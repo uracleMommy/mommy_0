@@ -13,5 +13,6 @@
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 
 @end
-
 // 1. 충돌상태 만들기
+// 튜토리얼2 커밋
+
