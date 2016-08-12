@@ -1,0 +1,394 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2AB627761D5C0CEC00BD7B84 /* LoginMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB627731D5C0CEC00BD7B84 /* LoginMain.m */; };
+		2AB627771D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB627751D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m */; };
+		2AB6277A1D5C0CF400BD7B84 /* SignUpMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB627791D5C0CF400BD7B84 /* SignUpMain.m */; };
+		2AB97A281D5AAFDA0063EB5E /* MembershipSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AB97A271D5AAFDA0063EB5E /* MembershipSignUp.storyboard */; };
+		2AC781DB1D599C0800B86BE1 /* MembershipLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC781DA1D599C0800B86BE1 /* MembershipLogin.storyboard */; };
+		DCA5AE261D598C6F0075B7AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA5AE251D598C6F0075B7AD /* main.m */; };
+		DCA5AE291D598C6F0075B7AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA5AE281D598C6F0075B7AD /* AppDelegate.m */; };
+		DCA5AE2C1D598C6F0075B7AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA5AE2B1D598C6F0075B7AD /* ViewController.m */; };
+		DCA5AE2F1D598C6F0075B7AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA5AE2D1D598C6F0075B7AD /* Main.storyboard */; };
+		DCA5AE321D598C6F0075B7AD /* co_medisolution.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCA5AE301D598C6F0075B7AD /* co_medisolution.xcdatamodeld */; };
+		DCA5AE341D598C6F0075B7AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCA5AE331D598C6F0075B7AD /* Assets.xcassets */; };
+		DCA5AE371D598C6F0075B7AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA5AE351D598C6F0075B7AD /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2AB627721D5C0CEC00BD7B84 /* LoginMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginMain.h; sourceTree = "<group>"; };
+		2AB627731D5C0CEC00BD7B84 /* LoginMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginMain.m; sourceTree = "<group>"; };
+		2AB627741D5C0CEC00BD7B84 /* LoginNewPasswordCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginNewPasswordCreate.h; sourceTree = "<group>"; };
+		2AB627751D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginNewPasswordCreate.m; sourceTree = "<group>"; };
+		2AB627781D5C0CF400BD7B84 /* SignUpMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpMain.h; sourceTree = "<group>"; };
+		2AB627791D5C0CF400BD7B84 /* SignUpMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpMain.m; sourceTree = "<group>"; };
+		2AB97A271D5AAFDA0063EB5E /* MembershipSignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MembershipSignUp.storyboard; sourceTree = "<group>"; };
+		2AC781DA1D599C0800B86BE1 /* MembershipLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MembershipLogin.storyboard; sourceTree = "<group>"; };
+		DCA5AE211D598C6F0075B7AD /* co.medisolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = co.medisolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCA5AE251D598C6F0075B7AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DCA5AE271D598C6F0075B7AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DCA5AE281D598C6F0075B7AD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DCA5AE2A1D598C6F0075B7AD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DCA5AE2B1D598C6F0075B7AD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DCA5AE2E1D598C6F0075B7AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DCA5AE311D598C6F0075B7AD /* co_medisolution.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = co_medisolution.xcdatamodel; sourceTree = "<group>"; };
+		DCA5AE331D598C6F0075B7AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DCA5AE361D598C6F0075B7AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DCA5AE381D598C6F0075B7AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DCA5AE1E1D598C6F0075B7AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2AB627671D5C0C8D00BD7B84 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2AB627721D5C0CEC00BD7B84 /* LoginMain.h */,
+				2AB627731D5C0CEC00BD7B84 /* LoginMain.m */,
+				2AB627741D5C0CEC00BD7B84 /* LoginNewPasswordCreate.h */,
+				2AB627751D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		2AB627681D5C0C9500BD7B84 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				2AB627781D5C0CF400BD7B84 /* SignUpMain.h */,
+				2AB627791D5C0CF400BD7B84 /* SignUpMain.m */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		2AC781D71D5998D700B86BE1 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				2AC781DA1D599C0800B86BE1 /* MembershipLogin.storyboard */,
+				2AB97A271D5AAFDA0063EB5E /* MembershipSignUp.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		2AC781D81D5998F400B86BE1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2AB627681D5C0C9500BD7B84 /* SignUp */,
+				2AB627671D5C0C8D00BD7B84 /* Login */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DCA5AE181D598C6F0075B7AD = {
+			isa = PBXGroup;
+			children = (
+				2AC781D81D5998F400B86BE1 /* Controller */,
+				2AC781D71D5998D700B86BE1 /* StoryBoard */,
+				DCA5AE231D598C6F0075B7AD /* co.medisolution */,
+				DCA5AE221D598C6F0075B7AD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DCA5AE221D598C6F0075B7AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCA5AE211D598C6F0075B7AD /* co.medisolution.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DCA5AE231D598C6F0075B7AD /* co.medisolution */ = {
+			isa = PBXGroup;
+			children = (
+				DCA5AE271D598C6F0075B7AD /* AppDelegate.h */,
+				DCA5AE281D598C6F0075B7AD /* AppDelegate.m */,
+				DCA5AE2A1D598C6F0075B7AD /* ViewController.h */,
+				DCA5AE2B1D598C6F0075B7AD /* ViewController.m */,
+				DCA5AE2D1D598C6F0075B7AD /* Main.storyboard */,
+				DCA5AE331D598C6F0075B7AD /* Assets.xcassets */,
+				DCA5AE351D598C6F0075B7AD /* LaunchScreen.storyboard */,
+				DCA5AE381D598C6F0075B7AD /* Info.plist */,
+				DCA5AE301D598C6F0075B7AD /* co_medisolution.xcdatamodeld */,
+				DCA5AE241D598C6F0075B7AD /* Supporting Files */,
+			);
+			path = co.medisolution;
+			sourceTree = "<group>";
+		};
+		DCA5AE241D598C6F0075B7AD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DCA5AE251D598C6F0075B7AD /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DCA5AE201D598C6F0075B7AD /* co.medisolution */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCA5AE3B1D598C6F0075B7AD /* Build configuration list for PBXNativeTarget "co.medisolution" */;
+			buildPhases = (
+				DCA5AE1D1D598C6F0075B7AD /* Sources */,
+				DCA5AE1E1D598C6F0075B7AD /* Frameworks */,
+				DCA5AE1F1D598C6F0075B7AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = co.medisolution;
+			productName = co.medisolution;
+			productReference = DCA5AE211D598C6F0075B7AD /* co.medisolution.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DCA5AE191D598C6F0075B7AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = medisolution;
+				TargetAttributes = {
+					DCA5AE201D598C6F0075B7AD = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = JH5F2VBM8Z;
+					};
+				};
+			};
+			buildConfigurationList = DCA5AE1C1D598C6F0075B7AD /* Build configuration list for PBXProject "co.medisolution" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DCA5AE181D598C6F0075B7AD;
+			productRefGroup = DCA5AE221D598C6F0075B7AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DCA5AE201D598C6F0075B7AD /* co.medisolution */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DCA5AE1F1D598C6F0075B7AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AB97A281D5AAFDA0063EB5E /* MembershipSignUp.storyboard in Resources */,
+				2AC781DB1D599C0800B86BE1 /* MembershipLogin.storyboard in Resources */,
+				DCA5AE371D598C6F0075B7AD /* LaunchScreen.storyboard in Resources */,
+				DCA5AE341D598C6F0075B7AD /* Assets.xcassets in Resources */,
+				DCA5AE2F1D598C6F0075B7AD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DCA5AE1D1D598C6F0075B7AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCA5AE2C1D598C6F0075B7AD /* ViewController.m in Sources */,
+				DCA5AE321D598C6F0075B7AD /* co_medisolution.xcdatamodeld in Sources */,
+				DCA5AE291D598C6F0075B7AD /* AppDelegate.m in Sources */,
+				2AB6277A1D5C0CF400BD7B84 /* SignUpMain.m in Sources */,
+				2AB627761D5C0CEC00BD7B84 /* LoginMain.m in Sources */,
+				DCA5AE261D598C6F0075B7AD /* main.m in Sources */,
+				2AB627771D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DCA5AE2D1D598C6F0075B7AD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCA5AE2E1D598C6F0075B7AD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DCA5AE351D598C6F0075B7AD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCA5AE361D598C6F0075B7AD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DCA5AE391D598C6F0075B7AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DCA5AE3A1D598C6F0075B7AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DCA5AE3C1D598C6F0075B7AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Park seohee (TDF9AJWPR5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = co.medisolution/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.medisolution;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2b5156ca-69db-4d9e-8a21-2e22316c4da2";
+			};
+			name = Debug;
+		};
+		DCA5AE3D1D598C6F0075B7AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Park seohee (TDF9AJWPR5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = co.medisolution/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.medisolution;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2b5156ca-69db-4d9e-8a21-2e22316c4da2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DCA5AE1C1D598C6F0075B7AD /* Build configuration list for PBXProject "co.medisolution" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCA5AE391D598C6F0075B7AD /* Debug */,
+				DCA5AE3A1D598C6F0075B7AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCA5AE3B1D598C6F0075B7AD /* Build configuration list for PBXNativeTarget "co.medisolution" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCA5AE3C1D598C6F0075B7AD /* Debug */,
+				DCA5AE3D1D598C6F0075B7AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DCA5AE301D598C6F0075B7AD /* co_medisolution.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DCA5AE311D598C6F0075B7AD /* co_medisolution.xcdatamodel */,
+			);
+			currentVersion = DCA5AE311D598C6F0075B7AD /* co_medisolution.xcdatamodel */;
+			path = co_medisolution.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DCA5AE191D598C6F0075B7AD /* Project object */;
+}
