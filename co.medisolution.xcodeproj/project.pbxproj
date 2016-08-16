@@ -18,6 +18,7 @@
 		DC5D20841D62AFA100ACDCA4 /* OTPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5D207F1D62AFA100ACDCA4 /* OTPageCell.m */; };
 		DC5D20851D62AFA100ACDCA4 /* OTPageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5D20811D62AFA100ACDCA4 /* OTPageScrollView.m */; };
 		DC5D20861D62AFA100ACDCA4 /* OTPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5D20831D62AFA100ACDCA4 /* OTPageView.m */; };
+		DC5D20911D62CB6500ACDCA4 /* DashBoardController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5D20901D62CB6500ACDCA4 /* DashBoardController.m */; };
 		DCA5AE261D598C6F0075B7AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA5AE251D598C6F0075B7AD /* main.m */; };
 		DCA5AE291D598C6F0075B7AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA5AE281D598C6F0075B7AD /* AppDelegate.m */; };
 		DCA5AE2C1D598C6F0075B7AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA5AE2B1D598C6F0075B7AD /* ViewController.m */; };
@@ -45,6 +46,8 @@
 		DC5D20811D62AFA100ACDCA4 /* OTPageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPageScrollView.m; sourceTree = "<group>"; };
 		DC5D20821D62AFA100ACDCA4 /* OTPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPageView.h; sourceTree = "<group>"; };
 		DC5D20831D62AFA100ACDCA4 /* OTPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPageView.m; sourceTree = "<group>"; };
+		DC5D208F1D62CB6500ACDCA4 /* DashBoardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardController.h; sourceTree = "<group>"; };
+		DC5D20901D62CB6500ACDCA4 /* DashBoardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardController.m; sourceTree = "<group>"; };
 		DCA5AE211D598C6F0075B7AD /* co.medisolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = co.medisolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA5AE251D598C6F0075B7AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DCA5AE271D598C6F0075B7AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -102,6 +105,7 @@
 		2AC781D81D5998F400B86BE1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DC5D20881D62B0F500ACDCA4 /* DashBoard */,
 				2AB627681D5C0C9500BD7B84 /* SignUp */,
 				2AB627671D5C0C8D00BD7B84 /* Login */,
 			);
@@ -111,6 +115,7 @@
 		DC3ACEA21D5DCA5500D68F80 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				DC5D20871D62B05C00ACDCA4 /* DashBoard */,
 				DC5D20761D62AE8F00ACDCA4 /* Common */,
 			);
 			path = Library;
@@ -135,6 +140,22 @@
 				DC5D20831D62AFA100ACDCA4 /* OTPageView.m */,
 			);
 			path = OTPageView;
+			sourceTree = "<group>";
+		};
+		DC5D20871D62B05C00ACDCA4 /* DashBoard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DashBoard;
+			sourceTree = "<group>";
+		};
+		DC5D20881D62B0F500ACDCA4 /* DashBoard */ = {
+			isa = PBXGroup;
+			children = (
+				DC5D208F1D62CB6500ACDCA4 /* DashBoardController.h */,
+				DC5D20901D62CB6500ACDCA4 /* DashBoardController.m */,
+			);
+			path = DashBoard;
 			sourceTree = "<group>";
 		};
 		DCA5AE181D598C6F0075B7AD = {
@@ -267,6 +288,7 @@
 				2AB6277A1D5C0CF400BD7B84 /* SignUpMain.m in Sources */,
 				2AB627761D5C0CEC00BD7B84 /* LoginMain.m in Sources */,
 				DCA5AE261D598C6F0075B7AD /* main.m in Sources */,
+				DC5D20911D62CB6500ACDCA4 /* DashBoardController.m in Sources */,
 				2AB627771D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m in Sources */,
 				DC5D20841D62AFA100ACDCA4 /* OTPageCell.m in Sources */,
 			);

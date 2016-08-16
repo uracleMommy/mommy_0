@@ -31,7 +31,7 @@
         <!--Mommy&-->
         <scene sceneID="5DJ-U5-Tla">
             <objects>
-                <viewController id="qcd-kp-tux" sceneMemberID="viewController">
+                <viewController id="qcd-kp-tux" customClass="DashBoardController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xol-G8-gyv"/>
                         <viewControllerLayoutGuide type="bottom" id="44H-j0-Pqn"/>
@@ -46,15 +46,26 @@
                                     <constraint firstAttribute="width" secondItem="Ho8-af-Jk8" secondAttribute="height" multiplier="1:1" id="Vwe-00-gFs"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCb-lL-2NI">
+                                <rect key="frame" x="0.0" y="383" width="320" height="136"/>
+                                <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Ho8-af-Jk8" firstAttribute="top" secondItem="Xol-G8-gyv" secondAttribute="bottom" id="7ip-PO-dSH"/>
+                            <constraint firstAttribute="trailing" secondItem="MCb-lL-2NI" secondAttribute="trailing" id="AJI-6U-cub"/>
                             <constraint firstItem="Ho8-af-Jk8" firstAttribute="leading" secondItem="lhh-2C-1mv" secondAttribute="leading" id="fPM-YF-O3a"/>
+                            <constraint firstItem="MCb-lL-2NI" firstAttribute="top" secondItem="Xol-G8-gyv" secondAttribute="bottom" constant="319" id="jHI-8d-EeH"/>
+                            <constraint firstItem="MCb-lL-2NI" firstAttribute="leading" secondItem="lhh-2C-1mv" secondAttribute="leading" id="r6C-Eo-YDl"/>
                             <constraint firstAttribute="trailing" secondItem="Ho8-af-Jk8" secondAttribute="trailing" id="rWr-SD-7Zi"/>
+                            <constraint firstItem="44H-j0-Pqn" firstAttribute="top" secondItem="MCb-lL-2NI" secondAttribute="bottom" id="z3o-vN-JTP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Mommy&amp;" id="vl1-Zn-XfR"/>
+                    <connections>
+                        <outlet property="pageViewContainer" destination="MCb-lL-2NI" id="I4c-Gg-9yK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P7C-Ce-DXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
