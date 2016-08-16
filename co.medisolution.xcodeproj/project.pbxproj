@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A371A4B1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A371A491D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.m */; };
+		2A371A4C1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A371A4A1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.xib */; };
+		2A371A501D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A371A4E1D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.m */; };
+		2A371A511D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A371A4F1D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.xib */; };
+		2A371A541D62E2C10051F278 /* SignUpFetusInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A371A531D62E2C10051F278 /* SignUpFetusInfoController.m */; };
+		2A371A571D62E8F30051F278 /* SignUpFetusInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A371A561D62E8F30051F278 /* SignUpFetusInfoModel.m */; };
 		2AB627761D5C0CEC00BD7B84 /* LoginMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB627731D5C0CEC00BD7B84 /* LoginMain.m */; };
 		2AB627771D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB627751D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m */; };
 		2AB6277A1D5C0CF400BD7B84 /* SignUpMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB627791D5C0CF400BD7B84 /* SignUpMain.m */; };
@@ -23,6 +29,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A371A481D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpFetusInfoCustomCell_Basic.h; sourceTree = "<group>"; };
+		2A371A491D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpFetusInfoCustomCell_Basic.m; sourceTree = "<group>"; };
+		2A371A4A1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpFetusInfoCustomCell_Basic.xib; sourceTree = "<group>"; };
+		2A371A4D1D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpFetusInfoCustomCell_Plus.h; sourceTree = "<group>"; };
+		2A371A4E1D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpFetusInfoCustomCell_Plus.m; sourceTree = "<group>"; };
+		2A371A4F1D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpFetusInfoCustomCell_Plus.xib; sourceTree = "<group>"; };
+		2A371A521D62E2C10051F278 /* SignUpFetusInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpFetusInfoController.h; sourceTree = "<group>"; };
+		2A371A531D62E2C10051F278 /* SignUpFetusInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpFetusInfoController.m; sourceTree = "<group>"; };
+		2A371A551D62E8F30051F278 /* SignUpFetusInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpFetusInfoModel.h; sourceTree = "<group>"; };
+		2A371A561D62E8F30051F278 /* SignUpFetusInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpFetusInfoModel.m; sourceTree = "<group>"; };
 		2AB627721D5C0CEC00BD7B84 /* LoginMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginMain.h; sourceTree = "<group>"; };
 		2AB627731D5C0CEC00BD7B84 /* LoginMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginMain.m; sourceTree = "<group>"; };
 		2AB627741D5C0CEC00BD7B84 /* LoginNewPasswordCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginNewPasswordCreate.h; sourceTree = "<group>"; };
@@ -56,6 +72,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A743F521D62AB2E007DEB6B /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				2A371A481D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.h */,
+				2A371A491D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.m */,
+				2A371A4A1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.xib */,
+				2A371A4D1D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.h */,
+				2A371A4E1D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.m */,
+				2A371A4F1D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.xib */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		2A743F561D62CA4B007DEB6B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2A743F571D62CA5F007DEB6B /* SignUp */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2A743F571D62CA5F007DEB6B /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				2A371A551D62E8F30051F278 /* SignUpFetusInfoModel.h */,
+				2A371A561D62E8F30051F278 /* SignUpFetusInfoModel.m */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
 		2AB627671D5C0C8D00BD7B84 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +118,8 @@
 			children = (
 				2AB627781D5C0CF400BD7B84 /* SignUpMain.h */,
 				2AB627791D5C0CF400BD7B84 /* SignUpMain.m */,
+				2A371A521D62E2C10051F278 /* SignUpFetusInfoController.h */,
+				2A371A531D62E2C10051F278 /* SignUpFetusInfoController.m */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -98,6 +146,7 @@
 		DC3ACEA21D5DCA5500D68F80 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				2A743F521D62AB2E007DEB6B /* SignUp */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -105,6 +154,7 @@
 		DCA5AE181D598C6F0075B7AD = {
 			isa = PBXGroup;
 			children = (
+				2A743F561D62CA4B007DEB6B /* Model */,
 				DC3ACEA21D5DCA5500D68F80 /* Library */,
 				2AC781D81D5998F400B86BE1 /* Controller */,
 				2AC781D71D5998D700B86BE1 /* StoryBoard */,
@@ -205,10 +255,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AB97A281D5AAFDA0063EB5E /* MembershipSignUp.storyboard in Resources */,
+				2A371A4C1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.xib in Resources */,
 				2AC781DB1D599C0800B86BE1 /* MembershipLogin.storyboard in Resources */,
 				DCA5AE371D598C6F0075B7AD /* LaunchScreen.storyboard in Resources */,
 				DCA5AE341D598C6F0075B7AD /* Assets.xcassets in Resources */,
 				DCA5AE2F1D598C6F0075B7AD /* Main.storyboard in Resources */,
+				2A371A511D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.xib in Resources */,
 				DC3ACE161D5D853C00D68F80 /* DashBoard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,8 +277,12 @@
 				DCA5AE291D598C6F0075B7AD /* AppDelegate.m in Sources */,
 				2AB6277A1D5C0CF400BD7B84 /* SignUpMain.m in Sources */,
 				2AB627761D5C0CEC00BD7B84 /* LoginMain.m in Sources */,
+				2A371A501D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.m in Sources */,
+				2A371A571D62E8F30051F278 /* SignUpFetusInfoModel.m in Sources */,
+				2A371A4B1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.m in Sources */,
 				DCA5AE261D598C6F0075B7AD /* main.m in Sources */,
 				2AB627771D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m in Sources */,
+				2A371A541D62E2C10051F278 /* SignUpFetusInfoController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
