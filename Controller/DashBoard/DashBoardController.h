@@ -12,4 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *pageViewContainer;
 
+@property (strong, nonatomic) NSArray *scrollViewArray;
+
 @end

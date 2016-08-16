@@ -19,6 +19,8 @@
 		DC5D20851D62AFA100ACDCA4 /* OTPageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5D20811D62AFA100ACDCA4 /* OTPageScrollView.m */; };
 		DC5D20861D62AFA100ACDCA4 /* OTPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5D20831D62AFA100ACDCA4 /* OTPageView.m */; };
 		DC5D20911D62CB6500ACDCA4 /* DashBoardController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5D20901D62CB6500ACDCA4 /* DashBoardController.m */; };
+		DC5D20951D62E01300ACDCA4 /* DashBoardScrollCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5D20931D62E01300ACDCA4 /* DashBoardScrollCellView.m */; };
+		DC5D20961D62E01300ACDCA4 /* DashBoardScrollCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC5D20941D62E01300ACDCA4 /* DashBoardScrollCellView.xib */; };
 		DCA5AE261D598C6F0075B7AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA5AE251D598C6F0075B7AD /* main.m */; };
 		DCA5AE291D598C6F0075B7AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA5AE281D598C6F0075B7AD /* AppDelegate.m */; };
 		DCA5AE2C1D598C6F0075B7AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA5AE2B1D598C6F0075B7AD /* ViewController.m */; };
@@ -48,6 +50,9 @@
 		DC5D20831D62AFA100ACDCA4 /* OTPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPageView.m; sourceTree = "<group>"; };
 		DC5D208F1D62CB6500ACDCA4 /* DashBoardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardController.h; sourceTree = "<group>"; };
 		DC5D20901D62CB6500ACDCA4 /* DashBoardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardController.m; sourceTree = "<group>"; };
+		DC5D20921D62E01300ACDCA4 /* DashBoardScrollCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardScrollCellView.h; sourceTree = "<group>"; };
+		DC5D20931D62E01300ACDCA4 /* DashBoardScrollCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardScrollCellView.m; sourceTree = "<group>"; };
+		DC5D20941D62E01300ACDCA4 /* DashBoardScrollCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashBoardScrollCellView.xib; sourceTree = "<group>"; };
 		DCA5AE211D598C6F0075B7AD /* co.medisolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = co.medisolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA5AE251D598C6F0075B7AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DCA5AE271D598C6F0075B7AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -145,6 +150,9 @@
 		DC5D20871D62B05C00ACDCA4 /* DashBoard */ = {
 			isa = PBXGroup;
 			children = (
+				DC5D20921D62E01300ACDCA4 /* DashBoardScrollCellView.h */,
+				DC5D20931D62E01300ACDCA4 /* DashBoardScrollCellView.m */,
+				DC5D20941D62E01300ACDCA4 /* DashBoardScrollCellView.xib */,
 			);
 			path = DashBoard;
 			sourceTree = "<group>";
@@ -262,6 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC5D20961D62E01300ACDCA4 /* DashBoardScrollCellView.xib in Resources */,
 				DC5D20741D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf in Resources */,
 				2AB97A281D5AAFDA0063EB5E /* MembershipSignUp.storyboard in Resources */,
 				2AC781DB1D599C0800B86BE1 /* MembershipLogin.storyboard in Resources */,
@@ -282,6 +291,7 @@
 			files = (
 				DCA5AE2C1D598C6F0075B7AD /* ViewController.m in Sources */,
 				DCA5AE321D598C6F0075B7AD /* co_medisolution.xcdatamodeld in Sources */,
+				DC5D20951D62E01300ACDCA4 /* DashBoardScrollCellView.m in Sources */,
 				DC5D20861D62AFA100ACDCA4 /* OTPageView.m in Sources */,
 				DCA5AE291D598C6F0075B7AD /* AppDelegate.m in Sources */,
 				DC5D20851D62AFA100ACDCA4 /* OTPageScrollView.m in Sources */,
