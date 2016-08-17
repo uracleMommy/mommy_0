@@ -21,24 +21,27 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.tabBarController.tabBar.translucent = NO;
+    //self.navigationController.navigationBar.translucent = NO;
+    
     CGRect containerFrame = _pageViewContainer.frame;
     OTPageView *PScrollView = [[OTPageView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, containerFrame.size.height)];
     PScrollView.pageScrollView.dataSource = self;
     PScrollView.pageScrollView.delegate = self;
     PScrollView.pageScrollView.padding = 10;
     PScrollView.pageScrollView.leftRightOffset = 0;
-    PScrollView.pageScrollView.frame = CGRectMake(([[UIScreen mainScreen] bounds].size.width -370)/2, 60, 370, 100);
-    PScrollView.backgroundColor = [UIColor colorWithRed:239.0f/255.0f green:79.0f/255.0f blue:104.0f/255.0f alpha:1.0f];
+    PScrollView.pageScrollView.frame = CGRectMake(([[UIScreen mainScreen] bounds].size.width -370)/2, 0, 280, 99);
+//    PScrollView.backgroundColor = [UIColor colorWithRed:239.0f/255.0f green:79.0f/255.0f blue:104.0f/255.0f alpha:1.0f];
     
-    [_pageViewContainer addSubview:PScrollView];
+//    [_pageViewContainer addSubview:PScrollView];
     
     // 페이지뷰에 담길 커스텀 뷰
     DashBoardScrollCellView *view1 = [[DashBoardScrollCellView alloc] initWithNibName:@"DashBoardScrollCellView" bundle:nil];
-    [view1.view setFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width - 60, 150)];
+    [view1.view setFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width - 40, 99)];
     DashBoardScrollCellView *view2 = [[DashBoardScrollCellView alloc] initWithNibName:@"DashBoardScrollCellView" bundle:nil];
-    [view2.view setFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width - 60, 150)];
+    [view2.view setFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width - 40, 99)];
     DashBoardScrollCellView *view3 = [[DashBoardScrollCellView alloc] initWithNibName:@"DashBoardScrollCellView" bundle:nil];
-    [view3.view setFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width - 60, 150)];
+    [view3.view setFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width - 40, 99)];
     
     _scrollViewArray = [NSArray arrayWithObjects:view1, view2, view3, nil];
     
@@ -72,7 +75,7 @@
 
 - (CGSize)sizeCellForPageScrollView:(OTPageScrollView*)pageScrollView {
     
-    return CGSizeMake([[UIScreen mainScreen] bounds].size.width - 60, 100);
+    return CGSizeMake([[UIScreen mainScreen] bounds].size.width - 40, 99);
 }
 
 - (void)pageScrollView:(OTPageScrollView *)pageScrollView didTapPageAtIndex:(NSInteger)index {

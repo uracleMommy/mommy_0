@@ -7,6 +7,10 @@
 //
 
 #import "LoginMain.h"
+#import "IQKeyboardManager.h"
+#import "IQKeyboardReturnKeyHandler.h"
+#import "IQDropDownTextField.h"
+#import "IQUIView+IQKeyboardToolbar.h"
 
 @interface LoginMain ()
 
@@ -17,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [[IQKeyboardManager sharedManager] setToolbarManageBehaviour:IQAutoToolbarByPosition];
     
     //close Button Setting
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
