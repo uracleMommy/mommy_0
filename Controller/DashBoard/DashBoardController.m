@@ -25,7 +25,7 @@
     OTPageView *PScrollView = [[OTPageView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, containerFrame.size.height)];
     PScrollView.pageScrollView.dataSource = self;
     PScrollView.pageScrollView.delegate = self;
-    PScrollView.pageScrollView.padding = 20;
+    PScrollView.pageScrollView.padding = 10;
     PScrollView.pageScrollView.leftRightOffset = 0;
     PScrollView.pageScrollView.frame = CGRectMake(([[UIScreen mainScreen] bounds].size.width -370)/2, 60, 370, 100);
     PScrollView.backgroundColor = [UIColor colorWithRed:239.0f/255.0f green:79.0f/255.0f blue:104.0f/255.0f alpha:1.0f];
