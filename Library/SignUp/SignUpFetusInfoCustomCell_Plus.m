@@ -9,6 +9,7 @@
 #import "SignUpFetusInfoCustomCell_Plus.h"
 
 @implementation SignUpFetusInfoCustomCell_Plus
+@synthesize delegate;
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -16,6 +17,7 @@
     _plusButton.layer.cornerRadius = 20;//half of the width
     _plusButton.layer.borderColor = [UIColor colorWithRed:132.0/255.0f green:68.0/255.0f  blue:240.0/255.0f alpha:1.0].CGColor;
     _plusButton.layer.borderWidth=1.0f;
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -25,7 +27,7 @@
 }
 
 - (IBAction)addFetusCell:(id)sender {
-    
-    
+    NSLog(@"PSH addFetusCell");
+    [delegate addTableCell];
 }
 @end

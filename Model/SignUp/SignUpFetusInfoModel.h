@@ -8,10 +8,23 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "SignUpFetusInfoCustomCell_Basic.h"
+#import "SignUpFetusInfoCustomCell_Plus.h"
 
-@interface SignUpFetusInfoModel : NSObject <UITableViewDataSource, UITableViewDelegate>
+
+@protocol fetusInfoModelDelegate <NSObject>
+
+@required
+- (void)deleteTableCell:(id)sender;
+- (void)addTableCell;
+
+@end
+
+
+@interface SignUpFetusInfoModel : NSObject <UITableViewDataSource, UITableViewDelegate, fetusInfoBasicCellDelegate, fetusInfoPlusCellDelegate>
 
 @property (nonatomic, strong) NSMutableArray *fetusNames;
 
+@property (weak, nonatomic) id<fetusInfoModelDelegate> delegate;
 
 @end

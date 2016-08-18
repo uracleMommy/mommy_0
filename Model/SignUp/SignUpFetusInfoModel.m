@@ -7,12 +7,11 @@
 //
 
 #import "SignUpFetusInfoModel.h"
-#import "SignUpFetusInfoCustomCell_Basic.h"
-#import "SignUpFetusInfoCustomCell_Plus.h"
 #define BASIC_CELL_ID @"BASIC_CELL_ID"
 #define PLUS_CELL_ID @"PLUS_CELL_ID"
 
 @implementation SignUpFetusInfoModel
+@synthesize delegate;
 
 - (instancetype)init
 {
@@ -21,8 +20,9 @@
         _fetusNames = [[NSMutableArray alloc]init];
         
         [_fetusNames addObject:@""];
+        
     }
-    return self;
+        return self;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -42,6 +42,7 @@
             
             cell = [tableView dequeueReusableCellWithIdentifier:BASIC_CELL_ID];
         }
+        cell.delegate = self;
         return cell;
         
         
@@ -53,6 +54,7 @@
             
             cell = [tableView dequeueReusableCellWithIdentifier:PLUS_CELL_ID];
         }
+        cell.delegate = self;
         return cell;
     }
 }
@@ -105,19 +107,25 @@
 {
     int height = 40;
     int row = [indexPath row];
+    int maxrow = [_fetusNames count];
     
-    switch (row) {
-        case 0:
-            break;
-            
-        case 1:
-            height = height + 40;
-            break;
-            
-        default:
-            break;
+    if(row == maxrow){
+        height = height+40;
     }
     
     return height;
 }
+
+-(void)addTableCell{
+    NSLog(@"PSH addTableCell");
+    if([_fetusNames count] <= 4){
+        [delegate addTableCell];
+    }
+}
+
+-(void)deleteTableCell:(id)sender{
+    NSLog(@"PSH deleteTableCell");
+    [delegate deleteTableCell:sender];
+}
+
 @end

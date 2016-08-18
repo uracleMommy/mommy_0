@@ -8,9 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol fetusInfoPlusCellDelegate <NSObject>
+
+- (void)addTableCell;
+
+@end
+
 @interface SignUpFetusInfoCustomCell_Plus : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIButton *plusButton;
 
 - (IBAction)addFetusCell:(id)sender;
+
+@property (weak, nonatomic) id<fetusInfoPlusCellDelegate> delegate;
+
 @end

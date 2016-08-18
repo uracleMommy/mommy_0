@@ -13,6 +13,8 @@
 		2A371A511D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A371A4F1D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.xib */; };
 		2A371A541D62E2C10051F278 /* SignUpFetusInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A371A531D62E2C10051F278 /* SignUpFetusInfoController.m */; };
 		2A371A571D62E8F30051F278 /* SignUpFetusInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A371A561D62E8F30051F278 /* SignUpFetusInfoModel.m */; };
+		2AA6D6C21D64230A00316DD6 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA6D6C11D64230A00316DD6 /* Diary.storyboard */; };
+		2AA6D6CA1D64356000316DD6 /* DiaryWriteBasicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D6C91D64356000316DD6 /* DiaryWriteBasicController.m */; };
 		2AB627761D5C0CEC00BD7B84 /* LoginMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB627731D5C0CEC00BD7B84 /* LoginMain.m */; };
 		2AB627771D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB627751D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m */; };
 		2AB6277A1D5C0CF400BD7B84 /* SignUpMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB627791D5C0CF400BD7B84 /* SignUpMain.m */; };
@@ -66,6 +68,9 @@
 		2A371A531D62E2C10051F278 /* SignUpFetusInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpFetusInfoController.m; sourceTree = "<group>"; };
 		2A371A551D62E8F30051F278 /* SignUpFetusInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpFetusInfoModel.h; sourceTree = "<group>"; };
 		2A371A561D62E8F30051F278 /* SignUpFetusInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpFetusInfoModel.m; sourceTree = "<group>"; };
+		2AA6D6C11D64230A00316DD6 /* Diary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
+		2AA6D6C81D64356000316DD6 /* DiaryWriteBasicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryWriteBasicController.h; sourceTree = "<group>"; };
+		2AA6D6C91D64356000316DD6 /* DiaryWriteBasicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryWriteBasicController.m; sourceTree = "<group>"; };
 		2AB627721D5C0CEC00BD7B84 /* LoginMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginMain.h; sourceTree = "<group>"; };
 		2AB627731D5C0CEC00BD7B84 /* LoginMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginMain.m; sourceTree = "<group>"; };
 		2AB627741D5C0CEC00BD7B84 /* LoginNewPasswordCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginNewPasswordCreate.h; sourceTree = "<group>"; };
@@ -187,6 +192,15 @@
 			path = SignUp;
 			sourceTree = "<group>";
 		};
+		2AA6D6C31D6434D600316DD6 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				2AA6D6C81D64356000316DD6 /* DiaryWriteBasicController.h */,
+				2AA6D6C91D64356000316DD6 /* DiaryWriteBasicController.m */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
 		2AB627671D5C0C8D00BD7B84 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +230,7 @@
 				2AB97A271D5AAFDA0063EB5E /* MembershipSignUp.storyboard */,
 				DC3ACE151D5D853C00D68F80 /* DashBoard.storyboard */,
 				DC723C291D63FE2200557E1E /* MainTabBar.storyboard */,
+				2AA6D6C11D64230A00316DD6 /* Diary.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -223,6 +238,7 @@
 		2AC781D81D5998F400B86BE1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2AA6D6C31D6434D600316DD6 /* Diary */,
 				DC5D20881D62B0F500ACDCA4 /* DashBoard */,
 				2AB627681D5C0C9500BD7B84 /* SignUp */,
 				2AB627671D5C0C8D00BD7B84 /* Login */,
@@ -500,7 +516,11 @@
 				DCA5AE371D598C6F0075B7AD /* LaunchScreen.storyboard in Resources */,
 				DCA5AE341D598C6F0075B7AD /* Assets.xcassets in Resources */,
 				DC5D20751D62ACFB00ACDCA4 /* NanumBarunGothic.ttf in Resources */,
+<<<<<<< HEAD
 				DC723C2A1D63FE2200557E1E /* MainTabBar.storyboard in Resources */,
+=======
+				2AA6D6C21D64230A00316DD6 /* Diary.storyboard in Resources */,
+>>>>>>> a4121629361e650228e19cc067925d616593c090
 				DCA5AE2F1D598C6F0075B7AD /* Main.storyboard in Resources */,
 				2A371A511D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.xib in Resources */,
 				DC3ACE161D5D853C00D68F80 /* DashBoard.storyboard in Resources */,
@@ -539,6 +559,7 @@
 				DC723C181D63EBA200557E1E /* IQUIView+Hierarchy.m in Sources */,
 				2A371A4B1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.m in Sources */,
 				DCA5AE261D598C6F0075B7AD /* main.m in Sources */,
+				2AA6D6CA1D64356000316DD6 /* DiaryWriteBasicController.m in Sources */,
 				DC5D20911D62CB6500ACDCA4 /* DashBoardController.m in Sources */,
 				2AB627771D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m in Sources */,
 				DC5D20841D62AFA100ACDCA4 /* OTPageCell.m in Sources */,
