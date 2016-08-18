@@ -106,7 +106,7 @@
                                                     <constraint firstAttribute="width" constant="40" id="KP3-3e-kew"/>
                                                     <constraint firstAttribute="height" constant="40" id="Qnh-Wu-tMY"/>
                                                 </constraints>
-                                                <state key="normal" image="5B1DC4CC-95C6-4219-96A6-7504B82C7325"/>
+                                                <state key="normal" image="40E1A2BA-079C-42DD-972A-16B0E09B0682"/>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -135,7 +135,7 @@
                                                     <constraint firstAttribute="height" constant="40" id="ukd-Dl-LMp"/>
                                                     <constraint firstAttribute="width" constant="40" id="xXp-hk-JXv"/>
                                                 </constraints>
-                                                <state key="normal" image="1A627CEA-1727-4B7C-AF7A-36B766CB6DD5"/>
+                                                <state key="normal" image="04947A55-276D-4973-95A4-3D9B3608DCF5"/>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -628,7 +628,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1A627CEA-1727-4B7C-AF7A-36B766CB6DD5" width="90" height="90">
+        <image name="04947A55-276D-4973-95A4-3D9B3608DCF5" width="90" height="90">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -1238,7 +1238,7 @@ w4zSjNaM3YzljPKM94z5jPuNAI0IjQuNEI0YjRuNLY0wjTUAAAAAAAACAQAAAAAAAAA+AAAAAAAAAAAA
 AAAAAACNNw
 </mutableData>
         </image>
-        <image name="5B1DC4CC-95C6-4219-96A6-7504B82C7325" width="90" height="90">
+        <image name="40E1A2BA-079C-42DD-972A-16B0E09B0682" width="90" height="90">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
