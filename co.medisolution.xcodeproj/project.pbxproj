@@ -516,11 +516,8 @@
 				DCA5AE371D598C6F0075B7AD /* LaunchScreen.storyboard in Resources */,
 				DCA5AE341D598C6F0075B7AD /* Assets.xcassets in Resources */,
 				DC5D20751D62ACFB00ACDCA4 /* NanumBarunGothic.ttf in Resources */,
-<<<<<<< HEAD
 				DC723C2A1D63FE2200557E1E /* MainTabBar.storyboard in Resources */,
-=======
 				2AA6D6C21D64230A00316DD6 /* Diary.storyboard in Resources */,
->>>>>>> a4121629361e650228e19cc067925d616593c090
 				DCA5AE2F1D598C6F0075B7AD /* Main.storyboard in Resources */,
 				2A371A511D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.xib in Resources */,
 				DC3ACE161D5D853C00D68F80 /* DashBoard.storyboard in Resources */,
