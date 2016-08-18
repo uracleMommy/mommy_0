@@ -60,7 +60,7 @@
                 <constraint firstItem="c4A-wb-rgi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="um9-dN-dfx"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-9" y="400.5"/>
+            <point key="canvasLocation" x="-37" y="295.5"/>
         </view>
     </objects>
     <resources>
