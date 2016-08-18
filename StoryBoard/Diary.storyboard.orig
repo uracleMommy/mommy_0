@@ -107,7 +107,11 @@
                                                     <constraint firstAttribute="width" constant="40" id="KP3-3e-kew"/>
                                                     <constraint firstAttribute="height" constant="40" id="Qnh-Wu-tMY"/>
                                                 </constraints>
+<<<<<<< HEAD
+                                                <state key="normal" image="40E1A2BA-079C-42DD-972A-16B0E09B0682"/>
+=======
                                                 <state key="normal" image="5AE2161E-041C-4A6D-80B6-19ADB30CDE78"/>
+>>>>>>> 9f238a52d6c0635ff9801b288a8e11a82ceb6562
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -136,7 +140,11 @@
                                                     <constraint firstAttribute="height" constant="40" id="ukd-Dl-LMp"/>
                                                     <constraint firstAttribute="width" constant="40" id="xXp-hk-JXv"/>
                                                 </constraints>
+<<<<<<< HEAD
+                                                <state key="normal" image="04947A55-276D-4973-95A4-3D9B3608DCF5"/>
+=======
                                                 <state key="normal" image="D5D8ED84-8620-43E1-BF6D-1F2FA2DB9359"/>
+>>>>>>> 9f238a52d6c0635ff9801b288a8e11a82ceb6562
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -738,7 +746,11 @@
         </scene>
     </scenes>
     <resources>
+<<<<<<< HEAD
+        <image name="04947A55-276D-4973-95A4-3D9B3608DCF5" width="90" height="90">
+=======
         <image name="5AE2161E-041C-4A6D-80B6-19ADB30CDE78" width="90" height="90">
+>>>>>>> 9f238a52d6c0635ff9801b288a8e11a82ceb6562
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -1348,7 +1360,11 @@ w4zSjNaM3YzljPKM94z5jPuNAI0IjQuNEI0YjRuNLY0wjTUAAAAAAAACAQAAAAAAAAA+AAAAAAAAAAAA
 AAAAAACNNw
 </mutableData>
         </image>
+<<<<<<< HEAD
+        <image name="40E1A2BA-079C-42DD-972A-16B0E09B0682" width="90" height="90">
+=======
         <image name="D5D8ED84-8620-43E1-BF6D-1F2FA2DB9359" width="90" height="90">
+>>>>>>> 9f238a52d6c0635ff9801b288a8e11a82ceb6562
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA

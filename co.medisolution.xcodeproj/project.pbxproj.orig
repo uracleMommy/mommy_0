@@ -20,16 +20,16 @@
 		2AB6277A1D5C0CF400BD7B84 /* SignUpMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB627791D5C0CF400BD7B84 /* SignUpMain.m */; };
 		2AB97A281D5AAFDA0063EB5E /* MembershipSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AB97A271D5AAFDA0063EB5E /* MembershipSignUp.storyboard */; };
 		2AC781DB1D599C0800B86BE1 /* MembershipLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC781DA1D599C0800B86BE1 /* MembershipLogin.storyboard */; };
-		DC1FE6D01D657E63006F7A50 /* DashBoardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6CF1D657E63006F7A50 /* DashBoardSegue.m */; };
-		DC1FE6D31D65834B006F7A50 /* TabbarDashBoardNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6D21D65834B006F7A50 /* TabbarDashBoardNavController.m */; };
-		DC1FE6D61D65860B006F7A50 /* TabbarDiaryNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6D51D65860B006F7A50 /* TabbarDiaryNavController.m */; };
-		DC1FE6D91D65863D006F7A50 /* DiarySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6D81D65863D006F7A50 /* DiarySegue.m */; };
 		2AE11DE31D654C4E003C6690 /* DiaryListBasicCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11DE11D654C4E003C6690 /* DiaryListBasicCustomCell.m */; };
 		2AE11DE41D654C4E003C6690 /* DiaryListBasicCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AE11DE21D654C4E003C6690 /* DiaryListBasicCustomCell.xib */; };
 		2AE11DE81D657DE4003C6690 /* DiaryListImageCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11DE61D657DE4003C6690 /* DiaryListImageCustomCell.m */; };
 		2AE11DE91D657DE4003C6690 /* DiaryListImageCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AE11DE71D657DE4003C6690 /* DiaryListImageCustomCell.xib */; };
 		2AE11DF01D6581D9003C6690 /* DiaryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11DEF1D6581D9003C6690 /* DiaryListModel.m */; };
 		2AE11DF31D6583BC003C6690 /* DiaryListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11DF21D6583BC003C6690 /* DiaryListController.m */; };
+		DC1FE6D01D657E63006F7A50 /* DashBoardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6CF1D657E63006F7A50 /* DashBoardSegue.m */; };
+		DC1FE6D31D65834B006F7A50 /* TabbarDashBoardNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6D21D65834B006F7A50 /* TabbarDashBoardNavController.m */; };
+		DC1FE6D61D65860B006F7A50 /* TabbarDiaryNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6D51D65860B006F7A50 /* TabbarDiaryNavController.m */; };
+		DC1FE6D91D65863D006F7A50 /* DiarySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6D81D65863D006F7A50 /* DiarySegue.m */; };
 		DC3ACE161D5D853C00D68F80 /* DashBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3ACE151D5D853C00D68F80 /* DashBoard.storyboard */; };
 		DC5D20741D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5D20721D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf */; };
 		DC5D20751D62ACFB00ACDCA4 /* NanumBarunGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5D20731D62ACFB00ACDCA4 /* NanumBarunGothic.ttf */; };
@@ -89,14 +89,6 @@
 		2AB627791D5C0CF400BD7B84 /* SignUpMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpMain.m; sourceTree = "<group>"; };
 		2AB97A271D5AAFDA0063EB5E /* MembershipSignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MembershipSignUp.storyboard; sourceTree = "<group>"; };
 		2AC781DA1D599C0800B86BE1 /* MembershipLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MembershipLogin.storyboard; sourceTree = "<group>"; };
-		DC1FE6CE1D657E63006F7A50 /* DashBoardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardSegue.h; sourceTree = "<group>"; };
-		DC1FE6CF1D657E63006F7A50 /* DashBoardSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardSegue.m; sourceTree = "<group>"; };
-		DC1FE6D11D65834B006F7A50 /* TabbarDashBoardNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbarDashBoardNavController.h; sourceTree = "<group>"; };
-		DC1FE6D21D65834B006F7A50 /* TabbarDashBoardNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabbarDashBoardNavController.m; sourceTree = "<group>"; };
-		DC1FE6D41D65860B006F7A50 /* TabbarDiaryNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbarDiaryNavController.h; sourceTree = "<group>"; };
-		DC1FE6D51D65860B006F7A50 /* TabbarDiaryNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabbarDiaryNavController.m; sourceTree = "<group>"; };
-		DC1FE6D71D65863D006F7A50 /* DiarySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiarySegue.h; sourceTree = "<group>"; };
-		DC1FE6D81D65863D006F7A50 /* DiarySegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiarySegue.m; sourceTree = "<group>"; };
 		2AE11DE01D654C4E003C6690 /* DiaryListBasicCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryListBasicCustomCell.h; sourceTree = "<group>"; };
 		2AE11DE11D654C4E003C6690 /* DiaryListBasicCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryListBasicCustomCell.m; sourceTree = "<group>"; };
 		2AE11DE21D654C4E003C6690 /* DiaryListBasicCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiaryListBasicCustomCell.xib; sourceTree = "<group>"; };
@@ -107,6 +99,14 @@
 		2AE11DEF1D6581D9003C6690 /* DiaryListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryListModel.m; sourceTree = "<group>"; };
 		2AE11DF11D6583BC003C6690 /* DiaryListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryListController.h; sourceTree = "<group>"; };
 		2AE11DF21D6583BC003C6690 /* DiaryListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryListController.m; sourceTree = "<group>"; };
+		DC1FE6CE1D657E63006F7A50 /* DashBoardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardSegue.h; sourceTree = "<group>"; };
+		DC1FE6CF1D657E63006F7A50 /* DashBoardSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardSegue.m; sourceTree = "<group>"; };
+		DC1FE6D11D65834B006F7A50 /* TabbarDashBoardNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbarDashBoardNavController.h; sourceTree = "<group>"; };
+		DC1FE6D21D65834B006F7A50 /* TabbarDashBoardNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabbarDashBoardNavController.m; sourceTree = "<group>"; };
+		DC1FE6D41D65860B006F7A50 /* TabbarDiaryNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbarDiaryNavController.h; sourceTree = "<group>"; };
+		DC1FE6D51D65860B006F7A50 /* TabbarDiaryNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabbarDiaryNavController.m; sourceTree = "<group>"; };
+		DC1FE6D71D65863D006F7A50 /* DiarySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiarySegue.h; sourceTree = "<group>"; };
+		DC1FE6D81D65863D006F7A50 /* DiarySegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiarySegue.m; sourceTree = "<group>"; };
 		DC3ACE151D5D853C00D68F80 /* DashBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DashBoard.storyboard; sourceTree = "<group>"; };
 		DC5D20721D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicBold.ttf; sourceTree = "<group>"; };
 		DC5D20731D62ACFB00ACDCA4 /* NanumBarunGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothic.ttf; sourceTree = "<group>"; };
@@ -276,6 +276,21 @@
 				2AB627671D5C0C8D00BD7B84 /* Login */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		DC1FE6C51D657A85006F7A50 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				DC1FE6D11D65834B006F7A50 /* TabbarDashBoardNavController.h */,
+				DC1FE6D21D65834B006F7A50 /* TabbarDashBoardNavController.m */,
+				DC1FE6CE1D657E63006F7A50 /* DashBoardSegue.h */,
+				DC1FE6CF1D657E63006F7A50 /* DashBoardSegue.m */,
+				DC1FE6D41D65860B006F7A50 /* TabbarDiaryNavController.h */,
+				DC1FE6D51D65860B006F7A50 /* TabbarDiaryNavController.m */,
+				DC1FE6D71D65863D006F7A50 /* DiarySegue.h */,
+				DC1FE6D81D65863D006F7A50 /* DiarySegue.m */,
+			);
+			path = Tabbar;
 			sourceTree = "<group>";
 		};
 		2AE11DDA1D654B47003C6690 /* Diary */ = {
@@ -622,6 +637,7 @@
 				DC5D20911D62CB6500ACDCA4 /* DashBoardController.m in Sources */,
 				2AB627771D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m in Sources */,
 				DC5D20841D62AFA100ACDCA4 /* OTPageCell.m in Sources */,
+				DC1FE6D31D65834B006F7A50 /* TabbarDashBoardNavController.m in Sources */,
 				2AE11DE81D657DE4003C6690 /* DiaryListImageCustomCell.m in Sources */,
 				DC723C1A1D63EBA200557E1E /* IQUIWindow+Hierarchy.m in Sources */,
 				2AE11DF31D6583BC003C6690 /* DiaryListController.m in Sources */,
