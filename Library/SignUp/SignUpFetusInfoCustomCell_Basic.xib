@@ -11,9 +11,14 @@
             <rect key="frame" x="0.0" y="0.0" width="321" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BbH-dL-XKh" id="MFY-Gk-480">
-                <rect key="frame" x="0.0" y="0.0" width="321" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="321" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mRp-q1-N0S">
+                        <rect key="frame" x="8" y="7" width="269" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trC-c9-Dbx">
                         <rect key="frame" x="277" y="0.0" width="44" height="44"/>
                         <constraints>
@@ -22,14 +27,9 @@
                         </constraints>
                         <state key="normal" backgroundImage="input_btn_del"/>
                         <connections>
-                            <action selector="deleteInputContents:" destination="BbH-dL-XKh" eventType="touchUpInside" id="J1J-Pp-zf5"/>
+                            <action selector="deleteInputContents:" destination="BbH-dL-XKh" eventType="touchUpInside" id="uCD-kh-RWy"/>
                         </connections>
                     </button>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mRp-q1-N0S">
-                        <rect key="frame" x="8" y="7" width="269" height="30"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
-                    </textField>
                 </subviews>
                 <constraints>
                     <constraint firstItem="mRp-q1-N0S" firstAttribute="top" secondItem="MFY-Gk-480" secondAttribute="top" constant="7" id="CHj-Zi-qQo"/>

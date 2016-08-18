@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SignUpFetusInfoModel.h"
 
-@interface SignUpFetusInfoController : UIViewController
+@interface SignUpFetusInfoController : UIViewController<fetusInfoModelDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *fetusInfoTableView;
 

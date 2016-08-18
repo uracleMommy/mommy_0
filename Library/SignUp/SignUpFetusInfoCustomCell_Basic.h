@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol fetusInfoBasicCellDelegate <NSObject>
+
+@required
+- (void)deleteTableCell:(id)sender;
+
+@end
+
 @interface SignUpFetusInfoCustomCell_Basic : UITableViewCell
 
 - (IBAction)deleteInputContents:(id)sender;
+
+@property (weak, nonatomic) id<fetusInfoBasicCellDelegate> delegate;
 
 @end
