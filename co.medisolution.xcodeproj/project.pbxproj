@@ -36,6 +36,11 @@
 		DC1FE6F71D65C83C006F7A50 /* UIScrollView+DZNSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6F51D65C83C006F7A50 /* UIScrollView+DZNSegmentedControl.m */; };
 		DC1FE6FA1D65CB37006F7A50 /* WeekProgramController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6F91D65CB37006F7A50 /* WeekProgramController.m */; };
 		DC3ACE161D5D853C00D68F80 /* DashBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3ACE151D5D853C00D68F80 /* DashBoard.storyboard */; };
+		DC512AC01D6694D100885C26 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC512ABF1D6694D100885C26 /* Message.storyboard */; };
+		DC512AC61D66989000885C26 /* MessageListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC512AC51D66989000885C26 /* MessageListModel.m */; };
+		DC512ACC1D669BF900885C26 /* MessageListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC512ACA1D669BF900885C26 /* MessageListCell.xib */; };
+		DC512ACF1D66A83400885C26 /* MessageListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC512ACE1D66A83400885C26 /* MessageListCell.m */; };
+		DC512AD21D66C62700885C26 /* MessageListController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC512AD11D66C62700885C26 /* MessageListController.m */; };
 		DC5D20741D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5D20721D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf */; };
 		DC5D20751D62ACFB00ACDCA4 /* NanumBarunGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5D20731D62ACFB00ACDCA4 /* NanumBarunGothic.ttf */; };
 		DC5D20841D62AFA100ACDCA4 /* OTPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5D207F1D62AFA100ACDCA4 /* OTPageCell.m */; };
@@ -123,6 +128,14 @@
 		DC1FE6F81D65CB37006F7A50 /* WeekProgramController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekProgramController.h; sourceTree = "<group>"; };
 		DC1FE6F91D65CB37006F7A50 /* WeekProgramController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekProgramController.m; sourceTree = "<group>"; };
 		DC3ACE151D5D853C00D68F80 /* DashBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DashBoard.storyboard; sourceTree = "<group>"; };
+		DC512ABF1D6694D100885C26 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
+		DC512AC41D66989000885C26 /* MessageListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageListModel.h; sourceTree = "<group>"; };
+		DC512AC51D66989000885C26 /* MessageListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageListModel.m; sourceTree = "<group>"; };
+		DC512ACA1D669BF900885C26 /* MessageListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageListCell.xib; sourceTree = "<group>"; };
+		DC512ACD1D66A83400885C26 /* MessageListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageListCell.h; sourceTree = "<group>"; };
+		DC512ACE1D66A83400885C26 /* MessageListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageListCell.m; sourceTree = "<group>"; };
+		DC512AD01D66C62700885C26 /* MessageListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageListController.h; sourceTree = "<group>"; };
+		DC512AD11D66C62700885C26 /* MessageListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageListController.m; sourceTree = "<group>"; };
 		DC5D20721D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicBold.ttf; sourceTree = "<group>"; };
 		DC5D20731D62ACFB00ACDCA4 /* NanumBarunGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothic.ttf; sourceTree = "<group>"; };
 		DC5D207E1D62AFA100ACDCA4 /* OTPageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPageCell.h; sourceTree = "<group>"; };
@@ -221,6 +234,7 @@
 		2A743F561D62CA4B007DEB6B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DC512AC31D66985A00885C26 /* Message */,
 				2AE11DEA1D658184003C6690 /* Diary */,
 				2A743F571D62CA5F007DEB6B /* SignUp */,
 			);
@@ -279,6 +293,7 @@
 				2AB97A271D5AAFDA0063EB5E /* MembershipSignUp.storyboard */,
 				DC3ACE151D5D853C00D68F80 /* DashBoard.storyboard */,
 				2AA6D6C11D64230A00316DD6 /* Diary.storyboard */,
+				DC512ABF1D6694D100885C26 /* Message.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -286,6 +301,7 @@
 		2AC781D81D5998F400B86BE1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DC512ABB1D66948100885C26 /* Message */,
 				DC1FE6DA1D658E33006F7A50 /* Tabbar */,
 				2AA6D6C31D6434D600316DD6 /* Diary */,
 				DC5D20881D62B0F500ACDCA4 /* DashBoard */,
@@ -355,6 +371,7 @@
 		DC3ACEA21D5DCA5500D68F80 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				DC512AC21D66982200885C26 /* Message */,
 				DC1FE6F11D65C7DB006F7A50 /* DZNSegmentedControl */,
 				2AE11DDA1D654B47003C6690 /* Diary */,
 				DC5D20871D62B05C00ACDCA4 /* DashBoard */,
@@ -362,6 +379,34 @@
 				2A743F521D62AB2E007DEB6B /* SignUp */,
 			);
 			path = Library;
+			sourceTree = "<group>";
+		};
+		DC512ABB1D66948100885C26 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				DC512AD01D66C62700885C26 /* MessageListController.h */,
+				DC512AD11D66C62700885C26 /* MessageListController.m */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		DC512AC21D66982200885C26 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				DC512ACD1D66A83400885C26 /* MessageListCell.h */,
+				DC512ACE1D66A83400885C26 /* MessageListCell.m */,
+				DC512ACA1D669BF900885C26 /* MessageListCell.xib */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		DC512AC31D66985A00885C26 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				DC512AC41D66989000885C26 /* MessageListModel.h */,
+				DC512AC51D66989000885C26 /* MessageListModel.m */,
+			);
+			path = Message;
 			sourceTree = "<group>";
 		};
 		DC5D20761D62AE8F00ACDCA4 /* Common */ = {
@@ -631,7 +676,9 @@
 				DC5D20751D62ACFB00ACDCA4 /* NanumBarunGothic.ttf in Resources */,
 				DC723C2A1D63FE2200557E1E /* MainTabBar.storyboard in Resources */,
 				2AA6D6C21D64230A00316DD6 /* Diary.storyboard in Resources */,
+				DC512ACC1D669BF900885C26 /* MessageListCell.xib in Resources */,
 				DCA5AE2F1D598C6F0075B7AD /* Main.storyboard in Resources */,
+				DC512AC01D6694D100885C26 /* Message.storyboard in Resources */,
 				2A371A511D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.xib in Resources */,
 				DC3ACE161D5D853C00D68F80 /* DashBoard.storyboard in Resources */,
 			);
@@ -667,11 +714,13 @@
 				DCA5AE291D598C6F0075B7AD /* AppDelegate.m in Sources */,
 				2AE11DE31D654C4E003C6690 /* DiaryListBasicCustomCell.m in Sources */,
 				DC5D20851D62AFA100ACDCA4 /* OTPageScrollView.m in Sources */,
+				DC512AD21D66C62700885C26 /* MessageListController.m in Sources */,
 				DC723C171D63EBA200557E1E /* IQUITextFieldView+Additions.m in Sources */,
 				2AB6277A1D5C0CF400BD7B84 /* SignUpMain.m in Sources */,
 				2AB627761D5C0CEC00BD7B84 /* LoginMain.m in Sources */,
 				DC1FE6E51D658E47006F7A50 /* TabbarDashBoardNavController.m in Sources */,
 				2A371A501D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.m in Sources */,
+				DC512ACF1D66A83400885C26 /* MessageListCell.m in Sources */,
 				2AE11DF01D6581D9003C6690 /* DiaryListModel.m in Sources */,
 				2A371A571D62E8F30051F278 /* SignUpFetusInfoModel.m in Sources */,
 				DC723C181D63EBA200557E1E /* IQUIView+Hierarchy.m in Sources */,
@@ -683,6 +732,7 @@
 				DC5D20911D62CB6500ACDCA4 /* DashBoardController.m in Sources */,
 				2AB627771D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m in Sources */,
 				DC1FE6F61D65C83C006F7A50 /* DZNSegmentedControl.m in Sources */,
+				DC512AC61D66989000885C26 /* MessageListModel.m in Sources */,
 				DC5D20841D62AFA100ACDCA4 /* OTPageCell.m in Sources */,
 				2AE11DE81D657DE4003C6690 /* DiaryListImageCustomCell.m in Sources */,
 				DC723C1A1D63EBA200557E1E /* IQUIWindow+Hierarchy.m in Sources */,

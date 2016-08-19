@@ -119,7 +119,7 @@
                 <outlet property="cellView" destination="iVd-u7-jDm" id="arg-4a-4ll"/>
                 <outlet property="contentLabel" destination="VPi-Q1-iUY" id="151-cS-cpA"/>
             </connections>
-            <point key="canvasLocation" x="221" y="240"/>
+            <point key="canvasLocation" x="656" y="245"/>
         </tableViewCell>
     </objects>
     <resources>

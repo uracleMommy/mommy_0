@@ -83,5 +83,33 @@
     
 }
 
+#pragma 쪽지리스트 팝업
+- (IBAction)MessagePopupAction:(id)sender {
+    
+    // MessageNaivgation
+    UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
+    UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"MessageNaivgation"];
+    
+    UIViewController *messageController = (UIViewController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"Message"];
+    UINavigationController *rootNavi = [[UINavigationController alloc] initWithRootViewController:messageController];
+    
+    
+    NSLog(@" 뷰 갯수 : %lu", (unsigned long)messageNavigationController.viewControllers.count);
+    
+    [self presentViewController:messageNavigationController animated:YES completion:nil];
+    
+    //[self.view addSubview:messageNavigationController.topViewController.view];
+    
+    
+//    [self.navigationController presentViewController:messageNavigationController.topViewController animated:YES completion:nil];
+    
+    
+    
+//    [self presentViewController:messageNavigationController.viewControllers[0] animated:YES completion:nil];
+    
+    
+    
+    
+}
 
 @end
