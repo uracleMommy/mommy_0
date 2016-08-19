@@ -51,24 +51,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="Qdj-O1-log" kind="custom" identifier="DashBoardSegue" customClass="DashBoardSegue" animates="NO" id="aqJ-RF-SOB"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8XN-vI-l6N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-457" y="-1399"/>
-        </scene>
-        <!--DashBoard-->
-        <scene sceneID="SPx-eD-6Mh">
-            <objects>
-                <viewControllerPlaceholder storyboardName="DashBoard" id="Qdj-O1-log" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ery-8c-laj"/>
-                    <navigationItem key="navigationItem" id="gIx-1Z-ztn"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BCh-BT-182" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="58.5" y="-1399"/>
         </scene>
     </scenes>
 </document>
