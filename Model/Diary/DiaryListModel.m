@@ -29,12 +29,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_diaryList count]+1;
+    return [_diaryList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if([indexPath indexAtPosition: 1] < [_diaryList count]){
+//    if([indexPath indexAtPosition: 1] < [_diaryList count]){
         DiaryListBasicCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:BASIC_CELL_ID];
         
         if(cell == nil){
@@ -46,17 +46,17 @@
         return cell;
         
         
-    }else{
-        DiaryListImageCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:IMAGE_CELL_ID];
-        
-        if(cell == nil){
-            [tableView registerNib:[UINib nibWithNibName:@"DiaryListImageCustomCell" bundle:nil] forCellReuseIdentifier:IMAGE_CELL_ID];
-            
-            cell = [tableView dequeueReusableCellWithIdentifier:IMAGE_CELL_ID];
-        }
-//        cell.delegate = self;
-        return cell;
-    }
+//    }else{
+//        DiaryListImageCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:IMAGE_CELL_ID];
+//        
+//        if(cell == nil){
+//            [tableView registerNib:[UINib nibWithNibName:@"DiaryListImageCustomCell" bundle:nil] forCellReuseIdentifier:IMAGE_CELL_ID];
+//            
+//            cell = [tableView dequeueReusableCellWithIdentifier:IMAGE_CELL_ID];
+//        }
+////        cell.delegate = self;
+//        return cell;
+//    }
 }
 
 /*
@@ -93,4 +93,11 @@
  }
  */
 
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    int height = 106;
+    
+    return height;
+}
 @end
