@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pIT-zG-VIw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pIT-zG-VIw">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="NanumBarunGothic.ttf">
+            <string>NanumBarunGothic</string>
+            <string>NanumBarunGothic</string>
+            <string>NanumBarunGothic</string>
+            <string>NanumBarunGothic</string>
+            <string>NanumBarunGothic</string>
+            <string>NanumBarunGothic</string>
+            <string>NanumBarunGothic</string>
+            <string>NanumBarunGothic</string>
+            <string>NanumBarunGothic</string>
+            <string>NanumBarunGothic</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="McU-z3-jbL">
@@ -14,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="20"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
@@ -41,22 +55,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8yU-z3-VZY">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입시 등록한 아이디 및  비밀번호를 입력해 주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="oOS-Kz-mTA">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="a5q-P5-g5v"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" red="0.25490196078431371" green="0.25490196078431371" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asX-MU-8ey">
                                         <rect key="frame" x="0.0" y="460" width="320" height="44"/>
                                         <color key="backgroundColor" red="0.97647058823529409" green="0.41176470588235292" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="R6f-5V-iEE"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
                                         <state key="normal" title="로그인">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -67,7 +72,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDf-x3-qez">
                                         <rect key="frame" x="16" y="173" width="98" height="20"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
                                         <color key="tintColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="0.0" colorSpace="calibratedRGB"/>
                                         <inset key="contentEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="자동로그인">
@@ -86,38 +91,17 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ecq-Ej-Edj">
-                                        <rect key="frame" x="185" y="173" width="120" height="20"/>
+                                        <rect key="frame" x="165" y="173" width="140" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="120" id="3IW-W3-Wjy"/>
+                                            <constraint firstAttribute="width" constant="140" id="3IW-W3-Wjy"/>
                                             <constraint firstAttribute="height" constant="20" id="uHu-Dy-tbc"/>
                                         </constraints>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
-                                                <fragment content="비밀번호를">
+                                                <fragment content="비밀번호를 잊으셨나요?">
                                                     <attributes>
                                                         <color key="NSColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <font key="NSFont" size="12" name="AppleSDGothicNeo-Regular"/>
-                                                        <integer key="NSUnderline" value="1"/>
-                                                    </attributes>
-                                                </fragment>
-                                                <fragment content=" ">
-                                                    <attributes>
-                                                        <color key="NSColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <font key="NSFont" size="12" name="HelveticaNeue"/>
-                                                        <integer key="NSUnderline" value="1"/>
-                                                    </attributes>
-                                                </fragment>
-                                                <fragment content="잊으셨나요">
-                                                    <attributes>
-                                                        <color key="NSColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <font key="NSFont" size="12" name="AppleSDGothicNeo-Regular"/>
-                                                        <integer key="NSUnderline" value="1"/>
-                                                    </attributes>
-                                                </fragment>
-                                                <fragment content="?">
-                                                    <attributes>
-                                                        <color key="NSColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                                        <font key="NSFont" size="12" name="NanumBarunGothic"/>
                                                         <integer key="NSUnderline" value="1"/>
                                                     </attributes>
                                                 </fragment>
@@ -171,6 +155,16 @@
                                             <constraint firstAttribute="trailing" secondItem="kOp-Uv-EwY" secondAttribute="trailing" id="otQ-Gu-Lyo"/>
                                         </constraints>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입시 등록한 아이디 및  비밀번호를 입력해 주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="oOS-Kz-mTA">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="a5q-P5-g5v"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
+                                        <color key="textColor" red="0.25490196078431371" green="0.25490196078431371" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -274,6 +268,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="xKT-B1-4mG"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
                                         <state key="normal" title="저장">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -284,16 +279,16 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="auB-fZ-mJf"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
                                         <color key="textColor" red="0.25592948720000003" green="0.25592948720000003" blue="0.25592948720000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6~18자 이내 | 영문, 숫자, 특수문자 조합 | 비밀번호일치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSw-cX-icR">
-                                        <rect key="frame" x="40" y="143" width="270" height="14"/>
+                                        <rect key="frame" x="30" y="143" width="280" height="14"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="270" id="pSr-U3-J3I"/>
+                                            <constraint firstAttribute="width" constant="280" id="pSr-U3-J3I"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="12"/>
                                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -349,7 +344,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="lRI-6W-ttt"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
                                         <color key="textColor" red="0.25592948720000003" green="0.25592948720000003" blue="0.25592948720000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -367,12 +362,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQ1-PK-OfA">
-                                                <rect key="frame" x="213" y="5" width="77" height="30"/>
+                                                <rect key="frame" x="208" y="5" width="82" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="77" id="8WZ-gg-Vjy"/>
+                                                    <constraint firstAttribute="width" constant="82" id="8WZ-gg-Vjy"/>
                                                     <constraint firstAttribute="height" constant="30" id="tOa-rF-rHa"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
                                                 <state key="normal" title="인증번호 받기">
                                                     <color key="titleColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -383,7 +378,7 @@
                                                     <constraint firstAttribute="width" constant="50" id="2KA-7n-Nvt"/>
                                                     <constraint firstAttribute="height" constant="30" id="Ul0-eO-apS"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
                                                 <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -396,7 +391,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="'-'없이 입력해 주세요." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="e0v-lL-tgs">
-                                                <rect key="frame" x="5" y="5" width="205" height="30"/>
+                                                <rect key="frame" x="5" y="5" width="200" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Z1D-yz-nDP"/>
                                                 </constraints>
@@ -428,6 +423,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="nRB-0y-lqZ"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
                                         <state key="normal" title="확인">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
