@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="83"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4qm-oT-BQr" id="IzM-aO-FDp">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="82.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="83"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="태명은 최대 5개까지 등록할 수 있습니다." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUc-Gg-IUp">
