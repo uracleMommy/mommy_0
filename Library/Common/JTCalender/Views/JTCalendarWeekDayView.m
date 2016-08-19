@@ -46,8 +46,9 @@
         [self addSubview:label];
         [dayViews addObject:label];
         
+        //fatesuan weekend guide line
         label.textAlignment = NSTextAlignmentCenter;
-        label.textColor = [UIColor colorWithRed:152./256. green:147./256. blue:157./256. alpha:1.];
+        label.textColor = [UIColor colorWithRed:153./256. green:153./256. blue:153./256. alpha:1.];
         label.font = [UIFont systemFontOfSize:11];
     }
     

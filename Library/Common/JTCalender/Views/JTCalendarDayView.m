@@ -40,7 +40,7 @@
     self.clipsToBounds = YES;
     
     _circleRatio = .6;
-    _dotRatio = 1. / 9.;
+    _dotRatio = 1. / 10.;
     
     {
         _circleView = [UIView new];
