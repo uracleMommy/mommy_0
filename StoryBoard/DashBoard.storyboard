@@ -3,42 +3,47 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="NanumBarunGothic.ttf">
+            <string>NanumBarunGothic</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Mommy&-->
         <scene sceneID="5DJ-U5-Tla">
             <objects>
                 <viewController id="qcd-kp-tux" customClass="DashBoardController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Xol-G8-gyv"/>
-                        <viewControllerLayoutGuide type="bottom" id="44H-j0-Pqn"/>
+                        <viewControllerLayoutGuide type="top" id="zQh-xI-Xue"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mgy-Sr-baA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lhh-2C-1mv">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_img_01" translatesAutoresizingMaskIntoConstraints="NO" id="Ho8-af-Jk8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_img_01" translatesAutoresizingMaskIntoConstraints="NO" id="Ho8-af-Jk8">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Ho8-af-Jk8" secondAttribute="height" multiplier="1:1" id="Vwe-00-gFs"/>
-                                </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCb-lL-2NI">
-                                <rect key="frame" x="0.0" y="319" width="320" height="136"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MCb-lL-2NI">
+                                <rect key="frame" x="0.0" y="390" width="320" height="65"/>
                                 <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dO2-BQ-dc3">
+                                <rect key="frame" x="144" y="153" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="GwF-kI-Oep" kind="modal" id="Mk3-bO-gxU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cy2-74-z6I">
+                                <rect key="frame" x="144" y="181" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="GFT-SH-6XH" kind="modal" id="WlM-tR-g57"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="Ho8-af-Jk8" firstAttribute="top" secondItem="Xol-G8-gyv" secondAttribute="bottom" id="7ip-PO-dSH"/>
-                            <constraint firstAttribute="trailing" secondItem="MCb-lL-2NI" secondAttribute="trailing" id="AJI-6U-cub"/>
-                            <constraint firstItem="Ho8-af-Jk8" firstAttribute="leading" secondItem="lhh-2C-1mv" secondAttribute="leading" id="fPM-YF-O3a"/>
-                            <constraint firstItem="MCb-lL-2NI" firstAttribute="top" secondItem="Xol-G8-gyv" secondAttribute="bottom" constant="319" id="jHI-8d-EeH"/>
-                            <constraint firstItem="MCb-lL-2NI" firstAttribute="leading" secondItem="lhh-2C-1mv" secondAttribute="leading" id="r6C-Eo-YDl"/>
-                            <constraint firstAttribute="trailing" secondItem="Ho8-af-Jk8" secondAttribute="trailing" id="rWr-SD-7Zi"/>
-                            <constraint firstItem="44H-j0-Pqn" firstAttribute="top" secondItem="MCb-lL-2NI" secondAttribute="bottom" id="z3o-vN-JTP"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Mommy&amp;" id="vl1-Zn-XfR"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
@@ -49,10 +54,132 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P7C-Ce-DXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="435" y="543"/>
+            <point key="canvasLocation" x="48" y="206"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SAB-CZ-1RF">
+            <objects>
+                <navigationController id="GwF-kI-Oep" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eb0-SQ-pwN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kBW-ak-UW0" kind="relationship" relationship="rootViewController" id="kod-MH-C51"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MzI-nD-CW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="506" y="206"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vlU-ru-4KT">
+            <objects>
+                <navigationController id="GFT-SH-6XH" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sO4-CD-Lj3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="RF8-XD-opD" kind="relationship" relationship="rootViewController" id="Jn5-HB-cPI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PZq-Po-1in" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="48" y="937"/>
+        </scene>
+        <!--주차별 태아정보-->
+        <scene sceneID="VYt-an-sf5">
+            <objects>
+                <viewController id="kBW-ak-UW0" customClass="fetusInfoController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bWg-7X-qns"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pkq-LV-u9k"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DAb-vE-WFr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="biC-Ty-jRY">
+                                <rect key="frame" x="0.0" y="64" width="320" height="39"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygW-1W-TA5">
+                                        <rect key="frame" x="205" y="-5" width="50" height="50"/>
+                                        <state key="normal" title="Button" image="tab_btn_right"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="임신 16주" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QyD-H4-YV5">
+                                        <rect key="frame" x="124" y="10" width="73" height="21"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
+                                        <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RO3-l8-5J4">
+                                        <rect key="frame" x="66" y="-5" width="50" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" image="tab_btn_left"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_img_02" translatesAutoresizingMaskIntoConstraints="NO" id="tld-lF-VJS">
+                                <rect key="frame" x="0.0" y="103" width="320" height="246"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eWB-qy-PRo">
+                                <rect key="frame" x="0.0" y="357" width="320" height="203"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="주차별 태아정보" id="t0r-TZ-AGT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GPx-jS-FRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="986" y="206"/>
+        </scene>
+        <!--주차별 프로그램-->
+        <scene sceneID="g84-k4-zGh">
+            <objects>
+                <viewController id="RF8-XD-opD" customClass="WeekProgramController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g51-4s-4Va"/>
+                        <viewControllerLayoutGuide type="bottom" id="9yO-t4-Cz8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H2w-mR-Ohm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5fe-Xp-jul" customClass="DZNSegmentedControl">
+                                <rect key="frame" x="0.0" y="64" width="320" height="39"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="주차별 프로그램" id="stX-FG-ZP1"/>
+                    <connections>
+                        <outlet property="segment" destination="5fe-Xp-jul" id="PRo-h9-Rkf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q0q-EU-Fjw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="524" y="937"/>
         </scene>
     </scenes>
     <resources>
         <image name="home_img_01" width="720" height="686"/>
+        <image name="home_img_02" width="720" height="686"/>
+        <image name="tab_btn_left" width="90" height="90"/>
+        <image name="tab_btn_right" width="90" height="90"/>
     </resources>
 </document>

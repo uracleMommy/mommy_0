@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Main Tabbar Controller-->
         <scene sceneID="AhZ-Xh-cvO">
             <objects>
-                <tabBarController id="app-An-DLK" sceneMemberID="viewController">
+                <tabBarController id="app-An-DLK" customClass="MainTabbarController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="f4e-oy-wuq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -16,11 +16,31 @@
                     </tabBar>
                     <connections>
                         <segue destination="xdW-ED-esc" kind="relationship" relationship="viewControllers" id="7Sy-eq-wwd"/>
+                        <segue destination="FEm-5R-5Xi" kind="relationship" relationship="viewControllers" id="hq0-uB-NsF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q12-XH-8bI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-998" y="-714"/>
+        </scene>
+        <!--두번째-->
+        <scene sceneID="F4p-lO-LSE">
+            <objects>
+                <viewController title="두번째" id="FEm-5R-5Xi" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2RW-j6-y62"/>
+                        <viewControllerLayoutGuide type="bottom" id="naO-Qu-wdF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zz0-8n-5Yk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="9xN-uW-9zV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ck2-i1-UvO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-457" y="-707"/>
         </scene>
         <!--Item-->
         <scene sceneID="krU-qc-6af">

@@ -33,7 +33,7 @@
     PScrollView.pageScrollView.frame = CGRectMake(([[UIScreen mainScreen] bounds].size.width -370)/2, 0, 280, 99);
 //    PScrollView.backgroundColor = [UIColor colorWithRed:239.0f/255.0f green:79.0f/255.0f blue:104.0f/255.0f alpha:1.0f];
     
-//    [_pageViewContainer addSubview:PScrollView];
+    [_pageViewContainer addSubview:PScrollView];
     
     // 페이지뷰에 담길 커스텀 뷰
     DashBoardScrollCellView *view1 = [[DashBoardScrollCellView alloc] initWithNibName:@"DashBoardScrollCellView" bundle:nil];

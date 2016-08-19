@@ -30,6 +30,11 @@
 		DC1FE6E41D658E47006F7A50 /* DiarySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6DE1D658E47006F7A50 /* DiarySegue.m */; };
 		DC1FE6E51D658E47006F7A50 /* TabbarDashBoardNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6E01D658E47006F7A50 /* TabbarDashBoardNavController.m */; };
 		DC1FE6E61D658E47006F7A50 /* TabbarDiaryNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6E21D658E47006F7A50 /* TabbarDiaryNavController.m */; };
+		DC1FE6EA1D659912006F7A50 /* MainTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6E91D659912006F7A50 /* MainTabbarController.m */; };
+		DC1FE6ED1D65A7D4006F7A50 /* fetusInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6EC1D65A7D4006F7A50 /* fetusInfoController.m */; };
+		DC1FE6F61D65C83C006F7A50 /* DZNSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6F31D65C83C006F7A50 /* DZNSegmentedControl.m */; };
+		DC1FE6F71D65C83C006F7A50 /* UIScrollView+DZNSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6F51D65C83C006F7A50 /* UIScrollView+DZNSegmentedControl.m */; };
+		DC1FE6FA1D65CB37006F7A50 /* WeekProgramController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6F91D65CB37006F7A50 /* WeekProgramController.m */; };
 		DC3ACE161D5D853C00D68F80 /* DashBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3ACE151D5D853C00D68F80 /* DashBoard.storyboard */; };
 		DC5D20741D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5D20721D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf */; };
 		DC5D20751D62ACFB00ACDCA4 /* NanumBarunGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5D20731D62ACFB00ACDCA4 /* NanumBarunGothic.ttf */; };
@@ -107,6 +112,16 @@
 		DC1FE6E01D658E47006F7A50 /* TabbarDashBoardNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabbarDashBoardNavController.m; sourceTree = "<group>"; };
 		DC1FE6E11D658E47006F7A50 /* TabbarDiaryNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbarDiaryNavController.h; sourceTree = "<group>"; };
 		DC1FE6E21D658E47006F7A50 /* TabbarDiaryNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabbarDiaryNavController.m; sourceTree = "<group>"; };
+		DC1FE6E81D659912006F7A50 /* MainTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabbarController.h; sourceTree = "<group>"; };
+		DC1FE6E91D659912006F7A50 /* MainTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabbarController.m; sourceTree = "<group>"; };
+		DC1FE6EB1D65A7D4006F7A50 /* fetusInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fetusInfoController.h; sourceTree = "<group>"; };
+		DC1FE6EC1D65A7D4006F7A50 /* fetusInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fetusInfoController.m; sourceTree = "<group>"; };
+		DC1FE6F21D65C83C006F7A50 /* DZNSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZNSegmentedControl.h; sourceTree = "<group>"; };
+		DC1FE6F31D65C83C006F7A50 /* DZNSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZNSegmentedControl.m; sourceTree = "<group>"; };
+		DC1FE6F41D65C83C006F7A50 /* UIScrollView+DZNSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+DZNSegmentedControl.h"; sourceTree = "<group>"; };
+		DC1FE6F51D65C83C006F7A50 /* UIScrollView+DZNSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+DZNSegmentedControl.m"; sourceTree = "<group>"; };
+		DC1FE6F81D65CB37006F7A50 /* WeekProgramController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekProgramController.h; sourceTree = "<group>"; };
+		DC1FE6F91D65CB37006F7A50 /* WeekProgramController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekProgramController.m; sourceTree = "<group>"; };
 		DC3ACE151D5D853C00D68F80 /* DashBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DashBoard.storyboard; sourceTree = "<group>"; };
 		DC5D20721D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicBold.ttf; sourceTree = "<group>"; };
 		DC5D20731D62ACFB00ACDCA4 /* NanumBarunGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothic.ttf; sourceTree = "<group>"; };
@@ -228,6 +243,8 @@
 				2AA6D6C91D64356000316DD6 /* DiaryWriteBasicController.m */,
 				2AE11DF11D6583BC003C6690 /* DiaryListController.h */,
 				2AE11DF21D6583BC003C6690 /* DiaryListController.m */,
+				DC1FE6F81D65CB37006F7A50 /* WeekProgramController.h */,
+				DC1FE6F91D65CB37006F7A50 /* WeekProgramController.m */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -311,13 +328,34 @@
 				DC1FE6E01D658E47006F7A50 /* TabbarDashBoardNavController.m */,
 				DC1FE6E11D658E47006F7A50 /* TabbarDiaryNavController.h */,
 				DC1FE6E21D658E47006F7A50 /* TabbarDiaryNavController.m */,
+				DC1FE6E81D659912006F7A50 /* MainTabbarController.h */,
+				DC1FE6E91D659912006F7A50 /* MainTabbarController.m */,
 			);
 			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		DC1FE6E71D6593A1006F7A50 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
+		DC1FE6F11D65C7DB006F7A50 /* DZNSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				DC1FE6F21D65C83C006F7A50 /* DZNSegmentedControl.h */,
+				DC1FE6F31D65C83C006F7A50 /* DZNSegmentedControl.m */,
+				DC1FE6F41D65C83C006F7A50 /* UIScrollView+DZNSegmentedControl.h */,
+				DC1FE6F51D65C83C006F7A50 /* UIScrollView+DZNSegmentedControl.m */,
+			);
+			path = DZNSegmentedControl;
 			sourceTree = "<group>";
 		};
 		DC3ACEA21D5DCA5500D68F80 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				DC1FE6F11D65C7DB006F7A50 /* DZNSegmentedControl */,
 				2AE11DDA1D654B47003C6690 /* Diary */,
 				DC5D20871D62B05C00ACDCA4 /* DashBoard */,
 				DC5D20761D62AE8F00ACDCA4 /* Common */,
@@ -329,6 +367,7 @@
 		DC5D20761D62AE8F00ACDCA4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				DC1FE6E71D6593A1006F7A50 /* New Group */,
 				DC723BCD1D63E93100557E1E /* IQKeyBoardManager */,
 				DC723BAE1D63E7BD00557E1E /* IQDropDownTextField */,
 				DC5D20771D62AF4700ACDCA4 /* OTPageView */,
@@ -355,6 +394,8 @@
 				DC5D20921D62E01300ACDCA4 /* DashBoardScrollCellView.h */,
 				DC5D20931D62E01300ACDCA4 /* DashBoardScrollCellView.m */,
 				DC5D20941D62E01300ACDCA4 /* DashBoardScrollCellView.xib */,
+				DC1FE6EB1D65A7D4006F7A50 /* fetusInfoController.h */,
+				DC1FE6EC1D65A7D4006F7A50 /* fetusInfoController.m */,
 			);
 			path = DashBoard;
 			sourceTree = "<group>";
@@ -613,10 +654,13 @@
 				DCA5AE321D598C6F0075B7AD /* co_medisolution.xcdatamodeld in Sources */,
 				DC723C161D63EBA200557E1E /* IQUIScrollView+Additions.m in Sources */,
 				DC1FE6E41D658E47006F7A50 /* DiarySegue.m in Sources */,
+				DC1FE6F71D65C83C006F7A50 /* UIScrollView+DZNSegmentedControl.m in Sources */,
+				DC1FE6EA1D659912006F7A50 /* MainTabbarController.m in Sources */,
 				DC1FE6E61D658E47006F7A50 /* TabbarDiaryNavController.m in Sources */,
 				DC723C031D63EB0D00557E1E /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				DC5D20951D62E01300ACDCA4 /* DashBoardScrollCellView.m in Sources */,
 				DC723C151D63EBA200557E1E /* IQNSArray+Sort.m in Sources */,
+				DC1FE6ED1D65A7D4006F7A50 /* fetusInfoController.m in Sources */,
 				DC723C271D63EBBA00557E1E /* NSDataKNAdditions.m in Sources */,
 				DC5D20861D62AFA100ACDCA4 /* OTPageView.m in Sources */,
 				DC723C001D63EB0D00557E1E /* IQBarButtonItem.m in Sources */,
@@ -634,9 +678,11 @@
 				DC1FE6E31D658E47006F7A50 /* DashBoardSegue.m in Sources */,
 				2A371A4B1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.m in Sources */,
 				DCA5AE261D598C6F0075B7AD /* main.m in Sources */,
+				DC1FE6FA1D65CB37006F7A50 /* WeekProgramController.m in Sources */,
 				2AA6D6CA1D64356000316DD6 /* DiaryWriteBasicController.m in Sources */,
 				DC5D20911D62CB6500ACDCA4 /* DashBoardController.m in Sources */,
 				2AB627771D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m in Sources */,
+				DC1FE6F61D65C83C006F7A50 /* DZNSegmentedControl.m in Sources */,
 				DC5D20841D62AFA100ACDCA4 /* OTPageCell.m in Sources */,
 				2AE11DE81D657DE4003C6690 /* DiaryListImageCustomCell.m in Sources */,
 				DC723C1A1D63EBA200557E1E /* IQUIWindow+Hierarchy.m in Sources */,
