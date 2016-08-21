@@ -19,9 +19,22 @@
     // Do any additional setup after loading the view.
     
     _messageListModel = [[MessageListModel alloc] init];
+    _messageListModel.delegate = self;
     _tableView.dataSource = _messageListModel;
     _tableView.delegate = _messageListModel;
     [_tableView reloadData];
+}
+
+- (void) tableView:(UITableView *)tableView selectedRowIndex:(NSInteger)rowIndex {
+    
+    // 디테일 이동 로직
+    [self performSegueWithIdentifier:@"goMessageDetail" sender:nil];
+    
+    
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

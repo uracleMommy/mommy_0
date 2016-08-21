@@ -55,6 +55,7 @@
 		DC512ACC1D669BF900885C26 /* MessageListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC512ACA1D669BF900885C26 /* MessageListCell.xib */; };
 		DC512ACF1D66A83400885C26 /* MessageListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC512ACE1D66A83400885C26 /* MessageListCell.m */; };
 		DC512AD21D66C62700885C26 /* MessageListController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC512AD11D66C62700885C26 /* MessageListController.m */; };
+		DC512AD51D66EC5100885C26 /* MessageDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC512AD41D66EC5100885C26 /* MessageDetailController.m */; };
 		DC5D20741D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5D20721D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf */; };
 		DC5D20751D62ACFB00ACDCA4 /* NanumBarunGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5D20731D62ACFB00ACDCA4 /* NanumBarunGothic.ttf */; };
 		DC5D20841D62AFA100ACDCA4 /* OTPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5D207F1D62AFA100ACDCA4 /* OTPageCell.m */; };
@@ -184,6 +185,8 @@
 		DC512ACE1D66A83400885C26 /* MessageListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageListCell.m; sourceTree = "<group>"; };
 		DC512AD01D66C62700885C26 /* MessageListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageListController.h; sourceTree = "<group>"; };
 		DC512AD11D66C62700885C26 /* MessageListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageListController.m; sourceTree = "<group>"; };
+		DC512AD31D66EC5100885C26 /* MessageDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDetailController.h; sourceTree = "<group>"; };
+		DC512AD41D66EC5100885C26 /* MessageDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageDetailController.m; sourceTree = "<group>"; };
 		DC5D20721D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicBold.ttf; sourceTree = "<group>"; };
 		DC5D20731D62ACFB00ACDCA4 /* NanumBarunGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothic.ttf; sourceTree = "<group>"; };
 		DC5D207E1D62AFA100ACDCA4 /* OTPageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPageCell.h; sourceTree = "<group>"; };
@@ -491,6 +494,8 @@
 			children = (
 				DC512AD01D66C62700885C26 /* MessageListController.h */,
 				DC512AD11D66C62700885C26 /* MessageListController.m */,
+				DC512AD31D66EC5100885C26 /* MessageDetailController.h */,
+				DC512AD41D66EC5100885C26 /* MessageDetailController.m */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -856,6 +861,7 @@
 				2AE11DF31D6583BC003C6690 /* DiaryListController.m in Sources */,
 				2A371A541D62E2C10051F278 /* SignUpFetusInfoController.m in Sources */,
 				DC723BF51D63EABD00557E1E /* IQKeyboardReturnKeyHandler.m in Sources */,
+				DC512AD51D66EC5100885C26 /* MessageDetailController.m in Sources */,
 				2A54B1B01D66904000C538D1 /* JTCalendarManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

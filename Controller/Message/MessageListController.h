@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MessageListModel.h"
 
-@interface MessageListController : UIViewController
+@interface MessageListController : UIViewController<MessageListModelDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

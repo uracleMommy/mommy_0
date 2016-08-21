@@ -54,4 +54,12 @@
     return 125.0;
 }
 
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // API 나오면 세부처리
+    if ([self.delegate respondsToSelector:@selector(tableView:selectedRowIndex:)]) {
+        [self.delegate tableView:tableView selectedRowIndex:1];
+    }    
+}
+
 @end
