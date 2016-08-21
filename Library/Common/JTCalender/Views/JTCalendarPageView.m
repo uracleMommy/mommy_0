@@ -141,7 +141,8 @@
         y = weekDayHeight;
     }
     
-    CGFloat weekHeight = (self.frame.size.height - y) / _numberOfWeeksDisplayed;
+    //fatesuan customizing
+    CGFloat weekHeight = (self.frame.size.height - y - 10) / _numberOfWeeksDisplayed;
     
     for(UIView *weekView in _weeksViews){
         weekView.frame = CGRectMake(0, y, weekWidth, weekHeight);

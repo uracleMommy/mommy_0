@@ -89,7 +89,7 @@
         dayView.circleView.layer.borderWidth = 1;
         dayView.circleView.layer.borderColor = [UIColor colorWithRed:132.0/255.0 green:68.0/255.0 blue:262.0/255.0 alpha:1.0].CGColor;
 //        dayView.dotView.backgroundColor = [UIColor whiteColor];
-        dayView.textLabel.textColor = [UIColor blackColor];
+        dayView.textLabel.textColor = [UIColor colorWithRed:132.0/255.0 green:68.0/255.0 blue:262.0/255.0 alpha:1.0];
     }
     // Selected date
     else if(_dateSelected && [_calendarManager.dateHelper date:_dateSelected isTheSameDayThan:dayView.date]){
@@ -102,13 +102,13 @@
     else if(![_calendarManager.dateHelper date:_calendarContentView.date isTheSameMonthThan:dayView.date]){
         dayView.circleView.hidden = YES;
         dayView.dotView.backgroundColor = [UIColor redColor];
-        dayView.textLabel.textColor = [UIColor lightGrayColor];
+        dayView.textLabel.textColor = [UIColor colorWithRed:200.0/255.0 green:200.0/255.0 blue:200.0/255.0 alpha:1.0];
     }
     // Another day of the current month
     else{
         dayView.circleView.hidden = YES;
         dayView.dotView.backgroundColor = [UIColor blueColor];
-        dayView.textLabel.textColor = [UIColor blackColor];
+        dayView.textLabel.textColor = [UIColor colorWithRed:80.0/255.0 green:80.0/255.0 blue:80.0/255.0 alpha:1.0];
     }
     
     if([self haveEventForDay:dayView.date]){

@@ -26,6 +26,10 @@
     
     UILabel *label = [UILabel new];
     label.textAlignment = NSTextAlignmentCenter;
+    //fatesuan customizing font size, family
+    label.textColor = [UIColor colorWithRed:65./256. green:65./256. blue:65./256. alpha:1.];
+    label.font = [UIFont systemFontOfSize:14];
+//    label.textAlignment = NSTextAlignmentCenter;
     
     return label;
 }
