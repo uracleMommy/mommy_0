@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pIT-zG-VIw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pIT-zG-VIw">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -132,7 +132,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="T19-CA-b6w"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="idTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이디" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kD9-Rl-7Ze">
                                                 <rect key="frame" x="5" y="5" width="290" height="30"/>
@@ -239,7 +239,10 @@
                                                     <constraint firstAttribute="height" constant="30" id="ylx-QX-Ne2"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="uV1-GJ-pXh" id="462-Tc-wv2"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="idTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OVk-Xu-2GU">
                                                 <rect key="frame" x="5" y="5" width="290" height="30"/>
@@ -247,7 +250,10 @@
                                                     <constraint firstAttribute="height" constant="30" id="UtO-Oi-Kq7"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="uV1-GJ-pXh" id="Gr9-hy-39K"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -320,6 +326,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="신규 비밀번호 생성" id="m9X-0X-Tnm"/>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="wE0-ed-aKV" id="dwW-Pg-gCR"/>
+                        <outlet property="passwordTextField" destination="OVk-Xu-2GU" id="PPt-pH-gdw"/>
+                        <outlet property="passwordValidationLabel" destination="gSw-cX-icR" id="CyR-yl-KoQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1R-Zp-lgL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -390,7 +401,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="hCu-Vr-0G3"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="'-'없이 입력해 주세요." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="e0v-lL-tgs">
                                                 <rect key="frame" x="5" y="5" width="200" height="30"/>
@@ -398,7 +409,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="Z1D-yz-nDP"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

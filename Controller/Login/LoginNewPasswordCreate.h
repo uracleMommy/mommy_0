@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginNewPasswordCreate : UIViewController
+@interface LoginNewPasswordCreate : UIViewController <UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UITextField *confirmPasswordTextField;
+@property (weak, nonatomic) IBOutlet UILabel *passwordValidationLabel;
 
 @end
