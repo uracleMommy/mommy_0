@@ -15,6 +15,7 @@
     
     if (self = [super init]) {
         
+        _listArray = [[NSMutableArray alloc] init];
     }
     
     return self;
@@ -27,7 +28,7 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 10;
+    return _listArray.count;
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -38,6 +39,16 @@
     [tableView registerNib:reuseCell forCellReuseIdentifier:CellIdentifierNoticeCell];
     
     MessageListCell *cell = (MessageListCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierNoticeCell];
+    
+//    UIView *alphaView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, cell.imgProfile.frame.size.width, cell.imgProfile.frame.size.height)];
+//    [alphaView setBackgroundColor:[UIColor blackColor]];
+//    alphaView.alpha = 0.5f;
+//    [cell.imgProfile addSubview:alphaView];
+    
+    [cell.imgProfile setImage:[UIImage imageNamed:@"contents_message_check"]];
+    
+    
+    // 체크표시 넣기
     
     if (cell == nil) {
         
@@ -59,7 +70,10 @@
     // API 나오면 세부처리
     if ([self.delegate respondsToSelector:@selector(tableView:selectedRowIndex:)]) {
         [self.delegate tableView:tableView selectedRowIndex:1];
-    }    
+    }
+    
+    // 체크 표시 테이블뷰에서 셀 접근해서 바꿔주고 어레이안에 데이터들 체크표시 상태 바꿔주기
+    
 }
 
 @end

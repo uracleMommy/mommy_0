@@ -22,4 +22,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lblContent;
 
+
+
 @end

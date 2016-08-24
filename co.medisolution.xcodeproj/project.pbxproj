@@ -84,6 +84,8 @@
 		DC723C261D63EBBA00557E1E /* libNSafer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC723C1E1D63EBBA00557E1E /* libNSafer.a */; };
 		DC723C271D63EBBA00557E1E /* NSDataKNAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DC723C241D63EBBA00557E1E /* NSDataKNAdditions.m */; };
 		DC723C2A1D63FE2200557E1E /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC723C291D63FE2200557E1E /* MainTabBar.storyboard */; };
+		DC73E5C61D6DAE3B007D2DEE /* IndicatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC73E5C41D6DAE3B007D2DEE /* IndicatorViewController.m */; };
+		DC73E5C71D6DAE3B007D2DEE /* IndicatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC73E5C51D6DAE3B007D2DEE /* IndicatorViewController.xib */; };
 		DC7D38491D6BDD8800314189 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7D38481D6BDD8800314189 /* FXBlurView.m */; };
 		DC7D384C1D6BDD9A00314189 /* ImageCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7D384B1D6BDD9A00314189 /* ImageCropView.m */; };
 		DCA5AE261D598C6F0075B7AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA5AE251D598C6F0075B7AD /* main.m */; };
@@ -248,6 +250,9 @@
 		DC723C231D63EBBA00557E1E /* NSDataKNAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataKNAdditions.h; sourceTree = "<group>"; };
 		DC723C241D63EBBA00557E1E /* NSDataKNAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataKNAdditions.m; sourceTree = "<group>"; };
 		DC723C291D63FE2200557E1E /* MainTabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
+		DC73E5C31D6DAE3B007D2DEE /* IndicatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndicatorViewController.h; sourceTree = "<group>"; };
+		DC73E5C41D6DAE3B007D2DEE /* IndicatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndicatorViewController.m; sourceTree = "<group>"; };
+		DC73E5C51D6DAE3B007D2DEE /* IndicatorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndicatorViewController.xib; sourceTree = "<group>"; };
 		DC7D38471D6BDD8800314189 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
 		DC7D38481D6BDD8800314189 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		DC7D384A1D6BDD9A00314189 /* ImageCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCropView.h; sourceTree = "<group>"; };
@@ -533,6 +538,7 @@
 		DC5D20761D62AE8F00ACDCA4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				DC73E5C11D6D896A007D2DEE /* Indicator */,
 				DC7D38461D6BDA8900314189 /* ImageCrop */,
 				DC1FE6E71D6593A1006F7A50 /* JTCalender */,
 				DC723BCD1D63E93100557E1E /* IQKeyBoardManager */,
@@ -680,6 +686,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		DC73E5C11D6D896A007D2DEE /* Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				DC73E5C31D6DAE3B007D2DEE /* IndicatorViewController.h */,
+				DC73E5C41D6DAE3B007D2DEE /* IndicatorViewController.m */,
+				DC73E5C51D6DAE3B007D2DEE /* IndicatorViewController.xib */,
+			);
+			path = Indicator;
+			sourceTree = "<group>";
+		};
 		DC7D38461D6BDA8900314189 /* ImageCrop */ = {
 			isa = PBXGroup;
 			children = (
@@ -804,6 +820,7 @@
 				2A54B1C81D66E4E600C538D1 /* Assets.xcassets in Resources */,
 				2AB97A281D5AAFDA0063EB5E /* MembershipSignUp.storyboard in Resources */,
 				2A371A4C1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.xib in Resources */,
+				DC73E5C71D6DAE3B007D2DEE /* IndicatorViewController.xib in Resources */,
 				2AC781DB1D599C0800B86BE1 /* MembershipLogin.storyboard in Resources */,
 				DCA5AE371D598C6F0075B7AD /* LaunchScreen.storyboard in Resources */,
 				DC5D20751D62ACFB00ACDCA4 /* NanumBarunGothic.ttf in Resources */,
@@ -864,6 +881,7 @@
 				2AE11DF01D6581D9003C6690 /* DiaryListModel.m in Sources */,
 				2AB3DD991D6BDB7C00512949 /* SignUpMommyInfoController.m in Sources */,
 				2A54B1BA1D66904000C538D1 /* JTHorizontalCalendarView.m in Sources */,
+				DC73E5C61D6DAE3B007D2DEE /* IndicatorViewController.m in Sources */,
 				2A371A571D62E8F30051F278 /* SignUpFetusInfoModel.m in Sources */,
 				DC723C181D63EBA200557E1E /* IQUIView+Hierarchy.m in Sources */,
 				DC1FE6E31D658E47006F7A50 /* DashBoardSegue.m in Sources */,

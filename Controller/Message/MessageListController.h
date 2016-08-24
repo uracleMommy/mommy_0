@@ -9,9 +9,20 @@
 #import <UIKit/UIKit.h>
 #import "MessageListModel.h"
 
+typedef enum {
+    
+    NormalMode = 0,
+    ModifyMode = 1
+    
+} ModifyStatus;
+
 @interface MessageListController : UIViewController<MessageListModelDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+- (IBAction)cellSelect:(id)sender;
+
+@property (assign) ModifyStatus modifyStatus;
 
 @property (strong, nonatomic) MessageListModel *messageListModel;
 
