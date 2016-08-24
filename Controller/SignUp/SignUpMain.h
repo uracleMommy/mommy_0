@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SignUpMain : UIViewController
+@interface SignUpMain : UIViewController <UITextFieldDelegate>
 
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UITextField *idTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UITextField *confirmPasswordTextField;
+@property (weak, nonatomic) IBOutlet UILabel *idValidationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *passwordValidationLabel;
 
 @end
-// 1. 충돌상태 만들기
-// 튜토리얼2 커밋
 

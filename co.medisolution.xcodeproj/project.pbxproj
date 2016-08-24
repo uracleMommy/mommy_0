@@ -29,6 +29,7 @@
 		2A54B1C81D66E4E600C538D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A54B1C71D66E4E600C538D1 /* Assets.xcassets */; };
 		2AA6D6C21D64230A00316DD6 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA6D6C11D64230A00316DD6 /* Diary.storyboard */; };
 		2AA6D6CA1D64356000316DD6 /* DiaryWriteBasicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D6C91D64356000316DD6 /* DiaryWriteBasicController.m */; };
+		2AB3DD991D6BDB7C00512949 /* SignUpMommyInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB3DD981D6BDB7C00512949 /* SignUpMommyInfoController.m */; };
 		2AB627761D5C0CEC00BD7B84 /* LoginMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB627731D5C0CEC00BD7B84 /* LoginMain.m */; };
 		2AB627771D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB627751D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m */; };
 		2AB6277A1D5C0CF400BD7B84 /* SignUpMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB627791D5C0CF400BD7B84 /* SignUpMain.m */; };
@@ -142,6 +143,8 @@
 		2AA6D6C11D64230A00316DD6 /* Diary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
 		2AA6D6C81D64356000316DD6 /* DiaryWriteBasicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryWriteBasicController.h; sourceTree = "<group>"; };
 		2AA6D6C91D64356000316DD6 /* DiaryWriteBasicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryWriteBasicController.m; sourceTree = "<group>"; };
+		2AB3DD971D6BDB7C00512949 /* SignUpMommyInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpMommyInfoController.h; sourceTree = "<group>"; };
+		2AB3DD981D6BDB7C00512949 /* SignUpMommyInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpMommyInfoController.m; sourceTree = "<group>"; };
 		2AB627721D5C0CEC00BD7B84 /* LoginMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginMain.h; sourceTree = "<group>"; };
 		2AB627731D5C0CEC00BD7B84 /* LoginMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginMain.m; sourceTree = "<group>"; };
 		2AB627741D5C0CEC00BD7B84 /* LoginNewPasswordCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginNewPasswordCreate.h; sourceTree = "<group>"; };
@@ -384,6 +387,8 @@
 				2AB627791D5C0CF400BD7B84 /* SignUpMain.m */,
 				2A371A521D62E2C10051F278 /* SignUpFetusInfoController.h */,
 				2A371A531D62E2C10051F278 /* SignUpFetusInfoController.m */,
+				2AB3DD971D6BDB7C00512949 /* SignUpMommyInfoController.h */,
+				2AB3DD981D6BDB7C00512949 /* SignUpMommyInfoController.m */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -857,6 +862,7 @@
 				2A371A501D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.m in Sources */,
 				DC512ACF1D66A83400885C26 /* MessageListCell.m in Sources */,
 				2AE11DF01D6581D9003C6690 /* DiaryListModel.m in Sources */,
+				2AB3DD991D6BDB7C00512949 /* SignUpMommyInfoController.m in Sources */,
 				2A54B1BA1D66904000C538D1 /* JTHorizontalCalendarView.m in Sources */,
 				2A371A571D62E8F30051F278 /* SignUpFetusInfoModel.m in Sources */,
 				DC723C181D63EBA200557E1E /* IQUIView+Hierarchy.m in Sources */,
