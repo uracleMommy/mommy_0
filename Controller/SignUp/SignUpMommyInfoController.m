@@ -19,6 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    _mommyImageButton.layer.cornerRadius = 20;//half of the width
+    _mommyImageButton.layer.masksToBounds = YES;
+    _defaultImage = [UIImage imageNamed:@"join_profile_photo.png"];
+    [_mommyImageButton setImage:_defaultImage forState:UIControlStateNormal];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,11 +42,13 @@
 }
 */
 
-- (IBAction)MommyPictureButton:(id)sender {
+#pragma mark - picturebutton action
+- (IBAction)mommyPictureButtonAction:(id)sender {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"사진"
                                                                    message:@""
                                                             preferredStyle:UIAlertControllerStyleActionSheet]; // 1
 //    UIAlertControllerStyleActionSheet
+
     UIAlertAction *showAction = [UIAlertAction actionWithTitle:@"사진보기"
                                                           style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                                                               NSLog(@"You pressed button one");
@@ -70,6 +78,9 @@
                                                            style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
                                                            }]; // 3
     
+    if([_mommyImageButton currentImage] != _defaultImage){
+        [alert addAction:showAction];
+    }
     [alert addAction:takeAction]; // 4
     [alert addAction:selectAction]; // 5
     [alert addAction:cancelAction];
@@ -82,11 +93,96 @@
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     NSLog(@"PSH picker!!");
-//    image = [info valueForKey:UIImagePickerControllerOriginalImage];
+    _image = [info valueForKey:UIImagePickerControllerOriginalImage];
 //    imageView.image = image;
+    
+    ImageCropViewController *controller = [[ImageCropViewController alloc] initWithImage:_image];
+    controller.delegate = self;
+    controller.blurredBackground = YES;
+    // set the cropped area
+    // controller.cropArea = CGRectMake(0, 0, 100, 200);
+    [[self navigationController] pushViewController:controller animated:YES];
+    
     [[self navigationController] dismissViewControllerAnimated:YES completion:nil];
 }
- 
+
+
+#pragma mark cropView Delegate
+//- (void)ImageCropViewControllerDidCancel:(ImageCropViewController *)controller{
+//    [_mommyImageButton setImage:_image forState:UIControlStateNormal];
+//    [[self navigationController] popViewControllerAnimated:YES];
+//}
+
+-(void)ImageCropViewControllerSuccess:(UIViewController *)controller didFinishCroppingImage:(UIImage *)croppedImage{
+    _image = croppedImage;
+    
+    [_mommyImageButton setImage:[self imageByScalingProportionallyToSize:CGSizeMake( _mommyImageButton.frame.size.width, _mommyImageButton.frame.size.height) sourceImage:croppedImage] forState:UIControlStateNormal];
+//    CGRect cropArea = controller.cropArea;
+    [[self navigationController] popViewControllerAnimated:YES];
+}
+
+- (UIImage *)imageByScalingProportionallyToSize:(CGSize)targetSize sourceImage:(UIImage*)sourceImage {
+    
+    UIImage *newImage = nil;
+    
+    CGSize imageSize = sourceImage.size;
+    CGFloat width = imageSize.width;
+    CGFloat height = imageSize.height;
+    
+    CGFloat targetWidth = targetSize.width;
+    CGFloat targetHeight = targetSize.height;
+    
+    CGFloat scaleFactor = 0.0;
+    CGFloat scaledWidth = targetWidth;
+    CGFloat scaledHeight = targetHeight;
+    
+    CGPoint thumbnailPoint = CGPointMake(0.0,0.0);
+    
+    if (!CGSizeEqualToSize(imageSize, targetSize)) {
+        
+        CGFloat widthFactor = targetWidth / width;
+        CGFloat heightFactor = targetHeight / height;
+        
+        if (widthFactor < heightFactor)
+            scaleFactor = widthFactor;
+        else
+            scaleFactor = heightFactor;
+        
+        scaledWidth  = width * scaleFactor;
+        scaledHeight = height * scaleFactor;
+        
+        // center the image
+        
+        if (widthFactor < heightFactor) {
+            thumbnailPoint.y = (targetHeight - scaledHeight) * 0.5;
+        } else if (widthFactor > heightFactor) {
+            thumbnailPoint.x = (targetWidth - scaledWidth) * 0.5;
+        }
+    }
+    
+    
+    // this is actually the interesting part:
+    
+    UIGraphicsBeginImageContextWithOptions(targetSize, NO, 0);
+    
+    CGRect thumbnailRect = CGRectZero;
+    thumbnailRect.origin = thumbnailPoint;
+    thumbnailRect.size.width  = scaledWidth;
+    thumbnailRect.size.height = scaledHeight;
+    
+    [sourceImage drawInRect:thumbnailRect];
+    
+    newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    if(newImage == nil) NSLog(@"could not scale image");
+    
+    
+    return newImage ;
+}
+
+
+
 #pragma mark Library Function
 
 -(void) checkLibraryAuthorization {

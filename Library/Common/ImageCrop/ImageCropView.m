@@ -34,6 +34,8 @@ float IMAGE_MIN_WIDTH = 400;
 - (void)loadView
 {
     [super loadView];
+    [self.navigationItem setHidesBackButton:NO animated:YES];
+
 }
 
 
@@ -45,15 +47,51 @@ float IMAGE_MIN_WIDTH = 400;
         contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         contentView.backgroundColor = [UIColor blackColor];
         
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
-                                                 initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-                                                 target:self
-                                                 action:@selector(cancel:)];
+        //cancel button setting
+//        UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//        UIImage *backBtnImage = [UIImage imageNamed:@"title_icon_close.png"];
+//        [backBtn setBackgroundImage:backBtnImage forState:UIControlStateNormal];
+//        backBtn.frame = CGRectMake(0, 0, 40, 40);
+//        UIButton *backButtonView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+//        backButtonView.bounds = CGRectOffset(backButtonView.bounds, -15, 0);
+//        [backBtn addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
+//        [backButtonView addSubview:backBtn];
+//        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:backButtonView];
+//        self.navigationItem.rightBarButtonItem = backButton;
+//        
         
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
-                                                  initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                  target:self
-                                                  action:@selector(done:)];
+        //done button setting
+        
+        UIImage * imageNormal = [UIImage imageNamed:@"title_icon_save.png"];
+        // create your button
+        UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.exclusiveTouch = YES;
+//        [button addTarget:self action:@selector(done:) forControlEvents:UIControlEventTouchUpInside];
+        [button setBackgroundImage:imageNormal forState:UIControlStateNormal];
+        
+        // set the frame of the button (better to grab actual offset of leftbarbuttonitem instead of magic numbers)
+        button.frame = CGRectMake(-15.0, 0.0, 40, 40);
+        UIButton * view2 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+        [view2 addTarget:self action:@selector(done:) forControlEvents:UIControlEventTouchUpInside];
+        [view2 addSubview:button];
+        
+        // set the barbuttonitem to be the view
+        UIBarButtonItem * barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:view2];
+        self.navigationItem.leftBarButtonItem = barButtonItem;
+//        UIButton *doneBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
+//        UIImage *doneBtnImage = [UIImage imageNamed:@"title_icon_save.png"];
+//        [doneBtn setBackgroundImage:doneBtnImage forState:UIControlStateNormal];
+//        
+//        UIButton *doneButtonView = [[UIButton alloc] initWithFrame:CGRectMake(-15, 0, 40, 40)];
+//        doneButtonView.bounds = CGRectOffset(doneButtonView.bounds, 15, 0);
+//        [doneButtonView addTarget:self action:@selector(done:) forControlEvents:UIControlEventTouchUpInside];
+//        [doneButtonView addSubview:doneBtn];
+//        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithCustomView:doneButtonView];
+//        self.navigationItem.leftBarButtonItem = doneButton;
+        
+        //navi title setting
+        self.navigationItem.title = @"사진편집";
+        
         CGSize statusBarSize = [[UIApplication sharedApplication] statusBarFrame].size;
         CGRect view = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - [[self navigationController] navigationBar].bounds.size.height - statusBarSize.height);
         self.cropView  = [[ImageCropView alloc] initWithFrame:view blurOn:self.blurredBackground];
