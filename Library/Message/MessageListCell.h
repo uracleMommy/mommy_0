@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EnumType.h"
 
 @interface MessageListCell : UITableViewCell
 
@@ -22,6 +23,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lblContent;
 
-
+@property (assign) ModifyStatus modifyStatus;
 
 @end

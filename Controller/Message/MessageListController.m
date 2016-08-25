@@ -7,6 +7,7 @@
 //
 
 #import "MessageListController.h"
+#import "MessageListCell.h"
 
 @interface MessageListController ()
 
@@ -23,18 +24,49 @@
     
     // 네비바 버튼 추가
     _messageListModel = [[MessageListModel alloc] init];
+    
     for (int i = 0; i < 10; i++) {
         
         NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"0", @"check", nil];
         [_messageListModel.listArray addObject:dic];
     }
+    
     _messageListModel.delegate = self;
     _tableView.dataSource = _messageListModel;
     _tableView.delegate = _messageListModel;
     [_tableView reloadData];
 }
 
-- (void) tableView:(UITableView *)tableView selectedRowIndex:(NSInteger)rowIndex {
+- (void) tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath {
+    
+    if (_modifyStatus == ModifyMode) {
+        
+        NSMutableArray *listArray = _messageListModel.listArray;
+        MessageListCell *cell = (MessageListCell *)[_tableView cellForRowAtIndexPath:indexPath];
+        UIImageView *img = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"contents_message_check"]];
+        
+        // 체크가 되어있는지 조사
+        for (UIView *view in cell.imgProfile.subviews) {
+            
+            if (view.tag == 1) {
+                
+                NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"0", @"check", nil];
+                [listArray replaceObjectAtIndex:indexPath.row withObject:dic];
+                
+                [view removeFromSuperview];
+                return;
+            }
+        }
+        
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"1", @"check", nil];
+        [listArray replaceObjectAtIndex:indexPath.row withObject:dic];
+        
+        // 체크표시 추가
+        img.tag = 1;
+        [img setFrame:CGRectMake(0, 0, cell.imgProfile.frame.size.width, cell.imgProfile.frame.size.height)];
+        [cell.imgProfile addSubview:img];
+        return;
+    }
     
     // 디테일 이동 로직
     [self performSegueWithIdentifier:@"goMessageDetail" sender:nil];
@@ -51,18 +83,24 @@
     if (_modifyStatus == NormalMode) {
         
         _modifyStatus = ModifyMode;
-        
-        // 테이블 리로드 처리
-        
-        
     }
+    
     else {
         
         _modifyStatus = NormalMode;
         
-        // 테이블 리로드 처리
+        // 체크인덱스 초기화
+        NSMutableArray *listArray = _messageListModel.listArray;
         
+        for (int i = 0; i < listArray.count; i++) {
+            
+            NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"0", @"check", nil];
+            [listArray replaceObjectAtIndex:i withObject:dic];
+        }
     }
+    
+    _messageListModel.modifyStatus = _modifyStatus;
+    [_tableView reloadData];
 }
 
 @end

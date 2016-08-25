@@ -7,16 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 #import "MessageListModel.h"
 
-typedef enum {
-    
-    NormalMode = 0,
-    ModifyMode = 1
-    
-} ModifyStatus;
 
-@interface MessageListController : UIViewController<MessageListModelDelegate>
+@interface MessageListController : CommonViewController<MessageListModelDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

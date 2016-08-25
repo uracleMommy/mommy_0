@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "EnumType.h"
 
 @protocol MessageListModelDelegate;
 
@@ -17,6 +18,8 @@
 
 @property (strong, nonatomic) NSMutableDictionary *listImgArray; // 프로필 이미지 캐쉬 저장용 딕셔너리
 
+@property (assign) ModifyStatus modifyStatus; // 편집모드
+
 @property (strong, nonatomic) id<MessageListModelDelegate> delegate;
 
 @end
@@ -25,6 +28,6 @@
 
 @required
 
-- (void) tableView : (UITableView *) tableView selectedRowIndex : (NSInteger) rowIndex;
+- (void) tableView : (UITableView *) tableView selectedIndexPath : (NSIndexPath *) indexPath;
 
 @end

@@ -40,12 +40,56 @@
     
     MessageListCell *cell = (MessageListCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierNoticeCell];
     
+    if (_modifyStatus == ModifyMode) {
+        
+        if (cell.imgProfile.subviews.count == 0) {
+            
+            UIView *alphaView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, cell.imgProfile.frame.size.width, cell.imgProfile.frame.size.height)];
+            alphaView.tag = 0;
+            [alphaView setBackgroundColor:[UIColor blackColor]];
+            alphaView.alpha = 0.7f;
+            [cell.imgProfile addSubview:alphaView];
+        }
+        
+        // 체크 로직
+        // 해당로우의 체크값이 1일때
+        NSDictionary *cellDic = _listArray[indexPath.row];
+        if ([cellDic[@"check"] isEqualToString:@"1"]) {
+            
+            UIImageView *img = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"contents_message_check"]];
+            img.tag = 1;
+            [img setFrame:CGRectMake(0, 0, cell.imgProfile.frame.size.width, cell.imgProfile.frame.size.height)];
+            [cell.imgProfile addSubview:img];
+        }
+        else {
+            
+            for (UIView *subView in cell.imgProfile.subviews) {
+                
+                if (subView.tag == 1) {
+                    
+                    [subView removeFromSuperview];
+                }
+            }
+        }
+    }
+    
+    else {
+        
+        if (cell.imgProfile.subviews.count > 0) {
+            
+            for (UIView *subView in cell.imgProfile.subviews) {
+                                
+                [subView removeFromSuperview];
+            }
+        }
+    }
+    
 //    UIView *alphaView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, cell.imgProfile.frame.size.width, cell.imgProfile.frame.size.height)];
 //    [alphaView setBackgroundColor:[UIColor blackColor]];
 //    alphaView.alpha = 0.5f;
 //    [cell.imgProfile addSubview:alphaView];
     
-    [cell.imgProfile setImage:[UIImage imageNamed:@"contents_message_check"]];
+//    [cell.imgProfile setImage:[UIImage imageNamed:@"contents_message_check"]];
     
     
     // 체크표시 넣기
@@ -68,12 +112,10 @@
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // API 나오면 세부처리
-    if ([self.delegate respondsToSelector:@selector(tableView:selectedRowIndex:)]) {
-        [self.delegate tableView:tableView selectedRowIndex:1];
+    if ([self.delegate respondsToSelector:@selector(tableView:selectedIndexPath:)]) {
+        
+        [self.delegate tableView:tableView selectedIndexPath:indexPath];
     }
-    
-    // 체크 표시 테이블뷰에서 셀 접근해서 바꿔주고 어레이안에 데이터들 체크표시 상태 바꿔주기
-    
 }
 
 @end

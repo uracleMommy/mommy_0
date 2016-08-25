@@ -18,18 +18,10 @@
     _imgProfile.layer.cornerRadius = 19;
     _imgProfile.layer.masksToBounds = YES;
     
-    // uiview 이미지뷰 add
-    UIView *alphaView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _imgProfile.frame.size.width, _imgProfile.frame.size.height)];
-    [alphaView setBackgroundColor:[UIColor blackColor]];
-    alphaView.alpha = 0.5f;
-    [_imgProfile addSubview:alphaView];
-    
     // 컨테이너뷰 라운드, 보더 처리
     _containerView.layer.borderColor = [[UIColor colorWithRed:217.0f/255.0f green:217.0f/255.0f blue:217.0f/255.0f alpha:1.0f] CGColor];
     _containerView.layer.borderWidth = 1.0f;
     _containerView.layer.cornerRadius = 5;
-    
-    // 점선 표시
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -46,16 +46,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dvX-u5-gyg">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="4" width="320" height="496"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dvX-u5-gyg" firstAttribute="top" secondItem="YoL-Na-fTo" secondAttribute="bottom" id="UU5-N6-gDQ"/>
-                            <constraint firstAttribute="trailing" secondItem="dvX-u5-gyg" secondAttribute="trailing" id="cSW-fr-ca9"/>
-                            <constraint firstItem="dvX-u5-gyg" firstAttribute="leading" secondItem="hbU-fI-6D4" secondAttribute="leading" id="igg-sF-yfo"/>
-                            <constraint firstItem="Ulx-8i-5o3" firstAttribute="top" secondItem="dvX-u5-gyg" secondAttribute="bottom" id="y67-9d-Kmv"/>
+                            <constraint firstAttribute="trailing" secondItem="dvX-u5-gyg" secondAttribute="trailing" id="EFo-8W-5Qc"/>
+                            <constraint firstItem="Ulx-8i-5o3" firstAttribute="top" secondItem="dvX-u5-gyg" secondAttribute="bottom" constant="4" id="KO1-LW-JM1"/>
+                            <constraint firstItem="dvX-u5-gyg" firstAttribute="leading" secondItem="hbU-fI-6D4" secondAttribute="leading" id="Ymv-UX-4Ho"/>
+                            <constraint firstItem="dvX-u5-gyg" firstAttribute="top" secondItem="YoL-Na-fTo" secondAttribute="bottom" constant="4" id="bJ2-it-hhl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="쪽지" id="TRV-NM-moO">

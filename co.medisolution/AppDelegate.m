@@ -14,11 +14,10 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    // 탭바 설정
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     return YES;
 }
@@ -45,6 +44,24 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+}
+
+#pragma mark 인디케이터 관련
+
+- (void) indicatorViewIn {
+    
+    if (!_indicatorView) {
+        _indicatorView = [[IndicatorViewController alloc] initWithNibName:@"IndicatorViewController" bundle:nil];
+        _indicatorView.view.frame = CGRectMake(0, 0, [[UIScreen mainScreen] applicationFrame].size.width, [[UIScreen mainScreen] applicationFrame].size.height+20);
+    }
+    
+    [self.window addSubview:_indicatorView.view];
+    [_indicatorView startIndicator];
+}
+
+- (void) indicatorViewOut {
+    [_indicatorView stopIndicator];
+    [_indicatorView.view removeFromSuperview];
 }
 
 #pragma mark - Core Data stack

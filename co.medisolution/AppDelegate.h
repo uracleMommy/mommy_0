@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "IndicatorViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -16,6 +17,11 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+#pragma mark 인디케이터 관련
+@property (strong, nonatomic) IndicatorViewController *indicatorView;
+- (void) indicatorViewIn;
+- (void) indicatorViewOut;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
