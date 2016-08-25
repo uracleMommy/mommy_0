@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="NanumBarunGothic.ttf">
@@ -27,8 +28,7 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trC-c9-Dbx">
                         <rect key="frame" x="277" y="0.0" width="44" height="44"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="44" id="5WG-Be-rLc"/>
-                            <constraint firstAttribute="height" constant="44" id="x0v-Ua-xZX"/>
+                            <constraint firstAttribute="width" secondItem="trC-c9-Dbx" secondAttribute="height" multiplier="1:1" id="nmx-fN-J56"/>
                         </constraints>
                         <state key="normal" backgroundImage="input_btn_del"/>
                         <connections>

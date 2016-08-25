@@ -13,6 +13,7 @@
 		2A371A511D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A371A4F1D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.xib */; };
 		2A371A541D62E2C10051F278 /* SignUpFetusInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A371A531D62E2C10051F278 /* SignUpFetusInfoController.m */; };
 		2A371A571D62E8F30051F278 /* SignUpFetusInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A371A561D62E8F30051F278 /* SignUpFetusInfoModel.m */; };
+		2A4474C81D6EBB4A00D467C8 /* LoginUnlockAccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4474C71D6EBB4A00D467C8 /* LoginUnlockAccountController.m */; };
 		2A54B1B01D66904000C538D1 /* JTCalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A54B1901D66904000C538D1 /* JTCalendarManager.m */; };
 		2A54B1B11D66904000C538D1 /* JTCalendarSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A54B1921D66904000C538D1 /* JTCalendarSettings.m */; };
 		2A54B1B21D66904000C538D1 /* JTDateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A54B1941D66904000C538D1 /* JTDateHelper.m */; };
@@ -107,6 +108,8 @@
 		2A371A531D62E2C10051F278 /* SignUpFetusInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpFetusInfoController.m; sourceTree = "<group>"; };
 		2A371A551D62E8F30051F278 /* SignUpFetusInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpFetusInfoModel.h; sourceTree = "<group>"; };
 		2A371A561D62E8F30051F278 /* SignUpFetusInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpFetusInfoModel.m; sourceTree = "<group>"; };
+		2A4474C61D6EBB4A00D467C8 /* LoginUnlockAccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginUnlockAccountController.h; sourceTree = "<group>"; };
+		2A4474C71D6EBB4A00D467C8 /* LoginUnlockAccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginUnlockAccountController.m; sourceTree = "<group>"; };
 		2A54B18D1D66904000C538D1 /* JTCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCalendar.h; sourceTree = "<group>"; };
 		2A54B18E1D66904000C538D1 /* JTCalendarDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCalendarDelegate.h; sourceTree = "<group>"; };
 		2A54B18F1D66904000C538D1 /* JTCalendarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCalendarManager.h; sourceTree = "<group>"; };
@@ -381,6 +384,8 @@
 				2AB627731D5C0CEC00BD7B84 /* LoginMain.m */,
 				2AB627741D5C0CEC00BD7B84 /* LoginNewPasswordCreate.h */,
 				2AB627751D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m */,
+				2A4474C61D6EBB4A00D467C8 /* LoginUnlockAccountController.h */,
+				2A4474C71D6EBB4A00D467C8 /* LoginUnlockAccountController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -874,6 +879,7 @@
 				DC723C171D63EBA200557E1E /* IQUITextFieldView+Additions.m in Sources */,
 				2AB6277A1D5C0CF400BD7B84 /* SignUpMain.m in Sources */,
 				2A54B1BB1D66904000C538D1 /* JTVerticalCalendarView.m in Sources */,
+				2A4474C81D6EBB4A00D467C8 /* LoginUnlockAccountController.m in Sources */,
 				2AB627761D5C0CEC00BD7B84 /* LoginMain.m in Sources */,
 				DC1FE6E51D658E47006F7A50 /* TabbarDashBoardNavController.m in Sources */,
 				2A371A501D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.m in Sources */,
