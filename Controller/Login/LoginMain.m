@@ -24,6 +24,7 @@
     
     [[IQKeyboardManager sharedManager] setToolbarManageBehaviour:IQAutoToolbarByPosition];
     
+    
     //close Button Setting
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *backBtnImage = [UIImage imageNamed:@"title_icon_close.png"];

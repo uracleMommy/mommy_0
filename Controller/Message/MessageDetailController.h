@@ -2,12 +2,30 @@
 //  MessageDetailController.h
 //  co.medisolution
 //
-//  Created by OGGU on 2016. 8. 19..
+//  Created by OGGU on 2016. 8. 26..
 //  Copyright © 2016년 medisolution. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
-@interface MessageDetailController : UIViewController
+@interface MessageDetailController : CommonViewController<UITextViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIImageView *imgProfile;
+
+@property (weak, nonatomic) IBOutlet UILabel *lblUserName;
+
+@property (weak, nonatomic) IBOutlet UILabel *lblDateTime;
+
+@property (weak, nonatomic) IBOutlet UILabel *lblDotLine;
+
+@property (weak, nonatomic) IBOutlet UIView *infoContainerView;
+
+@property (weak, nonatomic) IBOutlet UITextView *txtContentMessage;
+
+@property (weak, nonatomic) IBOutlet UITextView *txtMessageContent;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *messageContainerHeight;
+
+@property (assign) CGRect originalContentRect;
 
 @end

@@ -7,28 +7,41 @@
 //
 
 #import "CommonViewController.h"
+#import "IQKeyboardManager.h"
+#import "IQKeyboardReturnKeyHandler.h"
+#import "IQDropDownTextField.h"
+#import "IQUIView+IQKeyboardToolbar.h"
 
 @implementation CommonViewController
 
 - (void) viewDidLoad {
     [super viewDidLoad];
+    
+    [self setKeyboardEnabled:YES];
 }
 
 #pragma mark 인디케이터 관련
 
-//AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//[appDelegate indicatorViewIn];
-
+#pragma 인디케이터 활성화
 - (void) showIndicator {
     
     AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate indicatorViewIn];
 }
 
+#pragma 인디케이터 비활성화
 - (void) hideIndicator {
     
     AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate indicatorViewOut];
+}
+
+#pragma mark 키보드 매니저 관련
+
+#pragma 키보드 자동 업 이벤트 활성화/비활성화
+- (void) setKeyboardEnabled : (BOOL) enabled {
+    
+    [[IQKeyboardManager sharedManager] setEnable:NO];
 }
 
 @end

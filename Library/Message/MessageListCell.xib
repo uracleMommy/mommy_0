@@ -24,36 +24,65 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hre-Z9-Fwa">
                         <rect key="frame" x="8" y="4" width="304" height="117"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jeon" translatesAutoresizingMaskIntoConstraints="NO" id="Laq-Oq-hyZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jeon" translatesAutoresizingMaskIntoConstraints="NO" id="Laq-Oq-hyZ">
                                 <rect key="frame" x="8" y="8" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="5Ml-Gg-PVQ"/>
+                                    <constraint firstAttribute="height" constant="37" id="Ek5-PW-xyB"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2016.06.10 오전 06:17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBP-yX-2YR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016.06.10 오전 06:17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBP-yX-2YR">
                                 <rect key="frame" x="51" y="31" width="245" height="13"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="13" id="axd-SQ-tUZ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qT4-Ge-4Rh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qT4-Ge-4Rh">
                                 <rect key="frame" x="8" y="53" width="288" height="2"/>
-                                <color key="backgroundColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="GSa-Vj-8DZ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5UV-RJ-qWc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5UV-RJ-qWc">
                                 <rect key="frame" x="8" y="63" width="288" height="46"/>
                                 <string key="text">안녕하세요 저도 태동이 심해서 잠을 못자는데요. 같은 고민이센요~^^ 그런데 병원에서도 애가 활기차서 그렇단 말만하곤 건강한 안녕하세요...안녕하세요 저도 태동이 심해서 잠을 못자는데요. 같은 고민이센요~^^ 그런데 병원에서도 애가 활기차서 그렇단 말만하곤 건강한 안녕하세요...</string>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
                                 <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="왕지현" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFz-sf-hf7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="왕지현" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFz-sf-hf7">
                                 <rect key="frame" x="51" y="8" width="245" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="XT8-d0-njS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
                                 <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="XBP-yX-2YR" secondAttribute="trailing" constant="8" id="2Lz-eY-XFT"/>
+                            <constraint firstItem="5UV-RJ-qWc" firstAttribute="leading" secondItem="Hre-Z9-Fwa" secondAttribute="leading" constant="8" id="4vc-ML-cSh"/>
+                            <constraint firstItem="Laq-Oq-hyZ" firstAttribute="top" secondItem="Hre-Z9-Fwa" secondAttribute="top" constant="8" id="5ls-KR-jl9"/>
+                            <constraint firstAttribute="trailing" secondItem="yFz-sf-hf7" secondAttribute="trailing" constant="8" id="7rb-Yb-85i"/>
+                            <constraint firstItem="qT4-Ge-4Rh" firstAttribute="top" secondItem="Laq-Oq-hyZ" secondAttribute="bottom" constant="8" id="9xg-YU-qtY"/>
+                            <constraint firstAttribute="trailing" secondItem="5UV-RJ-qWc" secondAttribute="trailing" constant="8" id="BoW-zj-EIl"/>
+                            <constraint firstItem="XBP-yX-2YR" firstAttribute="top" secondItem="yFz-sf-hf7" secondAttribute="bottom" constant="2" id="CaH-Sa-eYV"/>
+                            <constraint firstItem="yFz-sf-hf7" firstAttribute="top" secondItem="Hre-Z9-Fwa" secondAttribute="top" constant="8" id="Q27-Ok-euI"/>
+                            <constraint firstAttribute="bottom" secondItem="5UV-RJ-qWc" secondAttribute="bottom" constant="8" id="Sl5-GU-oQR"/>
+                            <constraint firstItem="XBP-yX-2YR" firstAttribute="leading" secondItem="Laq-Oq-hyZ" secondAttribute="trailing" constant="6" id="Tbs-jA-6qj"/>
+                            <constraint firstItem="5UV-RJ-qWc" firstAttribute="top" secondItem="qT4-Ge-4Rh" secondAttribute="bottom" constant="8" id="i89-IN-14o"/>
+                            <constraint firstItem="Laq-Oq-hyZ" firstAttribute="leading" secondItem="Hre-Z9-Fwa" secondAttribute="leading" constant="8" id="sCl-3H-8Hm"/>
+                            <constraint firstAttribute="trailing" secondItem="qT4-Ge-4Rh" secondAttribute="trailing" constant="8" id="txF-Ql-aK3"/>
+                            <constraint firstItem="yFz-sf-hf7" firstAttribute="leading" secondItem="Laq-Oq-hyZ" secondAttribute="trailing" constant="6" id="vfg-Gr-zet"/>
+                            <constraint firstItem="qT4-Ge-4Rh" firstAttribute="leading" secondItem="Hre-Z9-Fwa" secondAttribute="leading" constant="8" id="xHt-hx-wNw"/>
+                        </constraints>
                     </view>
                 </subviews>
                 <constraints>

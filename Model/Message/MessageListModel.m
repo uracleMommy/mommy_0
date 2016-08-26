@@ -101,6 +101,31 @@
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
+    
+    // 점선처리
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    [shapeLayer setBounds:cell.bounds];
+    [shapeLayer setPosition:cell.center];
+    [shapeLayer setFillColor:[[UIColor clearColor] CGColor]];
+    [shapeLayer setStrokeColor:[[UIColor colorWithRed:217.0/255.0f green:217.0/255.0f  blue:217.0/255.0f alpha:1.0] CGColor]];
+    [shapeLayer setLineWidth:1.0f];
+    [shapeLayer setLineJoin:kCALineJoinRound];
+    [shapeLayer setLineDashPattern:
+     [NSArray arrayWithObjects:[NSNumber numberWithInt:3],
+      [NSNumber numberWithInt:3],nil]];
+    
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathMoveToPoint(path, NULL, 0, 0);
+    CGPathAddLineToPoint(path, NULL, tableView.frame.size.width - 32.0, 0);
+    
+    [shapeLayer setPath:path];
+    CGPathRelease(path);
+    
+    [[cell.lblDotLine layer] addSublayer:shapeLayer];
+    
+//    NSLog(@"%f", tableView.frame.size.width);
+//    NSLog(@"%f", cell.lblDotLine.layer.preferredFrameSize.width);
+    
     return cell;
 }
 
