@@ -8,6 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PushNoticeModel : NSObject
+@protocol PushNoticeModelDelegate;
+
+@interface PushNoticeModel : NSObject<UITableViewDelegate, UITableViewDataSource>
+
+@property (strong, nonatomic) NSArray *arrayList;
+
+@property (strong, nonatomic) id<PushNoticeModelDelegate> delegate;
+
+@end
+
+@protocol PushNoticeModelDelegate <NSObject>
+
+@optional
+
+- (void) tableView : (UITableView *) tableView didSelectRowAtIndexPath : (NSIndexPath *) indexPath;
 
 @end

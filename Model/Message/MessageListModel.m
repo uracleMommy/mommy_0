@@ -40,6 +40,11 @@
     
     MessageListCell *cell = (MessageListCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierNoticeCell];
     
+    if (cell == nil) {
+        
+        cell = (MessageListCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierNoticeCell];
+    }
+    
     if (_modifyStatus == ModifyMode) {
         
         if (cell.imgProfile.subviews.count == 0) {
@@ -94,10 +99,7 @@
     
     // 체크표시 넣기
     
-    if (cell == nil) {
-        
-        cell = (MessageListCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierNoticeCell];
-    }
+    
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     

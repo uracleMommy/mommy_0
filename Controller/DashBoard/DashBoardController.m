@@ -14,6 +14,7 @@
 #import "MultiImageViewController.h"
 #import "PageImageViewController.h"
 
+
 @interface DashBoardController ()<OTPageScrollViewDataSource,OTPageScrollViewDelegate>
 
 @end
@@ -125,6 +126,21 @@
     MultiImageViewController *multiImageViewController = [[MultiImageViewController alloc] initWithNibName:@"MultiImageViewController" bundle:nil];
     
     [self presentViewController:multiImageViewController animated:YES completion:nil];
+}
+
+#pragma 알림 팝업
+- (IBAction)NoticeView:(id)sender {
+    
+    UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"PushNotice" bundle:nil];
+    UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"PushListNavigation"];
+    
+//    UIViewController *messageController = (UIViewController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"Message"];
+//    UINavigationController *rootNavi = [[UINavigationController alloc] initWithRootViewController:messageController];
+    
+    
+    NSLog(@" 뷰 갯수 : %lu", (unsigned long)messageNavigationController.viewControllers.count);
+    
+    [self presentViewController:messageNavigationController animated:YES completion:nil];
 }
 
 @end

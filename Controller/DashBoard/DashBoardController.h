@@ -23,4 +23,6 @@
 
 - (IBAction)MultiImageView:(id)sender;
 
+- (IBAction)NoticeView:(id)sender;
+
 @end

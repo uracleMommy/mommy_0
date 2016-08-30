@@ -49,19 +49,19 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5UV-RJ-qWc">
-                                <rect key="frame" x="8" y="63" width="288" height="46"/>
-                                <string key="text">안녕하세요 저도 태동이 심해서 잠을 못자는데요. 같은 고민이센요~^^ 그런데 병원에서도 애가 활기차서 그렇단 말만하곤 건강한 안녕하세요...안녕하세요 저도 태동이 심해서 잠을 못자는데요. 같은 고민이센요~^^ 그런데 병원에서도 애가 활기차서 그렇단 말만하곤 건강한 안녕하세요...</string>
-                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
-                                <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="왕지현" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFz-sf-hf7">
                                 <rect key="frame" x="51" y="8" width="245" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="XT8-d0-njS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
+                                <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5UV-RJ-qWc">
+                                <rect key="frame" x="8" y="63" width="288" height="46"/>
+                                <string key="text">안녕하세요 저도 태동이 심해서 잠을 못자는데요. 같은 고민이센요~^^ 그런데 병원에서도 애가 활기차서 그렇단 말만하곤 건강한 안녕하세요...안녕하세요 저도 태동이 심해서 잠을 못자는데요. 같은 고민이센요~^^ 그런데 병원에서도 애가 활기차서 그렇단 말만하곤 건강한 안녕하세요...</string>
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
                                 <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
