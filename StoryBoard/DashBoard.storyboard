@@ -50,6 +50,20 @@
                                     <action selector="MessagePopupAction:" destination="qcd-kp-tux" eventType="touchUpInside" id="aPC-42-syE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0R-hI-yyD">
+                                <rect key="frame" x="123" y="251" width="89" height="30"/>
+                                <state key="normal" title="싱글이미지뷰"/>
+                                <connections>
+                                    <action selector="SingleImageView:" destination="qcd-kp-tux" eventType="touchUpInside" id="BY8-eM-0I4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXa-Zz-Ww2">
+                                <rect key="frame" x="112" y="280" width="111" height="30"/>
+                                <state key="normal" title="멀티이미지뷰"/>
+                                <connections>
+                                    <action selector="MultiImageView:" destination="qcd-kp-tux" eventType="touchUpInside" id="jt8-tP-PE6"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <navigationItem key="navigationItem" title="Mommy&amp;" id="vl1-Zn-XfR"/>

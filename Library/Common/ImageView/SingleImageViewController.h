@@ -10,4 +10,14 @@
 
 @interface SingleImageViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+@property (strong, nonatomic) UIImage *originalImage;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageWidthConstraint;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageHeightConstraint;
+
+- (IBAction)btnCloseAction:(id)sender;
+
 @end

@@ -19,4 +19,8 @@
 
 - (IBAction)MessagePopupAction:(id)sender;
 
+- (IBAction)SingleImageView:(id)sender;
+
+- (IBAction)MultiImageView:(id)sender;
+
 @end

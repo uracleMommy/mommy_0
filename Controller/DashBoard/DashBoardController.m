@@ -10,6 +10,9 @@
 #import "OTPageScrollView.h"
 #import "OTPageView.h"
 #import "DashBoardScrollCellView.h"
+#import "SingleImageViewController.h"
+#import "MultiImageViewController.h"
+#import "PageImageViewController.h"
 
 @interface DashBoardController ()<OTPageScrollViewDataSource,OTPageScrollViewDelegate>
 
@@ -85,7 +88,7 @@
 #pragma 쪽지리스트 팝업
 - (IBAction)MessagePopupAction:(id)sender {
     
-    // MessageNaivgation
+    // MessageNaivgation 
     UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
     UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"MessageNaivgation"];
     
@@ -102,13 +105,26 @@
     
 //    [self.navigationController presentViewController:messageNavigationController.topViewController animated:YES completion:nil];
     
-    
-    
 //    [self presentViewController:messageNavigationController.viewControllers[0] animated:YES completion:nil];
+}
+
+- (IBAction)SingleImageView:(id)sender {
+    
+    SingleImageViewController *singleImageViewController = [[SingleImageViewController alloc] initWithNibName:@"SingleImageViewController" bundle:nil];
+    
+    [self presentViewController:singleImageViewController animated:YES completion:nil];
+}
+
+
+- (IBAction)MultiImageView:(id)sender {
     
     
     
+//    PageImageViewController *pageImageViewController = [[PageImageViewController alloc] initWithNibName:@"PageImageViewController" bundle:nil];
     
+    MultiImageViewController *multiImageViewController = [[MultiImageViewController alloc] initWithNibName:@"MultiImageViewController" bundle:nil];
+    
+    [self presentViewController:multiImageViewController animated:YES completion:nil];
 }
 
 @end

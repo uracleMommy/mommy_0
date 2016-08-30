@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MultiImageViewController : UIViewController
+@interface MultiImageViewController : UIViewController<UIScrollViewDelegate>
+
+
 
 @end

@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MultiImageViewController">
             <connections>
+                <outlet property="pageControl" destination="ZRR-rg-ZBk" id="fqG-mj-fxb"/>
+                <outlet property="scrollView" destination="PfE-Rw-asr" id="RFy-sp-fej"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,8 +16,47 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfE-Rw-asr">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="J7h-ls-BBO"/>
+                    </connections>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOR-d3-iPl">
+                    <rect key="frame" x="272" y="8" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="71h-uv-9No"/>
+                        <constraint firstAttribute="width" constant="40" id="n1Q-i5-qnj"/>
+                    </constraints>
+                    <state key="normal" image="input_btn_del"/>
+                    <connections>
+                        <action selector="closeView:" destination="-1" eventType="touchUpInside" id="zP9-99-par"/>
+                    </connections>
+                </button>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZRR-rg-ZBk">
+                    <rect key="frame" x="124" y="523" width="73" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="37" id="26W-ib-CAh"/>
+                        <constraint firstAttribute="width" constant="73" id="D7p-Hg-Ofd"/>
+                    </constraints>
+                </pageControl>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="683" y="503"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="UOR-d3-iPl" secondAttribute="trailing" constant="8" id="0HQ-vX-wpL"/>
+                <constraint firstItem="ZRR-rg-ZBk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="46q-SI-NYT"/>
+                <constraint firstItem="PfE-Rw-asr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="80L-nI-f19"/>
+                <constraint firstItem="PfE-Rw-asr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BSc-yS-WVN"/>
+                <constraint firstAttribute="trailing" secondItem="PfE-Rw-asr" secondAttribute="trailing" id="X1b-MA-3Tc"/>
+                <constraint firstItem="UOR-d3-iPl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="aU7-oX-nLG"/>
+                <constraint firstAttribute="bottom" secondItem="ZRR-rg-ZBk" secondAttribute="bottom" constant="8" id="fnh-9V-OiK"/>
+                <constraint firstAttribute="bottom" secondItem="PfE-Rw-asr" secondAttribute="bottom" id="tCY-y6-KcC"/>
+            </constraints>
+            <point key="canvasLocation" x="51" y="391"/>
         </view>
     </objects>
+    <resources>
+        <image name="input_btn_del" width="90" height="90"/>
+    </resources>
 </document>
