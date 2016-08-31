@@ -41,4 +41,9 @@
     [self performSegueWithIdentifier:@"goDetail" sender:nil];
 }
 
+- (IBAction)closeView:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end

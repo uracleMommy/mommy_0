@@ -194,7 +194,13 @@
                             <constraint firstItem="8yU-z3-VZY" firstAttribute="leading" secondItem="s2X-qK-xvF" secondAttribute="leading" id="okr-Mk-qK9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="로그인" id="Q2i-vH-j8G"/>
+                    <navigationItem key="navigationItem" title="로그인" id="Q2i-vH-j8G">
+                        <barButtonItem key="rightBarButtonItem" title="닫기" id="5rx-kw-Hqs">
+                            <connections>
+                                <action selector="closeView:" destination="avC-lf-CXr" id="Uah-52-1UQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="autoLoginImage" destination="BmV-3t-I7P" id="xL0-qd-CVO"/>
                         <outlet property="idTextField" destination="kD9-Rl-7Ze" id="KBb-1h-rS9"/>
@@ -474,7 +480,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDl-ia-Fuy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1228" y="536"/>
+            <point key="canvasLocation" x="1232" y="531"/>
         </scene>
     </scenes>
     <resources>

@@ -19,6 +19,8 @@
     // Do any additional setup after loading the view.
     
     _scrollView.contentSize = CGSizeMake(320, 1000);
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -208,5 +210,10 @@
 //    NSLog(@"PSH textFieldDidEndEditing");
 //}
 
+
+- (IBAction)closeView:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

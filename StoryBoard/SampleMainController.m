@@ -7,6 +7,8 @@
 //
 
 #import "SampleMainController.h"
+#import "SingleImageViewController.h"
+#import "MultiImageViewController.h"
 
 @interface SampleMainController ()
 
@@ -26,28 +28,68 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (IBAction)memberResist:(id)sender {
+    
+    NSString *storyboard_name = @"MembershipSignUp";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboard_name bundle:[NSBundle mainBundle]];
+    UIViewController *vc = [storyboard instantiateInitialViewController];
+    
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (IBAction)login:(id)sender {
+    
+    NSString *storyboard_name = @"MembershipLogin";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboard_name bundle:[NSBundle mainBundle]];
+    UIViewController *vc = [storyboard instantiateInitialViewController];
+    
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (IBAction)diary:(id)sender {
+    
+    NSString *storyboard_name = @"Diary";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboard_name bundle:[NSBundle mainBundle]];
+    UIViewController *vc = [storyboard instantiateInitialViewController];
+    
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (IBAction)message:(id)sender {
+    
+    NSString *storyboard_name = @"Message";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboard_name bundle:[NSBundle mainBundle]];
+    UIViewController *vc = [storyboard instantiateInitialViewController];
+    
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (IBAction)pushNotice:(id)sender {
+    
+    NSString *storyboard_name = @"PushNotice";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboard_name bundle:[NSBundle mainBundle]];
+    UIViewController *vc = [storyboard instantiateInitialViewController];
+    
+    [self presentViewController:vc animated:YES completion:nil];
 }
+
+- (IBAction)singleImageView:(id)sender {
+    
+    SingleImageViewController *singleImageViewController = [[SingleImageViewController alloc] initWithNibName:@"SingleImageViewController" bundle:nil];
+    
+    [self presentViewController:singleImageViewController animated:YES completion:nil];
+}
+
+- (IBAction)multiImageView:(id)sender {
+    
+    MultiImageViewController *multiImageViewController = [[MultiImageViewController alloc] initWithNibName:@"MultiImageViewController" bundle:nil];
+    
+    [self presentViewController:multiImageViewController animated:YES completion:nil];
+}
+
+- (IBAction)weekProgram:(id)sender {
+    
+    
+}
+
 @end

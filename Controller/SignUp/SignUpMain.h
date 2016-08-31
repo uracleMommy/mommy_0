@@ -21,5 +21,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *passwordValidationLabel;
 @property (weak, nonatomic) IBOutlet UITextField *birthdayTextField;
 
+- (IBAction)closeView:(id)sender;
+
+
 @end
 

@@ -21,4 +21,6 @@
 
 @property (strong, nonatomic) MessageListModel *messageListModel;
 
+- (IBAction)closeView:(id)sender;
+
 @end

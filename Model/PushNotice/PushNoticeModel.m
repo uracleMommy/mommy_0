@@ -58,7 +58,7 @@
     
     CGMutablePathRef path = CGPathCreateMutable();
     CGPathMoveToPoint(path, NULL, 0, 0);
-    CGPathAddLineToPoint(path, NULL, tableView.frame.size.width - 71.0, 0);
+    CGPathAddLineToPoint(path, NULL, tableView.frame.size.width -  78.0, 0);
     
     [shapeLayer setPath:path];
     CGPathRelease(path);
@@ -72,7 +72,7 @@
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return 123.0;
+    return 129.0;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

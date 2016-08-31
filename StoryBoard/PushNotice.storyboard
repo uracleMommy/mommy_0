@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ZuB-Yt-R7H">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -59,7 +59,13 @@
                             <constraint firstItem="UK8-7y-cfP" firstAttribute="top" secondItem="fMV-b6-iq8" secondAttribute="bottom" constant="4" id="dsS-x6-8wi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="알림" id="cge-fX-A6V"/>
+                    <navigationItem key="navigationItem" title="알림" id="cge-fX-A6V">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="nmU-6G-gpi">
+                            <connections>
+                                <action selector="closeView:" destination="M7K-vz-91g" id="7GW-dc-dvP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="UK8-7y-cfP" id="IRi-xt-QFL"/>
                         <segue destination="AcN-7P-WVU" kind="push" identifier="goDetail" id="gk1-nL-Jg5"/>
@@ -107,7 +113,7 @@
                                     <constraint firstAttribute="height" constant="1" id="Pv9-js-Jt0"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Msb-Pv-6Vp">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msb-Pv-6Vp">
                                 <rect key="frame" x="14" y="134" width="292" height="362"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">푸쉬 메세지 내용이 제공됩니다. 푸쉬 메세지 내용이 제공됩니다.푸쉬 메세지 내용이 제공됩니다.푸쉬 메세지 내용이 제공됩니다.푸쉬 메세지 내용이 제공됩니다.푸쉬 메세지 내용이 제공됩니다.푸쉬 메세지 내용이 제공됩니다.푸쉬 메세지 내용이 제공됩니다.푸쉬 메세지 내용이 제공됩니다.푸쉬 메세지 내용이 제공됩니다.</string>

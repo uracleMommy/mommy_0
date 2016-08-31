@@ -498,7 +498,13 @@
                             <constraint firstItem="i1n-xS-3gT" firstAttribute="top" secondItem="0w0-KU-V80" secondAttribute="bottom" id="wqk-XN-Ym5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="회원가입" id="BG7-GQ-Zb9"/>
+                    <navigationItem key="navigationItem" title="회원가입" id="BG7-GQ-Zb9">
+                        <barButtonItem key="rightBarButtonItem" title="닫기" id="DOh-Rg-BQp">
+                            <connections>
+                                <action selector="closeView:" destination="kFE-e9-yMh" id="ki8-Lc-3CD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="birthdayTextField" destination="o6j-Q0-g8M" id="5ql-jh-Yaz"/>
                         <outlet property="confirmPasswordTextField" destination="jm4-xG-0bX" id="egV-0V-a3i"/>
@@ -968,7 +974,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="scU-cW-Oc4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="164" y="1362"/>
+            <point key="canvasLocation" x="234" y="1354"/>
         </scene>
         <!--태아 정보-->
         <scene sceneID="Htf-fo-5dt">

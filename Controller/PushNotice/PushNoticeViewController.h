@@ -13,4 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+- (IBAction)closeView:(id)sender;
+
 @end

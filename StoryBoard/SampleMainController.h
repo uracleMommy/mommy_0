@@ -20,4 +20,10 @@
 
 - (IBAction)pushNotice:(id)sender;
 
+- (IBAction)singleImageView:(id)sender;
+
+- (IBAction)multiImageView:(id)sender;
+
+- (IBAction)weekProgram:(id)sender;
+
 @end
