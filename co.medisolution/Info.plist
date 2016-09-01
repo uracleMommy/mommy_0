@@ -33,7 +33,7 @@
 		<string>NanumBarunGothicBold.ttf</string>
 	</array>
 	<key>UIMainStoryboardFile</key>
-	<string>MainTabBar</string>
+	<string>MembershipSignUp</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

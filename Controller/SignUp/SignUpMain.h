@@ -9,15 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface SignUpMain : UIViewController <UITextFieldDelegate, UIPickerViewDelegate>{
-    UIPickerView *pickerview;
-    
     UIViewController *scrollViewContoller;
 }
 
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
-
-- (IBAction)closeView:(id)sender;
-
 
 @end
 

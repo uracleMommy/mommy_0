@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "ImageCropView.h"
 
-@interface SignUpMommyInfoScrollViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIAlertViewDelegate, UIImagePickerControllerDelegate, ImageCropViewControllerDelegate>
+@interface SignUpMommyInfoScrollViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIAlertViewDelegate, UIImagePickerControllerDelegate, ImageCropViewControllerDelegate>{
+    UIImagePickerController *imagePicker;
+    UIImagePickerController *imagePickerController;
+    ImageCropViewController *controller;
+}
 
 - (IBAction)mommyPictureButtonAction:(id)sender;
 - (UIImage *)imageByScalingProportionallyToSize:(CGSize)targetSize;

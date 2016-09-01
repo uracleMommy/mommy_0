@@ -27,10 +27,10 @@
 -(void)viewDidAppear:(BOOL)animated{
     scrollViewContoller = [self.storyboard instantiateViewControllerWithIdentifier:@"SignUpMommyInfoScrollView"];
     
-    [scrollViewContoller.view setFrame:CGRectMake(0, 0, _scrollView.frame.size.width, 504)];
+    [scrollViewContoller.view setFrame:CGRectMake(0, 0, _scrollView.frame.size.width, 470)];
     
     [_scrollView addSubview : scrollViewContoller.view];
-    _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width, 504);
+    _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width, 470);
     
 }
 

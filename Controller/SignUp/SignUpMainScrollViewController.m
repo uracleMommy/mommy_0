@@ -16,8 +16,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [_birthdayTextField setDropDownMode : IQDropDownModeDatePicker];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"YYYYMMdd"];
+    [_birthdayTextField setDateFormatter:formatter];
+    
+    
+//    birthdayPicker = [[UIDatePicker alloc]init];
+//    birthdayPicker.datePickerMode = UIDatePickerModeDate;
+//    [_birthdayTextField setInputView:birthdayPicker];
+//    
+//    UIToolbar *toolBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 44)];
+//    UIBarButtonItem *doneBtn =  [[UIBarButtonItem alloc]initWithTitle:@"done" style:UIBarButtonItemStyleDone target:self action:@selector(selectedDate)];
+//    [toolBar setItems:[NSArray arrayWithObjects:doneBtn, nil]];
     // Do any additional setup after loading the view.
     
+}
+
+- (void)selectedDate {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"YYYYMMdd"];
+    _birthdayTextField.text = [NSString stringWithFormat:@"%@", [formatter stringFromDate:birthdayPicker.date]];
+    [_birthdayTextField resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -222,6 +244,12 @@
         //비밀번호 일치
     }
     return YES;
+}
+
+//Called when textField changes it's selected item.
+-(void)textField:(IQDropDownTextField*)textField didSelectItem:(NSString*)item {
+    NSLog(@"%@", item);
+    _birthdayTextField.text = item;
 }
 
 

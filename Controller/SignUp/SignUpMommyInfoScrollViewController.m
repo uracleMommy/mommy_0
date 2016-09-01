@@ -95,14 +95,20 @@
     _image = [info valueForKey:UIImagePickerControllerOriginalImage];
     //    imageView.image = image;
     
-    ImageCropViewController *controller = [[ImageCropViewController alloc] initWithImage:_image];
-    controller.delegate = self;
-    controller.blurredBackground = YES;
+    if(controller == nil){
+        controller = [[ImageCropViewController alloc] initWithImage:_image];
+        controller.delegate = self;
+        controller.blurredBackground = YES;
+    }else{
+        [controller setImage:_image];
+    }
     // set the cropped area
     // controller.cropArea = CGRectMake(0, 0, 100, 200);
-    [[self navigationController] pushViewController:controller animated:YES];
+    [imagePicker dismissViewControllerAnimated:YES completion:nil];
+    [imagePickerController dismissViewControllerAnimated:YES completion:nil];
     
-    [[self navigationController] dismissViewControllerAnimated:YES completion:nil];
+    [self presentViewController:controller animated:YES completion:nil];
+    
 }
 
 
@@ -216,8 +222,11 @@
 }
 
 - (void)libraryAuthorized{
-    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-    imagePickerController.delegate = self;
+    if(imagePickerController == nil){
+        imagePickerController = [[UIImagePickerController alloc] init];
+        imagePickerController.delegate = self;
+    }
+    
     [self presentViewController:imagePickerController animated:YES completion:nil];
 }
 - (void)libraryDenied{
@@ -257,9 +266,12 @@
 }
 
 - (void)cameraAuthorized{
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-    [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
-    [imagePicker setDelegate:self];
+    if(imagePicker == nil){
+        imagePicker = [[UIImagePickerController alloc] init];
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+        [imagePicker setDelegate:self];
+    }
+    
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
 - (void)cameraDenied{
