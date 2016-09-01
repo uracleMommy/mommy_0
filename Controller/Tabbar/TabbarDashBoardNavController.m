@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self performSegueWithIdentifier:@"DashBoardSegue" sender:nil];
+    //[self performSegueWithIdentifier:@"DashBoardSegue" sender:nil];
 }
 
 - (void)didReceiveMemoryWarning {

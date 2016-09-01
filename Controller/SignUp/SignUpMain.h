@@ -16,5 +16,8 @@
 
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 
+- (IBAction)closeView:(id)sender;
+
+
 @end
 

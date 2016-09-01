@@ -1,4 +1,4 @@
-//
+ //
 //  DiaryCalenderController.h
 //  co.medisolution
 //
@@ -17,5 +17,6 @@
 
 @property (strong, nonatomic) JTCalendarManager *calendarManager;
 
+- (IBAction)closeView:(id)sender;
 
 @end

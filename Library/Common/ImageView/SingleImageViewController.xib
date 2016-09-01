@@ -7,6 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SingleImageViewController">
             <connections>
+                <outlet property="imageHeightConstraint" destination="6nG-YV-A7u" id="OOh-Xf-MTH"/>
+                <outlet property="imageView" destination="9Q5-sX-Nj6" id="ZBT-NZ-TpT"/>
+                <outlet property="imageWidthConstraint" destination="4YD-Dh-zWw" id="odh-r7-BmA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,8 +17,37 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="596" y="470"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Q5-sX-Nj6">
+                    <rect key="frame" x="40" y="164" width="240" height="240"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="4YD-Dh-zWw"/>
+                        <constraint firstAttribute="height" constant="240" id="6nG-YV-A7u"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMT-g8-gx2">
+                    <rect key="frame" x="272" y="8" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="XFB-Pv-WrU"/>
+                        <constraint firstAttribute="height" constant="40" id="olY-44-apF"/>
+                    </constraints>
+                    <state key="normal" image="input_btn_del"/>
+                    <connections>
+                        <action selector="btnCloseAction:" destination="-1" eventType="touchUpInside" id="9Ng-kR-l7W"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="cMT-g8-gx2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="PeH-eg-Jae"/>
+                <constraint firstAttribute="trailing" secondItem="cMT-g8-gx2" secondAttribute="trailing" constant="8" id="axa-pO-dq3"/>
+                <constraint firstItem="9Q5-sX-Nj6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bya-HR-Xwh"/>
+                <constraint firstItem="9Q5-sX-Nj6" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="euI-1X-M0v"/>
+            </constraints>
+            <point key="canvasLocation" x="-613" y="-24"/>
         </view>
     </objects>
+    <resources>
+        <image name="input_btn_del" width="90" height="90"/>
+    </resources>
 </document>

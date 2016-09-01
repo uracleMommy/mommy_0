@@ -36,18 +36,39 @@
                                     <segue destination="GwF-kI-Oep" kind="modal" id="Mk3-bO-gxU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cy2-74-z6I">
-                                <rect key="frame" x="144" y="181" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="GFT-SH-6XH" kind="modal" id="WlM-tR-g57"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Fh-gD-vmF">
                                 <rect key="frame" x="121" y="213" width="78" height="30"/>
                                 <state key="normal" title="쪽지리스트"/>
                                 <connections>
                                     <action selector="MessagePopupAction:" destination="qcd-kp-tux" eventType="touchUpInside" id="aPC-42-syE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0R-hI-yyD">
+                                <rect key="frame" x="123" y="251" width="89" height="30"/>
+                                <state key="normal" title="싱글이미지뷰"/>
+                                <connections>
+                                    <action selector="SingleImageView:" destination="qcd-kp-tux" eventType="touchUpInside" id="BY8-eM-0I4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXa-Zz-Ww2">
+                                <rect key="frame" x="112" y="280" width="111" height="30"/>
+                                <state key="normal" title="멀티이미지뷰"/>
+                                <connections>
+                                    <action selector="MultiImageView:" destination="qcd-kp-tux" eventType="touchUpInside" id="jt8-tP-PE6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ewf-ml-6fd">
+                                <rect key="frame" x="106" y="120" width="108" height="30"/>
+                                <state key="normal" title="알림뷰"/>
+                                <connections>
+                                    <action selector="NoticeView:" destination="qcd-kp-tux" eventType="touchUpInside" id="qbe-bs-uaC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cy2-74-z6I">
+                                <rect key="frame" x="112" y="181" width="97" height="30"/>
+                                <state key="normal" title="금주의 프로그램"/>
+                                <connections>
+                                    <segue destination="GFT-SH-6XH" kind="modal" id="WlM-tR-g57"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -96,7 +117,7 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="RF8-XD-opD" kind="relationship" relationship="rootViewController" id="Jn5-HB-cPI"/>
+                        <segue destination="b3k-rf-e6t" kind="relationship" relationship="rootViewController" id="jEj-ok-AYh"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PZq-Po-1in" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -170,7 +191,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LSR-aq-wUA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="986" y="937"/>
+            <point key="canvasLocation" x="1385" y="937"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="a0r-x5-Gf9">
@@ -189,7 +210,46 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ge-7M-Aq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1454" y="937"/>
+            <point key="canvasLocation" x="1853" y="937"/>
+        </scene>
+        <!--금주의 프로그램-->
+        <scene sceneID="YYU-hT-2ze">
+            <objects>
+                <viewController id="b3k-rf-e6t" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OQo-IE-XD8"/>
+                        <viewControllerLayoutGuide type="bottom" id="0mc-zW-hMh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zin-ab-dAg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dB-3o-PV7">
+                                <rect key="frame" x="0.0" y="527" width="320" height="41"/>
+                                <color key="backgroundColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="OFx-D1-mDI"/>
+                                </constraints>
+                                <state key="normal" title="주차별 프로그램">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="RF8-XD-opD" kind="push" id="PXM-9J-YRF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0mc-zW-hMh" firstAttribute="top" secondItem="9dB-3o-PV7" secondAttribute="bottom" id="bjV-d0-xDV"/>
+                            <constraint firstItem="9dB-3o-PV7" firstAttribute="leading" secondItem="zin-ab-dAg" secondAttribute="leading" id="lP1-vP-vte"/>
+                            <constraint firstAttribute="trailing" secondItem="9dB-3o-PV7" secondAttribute="trailing" id="u5P-V0-yR2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="금주의 프로그램" id="eHR-bD-9Qh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T16-cA-YPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="478" y="937"/>
         </scene>
         <!--주차별 프로그램-->
         <scene sceneID="g84-k4-zGh">
@@ -203,11 +263,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5fe-Xp-jul" customClass="DZNSegmentedControl">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fe-Xp-jul" customClass="DZNSegmentedControl">
                                 <rect key="frame" x="0.0" y="64" width="320" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="Nwl-a4-oTC"/>
+                                </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ysC-FT-z2i">
+                                <rect key="frame" x="0.0" y="103" width="320" height="465"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9yO-t4-Cz8" firstAttribute="top" secondItem="ysC-FT-z2i" secondAttribute="bottom" id="1o8-cv-XE8"/>
+                            <constraint firstItem="ysC-FT-z2i" firstAttribute="top" secondItem="5fe-Xp-jul" secondAttribute="bottom" id="DkH-kB-np8"/>
+                            <constraint firstItem="5fe-Xp-jul" firstAttribute="leading" secondItem="H2w-mR-Ohm" secondAttribute="leading" id="Oth-dI-Dgw"/>
+                            <constraint firstAttribute="trailing" secondItem="5fe-Xp-jul" secondAttribute="trailing" id="X8S-3Z-mzD"/>
+                            <constraint firstItem="ysC-FT-z2i" firstAttribute="leading" secondItem="H2w-mR-Ohm" secondAttribute="leading" id="cOf-Tm-slB"/>
+                            <constraint firstItem="5fe-Xp-jul" firstAttribute="top" secondItem="g51-4s-4Va" secondAttribute="bottom" id="gP2-Qy-6mn"/>
+                            <constraint firstAttribute="trailing" secondItem="ysC-FT-z2i" secondAttribute="trailing" id="udD-bQ-5JI"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="주차별 프로그램" id="stX-FG-ZP1"/>
                     <connections>
@@ -216,7 +292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0q-EU-Fjw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="524" y="937"/>
+            <point key="canvasLocation" x="901" y="937"/>
         </scene>
     </scenes>
     <resources>

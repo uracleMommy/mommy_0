@@ -35,7 +35,7 @@
     backButtonView.bounds = CGRectOffset(backButtonView.bounds, -15, 0);
     [backButtonView addSubview:backBtn];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:backButtonView];
-    self.navigationItem.rightBarButtonItem = backButton;
+    //self.navigationItem.rightBarButtonItem = backButton;
     
     //id field Setting
     UIImage *idFieldImage = [UIImage imageNamed:@"login_id.png"];
@@ -90,6 +90,12 @@
         NSLog(@"Image View doesn't contains image.png");
     }
 }
+
+- (IBAction)closeView:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 /*
 #pragma mark - Navigation

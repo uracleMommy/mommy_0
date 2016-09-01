@@ -19,4 +19,10 @@
 
 - (IBAction)MessagePopupAction:(id)sender;
 
+- (IBAction)SingleImageView:(id)sender;
+
+- (IBAction)MultiImageView:(id)sender;
+
+- (IBAction)NoticeView:(id)sender;
+
 @end

@@ -221,4 +221,9 @@
     }
 }
 
+- (IBAction)closeView:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end

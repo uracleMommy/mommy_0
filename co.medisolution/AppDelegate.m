@@ -19,6 +19,9 @@
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
+//    _sampleMainController = [[SampleMainController alloc] initWithNibName:@"SampleMainController" bundle:nil];
+//    self.window.rootViewController = _sampleMainController;
+    
     return YES;
 }
 
@@ -62,6 +65,19 @@
 - (void) indicatorViewOut {
     [_indicatorView stopIndicator];
     [_indicatorView.view removeFromSuperview];
+}
+
+
+#pragma mark 스토리 보드 전한
+
+- (void) go_story_board : (NSString *) storyboard_name {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboard_name bundle:[NSBundle mainBundle]];
+    UIViewController *vc = [storyboard instantiateInitialViewController];
+    
+    // Set root view controller and make windows visible
+    self.window.rootViewController = vc;
+    [self.window makeKeyAndVisible];
 }
 
 #pragma mark - Core Data stack

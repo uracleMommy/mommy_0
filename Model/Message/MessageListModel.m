@@ -40,6 +40,11 @@
     
     MessageListCell *cell = (MessageListCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierNoticeCell];
     
+    if (cell == nil) {
+        
+        cell = (MessageListCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierNoticeCell];
+    }
+    
     if (_modifyStatus == ModifyMode) {
         
         if (cell.imgProfile.subviews.count == 0) {
@@ -94,10 +99,7 @@
     
     // 체크표시 넣기
     
-    if (cell == nil) {
-        
-        cell = (MessageListCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierNoticeCell];
-    }
+    
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
@@ -131,7 +133,7 @@
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return 125.0;
+    return 136.0;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

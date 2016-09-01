@@ -14,6 +14,9 @@
 @property (strong, nonatomic) IBOutlet UITextField *pwTextField;
 @property (strong, nonatomic) IBOutlet UIImageView *autoLoginImage;
 
--(IBAction)clickAutoLoginButton:(id)sender;
+- (IBAction)clickAutoLoginButton:(id)sender;
+
+- (IBAction)closeView:(id)sender;
+
 
 @end
