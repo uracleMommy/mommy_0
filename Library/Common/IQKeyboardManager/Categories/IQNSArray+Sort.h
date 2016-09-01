@@ -1,5 +1,5 @@
 //
-//  IQToolbar.h
+//  NSArray+Sort.h
 // https://github.com/hackiftekhar/IQKeyboardManager
 // Copyright (c) 2013-16 Iftekhar Qurashi.
 //
@@ -21,22 +21,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIToolbar.h>
+#import <Foundation/NSArray.h>
 
 /**
- IQToolbar for IQKeyboardManager.
+ UIView.subviews sorting category.
  */
-@interface IQToolbar : UIToolbar <UIInputViewAudioFeedback>
+@interface NSArray (IQ_NSArray_Sort)
+
+///--------------
+/// @name Sorting
+///--------------
 
 /**
- Title font for toolbar.
+ Returns the array by sorting the UIView's by their tag property.
  */
-@property(nullable, nonatomic, strong) UIFont *titleFont;
+@property (nonatomic, readonly, copy) NSArray * _Nonnull sortedArrayByTag;
 
 /**
- Toolbar title
+ Returns the array by sorting the UIView's by their tag property.
  */
-@property(nullable, nonatomic, strong) NSString *title;
+@property (nonatomic, readonly, copy) NSArray * _Nonnull sortedArrayByPosition;
 
 @end
-

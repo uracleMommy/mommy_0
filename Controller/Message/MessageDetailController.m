@@ -9,7 +9,6 @@
 #import "MessageDetailController.h"
 #import "IQKeyboardManager.h"
 #import "IQKeyboardReturnKeyHandler.h"
-#import "IQDropDownTextField.h"
 #import "IQUIView+IQKeyboardToolbar.h"
 
 @implementation MessageDetailController

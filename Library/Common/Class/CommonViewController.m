@@ -9,7 +9,6 @@
 #import "CommonViewController.h"
 #import "IQKeyboardManager.h"
 #import "IQKeyboardReturnKeyHandler.h"
-#import "IQDropDownTextField.h"
 #import "IQUIView+IQKeyboardToolbar.h"
 
 @implementation CommonViewController
@@ -41,7 +40,7 @@
 #pragma 키보드 자동 업 이벤트 활성화/비활성화
 - (void) setKeyboardEnabled : (BOOL) enabled {
     
-    [[IQKeyboardManager sharedManager] setEnable:NO];
+    [[IQKeyboardManager sharedManager] setEnable:enabled];
 }
 
 @end
