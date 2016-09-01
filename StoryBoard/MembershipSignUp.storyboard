@@ -79,6 +79,7 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1n-xS-3gT">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjc-6h-DuI">
                                 <rect key="frame" x="0.0" y="460" width="320" height="44"/>
@@ -144,6 +145,7 @@
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6b1-Ac-AlX">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -175,11 +177,11 @@
                         <viewControllerLayoutGuide type="bottom" id="xag-2N-09F"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="OK3-wl-aJQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="630"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="610"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YTc-9j-PQ1">
-                                <rect key="frame" x="0.0" y="20" width="320" height="610"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="610"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_bullet" translatesAutoresizingMaskIntoConstraints="NO" id="tOv-2C-6w2">
                                         <rect key="frame" x="10" y="75" width="14" height="20"/>
@@ -585,8 +587,10 @@
                             <constraint firstItem="xag-2N-09F" firstAttribute="top" secondItem="YTc-9j-PQ1" secondAttribute="bottom" id="rIu-IE-EPD"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="630"/>
+                    <size key="freeformSize" width="320" height="610"/>
                     <connections>
                         <outlet property="birthdayTextField" destination="LR5-bR-TnD" id="qyi-lj-83V"/>
                         <outlet property="confirmPasswordTextField" destination="Vt3-so-C8O" id="z3b-ZA-bIV"/>
@@ -610,11 +614,11 @@
                         <viewControllerLayoutGuide type="bottom" id="kba-oz-geQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nks-4c-fCB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="490"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="470"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v11-Em-o62">
-                                <rect key="frame" x="0.0" y="20" width="320" height="470"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="470"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="산모정보를 입력해 주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="SfF-uT-IZ2">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
@@ -703,7 +707,7 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="입력" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kEL-8F-xgV" customClass="notPasteField">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="입력" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kEL-8F-xgV" customClass="IQDropDownTextField">
                                                 <rect key="frame" x="78" y="43" width="217" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="IDU-bG-XfY"/>
@@ -1000,8 +1004,10 @@
                             <constraint firstItem="v11-Em-o62" firstAttribute="top" secondItem="a7s-Oc-vp1" secondAttribute="bottom" id="UJ9-pU-OuX"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="490"/>
+                    <size key="freeformSize" width="320" height="470"/>
                     <connections>
                         <outlet property="mommyImageButton" destination="549-6v-POq" id="fSk-3i-NLp"/>
                         <outlet property="mommyNameTextField" destination="wIN-es-mL6" id="L1S-Ng-PcJ"/>
