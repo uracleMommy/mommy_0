@@ -67,6 +67,8 @@
 		DC512ACC1D669BF900885C26 /* MessageListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC512ACA1D669BF900885C26 /* MessageListCell.xib */; };
 		DC512ACF1D66A83400885C26 /* MessageListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC512ACE1D66A83400885C26 /* MessageListCell.m */; };
 		DC512AD21D66C62700885C26 /* MessageListController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC512AD11D66C62700885C26 /* MessageListController.m */; };
+		DC538E621D78009100E5949B /* WeightChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC538E611D78009100E5949B /* WeightChartViewController.m */; };
+		DC538E651D78016B00E5949B /* WeightChartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC538E641D78016B00E5949B /* WeightChartModel.m */; };
 		DC5D20741D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5D20721D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf */; };
 		DC5D20751D62ACFB00ACDCA4 /* NanumBarunGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5D20731D62ACFB00ACDCA4 /* NanumBarunGothic.ttf */; };
 		DC5D20841D62AFA100ACDCA4 /* OTPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5D207F1D62AFA100ACDCA4 /* OTPageCell.m */; };
@@ -241,6 +243,10 @@
 		DC512ACE1D66A83400885C26 /* MessageListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageListCell.m; sourceTree = "<group>"; };
 		DC512AD01D66C62700885C26 /* MessageListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageListController.h; sourceTree = "<group>"; };
 		DC512AD11D66C62700885C26 /* MessageListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageListController.m; sourceTree = "<group>"; };
+		DC538E601D78009100E5949B /* WeightChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightChartViewController.h; sourceTree = "<group>"; };
+		DC538E611D78009100E5949B /* WeightChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightChartViewController.m; sourceTree = "<group>"; };
+		DC538E631D78016B00E5949B /* WeightChartModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightChartModel.h; sourceTree = "<group>"; };
+		DC538E641D78016B00E5949B /* WeightChartModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightChartModel.m; sourceTree = "<group>"; };
 		DC5D20721D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicBold.ttf; sourceTree = "<group>"; };
 		DC5D20731D62ACFB00ACDCA4 /* NanumBarunGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothic.ttf; sourceTree = "<group>"; };
 		DC5D207E1D62AFA100ACDCA4 /* OTPageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPageCell.h; sourceTree = "<group>"; };
@@ -610,6 +616,8 @@
 			children = (
 				DC3AAECC1D759C19007218E9 /* WeekProgramModel.h */,
 				DC3AAECD1D759C19007218E9 /* WeekProgramModel.m */,
+				DC538E631D78016B00E5949B /* WeightChartModel.h */,
+				DC538E641D78016B00E5949B /* WeightChartModel.m */,
 			);
 			path = DashBoard;
 			sourceTree = "<group>";
@@ -720,6 +728,8 @@
 				DC3AAEC91D759BA9007218E9 /* WeekProgramController.m */,
 				DC5D208F1D62CB6500ACDCA4 /* DashBoardController.h */,
 				DC5D20901D62CB6500ACDCA4 /* DashBoardController.m */,
+				DC538E601D78009100E5949B /* WeightChartViewController.h */,
+				DC538E611D78009100E5949B /* WeightChartViewController.m */,
 			);
 			path = DashBoard;
 			sourceTree = "<group>";
@@ -1096,6 +1106,7 @@
 				2A54B1BB1D66904000C538D1 /* JTVerticalCalendarView.m in Sources */,
 				2A4474C81D6EBB4A00D467C8 /* LoginUnlockAccountController.m in Sources */,
 				2AB627761D5C0CEC00BD7B84 /* LoginMain.m in Sources */,
+				DC538E651D78016B00E5949B /* WeightChartModel.m in Sources */,
 				DC1FE6E51D658E47006F7A50 /* TabbarDashBoardNavController.m in Sources */,
 				DCF6CAAC1D742B4000703CAE /* JTSSimpleImageDownloader.m in Sources */,
 				2A371A501D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.m in Sources */,
@@ -1107,6 +1118,7 @@
 				2AB3DD991D6BDB7C00512949 /* SignUpMommyInfoController.m in Sources */,
 				2A54B1BA1D66904000C538D1 /* JTHorizontalCalendarView.m in Sources */,
 				DC3AAEC41D757D4A007218E9 /* SampleMainController.m in Sources */,
+				DC538E621D78009100E5949B /* WeightChartViewController.m in Sources */,
 				DC73E5C61D6DAE3B007D2DEE /* IndicatorViewController.m in Sources */,
 				2A371A571D62E8F30051F278 /* SignUpFetusInfoModel.m in Sources */,
 				DC723C181D63EBA200557E1E /* IQUIView+Hierarchy.m in Sources */,
