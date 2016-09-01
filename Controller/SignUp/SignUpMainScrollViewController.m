@@ -7,6 +7,9 @@
 //
 
 #import "SignUpMainScrollViewController.h"
+#import "IQKeyboardManager.h"
+#import "IQKeyboardReturnKeyHandler.h"
+#import "IQUIView+IQKeyboardToolbar.h"
 
 @interface SignUpMainScrollViewController ()
 
@@ -16,13 +19,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    [_birthdayTextField setDropDownMode : IQDropDownModeDatePicker];
     
-    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-    [formatter setDateFormat:@"YYYYMMdd"];
-    [_birthdayTextField setDateFormatter:formatter];
-    [_birthdayTextField setMaximumDate: [NSDate date]];
+    //[[IQKeyboardManager sharedManager] setEnable:NO];
+
+
+//    [_birthdayTextField setDropDownMode : IQDropDownModeDatePicker];
+//    
+//    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+//    [formatter setDateFormat:@"YYYYMMdd"];
+//    [_birthdayTextField setDateFormatter:formatter];
     
     
 //    birthdayPicker = [[UIDatePicker alloc]init];
@@ -246,12 +251,5 @@
     }
     return YES;
 }
-
-//Called when textField changes it's selected item.
--(void)textField:(IQDropDownTextField*)textField didSelectItem:(NSString*)item {
-    NSLog(@"%@", item);
-    _birthdayTextField.text = item;
-}
-
 
 @end
