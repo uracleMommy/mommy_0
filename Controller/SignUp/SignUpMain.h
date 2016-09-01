@@ -10,16 +10,11 @@
 
 @interface SignUpMain : UIViewController <UITextFieldDelegate, UIPickerViewDelegate>{
     UIPickerView *pickerview;
-//    UIDatePicker
+    
+    UIViewController *scrollViewContoller;
 }
 
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UITextField *idTextField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (weak, nonatomic) IBOutlet UITextField *confirmPasswordTextField;
-@property (weak, nonatomic) IBOutlet UILabel *idValidationLabel;
-@property (weak, nonatomic) IBOutlet UILabel *passwordValidationLabel;
-@property (weak, nonatomic) IBOutlet UITextField *birthdayTextField;
 
 @end
 
