@@ -1,22 +1,22 @@
 //
-//  SignUpMommyInfoController.m
+//  SignUpMain.m
 //  co.medisolution
 //
-//  Created by uracle on 2016. 8. 23..
+//  Created by uracle on 2016. 8. 10..
 //  Copyright © 2016년 medisolution. All rights reserved.
 //
 
-#import "SignUpMommyInfoController.h"
+#import "SignUpMain.h"
 
-@interface SignUpMommyInfoController ()
+@interface SignUpMain ()
 
 @end
 
-@implementation SignUpMommyInfoController
+@implementation SignUpMain
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.   
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,17 +25,16 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    scrollViewContoller = [self.storyboard instantiateViewControllerWithIdentifier:@"SignUpMommyInfoScrollView"];
-    
-    [scrollViewContoller.view setFrame:CGRectMake(0, 0, _scrollView.frame.size.width, 470)];
+    scrollViewContoller = [self.storyboard instantiateViewControllerWithIdentifier:@"SignUpMainScrollView"];
+
+    [scrollViewContoller.view setFrame:CGRectMake(0, 0, _scrollView.frame.size.width, 664)];
     
     [_scrollView addSubview : scrollViewContoller.view];
-    _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width, 470);
-    
+    _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width, 664);
 }
 
 /*
-#pragma mark - Navigation
+#pragma mark - Navigationf
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
