@@ -29,19 +29,14 @@
     
     
     
+    // 테이블 바인드
+    
+    _weightChartModel = [[WeightChartModel alloc] init];
+    NSArray *arrayList = [NSArray arrayWithObjects:@"1", @"2", @"3", @"4", nil];
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    _tableView.delegate = _weightChartModel;
+    _tableView.dataSource = _weightChartModel;
     
     
 }

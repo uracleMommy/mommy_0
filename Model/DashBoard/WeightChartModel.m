@@ -30,7 +30,16 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return _arrayList.count;
+    if (_arrayList.count > 0) {
+        
+        // 차트 셀 한개는 리턴이 되어야 함
+        return _arrayList.count + 1;
+    }
+    else {
+        
+        // 차트셀 + 인포셀 헤더 풋터
+        return _arrayList.count + 3;
+    }
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -52,8 +61,72 @@
     UINib *reuseWeightDetailInfoFooterCell = [UINib nibWithNibName:@"WeightDetailInfoFooterCell" bundle:nil];
     [tableView registerNib:reuseWeightDetailInfoFooterCell forCellReuseIdentifier:CellIdentifierWeightDetailInfoFooterCell];
     
-    // 웹 차트
-    if (indexPath.row == 0) {
+    // 데이터가 있을 때(전체 리턴)
+    if (_arrayList.count > 0) {
+        
+        // 웹 차트
+        if (indexPath.row == 0) {
+            
+            WeightChartViewCell *cell = (WeightChartViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierMessageListCell];
+            
+            if (cell == nil) {
+                
+                cell = (WeightChartViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierMessageListCell];
+            }
+            
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            
+            return cell;
+        }
+        
+        // 디테일 정보 헤더
+        else if (indexPath.row == 1) {
+            
+            WeightDetailInfoHeaderCell *cell = (WeightDetailInfoHeaderCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierWeightDetailInfoHeaderCell];
+            
+            if (cell == nil) {
+                
+                cell = (WeightDetailInfoHeaderCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierWeightDetailInfoHeaderCell];
+            }
+            
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            
+            return cell;
+        }
+        
+        // 디테일 정보 풋터
+        else if (indexPath.row + 1 == _arrayList.count + 3) {
+            
+            WeightDetailInfoFooterCell *cell = (WeightDetailInfoFooterCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierWeightDetailInfoFooterCell];
+            
+            if (cell == nil) {
+                
+                cell = (WeightDetailInfoFooterCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierWeightDetailInfoFooterCell];
+            }
+            
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            
+            return cell;
+            
+        }
+        
+        // 디테일 정보 컨텐츠
+        else {
+            
+            WeightDetailInfoContentsCell *cell = (WeightDetailInfoContentsCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierWeightDetailInfoContentsCell];
+            
+            if (cell == nil) {
+                
+                cell = (WeightDetailInfoContentsCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierWeightDetailInfoContentsCell];
+            }
+            
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            
+            return cell;
+        }
+    }
+    // 데이터가 없을 때(차트만 리턴)
+    else {
         
         WeightChartViewCell *cell = (WeightChartViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierMessageListCell];
         
@@ -63,12 +136,61 @@
         }
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         return cell;
     }
-    
-    // 
-    
-    return nil;
 }
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // 데이터가 있을 때(전체 리턴)
+    if (_arrayList.count > 0) {
+        
+        // 차트 높이
+        if (indexPath.row == 0) {
+            
+            return 356.0f;
+        }
+        // 디테일 정보 헤더 높이
+        else if (indexPath.row == 1) {
+            
+            return 40.0f;
+        }
+        // 디테일 정보 풋터 높이
+        else if (indexPath.row + 1 == _arrayList.count + 3) {
+            
+            return 28.0f;
+        }
+        // 디테일 정보 컨텐츠 높이
+        else {
+            
+            return 45.0f;
+        }
+    }
+    // 데이터가 없을 때(차트만 리턴)
+    else {
+        
+        return 356.0f;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @end
