@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *autoLoginImage;
 
 - (IBAction)clickAutoLoginButton:(id)sender;
+- (IBAction)loginButtonAction:(id)sender;
 
 - (IBAction)closeView:(id)sender;
 

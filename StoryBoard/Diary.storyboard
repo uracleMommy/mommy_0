@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jPT-UW-I90">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jPT-UW-I90">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -30,7 +30,7 @@
         <!--Navigation Controller-->
         <scene sceneID="hwT-uF-9Sn">
             <objects>
-                <navigationController id="jPT-UW-I90" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="DiaryNavigation" id="jPT-UW-I90" sceneMemberID="viewController">
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cIy-Rs-anl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -128,7 +128,7 @@
                                                     <constraint firstAttribute="width" constant="40" id="KP3-3e-kew"/>
                                                     <constraint firstAttribute="height" constant="40" id="Qnh-Wu-tMY"/>
                                                 </constraints>
-                                                <state key="normal" image="652C6831-9093-4731-96F4-20546864FB20"/>
+                                                <state key="normal" image="EB2C15E0-A606-4AFF-8814-E15F1B7583AF"/>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -157,7 +157,7 @@
                                                     <constraint firstAttribute="height" constant="40" id="ukd-Dl-LMp"/>
                                                     <constraint firstAttribute="width" constant="40" id="xXp-hk-JXv"/>
                                                 </constraints>
-                                                <state key="normal" image="469E33D2-C3A9-4395-918D-5ECDEA3976D8"/>
+                                                <state key="normal" image="1E9D82D8-559C-4A36-8CC2-426D86BC5415"/>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -321,11 +321,12 @@
                         <outlet property="imageButton02" destination="zon-KK-vDk" id="Lkn-wU-8OP"/>
                         <outlet property="imageButton03" destination="HP4-OB-b1k" id="KPY-sD-F7n"/>
                         <outlet property="imageButton04" destination="cdg-Kg-Yj7" id="0tH-hh-Zy8"/>
+                        <outlet property="navigationBar" destination="oKb-KJ-HOJ" id="Jii-Vh-sC5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sxb-fF-Hx7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="486" y="419"/>
+            <point key="canvasLocation" x="1303" y="1194"/>
         </scene>
         <!--다이어리-->
         <scene sceneID="KSS-eg-VP9">
@@ -512,10 +513,10 @@
             </objects>
             <point key="canvasLocation" x="424" y="1452"/>
         </scene>
-        <!--View Controller-->
+        <!--Diary Detail Schedule Controller-->
         <scene sceneID="ohi-qZ-MsD">
             <objects>
-                <viewController id="b6z-56-zCh" sceneMemberID="viewController">
+                <viewController id="b6z-56-zCh" customClass="DiaryDetailScheduleController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ssP-DM-XwY"/>
                         <viewControllerLayoutGuide type="bottom" id="O89-vZ-dIA"/>
@@ -534,6 +535,9 @@
                                 <items>
                                     <navigationItem title="일정 보기" id="WXC-Jq-Qwa"/>
                                 </items>
+                                <connections>
+                                    <outlet property="delegate" destination="b6z-56-zCh" id="9Wi-xI-yar"/>
+                                </connections>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v2D-sa-kWp">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
@@ -616,15 +620,18 @@
                             <constraint firstAttribute="trailing" secondItem="v2D-sa-kWp" secondAttribute="trailing" id="Xdq-Jc-Jkr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="inI-OC-cXH" id="2nh-gw-6cp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GON-Rk-jUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="919" y="1194"/>
         </scene>
-        <!--View Controller-->
+        <!--Diary Write Schedule Controller-->
         <scene sceneID="5kS-h0-0Qw">
             <objects>
-                <viewController id="SYe-f6-vYE" sceneMemberID="viewController">
+                <viewController id="SYe-f6-vYE" customClass="DiaryWriteScheduleController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xfD-Zz-oZD"/>
                         <viewControllerLayoutGuide type="bottom" id="K4C-C7-YWY"/>
@@ -770,6 +777,9 @@
                             <constraint firstItem="KkK-T6-HgT" firstAttribute="top" secondItem="9wr-IW-Adc" secondAttribute="bottom" id="koY-cB-0Wy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="9wr-IW-Adc" id="MR6-Tm-Sz4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQo-H1-ca3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -900,7 +910,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="469E33D2-C3A9-4395-918D-5ECDEA3976D8" width="90" height="90">
+        <image name="1E9D82D8-559C-4A36-8CC2-426D86BC5415" width="90" height="90">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -1510,7 +1520,7 @@ w4zSjNaM3YzljPKM94z5jPuNAI0IjQuNEI0YjRuNLY0wjTUAAAAAAAACAQAAAAAAAAA+AAAAAAAAAAAA
 AAAAAACNNw
 </mutableData>
         </image>
-        <image name="652C6831-9093-4731-96F4-20546864FB20" width="90" height="90">
+        <image name="EB2C15E0-A606-4AFF-8814-E15F1B7583AF" width="90" height="90">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA

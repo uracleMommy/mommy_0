@@ -12,7 +12,8 @@
 @interface SignUpFetusInfoController : UIViewController<fetusInfoModelDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *fetusInfoTableView;
-
 @property (strong, nonatomic) SignUpFetusInfoModel *fetusInfoTableDelegate;
+
+- (IBAction)saveButtonAction:(id)sender;
 
 @end

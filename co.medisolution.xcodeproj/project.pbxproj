@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2A0CCB441D73B411001B6E1F /* SignUpMainScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0CCB431D73B411001B6E1F /* SignUpMainScrollViewController.m */; };
+		2A309ACE1D79634E001C54C5 /* ColorPickerTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A309AC31D79634E001C54C5 /* ColorPickerTextField.m */; };
+		2A309ACF1D79634E001C54C5 /* HFColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A309AC61D79634E001C54C5 /* HFColorButton.m */; };
+		2A309AD01D79634E001C54C5 /* HFColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A309AC81D79634E001C54C5 /* HFColorPickerView.m */; };
+		2A309AD11D79634E001C54C5 /* UIColor+HexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A309ACA1D79634E001C54C5 /* UIColor+HexColors.m */; };
+		2A309AD21D79634E001C54C5 /* IQDropDownTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A309ACD1D79634E001C54C5 /* IQDropDownTextField.m */; };
 		2A371A4B1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A371A491D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.m */; };
 		2A371A4C1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A371A4A1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.xib */; };
 		2A371A501D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A371A4E1D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.m */; };
@@ -44,6 +49,8 @@
 		2AE11DE91D657DE4003C6690 /* DiaryListImageCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AE11DE71D657DE4003C6690 /* DiaryListImageCustomCell.xib */; };
 		2AE11DF01D6581D9003C6690 /* DiaryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11DEF1D6581D9003C6690 /* DiaryListModel.m */; };
 		2AE11DF31D6583BC003C6690 /* DiaryListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11DF21D6583BC003C6690 /* DiaryListController.m */; };
+		2AEBE3491D79419E0075B210 /* DiaryWriteScheduleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBE3481D79419E0075B210 /* DiaryWriteScheduleController.m */; };
+		2AEBE34C1D7941BF0075B210 /* DiaryDetailScheduleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBE34B1D7941BF0075B210 /* DiaryDetailScheduleController.m */; };
 		DC1FE6E31D658E47006F7A50 /* DashBoardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6DC1D658E47006F7A50 /* DashBoardSegue.m */; };
 		DC1FE6E41D658E47006F7A50 /* DiarySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6DE1D658E47006F7A50 /* DiarySegue.m */; };
 		DC1FE6E51D658E47006F7A50 /* TabbarDashBoardNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6E01D658E47006F7A50 /* TabbarDashBoardNavController.m */; };
@@ -128,6 +135,16 @@
 /* Begin PBXFileReference section */
 		2A0CCB421D73B411001B6E1F /* SignUpMainScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpMainScrollViewController.h; sourceTree = "<group>"; };
 		2A0CCB431D73B411001B6E1F /* SignUpMainScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpMainScrollViewController.m; sourceTree = "<group>"; };
+		2A309AC21D79634E001C54C5 /* ColorPickerTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerTextField.h; sourceTree = "<group>"; };
+		2A309AC31D79634E001C54C5 /* ColorPickerTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerTextField.m; sourceTree = "<group>"; };
+		2A309AC51D79634E001C54C5 /* HFColorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFColorButton.h; sourceTree = "<group>"; };
+		2A309AC61D79634E001C54C5 /* HFColorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFColorButton.m; sourceTree = "<group>"; };
+		2A309AC71D79634E001C54C5 /* HFColorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFColorPickerView.h; sourceTree = "<group>"; };
+		2A309AC81D79634E001C54C5 /* HFColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFColorPickerView.m; sourceTree = "<group>"; };
+		2A309AC91D79634E001C54C5 /* UIColor+HexColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexColors.h"; sourceTree = "<group>"; };
+		2A309ACA1D79634E001C54C5 /* UIColor+HexColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexColors.m"; sourceTree = "<group>"; };
+		2A309ACC1D79634E001C54C5 /* IQDropDownTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQDropDownTextField.h; sourceTree = "<group>"; };
+		2A309ACD1D79634E001C54C5 /* IQDropDownTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQDropDownTextField.m; sourceTree = "<group>"; };
 		2A371A481D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpFetusInfoCustomCell_Basic.h; sourceTree = "<group>"; };
 		2A371A491D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpFetusInfoCustomCell_Basic.m; sourceTree = "<group>"; };
 		2A371A4A1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpFetusInfoCustomCell_Basic.xib; sourceTree = "<group>"; };
@@ -200,6 +217,10 @@
 		2AE11DEF1D6581D9003C6690 /* DiaryListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryListModel.m; sourceTree = "<group>"; };
 		2AE11DF11D6583BC003C6690 /* DiaryListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryListController.h; sourceTree = "<group>"; };
 		2AE11DF21D6583BC003C6690 /* DiaryListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryListController.m; sourceTree = "<group>"; };
+		2AEBE3471D79419E0075B210 /* DiaryWriteScheduleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryWriteScheduleController.h; sourceTree = "<group>"; };
+		2AEBE3481D79419E0075B210 /* DiaryWriteScheduleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryWriteScheduleController.m; sourceTree = "<group>"; };
+		2AEBE34A1D7941BF0075B210 /* DiaryDetailScheduleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryDetailScheduleController.h; sourceTree = "<group>"; };
+		2AEBE34B1D7941BF0075B210 /* DiaryDetailScheduleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryDetailScheduleController.m; sourceTree = "<group>"; };
 		DC1FE6DB1D658E47006F7A50 /* DashBoardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardSegue.h; sourceTree = "<group>"; };
 		DC1FE6DC1D658E47006F7A50 /* DashBoardSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardSegue.m; sourceTree = "<group>"; };
 		DC1FE6DD1D658E47006F7A50 /* DiarySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiarySegue.h; sourceTree = "<group>"; };
@@ -356,6 +377,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A309AC01D79634E001C54C5 /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				2A309AC11D79634E001C54C5 /* Color Picker TextField */,
+				2A309ACB1D79634E001C54C5 /* IQDropDownTextField */,
+			);
+			path = "Third Party";
+			sourceTree = "<group>";
+		};
+		2A309AC11D79634E001C54C5 /* Color Picker TextField */ = {
+			isa = PBXGroup;
+			children = (
+				2A309AC21D79634E001C54C5 /* ColorPickerTextField.h */,
+				2A309AC31D79634E001C54C5 /* ColorPickerTextField.m */,
+				2A309AC41D79634E001C54C5 /* HFColorPicker */,
+				2A309AC91D79634E001C54C5 /* UIColor+HexColors.h */,
+				2A309ACA1D79634E001C54C5 /* UIColor+HexColors.m */,
+			);
+			path = "Color Picker TextField";
+			sourceTree = "<group>";
+		};
+		2A309AC41D79634E001C54C5 /* HFColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				2A309AC51D79634E001C54C5 /* HFColorButton.h */,
+				2A309AC61D79634E001C54C5 /* HFColorButton.m */,
+				2A309AC71D79634E001C54C5 /* HFColorPickerView.h */,
+				2A309AC81D79634E001C54C5 /* HFColorPickerView.m */,
+			);
+			path = HFColorPicker;
+			sourceTree = "<group>";
+		};
+		2A309ACB1D79634E001C54C5 /* IQDropDownTextField */ = {
+			isa = PBXGroup;
+			children = (
+				2A309ACC1D79634E001C54C5 /* IQDropDownTextField.h */,
+				2A309ACD1D79634E001C54C5 /* IQDropDownTextField.m */,
+			);
+			path = IQDropDownTextField;
+			sourceTree = "<group>";
+		};
 		2A54B1951D66904000C538D1 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,6 +506,10 @@
 				2AE11DF21D6583BC003C6690 /* DiaryListController.m */,
 				2A54B1BC1D6691F600C538D1 /* DiaryCalenderController.h */,
 				2A54B1BD1D6691F600C538D1 /* DiaryCalenderController.m */,
+				2AEBE3471D79419E0075B210 /* DiaryWriteScheduleController.h */,
+				2AEBE3481D79419E0075B210 /* DiaryWriteScheduleController.m */,
+				2AEBE34A1D7941BF0075B210 /* DiaryDetailScheduleController.h */,
+				2AEBE34B1D7941BF0075B210 /* DiaryDetailScheduleController.m */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -671,6 +737,7 @@
 		DC538E9C1D781C3600E5949B /* IQKeyboardManager */ = {
 			isa = PBXGroup;
 			children = (
+				2A309AC01D79634E001C54C5 /* Third Party */,
 				DC538E9D1D781C3600E5949B /* Categories */,
 				DC538EAA1D781C3600E5949B /* Constants */,
 				DC538EAD1D781C3600E5949B /* IQKeyboardManager.h */,
@@ -1025,6 +1092,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A309AD21D79634E001C54C5 /* IQDropDownTextField.m in Sources */,
 				DC538EC11D781C3600E5949B /* IQNSArray+Sort.m in Sources */,
 				DC538ECA1D781C3600E5949B /* IQBarButtonItem.m in Sources */,
 				DC4EAA8B1D6E6F5E005370A8 /* notPasteField.m in Sources */,
@@ -1037,15 +1105,19 @@
 				DCA5AE2C1D598C6F0075B7AD /* ViewController.m in Sources */,
 				DC60709C1D7030E700F60148 /* MultiImageViewController.m in Sources */,
 				2A54B1BE1D6691F600C538D1 /* DiaryCalenderController.m in Sources */,
+				2AEBE3491D79419E0075B210 /* DiaryWriteScheduleController.m in Sources */,
+				2AEBE34C1D7941BF0075B210 /* DiaryDetailScheduleController.m in Sources */,
 				2A54B1B51D66904000C538D1 /* JTCalendarDayView.m in Sources */,
 				DCF6CA901D740D0A00703CAE /* PageImageViewController.m in Sources */,
 				DCA5AE321D598C6F0075B7AD /* co_medisolution.xcdatamodeld in Sources */,
 				DC538EC91D781C3600E5949B /* IQTextView.m in Sources */,
 				DC1FE6E41D658E47006F7A50 /* DiarySegue.m in Sources */,
+				2A309ACF1D79634E001C54C5 /* HFColorButton.m in Sources */,
 				DC538EC81D781C3600E5949B /* IQKeyboardReturnKeyHandler.m in Sources */,
 				DC1FE6F71D65C83C006F7A50 /* UIScrollView+DZNSegmentedControl.m in Sources */,
 				DC1FE6EA1D659912006F7A50 /* MainTabbarController.m in Sources */,
 				DC1FE6E61D658E47006F7A50 /* TabbarDiaryNavController.m in Sources */,
+				2A309AD01D79634E001C54C5 /* HFColorPickerView.m in Sources */,
 				DC6070971D7030CF00F60148 /* SingleImageViewController.m in Sources */,
 				DCF6CAAE1D742B4000703CAE /* UIImage+JTSImageEffects.m in Sources */,
 				DC5D20951D62E01300ACDCA4 /* DashBoardScrollCellView.m in Sources */,
@@ -1082,6 +1154,7 @@
 				DC512ACF1D66A83400885C26 /* MessageListCell.m in Sources */,
 				DC60708D1D6FC85000F60148 /* MessageDetailController.m in Sources */,
 				2AE11DF01D6581D9003C6690 /* DiaryListModel.m in Sources */,
+				2A309ACE1D79634E001C54C5 /* ColorPickerTextField.m in Sources */,
 				2AB3DD991D6BDB7C00512949 /* SignUpMommyInfoController.m in Sources */,
 				2A54B1BA1D66904000C538D1 /* JTHorizontalCalendarView.m in Sources */,
 				DC3AAEC41D757D4A007218E9 /* SampleMainController.m in Sources */,
@@ -1113,6 +1186,7 @@
 				DC7D384C1D6BDD9A00314189 /* ImageCropView.m in Sources */,
 				DC538EC41D781C3600E5949B /* IQUIView+Hierarchy.m in Sources */,
 				DC3AAECA1D759BA9007218E9 /* WeekProgramController.m in Sources */,
+				2A309AD11D79634E001C54C5 /* UIColor+HexColors.m in Sources */,
 				2A54B1B01D66904000C538D1 /* JTCalendarManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

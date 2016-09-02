@@ -18,18 +18,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //close Button Setting
+    [self.navigationItem setHidesBackButton:YES];
+    
+    //back Button Setting
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *backBtnImage = [UIImage imageNamed:@"title_icon_close.png"];
-    [backBtn setBackgroundImage:backBtnImage forState:UIControlStateNormal];
-    //    [backBtn addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
     backBtn.frame = CGRectMake(0, 0, 40, 40);
-    UIView *backButtonView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-    backButtonView.bounds = CGRectOffset(backButtonView.bounds, -15, 0);
-    [backButtonView addSubview:backBtn];
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:backButtonView];
+    [backBtn setImage:backBtnImage forState:UIControlStateNormal];
+    [backBtn addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
+    [backBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
     self.navigationItem.rightBarButtonItem = backButton;
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,6 +46,9 @@
 }
 */
 
+-(void)goBack{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 #pragma UITextField Delegate
 
@@ -150,5 +152,13 @@
         //비밀번호 일치
     }
     return YES;
+}
+- (IBAction)savePasswordButtonAction:(id)sender {
+    
+    //TEMP 가입이동
+    UIStoryboard *signUpStoryboard = [UIStoryboard storyboardWithName:@"MembershipSignUp" bundle:nil];
+    UINavigationController *signUpNavigationController = (UINavigationController *)[signUpStoryboard instantiateViewControllerWithIdentifier:@"MembershipSignUpNavigation"];
+    
+    [self presentViewController:signUpNavigationController animated:YES completion:nil];
 }
 @end

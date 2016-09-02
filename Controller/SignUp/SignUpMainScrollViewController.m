@@ -22,30 +22,11 @@
     
     //[[IQKeyboardManager sharedManager] setEnable:NO];
 
+    [_birthdayTextField setDropDownMode : IQDropDownModeDatePicker];
 
-//    [_birthdayTextField setDropDownMode : IQDropDownModeDatePicker];
-//    
-//    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-//    [formatter setDateFormat:@"YYYYMMdd"];
-//    [_birthdayTextField setDateFormatter:formatter];
-    
-    
-//    birthdayPicker = [[UIDatePicker alloc]init];
-//    birthdayPicker.datePickerMode = UIDatePickerModeDate;
-//    [_birthdayTextField setInputView:birthdayPicker];
-//    
-//    UIToolbar *toolBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 44)];
-//    UIBarButtonItem *doneBtn =  [[UIBarButtonItem alloc]initWithTitle:@"done" style:UIBarButtonItemStyleDone target:self action:@selector(selectedDate)];
-//    [toolBar setItems:[NSArray arrayWithObjects:doneBtn, nil]];
-    // Do any additional setup after loading the view.
-    
-}
-
-- (void)selectedDate {
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-    [formatter setDateFormat:@"YYYYMMdd"];
-    _birthdayTextField.text = [NSString stringWithFormat:@"%@", [formatter stringFromDate:birthdayPicker.date]];
-    [_birthdayTextField resignFirstResponder];
+    [formatter setDateFormat:@"YYYY.MM.dd"];
+    [_birthdayTextField setDateFormatter:formatter];
 }
 
 - (void)didReceiveMemoryWarning {

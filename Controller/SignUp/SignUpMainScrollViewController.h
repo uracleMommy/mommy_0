@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IQDropDownTextField.h"
 
-@interface SignUpMainScrollViewController : UIViewController <UITextFieldDelegate> {
+@interface SignUpMainScrollViewController : UIViewController <UITextFieldDelegate, IQDropDownTextFieldDelegate> {
     int t_count;
     NSTimer *confirmNumberTimer;
     UIDatePicker *birthdayPicker;
@@ -23,6 +24,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *confirmPasswordTextField;
 @property (weak, nonatomic) IBOutlet UILabel *idValidationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *passwordValidationLabel;
-@property (weak, nonatomic) IBOutlet UITextField *birthdayTextField;
+@property (weak, nonatomic) IBOutlet IQDropDownTextField *birthdayTextField;
 
 @end

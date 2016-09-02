@@ -23,18 +23,17 @@
     
     [[IQKeyboardManager sharedManager] setToolbarManageBehaviour:IQAutoToolbarByPosition];
     
-    
-    //close Button Setting
+    [self.navigationItem setHidesBackButton:YES];
+
+    //back Button Setting
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *backBtnImage = [UIImage imageNamed:@"title_icon_close.png"];
-    [backBtn setBackgroundImage:backBtnImage forState:UIControlStateNormal];
-//    [backBtn addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
     backBtn.frame = CGRectMake(0, 0, 40, 40);
-    UIView *backButtonView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-    backButtonView.bounds = CGRectOffset(backButtonView.bounds, -15, 0);
-    [backButtonView addSubview:backBtn];
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:backButtonView];
-    //self.navigationItem.rightBarButtonItem = backButton;
+    [backBtn setImage:backBtnImage forState:UIControlStateNormal];
+    [backBtn addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
+    [backBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+    self.navigationItem.rightBarButtonItem = backButton;
     
     //id field Setting
     UIImage *idFieldImage = [UIImage imageNamed:@"login_id.png"];
@@ -71,6 +70,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)goBack {
+    NSLog(@"PSH goBack");
+    //임시로 계정 잠금 화면으로 이동
+    [self performSegueWithIdentifier:@"moveLoginUnlockAccount" sender:self];
+}
+
 -(IBAction)clickAutoLoginButton:(id)sender {
     UIImage *autoLoginOffImage = [UIImage imageNamed:@"login_checkbox_off.png"];
     UIImage *autoLoginOnImage = [UIImage imageNamed:@"login_checkbox_on.png"];
@@ -90,9 +95,12 @@
     }
 }
 
-- (IBAction)closeView:(id)sender {
+- (IBAction)loginButtonAction:(id)sender {
+    //TEMP 대쉬보드 이동
+    UIStoryboard *dashBoardStoryboard = [UIStoryboard storyboardWithName:@"DashBoard" bundle:nil];
+    UINavigationController *dashBoardNavigationController = (UINavigationController *)[dashBoardStoryboard instantiateViewControllerWithIdentifier:@"DashBoardNavigation"];
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self presentViewController:dashBoardNavigationController animated:YES completion:nil];
 }
 
 

@@ -21,11 +21,12 @@
     
     [super viewDidLoad];
     
+    
+    [self.navigationItem setHidesBackButton:YES];
+    
     [_fetusInfoTableView setDelegate:_fetusInfoTableDelegate];
     [_fetusInfoTableView setDataSource:_fetusInfoTableDelegate];
-    
     _fetusInfoTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
     [_fetusInfoTableView reloadData];
     
     // Do any additional setup after loading the view.
@@ -73,4 +74,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)saveButtonAction:(id)sender {
+    NSLog(@"PSH save");
+    //TEMP 임시 다이어리 이동
+    //TEMP 대쉬보드 이동
+    UIStoryboard *diaryStoryboard = [UIStoryboard storyboardWithName:@"Diary" bundle:nil];
+    UINavigationController *diaryNavigationController = (UINavigationController *)[diaryStoryboard instantiateViewControllerWithIdentifier:@"DiaryNavigation"];
+    
+    [self presentViewController:diaryNavigationController animated:YES completion:nil];
+}
 @end

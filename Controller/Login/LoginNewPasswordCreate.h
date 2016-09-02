@@ -14,4 +14,5 @@
 @property (weak, nonatomic) IBOutlet UITextField *confirmPasswordTextField;
 @property (weak, nonatomic) IBOutlet UILabel *passwordValidationLabel;
 
+- (IBAction)savePasswordButtonAction:(id)sender;
 @end
