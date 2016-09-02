@@ -10,9 +10,8 @@
 
 @interface DiaryWriteBasicController : UIViewController <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *contentsTextView;
-
+@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (strong, nonatomic) UILabel *placeholderLabel;
-
 @property (weak, nonatomic) IBOutlet UIButton *imageButton01;
 @property (weak, nonatomic) IBOutlet UIButton *imageButton02;
 @property (weak, nonatomic) IBOutlet UIButton *imageButton03;

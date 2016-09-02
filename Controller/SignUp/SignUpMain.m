@@ -8,9 +8,6 @@
 
 #import "SignUpMain.h"
 #import "IQKeyboardManager.h"
-//#import "IQKeyboardReturnKeyHandler.h"
-//
-//#import "IQUIView+IQKeyboardToolbar.h"
 
 @interface SignUpMain ()
 
@@ -23,6 +20,16 @@
     // Do any additional setup after loading the view.
     
     //[[IQKeyboardManager sharedManager] setEnable:YES];
+    
+    //back Button Setting
+    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *backBtnImage = [UIImage imageNamed:@"title_icon_close.png"];
+    backBtn.frame = CGRectMake(0, 0, 40, 40);
+    [backBtn setImage:backBtnImage forState:UIControlStateNormal];
+    [backBtn addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
+    [backBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+    self.navigationItem.rightBarButtonItem = backButton;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,5 +58,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void) goBack{
+    NSLog(@"PSH goBack");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

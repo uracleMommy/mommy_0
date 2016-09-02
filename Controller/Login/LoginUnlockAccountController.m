@@ -18,6 +18,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     t_count = 0;
+    
+    [self.navigationItem setHidesBackButton:YES];
+    
+    //back Button Setting
+    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *backBtnImage = [UIImage imageNamed:@"title_icon_back.png"];
+    backBtn.frame = CGRectMake(0, 0, 40, 40);
+    [backBtn setImage:backBtnImage forState:UIControlStateNormal];
+    [backBtn addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
+    [backBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+    self.navigationItem.leftBarButtonItem = backButton;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,6 +46,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+-(void)goBack{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 - (IBAction)getConfirmNumberAction:(id)sender {
     if(![confirmNumberTimer isValid]){

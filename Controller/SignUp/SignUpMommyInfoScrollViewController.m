@@ -20,10 +20,42 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _mommyImageButton.layer.cornerRadius = 20;//half of the width
+    _mommyImageButton.layer.cornerRadius = 50;//half of the width
     _mommyImageButton.layer.masksToBounds = YES;
     _defaultImage = [UIImage imageNamed:@"join_profile_photo.png"];
     [_mommyImageButton setImage:_defaultImage forState:UIControlStateNormal];
+    
+    
+    [_dueDateTextField setDropDownMode : IQDropDownModeDatePicker];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"YYYY.MM.dd"];
+    [_dueDateTextField setDateFormatter:formatter];
+    
+    [_fetusCountTextField setDropDownMode : IQDropDownModeTextPicker];
+    [_fetusCountTextField setItemList:@[@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9"]];
+   
+//    [_dueDateTextField setDropDownMode : IQDropDownModeTextPicker];
+//    [_dueDateTextField setItemList:@[@"Zero Line Of Code",
+//                                     @"No More UIScrollView",
+//                                     @"No More Subclasses",
+//                                     @"No More Manual Work",
+//                                     @"No More #imports",
+//                                     @"Device Orientation support",
+//                                     @"UITextField Category for Keyboard",
+//                                     @"Enable/Desable Keyboard Manager",
+//                                     @"Customize InputView support",
+//                                     @"IQTextView for placeholder support",
+//                                     @"Automanage keyboard toolbar",
+//                                     @"Can set keyboard and textFiled distance",
+//                                     @"Can resign on touching outside",
+//                                     @"Auto adjust textView's height ",
+//                                     @"Adopt tintColor from textField",
+//                                     @"Customize keyboardAppearance",
+//                                     @"play sound on next/prev/done"]];
+
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -107,7 +139,12 @@
     [imagePicker dismissViewControllerAnimated:YES completion:nil];
     [imagePickerController dismissViewControllerAnimated:YES completion:nil];
     
-    [self presentViewController:controller animated:YES completion:nil];
+    //TEMP pickerview navigation 처리 전 주석
+//    [self presentViewController:controller animated:YES completion:nil];
+    
+    [_mommyImageButton setImage:_image forState:UIControlStateNormal];
+    [_mommyImageButton.imageView setContentMode:UIViewContentModeScaleAspectFill];
+
     
 }
 

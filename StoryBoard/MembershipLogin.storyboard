@@ -68,7 +68,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="uBg-MK-Mrd" kind="push" id="s8Y-cU-m09"/>
+                                            <action selector="loginButtonAction:" destination="avC-lf-CXr" eventType="touchUpInside" id="DmL-QM-Zc0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDf-x3-qez">
@@ -194,17 +194,12 @@
                             <constraint firstItem="8yU-z3-VZY" firstAttribute="leading" secondItem="s2X-qK-xvF" secondAttribute="leading" id="okr-Mk-qK9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="로그인" id="Q2i-vH-j8G">
-                        <barButtonItem key="rightBarButtonItem" title="닫기" id="5rx-kw-Hqs">
-                            <connections>
-                                <action selector="closeView:" destination="avC-lf-CXr" id="Uah-52-1UQ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="로그인" id="Q2i-vH-j8G"/>
                     <connections>
                         <outlet property="autoLoginImage" destination="BmV-3t-I7P" id="xL0-qd-CVO"/>
                         <outlet property="idTextField" destination="kD9-Rl-7Ze" id="KBb-1h-rS9"/>
                         <outlet property="pwTextField" destination="oUw-1O-ev7" id="bbn-OR-MyJ"/>
+                        <segue destination="uBg-MK-Mrd" kind="push" identifier="moveLoginUnlockAccount" id="3eW-lG-fLw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ivS-Zf-cUN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -286,6 +281,9 @@
                                         <state key="normal" title="저장">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="savePasswordButtonAction:" destination="uV1-GJ-pXh" eventType="touchUpInside" id="app-NW-JDm"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새로운 비밀번호를 입력해 주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="Jco-gZ-w2U">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
@@ -480,7 +478,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDl-ia-Fuy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1232" y="531"/>
+            <point key="canvasLocation" x="604" y="1305"/>
         </scene>
     </scenes>
     <resources>

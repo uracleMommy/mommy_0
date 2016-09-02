@@ -1,0 +1,15 @@
+//
+//  DiaryDetailScheduleController.h
+//  co.medisolution
+//
+//  Created by uracle on 2016. 9. 2..
+//  Copyright © 2016년 medisolution. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface DiaryDetailScheduleController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
+
+@end
