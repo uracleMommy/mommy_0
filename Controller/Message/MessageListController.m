@@ -19,6 +19,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+
+    
     // 편집모드
     _messageListModel = NormalMode;
     

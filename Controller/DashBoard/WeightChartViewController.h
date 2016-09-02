@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "DZNSegmentedControl.h"
+#import "WeightChartModel.h"
 
-@interface WeightChartViewController : UIViewController
+@interface WeightChartViewController : UIViewController<DZNSegmentedControlDelegate>
 
 @property (weak, nonatomic) IBOutlet DZNSegmentedControl *dayWeekTypeSegment;
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (strong, nonatomic) WeightChartModel *weightChartModel;
 
 @end

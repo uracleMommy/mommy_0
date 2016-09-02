@@ -28,7 +28,7 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="RgS-Lv-ov4" kind="relationship" relationship="rootViewController" id="YF0-Ho-Hfs"/>
+                        <segue destination="RgS-Lv-ov4" kind="relationship" relationship="rootViewController" id="ctX-dM-tEB"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OaF-4S-VBm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -72,6 +72,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="dvX-u5-gyg" id="6he-lv-1HE"/>
                         <segue destination="c8R-dW-6fv" kind="push" identifier="goMessageDetail" id="wSp-B4-KwN"/>

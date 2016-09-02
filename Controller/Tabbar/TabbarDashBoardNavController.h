@@ -10,4 +10,6 @@
 
 @interface TabbarDashBoardNavController : UINavigationController
 
+@property (strong, nonatomic) UIViewController *rootViewController;
+
 @end

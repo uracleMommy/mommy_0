@@ -10,4 +10,12 @@
 
 @interface MainTabbarController : UITabBarController
 
+@property (strong, nonatomic) UIViewController *firstTabViewController;
+
+@property (strong, nonatomic) UIViewController *secondTabViewController;
+
+@property (strong, nonatomic) UIViewController *thirdTabViewController;
+
+@property (strong, nonatomic) UIViewController *fourthTabViewController;
+
 @end

@@ -14,7 +14,6 @@
 #import "MultiImageViewController.h"
 #import "PageImageViewController.h"
 
-
 @interface DashBoardController ()<OTPageScrollViewDataSource,OTPageScrollViewDelegate>
 
 @end
@@ -26,7 +25,7 @@
     // Do any additional setup after loading the view.
     
     self.tabBarController.tabBar.translucent = NO;
-    //self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.translucent = NO;
     
     CGRect containerFrame = _pageViewContainer.frame;
     OTPageView *PScrollView = [[OTPageView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, containerFrame.size.height)];
@@ -50,6 +49,10 @@
     _scrollViewArray = [NSArray arrayWithObjects:view1, view2, view3, nil];
     
     [PScrollView.pageScrollView reloadData];
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBar.translucent = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -91,13 +94,15 @@
     
     // MessageNaivgation 
     UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
-    UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"MessageNaivgation"];
+    UIViewController *messageNavigationController = (UIViewController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"MessageNaivgation"];
     
-    UIViewController *messageController = (UIViewController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"Message"];
-    UINavigationController *rootNavi = [[UINavigationController alloc] initWithRootViewController:messageController];
+//    UIViewController *messageController = (UIViewController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"MessageNaivgation"];
+//    UINavigationController *rootNavi = [[UINavigationController alloc] initWithRootViewController:messageController];
+    
+    messageNavigationController.modalPresentationStyle = UIModalPresentationFormSheet;
     
     
-    NSLog(@" 뷰 갯수 : %lu", (unsigned long)messageNavigationController.viewControllers.count);
+//    NSLog(@" 뷰 갯수 : %lu", (unsigned long)messageNavigationController.viewControllers.count);
     
     [self presentViewController:messageNavigationController animated:YES completion:nil];
     
@@ -132,15 +137,22 @@
 - (IBAction)NoticeView:(id)sender {
     
     UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"PushNotice" bundle:nil];
-    UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"PushListNavigation"];
+    UIViewController *messageNavigationController = (UIViewController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"PushListNavigation"];
+
     
-//    UIViewController *messageController = (UIViewController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"Message"];
-//    UINavigationController *rootNavi = [[UINavigationController alloc] initWithRootViewController:messageController];
+    messageNavigationController.modalPresentationStyle = UIModalPresentationFormSheet;
     
-    
-    NSLog(@" 뷰 갯수 : %lu", (unsigned long)messageNavigationController.viewControllers.count);
+//    NSLog(@" 뷰 갯수 : %lu", (unsigned long)messageNavigationController.viewControllers.count);
     
     [self presentViewController:messageNavigationController animated:YES completion:nil];
+}
+
+- (IBAction)MessageModal:(id)sender {
+    
+    if ([self.delegate respondsToSelector:@selector(presentMessage)]) {
+        
+        [self.delegate presentMessage];
+    }
 }
 
 @end

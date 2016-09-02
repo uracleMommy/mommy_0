@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface WeightChartModel : NSObject
+@interface WeightChartModel : NSObject<UITableViewDelegate, UITableViewDataSource>
+
+@property (strong, nonatomic) NSArray *arrayList;
 
 @end

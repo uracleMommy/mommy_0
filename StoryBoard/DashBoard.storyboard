@@ -22,8 +22,11 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_img_01" translatesAutoresizingMaskIntoConstraints="NO" id="Ho8-af-Jk8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_img_01" translatesAutoresizingMaskIntoConstraints="NO" id="Ho8-af-Jk8">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="Miw-yg-Cbi"/>
+                                </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MCb-lL-2NI">
                                 <rect key="frame" x="0.0" y="390" width="320" height="65"/>
@@ -33,7 +36,7 @@
                                 <rect key="frame" x="144" y="153" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="GwF-kI-Oep" kind="modal" id="Mk3-bO-gxU"/>
+                                    <segue destination="GwF-kI-Oep" kind="push" id="Mk3-bO-gxU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Fh-gD-vmF">
@@ -71,7 +74,26 @@
                                     <segue destination="GFT-SH-6XH" kind="modal" id="WlM-tR-g57"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGz-gG-eAb">
+                                <rect key="frame" x="226" y="280" width="65" height="30"/>
+                                <state key="normal" title="메시지모달"/>
+                                <connections>
+                                    <action selector="MessageModal:" destination="qcd-kp-tux" eventType="touchUpInside" id="cR4-t0-zNK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8y-wO-OvI">
+                                <rect key="frame" x="226" y="251" width="65" height="30"/>
+                                <state key="normal" title="체중"/>
+                                <connections>
+                                    <segue destination="2V9-q2-tdq" kind="modal" id="MZZ-4A-6WO"/>
+                                </connections>
+                            </button>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ho8-af-Jk8" secondAttribute="trailing" id="2FP-Lv-g2c"/>
+                            <constraint firstItem="Ho8-af-Jk8" firstAttribute="top" secondItem="zQh-xI-Xue" secondAttribute="bottom" id="FQb-b5-eAu"/>
+                            <constraint firstItem="Ho8-af-Jk8" firstAttribute="leading" secondItem="lhh-2C-1mv" secondAttribute="leading" id="G9l-KD-UM7"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Mommy&amp;" id="vl1-Zn-XfR"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
@@ -133,7 +155,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Pkq-LV-u9k"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DAb-vE-WFr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="biC-Ty-jRY">
@@ -212,7 +234,7 @@
                                     <constraint firstAttribute="height" constant="44" id="zRr-Ox-3sb"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eFE-CN-IWh">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eFE-CN-IWh">
                                 <rect key="frame" x="0.0" y="108" width="320" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -231,6 +253,7 @@
                     <navigationItem key="navigationItem" title="체중" id="WUF-KA-wp2"/>
                     <connections>
                         <outlet property="dayWeekTypeSegment" destination="t0R-Gy-ts6" id="rno-fp-RIz"/>
+                        <outlet property="tableView" destination="eFE-CN-IWh" id="97Z-Cc-0fd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ge-7M-Aq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
