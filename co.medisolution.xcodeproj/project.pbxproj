@@ -13,6 +13,14 @@
 		2A309AD01D79634E001C54C5 /* HFColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A309AC81D79634E001C54C5 /* HFColorPickerView.m */; };
 		2A309AD11D79634E001C54C5 /* UIColor+HexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A309ACA1D79634E001C54C5 /* UIColor+HexColors.m */; };
 		2A309AD21D79634E001C54C5 /* IQDropDownTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A309ACD1D79634E001C54C5 /* IQDropDownTextField.m */; };
+		2A309ADF1D7972BB001C54C5 /* WeightChartViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A309AD41D7972BB001C54C5 /* WeightChartViewCell.m */; };
+		2A309AE01D7972BB001C54C5 /* WeightChartViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A309AD51D7972BB001C54C5 /* WeightChartViewCell.xib */; };
+		2A309AE11D7972BB001C54C5 /* WeightDetailInfoContentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A309AD71D7972BB001C54C5 /* WeightDetailInfoContentsCell.m */; };
+		2A309AE21D7972BB001C54C5 /* WeightDetailInfoContentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A309AD81D7972BB001C54C5 /* WeightDetailInfoContentsCell.xib */; };
+		2A309AE31D7972BB001C54C5 /* WeightDetailInfoFooterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A309ADA1D7972BB001C54C5 /* WeightDetailInfoFooterCell.m */; };
+		2A309AE41D7972BB001C54C5 /* WeightDetailInfoFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A309ADB1D7972BB001C54C5 /* WeightDetailInfoFooterCell.xib */; };
+		2A309AE51D7972BB001C54C5 /* WeightDetailInfoHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A309ADD1D7972BB001C54C5 /* WeightDetailInfoHeaderCell.m */; };
+		2A309AE61D7972BB001C54C5 /* WeightDetailInfoHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A309ADE1D7972BB001C54C5 /* WeightDetailInfoHeaderCell.xib */; };
 		2A371A4B1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A371A491D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.m */; };
 		2A371A4C1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A371A4A1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.xib */; };
 		2A371A501D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A371A4E1D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.m */; };
@@ -145,6 +153,18 @@
 		2A309ACA1D79634E001C54C5 /* UIColor+HexColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexColors.m"; sourceTree = "<group>"; };
 		2A309ACC1D79634E001C54C5 /* IQDropDownTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQDropDownTextField.h; sourceTree = "<group>"; };
 		2A309ACD1D79634E001C54C5 /* IQDropDownTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQDropDownTextField.m; sourceTree = "<group>"; };
+		2A309AD31D7972BB001C54C5 /* WeightChartViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightChartViewCell.h; sourceTree = "<group>"; };
+		2A309AD41D7972BB001C54C5 /* WeightChartViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightChartViewCell.m; sourceTree = "<group>"; };
+		2A309AD51D7972BB001C54C5 /* WeightChartViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeightChartViewCell.xib; sourceTree = "<group>"; };
+		2A309AD61D7972BB001C54C5 /* WeightDetailInfoContentsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightDetailInfoContentsCell.h; sourceTree = "<group>"; };
+		2A309AD71D7972BB001C54C5 /* WeightDetailInfoContentsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightDetailInfoContentsCell.m; sourceTree = "<group>"; };
+		2A309AD81D7972BB001C54C5 /* WeightDetailInfoContentsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeightDetailInfoContentsCell.xib; sourceTree = "<group>"; };
+		2A309AD91D7972BB001C54C5 /* WeightDetailInfoFooterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightDetailInfoFooterCell.h; sourceTree = "<group>"; };
+		2A309ADA1D7972BB001C54C5 /* WeightDetailInfoFooterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightDetailInfoFooterCell.m; sourceTree = "<group>"; };
+		2A309ADB1D7972BB001C54C5 /* WeightDetailInfoFooterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeightDetailInfoFooterCell.xib; sourceTree = "<group>"; };
+		2A309ADC1D7972BB001C54C5 /* WeightDetailInfoHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightDetailInfoHeaderCell.h; sourceTree = "<group>"; };
+		2A309ADD1D7972BB001C54C5 /* WeightDetailInfoHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightDetailInfoHeaderCell.m; sourceTree = "<group>"; };
+		2A309ADE1D7972BB001C54C5 /* WeightDetailInfoHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeightDetailInfoHeaderCell.xib; sourceTree = "<group>"; };
 		2A371A481D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpFetusInfoCustomCell_Basic.h; sourceTree = "<group>"; };
 		2A371A491D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpFetusInfoCustomCell_Basic.m; sourceTree = "<group>"; };
 		2A371A4A1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpFetusInfoCustomCell_Basic.xib; sourceTree = "<group>"; };
@@ -847,6 +867,18 @@
 		DC5D20871D62B05C00ACDCA4 /* DashBoard */ = {
 			isa = PBXGroup;
 			children = (
+				2A309AD31D7972BB001C54C5 /* WeightChartViewCell.h */,
+				2A309AD41D7972BB001C54C5 /* WeightChartViewCell.m */,
+				2A309AD51D7972BB001C54C5 /* WeightChartViewCell.xib */,
+				2A309AD61D7972BB001C54C5 /* WeightDetailInfoContentsCell.h */,
+				2A309AD71D7972BB001C54C5 /* WeightDetailInfoContentsCell.m */,
+				2A309AD81D7972BB001C54C5 /* WeightDetailInfoContentsCell.xib */,
+				2A309AD91D7972BB001C54C5 /* WeightDetailInfoFooterCell.h */,
+				2A309ADA1D7972BB001C54C5 /* WeightDetailInfoFooterCell.m */,
+				2A309ADB1D7972BB001C54C5 /* WeightDetailInfoFooterCell.xib */,
+				2A309ADC1D7972BB001C54C5 /* WeightDetailInfoHeaderCell.h */,
+				2A309ADD1D7972BB001C54C5 /* WeightDetailInfoHeaderCell.m */,
+				2A309ADE1D7972BB001C54C5 /* WeightDetailInfoHeaderCell.xib */,
 				DC5D20921D62E01300ACDCA4 /* DashBoardScrollCellView.h */,
 				DC5D20931D62E01300ACDCA4 /* DashBoardScrollCellView.m */,
 				DC5D20941D62E01300ACDCA4 /* DashBoardScrollCellView.xib */,
@@ -1057,6 +1089,7 @@
 			files = (
 				DCF6CABF1D74430300703CAE /* PushViewListCell.xib in Resources */,
 				2AE11DE91D657DE4003C6690 /* DiaryListImageCustomCell.xib in Resources */,
+				2A309AE61D7972BB001C54C5 /* WeightDetailInfoHeaderCell.xib in Resources */,
 				2AE11DE41D654C4E003C6690 /* DiaryListBasicCustomCell.xib in Resources */,
 				DC6070981D7030CF00F60148 /* SingleImageViewController.xib in Resources */,
 				DC5D20961D62E01300ACDCA4 /* DashBoardScrollCellView.xib in Resources */,
@@ -1064,6 +1097,7 @@
 				DCF6CA911D740D0A00703CAE /* PageImageViewController.xib in Resources */,
 				DCF6CA9B1D740DED00703CAE /* ChildPageImageViewController.xib in Resources */,
 				DC3AAED31D75A11C007218E9 /* WeekProgramCell.xib in Resources */,
+				2A309AE41D7972BB001C54C5 /* WeightDetailInfoFooterCell.xib in Resources */,
 				2A54B1C81D66E4E600C538D1 /* Assets.xcassets in Resources */,
 				2AB97A281D5AAFDA0063EB5E /* MembershipSignUp.storyboard in Resources */,
 				DCF6CAC11D7443E200703CAE /* PushNotice.storyboard in Resources */,
@@ -1075,11 +1109,13 @@
 				DC723C2A1D63FE2200557E1E /* MainTabBar.storyboard in Resources */,
 				DC3AAEC51D757D4A007218E9 /* SampleMainController.xib in Resources */,
 				2AA6D6C21D64230A00316DD6 /* Diary.storyboard in Resources */,
+				2A309AE21D7972BB001C54C5 /* WeightDetailInfoContentsCell.xib in Resources */,
 				DC60709D1D7030E700F60148 /* MultiImageViewController.xib in Resources */,
 				DC512ACC1D669BF900885C26 /* MessageListCell.xib in Resources */,
 				DCA5AE2F1D598C6F0075B7AD /* Main.storyboard in Resources */,
 				DC512AC01D6694D100885C26 /* Message.storyboard in Resources */,
 				2A371A511D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.xib in Resources */,
+				2A309AE01D7972BB001C54C5 /* WeightChartViewCell.xib in Resources */,
 				DC3ACE161D5D853C00D68F80 /* DashBoard.storyboard in Resources */,
 				DC538ECF1D781C3600E5949B /* IQKeyboardManager.bundle in Resources */,
 			);
@@ -1146,6 +1182,7 @@
 				2AB627761D5C0CEC00BD7B84 /* LoginMain.m in Sources */,
 				DC538E651D78016B00E5949B /* WeightChartModel.m in Sources */,
 				DC1FE6E51D658E47006F7A50 /* TabbarDashBoardNavController.m in Sources */,
+				2A309AE11D7972BB001C54C5 /* WeightDetailInfoContentsCell.m in Sources */,
 				DCF6CAAC1D742B4000703CAE /* JTSSimpleImageDownloader.m in Sources */,
 				DC538EC31D781C3600E5949B /* IQUITextFieldView+Additions.m in Sources */,
 				2A371A501D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.m in Sources */,
@@ -1154,6 +1191,7 @@
 				DC512ACF1D66A83400885C26 /* MessageListCell.m in Sources */,
 				DC60708D1D6FC85000F60148 /* MessageDetailController.m in Sources */,
 				2AE11DF01D6581D9003C6690 /* DiaryListModel.m in Sources */,
+				2A309AE51D7972BB001C54C5 /* WeightDetailInfoHeaderCell.m in Sources */,
 				2A309ACE1D79634E001C54C5 /* ColorPickerTextField.m in Sources */,
 				2AB3DD991D6BDB7C00512949 /* SignUpMommyInfoController.m in Sources */,
 				2A54B1BA1D66904000C538D1 /* JTHorizontalCalendarView.m in Sources */,
@@ -1169,6 +1207,7 @@
 				2A54B1B41D66904000C538D1 /* JTCalendarScrollManager.m in Sources */,
 				DCF6CAA91D742B4000703CAE /* JTSAnimatedGIFUtility.m in Sources */,
 				2A54B1B91D66904000C538D1 /* JTCalendarWeekView.m in Sources */,
+				2A309AE31D7972BB001C54C5 /* WeightDetailInfoFooterCell.m in Sources */,
 				2A54B1B31D66904000C538D1 /* JTCalendarDelegateManager.m in Sources */,
 				2AA6D6CA1D64356000316DD6 /* DiaryWriteBasicController.m in Sources */,
 				DC538ECB1D781C3600E5949B /* IQPreviousNextView.m in Sources */,
@@ -1178,6 +1217,7 @@
 				2A54B1B61D66904000C538D1 /* JTCalendarMenuView.m in Sources */,
 				DC1FE6F61D65C83C006F7A50 /* DZNSegmentedControl.m in Sources */,
 				DC512AC61D66989000885C26 /* MessageListModel.m in Sources */,
+				2A309ADF1D7972BB001C54C5 /* WeightChartViewCell.m in Sources */,
 				DC5D20841D62AFA100ACDCA4 /* OTPageCell.m in Sources */,
 				2AE11DE81D657DE4003C6690 /* DiaryListImageCustomCell.m in Sources */,
 				2AE11DF31D6583BC003C6690 /* DiaryListController.m in Sources */,
