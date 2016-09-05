@@ -27,6 +27,8 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
     [formatter setDateFormat:@"YYYY.MM.dd"];
     [_birthdayTextField setDateFormatter:formatter];
+    [_birthdayTextField setMaximumDate:[NSDate date]];
+    
 }
 
 - (void)didReceiveMemoryWarning {

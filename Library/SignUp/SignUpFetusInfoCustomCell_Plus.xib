@@ -64,6 +64,7 @@
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
+                <outlet property="maxCountLabel" destination="QUc-Gg-IUp" id="xpH-2L-WIB"/>
                 <outlet property="plusButton" destination="xJK-Tn-8ij" id="qr2-CZ-JTK"/>
             </connections>
             <point key="canvasLocation" x="251" y="257.5"/>

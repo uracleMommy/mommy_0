@@ -73,6 +73,14 @@
     newItem.leftBarButtonItem = saveButton;
     
     [_navigationBar setItems:@[newItem]];
+    
+    [_dateButton setDropDownMode:IQDropDownModeDatePicker];
+    [_dateButton setInputTextFlag:YES];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"YYYY년 MM월 dd일 EEEE"];
+    [_dateButton setDateFormatter:formatter];
+    [_dateButton setDelegate:self];
 
 }
 
@@ -82,6 +90,11 @@
 
 - (void)saveDiary{
     
+}
+
+-(void)textField:(IQDropDownTextField*)textField didSelectItem:(NSString*)item{
+    NSLog(@"selected : %@", item);
+    _dateLabel.text = item;
 }
 
 - (void)didReceiveMemoryWarning {

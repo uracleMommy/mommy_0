@@ -94,6 +94,13 @@ typedef NS_ENUM(NSInteger, IQDropDownMode) {
  */
 @property (nonatomic, assign) IQDropDownMode dropDownMode;
 
+/**
+ @property   inputTextFlag
+ 
+ @abstract   not setting text when selected datePicker and timePicker
+ */
+@property (nonatomic, assign) Boolean inputTextFlag;
+
 
 
 /*******************************************/

@@ -145,7 +145,7 @@
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6b1-Ac-AlX">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
-                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -644,7 +644,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xET-fk-U4Z">
                                         <rect key="frame" x="10" y="165" width="300" height="39"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="idTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="입력" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wIN-es-mL6" customClass="notPasteField">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="idTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wIN-es-mL6" customClass="notPasteField">
                                                 <rect key="frame" x="53" y="5" width="242" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="sd1-zg-TZF"/>
@@ -696,7 +696,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FfM-mS-3VP">
                                         <rect key="frame" x="10" y="238" width="300" height="192"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="입력" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kEL-8F-xgV" customClass="IQDropDownTextField">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kEL-8F-xgV" customClass="IQDropDownTextField">
                                                 <rect key="frame" x="78" y="43" width="217" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="IDU-bG-XfY"/>
@@ -704,7 +704,7 @@
                                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="입력" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SWA-nk-HKa" customClass="IQDropDownTextField">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SWA-nk-HKa">
                                                 <rect key="frame" x="53" y="5" width="242" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="N6v-rt-QLp"/>
@@ -732,14 +732,6 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="156.8" placeholder="입력" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KFM-h1-lYy" customClass="IQDropDownTextField">
-                                                <rect key="frame" x="28" y="119" width="246" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="N4t-6g-Cmf"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
-                                            </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUo-2T-oqj">
                                                 <rect key="frame" x="0.0" y="152" width="300" height="2"/>
                                                 <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -750,14 +742,6 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2" placeholder="입력" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="40d-mc-xrS" customClass="IQDropDownTextField">
-                                                <rect key="frame" x="40" y="157" width="241" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="hnH-vG-sdn"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                            </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="출산예정일" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k92-RI-Cn6">
                                                 <rect key="frame" x="10" y="43" width="63" height="30"/>
                                                 <constraints>
@@ -788,7 +772,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G1h-Is-X7P">
                                                 <rect key="frame" x="150" y="78" width="150" height="36"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ㅇㄹㅇㄹ" placeholder="입력" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dbO-Pj-a6C" customClass="IQDropDownTextField">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dbO-Pj-a6C">
                                                         <rect key="frame" x="57" y="3" width="69" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="33Q-jN-Npy"/>
@@ -851,7 +835,7 @@
                                                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="45.0" placeholder="입력" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LCZ-9q-iqp" customClass="IQDropDownTextField">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LCZ-9q-iqp">
                                                         <rect key="frame" x="81" y="3" width="50" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="wGF-Rf-roA"/>
@@ -914,6 +898,22 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="40d-mc-xrS" customClass="IQDropDownTextField">
+                                                <rect key="frame" x="40" y="157" width="241" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="hnH-vG-sdn"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KFM-h1-lYy">
+                                                <rect key="frame" x="28" y="119" width="246" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="N4t-6g-Cmf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -1007,12 +1007,15 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="470"/>
                     <connections>
-                        <outlet property="beforeWeightTextField" destination="LCZ-9q-iqp" id="Efm-mU-Dxa"/>
-                        <outlet property="dueDateTextField" destination="kEL-8F-xgV" id="N9y-4y-g8O"/>
+                        <outlet property="addressTextField" destination="SWA-nk-HKa" id="hUD-qh-pI8"/>
+                        <outlet property="beforeWeightTextField" destination="LCZ-9q-iqp" id="Qdg-wU-6jW"/>
+                        <outlet property="dueDateTextField" destination="kEL-8F-xgV" id="rT2-Rd-nrb"/>
                         <outlet property="fetusCountTextField" destination="40d-mc-xrS" id="hwb-HH-fyE"/>
+                        <outlet property="heightTextField" destination="KFM-h1-lYy" id="cbd-qi-94Y"/>
                         <outlet property="mommyImageButton" destination="549-6v-POq" id="fSk-3i-NLp"/>
                         <outlet property="mommyNameTextField" destination="wIN-es-mL6" id="L1S-Ng-PcJ"/>
                         <outlet property="mommyNameValidationLabel" destination="Du0-Ga-CVj" id="jQj-sk-Evd"/>
+                        <outlet property="nowWeightTextField" destination="dbO-Pj-a6C" id="SmG-0a-fla"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XEq-ps-hsp" userLabel="First Responder" sceneMemberID="firstResponder"/>

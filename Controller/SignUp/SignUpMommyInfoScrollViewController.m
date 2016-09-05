@@ -26,41 +26,213 @@
     [_mommyImageButton setImage:_defaultImage forState:UIControlStateNormal];
     
     
-    [_dueDateTextField setDropDownMode : IQDropDownModeDatePicker];
+    pickerData_0 = [[NSMutableArray alloc]initWithArray:@[@"Select", @"서울시", @"경기도"]];
+    pickerData_1 = [[NSMutableArray alloc]initWithArray:@[@"Select"]];
+    pickerData_2 = [[NSMutableArray alloc]initWithArray:@[@"Select"]];
     
+    pickerData_number_point = [[NSMutableArray alloc]init]; //소수점 1자리
+    pickerData_number_weight = [[NSMutableArray alloc]initWithArray:@[@"Select"]]; //체중
+    pickerData_number_height = [[NSMutableArray alloc]initWithArray:@[@"Select"]]; //키
+    pickerData_number_fetus = [[NSMutableArray alloc]init]; //태아 정보
+    
+    for(int i = 0 ; i < 1000 ; i++){
+        if(i < 10){
+            [pickerData_number_point addObject: [NSString stringWithFormat:@".%d", i]];
+            [pickerData_number_fetus addObject: [NSString stringWithFormat:@"%d", i]];
+        }else if( i > 10 && i < 100){
+            [pickerData_number_weight addObject: [NSString stringWithFormat:@"%d", i]];
+        }else if( i > 100 && i < 500){
+            [pickerData_number_height addObject: [NSString stringWithFormat:@"%d", i]];
+        }
+    }
+    
+    
+    beforeWeightPicker = [[UIPickerView alloc] init];
+    beforeWeightPicker.dataSource = self;
+    beforeWeightPicker.delegate = self;
+    [_beforeWeightTextField setInputView:beforeWeightPicker];
+    
+    nowWeightPicker = [[UIPickerView alloc] init];
+    nowWeightPicker.dataSource = self;
+    nowWeightPicker.delegate = self;
+    [_nowWeightTextField setInputView:nowWeightPicker];
+    
+    heightPicker = [[UIPickerView alloc] init];
+    heightPicker.dataSource = self;
+    heightPicker.delegate = self;
+    [_heightTextField setInputView:heightPicker];
+    
+    addressPicker = [[UIPickerView alloc] init];
+    addressPicker.dataSource = self;
+    addressPicker.delegate = self;
+    [_addressTextField setInputView:addressPicker];
+    
+    
+    [_dueDateTextField setDropDownMode : IQDropDownModeDatePicker];
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
     [formatter setDateFormat:@"YYYY.MM.dd"];
     [_dueDateTextField setDateFormatter:formatter];
+    [_dueDateTextField setMinimumDate:[NSDate date]];
     
     [_fetusCountTextField setDropDownMode : IQDropDownModeTextPicker];
-    [_fetusCountTextField setItemList:@[@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9"]];
-   
-//    [_dueDateTextField setDropDownMode : IQDropDownModeTextPicker];
-//    [_dueDateTextField setItemList:@[@"Zero Line Of Code",
-//                                     @"No More UIScrollView",
-//                                     @"No More Subclasses",
-//                                     @"No More Manual Work",
-//                                     @"No More #imports",
-//                                     @"Device Orientation support",
-//                                     @"UITextField Category for Keyboard",
-//                                     @"Enable/Desable Keyboard Manager",
-//                                     @"Customize InputView support",
-//                                     @"IQTextView for placeholder support",
-//                                     @"Automanage keyboard toolbar",
-//                                     @"Can set keyboard and textFiled distance",
-//                                     @"Can resign on touching outside",
-//                                     @"Auto adjust textView's height ",
-//                                     @"Adopt tintColor from textField",
-//                                     @"Customize keyboardAppearance",
-//                                     @"play sound on next/prev/done"]];
-
-    
-    
+    [_fetusCountTextField setItemList:pickerData_number_fetus];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark pikerView
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+{
+    UILabel *labelText = [[UILabel alloc] init];
+    [labelText setTextAlignment:NSTextAlignmentCenter];
+    [labelText setAdjustsFontSizeToFitWidth:YES];
+    labelText.backgroundColor = [UIColor clearColor];
+    
+    if([pickerView isEqual:addressPicker]){
+        if(component == 0){
+            [labelText setText:pickerData_0[row]];
+        }else if(component == 1){
+            [labelText setText:pickerData_1[row]];
+        }else{
+            [labelText setText:pickerData_2[row]];
+        }
+        
+        if (row == 0)
+        {
+            labelText.font = [UIFont boldSystemFontOfSize:30.0];
+            labelText.textColor = [UIColor lightGrayColor];
+        }
+        else
+        {
+            labelText.font = [UIFont boldSystemFontOfSize:18.0];
+            labelText.textColor = [UIColor blackColor];
+        }
+    }else{
+        if(component == 0){
+            if([pickerView isEqual:beforeWeightPicker] || [pickerView isEqual:nowWeightPicker]){
+                [labelText setText:pickerData_number_weight[row]];
+            }else{
+                [labelText setText:pickerData_number_height[row]];
+            }
+            
+            if (row == 0)
+            {
+                labelText.font = [UIFont boldSystemFontOfSize:30.0];
+                labelText.textColor = [UIColor lightGrayColor];
+            }
+            else
+            {
+                labelText.font = [UIFont boldSystemFontOfSize:18.0];
+                labelText.textColor = [UIColor blackColor];
+            }
+            
+        }else{
+            [labelText setText:pickerData_number_point[row]];
+            
+            labelText.font = [UIFont boldSystemFontOfSize:18.0];
+            labelText.textColor = [UIColor blackColor];
+        }
+
+    }
+    
+    return labelText;
+}
+
+
+// The number of columns of data
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    if([pickerView isEqual:addressPicker]){
+        return 3;
+    }else{
+        return 2;
+    }
+    
+}
+
+// The number of rows of data
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    NSInteger count = 0;
+    
+    if([pickerView isEqual:addressPicker]){
+        if(component == 0){
+            count = [pickerData_0 count];
+        }else if(component == 1){
+            count = [pickerData_1 count];
+        }else{
+            count = [pickerData_2 count];
+        }
+    }else{
+        if(component == 0){
+            if([pickerView isEqual:beforeWeightPicker] || [pickerView isEqual:nowWeightPicker]){
+                count = [pickerData_number_weight count];
+            }else{
+                count = [pickerData_number_height count];
+            }
+        }else{
+            count = [pickerData_number_point count];
+        }
+    }
+    
+
+    return count;
+
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    // This method is triggered whenever the user makes a change to the picker selection.
+    // The parameter named row and component represents what was selected.
+    
+    NSMutableString *value = [[NSMutableString alloc]init];
+    
+    if([pickerView isEqual:addressPicker]){
+        if(component == 0){
+            if(row == 0){
+                [pickerData_1 setArray:@[@"Select"]];
+            }else{
+                [pickerData_1 setArray:@[@"Select", @"노원구", @"도봉구", @"성북구", @"송파구", @"강북구"]];
+            }
+            [pickerData_2 setArray:@[@"Select"]];
+            
+            [pickerView reloadComponent:1];
+            [pickerView reloadComponent:2];
+        }else if(component == 1){
+            if(row == 0){
+                [pickerData_2 setArray:@[@"Select"]];
+            }else{
+                [pickerData_2 setArray:@[@"Select", @"쌍문 1동", @"쌍문 2동", @"쌍문 3동", @"쌍문 4동", @"쌍문 5동"]];
+            }
+            [pickerView reloadComponent:2];
+        }
+        
+        if([pickerView selectedRowInComponent:0] != 0 && [pickerView selectedRowInComponent:1] != 0 && [pickerView selectedRowInComponent:2] != 0){
+            [value appendString:[NSString stringWithFormat:@"%@ %@ %@", pickerData_0[[pickerView selectedRowInComponent:0]], pickerData_1[[pickerView selectedRowInComponent:1]], pickerData_2[[pickerView selectedRowInComponent:2]]]];
+        }
+        
+        _addressTextField.text = value;
+    }else if([pickerView selectedRowInComponent:0] != 0){
+        if([pickerView isEqual:beforeWeightPicker] || [pickerView isEqual:nowWeightPicker]){
+            [value appendString:[NSString stringWithFormat:@"%@", pickerData_number_weight[[pickerView selectedRowInComponent:0]]]];
+        }else{
+            [value appendString:pickerData_number_height[[pickerView selectedRowInComponent:0]]];
+        }
+        
+        [value appendString:pickerData_number_point[[pickerView selectedRowInComponent:1]]];
+        
+        if([pickerView isEqual:beforeWeightPicker]){
+            _beforeWeightTextField.text = value;
+        }else if([pickerView isEqual:nowWeightPicker]){
+            _nowWeightTextField.text = value;
+        }else{
+            _heightTextField.text = value;
+        }
+    }
 }
 
 /*
