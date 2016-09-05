@@ -1,5 +1,5 @@
 //
-//  WeightDetailInfoHeaderCell.h
+//  ActiveMassController.h
 //  co.medisolution
 //
 //  Created by OGGU on 2016. 9. 5..
@@ -8,11 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WeightDetailInfoHeaderCell : UITableViewCell
+@interface ActiveMassController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIView *containerView;
-
-
-
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

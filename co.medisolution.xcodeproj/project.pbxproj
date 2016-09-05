@@ -70,6 +70,16 @@
 		DC3AAED21D75A11C007218E9 /* WeekProgramCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3AAED01D75A11C007218E9 /* WeekProgramCell.m */; };
 		DC3AAED31D75A11C007218E9 /* WeekProgramCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC3AAED11D75A11C007218E9 /* WeekProgramCell.xib */; };
 		DC3ACE161D5D853C00D68F80 /* DashBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3ACE151D5D853C00D68F80 /* DashBoard.storyboard */; };
+		DC4E95851D7CF0A80087647B /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC4E95841D7CF0A80087647B /* More.storyboard */; };
+		DC4E95881D7D0B2B0087647B /* WeightDetailInfoHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E95871D7D0B2B0087647B /* WeightDetailInfoHeaderCell.m */; };
+		DC4E958D1D7D26EC0087647B /* WeightTotalInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E958B1D7D26EC0087647B /* WeightTotalInfoCell.m */; };
+		DC4E958E1D7D26EC0087647B /* WeightTotalInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4E958C1D7D26EC0087647B /* WeightTotalInfoCell.xib */; };
+		DC4E95921D7D2D2B0087647B /* WeightInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E95901D7D2D2B0087647B /* WeightInfoView.m */; };
+		DC4E95931D7D2D2B0087647B /* WeightInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4E95911D7D2D2B0087647B /* WeightInfoView.xib */; };
+		DC4E95991D7D62D60087647B /* ActiveMassModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E95981D7D62D60087647B /* ActiveMassModel.m */; };
+		DC4E959C1D7D64930087647B /* ActiveMassController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E959B1D7D64930087647B /* ActiveMassController.m */; };
+		DC4E95A01D7D65050087647B /* ActiveMassChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E959E1D7D65050087647B /* ActiveMassChartView.m */; };
+		DC4E95A11D7D65050087647B /* ActiveMassChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4E959F1D7D65050087647B /* ActiveMassChartView.xib */; };
 		DC4EAA8B1D6E6F5E005370A8 /* notPasteField.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4EAA8A1D6E6F5E005370A8 /* notPasteField.m */; };
 		DC512AC01D6694D100885C26 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC512ABF1D6694D100885C26 /* Message.storyboard */; };
 		DC512AC61D66989000885C26 /* MessageListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC512AC51D66989000885C26 /* MessageListModel.m */; };
@@ -99,7 +109,6 @@
 		DC56F0A51D79728F00FB3A30 /* WeightDetailInfoContentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC56F09B1D79728F00FB3A30 /* WeightDetailInfoContentsCell.xib */; };
 		DC56F0A61D79728F00FB3A30 /* WeightDetailInfoFooterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC56F09D1D79728F00FB3A30 /* WeightDetailInfoFooterCell.m */; };
 		DC56F0A71D79728F00FB3A30 /* WeightDetailInfoFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC56F09E1D79728F00FB3A30 /* WeightDetailInfoFooterCell.xib */; };
-		DC56F0A81D79728F00FB3A30 /* WeightDetailInfoHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC56F0A01D79728F00FB3A30 /* WeightDetailInfoHeaderCell.m */; };
 		DC56F0A91D79728F00FB3A30 /* WeightDetailInfoHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC56F0A11D79728F00FB3A30 /* WeightDetailInfoHeaderCell.xib */; };
 		DC5D20741D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5D20721D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf */; };
 		DC5D20751D62ACFB00ACDCA4 /* NanumBarunGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5D20731D62ACFB00ACDCA4 /* NanumBarunGothic.ttf */; };
@@ -265,6 +274,22 @@
 		DC3AAED01D75A11C007218E9 /* WeekProgramCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekProgramCell.m; sourceTree = "<group>"; };
 		DC3AAED11D75A11C007218E9 /* WeekProgramCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekProgramCell.xib; sourceTree = "<group>"; };
 		DC3ACE151D5D853C00D68F80 /* DashBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DashBoard.storyboard; sourceTree = "<group>"; };
+		DC4E95841D7CF0A80087647B /* More.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = More.storyboard; sourceTree = "<group>"; };
+		DC4E95861D7D0B2B0087647B /* WeightDetailInfoHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightDetailInfoHeaderCell.h; sourceTree = "<group>"; };
+		DC4E95871D7D0B2B0087647B /* WeightDetailInfoHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightDetailInfoHeaderCell.m; sourceTree = "<group>"; };
+		DC4E958A1D7D26EC0087647B /* WeightTotalInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightTotalInfoCell.h; sourceTree = "<group>"; };
+		DC4E958B1D7D26EC0087647B /* WeightTotalInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightTotalInfoCell.m; sourceTree = "<group>"; };
+		DC4E958C1D7D26EC0087647B /* WeightTotalInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeightTotalInfoCell.xib; sourceTree = "<group>"; };
+		DC4E958F1D7D2D2B0087647B /* WeightInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightInfoView.h; sourceTree = "<group>"; };
+		DC4E95901D7D2D2B0087647B /* WeightInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightInfoView.m; sourceTree = "<group>"; };
+		DC4E95911D7D2D2B0087647B /* WeightInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeightInfoView.xib; sourceTree = "<group>"; };
+		DC4E95971D7D62D60087647B /* ActiveMassModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActiveMassModel.h; sourceTree = "<group>"; };
+		DC4E95981D7D62D60087647B /* ActiveMassModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActiveMassModel.m; sourceTree = "<group>"; };
+		DC4E959A1D7D64930087647B /* ActiveMassController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActiveMassController.h; sourceTree = "<group>"; };
+		DC4E959B1D7D64930087647B /* ActiveMassController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActiveMassController.m; sourceTree = "<group>"; };
+		DC4E959D1D7D65050087647B /* ActiveMassChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActiveMassChartView.h; sourceTree = "<group>"; };
+		DC4E959E1D7D65050087647B /* ActiveMassChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActiveMassChartView.m; sourceTree = "<group>"; };
+		DC4E959F1D7D65050087647B /* ActiveMassChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActiveMassChartView.xib; sourceTree = "<group>"; };
 		DC4EAA891D6E6F5E005370A8 /* notPasteField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = notPasteField.h; sourceTree = "<group>"; };
 		DC4EAA8A1D6E6F5E005370A8 /* notPasteField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = notPasteField.m; sourceTree = "<group>"; };
 		DC512ABF1D6694D100885C26 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
@@ -319,8 +344,6 @@
 		DC56F09C1D79728F00FB3A30 /* WeightDetailInfoFooterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightDetailInfoFooterCell.h; sourceTree = "<group>"; };
 		DC56F09D1D79728F00FB3A30 /* WeightDetailInfoFooterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightDetailInfoFooterCell.m; sourceTree = "<group>"; };
 		DC56F09E1D79728F00FB3A30 /* WeightDetailInfoFooterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeightDetailInfoFooterCell.xib; sourceTree = "<group>"; };
-		DC56F09F1D79728F00FB3A30 /* WeightDetailInfoHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightDetailInfoHeaderCell.h; sourceTree = "<group>"; };
-		DC56F0A01D79728F00FB3A30 /* WeightDetailInfoHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightDetailInfoHeaderCell.m; sourceTree = "<group>"; };
 		DC56F0A11D79728F00FB3A30 /* WeightDetailInfoHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeightDetailInfoHeaderCell.xib; sourceTree = "<group>"; };
 		DC5D20721D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicBold.ttf; sourceTree = "<group>"; };
 		DC5D20731D62ACFB00ACDCA4 /* NanumBarunGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothic.ttf; sourceTree = "<group>"; };
@@ -567,6 +590,7 @@
 		2AC781D71D5998D700B86BE1 /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
+				DC4E95841D7CF0A80087647B /* More.storyboard */,
 				DC723C291D63FE2200557E1E /* MainTabBar.storyboard */,
 				2AC781DA1D599C0800B86BE1 /* MembershipLogin.storyboard */,
 				2AB97A271D5AAFDA0063EB5E /* MembershipSignUp.storyboard */,
@@ -698,6 +722,8 @@
 				DC3AAECD1D759C19007218E9 /* WeekProgramModel.m */,
 				DC538E631D78016B00E5949B /* WeightChartModel.h */,
 				DC538E641D78016B00E5949B /* WeightChartModel.m */,
+				DC4E95971D7D62D60087647B /* ActiveMassModel.h */,
+				DC4E95981D7D62D60087647B /* ActiveMassModel.m */,
 			);
 			path = DashBoard;
 			sourceTree = "<group>";
@@ -876,8 +902,8 @@
 				DC56F09C1D79728F00FB3A30 /* WeightDetailInfoFooterCell.h */,
 				DC56F09D1D79728F00FB3A30 /* WeightDetailInfoFooterCell.m */,
 				DC56F09E1D79728F00FB3A30 /* WeightDetailInfoFooterCell.xib */,
-				DC56F09F1D79728F00FB3A30 /* WeightDetailInfoHeaderCell.h */,
-				DC56F0A01D79728F00FB3A30 /* WeightDetailInfoHeaderCell.m */,
+				DC4E95861D7D0B2B0087647B /* WeightDetailInfoHeaderCell.h */,
+				DC4E95871D7D0B2B0087647B /* WeightDetailInfoHeaderCell.m */,
 				DC56F0A11D79728F00FB3A30 /* WeightDetailInfoHeaderCell.xib */,
 				DC5D20921D62E01300ACDCA4 /* DashBoardScrollCellView.h */,
 				DC5D20931D62E01300ACDCA4 /* DashBoardScrollCellView.m */,
@@ -887,6 +913,15 @@
 				DC3AAECF1D75A11C007218E9 /* WeekProgramCell.h */,
 				DC3AAED01D75A11C007218E9 /* WeekProgramCell.m */,
 				DC3AAED11D75A11C007218E9 /* WeekProgramCell.xib */,
+				DC4E958A1D7D26EC0087647B /* WeightTotalInfoCell.h */,
+				DC4E958B1D7D26EC0087647B /* WeightTotalInfoCell.m */,
+				DC4E958C1D7D26EC0087647B /* WeightTotalInfoCell.xib */,
+				DC4E958F1D7D2D2B0087647B /* WeightInfoView.h */,
+				DC4E95901D7D2D2B0087647B /* WeightInfoView.m */,
+				DC4E95911D7D2D2B0087647B /* WeightInfoView.xib */,
+				DC4E959D1D7D65050087647B /* ActiveMassChartView.h */,
+				DC4E959E1D7D65050087647B /* ActiveMassChartView.m */,
+				DC4E959F1D7D65050087647B /* ActiveMassChartView.xib */,
 			);
 			path = DashBoard;
 			sourceTree = "<group>";
@@ -900,6 +935,8 @@
 				DC5D20901D62CB6500ACDCA4 /* DashBoardController.m */,
 				DC538E601D78009100E5949B /* WeightChartViewController.h */,
 				DC538E611D78009100E5949B /* WeightChartViewController.m */,
+				DC4E959A1D7D64930087647B /* ActiveMassController.h */,
+				DC4E959B1D7D64930087647B /* ActiveMassController.m */,
 			);
 			path = DashBoard;
 			sourceTree = "<group>";
@@ -1092,6 +1129,7 @@
 				DC56F0A91D79728F00FB3A30 /* WeightDetailInfoHeaderCell.xib in Resources */,
 				2AE11DE41D654C4E003C6690 /* DiaryListBasicCustomCell.xib in Resources */,
 				DC6070981D7030CF00F60148 /* SingleImageViewController.xib in Resources */,
+				DC4E958E1D7D26EC0087647B /* WeightTotalInfoCell.xib in Resources */,
 				DC5D20961D62E01300ACDCA4 /* DashBoardScrollCellView.xib in Resources */,
 				DC5D20741D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf in Resources */,
 				DCF6CA911D740D0A00703CAE /* PageImageViewController.xib in Resources */,
@@ -1112,9 +1150,12 @@
 				DC56F0A51D79728F00FB3A30 /* WeightDetailInfoContentsCell.xib in Resources */,
 				DC60709D1D7030E700F60148 /* MultiImageViewController.xib in Resources */,
 				DC512ACC1D669BF900885C26 /* MessageListCell.xib in Resources */,
+				DC4E95851D7CF0A80087647B /* More.storyboard in Resources */,
 				DCA5AE2F1D598C6F0075B7AD /* Main.storyboard in Resources */,
 				DC512AC01D6694D100885C26 /* Message.storyboard in Resources */,
+				DC4E95A11D7D65050087647B /* ActiveMassChartView.xib in Resources */,
 				2A371A511D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.xib in Resources */,
+				DC4E95931D7D2D2B0087647B /* WeightInfoView.xib in Resources */,
 				DC56F0A31D79728F00FB3A30 /* WeightChartViewCell.xib in Resources */,
 				DC3ACE161D5D853C00D68F80 /* DashBoard.storyboard in Resources */,
 				DC538ECF1D781C3600E5949B /* IQKeyboardManager.bundle in Resources */,
@@ -1141,6 +1182,7 @@
 				DCA5AE2C1D598C6F0075B7AD /* ViewController.m in Sources */,
 				DC60709C1D7030E700F60148 /* MultiImageViewController.m in Sources */,
 				2A54B1BE1D6691F600C538D1 /* DiaryCalenderController.m in Sources */,
+				DC4E95991D7D62D60087647B /* ActiveMassModel.m in Sources */,
 				2AEBE3491D79419E0075B210 /* DiaryWriteScheduleController.m in Sources */,
 				2AEBE34C1D7941BF0075B210 /* DiaryDetailScheduleController.m in Sources */,
 				2A54B1B51D66904000C538D1 /* JTCalendarDayView.m in Sources */,
@@ -1160,6 +1202,7 @@
 				DC3AAEC01D7552EE007218E9 /* PushNoticeDetailViewController.m in Sources */,
 				DC3AAED21D75A11C007218E9 /* WeekProgramCell.m in Sources */,
 				DCF6CAAD1D742B4000703CAE /* UIApplication+JTSImageViewController.m in Sources */,
+				DC4E95A01D7D65050087647B /* ActiveMassChartView.m in Sources */,
 				DC538EC21D781C3600E5949B /* IQUIScrollView+Additions.m in Sources */,
 				DC1FE6ED1D65A7D4006F7A50 /* fetusInfoController.m in Sources */,
 				2A54B1B81D66904000C538D1 /* JTCalendarWeekDayView.m in Sources */,
@@ -1172,6 +1215,7 @@
 				2AE11DE31D654C4E003C6690 /* DiaryListBasicCustomCell.m in Sources */,
 				DCF6CAAB1D742B4000703CAE /* JTSImageViewController.m in Sources */,
 				DC5D20851D62AFA100ACDCA4 /* OTPageScrollView.m in Sources */,
+				DC4E95921D7D2D2B0087647B /* WeightInfoView.m in Sources */,
 				DC3AAECE1D759C19007218E9 /* WeekProgramModel.m in Sources */,
 				DC512AD21D66C62700885C26 /* MessageListController.m in Sources */,
 				2AB6277A1D5C0CF400BD7B84 /* SignUpMain.m in Sources */,
@@ -1187,11 +1231,12 @@
 				DC538EC31D781C3600E5949B /* IQUITextFieldView+Additions.m in Sources */,
 				2A371A501D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.m in Sources */,
 				DC3AAEB31D7514A3007218E9 /* PushViewListCell.m in Sources */,
+				DC4E959C1D7D64930087647B /* ActiveMassController.m in Sources */,
 				DC32664A1D6E7EA1008B38A8 /* CommonViewController.m in Sources */,
 				DC512ACF1D66A83400885C26 /* MessageListCell.m in Sources */,
 				DC60708D1D6FC85000F60148 /* MessageDetailController.m in Sources */,
 				2AE11DF01D6581D9003C6690 /* DiaryListModel.m in Sources */,
-				DC56F0A81D79728F00FB3A30 /* WeightDetailInfoHeaderCell.m in Sources */,
+				DC4E95881D7D0B2B0087647B /* WeightDetailInfoHeaderCell.m in Sources */,
 				2A309ACE1D79634E001C54C5 /* ColorPickerTextField.m in Sources */,
 				2AB3DD991D6BDB7C00512949 /* SignUpMommyInfoController.m in Sources */,
 				2A54B1BA1D66904000C538D1 /* JTHorizontalCalendarView.m in Sources */,
@@ -1211,6 +1256,7 @@
 				2A54B1B31D66904000C538D1 /* JTCalendarDelegateManager.m in Sources */,
 				2AA6D6CA1D64356000316DD6 /* DiaryWriteBasicController.m in Sources */,
 				DC538ECB1D781C3600E5949B /* IQPreviousNextView.m in Sources */,
+				DC4E958D1D7D26EC0087647B /* WeightTotalInfoCell.m in Sources */,
 				DC3AAEBA1D751EB6007218E9 /* PushNoticeViewController.m in Sources */,
 				DC5D20911D62CB6500ACDCA4 /* DashBoardController.m in Sources */,
 				2AB627771D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m in Sources */,

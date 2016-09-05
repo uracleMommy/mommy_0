@@ -71,8 +71,7 @@
 
 - (void)commonInit
 {
-    _initializing = YES;
-    
+    _initializing = YES;    
     _showsCount = YES;
     _selectedSegmentIndex = -1;
     _selectionIndicatorHeight = 2.0f;

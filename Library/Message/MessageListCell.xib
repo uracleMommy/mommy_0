@@ -102,7 +102,7 @@
                 <outlet property="lblName" destination="yFz-sf-hf7" id="XfY-vH-Hs0"/>
                 <outlet property="lblWriteTime" destination="XBP-yX-2YR" id="eFf-X1-Bhf"/>
             </connections>
-            <point key="canvasLocation" x="-448" y="296"/>
+            <point key="canvasLocation" x="-852" y="359"/>
         </tableViewCell>
     </objects>
     <resources>

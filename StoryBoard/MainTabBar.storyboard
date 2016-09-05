@@ -61,7 +61,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKm-md-Rjq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-457" y="-5"/>
+            <point key="canvasLocation" x="-452" y="61"/>
         </scene>
         <!--More-->
         <scene sceneID="EHR-Wk-d5H">
@@ -76,7 +76,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sb0-WM-Xgz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-998" y="-12"/>
+            <point key="canvasLocation" x="-998" y="61"/>
         </scene>
         <!--Home-->
         <scene sceneID="krU-qc-6af">

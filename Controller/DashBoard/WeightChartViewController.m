@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+        
     NSArray *items = @[@"일자별", @"주차별"];
     _dayWeekTypeSegment.items = items;
     
@@ -27,18 +27,14 @@
     
     [_dayWeekTypeSegment setShowsCount:NO];
     
-    
-    
     // 테이블 바인드
-    
-    _weightChartModel = [[WeightChartModel alloc] init];
     NSArray *arrayList = [NSArray arrayWithObjects:@"1", @"2", @"3", @"4", nil];
-    
+    _weightChartModel = [[WeightChartModel alloc] init];
+    _weightChartModel.arrayList = arrayList;
     
     _tableView.delegate = _weightChartModel;
     _tableView.dataSource = _weightChartModel;
-    
-    
+    //[_tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
