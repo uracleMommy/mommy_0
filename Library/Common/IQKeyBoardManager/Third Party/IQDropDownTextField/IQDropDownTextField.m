@@ -47,6 +47,7 @@
 
 @implementation IQDropDownTextField
 
+@synthesize inputTextFlag = _inputTextFlag;
 @synthesize dropDownMode = _dropDownMode;
 @synthesize itemList = _itemList;
 @synthesize selectedItem = _selectedItem;
@@ -321,7 +322,9 @@
             if (date)
             {
                 _selectedItem = selectedItem;
-                self.text = selectedItem;
+                if(_inputTextFlag == NO){
+                    self.text = selectedItem;
+                }
                 [self.datePicker setDate:date animated:animated];
                 
                 if ([self.delegate respondsToSelector:@selector(textField:didSelectItem:)])
@@ -339,7 +342,9 @@
             if (date)
             {
                 _selectedItem = selectedItem;
-                self.text = selectedItem;
+                if(_inputTextFlag == NO){
+                    self.text = selectedItem;
+                }
                 [self.timePicker setDate:date animated:animated];
                 
                 if ([self.delegate respondsToSelector:@selector(textField:didSelectItem:)])
@@ -413,6 +418,10 @@
     }
     
     [self.pickerView reloadAllComponents];
+}
+
+-(void)setInputTextFlag:(Boolean)inputTextFlag{
+    _inputTextFlag = inputTextFlag;
 }
 
 #pragma mark - Getter

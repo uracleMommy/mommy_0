@@ -7,8 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IQDropDownTextField.h"
 
-@interface DiaryWriteScheduleController : UIViewController
+@interface DiaryWriteScheduleController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource, IQDropDownTextFieldDelegate>{
+    UIDatePicker *datePicker;
+    UIDatePicker *timePicker;
+}
+
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
+@property (weak, nonatomic) IBOutlet IQDropDownTextField *dateButton;
+@property (weak, nonatomic) IBOutlet IQDropDownTextField *timeButton;
 
 @end

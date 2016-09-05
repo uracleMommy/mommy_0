@@ -42,12 +42,38 @@
     
     [_navigationBar setItems:@[newItem]];
     
+    
+    [_dateButton setDropDownMode:IQDropDownModeDatePicker];
+    [_dateButton setInputTextFlag:YES];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"YYYY년 MM월 dd일 EEEE"];
+    [_dateButton setDateFormatter:formatter];
+    [_dateButton setDelegate:self];
+    
+    
+    [_timeButton setDropDownMode:IQDropDownModeTimePicker];
+    [_timeButton setInputTextFlag:YES];
+    
+    NSDateFormatter *formatter2 = [[NSDateFormatter alloc]init];
+    [formatter2 setDateFormat:@"HH:mm"];
+    [_timeButton setTimeFormatter:formatter2];
+    [_timeButton setDelegate:self];
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+-(void)textField:(IQDropDownTextField*)textField didSelectItem:(NSString*)item{
+    NSLog(@"selected : %@", item);
+    if([textField isEqual:_dateButton]){
+        _dateLabel.text = item;
+    }else{
+        _timeLabel.text = item;
+    }
+}
 /*
 #pragma mark - Navigation
 
@@ -65,6 +91,5 @@
 - (void)saveSchedule{
     
 }
-
 
 @end

@@ -12,7 +12,6 @@
 @interface SignUpMainScrollViewController : UIViewController <UITextFieldDelegate, IQDropDownTextFieldDelegate> {
     int t_count;
     NSTimer *confirmNumberTimer;
-    UIDatePicker *birthdayPicker;
 }
 
 - (IBAction)getConfirmNumberAction:(id)sender;
