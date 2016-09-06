@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="NanumBarunGothic.ttf">
+            <string>NanumBarunGothic</string>
+        </mutableArray>
+        <mutableArray key="NanumBarunGothicBold.ttf">
+            <string>NanumBarunGothicBold</string>
+            <string>NanumBarunGothicBold</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="91" id="Yuc-LQ-Lex" customClass="ActiveMassExerciseCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yuc-LQ-Lex" id="DCd-JG-dQo">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="95.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHA-A8-4Fp">
+                        <rect key="frame" x="8" y="4" width="304" height="87.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contents_icon_act_exetime" translatesAutoresizingMaskIntoConstraints="NO" id="cMq-ax-6tJ">
+                                <rect key="frame" x="15" y="19" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="FzH-B9-lUg"/>
+                                    <constraint firstAttribute="width" constant="20" id="bds-On-G6v"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="운동시간" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Hq-UR-S5A">
+                                <rect key="frame" x="43" y="19" width="68" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="0g5-7f-tE3"/>
+                                    <constraint firstAttribute="width" constant="68" id="Iy4-rd-fpo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12시간30분" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfs-6u-hn2">
+                                <rect key="frame" x="114" y="19" width="97" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Rf9-xw-mIC"/>
+                                    <constraint firstAttribute="width" constant="97" id="etn-8E-YFj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
+                                <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8xu-w6-fZh">
+                                <rect key="frame" x="15" y="48" width="274" height="10"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="FDp-WO-ACz"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12시 10분" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0M-85-rkX">
+                                <rect key="frame" x="219" y="22" width="70" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="4Do-wr-hib"/>
+                                    <constraint firstAttribute="width" constant="70" id="6r6-8d-frs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="14"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2Hq-UR-S5A" firstAttribute="leading" secondItem="cMq-ax-6tJ" secondAttribute="trailing" constant="8" id="29w-La-Br0"/>
+                            <constraint firstItem="cMq-ax-6tJ" firstAttribute="leading" secondItem="AHA-A8-4Fp" secondAttribute="leading" constant="15" id="8vy-aw-1C7"/>
+                            <constraint firstItem="dfs-6u-hn2" firstAttribute="top" secondItem="AHA-A8-4Fp" secondAttribute="top" constant="19" id="FXR-Wh-9Kd"/>
+                            <constraint firstItem="cMq-ax-6tJ" firstAttribute="top" secondItem="AHA-A8-4Fp" secondAttribute="top" constant="19" id="JJp-GH-Ppo"/>
+                            <constraint firstAttribute="trailing" secondItem="T0M-85-rkX" secondAttribute="trailing" constant="15" id="JoV-Wl-TQK"/>
+                            <constraint firstItem="2Hq-UR-S5A" firstAttribute="top" secondItem="AHA-A8-4Fp" secondAttribute="top" constant="19" id="Xma-Fq-unU"/>
+                            <constraint firstItem="dfs-6u-hn2" firstAttribute="leading" secondItem="2Hq-UR-S5A" secondAttribute="trailing" constant="3" id="e8n-wK-6la"/>
+                            <constraint firstItem="T0M-85-rkX" firstAttribute="top" secondItem="AHA-A8-4Fp" secondAttribute="top" constant="22" id="gas-gT-XcQ"/>
+                            <constraint firstAttribute="trailing" secondItem="8xu-w6-fZh" secondAttribute="trailing" constant="15" id="hKY-JX-4u7"/>
+                            <constraint firstItem="8xu-w6-fZh" firstAttribute="leading" secondItem="AHA-A8-4Fp" secondAttribute="leading" constant="15" id="l66-sJ-ide"/>
+                            <constraint firstItem="8xu-w6-fZh" firstAttribute="top" secondItem="T0M-85-rkX" secondAttribute="bottom" constant="5" id="pce-Gs-WHG"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="AHA-A8-4Fp" firstAttribute="top" secondItem="DCd-JG-dQo" secondAttribute="top" constant="4" id="Ukp-mq-Pt5"/>
+                    <constraint firstItem="AHA-A8-4Fp" firstAttribute="leading" secondItem="DCd-JG-dQo" secondAttribute="leading" constant="8" id="cZZ-Mv-6Oi"/>
+                    <constraint firstAttribute="trailing" secondItem="AHA-A8-4Fp" secondAttribute="trailing" constant="8" id="ghE-OL-YfS"/>
+                    <constraint firstAttribute="bottom" secondItem="AHA-A8-4Fp" secondAttribute="bottom" constant="4" id="kbz-YK-bqW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="containerBar" destination="8xu-w6-fZh" id="yf7-Lf-DXQ"/>
+                <outlet property="containerView" destination="AHA-A8-4Fp" id="L26-Ve-9yk"/>
+            </connections>
+            <point key="canvasLocation" x="-221" y="409"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="contents_icon_act_exetime" width="36" height="36"/>
+    </resources>
+</document>

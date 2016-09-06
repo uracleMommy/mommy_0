@@ -103,7 +103,6 @@
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    
     // 점선처리
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
     [shapeLayer setBounds:cell.bounds];
