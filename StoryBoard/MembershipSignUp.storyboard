@@ -638,7 +638,6 @@
                                         <state key="normal" image="join_profile_photo"/>
                                         <connections>
                                             <action selector="mommyPictureButtonAction:" destination="AlB-TO-ODX" eventType="touchUpInside" id="vGB-yg-Hel"/>
-                                            <action selector="mommyPictureButtonAction:" destination="Ktq-o7-rkG" eventType="touchUpInside" id="xNk-by-Lj0"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xET-fk-U4Z">

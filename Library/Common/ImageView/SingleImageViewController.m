@@ -33,7 +33,7 @@
 
 - (void) viewDidLayoutSubviews {
     
-    _originalImage = [UIImage imageNamed:@"screen1"];
+//    _originalImage = [UIImage imageNamed:@"screen1"];
     float oldImageWidth = _originalImage.size.width;
     float oldImageHeight = _originalImage.size.height;
     

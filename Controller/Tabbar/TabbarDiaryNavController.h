@@ -10,4 +10,6 @@
 
 @interface TabbarDiaryNavController : UINavigationController
 
+@property (strong, nonatomic) UIViewController *rootViewController;
+
 @end

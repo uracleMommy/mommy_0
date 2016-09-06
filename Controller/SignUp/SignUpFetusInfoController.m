@@ -75,12 +75,9 @@
 }
 */
 - (IBAction)saveButtonAction:(id)sender {
-    NSLog(@"PSH save");
-    //TEMP 임시 다이어리 이동
-    //TEMP 대쉬보드 이동
-    UIStoryboard *diaryStoryboard = [UIStoryboard storyboardWithName:@"Diary" bundle:nil];
-    UINavigationController *diaryNavigationController = (UINavigationController *)[diaryStoryboard instantiateViewControllerWithIdentifier:@"DiaryNavigation"];
+    UIStoryboard *mainTabBarStoryboard = [UIStoryboard storyboardWithName:@"MainTabBar" bundle:nil];
+    UINavigationController *mainTabBarNavigationController = (UINavigationController *)[mainTabBarStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarNavigation"];
     
-    [self presentViewController:diaryNavigationController animated:YES completion:nil];
+    [self presentViewController:mainTabBarNavigationController animated:YES completion:nil];
 }
 @end

@@ -7,9 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import <Photos/Photos.h>
 #import "IQDropDownTextField.h"
+#import "AppDelegate.h"
+#import "emoticonPopupViewController.h"
+#import "SingleImageViewController.h"
+#import "ImageCropView.h"
 
-@interface DiaryWriteBasicController : UIViewController <UITextViewDelegate, IQDropDownTextFieldDelegate>
+@interface DiaryWriteBasicController : UIViewController <UITextViewDelegate, IQDropDownTextFieldDelegate, ImageCropViewControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, UINavigationControllerDelegate> {
+    UIButton *selectedImageButton;
+    UIImage *image;
+    UIImage *defaultImage;
+    ImageCropViewController *controller;
+    UIImagePickerController *imagePickerController;
+    UIImagePickerController *imagePicker;
+}
+
 @property (weak, nonatomic) IBOutlet UITextView *contentsTextView;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (strong, nonatomic) UILabel *placeholderLabel;
@@ -19,5 +33,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *imageButton04;
 @property (weak, nonatomic) IBOutlet IQDropDownTextField *dateButton;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+
+#pragma mark 이모티콘 팝업 관련
+@property (strong, nonatomic) emoticonPopupViewController *emoticonPopupView;
+- (IBAction)showEmoticonPopup:(id)sender;
+
+- (IBAction)mommyPictureButtonAction:(id)sender;
 
 @end

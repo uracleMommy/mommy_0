@@ -43,54 +43,11 @@ float IMAGE_MIN_WIDTH = 400;
 {
     [super viewDidLoad];
     if (self){
+        CGFloat width = self.view.frame.size.width;
+        NSLog(@"width : %f", width);
         UIView *contentView = [[UIView alloc] init];
         contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         contentView.backgroundColor = [UIColor blackColor];
-        
-        //cancel button setting
-//        UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-//        UIImage *backBtnImage = [UIImage imageNamed:@"title_icon_close.png"];
-//        [backBtn setBackgroundImage:backBtnImage forState:UIControlStateNormal];
-//        backBtn.frame = CGRectMake(0, 0, 40, 40);
-//        UIButton *backButtonView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-//        backButtonView.bounds = CGRectOffset(backButtonView.bounds, -15, 0);
-//        [backBtn addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
-//        [backButtonView addSubview:backBtn];
-//        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:backButtonView];
-//        self.navigationItem.rightBarButtonItem = backButton;
-//        
-        
-        //done button setting
-        
-        UIImage * imageNormal = [UIImage imageNamed:@"title_icon_save.png"];
-        // create your button
-        UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.exclusiveTouch = YES;
-//        [button addTarget:self action:@selector(done:) forControlEvents:UIControlEventTouchUpInside];
-        [button setBackgroundImage:imageNormal forState:UIControlStateNormal];
-        
-        // set the frame of the button (better to grab actual offset of leftbarbuttonitem instead of magic numbers)
-        button.frame = CGRectMake(-15.0, 0.0, 40, 40);
-        UIButton * view2 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-        [view2 addTarget:self action:@selector(done:) forControlEvents:UIControlEventTouchUpInside];
-        [view2 addSubview:button];
-        
-        // set the barbuttonitem to be the view
-        UIBarButtonItem * barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:view2];
-        self.navigationItem.leftBarButtonItem = barButtonItem;
-//        UIButton *doneBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
-//        UIImage *doneBtnImage = [UIImage imageNamed:@"title_icon_save.png"];
-//        [doneBtn setBackgroundImage:doneBtnImage forState:UIControlStateNormal];
-//        
-//        UIButton *doneButtonView = [[UIButton alloc] initWithFrame:CGRectMake(-15, 0, 40, 40)];
-//        doneButtonView.bounds = CGRectOffset(doneButtonView.bounds, 15, 0);
-//        [doneButtonView addTarget:self action:@selector(done:) forControlEvents:UIControlEventTouchUpInside];
-//        [doneButtonView addSubview:doneBtn];
-//        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithCustomView:doneButtonView];
-//        self.navigationItem.leftBarButtonItem = doneButton;
-        
-        //navi title setting
-        self.navigationItem.title = @"사진편집";
         
         CGSize statusBarSize = [[UIApplication sharedApplication] statusBarFrame].size;
         CGRect view = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - [[self navigationController] navigationBar].bounds.size.height - statusBarSize.height);
@@ -101,6 +58,57 @@ float IMAGE_MIN_WIDTH = 400;
         if (_cropArea.size.width > 0) {
             self.cropView.cropAreaInImage = _cropArea;
         }
+        
+        navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, width, 44+statusBarSize.height)];
+        UINavigationItem *navItem = [[UINavigationItem alloc]initWithTitle:@"사진편집"];
+        navigationBar.delegate = self;
+        [UINavigationBar appearance].barTintColor = [UIColor colorWithRed:132.0/255.0 green:68.0/255.0 blue:240.0/255.0 alpha:1.0];
+//        navigationBar.backgroundColor = [UIColor colorWithRed:132.0/255.0 green:68.0/255.0 blue:240.0/255.0 alpha:1.0];
+        
+        //        if(!self.navigationController){
+        //            [self.view addSubview:navBar];
+        //        }else{
+        //            //navi title setting
+        //            self.navigationItem.title = @"사진편집";
+        //        }
+        
+        //done button setting
+        UIButton *doneBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIImage *doneBtnImage = [UIImage imageNamed:@"title_icon_save.png"];
+        doneBtn.frame = CGRectMake(0, 0, 40, 40);
+        [doneBtn setImage:doneBtnImage forState:UIControlStateNormal];
+        [doneBtn addTarget:self action:@selector(done:) forControlEvents:UIControlEventTouchUpInside];
+        [doneBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
+        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithCustomView:doneBtn];
+        
+        navItem.rightBarButtonItem = doneButton;
+        
+        [navigationBar setItems:@[navItem] animated:YES];
+        
+        
+        [self.view addSubview:navigationBar];
+//        
+//        UINavigationBar *myNav = [[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, width, 44+statusBarSize.height)];
+//        [UINavigationBar appearance].barTintColor = [UIColor colorWithRed:132.0/255.0 green:68.0/255.0 blue:240.0/255.0 alpha:1.0];
+//        [self.view addSubview:myNav];
+        
+        
+//        UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel"
+//                                                                       style:UIBarButtonItemStyleBordered
+//                                                                      target:self
+//                                                                      action:nil];
+//        
+//        UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithTitle:@"Done"
+//                                                                     style:UIBarButtonItemStyleBordered
+//                                                                    target:self action:nil];
+//        
+//        
+//        UINavigationItem *navigItem = [[UINavigationItem alloc] initWithTitle:@"Navigation Title"];
+//        navigItem.rightBarButtonItem = doneItem;
+//        navigItem.leftBarButtonItem = cancelItem;
+//        myNav.items = [NSArray arrayWithObjects: navigItem,nil];
+        
+//        [UIBarButtonItem appearance].tintColor = [UIColor blueColor];
     }
 }
 
@@ -152,6 +160,8 @@ float IMAGE_MIN_WIDTH = 400;
             CGImageRelease(imageRef);
         }
         [self.delegate ImageCropViewControllerSuccess:self didFinishCroppingImage:cropped];
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
     
 }

@@ -88,9 +88,53 @@
     
     if([clickImage isEqual:addImageData]){
         [imageView setImage:closeImage forState:UIControlStateNormal];
+        
+        NSArray *menuItems =
+        @[
+          [KxMenuItem menuItem:@"다이어리"
+                        target:self
+                        action:@selector(moveWriteDiary:)],
+          
+          [KxMenuItem menuItem:@"일정"
+                        target:self
+                        action:@selector(moveWriteSchedule:)],
+          ];
+        
+        KxMenuItem *first = menuItems[0];
+        first.foreColor = [UIColor colorWithRed:47/255.0f green:112/255.0f blue:225/255.0f alpha:1.0];
+        first.alignment = NSTextAlignmentCenter;
+        
+        [KxMenu showMenuInView:self.view
+                      fromRect:CGRectMake(imageView.frame.origin.x, imageView.frame.origin.x, imageView.frame.size.width, imageView.frame.size.height)
+                     menuItems:menuItems];
+        
+        [KxMenu setTarget:self action:@selector(dismissMenu)];
+
     }else{
+        [KxMenu dismissMenu];
         [imageView setImage:addImage forState:UIControlStateNormal];
+        
     }
+}
+
+- (void)dismissMenu{
+    NSLog(@"dismissMenu");
+    UIButton *imageView = self.navigationItem.leftBarButtonItem.customView;
+    [imageView setImage:[UIImage imageNamed:@"title_icon_add.png"] forState:UIControlStateNormal];
+}
+
+- (void) moveWriteDiary:(id)sender{
+    UIButton *imageView = self.navigationItem.leftBarButtonItem.customView;
+    [imageView setImage:[UIImage imageNamed:@"title_icon_add.png"] forState:UIControlStateNormal];
+    
+    [self performSegueWithIdentifier:@"writeDiarySegue" sender:self];
+}
+
+- (void) moveWriteSchedule:(id)sender{
+    UIButton *imageView = self.navigationItem.leftBarButtonItem.customView;
+    [imageView setImage:[UIImage imageNamed:@"title_icon_add.png"] forState:UIControlStateNormal];
+    
+    [self performSegueWithIdentifier:@"writeDetailScheduleSegue" sender:self];
 }
 
 - (void)moveToMessage{
