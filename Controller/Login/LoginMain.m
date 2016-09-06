@@ -71,7 +71,6 @@
 }
 
 - (void)goBack {
-    NSLog(@"PSH goBack");
     //임시로 계정 잠금 화면으로 이동
     [self performSegueWithIdentifier:@"moveLoginUnlockAccount" sender:self];
 }
@@ -97,8 +96,8 @@
 
 - (IBAction)loginButtonAction:(id)sender {
     //TEMP 대쉬보드 이동
-    UIStoryboard *dashBoardStoryboard = [UIStoryboard storyboardWithName:@"DashBoard" bundle:nil];
-    UINavigationController *dashBoardNavigationController = (UINavigationController *)[dashBoardStoryboard instantiateViewControllerWithIdentifier:@"DashBoardNavigation"];
+    UIStoryboard *dashBoardStoryboard = [UIStoryboard storyboardWithName:@"MainTabBar" bundle:nil];
+    UINavigationController *dashBoardNavigationController = (UINavigationController *)[dashBoardStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarNavigation"];
     
     [self presentViewController:dashBoardNavigationController animated:YES completion:nil];
 }

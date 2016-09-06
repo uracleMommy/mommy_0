@@ -7,8 +7,6 @@
 //
 
 #import "SignUpMommyInfoScrollViewController.h"
-#import <AVFoundation/AVFoundation.h>
-#import <Photos/Photos.h>
 
 @interface SignUpMommyInfoScrollViewController ()
 
@@ -250,7 +248,6 @@
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"사진"
                                                                    message:@""
                                                             preferredStyle:UIAlertControllerStyleActionSheet]; // 1
-    //    UIAlertControllerStyleActionSheet
     
     UIAlertAction *showAction = [UIAlertAction actionWithTitle:@"사진보기"
                                                          style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
@@ -281,7 +278,7 @@
                                                            style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
                                                            }]; // 3
     
-    if([_mommyImageButton currentImage] != _defaultImage){
+    if(![[_mommyImageButton currentImage] isEqual:_defaultImage]){
         [alert addAction:showAction];
     }
     [alert addAction:takeAction]; // 4
@@ -295,107 +292,28 @@
 
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    NSLog(@"PSH picker!!");
     _image = [info valueForKey:UIImagePickerControllerOriginalImage];
-    //    imageView.image = image;
     
-    if(controller == nil){
-        controller = [[ImageCropViewController alloc] initWithImage:_image];
-        controller.delegate = self;
-        controller.blurredBackground = YES;
-    }else{
-        [controller setImage:_image];
-    }
-    // set the cropped area
-    // controller.cropArea = CGRectMake(0, 0, 100, 200);
+    controller = [[ImageCropViewController alloc] initWithImage:_image];
+    controller.delegate = self;
+    controller.blurredBackground = YES;
+
     [imagePicker dismissViewControllerAnimated:YES completion:nil];
     [imagePickerController dismissViewControllerAnimated:YES completion:nil];
     
-    //TEMP pickerview navigation 처리 전 주석
-//    [self presentViewController:controller animated:YES completion:nil];
-    
-    [_mommyImageButton setImage:_image forState:UIControlStateNormal];
-    [_mommyImageButton.imageView setContentMode:UIViewContentModeScaleAspectFill];
-
-    
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 
 #pragma mark cropView Delegate
-//- (void)ImageCropViewControllerDidCancel:(ImageCropViewController *)controller{
-//    [_mommyImageButton setImage:_image forState:UIControlStateNormal];
-//    [[self navigationController] popViewControllerAnimated:YES];
-//}
-
 -(void)ImageCropViewControllerSuccess:(UIViewController *)controller didFinishCroppingImage:(UIImage *)croppedImage{
     _image = croppedImage;
     
-    [_mommyImageButton setImage:[self imageByScalingProportionallyToSize:CGSizeMake( _mommyImageButton.frame.size.width, _mommyImageButton.frame.size.height) sourceImage:croppedImage] forState:UIControlStateNormal];
-    //    CGRect cropArea = controller.cropArea;
+    [_mommyImageButton setImage:_image forState:UIControlStateNormal];
+    [_mommyImageButton.imageView setContentMode:UIViewContentModeScaleAspectFill];
+    
     [[self navigationController] popViewControllerAnimated:YES];
 }
-
-- (UIImage *)imageByScalingProportionallyToSize:(CGSize)targetSize sourceImage:(UIImage*)sourceImage {
-    
-    UIImage *newImage = nil;
-    
-    CGSize imageSize = sourceImage.size;
-    CGFloat width = imageSize.width;
-    CGFloat height = imageSize.height;
-    
-    CGFloat targetWidth = targetSize.width;
-    CGFloat targetHeight = targetSize.height;
-    
-    CGFloat scaleFactor = 0.0;
-    CGFloat scaledWidth = targetWidth;
-    CGFloat scaledHeight = targetHeight;
-    
-    CGPoint thumbnailPoint = CGPointMake(0.0,0.0);
-    
-    if (!CGSizeEqualToSize(imageSize, targetSize)) {
-        
-        CGFloat widthFactor = targetWidth / width;
-        CGFloat heightFactor = targetHeight / height;
-        
-        if (widthFactor < heightFactor)
-            scaleFactor = widthFactor;
-        else
-            scaleFactor = heightFactor;
-        
-        scaledWidth  = width * scaleFactor;
-        scaledHeight = height * scaleFactor;
-        
-        // center the image
-        
-        if (widthFactor < heightFactor) {
-            thumbnailPoint.y = (targetHeight - scaledHeight) * 0.5;
-        } else if (widthFactor > heightFactor) {
-            thumbnailPoint.x = (targetWidth - scaledWidth) * 0.5;
-        }
-    }
-    
-    
-    // this is actually the interesting part:
-    
-    UIGraphicsBeginImageContextWithOptions(targetSize, NO, 0);
-    
-    CGRect thumbnailRect = CGRectZero;
-    thumbnailRect.origin = thumbnailPoint;
-    thumbnailRect.size.width  = scaledWidth;
-    thumbnailRect.size.height = scaledHeight;
-    
-    [sourceImage drawInRect:thumbnailRect];
-    
-    newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    if(newImage == nil) NSLog(@"could not scale image");
-    
-    
-    return newImage ;
-}
-
-
 
 #pragma mark Library Function
 
@@ -415,18 +333,7 @@
         [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"Your device doesn't have a library." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
     }
     else if(status == PHAuthorizationStatusNotDetermined){ // not determined
-        //        [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
-        //
-        //            if (status == PHAuthorizationStatusAuthorized) {
-        //                // Access has been granted.
         [self libraryAuthorized];
-        //            }
-        //
-        //            else {
-        //                // Access has been denied.
-        //                [self libraryDenied];
-        //            }
-        //        }];
     }
 }
 
@@ -462,15 +369,7 @@
         [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"Your device doesn't have a camera." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
     }
     else if(status == AVAuthorizationStatusNotDetermined){ // not determined
-        
-        //        [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
-        //            if(granted){ // Access has been granted ..do something
-        //                NSLog(@"camera authorized");
         [self cameraAuthorized];
-        //            } else { // Access denied ..do something
-        //                [self cameraDenied];
-        //            }
-        //        }];
     }
 }
 
@@ -491,7 +390,7 @@
 #pragma mark UITextField Delegate
 
 -(BOOL)textFieldShouldEndEditing:(UITextField *)textField{
-    if(textField == _mommyNameTextField){
+    if([textField isEqual:_mommyNameTextField]){
         NSString *mommyText = [[NSString alloc] initWithString:_mommyNameTextField.text];
         if([mommyText isEqualToString:@""]){
             _mommyNameValidationLabel.textColor = [UIColor lightGrayColor];
@@ -519,19 +418,8 @@
                          range:NSMakeRange(0, 5)];
             [_mommyNameValidationLabel setAttributedText: text];
         }
-        
-        
-        
-        
-        //영문, 숫자구성
-        //5~12자 이내
-        //중복되지않음
     }
     return YES;
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
 }
 
 @end

@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import <Photos/Photos.h>
 #import "ImageCropView.h"
 #import "IQDropDownTextField.h"
 
-@interface SignUpMommyInfoScrollViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIAlertViewDelegate, UIImagePickerControllerDelegate, ImageCropViewControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource>{
+@interface SignUpMommyInfoScrollViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIAlertViewDelegate, ImageCropViewControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
     UIImagePickerController *imagePicker;
     UIImagePickerController *imagePickerController;
     ImageCropViewController *controller;

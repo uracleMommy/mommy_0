@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A0CCB441D73B411001B6E1F /* SignUpMainScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0CCB431D73B411001B6E1F /* SignUpMainScrollViewController.m */; };
+		2A3026381D7E549D0020C3B4 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3026371D7E549D0020C3B4 /* KxMenu.m */; };
 		2A309ACE1D79634E001C54C5 /* ColorPickerTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A309AC31D79634E001C54C5 /* ColorPickerTextField.m */; };
 		2A309ACF1D79634E001C54C5 /* HFColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A309AC61D79634E001C54C5 /* HFColorButton.m */; };
 		2A309AD01D79634E001C54C5 /* HFColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A309AC81D79634E001C54C5 /* HFColorPickerView.m */; };
@@ -19,6 +20,8 @@
 		2A371A511D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A371A4F1D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.xib */; };
 		2A371A541D62E2C10051F278 /* SignUpFetusInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A371A531D62E2C10051F278 /* SignUpFetusInfoController.m */; };
 		2A371A571D62E8F30051F278 /* SignUpFetusInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A371A561D62E8F30051F278 /* SignUpFetusInfoModel.m */; };
+		2A444C371D7EBA7E00B37E8A /* termsPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A444C351D7EBA7E00B37E8A /* termsPopupViewController.m */; };
+		2A444C381D7EBA7E00B37E8A /* termsPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A444C361D7EBA7E00B37E8A /* termsPopupViewController.xib */; };
 		2A4474C81D6EBB4A00D467C8 /* LoginUnlockAccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4474C71D6EBB4A00D467C8 /* LoginUnlockAccountController.m */; };
 		2A54B1B01D66904000C538D1 /* JTCalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A54B1901D66904000C538D1 /* JTCalendarManager.m */; };
 		2A54B1B11D66904000C538D1 /* JTCalendarSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A54B1921D66904000C538D1 /* JTCalendarSettings.m */; };
@@ -42,6 +45,8 @@
 		2AB6277A1D5C0CF400BD7B84 /* SignUpMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB627791D5C0CF400BD7B84 /* SignUpMain.m */; };
 		2AB97A281D5AAFDA0063EB5E /* MembershipSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AB97A271D5AAFDA0063EB5E /* MembershipSignUp.storyboard */; };
 		2AC781DB1D599C0800B86BE1 /* MembershipLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC781DA1D599C0800B86BE1 /* MembershipLogin.storyboard */; };
+		2AD4A8911D7D660C0032E16C /* emoticonPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4A88F1D7D660C0032E16C /* emoticonPopupViewController.m */; };
+		2AD4A8921D7D660C0032E16C /* emoticonPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4A8901D7D660C0032E16C /* emoticonPopupViewController.xib */; };
 		2ADC0BE81D751A2E006E47B3 /* SignUpMommyInfoScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ADC0BE71D751A2E006E47B3 /* SignUpMommyInfoScrollViewController.m */; };
 		2AE11DE31D654C4E003C6690 /* DiaryListBasicCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11DE11D654C4E003C6690 /* DiaryListBasicCustomCell.m */; };
 		2AE11DE41D654C4E003C6690 /* DiaryListBasicCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AE11DE21D654C4E003C6690 /* DiaryListBasicCustomCell.xib */; };
@@ -152,6 +157,8 @@
 /* Begin PBXFileReference section */
 		2A0CCB421D73B411001B6E1F /* SignUpMainScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpMainScrollViewController.h; sourceTree = "<group>"; };
 		2A0CCB431D73B411001B6E1F /* SignUpMainScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpMainScrollViewController.m; sourceTree = "<group>"; };
+		2A3026361D7E549D0020C3B4 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
+		2A3026371D7E549D0020C3B4 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		2A309AC21D79634E001C54C5 /* ColorPickerTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerTextField.h; sourceTree = "<group>"; };
 		2A309AC31D79634E001C54C5 /* ColorPickerTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerTextField.m; sourceTree = "<group>"; };
 		2A309AC51D79634E001C54C5 /* HFColorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFColorButton.h; sourceTree = "<group>"; };
@@ -172,6 +179,9 @@
 		2A371A531D62E2C10051F278 /* SignUpFetusInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpFetusInfoController.m; sourceTree = "<group>"; };
 		2A371A551D62E8F30051F278 /* SignUpFetusInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpFetusInfoModel.h; sourceTree = "<group>"; };
 		2A371A561D62E8F30051F278 /* SignUpFetusInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpFetusInfoModel.m; sourceTree = "<group>"; };
+		2A444C341D7EBA7E00B37E8A /* termsPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = termsPopupViewController.h; sourceTree = "<group>"; };
+		2A444C351D7EBA7E00B37E8A /* termsPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = termsPopupViewController.m; sourceTree = "<group>"; };
+		2A444C361D7EBA7E00B37E8A /* termsPopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = termsPopupViewController.xib; sourceTree = "<group>"; };
 		2A4474C61D6EBB4A00D467C8 /* LoginUnlockAccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginUnlockAccountController.h; sourceTree = "<group>"; };
 		2A4474C71D6EBB4A00D467C8 /* LoginUnlockAccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginUnlockAccountController.m; sourceTree = "<group>"; };
 		2A54B18D1D66904000C538D1 /* JTCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCalendar.h; sourceTree = "<group>"; };
@@ -222,6 +232,9 @@
 		2AB627791D5C0CF400BD7B84 /* SignUpMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpMain.m; sourceTree = "<group>"; };
 		2AB97A271D5AAFDA0063EB5E /* MembershipSignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MembershipSignUp.storyboard; sourceTree = "<group>"; };
 		2AC781DA1D599C0800B86BE1 /* MembershipLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MembershipLogin.storyboard; sourceTree = "<group>"; };
+		2AD4A88E1D7D660C0032E16C /* emoticonPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = emoticonPopupViewController.h; sourceTree = "<group>"; };
+		2AD4A88F1D7D660C0032E16C /* emoticonPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = emoticonPopupViewController.m; sourceTree = "<group>"; };
+		2AD4A8901D7D660C0032E16C /* emoticonPopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = emoticonPopupViewController.xib; sourceTree = "<group>"; };
 		2ADC0BE61D751A2E006E47B3 /* SignUpMommyInfoScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpMommyInfoScrollViewController.h; sourceTree = "<group>"; };
 		2ADC0BE71D751A2E006E47B3 /* SignUpMommyInfoScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpMommyInfoScrollViewController.m; sourceTree = "<group>"; };
 		2AE11DE01D654C4E003C6690 /* DiaryListBasicCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryListBasicCustomCell.h; sourceTree = "<group>"; };
@@ -420,6 +433,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A3026321D7E54640020C3B4 /* KkMenu */ = {
+			isa = PBXGroup;
+			children = (
+				2A3026361D7E549D0020C3B4 /* KxMenu.h */,
+				2A3026371D7E549D0020C3B4 /* KxMenu.m */,
+			);
+			path = KkMenu;
+			sourceTree = "<group>";
+		};
 		2A309AC01D79634E001C54C5 /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +537,9 @@
 				2A371A4D1D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.h */,
 				2A371A4E1D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.m */,
 				2A371A4F1D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.xib */,
+				2A444C341D7EBA7E00B37E8A /* termsPopupViewController.h */,
+				2A444C351D7EBA7E00B37E8A /* termsPopupViewController.m */,
+				2A444C361D7EBA7E00B37E8A /* termsPopupViewController.xib */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -628,6 +653,9 @@
 				2AE11DE51D657DE4003C6690 /* DiaryListImageCustomCell.h */,
 				2AE11DE61D657DE4003C6690 /* DiaryListImageCustomCell.m */,
 				2AE11DE71D657DE4003C6690 /* DiaryListImageCustomCell.xib */,
+				2AD4A88E1D7D660C0032E16C /* emoticonPopupViewController.h */,
+				2AD4A88F1D7D660C0032E16C /* emoticonPopupViewController.m */,
+				2AD4A8901D7D660C0032E16C /* emoticonPopupViewController.xib */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -862,6 +890,7 @@
 		DC5D20761D62AE8F00ACDCA4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				2A3026321D7E54640020C3B4 /* KkMenu */,
 				DC538E9C1D781C3600E5949B /* IQKeyboardManager */,
 				DCF6CAB01D74413D00703CAE /* PushNotice */,
 				DCF6CA9C1D742AD500703CAE /* JTSImageViewer */,
@@ -1133,11 +1162,13 @@
 				DC5D20961D62E01300ACDCA4 /* DashBoardScrollCellView.xib in Resources */,
 				DC5D20741D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf in Resources */,
 				DCF6CA911D740D0A00703CAE /* PageImageViewController.xib in Resources */,
+				2AD4A8921D7D660C0032E16C /* emoticonPopupViewController.xib in Resources */,
 				DCF6CA9B1D740DED00703CAE /* ChildPageImageViewController.xib in Resources */,
 				DC3AAED31D75A11C007218E9 /* WeekProgramCell.xib in Resources */,
 				DC56F0A71D79728F00FB3A30 /* WeightDetailInfoFooterCell.xib in Resources */,
 				2A54B1C81D66E4E600C538D1 /* Assets.xcassets in Resources */,
 				2AB97A281D5AAFDA0063EB5E /* MembershipSignUp.storyboard in Resources */,
+				2A444C381D7EBA7E00B37E8A /* termsPopupViewController.xib in Resources */,
 				DCF6CAC11D7443E200703CAE /* PushNotice.storyboard in Resources */,
 				2A371A4C1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.xib in Resources */,
 				DC73E5C71D6DAE3B007D2DEE /* IndicatorViewController.xib in Resources */,
@@ -1192,6 +1223,7 @@
 				DC1FE6E41D658E47006F7A50 /* DiarySegue.m in Sources */,
 				2A309ACF1D79634E001C54C5 /* HFColorButton.m in Sources */,
 				DC538EC81D781C3600E5949B /* IQKeyboardReturnKeyHandler.m in Sources */,
+				2A3026381D7E549D0020C3B4 /* KxMenu.m in Sources */,
 				DC1FE6F71D65C83C006F7A50 /* UIScrollView+DZNSegmentedControl.m in Sources */,
 				DC1FE6EA1D659912006F7A50 /* MainTabbarController.m in Sources */,
 				DC1FE6E61D658E47006F7A50 /* TabbarDiaryNavController.m in Sources */,
@@ -1207,6 +1239,7 @@
 				DC1FE6ED1D65A7D4006F7A50 /* fetusInfoController.m in Sources */,
 				2A54B1B81D66904000C538D1 /* JTCalendarWeekDayView.m in Sources */,
 				DC538EC51D781C3600E5949B /* IQUIViewController+Additions.m in Sources */,
+				2A444C371D7EBA7E00B37E8A /* termsPopupViewController.m in Sources */,
 				DC5D20861D62AFA100ACDCA4 /* OTPageView.m in Sources */,
 				2ADC0BE81D751A2E006E47B3 /* SignUpMommyInfoScrollViewController.m in Sources */,
 				2A54B1B21D66904000C538D1 /* JTDateHelper.m in Sources */,
@@ -1238,6 +1271,7 @@
 				2AE11DF01D6581D9003C6690 /* DiaryListModel.m in Sources */,
 				DC4E95881D7D0B2B0087647B /* WeightDetailInfoHeaderCell.m in Sources */,
 				2A309ACE1D79634E001C54C5 /* ColorPickerTextField.m in Sources */,
+				2AD4A8911D7D660C0032E16C /* emoticonPopupViewController.m in Sources */,
 				2AB3DD991D6BDB7C00512949 /* SignUpMommyInfoController.m in Sources */,
 				2A54B1BA1D66904000C538D1 /* JTHorizontalCalendarView.m in Sources */,
 				DC3AAEC41D757D4A007218E9 /* SampleMainController.m in Sources */,

@@ -31,6 +31,13 @@
     [firstController setViewControllers:@[_firstTabViewController]];
     
     // 다이어리 루트 컨트롤러 할당
+    UIStoryboard *diaryBoardStoryboard = [UIStoryboard storyboardWithName:@"Diary" bundle:nil];
+    
+    _secondTabViewController = [diaryBoardStoryboard instantiateInitialViewController];
+    
+    UINavigationController *secondController = (UINavigationController *)self.viewControllers[1];
+    [secondController setViewControllers:@[_secondTabViewController]];
+    
     
     // 커뮤니티 루트 컨트롤러 할당
     

@@ -7,7 +7,15 @@
 //
 
 #import "DiarySegue.h"
+#import "TabbarDiaryNavController.h"
 
 @implementation DiarySegue
+
+- (void) perform {
+    
+    TabbarDiaryNavController *diaryContainerNavi =  (TabbarDiaryNavController *)self.sourceViewController;
+    UIViewController *DiaryController = (UIViewController *)self.destinationViewController;
+    [diaryContainerNavi pushViewController:DiaryController animated:NO];
+}
 
 @end

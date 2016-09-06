@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DiaryListModel.h"
+#import "KxMenu.h"
 
 @interface DiaryListController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *listTableview;
