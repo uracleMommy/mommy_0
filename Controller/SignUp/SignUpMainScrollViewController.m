@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //[[IQKeyboardManager sharedManager] setEnable:NO];
+    [[IQKeyboardManager sharedManager] setEnable:NO];
 
     [_birthdayTextField setDropDownMode : IQDropDownModeDatePicker];
 

@@ -78,6 +78,7 @@
                             <constraint firstItem="dfs-6u-hn2" firstAttribute="top" secondItem="AHA-A8-4Fp" secondAttribute="top" constant="19" id="FXR-Wh-9Kd"/>
                             <constraint firstItem="cMq-ax-6tJ" firstAttribute="top" secondItem="AHA-A8-4Fp" secondAttribute="top" constant="19" id="JJp-GH-Ppo"/>
                             <constraint firstAttribute="trailing" secondItem="T0M-85-rkX" secondAttribute="trailing" constant="15" id="JoV-Wl-TQK"/>
+                            <constraint firstAttribute="height" constant="87.5" id="PYW-2l-Byt"/>
                             <constraint firstItem="2Hq-UR-S5A" firstAttribute="top" secondItem="AHA-A8-4Fp" secondAttribute="top" constant="19" id="Xma-Fq-unU"/>
                             <constraint firstItem="dfs-6u-hn2" firstAttribute="leading" secondItem="2Hq-UR-S5A" secondAttribute="trailing" constant="3" id="e8n-wK-6la"/>
                             <constraint firstItem="T0M-85-rkX" firstAttribute="top" secondItem="AHA-A8-4Fp" secondAttribute="top" constant="22" id="gas-gT-XcQ"/>
@@ -94,12 +95,17 @@
                     <constraint firstAttribute="trailing" secondItem="AHA-A8-4Fp" secondAttribute="trailing" constant="8" id="ghE-OL-YfS"/>
                     <constraint firstAttribute="bottom" secondItem="AHA-A8-4Fp" secondAttribute="bottom" constant="4" id="kbz-YK-bqW"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="kbz-YK-bqW"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="containerBar" destination="8xu-w6-fZh" id="yf7-Lf-DXQ"/>
                 <outlet property="containerView" destination="AHA-A8-4Fp" id="L26-Ve-9yk"/>
             </connections>
-            <point key="canvasLocation" x="-221" y="409"/>
+            <point key="canvasLocation" x="-134" y="435"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -7,6 +7,7 @@
 //
 
 #import "ActiveMassController.h"
+#import "ExerciseCountDownController.h"
 
 @interface ActiveMassController ()
 
@@ -42,6 +43,20 @@
 - (IBAction)closeModal:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)goExerciseTimer:(id)sender {
+    
+    
+    UIStoryboard *dashBoardStoryboard = [UIStoryboard storyboardWithName:@"DashBoard" bundle:nil];    
+    UIViewController *exerciseCountDownController = [dashBoardStoryboard instantiateViewControllerWithIdentifier:@"ExerciseCountDown"];
+    
+    
+    CGRect size = [[UIScreen mainScreen] bounds];
+    [exerciseCountDownController.view setFrame:size];
+    
+    AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate.window addSubview:exerciseCountDownController.view];
 }
 
 @end

@@ -117,9 +117,18 @@
         return 314;
     }
     
-    else {
+    else if (indexPath.row == 1) {
         
         return 96;
+    }
+    
+    else if (indexPath.row == 2) {
+        
+        return 96;
+    }
+    else {
+        
+        return 146;
     }
 }
 

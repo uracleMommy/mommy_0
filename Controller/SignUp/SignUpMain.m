@@ -19,7 +19,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //[[IQKeyboardManager sharedManager] setEnable:YES];
+    
+    [[IQKeyboardManager sharedManager] setEnable:NO];
+    [[IQKeyboardManager sharedManager] setEnableAutoToolbar:YES];
     
     //back Button Setting
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -38,6 +40,20 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+
+//    scrollViewContoller = [self.storyboard instantiateViewControllerWithIdentifier:@"SignUpMainScrollViewTest"];
+//    
+//    [scrollViewContoller.view setFrame:CGRectMake(0, 0, _scrollView.frame.size.width, 630)];
+//    
+//    NSLog(@"%f %f", scrollViewContoller.view.frame.size.width, scrollViewContoller.view.frame.size.height);
+//    
+//    
+//    [_scrollView addSubview : scrollViewContoller.view];
+//    //[_scrollView sizeToFit];
+//    _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width, 630);
+//    [_scrollView sizeToFit];
+
+    
     scrollViewContoller = [self.storyboard instantiateViewControllerWithIdentifier:@"SignUpMainScrollView"];
 
     [scrollViewContoller.view setFrame:CGRectMake(0, 0, _scrollView.frame.size.width, 630)];
@@ -46,7 +62,9 @@
     
     
     [_scrollView addSubview : scrollViewContoller.view];
+    //[_scrollView sizeToFit];
     _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width, 630);
+    [_scrollView sizeToFit];
 }
 
 /*

@@ -21,4 +21,6 @@
 
 - (IBAction)closeModal:(id)sender;
 
+- (IBAction)goExerciseTimer:(id)sender;
+
 @end
