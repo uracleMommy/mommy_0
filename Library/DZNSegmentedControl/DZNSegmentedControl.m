@@ -485,11 +485,13 @@
             
             [btn setImage:selectedImage forState:UIControlStateSelected];
             btn.tintColor = color;
+            //btn.titleLabel.font = [UIFont fontWithName:@"NanumBarunGothic" size:15.0f];
+            
         }
     }
     else {
         [self setTitleColor:color forState:UIControlStateHighlighted];
-        [self setTitleColor:color forState:UIControlStateSelected];
+        [self setTitleColor:color forState:UIControlStateSelected];        
     }
 }
 
@@ -730,8 +732,22 @@
             }
         }
         else {
-            [attributedString addAttribute:NSFontAttributeName value:self.font range:NSMakeRange(0, attributedString.string.length)];
+            
+            // 수정본 시작
+            if (self.selectedSegmentIndex == button.tag) {
+                
+                [attributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"NanumBarunGothicBold" size:15.0f] range:NSMakeRange(0, attributedString.string.length)];
+            }
+            else {
+                
+                [attributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"NanumBarunGothic" size:15.0f] range:NSMakeRange(0, attributedString.string.length)];
+            }
+            // 수정본 끝
+            
+            // 원본
+            //[attributedString addAttribute:NSFontAttributeName value:self.font range:NSMakeRange(0, attributedString.string.length)];
             [attributedString addAttribute:NSForegroundColorAttributeName value:color range:NSMakeRange(0, attributedString.string.length)];
+            
         }
         
         [button setAttributedTitle:attributedString forState:state];
@@ -754,9 +770,11 @@
 
 - (void)setFont:(UIFont *)font
 {
-    if ( [self.font.fontName isEqualToString:font.fontName] && self.font.pointSize == font.pointSize ) {
-        return;
-    }
+    
+    // 원본
+//    if ( [self.font.fontName isEqualToString:font.fontName] && self.font.pointSize == font.pointSize ) {
+//        return;
+//    }
     
     _font = font;
     
@@ -859,6 +877,7 @@
     self.selectionIndicator.backgroundColor = self.tintColor;
     
     self.hairline.frame = [self hairlineRect];
+    
 }
 
 - (void)configureButtonForSegment:(NSUInteger)segment

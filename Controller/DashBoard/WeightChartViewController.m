@@ -27,8 +27,10 @@
     
     [_dayWeekTypeSegment setShowsCount:NO];
     
+    
+    
     // 테이블 바인드
-    NSArray *arrayList = [NSArray arrayWithObjects:@"1", @"2", @"3", @"4", nil];
+    NSArray *arrayList = [NSArray arrayWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", nil];
     _weightChartModel = [[WeightChartModel alloc] init];
     _weightChartModel.arrayList = arrayList;
     
@@ -40,8 +42,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+        
+}
+
+- (IBAction)closeModal:(id)sender {
     
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

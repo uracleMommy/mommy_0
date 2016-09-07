@@ -125,7 +125,6 @@
 - (IBAction)MultiImageView:(id)sender {
     
     
-    
 //    PageImageViewController *pageImageViewController = [[PageImageViewController alloc] initWithNibName:@"PageImageViewController" bundle:nil];
     
     MultiImageViewController *multiImageViewController = [[MultiImageViewController alloc] initWithNibName:@"MultiImageViewController" bundle:nil];

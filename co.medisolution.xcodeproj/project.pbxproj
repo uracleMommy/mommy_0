@@ -75,6 +75,10 @@
 		DC3AAED21D75A11C007218E9 /* WeekProgramCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3AAED01D75A11C007218E9 /* WeekProgramCell.m */; };
 		DC3AAED31D75A11C007218E9 /* WeekProgramCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC3AAED11D75A11C007218E9 /* WeekProgramCell.xib */; };
 		DC3ACE161D5D853C00D68F80 /* DashBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3ACE151D5D853C00D68F80 /* DashBoard.storyboard */; };
+		DC44C37E1D7FADFA00519D96 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44C3771D7FADFA00519D96 /* TPKeyboardAvoidingCollectionView.m */; };
+		DC44C37F1D7FADFA00519D96 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44C3791D7FADFA00519D96 /* TPKeyboardAvoidingScrollView.m */; };
+		DC44C3801D7FADFA00519D96 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44C37B1D7FADFA00519D96 /* TPKeyboardAvoidingTableView.m */; };
+		DC44C3811D7FADFA00519D96 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44C37D1D7FADFA00519D96 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		DC4E95851D7CF0A80087647B /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC4E95841D7CF0A80087647B /* More.storyboard */; };
 		DC4E95881D7D0B2B0087647B /* WeightDetailInfoHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E95871D7D0B2B0087647B /* WeightDetailInfoHeaderCell.m */; };
 		DC4E958D1D7D26EC0087647B /* WeightTotalInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E958B1D7D26EC0087647B /* WeightTotalInfoCell.m */; };
@@ -83,8 +87,13 @@
 		DC4E95931D7D2D2B0087647B /* WeightInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4E95911D7D2D2B0087647B /* WeightInfoView.xib */; };
 		DC4E95991D7D62D60087647B /* ActiveMassModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E95981D7D62D60087647B /* ActiveMassModel.m */; };
 		DC4E959C1D7D64930087647B /* ActiveMassController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E959B1D7D64930087647B /* ActiveMassController.m */; };
-		DC4E95A01D7D65050087647B /* ActiveMassChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E959E1D7D65050087647B /* ActiveMassChartView.m */; };
 		DC4E95A11D7D65050087647B /* ActiveMassChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4E959F1D7D65050087647B /* ActiveMassChartView.xib */; };
+		DC4E95A51D7D66550087647B /* ActiveMassStepCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E95A31D7D66550087647B /* ActiveMassStepCell.m */; };
+		DC4E95A61D7D66550087647B /* ActiveMassStepCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4E95A41D7D66550087647B /* ActiveMassStepCell.xib */; };
+		DC4E95AA1D7D66930087647B /* ActiveMassCalorieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E95A81D7D66930087647B /* ActiveMassCalorieCell.m */; };
+		DC4E95AB1D7D66930087647B /* ActiveMassCalorieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4E95A91D7D66930087647B /* ActiveMassCalorieCell.xib */; };
+		DC4E95AF1D7D66C40087647B /* ActiveMassExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E95AD1D7D66C40087647B /* ActiveMassExerciseCell.m */; };
+		DC4E95B01D7D66C40087647B /* ActiveMassExerciseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4E95AE1D7D66C40087647B /* ActiveMassExerciseCell.xib */; };
 		DC4EAA8B1D6E6F5E005370A8 /* notPasteField.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4EAA8A1D6E6F5E005370A8 /* notPasteField.m */; };
 		DC512AC01D6694D100885C26 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC512ABF1D6694D100885C26 /* Message.storyboard */; };
 		DC512AC61D66989000885C26 /* MessageListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC512AC51D66989000885C26 /* MessageListModel.m */; };
@@ -123,6 +132,15 @@
 		DC5D20911D62CB6500ACDCA4 /* DashBoardController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5D20901D62CB6500ACDCA4 /* DashBoardController.m */; };
 		DC5D20951D62E01300ACDCA4 /* DashBoardScrollCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5D20931D62E01300ACDCA4 /* DashBoardScrollCellView.m */; };
 		DC5D20961D62E01300ACDCA4 /* DashBoardScrollCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC5D20941D62E01300ACDCA4 /* DashBoardScrollCellView.xib */; };
+		DC5FCCE91D7E417E00957D73 /* ActiveMassChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5FCCE81D7E417E00957D73 /* ActiveMassChartView.m */; };
+		DC5FCCEC1D7E81B500957D73 /* SleepingHoursViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5FCCEB1D7E81B500957D73 /* SleepingHoursViewController.m */; };
+		DC5FCCEF1D7E83B500957D73 /* SleepingHoursModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5FCCEE1D7E83B500957D73 /* SleepingHoursModel.m */; };
+		DC5FCCF31D7E84CC00957D73 /* SleepingHoursChartViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5FCCF11D7E84CC00957D73 /* SleepingHoursChartViewCell.m */; };
+		DC5FCCF41D7E84CC00957D73 /* SleepingHoursChartViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC5FCCF21D7E84CC00957D73 /* SleepingHoursChartViewCell.xib */; };
+		DC5FCCF81D7E858900957D73 /* SleepingHoursEvalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5FCCF61D7E858900957D73 /* SleepingHoursEvalCell.m */; };
+		DC5FCCF91D7E858900957D73 /* SleepingHoursEvalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC5FCCF71D7E858900957D73 /* SleepingHoursEvalCell.xib */; };
+		DC5FCCFD1D7E890200957D73 /* SleepingHoursInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5FCCFB1D7E890200957D73 /* SleepingHoursInfoCell.m */; };
+		DC5FCCFE1D7E890200957D73 /* SleepingHoursInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC5FCCFC1D7E890200957D73 /* SleepingHoursInfoCell.xib */; };
 		DC60708D1D6FC85000F60148 /* MessageDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC60708C1D6FC85000F60148 /* MessageDetailController.m */; };
 		DC6070971D7030CF00F60148 /* SingleImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6070951D7030CF00F60148 /* SingleImageViewController.m */; };
 		DC6070981D7030CF00F60148 /* SingleImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC6070961D7030CF00F60148 /* SingleImageViewController.xib */; };
@@ -287,6 +305,14 @@
 		DC3AAED01D75A11C007218E9 /* WeekProgramCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekProgramCell.m; sourceTree = "<group>"; };
 		DC3AAED11D75A11C007218E9 /* WeekProgramCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekProgramCell.xib; sourceTree = "<group>"; };
 		DC3ACE151D5D853C00D68F80 /* DashBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DashBoard.storyboard; sourceTree = "<group>"; };
+		DC44C3761D7FADFA00519D96 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		DC44C3771D7FADFA00519D96 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		DC44C3781D7FADFA00519D96 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		DC44C3791D7FADFA00519D96 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		DC44C37A1D7FADFA00519D96 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		DC44C37B1D7FADFA00519D96 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		DC44C37C1D7FADFA00519D96 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		DC44C37D1D7FADFA00519D96 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		DC4E95841D7CF0A80087647B /* More.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = More.storyboard; sourceTree = "<group>"; };
 		DC4E95861D7D0B2B0087647B /* WeightDetailInfoHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightDetailInfoHeaderCell.h; sourceTree = "<group>"; };
 		DC4E95871D7D0B2B0087647B /* WeightDetailInfoHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightDetailInfoHeaderCell.m; sourceTree = "<group>"; };
@@ -300,9 +326,16 @@
 		DC4E95981D7D62D60087647B /* ActiveMassModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActiveMassModel.m; sourceTree = "<group>"; };
 		DC4E959A1D7D64930087647B /* ActiveMassController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActiveMassController.h; sourceTree = "<group>"; };
 		DC4E959B1D7D64930087647B /* ActiveMassController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActiveMassController.m; sourceTree = "<group>"; };
-		DC4E959D1D7D65050087647B /* ActiveMassChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActiveMassChartView.h; sourceTree = "<group>"; };
-		DC4E959E1D7D65050087647B /* ActiveMassChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActiveMassChartView.m; sourceTree = "<group>"; };
 		DC4E959F1D7D65050087647B /* ActiveMassChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActiveMassChartView.xib; sourceTree = "<group>"; };
+		DC4E95A21D7D66550087647B /* ActiveMassStepCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActiveMassStepCell.h; sourceTree = "<group>"; };
+		DC4E95A31D7D66550087647B /* ActiveMassStepCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActiveMassStepCell.m; sourceTree = "<group>"; };
+		DC4E95A41D7D66550087647B /* ActiveMassStepCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActiveMassStepCell.xib; sourceTree = "<group>"; };
+		DC4E95A71D7D66930087647B /* ActiveMassCalorieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActiveMassCalorieCell.h; sourceTree = "<group>"; };
+		DC4E95A81D7D66930087647B /* ActiveMassCalorieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActiveMassCalorieCell.m; sourceTree = "<group>"; };
+		DC4E95A91D7D66930087647B /* ActiveMassCalorieCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActiveMassCalorieCell.xib; sourceTree = "<group>"; };
+		DC4E95AC1D7D66C40087647B /* ActiveMassExerciseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActiveMassExerciseCell.h; sourceTree = "<group>"; };
+		DC4E95AD1D7D66C40087647B /* ActiveMassExerciseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActiveMassExerciseCell.m; sourceTree = "<group>"; };
+		DC4E95AE1D7D66C40087647B /* ActiveMassExerciseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActiveMassExerciseCell.xib; sourceTree = "<group>"; };
 		DC4EAA891D6E6F5E005370A8 /* notPasteField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = notPasteField.h; sourceTree = "<group>"; };
 		DC4EAA8A1D6E6F5E005370A8 /* notPasteField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = notPasteField.m; sourceTree = "<group>"; };
 		DC512ABF1D6694D100885C26 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
@@ -371,6 +404,21 @@
 		DC5D20921D62E01300ACDCA4 /* DashBoardScrollCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardScrollCellView.h; sourceTree = "<group>"; };
 		DC5D20931D62E01300ACDCA4 /* DashBoardScrollCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardScrollCellView.m; sourceTree = "<group>"; };
 		DC5D20941D62E01300ACDCA4 /* DashBoardScrollCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashBoardScrollCellView.xib; sourceTree = "<group>"; };
+		DC5FCCE71D7E417E00957D73 /* ActiveMassChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActiveMassChartView.h; sourceTree = "<group>"; };
+		DC5FCCE81D7E417E00957D73 /* ActiveMassChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActiveMassChartView.m; sourceTree = "<group>"; };
+		DC5FCCEA1D7E81B500957D73 /* SleepingHoursViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepingHoursViewController.h; sourceTree = "<group>"; };
+		DC5FCCEB1D7E81B500957D73 /* SleepingHoursViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepingHoursViewController.m; sourceTree = "<group>"; };
+		DC5FCCED1D7E83B500957D73 /* SleepingHoursModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepingHoursModel.h; sourceTree = "<group>"; };
+		DC5FCCEE1D7E83B500957D73 /* SleepingHoursModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepingHoursModel.m; sourceTree = "<group>"; };
+		DC5FCCF01D7E84CC00957D73 /* SleepingHoursChartViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepingHoursChartViewCell.h; sourceTree = "<group>"; };
+		DC5FCCF11D7E84CC00957D73 /* SleepingHoursChartViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepingHoursChartViewCell.m; sourceTree = "<group>"; };
+		DC5FCCF21D7E84CC00957D73 /* SleepingHoursChartViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SleepingHoursChartViewCell.xib; sourceTree = "<group>"; };
+		DC5FCCF51D7E858900957D73 /* SleepingHoursEvalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepingHoursEvalCell.h; sourceTree = "<group>"; };
+		DC5FCCF61D7E858900957D73 /* SleepingHoursEvalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepingHoursEvalCell.m; sourceTree = "<group>"; };
+		DC5FCCF71D7E858900957D73 /* SleepingHoursEvalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SleepingHoursEvalCell.xib; sourceTree = "<group>"; };
+		DC5FCCFA1D7E890200957D73 /* SleepingHoursInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepingHoursInfoCell.h; sourceTree = "<group>"; };
+		DC5FCCFB1D7E890200957D73 /* SleepingHoursInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepingHoursInfoCell.m; sourceTree = "<group>"; };
+		DC5FCCFC1D7E890200957D73 /* SleepingHoursInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SleepingHoursInfoCell.xib; sourceTree = "<group>"; };
 		DC60708B1D6FC85000F60148 /* MessageDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDetailController.h; sourceTree = "<group>"; };
 		DC60708C1D6FC85000F60148 /* MessageDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageDetailController.m; sourceTree = "<group>"; };
 		DC6070941D7030CF00F60148 /* SingleImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleImageViewController.h; sourceTree = "<group>"; };
@@ -752,6 +800,8 @@
 				DC538E641D78016B00E5949B /* WeightChartModel.m */,
 				DC4E95971D7D62D60087647B /* ActiveMassModel.h */,
 				DC4E95981D7D62D60087647B /* ActiveMassModel.m */,
+				DC5FCCED1D7E83B500957D73 /* SleepingHoursModel.h */,
+				DC5FCCEE1D7E83B500957D73 /* SleepingHoursModel.m */,
 			);
 			path = DashBoard;
 			sourceTree = "<group>";
@@ -767,6 +817,21 @@
 				2A743F521D62AB2E007DEB6B /* SignUp */,
 			);
 			path = Library;
+			sourceTree = "<group>";
+		};
+		DC44C3751D7FADFA00519D96 /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				DC44C3761D7FADFA00519D96 /* TPKeyboardAvoidingCollectionView.h */,
+				DC44C3771D7FADFA00519D96 /* TPKeyboardAvoidingCollectionView.m */,
+				DC44C3781D7FADFA00519D96 /* TPKeyboardAvoidingScrollView.h */,
+				DC44C3791D7FADFA00519D96 /* TPKeyboardAvoidingScrollView.m */,
+				DC44C37A1D7FADFA00519D96 /* TPKeyboardAvoidingTableView.h */,
+				DC44C37B1D7FADFA00519D96 /* TPKeyboardAvoidingTableView.m */,
+				DC44C37C1D7FADFA00519D96 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				DC44C37D1D7FADFA00519D96 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			path = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
 		DC4EAA881D6E6F35005370A8 /* NotPasteField */ = {
@@ -890,6 +955,7 @@
 		DC5D20761D62AE8F00ACDCA4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				DC44C3751D7FADFA00519D96 /* TPKeyboardAvoiding */,
 				2A3026321D7E54640020C3B4 /* KkMenu */,
 				DC538E9C1D781C3600E5949B /* IQKeyboardManager */,
 				DCF6CAB01D74413D00703CAE /* PushNotice */,
@@ -948,9 +1014,27 @@
 				DC4E958F1D7D2D2B0087647B /* WeightInfoView.h */,
 				DC4E95901D7D2D2B0087647B /* WeightInfoView.m */,
 				DC4E95911D7D2D2B0087647B /* WeightInfoView.xib */,
-				DC4E959D1D7D65050087647B /* ActiveMassChartView.h */,
-				DC4E959E1D7D65050087647B /* ActiveMassChartView.m */,
+				DC5FCCE71D7E417E00957D73 /* ActiveMassChartView.h */,
+				DC5FCCE81D7E417E00957D73 /* ActiveMassChartView.m */,
 				DC4E959F1D7D65050087647B /* ActiveMassChartView.xib */,
+				DC4E95A21D7D66550087647B /* ActiveMassStepCell.h */,
+				DC4E95A31D7D66550087647B /* ActiveMassStepCell.m */,
+				DC4E95A41D7D66550087647B /* ActiveMassStepCell.xib */,
+				DC4E95A71D7D66930087647B /* ActiveMassCalorieCell.h */,
+				DC4E95A81D7D66930087647B /* ActiveMassCalorieCell.m */,
+				DC4E95A91D7D66930087647B /* ActiveMassCalorieCell.xib */,
+				DC4E95AC1D7D66C40087647B /* ActiveMassExerciseCell.h */,
+				DC4E95AD1D7D66C40087647B /* ActiveMassExerciseCell.m */,
+				DC4E95AE1D7D66C40087647B /* ActiveMassExerciseCell.xib */,
+				DC5FCCF01D7E84CC00957D73 /* SleepingHoursChartViewCell.h */,
+				DC5FCCF11D7E84CC00957D73 /* SleepingHoursChartViewCell.m */,
+				DC5FCCF21D7E84CC00957D73 /* SleepingHoursChartViewCell.xib */,
+				DC5FCCF51D7E858900957D73 /* SleepingHoursEvalCell.h */,
+				DC5FCCF61D7E858900957D73 /* SleepingHoursEvalCell.m */,
+				DC5FCCF71D7E858900957D73 /* SleepingHoursEvalCell.xib */,
+				DC5FCCFA1D7E890200957D73 /* SleepingHoursInfoCell.h */,
+				DC5FCCFB1D7E890200957D73 /* SleepingHoursInfoCell.m */,
+				DC5FCCFC1D7E890200957D73 /* SleepingHoursInfoCell.xib */,
 			);
 			path = DashBoard;
 			sourceTree = "<group>";
@@ -966,6 +1050,8 @@
 				DC538E611D78009100E5949B /* WeightChartViewController.m */,
 				DC4E959A1D7D64930087647B /* ActiveMassController.h */,
 				DC4E959B1D7D64930087647B /* ActiveMassController.m */,
+				DC5FCCEA1D7E81B500957D73 /* SleepingHoursViewController.h */,
+				DC5FCCEB1D7E81B500957D73 /* SleepingHoursViewController.m */,
 			);
 			path = DashBoard;
 			sourceTree = "<group>";
@@ -1158,19 +1244,23 @@
 				DC56F0A91D79728F00FB3A30 /* WeightDetailInfoHeaderCell.xib in Resources */,
 				2AE11DE41D654C4E003C6690 /* DiaryListBasicCustomCell.xib in Resources */,
 				DC6070981D7030CF00F60148 /* SingleImageViewController.xib in Resources */,
+				DC5FCCFE1D7E890200957D73 /* SleepingHoursInfoCell.xib in Resources */,
 				DC4E958E1D7D26EC0087647B /* WeightTotalInfoCell.xib in Resources */,
 				DC5D20961D62E01300ACDCA4 /* DashBoardScrollCellView.xib in Resources */,
+				DC4E95A61D7D66550087647B /* ActiveMassStepCell.xib in Resources */,
 				DC5D20741D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf in Resources */,
 				DCF6CA911D740D0A00703CAE /* PageImageViewController.xib in Resources */,
 				2AD4A8921D7D660C0032E16C /* emoticonPopupViewController.xib in Resources */,
 				DCF6CA9B1D740DED00703CAE /* ChildPageImageViewController.xib in Resources */,
 				DC3AAED31D75A11C007218E9 /* WeekProgramCell.xib in Resources */,
 				DC56F0A71D79728F00FB3A30 /* WeightDetailInfoFooterCell.xib in Resources */,
+				DC4E95B01D7D66C40087647B /* ActiveMassExerciseCell.xib in Resources */,
 				2A54B1C81D66E4E600C538D1 /* Assets.xcassets in Resources */,
 				2AB97A281D5AAFDA0063EB5E /* MembershipSignUp.storyboard in Resources */,
 				2A444C381D7EBA7E00B37E8A /* termsPopupViewController.xib in Resources */,
 				DCF6CAC11D7443E200703CAE /* PushNotice.storyboard in Resources */,
 				2A371A4C1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.xib in Resources */,
+				DC5FCCF91D7E858900957D73 /* SleepingHoursEvalCell.xib in Resources */,
 				DC73E5C71D6DAE3B007D2DEE /* IndicatorViewController.xib in Resources */,
 				2AC781DB1D599C0800B86BE1 /* MembershipLogin.storyboard in Resources */,
 				DCA5AE371D598C6F0075B7AD /* LaunchScreen.storyboard in Resources */,
@@ -1178,7 +1268,9 @@
 				DC723C2A1D63FE2200557E1E /* MainTabBar.storyboard in Resources */,
 				DC3AAEC51D757D4A007218E9 /* SampleMainController.xib in Resources */,
 				2AA6D6C21D64230A00316DD6 /* Diary.storyboard in Resources */,
+				DC4E95AB1D7D66930087647B /* ActiveMassCalorieCell.xib in Resources */,
 				DC56F0A51D79728F00FB3A30 /* WeightDetailInfoContentsCell.xib in Resources */,
+				DC5FCCF41D7E84CC00957D73 /* SleepingHoursChartViewCell.xib in Resources */,
 				DC60709D1D7030E700F60148 /* MultiImageViewController.xib in Resources */,
 				DC512ACC1D669BF900885C26 /* MessageListCell.xib in Resources */,
 				DC4E95851D7CF0A80087647B /* More.storyboard in Resources */,
@@ -1202,11 +1294,13 @@
 			files = (
 				2A309AD21D79634E001C54C5 /* IQDropDownTextField.m in Sources */,
 				DC538EC11D781C3600E5949B /* IQNSArray+Sort.m in Sources */,
+				DC44C3801D7FADFA00519D96 /* TPKeyboardAvoidingTableView.m in Sources */,
 				DC538ECA1D781C3600E5949B /* IQBarButtonItem.m in Sources */,
 				DC4EAA8B1D6E6F5E005370A8 /* notPasteField.m in Sources */,
 				DC538ECD1D781C3600E5949B /* IQToolbar.m in Sources */,
 				2A54B1B11D66904000C538D1 /* JTCalendarSettings.m in Sources */,
 				DCF6CAC51D74453200703CAE /* PushNoticeModel.m in Sources */,
+				DC4E95A51D7D66550087647B /* ActiveMassStepCell.m in Sources */,
 				DCF6CA9A1D740DED00703CAE /* ChildPageImageViewController.m in Sources */,
 				DCF6CAAA1D742B4000703CAE /* JTSImageInfo.m in Sources */,
 				2A54B1B71D66904000C538D1 /* JTCalendarPageView.m in Sources */,
@@ -1219,6 +1313,7 @@
 				2A54B1B51D66904000C538D1 /* JTCalendarDayView.m in Sources */,
 				DCF6CA901D740D0A00703CAE /* PageImageViewController.m in Sources */,
 				DCA5AE321D598C6F0075B7AD /* co_medisolution.xcdatamodeld in Sources */,
+				DC4E95AA1D7D66930087647B /* ActiveMassCalorieCell.m in Sources */,
 				DC538EC91D781C3600E5949B /* IQTextView.m in Sources */,
 				DC1FE6E41D658E47006F7A50 /* DiarySegue.m in Sources */,
 				2A309ACF1D79634E001C54C5 /* HFColorButton.m in Sources */,
@@ -1229,12 +1324,13 @@
 				DC1FE6E61D658E47006F7A50 /* TabbarDiaryNavController.m in Sources */,
 				2A309AD01D79634E001C54C5 /* HFColorPickerView.m in Sources */,
 				DC6070971D7030CF00F60148 /* SingleImageViewController.m in Sources */,
+				DC5FCCEF1D7E83B500957D73 /* SleepingHoursModel.m in Sources */,
 				DCF6CAAE1D742B4000703CAE /* UIImage+JTSImageEffects.m in Sources */,
 				DC5D20951D62E01300ACDCA4 /* DashBoardScrollCellView.m in Sources */,
 				DC3AAEC01D7552EE007218E9 /* PushNoticeDetailViewController.m in Sources */,
 				DC3AAED21D75A11C007218E9 /* WeekProgramCell.m in Sources */,
 				DCF6CAAD1D742B4000703CAE /* UIApplication+JTSImageViewController.m in Sources */,
-				DC4E95A01D7D65050087647B /* ActiveMassChartView.m in Sources */,
+				DC44C37E1D7FADFA00519D96 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				DC538EC21D781C3600E5949B /* IQUIScrollView+Additions.m in Sources */,
 				DC1FE6ED1D65A7D4006F7A50 /* fetusInfoController.m in Sources */,
 				2A54B1B81D66904000C538D1 /* JTCalendarWeekDayView.m in Sources */,
@@ -1245,6 +1341,7 @@
 				2A54B1B21D66904000C538D1 /* JTDateHelper.m in Sources */,
 				DCA5AE291D598C6F0075B7AD /* AppDelegate.m in Sources */,
 				DC538ECE1D781C3600E5949B /* IQUIView+IQKeyboardToolbar.m in Sources */,
+				DC5FCCF31D7E84CC00957D73 /* SleepingHoursChartViewCell.m in Sources */,
 				2AE11DE31D654C4E003C6690 /* DiaryListBasicCustomCell.m in Sources */,
 				DCF6CAAB1D742B4000703CAE /* JTSImageViewController.m in Sources */,
 				DC5D20851D62AFA100ACDCA4 /* OTPageScrollView.m in Sources */,
@@ -1273,6 +1370,7 @@
 				2A309ACE1D79634E001C54C5 /* ColorPickerTextField.m in Sources */,
 				2AD4A8911D7D660C0032E16C /* emoticonPopupViewController.m in Sources */,
 				2AB3DD991D6BDB7C00512949 /* SignUpMommyInfoController.m in Sources */,
+				DC44C37F1D7FADFA00519D96 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				2A54B1BA1D66904000C538D1 /* JTHorizontalCalendarView.m in Sources */,
 				DC3AAEC41D757D4A007218E9 /* SampleMainController.m in Sources */,
 				DC538E621D78009100E5949B /* WeightChartViewController.m in Sources */,
@@ -1282,23 +1380,28 @@
 				DC1FE6E31D658E47006F7A50 /* DashBoardSegue.m in Sources */,
 				2A371A4B1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.m in Sources */,
 				DCA5AE261D598C6F0075B7AD /* main.m in Sources */,
+				DC5FCCF81D7E858900957D73 /* SleepingHoursEvalCell.m in Sources */,
 				DC7D38491D6BDD8800314189 /* FXBlurView.m in Sources */,
 				2A54B1B41D66904000C538D1 /* JTCalendarScrollManager.m in Sources */,
 				DCF6CAA91D742B4000703CAE /* JTSAnimatedGIFUtility.m in Sources */,
 				2A54B1B91D66904000C538D1 /* JTCalendarWeekView.m in Sources */,
 				DC56F0A61D79728F00FB3A30 /* WeightDetailInfoFooterCell.m in Sources */,
 				2A54B1B31D66904000C538D1 /* JTCalendarDelegateManager.m in Sources */,
+				DC4E95AF1D7D66C40087647B /* ActiveMassExerciseCell.m in Sources */,
 				2AA6D6CA1D64356000316DD6 /* DiaryWriteBasicController.m in Sources */,
 				DC538ECB1D781C3600E5949B /* IQPreviousNextView.m in Sources */,
 				DC4E958D1D7D26EC0087647B /* WeightTotalInfoCell.m in Sources */,
 				DC3AAEBA1D751EB6007218E9 /* PushNoticeViewController.m in Sources */,
 				DC5D20911D62CB6500ACDCA4 /* DashBoardController.m in Sources */,
+				DC5FCCFD1D7E890200957D73 /* SleepingHoursInfoCell.m in Sources */,
 				2AB627771D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m in Sources */,
+				DC5FCCE91D7E417E00957D73 /* ActiveMassChartView.m in Sources */,
 				2A54B1B61D66904000C538D1 /* JTCalendarMenuView.m in Sources */,
 				DC1FE6F61D65C83C006F7A50 /* DZNSegmentedControl.m in Sources */,
 				DC512AC61D66989000885C26 /* MessageListModel.m in Sources */,
 				DC56F0A21D79728F00FB3A30 /* WeightChartViewCell.m in Sources */,
 				DC5D20841D62AFA100ACDCA4 /* OTPageCell.m in Sources */,
+				DC44C3811D7FADFA00519D96 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				2AE11DE81D657DE4003C6690 /* DiaryListImageCustomCell.m in Sources */,
 				2AE11DF31D6583BC003C6690 /* DiaryListController.m in Sources */,
 				DC538EC61D781C3600E5949B /* IQUIWindow+Hierarchy.m in Sources */,
@@ -1306,6 +1409,7 @@
 				DC7D384C1D6BDD9A00314189 /* ImageCropView.m in Sources */,
 				DC538EC41D781C3600E5949B /* IQUIView+Hierarchy.m in Sources */,
 				DC3AAECA1D759BA9007218E9 /* WeekProgramController.m in Sources */,
+				DC5FCCEC1D7E81B500957D73 /* SleepingHoursViewController.m in Sources */,
 				2A309AD11D79634E001C54C5 /* UIColor+HexColors.m in Sources */,
 				2A54B1B01D66904000C538D1 /* JTCalendarManager.m in Sources */,
 			);

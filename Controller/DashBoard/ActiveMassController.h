@@ -7,9 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
+#import "DZNSegmentedControl.h"
+#import "ActiveMassModel.h"
 
-@interface ActiveMassController : UIViewController
+@interface ActiveMassController : CommonViewController<DZNSegmentedControlDelegate>
+
+@property (weak, nonatomic) IBOutlet DZNSegmentedControl *dayWeekTypeSegment;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic) ActiveMassModel *activeMassModel;
+
+- (IBAction)closeModal:(id)sender;
 
 @end
