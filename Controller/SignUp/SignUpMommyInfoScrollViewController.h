@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <Photos/Photos.h>
 #import "ImageCropView.h"
+#import "IQKeyboardManager.h"
 #import "IQDropDownTextField.h"
 
 @interface SignUpMommyInfoScrollViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIAlertViewDelegate, ImageCropViewControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
@@ -33,14 +34,14 @@
 - (UIImage *)imageByScalingProportionallyToSize:(CGSize)targetSize;
 
 
-@property (weak, nonatomic) IBOutlet IQDropDownTextField *fetusCountTextField;
-@property (weak, nonatomic) IBOutlet IQDropDownTextField *dueDateTextField;
-@property (weak, nonatomic) IBOutlet UITextField *addressTextField;
-@property (weak, nonatomic) IBOutlet UITextField *nowWeightTextField;
-@property (weak, nonatomic) IBOutlet UITextField *beforeWeightTextField;
-@property (weak, nonatomic) IBOutlet UITextField *heightTextField;
 @property (weak, nonatomic) IBOutlet UITextField *mommyNameTextField;
 @property (weak, nonatomic) IBOutlet UILabel *mommyNameValidationLabel;
+@property (weak, nonatomic) IBOutlet UITextField *addressTextField;
+@property (weak, nonatomic) IBOutlet IQDropDownTextField *dueDateTextField;
+@property (weak, nonatomic) IBOutlet UITextField *beforeWeightTextField;
+@property (weak, nonatomic) IBOutlet UITextField *nowWeightTextField;
+@property (weak, nonatomic) IBOutlet UITextField *heightTextField;
+@property (weak, nonatomic) IBOutlet IQDropDownTextField *fetusCountTextField;
 @property (weak, nonatomic) IBOutlet UIButton *mommyImageButton;
 @property (strong, nonatomic) UIImage *image;
 @property (strong, nonatomic) UIImage *defaultImage;

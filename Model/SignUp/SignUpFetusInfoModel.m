@@ -105,12 +105,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    int height = 40;
+    int height = 45;
     int row = [indexPath row];
     int maxrow = [_fetusNames count];
     
     if(row == maxrow){
-        height = height+40;
+        height = height+45;
     }
     
     return height;

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IQKeyboardManager.h"
 #import "TPKeyboardAvoidingScrollView.h"
 
 @interface SignUpMain : UIViewController <UITextFieldDelegate, UIPickerViewDelegate>{

@@ -74,6 +74,7 @@
     
     [_fetusCountTextField setDropDownMode : IQDropDownModeTextPicker];
     [_fetusCountTextField setItemList:pickerData_number_fetus];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -295,13 +296,19 @@
     _image = [info valueForKey:UIImagePickerControllerOriginalImage];
     
     controller = [[ImageCropViewController alloc] initWithImage:_image];
+    
     controller.delegate = self;
     controller.blurredBackground = YES;
+
 
     [imagePicker dismissViewControllerAnimated:YES completion:nil];
     [imagePickerController dismissViewControllerAnimated:YES completion:nil];
     
-    [self presentViewController:controller animated:YES completion:nil];
+    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:controller];
+    
+    [navController.navigationBar setTintColor:[UIColor colorWithRed:132.0/255.0 green:68.0/255.0 blue:240.0/255.0 alpha:1.0]];
+    
+    [self presentViewController:navController animated:YES completion:nil];
 }
 
 

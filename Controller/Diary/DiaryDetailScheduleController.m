@@ -17,8 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UINavigationItem *newItem = [[UINavigationItem alloc]init];
-    newItem.title = @"일정보기";
     
     //back Button Setting
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -29,7 +27,7 @@
     [backBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
     
-    newItem.leftBarButtonItem = backButton;
+    self.navigationItem.leftBarButtonItem = backButton;
     
     
     //edit Button Setting
@@ -51,10 +49,7 @@
     UIBarButtonItem *deleteButton = [[UIBarButtonItem alloc] initWithCustomView:deleteBtn];
     
     NSArray *rightBarButtonItems = [[NSArray alloc] initWithObjects: deleteButton, editButton, nil];
-    newItem.rightBarButtonItems = rightBarButtonItems;
-    
-    [_navigationBar setItems:@[newItem]];
-    
+    self.navigationItem.rightBarButtonItems = rightBarButtonItems;    
 }
 
 - (void)didReceiveMemoryWarning {

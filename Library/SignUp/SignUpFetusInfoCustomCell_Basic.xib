@@ -14,19 +14,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="BASIC_CELL_ID" selectionStyle="none" indentationWidth="10" reuseIdentifier="BASIC_CELL_ID" id="BbH-dL-XKh" customClass="SignUpFetusInfoCustomCell_Basic">
-            <rect key="frame" x="0.0" y="0.0" width="321" height="44"/>
+            <rect key="frame" x="0.0" y="0.0" width="321" height="45"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BbH-dL-XKh" id="MFY-Gk-480">
-                <rect key="frame" x="0.0" y="0.0" width="321" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="321" height="44.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mRp-q1-N0S" customClass="notPasteField">
-                        <rect key="frame" x="8" y="7" width="269" height="30"/>
-                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
+                        <rect key="frame" x="15" y="7" width="261" height="30"/>
+                        <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trC-c9-Dbx">
-                        <rect key="frame" x="277" y="0.0" width="44" height="44"/>
+                        <rect key="frame" x="276" y="0.0" width="45" height="45"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="trC-c9-Dbx" secondAttribute="height" multiplier="1:1" id="nmx-fN-J56"/>
                         </constraints>
@@ -38,7 +39,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="mRp-q1-N0S" firstAttribute="top" secondItem="MFY-Gk-480" secondAttribute="top" constant="7" id="CHj-Zi-qQo"/>
-                    <constraint firstItem="mRp-q1-N0S" firstAttribute="leading" secondItem="MFY-Gk-480" secondAttribute="leading" constant="8" id="DNA-0Z-rjB"/>
+                    <constraint firstItem="mRp-q1-N0S" firstAttribute="leading" secondItem="MFY-Gk-480" secondAttribute="leading" constant="15" id="DNA-0Z-rjB"/>
                     <constraint firstAttribute="bottom" secondItem="trC-c9-Dbx" secondAttribute="bottom" id="Rw0-FT-ZL4"/>
                     <constraint firstItem="trC-c9-Dbx" firstAttribute="top" secondItem="MFY-Gk-480" secondAttribute="top" id="VIl-Di-OdZ"/>
                     <constraint firstAttribute="trailing" secondItem="trC-c9-Dbx" secondAttribute="trailing" id="Yoj-u4-Pnh"/>

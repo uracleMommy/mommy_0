@@ -21,12 +21,13 @@
     
     defaultImage = [UIImage imageNamed:@"contents_btn_photo_update.png"];
    
-    _placeholderLabel = [[UILabel alloc] initWithFrame:CGRectMake(5.0, 0.0, _contentsTextView.frame.size.width - 10.0, 34.0)];
+    _placeholderLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, _contentsTextView.frame.size.width - 10.0, 34.0)];
     
     [_placeholderLabel setText:@"내용을 입력해주세요"];
     [_placeholderLabel setBackgroundColor:[UIColor clearColor]];
     [_placeholderLabel setTextColor:[UIColor colorWithRed:199.0/255.0f green:199.0/255.0f  blue:205.0/255.0f alpha:1.0]];
-    [_placeholderLabel setFont:[UIFont systemFontOfSize:14.5]];
+    
+    [_placeholderLabel setFont:[UIFont fontWithName:@"NanumBarunGothic" size:15]];
     _contentsTextView.delegate = self;
     
     [_contentsTextView addSubview:_placeholderLabel];
@@ -56,9 +57,6 @@
     [_imageButton04 setImage:defaultImage forState:UIControlStateNormal];
     
     
-    UINavigationItem *newItem = [[UINavigationItem alloc]init];
-    newItem.title = @"다이어리 쓰기";
-    
     //close Button Setting
     UIButton *closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *closeBtnImage = [UIImage imageNamed:@"title_icon_close.png"];
@@ -67,7 +65,7 @@
     [closeBtn addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
     [closeBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
     UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithCustomView:closeBtn];
-    newItem.rightBarButtonItem = closeButton;
+    self.navigationItem.rightBarButtonItem = closeButton;
     
     //save Button Setting
     UIButton *saveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -77,9 +75,7 @@
     [saveBtn addTarget:self action:@selector(saveDiary) forControlEvents:UIControlEventTouchUpInside];
     [saveBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithCustomView:saveBtn];
-    newItem.leftBarButtonItem = saveButton;
-    
-    [_navigationBar setItems:@[newItem]];
+    self.navigationItem.leftBarButtonItem = saveButton;
     
     [_dateButton setDropDownMode:IQDropDownModeDatePicker];
     [_dateButton setInputTextFlag:YES];
@@ -201,7 +197,7 @@
     [imagePicker dismissViewControllerAnimated:YES completion:nil];
     [imagePickerController dismissViewControllerAnimated:YES completion:nil];
     
-    [self presentViewController:controller animated:YES completion:nil];
+    [[self navigationController] pushViewController:controller animated:YES];
 }
 
 
