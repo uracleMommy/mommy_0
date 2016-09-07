@@ -16,8 +16,6 @@
 
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
-@property (strong, nonatomic) NSArray *imgArray;
-
 - (IBAction)closeView:(id)sender;
 
 @end
@@ -28,7 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    _imgArray = [NSArray arrayWithObjects:@"0", @"1", @"2", @"3", nil];
+//    _imgArray = [NSArray arrayWithObjects:@"0", @"1", @"2", nil];
     
     CGRect windowSize = [[UIScreen mainScreen] bounds];
     
@@ -47,6 +45,7 @@
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, i * windowSize.size.width, windowSize.size.width, windowSize.size.height)];
         UITapGestureRecognizer *imageTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTap:)];
+        imageTap.view.tag = i;
         [imageView addGestureRecognizer:imageTap];
         imageView.userInteractionEnabled = YES;
         [containerView addSubview:imageView];
@@ -58,7 +57,8 @@
         
         UIImage *originalImage;
         
-        originalImage = [UIImage imageNamed:[NSString stringWithFormat:@"home_img_0%d", i+1]];
+//        originalImage = [UIImage imageNamed:[NSString stringWithFormat:@"home_img_0%d", i+1]];
+        originalImage = (UIImage *)[_imgArray objectAtIndex:i];
         float oldImageWidth = originalImage.size.width;
         float oldImageHeight = originalImage.size.height;
         
@@ -86,10 +86,10 @@
 #pragma 이미지 탭
 - (void) imageTap : (id) sender {
     
-    
+    UITapGestureRecognizer *gestureRecognizer = (UITapGestureRecognizer *)sender;
     
     JTSImageInfo *imageInfo = [[JTSImageInfo alloc] init];
-    imageInfo.image = [UIImage imageNamed:@"home_img_01"];
+    imageInfo.image = (UIImage *)_imgArray[gestureRecognizer.view.tag]; //[UIImage imageNamed:@"home_img_01"];
     
     JTSImageViewController *imageViewer = [[JTSImageViewController alloc]
                                            initWithImageInfo:imageInfo

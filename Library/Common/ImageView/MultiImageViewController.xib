@@ -42,7 +42,7 @@
                     </constraints>
                 </pageControl>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="UOR-d3-iPl" secondAttribute="trailing" constant="8" id="0HQ-vX-wpL"/>
                 <constraint firstItem="ZRR-rg-ZBk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="46q-SI-NYT"/>
@@ -53,7 +53,7 @@
                 <constraint firstAttribute="bottom" secondItem="ZRR-rg-ZBk" secondAttribute="bottom" constant="8" id="fnh-9V-OiK"/>
                 <constraint firstAttribute="bottom" secondItem="PfE-Rw-asr" secondAttribute="bottom" id="tCY-y6-KcC"/>
             </constraints>
-            <point key="canvasLocation" x="51" y="391"/>
+            <point key="canvasLocation" x="-53" y="429"/>
         </view>
     </objects>
     <resources>

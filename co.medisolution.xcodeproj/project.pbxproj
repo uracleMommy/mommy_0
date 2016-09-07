@@ -75,6 +75,10 @@
 		DC3AAED21D75A11C007218E9 /* WeekProgramCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3AAED01D75A11C007218E9 /* WeekProgramCell.m */; };
 		DC3AAED31D75A11C007218E9 /* WeekProgramCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC3AAED11D75A11C007218E9 /* WeekProgramCell.xib */; };
 		DC3ACE161D5D853C00D68F80 /* DashBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3ACE151D5D853C00D68F80 /* DashBoard.storyboard */; };
+		DC44C37E1D7FADFA00519D96 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44C3771D7FADFA00519D96 /* TPKeyboardAvoidingCollectionView.m */; };
+		DC44C37F1D7FADFA00519D96 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44C3791D7FADFA00519D96 /* TPKeyboardAvoidingScrollView.m */; };
+		DC44C3801D7FADFA00519D96 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44C37B1D7FADFA00519D96 /* TPKeyboardAvoidingTableView.m */; };
+		DC44C3811D7FADFA00519D96 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44C37D1D7FADFA00519D96 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		DC4E95851D7CF0A80087647B /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC4E95841D7CF0A80087647B /* More.storyboard */; };
 		DC4E95881D7D0B2B0087647B /* WeightDetailInfoHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E95871D7D0B2B0087647B /* WeightDetailInfoHeaderCell.m */; };
 		DC4E958D1D7D26EC0087647B /* WeightTotalInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E958B1D7D26EC0087647B /* WeightTotalInfoCell.m */; };
@@ -301,6 +305,14 @@
 		DC3AAED01D75A11C007218E9 /* WeekProgramCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekProgramCell.m; sourceTree = "<group>"; };
 		DC3AAED11D75A11C007218E9 /* WeekProgramCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekProgramCell.xib; sourceTree = "<group>"; };
 		DC3ACE151D5D853C00D68F80 /* DashBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DashBoard.storyboard; sourceTree = "<group>"; };
+		DC44C3761D7FADFA00519D96 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		DC44C3771D7FADFA00519D96 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		DC44C3781D7FADFA00519D96 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		DC44C3791D7FADFA00519D96 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		DC44C37A1D7FADFA00519D96 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		DC44C37B1D7FADFA00519D96 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		DC44C37C1D7FADFA00519D96 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		DC44C37D1D7FADFA00519D96 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		DC4E95841D7CF0A80087647B /* More.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = More.storyboard; sourceTree = "<group>"; };
 		DC4E95861D7D0B2B0087647B /* WeightDetailInfoHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightDetailInfoHeaderCell.h; sourceTree = "<group>"; };
 		DC4E95871D7D0B2B0087647B /* WeightDetailInfoHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightDetailInfoHeaderCell.m; sourceTree = "<group>"; };
@@ -807,6 +819,21 @@
 			path = Library;
 			sourceTree = "<group>";
 		};
+		DC44C3751D7FADFA00519D96 /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				DC44C3761D7FADFA00519D96 /* TPKeyboardAvoidingCollectionView.h */,
+				DC44C3771D7FADFA00519D96 /* TPKeyboardAvoidingCollectionView.m */,
+				DC44C3781D7FADFA00519D96 /* TPKeyboardAvoidingScrollView.h */,
+				DC44C3791D7FADFA00519D96 /* TPKeyboardAvoidingScrollView.m */,
+				DC44C37A1D7FADFA00519D96 /* TPKeyboardAvoidingTableView.h */,
+				DC44C37B1D7FADFA00519D96 /* TPKeyboardAvoidingTableView.m */,
+				DC44C37C1D7FADFA00519D96 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				DC44C37D1D7FADFA00519D96 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			path = TPKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
 		DC4EAA881D6E6F35005370A8 /* NotPasteField */ = {
 			isa = PBXGroup;
 			children = (
@@ -928,6 +955,7 @@
 		DC5D20761D62AE8F00ACDCA4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				DC44C3751D7FADFA00519D96 /* TPKeyboardAvoiding */,
 				2A3026321D7E54640020C3B4 /* KkMenu */,
 				DC538E9C1D781C3600E5949B /* IQKeyboardManager */,
 				DCF6CAB01D74413D00703CAE /* PushNotice */,
@@ -1266,6 +1294,7 @@
 			files = (
 				2A309AD21D79634E001C54C5 /* IQDropDownTextField.m in Sources */,
 				DC538EC11D781C3600E5949B /* IQNSArray+Sort.m in Sources */,
+				DC44C3801D7FADFA00519D96 /* TPKeyboardAvoidingTableView.m in Sources */,
 				DC538ECA1D781C3600E5949B /* IQBarButtonItem.m in Sources */,
 				DC4EAA8B1D6E6F5E005370A8 /* notPasteField.m in Sources */,
 				DC538ECD1D781C3600E5949B /* IQToolbar.m in Sources */,
@@ -1301,6 +1330,7 @@
 				DC3AAEC01D7552EE007218E9 /* PushNoticeDetailViewController.m in Sources */,
 				DC3AAED21D75A11C007218E9 /* WeekProgramCell.m in Sources */,
 				DCF6CAAD1D742B4000703CAE /* UIApplication+JTSImageViewController.m in Sources */,
+				DC44C37E1D7FADFA00519D96 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				DC538EC21D781C3600E5949B /* IQUIScrollView+Additions.m in Sources */,
 				DC1FE6ED1D65A7D4006F7A50 /* fetusInfoController.m in Sources */,
 				2A54B1B81D66904000C538D1 /* JTCalendarWeekDayView.m in Sources */,
@@ -1340,6 +1370,7 @@
 				2A309ACE1D79634E001C54C5 /* ColorPickerTextField.m in Sources */,
 				2AD4A8911D7D660C0032E16C /* emoticonPopupViewController.m in Sources */,
 				2AB3DD991D6BDB7C00512949 /* SignUpMommyInfoController.m in Sources */,
+				DC44C37F1D7FADFA00519D96 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				2A54B1BA1D66904000C538D1 /* JTHorizontalCalendarView.m in Sources */,
 				DC3AAEC41D757D4A007218E9 /* SampleMainController.m in Sources */,
 				DC538E621D78009100E5949B /* WeightChartViewController.m in Sources */,
@@ -1370,6 +1401,7 @@
 				DC512AC61D66989000885C26 /* MessageListModel.m in Sources */,
 				DC56F0A21D79728F00FB3A30 /* WeightChartViewCell.m in Sources */,
 				DC5D20841D62AFA100ACDCA4 /* OTPageCell.m in Sources */,
+				DC44C3811D7FADFA00519D96 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				2AE11DE81D657DE4003C6690 /* DiaryListImageCustomCell.m in Sources */,
 				2AE11DF31D6583BC003C6690 /* DiaryListController.m in Sources */,
 				DC538EC61D781C3600E5949B /* IQUIWindow+Hierarchy.m in Sources */,

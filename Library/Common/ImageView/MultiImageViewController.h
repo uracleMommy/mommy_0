@@ -10,6 +10,6 @@
 
 @interface MultiImageViewController : UIViewController<UIScrollViewDelegate>
 
-
+@property (strong, nonatomic) NSArray *imgArray;
 
 @end
