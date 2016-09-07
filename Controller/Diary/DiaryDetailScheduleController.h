@@ -10,6 +10,4 @@
 
 @interface DiaryDetailScheduleController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
-
 @end

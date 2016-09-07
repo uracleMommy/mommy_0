@@ -298,10 +298,15 @@
     controller.delegate = self;
     controller.blurredBackground = YES;
 
-    [imagePicker dismissViewControllerAnimated:YES completion:nil];
-    [imagePickerController dismissViewControllerAnimated:YES completion:nil];
+
+//    [imagePicker dismissViewControllerAnimated:YES completion:nil];
+  //  [imagePickerController dismissViewControllerAnimated:YES completion:nil];
+    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+//    [self.presentingViewController dissmissViewControllerAnimated:YES completion:nil];
+//    [[self navigationController] dismissViewControllerAnimated:YES completion:nil];
+    [[self navigationController] pushViewController:controller animated:YES];
     
-    [self presentViewController:controller animated:YES completion:nil];
+//    [self presentViewController:controller animated:YES completion:nil];
 }
 
 

@@ -56,9 +56,6 @@
     [_imageButton04 setImage:defaultImage forState:UIControlStateNormal];
     
     
-    UINavigationItem *newItem = [[UINavigationItem alloc]init];
-    newItem.title = @"다이어리 쓰기";
-    
     //close Button Setting
     UIButton *closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *closeBtnImage = [UIImage imageNamed:@"title_icon_close.png"];
@@ -67,7 +64,7 @@
     [closeBtn addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
     [closeBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
     UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithCustomView:closeBtn];
-    newItem.rightBarButtonItem = closeButton;
+    self.navigationItem.rightBarButtonItem = closeButton;
     
     //save Button Setting
     UIButton *saveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -77,9 +74,7 @@
     [saveBtn addTarget:self action:@selector(saveDiary) forControlEvents:UIControlEventTouchUpInside];
     [saveBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithCustomView:saveBtn];
-    newItem.leftBarButtonItem = saveButton;
-    
-    [_navigationBar setItems:@[newItem]];
+    self.navigationItem.leftBarButtonItem = saveButton;
     
     [_dateButton setDropDownMode:IQDropDownModeDatePicker];
     [_dateButton setInputTextFlag:YES];
@@ -201,7 +196,7 @@
     [imagePicker dismissViewControllerAnimated:YES completion:nil];
     [imagePickerController dismissViewControllerAnimated:YES completion:nil];
     
-    [self presentViewController:controller animated:YES completion:nil];
+    [[self navigationController] pushViewController:controller animated:YES];
 }
 
 

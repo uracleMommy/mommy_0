@@ -17,8 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UINavigationItem *newItem = [[UINavigationItem alloc]init];
-    newItem.title = @"일정입력";
     
     //close Button Setting
     UIButton *closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -28,7 +26,7 @@
     [closeBtn addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
     [closeBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
     UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithCustomView:closeBtn];
-    newItem.rightBarButtonItem = closeButton;
+    self.navigationItem.rightBarButtonItem = closeButton;
     
     //save Button Setting
     UIButton *saveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -38,10 +36,7 @@
     [saveBtn addTarget:self action:@selector(saveSchedule) forControlEvents:UIControlEventTouchUpInside];
     [saveBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithCustomView:saveBtn];
-    newItem.leftBarButtonItem = saveButton;
-    
-    [_navigationBar setItems:@[newItem]];
-    
+    self.navigationItem.leftBarButtonItem = saveButton;
     
     [_dateButton setDropDownMode:IQDropDownModeDatePicker];
     [_dateButton setInputTextFlag:YES];

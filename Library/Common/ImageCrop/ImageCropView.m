@@ -59,10 +59,10 @@ float IMAGE_MIN_WIDTH = 400;
             self.cropView.cropAreaInImage = _cropArea;
         }
         
-        navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, width, 44+statusBarSize.height)];
-        UINavigationItem *navItem = [[UINavigationItem alloc]initWithTitle:@"사진편집"];
-        navigationBar.delegate = self;
-        [UINavigationBar appearance].barTintColor = [UIColor colorWithRed:132.0/255.0 green:68.0/255.0 blue:240.0/255.0 alpha:1.0];
+//        navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, width, 44+statusBarSize.height)];
+//        UINavigationItem *navItem = [[UINavigationItem alloc]initWithTitle:@"사진편집"];
+//        navigationBar.delegate = self;
+//        [UINavigationBar appearance].barTintColor = [UIColor colorWithRed:132.0/255.0 green:68.0/255.0 blue:240.0/255.0 alpha:1.0];
 //        navigationBar.backgroundColor = [UIColor colorWithRed:132.0/255.0 green:68.0/255.0 blue:240.0/255.0 alpha:1.0];
         
         //        if(!self.navigationController){
@@ -81,13 +81,15 @@ float IMAGE_MIN_WIDTH = 400;
         [doneBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
         UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithCustomView:doneBtn];
         
-        navItem.rightBarButtonItem = doneButton;
+        self.navigationItem.rightBarButtonItem = doneButton;
         
-        [navigationBar setItems:@[navItem] animated:YES];
+        self.navigationItem.title = @"사진편집";
+        
+//        [navigationBar setItems:@[navItem] animated:YES];
         
         
-        [self.view addSubview:navigationBar];
-//        
+//        [self.view addSubview:navigationBar];
+//
 //        UINavigationBar *myNav = [[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, width, 44+statusBarSize.height)];
 //        [UINavigationBar appearance].barTintColor = [UIColor colorWithRed:132.0/255.0 green:68.0/255.0 blue:240.0/255.0 alpha:1.0];
 //        [self.view addSubview:myNav];
