@@ -72,6 +72,10 @@ float IMAGE_MIN_WIDTH = 400;
         //            self.navigationItem.title = @"사진편집";
         //        }
         
+        [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:132.0/255.0 green:68.0/255.0 blue:240.0/255.0 alpha:1.0]];
+        
+        self.navigationItem.title = @"사진편집";
+         
         //done button setting
         UIButton *doneBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         UIImage *doneBtnImage = [UIImage imageNamed:@"title_icon_save.png"];
@@ -82,35 +86,6 @@ float IMAGE_MIN_WIDTH = 400;
         UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithCustomView:doneBtn];
         
         self.navigationItem.rightBarButtonItem = doneButton;
-        
-        self.navigationItem.title = @"사진편집";
-        
-//        [navigationBar setItems:@[navItem] animated:YES];
-        
-        
-//        [self.view addSubview:navigationBar];
-//
-//        UINavigationBar *myNav = [[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, width, 44+statusBarSize.height)];
-//        [UINavigationBar appearance].barTintColor = [UIColor colorWithRed:132.0/255.0 green:68.0/255.0 blue:240.0/255.0 alpha:1.0];
-//        [self.view addSubview:myNav];
-        
-        
-//        UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel"
-//                                                                       style:UIBarButtonItemStyleBordered
-//                                                                      target:self
-//                                                                      action:nil];
-//        
-//        UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithTitle:@"Done"
-//                                                                     style:UIBarButtonItemStyleBordered
-//                                                                    target:self action:nil];
-//        
-//        
-//        UINavigationItem *navigItem = [[UINavigationItem alloc] initWithTitle:@"Navigation Title"];
-//        navigItem.rightBarButtonItem = doneItem;
-//        navigItem.leftBarButtonItem = cancelItem;
-//        myNav.items = [NSArray arrayWithObjects: navigItem,nil];
-        
-//        [UIBarButtonItem appearance].tintColor = [UIColor blueColor];
     }
 }
 

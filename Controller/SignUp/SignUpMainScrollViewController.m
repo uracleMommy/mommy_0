@@ -7,9 +7,6 @@
 //
 
 #import "SignUpMainScrollViewController.h"
-#import "IQKeyboardManager.h"
-#import "IQKeyboardReturnKeyHandler.h"
-#import "IQUIView+IQKeyboardToolbar.h"
 
 @interface SignUpMainScrollViewController ()
 
@@ -20,8 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //[[IQKeyboardManager sharedManager] setEnable:NO];
-
     [_birthdayTextField setDropDownMode : IQDropDownModeDatePicker];
 
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
@@ -51,10 +46,6 @@
         t_count = 0;
         confirmNumberTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countTimer:) userInfo:nil repeats:YES];
     }
-}
-
-- (IBAction)moveSignUpMommyInfo:(id)sender {
-//    [self performSegueWithIdentifier:@"SignUpMainSegue" sender:self];
 }
 
 - (void)countTimer:(NSTimer *)timer{

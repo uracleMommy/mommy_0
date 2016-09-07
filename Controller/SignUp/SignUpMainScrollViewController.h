@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "IQDropDownTextField.h"
+#import "IQKeyboardManager.h"
 
 @interface SignUpMainScrollViewController : UIViewController <UITextFieldDelegate, IQDropDownTextFieldDelegate> {
     int t_count;
@@ -15,7 +16,6 @@
 }
 
 - (IBAction)getConfirmNumberAction:(id)sender;
-- (IBAction)moveSignUpMommyInfo:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UITextField *idTextField;

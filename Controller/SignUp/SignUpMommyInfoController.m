@@ -19,6 +19,8 @@
     // Do any additional setup after loading the view.
     
     [self.navigationItem setHidesBackButton:YES];
+    [[IQKeyboardManager sharedManager] setEnable:NO];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,11 +31,12 @@
 -(void)viewDidAppear:(BOOL)animated{
     scrollViewContoller = [self.storyboard instantiateViewControllerWithIdentifier:@"SignUpMommyInfoScrollView"];
     
-    [scrollViewContoller.view setFrame:CGRectMake(0, 0, _scrollView.frame.size.width, 470)];
+    [scrollViewContoller.view setFrame:CGRectMake(0, 0, _scrollView.frame.size.width, 530)];
+    _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width, 530);
     
     [_scrollView addSubview : scrollViewContoller.view];
-    _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width, 470);
-    
+
+    [_scrollView sizeToFit];
 }
 
 /*

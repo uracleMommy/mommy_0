@@ -14,6 +14,8 @@
     UIDatePicker *timePicker;
 }
 
+@property (weak, nonatomic) IBOutlet UITextView *contentsTextView;
+@property (strong, nonatomic) UILabel *placeholderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet IQDropDownTextField *dateButton;

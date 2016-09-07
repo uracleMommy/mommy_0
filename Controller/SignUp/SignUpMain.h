@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IQKeyboardManager.h"
+#import "TPKeyboardAvoidingScrollView.h"
 
 @interface SignUpMain : UIViewController <UITextFieldDelegate, UIPickerViewDelegate>{
     UIViewController *scrollViewContoller;
 }
 
-@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
 
 @end
 

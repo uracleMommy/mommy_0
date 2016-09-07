@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TPKeyboardAvoidingScrollView.h"
+#import "IQKeyboardManager.h"
 
 @interface SignUpMommyInfoController : UIViewController{
     
     UIViewController *scrollViewContoller;
 }
-
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
 
 @end

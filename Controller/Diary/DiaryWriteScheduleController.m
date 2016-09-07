@@ -54,6 +54,18 @@
     [formatter2 setDateFormat:@"HH:mm"];
     [_timeButton setTimeFormatter:formatter2];
     [_timeButton setDelegate:self];
+    
+    
+    _placeholderLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, _contentsTextView.frame.size.width - 10.0, 34.0)];
+    
+    [_placeholderLabel setText:@"내용을 입력해주세요"];
+    [_placeholderLabel setBackgroundColor:[UIColor clearColor]];
+    [_placeholderLabel setTextColor:[UIColor colorWithRed:199.0/255.0f green:199.0/255.0f  blue:205.0/255.0f alpha:1.0]];
+    
+    [_placeholderLabel setFont:[UIFont fontWithName:@"NanumBarunGothic" size:15]];
+//    _contentsTextView.delegate = self;
+    
+    [_contentsTextView addSubview:_placeholderLabel];
 }
 
 - (void)didReceiveMemoryWarning {
