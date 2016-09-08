@@ -84,6 +84,18 @@
 		DC44C38A1D7FD73300519D96 /* ExerciseTimerController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44C3891D7FD73300519D96 /* ExerciseTimerController.m */; };
 		DC44C3911D800DEB00519D96 /* MoreMainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44C3901D800DEB00519D96 /* MoreMainModel.m */; };
 		DC44C3951D800E2600519D96 /* MoreMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44C3941D800E2600519D96 /* MoreMainViewController.m */; };
+		DC4DE2BE1D80F4BD007CF9BF /* MoreMainTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4DE2BC1D80F4BD007CF9BF /* MoreMainTitleCell.xib */; };
+		DC4DE2C21D80F4CE007CF9BF /* MoreMainMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4DE2C01D80F4CE007CF9BF /* MoreMainMenuCell.m */; };
+		DC4DE2C31D80F4CE007CF9BF /* MoreMainMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4DE2C11D80F4CE007CF9BF /* MoreMainMenuCell.xib */; };
+		DC4DE2C61D810154007CF9BF /* MoreMainTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4DE2C51D810154007CF9BF /* MoreMainTitleCell.m */; };
+		DC4DE2CC1D814F3B007CF9BF /* MoreBloodPressureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4DE2CB1D814F3B007CF9BF /* MoreBloodPressureViewController.m */; };
+		DC4DE2CF1D814F56007CF9BF /* MoreBloodPressureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4DE2CE1D814F56007CF9BF /* MoreBloodPressureModel.m */; };
+		DC4DE2D41D814F7A007CF9BF /* MoreBloodPressureChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4DE2D21D814F7A007CF9BF /* MoreBloodPressureChartCell.xib */; };
+		DC4DE2D81D814F9D007CF9BF /* MoreBloodPressureHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4DE2D61D814F9D007CF9BF /* MoreBloodPressureHistoryCell.m */; };
+		DC4DE2D91D814F9D007CF9BF /* MoreBloodPressureHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4DE2D71D814F9D007CF9BF /* MoreBloodPressureHistoryCell.xib */; };
+		DC4DE2DC1D815860007CF9BF /* MoreBloodPressureChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4DE2DB1D815860007CF9BF /* MoreBloodPressureChartCell.m */; };
+		DC4DE2E01D815C35007CF9BF /* MoreBloodPressureInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4DE2DE1D815C35007CF9BF /* MoreBloodPressureInfoView.m */; };
+		DC4DE2E11D815C35007CF9BF /* MoreBloodPressureInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4DE2DF1D815C35007CF9BF /* MoreBloodPressureInfoView.xib */; };
 		DC4E95851D7CF0A80087647B /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC4E95841D7CF0A80087647B /* More.storyboard */; };
 		DC4E95881D7D0B2B0087647B /* WeightDetailInfoHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E95871D7D0B2B0087647B /* WeightDetailInfoHeaderCell.m */; };
 		DC4E958D1D7D26EC0087647B /* WeightTotalInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E958B1D7D26EC0087647B /* WeightTotalInfoCell.m */; };
@@ -328,6 +340,25 @@
 		DC44C3901D800DEB00519D96 /* MoreMainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreMainModel.m; sourceTree = "<group>"; };
 		DC44C3931D800E2600519D96 /* MoreMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreMainViewController.h; sourceTree = "<group>"; };
 		DC44C3941D800E2600519D96 /* MoreMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreMainViewController.m; sourceTree = "<group>"; };
+		DC4DE2BC1D80F4BD007CF9BF /* MoreMainTitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreMainTitleCell.xib; sourceTree = "<group>"; };
+		DC4DE2BF1D80F4CE007CF9BF /* MoreMainMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreMainMenuCell.h; sourceTree = "<group>"; };
+		DC4DE2C01D80F4CE007CF9BF /* MoreMainMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreMainMenuCell.m; sourceTree = "<group>"; };
+		DC4DE2C11D80F4CE007CF9BF /* MoreMainMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreMainMenuCell.xib; sourceTree = "<group>"; };
+		DC4DE2C41D810154007CF9BF /* MoreMainTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreMainTitleCell.h; sourceTree = "<group>"; };
+		DC4DE2C51D810154007CF9BF /* MoreMainTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreMainTitleCell.m; sourceTree = "<group>"; };
+		DC4DE2CA1D814F3B007CF9BF /* MoreBloodPressureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreBloodPressureViewController.h; sourceTree = "<group>"; };
+		DC4DE2CB1D814F3B007CF9BF /* MoreBloodPressureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreBloodPressureViewController.m; sourceTree = "<group>"; };
+		DC4DE2CD1D814F56007CF9BF /* MoreBloodPressureModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreBloodPressureModel.h; sourceTree = "<group>"; };
+		DC4DE2CE1D814F56007CF9BF /* MoreBloodPressureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreBloodPressureModel.m; sourceTree = "<group>"; };
+		DC4DE2D21D814F7A007CF9BF /* MoreBloodPressureChartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreBloodPressureChartCell.xib; sourceTree = "<group>"; };
+		DC4DE2D51D814F9D007CF9BF /* MoreBloodPressureHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreBloodPressureHistoryCell.h; sourceTree = "<group>"; };
+		DC4DE2D61D814F9D007CF9BF /* MoreBloodPressureHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreBloodPressureHistoryCell.m; sourceTree = "<group>"; };
+		DC4DE2D71D814F9D007CF9BF /* MoreBloodPressureHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreBloodPressureHistoryCell.xib; sourceTree = "<group>"; };
+		DC4DE2DA1D815860007CF9BF /* MoreBloodPressureChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreBloodPressureChartCell.h; sourceTree = "<group>"; };
+		DC4DE2DB1D815860007CF9BF /* MoreBloodPressureChartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreBloodPressureChartCell.m; sourceTree = "<group>"; };
+		DC4DE2DD1D815C35007CF9BF /* MoreBloodPressureInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreBloodPressureInfoView.h; sourceTree = "<group>"; };
+		DC4DE2DE1D815C35007CF9BF /* MoreBloodPressureInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreBloodPressureInfoView.m; sourceTree = "<group>"; };
+		DC4DE2DF1D815C35007CF9BF /* MoreBloodPressureInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreBloodPressureInfoView.xib; sourceTree = "<group>"; };
 		DC4E95841D7CF0A80087647B /* More.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = More.storyboard; sourceTree = "<group>"; };
 		DC4E95861D7D0B2B0087647B /* WeightDetailInfoHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightDetailInfoHeaderCell.h; sourceTree = "<group>"; };
 		DC4E95871D7D0B2B0087647B /* WeightDetailInfoHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightDetailInfoHeaderCell.m; sourceTree = "<group>"; };
@@ -828,6 +859,7 @@
 		DC3ACEA21D5DCA5500D68F80 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				DC44C3961D80192600519D96 /* More */,
 				DC512AC21D66982200885C26 /* Message */,
 				DC1FE6F11D65C7DB006F7A50 /* DZNSegmentedControl */,
 				2AE11DDA1D654B47003C6690 /* Diary */,
@@ -858,6 +890,8 @@
 			children = (
 				DC44C38F1D800DEB00519D96 /* MoreMainModel.h */,
 				DC44C3901D800DEB00519D96 /* MoreMainModel.m */,
+				DC4DE2CD1D814F56007CF9BF /* MoreBloodPressureModel.h */,
+				DC4DE2CE1D814F56007CF9BF /* MoreBloodPressureModel.m */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -867,6 +901,30 @@
 			children = (
 				DC44C3931D800E2600519D96 /* MoreMainViewController.h */,
 				DC44C3941D800E2600519D96 /* MoreMainViewController.m */,
+				DC4DE2CA1D814F3B007CF9BF /* MoreBloodPressureViewController.h */,
+				DC4DE2CB1D814F3B007CF9BF /* MoreBloodPressureViewController.m */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		DC44C3961D80192600519D96 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				DC4DE2C41D810154007CF9BF /* MoreMainTitleCell.h */,
+				DC4DE2C51D810154007CF9BF /* MoreMainTitleCell.m */,
+				DC4DE2BC1D80F4BD007CF9BF /* MoreMainTitleCell.xib */,
+				DC4DE2BF1D80F4CE007CF9BF /* MoreMainMenuCell.h */,
+				DC4DE2C01D80F4CE007CF9BF /* MoreMainMenuCell.m */,
+				DC4DE2C11D80F4CE007CF9BF /* MoreMainMenuCell.xib */,
+				DC4DE2DA1D815860007CF9BF /* MoreBloodPressureChartCell.h */,
+				DC4DE2DB1D815860007CF9BF /* MoreBloodPressureChartCell.m */,
+				DC4DE2D21D814F7A007CF9BF /* MoreBloodPressureChartCell.xib */,
+				DC4DE2D51D814F9D007CF9BF /* MoreBloodPressureHistoryCell.h */,
+				DC4DE2D61D814F9D007CF9BF /* MoreBloodPressureHistoryCell.m */,
+				DC4DE2D71D814F9D007CF9BF /* MoreBloodPressureHistoryCell.xib */,
+				DC4DE2DD1D815C35007CF9BF /* MoreBloodPressureInfoView.h */,
+				DC4DE2DE1D815C35007CF9BF /* MoreBloodPressureInfoView.m */,
+				DC4DE2DF1D815C35007CF9BF /* MoreBloodPressureInfoView.xib */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -1280,6 +1338,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC4DE2D91D814F9D007CF9BF /* MoreBloodPressureHistoryCell.xib in Resources */,
 				DCF6CABF1D74430300703CAE /* PushViewListCell.xib in Resources */,
 				2AE11DE91D657DE4003C6690 /* DiaryListImageCustomCell.xib in Resources */,
 				DC56F0A91D79728F00FB3A30 /* WeightDetailInfoHeaderCell.xib in Resources */,
@@ -1296,6 +1355,7 @@
 				DC3AAED31D75A11C007218E9 /* WeekProgramCell.xib in Resources */,
 				DC56F0A71D79728F00FB3A30 /* WeightDetailInfoFooterCell.xib in Resources */,
 				DC4E95B01D7D66C40087647B /* ActiveMassExerciseCell.xib in Resources */,
+				DC4DE2E11D815C35007CF9BF /* MoreBloodPressureInfoView.xib in Resources */,
 				2A54B1C81D66E4E600C538D1 /* Assets.xcassets in Resources */,
 				2AB97A281D5AAFDA0063EB5E /* MembershipSignUp.storyboard in Resources */,
 				2A444C381D7EBA7E00B37E8A /* termsPopupViewController.xib in Resources */,
@@ -1315,13 +1375,16 @@
 				DC60709D1D7030E700F60148 /* MultiImageViewController.xib in Resources */,
 				DC512ACC1D669BF900885C26 /* MessageListCell.xib in Resources */,
 				DC4E95851D7CF0A80087647B /* More.storyboard in Resources */,
+				DC4DE2D41D814F7A007CF9BF /* MoreBloodPressureChartCell.xib in Resources */,
 				DCA5AE2F1D598C6F0075B7AD /* Main.storyboard in Resources */,
+				DC4DE2BE1D80F4BD007CF9BF /* MoreMainTitleCell.xib in Resources */,
 				DC512AC01D6694D100885C26 /* Message.storyboard in Resources */,
 				DC4E95A11D7D65050087647B /* ActiveMassChartView.xib in Resources */,
 				2A371A511D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.xib in Resources */,
 				DC4E95931D7D2D2B0087647B /* WeightInfoView.xib in Resources */,
 				DC56F0A31D79728F00FB3A30 /* WeightChartViewCell.xib in Resources */,
 				DC3ACE161D5D853C00D68F80 /* DashBoard.storyboard in Resources */,
+				DC4DE2C31D80F4CE007CF9BF /* MoreMainMenuCell.xib in Resources */,
 				DC538ECF1D781C3600E5949B /* IQKeyboardManager.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1338,6 +1401,7 @@
 				DC44C3801D7FADFA00519D96 /* TPKeyboardAvoidingTableView.m in Sources */,
 				DC538ECA1D781C3600E5949B /* IQBarButtonItem.m in Sources */,
 				DC4EAA8B1D6E6F5E005370A8 /* notPasteField.m in Sources */,
+				DC4DE2CC1D814F3B007CF9BF /* MoreBloodPressureViewController.m in Sources */,
 				DC538ECD1D781C3600E5949B /* IQToolbar.m in Sources */,
 				2A54B1B11D66904000C538D1 /* JTCalendarSettings.m in Sources */,
 				DCF6CAC51D74453200703CAE /* PushNoticeModel.m in Sources */,
@@ -1356,10 +1420,12 @@
 				DC44C38A1D7FD73300519D96 /* ExerciseTimerController.m in Sources */,
 				DCA5AE321D598C6F0075B7AD /* co_medisolution.xcdatamodeld in Sources */,
 				DC4E95AA1D7D66930087647B /* ActiveMassCalorieCell.m in Sources */,
+				DC4DE2C21D80F4CE007CF9BF /* MoreMainMenuCell.m in Sources */,
 				DC538EC91D781C3600E5949B /* IQTextView.m in Sources */,
 				DC1FE6E41D658E47006F7A50 /* DiarySegue.m in Sources */,
 				2A309ACF1D79634E001C54C5 /* HFColorButton.m in Sources */,
 				DC538EC81D781C3600E5949B /* IQKeyboardReturnKeyHandler.m in Sources */,
+				DC4DE2E01D815C35007CF9BF /* MoreBloodPressureInfoView.m in Sources */,
 				2A3026381D7E549D0020C3B4 /* KxMenu.m in Sources */,
 				DC1FE6F71D65C83C006F7A50 /* UIScrollView+DZNSegmentedControl.m in Sources */,
 				DC1FE6EA1D659912006F7A50 /* MainTabbarController.m in Sources */,
@@ -1408,6 +1474,7 @@
 				DC4E959C1D7D64930087647B /* ActiveMassController.m in Sources */,
 				DC44C3871D7FD6F700519D96 /* ExerciseCountDownController.m in Sources */,
 				DC32664A1D6E7EA1008B38A8 /* CommonViewController.m in Sources */,
+				DC4DE2DC1D815860007CF9BF /* MoreBloodPressureChartCell.m in Sources */,
 				DC512ACF1D66A83400885C26 /* MessageListCell.m in Sources */,
 				DC60708D1D6FC85000F60148 /* MessageDetailController.m in Sources */,
 				2AE11DF01D6581D9003C6690 /* DiaryListModel.m in Sources */,
@@ -1430,17 +1497,20 @@
 				2A54B1B41D66904000C538D1 /* JTCalendarScrollManager.m in Sources */,
 				DCF6CAA91D742B4000703CAE /* JTSAnimatedGIFUtility.m in Sources */,
 				2A54B1B91D66904000C538D1 /* JTCalendarWeekView.m in Sources */,
+				DC4DE2D81D814F9D007CF9BF /* MoreBloodPressureHistoryCell.m in Sources */,
 				DC56F0A61D79728F00FB3A30 /* WeightDetailInfoFooterCell.m in Sources */,
 				2A54B1B31D66904000C538D1 /* JTCalendarDelegateManager.m in Sources */,
 				DC4E95AF1D7D66C40087647B /* ActiveMassExerciseCell.m in Sources */,
 				2AA6D6CA1D64356000316DD6 /* DiaryWriteBasicController.m in Sources */,
 				DC538ECB1D781C3600E5949B /* IQPreviousNextView.m in Sources */,
 				DC4E958D1D7D26EC0087647B /* WeightTotalInfoCell.m in Sources */,
+				DC4DE2CF1D814F56007CF9BF /* MoreBloodPressureModel.m in Sources */,
 				DC3AAEBA1D751EB6007218E9 /* PushNoticeViewController.m in Sources */,
 				DC5D20911D62CB6500ACDCA4 /* DashBoardController.m in Sources */,
 				DC5FCCFD1D7E890200957D73 /* SleepingHoursInfoCell.m in Sources */,
 				2AB627771D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m in Sources */,
 				DC5FCCE91D7E417E00957D73 /* ActiveMassChartView.m in Sources */,
+				DC4DE2C61D810154007CF9BF /* MoreMainTitleCell.m in Sources */,
 				2A54B1B61D66904000C538D1 /* JTCalendarMenuView.m in Sources */,
 				DC1FE6F61D65C83C006F7A50 /* DZNSegmentedControl.m in Sources */,
 				DC512AC61D66989000885C26 /* MessageListModel.m in Sources */,

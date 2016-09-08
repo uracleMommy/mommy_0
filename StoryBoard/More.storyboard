@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--더보기-->
         <scene sceneID="Dec-On-eW3">
             <objects>
-                <viewController id="d8O-Ij-A3J" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MoreMainView" id="d8O-Ij-A3J" customClass="MoreMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cbd-SK-OO1"/>
                         <viewControllerLayoutGuide type="bottom" id="3Mo-Le-co4"/>
@@ -17,18 +17,55 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rTc-tw-4ix">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rTc-tw-4ix">
+                                <rect key="frame" x="0.0" y="4" width="320" height="447"/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="rTc-tw-4ix" firstAttribute="top" secondItem="cbd-SK-OO1" secondAttribute="bottom" constant="4" id="8Rk-Xr-vfg"/>
+                            <constraint firstAttribute="trailing" secondItem="rTc-tw-4ix" secondAttribute="trailing" id="GbW-zp-rxY"/>
+                            <constraint firstItem="3Mo-Le-co4" firstAttribute="top" secondItem="rTc-tw-4ix" secondAttribute="bottom" constant="4" id="WIB-Ss-lif"/>
+                            <constraint firstItem="rTc-tw-4ix" firstAttribute="leading" secondItem="ma6-Zj-fii" secondAttribute="leading" id="Zq2-oR-DZF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="더보기" id="Fev-TW-Tvs"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="rTc-tw-4ix" id="BGZ-Ca-FH4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D2U-Bx-Q2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2142" y="46"/>
+        </scene>
+        <!--More Blood Pressure View Controller-->
+        <scene sceneID="xaW-wG-Ocr">
+            <objects>
+                <viewController id="aFA-9D-0sv" customClass="MoreBloodPressureViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="94D-1O-2FD"/>
+                        <viewControllerLayoutGuide type="bottom" id="gCC-fX-zlr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2SV-nv-VL5">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zsh-9K-en3">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="D2U-Bx-Q2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PLg-tX-EB6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-531" y="384"/>
+            <point key="canvasLocation" x="-1668" y="46"/>
         </scene>
     </scenes>
 </document>

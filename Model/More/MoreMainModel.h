@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MoreMainModel : NSObject
+@interface MoreMainModel : NSObject<UITableViewDelegate, UITableViewDataSource>
+
+@property (strong, nonatomic) NSArray *arrayList;
 
 @end
