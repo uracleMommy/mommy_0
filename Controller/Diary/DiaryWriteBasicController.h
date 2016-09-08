@@ -15,7 +15,7 @@
 #import "SingleImageViewController.h"
 #import "ImageCropView.h"
 
-@interface DiaryWriteBasicController : UIViewController <UITextViewDelegate, IQDropDownTextFieldDelegate, ImageCropViewControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, UINavigationControllerDelegate> {
+@interface DiaryWriteBasicController : UIViewController <UITextViewDelegate, IQDropDownTextFieldDelegate, ImageCropViewControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, UINavigationControllerDelegate, emoticonPopupViewDelegate> {
     UIButton *selectedImageButton;
     UIImage *image;
     UIImage *defaultImage;
@@ -32,11 +32,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *imageButton04;
 @property (weak, nonatomic) IBOutlet IQDropDownTextField *dateButton;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UIButton *emoticonButton;
 
 #pragma mark 이모티콘 팝업 관련
 @property (strong, nonatomic) emoticonPopupViewController *emoticonPopupView;
 - (IBAction)showEmoticonPopup:(id)sender;
-
 - (IBAction)mommyPictureButtonAction:(id)sender;
+- (void)clickButton:(int)tag;
 
 @end

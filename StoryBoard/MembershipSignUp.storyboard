@@ -101,7 +101,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Ktq-o7-rkG" kind="push" id="rIJ-FC-yb6"/>
+                                    <action selector="showTermsPopup:" destination="kFE-e9-yMh" eventType="touchUpInside" id="0ia-lB-Sg2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -119,6 +119,7 @@
                     <navigationItem key="navigationItem" title="회원가입" id="pme-2W-BM6"/>
                     <connections>
                         <outlet property="scrollView" destination="i1n-xS-3gT" id="fwC-jd-xIJ"/>
+                        <segue destination="Ktq-o7-rkG" kind="push" identifier="moveMommyInfoSegue" id="hn8-n5-ST0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbV-ps-j7V" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -591,6 +592,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="530"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XdX-Fd-JJc">
+                                <rect key="frame" x="0.0" y="45" width="320" height="127"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="산모정보를 입력해 주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="YaE-n4-dPh">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -963,12 +967,16 @@
                             <constraint firstItem="llb-qt-rH2" firstAttribute="leading" secondItem="FIK-9p-Df8" secondAttribute="leading" constant="15" id="8td-qi-5I8"/>
                             <constraint firstItem="Ssb-hi-H48" firstAttribute="top" secondItem="MUY-Rx-QcH" secondAttribute="bottom" constant="8" id="FF2-JF-2Cu"/>
                             <constraint firstItem="9Kp-ue-hE7" firstAttribute="top" secondItem="YaE-n4-dPh" secondAttribute="bottom" constant="20" id="Hg8-5O-yN2"/>
+                            <constraint firstItem="YaE-n4-dPh" firstAttribute="top" secondItem="FIK-9p-Df8" secondAttribute="topMargin" id="Ms0-tb-uPv"/>
                             <constraint firstAttribute="trailing" secondItem="YaE-n4-dPh" secondAttribute="trailing" id="Qq2-bs-l71"/>
-                            <constraint firstItem="YaE-n4-dPh" firstAttribute="top" secondItem="FIK-9p-Df8" secondAttribute="topMargin" id="TV3-fr-Q6C"/>
+                            <constraint firstItem="XdX-Fd-JJc" firstAttribute="top" secondItem="YaE-n4-dPh" secondAttribute="bottom" id="VQf-Sj-KQI"/>
+                            <constraint firstItem="MUY-Rx-QcH" firstAttribute="top" secondItem="XdX-Fd-JJc" secondAttribute="bottom" constant="8" id="Zcy-tu-vl3"/>
                             <constraint firstItem="YaE-n4-dPh" firstAttribute="leading" secondItem="FIK-9p-Df8" secondAttribute="leading" id="g5A-7C-1tT"/>
                             <constraint firstAttribute="trailing" secondItem="AYf-gz-cyg" secondAttribute="trailing" constant="15" id="h39-Lr-rxd"/>
                             <constraint firstItem="9Kp-ue-hE7" firstAttribute="centerX" secondItem="FIK-9p-Df8" secondAttribute="centerX" id="ic2-ZY-cFo"/>
                             <constraint firstItem="AYf-gz-cyg" firstAttribute="top" secondItem="llb-qt-rH2" secondAttribute="bottom" constant="8" id="k5M-zn-Ys7"/>
+                            <constraint firstItem="XdX-Fd-JJc" firstAttribute="leading" secondItem="FIK-9p-Df8" secondAttribute="leading" id="mFx-XL-65M"/>
+                            <constraint firstAttribute="trailing" secondItem="XdX-Fd-JJc" secondAttribute="trailing" id="mrR-L7-ZgS"/>
                             <constraint firstAttribute="trailing" secondItem="llb-qt-rH2" secondAttribute="trailing" constant="15" id="pmo-fb-fB4"/>
                             <constraint firstItem="MUY-Rx-QcH" firstAttribute="top" secondItem="9Kp-ue-hE7" secondAttribute="bottom" constant="15" id="pz7-jd-U1l"/>
                             <constraint firstItem="MUY-Rx-QcH" firstAttribute="leading" secondItem="FIK-9p-Df8" secondAttribute="leading" constant="15" id="sHG-Ru-wci"/>
@@ -982,6 +990,7 @@
                         <outlet property="dueDateTextField" destination="3jV-aD-72I" id="PN1-D5-1lk"/>
                         <outlet property="fetusCountTextField" destination="0Lk-Fa-cYE" id="WKI-ug-Nmx"/>
                         <outlet property="heightTextField" destination="hvT-Eg-SWR" id="F9A-x2-eaW"/>
+                        <outlet property="mommyBackImageView" destination="XdX-Fd-JJc" id="9d7-nc-rIF"/>
                         <outlet property="mommyImageButton" destination="9Kp-ue-hE7" id="G4f-he-6LS"/>
                         <outlet property="mommyNameTextField" destination="hWP-SX-h1O" id="o2h-45-lpM"/>
                         <outlet property="mommyNameValidationLabel" destination="Ssb-hi-H48" id="f1t-F7-vOd"/>

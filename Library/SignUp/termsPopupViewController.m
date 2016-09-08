@@ -13,6 +13,7 @@
 @end
 
 @implementation termsPopupViewController
+@synthesize delegate;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,4 +35,11 @@
 }
 */
 
+- (IBAction)okButtonAction:(id)sender {
+    [self.view removeFromSuperview];
+    [delegate okButtonAction];
+}
+- (IBAction)cancleButtonAction:(id)sender {
+    [self.view removeFromSuperview];
+}
 @end

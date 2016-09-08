@@ -65,4 +65,20 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)showTermsPopup:(id)sender {
+    if (!_termsPopupView) {
+        _termsPopupView = [[termsPopupViewController alloc] initWithNibName:@"termsPopupViewController" bundle:nil];
+        _termsPopupView.delegate = self;
+        _termsPopupView.view.frame = CGRectMake(0, 0, [[UIScreen mainScreen] applicationFrame].size.width, [[UIScreen mainScreen] applicationFrame].size.height+20);
+    }
+    
+    AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate.window addSubview:_termsPopupView.view];
+}
+
+- (void)okButtonAction{
+    [self performSegueWithIdentifier:@"moveMommyInfoSegue" sender:self];
+}
+
+
 @end
