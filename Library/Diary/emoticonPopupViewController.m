@@ -13,6 +13,7 @@
 @end
 
 @implementation emoticonPopupViewController
+@synthesize delegate;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,4 +38,11 @@
 - (IBAction)closePopup:(id)sender {
     [self.view removeFromSuperview];
 }
+
+- (IBAction)clickButton:(id)sender {
+    [self.view removeFromSuperview];
+    [delegate clickButton:(int)[sender tag]];
+}
+
 @end
+

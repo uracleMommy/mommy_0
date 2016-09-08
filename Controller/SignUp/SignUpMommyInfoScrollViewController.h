@@ -12,11 +12,16 @@
 #import "ImageCropView.h"
 #import "IQKeyboardManager.h"
 #import "IQDropDownTextField.h"
+#import "FXBlurView.h"
 
-@interface SignUpMommyInfoScrollViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIAlertViewDelegate, ImageCropViewControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
-    UIImagePickerController *imagePicker;
-    UIImagePickerController *imagePickerController;
-    ImageCropViewController *controller;
+@protocol SignUpMommyInfoScrollViewDelegate <NSObject>
+
+-(void)callCameraView;
+-(void)callLibraryView;
+
+@end
+
+@interface SignUpMommyInfoScrollViewController : UIViewController <UINavigationControllerDelegate, UITextFieldDelegate, UIAlertViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
     NSMutableArray *pickerData_0; //거주지 시
     NSMutableArray *pickerData_1; //거주지 구
     NSMutableArray *pickerData_2; //거주지 동
@@ -31,9 +36,10 @@
 }
 
 - (IBAction)mommyPictureButtonAction:(id)sender;
-- (UIImage *)imageByScalingProportionallyToSize:(CGSize)targetSize;
+- (void)setMommyImage:(UIImage *)croppedImage;
 
-
+@property (weak, nonatomic)id<SignUpMommyInfoScrollViewDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UIImageView *mommyBackImageView;
 @property (weak, nonatomic) IBOutlet UITextField *mommyNameTextField;
 @property (weak, nonatomic) IBOutlet UILabel *mommyNameValidationLabel;
 @property (weak, nonatomic) IBOutlet UITextField *addressTextField;
@@ -43,7 +49,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *heightTextField;
 @property (weak, nonatomic) IBOutlet IQDropDownTextField *fetusCountTextField;
 @property (weak, nonatomic) IBOutlet UIButton *mommyImageButton;
-@property (strong, nonatomic) UIImage *image;
 @property (strong, nonatomic) UIImage *defaultImage;
 
 

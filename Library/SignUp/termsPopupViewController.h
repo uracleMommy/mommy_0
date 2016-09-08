@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol termsPopupViewDelegate <NSObject>
+
+- (void)okButtonAction;
+
+@end
 @interface termsPopupViewController : UIViewController
+
+@property (weak, nonatomic) id<termsPopupViewDelegate> delegate;
+
+- (IBAction)okButtonAction:(id)sender;
+- (IBAction)cancleButtonAction:(id)sender;
 
 @end

@@ -290,36 +290,12 @@
     [self presentViewController:alert animated:YES completion:nil]; // 6
 }
 
-
-- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    _image = [info valueForKey:UIImagePickerControllerOriginalImage];
-    
-    controller = [[ImageCropViewController alloc] initWithImage:_image];
-    
-    controller.delegate = self;
-    controller.blurredBackground = YES;
-
-
-    [imagePicker dismissViewControllerAnimated:YES completion:nil];
-    [imagePickerController dismissViewControllerAnimated:YES completion:nil];
-    
-    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:controller];
-    
-    [navController.navigationBar setTintColor:[UIColor colorWithRed:132.0/255.0 green:68.0/255.0 blue:240.0/255.0 alpha:1.0]];
-    
-    [self presentViewController:navController animated:YES completion:nil];
-}
-
-
-#pragma mark cropView Delegate
--(void)ImageCropViewControllerSuccess:(UIViewController *)controller didFinishCroppingImage:(UIImage *)croppedImage{
-    _image = croppedImage;
-    
-    [_mommyImageButton setImage:_image forState:UIControlStateNormal];
+-(void)setMommyImage:(UIImage *)croppedImage{
+    [_mommyImageButton setImage:croppedImage forState:UIControlStateNormal];
     [_mommyImageButton.imageView setContentMode:UIViewContentModeScaleAspectFill];
+    UIImage *blurImage = [croppedImage blurredImageWithRadius:50 iterations:1 tintColor:[UIColor blackColor]];;
     
-    [[self navigationController] popViewControllerAnimated:YES];
+    [_mommyBackImageView setImage:blurImage];
 }
 
 #pragma mark Library Function
@@ -345,13 +321,9 @@
 }
 
 - (void)libraryAuthorized{
-    if(imagePickerController == nil){
-        imagePickerController = [[UIImagePickerController alloc] init];
-        imagePickerController.delegate = self;
-    }
-    
-    [self presentViewController:imagePickerController animated:YES completion:nil];
+    [_delegate callLibraryView];
 }
+
 - (void)libraryDenied{
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림" message:@"사진을 이용하려면 사진 접근이 필요합니다.\n\n단말기의 [설정>개인정보보호>사진]에서 Mommy의 설정상태를 확인해주세요." delegate:self cancelButtonTitle:nil otherButtonTitles:@"확인", nil];
     [alert show];
@@ -381,14 +353,9 @@
 }
 
 - (void)cameraAuthorized{
-    if(imagePicker == nil){
-        imagePicker = [[UIImagePickerController alloc] init];
-        [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
-        [imagePicker setDelegate:self];
-    }
-    
-    [self presentViewController:imagePicker animated:YES completion:nil];
+    [_delegate callCameraView];
 }
+
 - (void)cameraDenied{
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림" message:@"카메라를 이용하려면 카메라 접근이 필요합니다.\n\n단말기의 [설정>개인정보보호>카메라]에서 Mommy의 설정상태를 확인해주세요." delegate:self cancelButtonTitle:nil otherButtonTitles:@"확인", nil];
     [alert show];

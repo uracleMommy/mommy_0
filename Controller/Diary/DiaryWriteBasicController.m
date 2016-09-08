@@ -31,6 +31,7 @@
     _contentsTextView.delegate = self;
     
     [_contentsTextView addSubview:_placeholderLabel];
+    [_contentsTextView setTextContainerInset:UIEdgeInsetsMake(8, -5, 0, 0)];
     
     _imageButton01.layer.cornerRadius = 20;//half of the width
     _imageButton01.layer.borderColor = [UIColor colorWithRed:236.0/255.0f green:236.0/255.0f  blue:236.0/255.0f alpha:1.0].CGColor;
@@ -84,7 +85,8 @@
     [formatter setDateFormat:@"YYYY년 MM월 dd일 EEEE"];
     [_dateButton setDateFormatter:formatter];
     [_dateButton setDelegate:self];
-    
+    [_dateButton setDate:NSDate.date];
+    _dateLabel.text = [formatter stringFromDate:NSDate.date];
     
 
 }
@@ -106,6 +108,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark UITextView Delegate
 - (BOOL) textViewShouldBeginEditing:(UITextView *)textView
 {
     if (![textView hasText]) {
@@ -124,15 +127,26 @@
         _placeholderLabel.hidden = YES;
     }
 }
-
+#pragma mark - emoticon
 - (IBAction)showEmoticonPopup:(id)sender {
     if (!_emoticonPopupView) {
         _emoticonPopupView = [[emoticonPopupViewController alloc] initWithNibName:@"emoticonPopupViewController" bundle:nil];
+        _emoticonPopupView.delegate = self;
         _emoticonPopupView.view.frame = CGRectMake(0, 0, [[UIScreen mainScreen] applicationFrame].size.width, [[UIScreen mainScreen] applicationFrame].size.height+20);
     }
 
     AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate.window addSubview:_emoticonPopupView.view];
+}
+
+- (void)clickButton:(int)tag {
+    NSMutableString *emoticonImageName = [[NSMutableString alloc] initWithString:@"contents_icon_emoticon0"];
+    
+    [emoticonImageName appendFormat:@"%d", tag+1];
+    [_emoticonButton setImage:[UIImage imageNamed:emoticonImageName] forState:UIControlStateNormal];
+    
+    [_emoticonButton setImageEdgeInsets:UIEdgeInsetsMake(7, 7, 7, 7)];
+    [_emoticonButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
 }
 
 #pragma mark - picturebutton action

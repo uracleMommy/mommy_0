@@ -46,6 +46,8 @@
     [_dateButton setDateFormatter:formatter];
     [_dateButton setDelegate:self];
     
+    [_dateButton setDate:NSDate.date];
+    _dateLabel.text = [formatter stringFromDate:NSDate.date];
     
     [_timeButton setDropDownMode:IQDropDownModeTimePicker];
     [_timeButton setInputTextFlag:YES];
@@ -55,6 +57,9 @@
     [_timeButton setTimeFormatter:formatter2];
     [_timeButton setDelegate:self];
     
+    [_timeButton setDate:NSDate.date];
+    _timeLabel.text = [formatter2 stringFromDate:NSDate.date];
+    
     
     _placeholderLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, _contentsTextView.frame.size.width - 10.0, 34.0)];
     
@@ -63,9 +68,10 @@
     [_placeholderLabel setTextColor:[UIColor colorWithRed:199.0/255.0f green:199.0/255.0f  blue:205.0/255.0f alpha:1.0]];
     
     [_placeholderLabel setFont:[UIFont fontWithName:@"NanumBarunGothic" size:15]];
-//    _contentsTextView.delegate = self;
+    _contentsTextView.delegate = self;
     
     [_contentsTextView addSubview:_placeholderLabel];
+    [_contentsTextView setTextContainerInset:UIEdgeInsetsMake(8, -5, 0, 0)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,6 +79,27 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark UITextView Delegate
+- (BOOL) textViewShouldBeginEditing:(UITextView *)textView
+{
+    if (![textView hasText]) {
+        _placeholderLabel.hidden = NO;
+    }
+    return YES;
+}
+
+-(void) textViewDidChange:(UITextView *)textView
+{
+    
+    if(![textView hasText]) {
+        _placeholderLabel.hidden = NO;
+    }
+    else{
+        _placeholderLabel.hidden = YES;
+    }
+}
+
+#pragma mark dateField & timeField
 -(void)textField:(IQDropDownTextField*)textField didSelectItem:(NSString*)item{
     NSLog(@"selected : %@", item);
     if([textField isEqual:_dateButton]){

@@ -250,7 +250,8 @@
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="URd-z2-3jQ">
                                                 <rect key="frame" x="15" y="15" width="290" height="256"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
+                                                <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
@@ -303,6 +304,7 @@
                         <outlet property="contentsTextView" destination="URd-z2-3jQ" id="cbT-ju-Te4"/>
                         <outlet property="dateButton" destination="fWY-ph-cWp" id="2F4-Sk-tDz"/>
                         <outlet property="dateLabel" destination="ChB-ho-0Le" id="Ic0-ee-BjW"/>
+                        <outlet property="emoticonButton" destination="CFZ-Sj-VSa" id="khH-mF-kii"/>
                         <outlet property="imageButton01" destination="ZrF-Jq-Z1U" id="7Fw-pX-e5E"/>
                         <outlet property="imageButton02" destination="zon-KK-vDk" id="Lkn-wU-8OP"/>
                         <outlet property="imageButton03" destination="HP4-OB-b1k" id="KPY-sD-F7n"/>
