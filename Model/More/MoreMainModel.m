@@ -185,8 +185,34 @@
         
         return 417;
     }
-    
-    
 }
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if ([self.delegate respondsToSelector:@selector(selectedIndexPath:)]) {
+        
+        [self.delegate selectedIndexPath:indexPath];
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @end

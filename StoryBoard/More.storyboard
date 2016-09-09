@@ -35,13 +35,15 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="tableView" destination="rTc-tw-4ix" id="BGZ-Ca-FH4"/>
+                        <segue destination="O1c-g3-euU" kind="modal" identifier="goBloodPressure" id="aQA-uo-JLQ"/>
+                        <segue destination="1TF-S5-Wku" kind="modal" id="Jyy-HJ-Ko2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D2U-Bx-Q2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2142" y="46"/>
+            <point key="canvasLocation" x="-2271" y="46"/>
         </scene>
-        <!--More Blood Pressure View Controller-->
+        <!--혈압관리-->
         <scene sceneID="xaW-wG-Ocr">
             <objects>
                 <viewController id="aFA-9D-0sv" customClass="MoreBloodPressureViewController" sceneMemberID="viewController">
@@ -50,22 +52,110 @@
                         <viewControllerLayoutGuide type="bottom" id="gCC-fX-zlr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2SV-nv-VL5">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zsh-9K-en3">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zsh-9K-en3">
+                                <rect key="frame" x="0.0" y="4" width="320" height="496"/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="gCC-fX-zlr" firstAttribute="top" secondItem="zsh-9K-en3" secondAttribute="bottom" constant="4" id="D2r-mc-Yxy"/>
+                            <constraint firstAttribute="trailing" secondItem="zsh-9K-en3" secondAttribute="trailing" id="I03-lP-PBx"/>
+                            <constraint firstItem="zsh-9K-en3" firstAttribute="top" secondItem="94D-1O-2FD" secondAttribute="bottom" constant="4" id="aXz-xR-cdE"/>
+                            <constraint firstItem="zsh-9K-en3" firstAttribute="leading" secondItem="2SV-nv-VL5" secondAttribute="leading" id="hUC-Om-iHX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="혈압관리" id="vbC-dA-ciD">
+                        <barButtonItem key="leftBarButtonItem" title="닫기" id="x13-vH-n6G">
+                            <connections>
+                                <action selector="closeModal:" destination="aFA-9D-0sv" id="V13-T3-r2g"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="추가" id="uuC-ZH-3T4">
+                            <connections>
+                                <action selector="addHistory:" destination="aFA-9D-0sv" id="ijI-ec-Wlu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="zsh-9K-en3" id="wgr-eg-iRl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PLg-tX-EB6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1328" y="46"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jgj-fa-YZl">
+            <objects>
+                <navigationController id="O1c-g3-euU" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="aLl-ce-VKh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="aFA-9D-0sv" kind="relationship" relationship="rootViewController" id="Msa-Ee-suO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cM7-dl-Tq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1773" y="46"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sjy-p1-rq8">
+            <objects>
+                <navigationController id="1TF-S5-Wku" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="y3y-tI-dP7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7mD-qb-8z0" kind="relationship" relationship="rootViewController" id="ZD9-a6-eTH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V0i-mM-aqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1773" y="791"/>
+        </scene>
+        <!--주차별 체크리스트-->
+        <scene sceneID="eTk-Ef-6qS">
+            <objects>
+                <viewController id="7mD-qb-8z0" customClass="MoreWeekCheckViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OaV-Mu-kkx"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z2A-ta-bUG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ula-4Y-32P">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CvS-oy-apj">
+                                <rect key="frame" x="0.0" y="4" width="320" height="496"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <navigationItem key="navigationItem" title="주차별 체크리스트" id="Htd-ZL-TYJ"/>
+                    <connections>
+                        <outlet property="tableView" destination="CvS-oy-apj" id="ozc-Rn-uDq"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PLg-tX-EB6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vjL-g4-Lsn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1668" y="46"/>
+            <point key="canvasLocation" x="-1328" y="791"/>
         </scene>
     </scenes>
 </document>

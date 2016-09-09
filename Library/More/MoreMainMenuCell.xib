@@ -170,8 +170,8 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="iL8-nN-0Nl"/>
                                                 <exclude reference="5Wl-nZ-53c"/>
+                                                <exclude reference="iL8-nN-0Nl"/>
                                             </mask>
                                         </variation>
                                     </imageView>
@@ -188,8 +188,8 @@
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="vj5-7q-kLD"/>
                                                 <exclude reference="5I6-na-2N6"/>
+                                                <exclude reference="vj5-7q-kLD"/>
                                             </mask>
                                         </variation>
                                     </label>
@@ -228,8 +228,8 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="ear-fD-vkk"/>
                                                 <exclude reference="4yN-DM-uws"/>
+                                                <exclude reference="ear-fD-vkk"/>
                                             </mask>
                                         </variation>
                                     </imageView>
@@ -286,8 +286,8 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="fBx-9x-eaj"/>
                                                 <exclude reference="2qC-4S-Kj2"/>
+                                                <exclude reference="fBx-9x-eaj"/>
                                             </mask>
                                         </variation>
                                     </imageView>

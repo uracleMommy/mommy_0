@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MoreBloodPressureModel.h"
 
 @interface MoreBloodPressureViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic) MoreBloodPressureModel *moreBloodPressureModel;
+
+- (IBAction)closeModal:(id)sender;
+
+- (IBAction)addHistory:(id)sender;
 
 @end

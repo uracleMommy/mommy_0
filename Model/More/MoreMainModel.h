@@ -8,8 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol MoreMainModelDelegate;
+
 @interface MoreMainModel : NSObject<UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) NSArray *arrayList;
+
+@property (strong, nonatomic) id<MoreMainModelDelegate> delegate;
+
+@end
+
+@protocol MoreMainModelDelegate <NSObject>
+
+@required
+
+- (void) selectedIndexPath : (NSIndexPath *) indexPath;
 
 @end

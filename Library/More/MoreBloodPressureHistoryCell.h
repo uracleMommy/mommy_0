@@ -10,4 +10,8 @@
 
 @interface MoreBloodPressureHistoryCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+
+@property (weak, nonatomic) IBOutlet UIView *infoViewContainer;
+
 @end

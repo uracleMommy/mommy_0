@@ -19,10 +19,16 @@
     // Do any additional setup after loading the view.
     
     _moreMainModel = [[MoreMainModel alloc] init];
-    
+    _moreMainModel.delegate = self;
     _tableView.dataSource = _moreMainModel;
     _tableView.delegate = _moreMainModel;
     
+}
+
+#pragma 선택된 테이블 콜백
+- (void) selectedIndexPath:(NSIndexPath *)indexPath {
+    
+    [self performSegueWithIdentifier:@"goBloodPressure" sender:nil];
 }
 
 - (void)didReceiveMemoryWarning {

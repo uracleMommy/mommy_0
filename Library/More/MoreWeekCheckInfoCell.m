@@ -1,14 +1,14 @@
 //
-//  MoreBloodPressureHistoryCell.m
+//  MoreWeekCheckInfoCell.m
 //  co.medisolution
 //
-//  Created by OGGU on 2016. 9. 8..
+//  Created by OGGU on 2016. 9. 9..
 //  Copyright © 2016년 medisolution. All rights reserved.
 //
 
-#import "MoreBloodPressureHistoryCell.h"
+#import "MoreWeekCheckInfoCell.h"
 
-@implementation MoreBloodPressureHistoryCell
+@implementation MoreWeekCheckInfoCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

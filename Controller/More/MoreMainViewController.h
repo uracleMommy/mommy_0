@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MoreMainModel.h"
 
-@interface MoreMainViewController : UIViewController
+@interface MoreMainViewController : UIViewController<MoreMainModelDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
