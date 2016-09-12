@@ -26,9 +26,16 @@
 }
 
 #pragma 선택된 테이블 콜백
-- (void) selectedIndexPath:(NSIndexPath *)indexPath {
+- (void) selectedIndexPath:(NSInteger)index {
     
-    [self performSegueWithIdentifier:@"goBloodPressure" sender:nil];
+    if (index == 1) {
+        
+        [self performSegueWithIdentifier:@"goBloodPressure" sender:nil];
+    }
+    else if (index == 2) {
+        
+        [self performSegueWithIdentifier:@"goWeekCheckList" sender:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -22,25 +22,46 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7fg-Ey-fD3">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7fg-Ey-fD3">
                         <rect key="frame" x="8" y="4" width="304" height="61.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1주~4주차" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Juc-TH-q9q">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1주~4주차" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Juc-TH-q9q">
                                 <rect key="frame" x="8" y="12" width="288" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="RXm-mV-78T"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="16"/>
                                 <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="아직 임신이 되었는지 알 수 없어요." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTI-5d-X2U">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 임신이 되었는지 알 수 없어요." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTI-5d-X2U">
                                 <rect key="frame" x="8" y="33" width="288" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="nRk-He-2Qx"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
                                 <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Juc-TH-q9q" secondAttribute="trailing" constant="8" id="So8-7R-yl9"/>
+                            <constraint firstItem="BTI-5d-X2U" firstAttribute="top" secondItem="Juc-TH-q9q" secondAttribute="bottom" id="fLx-JP-gOm"/>
+                            <constraint firstItem="BTI-5d-X2U" firstAttribute="leading" secondItem="7fg-Ey-fD3" secondAttribute="leading" constant="8" id="oRw-EG-vU7"/>
+                            <constraint firstItem="Juc-TH-q9q" firstAttribute="top" secondItem="7fg-Ey-fD3" secondAttribute="top" constant="12" id="pOW-YM-zCg"/>
+                            <constraint firstAttribute="trailing" secondItem="BTI-5d-X2U" secondAttribute="trailing" constant="8" id="v6D-cG-m63"/>
+                            <constraint firstItem="Juc-TH-q9q" firstAttribute="leading" secondItem="7fg-Ey-fD3" secondAttribute="leading" constant="8" id="wtL-yc-DHc"/>
+                        </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="7fg-Ey-fD3" secondAttribute="bottom" constant="4" id="5UG-O1-7d0"/>
+                    <constraint firstItem="7fg-Ey-fD3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="Ed5-ip-kkq"/>
+                    <constraint firstAttribute="trailing" secondItem="7fg-Ey-fD3" secondAttribute="trailing" constant="8" id="hpW-1U-aWI"/>
+                    <constraint firstItem="7fg-Ey-fD3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="ul1-Pz-RVM"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="containerView" destination="7fg-Ey-fD3" id="lDC-Up-lfZ"/>

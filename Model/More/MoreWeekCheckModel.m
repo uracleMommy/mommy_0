@@ -167,7 +167,7 @@
     
     if (indexPath.section == 0 || indexPath.section == 2 || indexPath.section == 4) {
         
-        return 30;
+        return 36;
     }
     else {
         

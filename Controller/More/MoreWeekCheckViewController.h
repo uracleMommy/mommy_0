@@ -17,4 +17,6 @@
 
 @property (strong, nonatomic) NSArray *weekData;
 
+- (IBAction)closeModal:(id)sender;
+
 @end

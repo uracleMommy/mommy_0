@@ -36,7 +36,7 @@
                     <connections>
                         <outlet property="tableView" destination="rTc-tw-4ix" id="BGZ-Ca-FH4"/>
                         <segue destination="O1c-g3-euU" kind="modal" identifier="goBloodPressure" id="aQA-uo-JLQ"/>
-                        <segue destination="1TF-S5-Wku" kind="modal" id="Jyy-HJ-Ko2"/>
+                        <segue destination="1TF-S5-Wku" kind="modal" identifier="goWeekCheckList" id="Jyy-HJ-Ko2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D2U-Bx-Q2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -141,21 +141,59 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CvS-oy-apj">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CvS-oy-apj">
                                 <rect key="frame" x="0.0" y="4" width="320" height="496"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="CvS-oy-apj" firstAttribute="top" secondItem="OaV-Mu-kkx" secondAttribute="bottom" constant="4" id="9O8-rW-jho"/>
+                            <constraint firstAttribute="trailing" secondItem="CvS-oy-apj" secondAttribute="trailing" id="Ldi-nq-GOM"/>
+                            <constraint firstItem="Z2A-ta-bUG" firstAttribute="top" secondItem="CvS-oy-apj" secondAttribute="bottom" constant="4" id="mfy-gS-BwY"/>
+                            <constraint firstItem="CvS-oy-apj" firstAttribute="leading" secondItem="Ula-4Y-32P" secondAttribute="leading" id="nj9-Ge-XP0"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="주차별 체크리스트" id="Htd-ZL-TYJ"/>
+                    <navigationItem key="navigationItem" title="주차별 체크리스트" id="Htd-ZL-TYJ">
+                        <barButtonItem key="leftBarButtonItem" title="닫기" id="QZU-dd-c4u">
+                            <connections>
+                                <action selector="closeModal:" destination="7mD-qb-8z0" id="crj-Kt-hwb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="CvS-oy-apj" id="ozc-Rn-uDq"/>
+                        <segue destination="hBk-qv-37d" kind="push" id="pyF-zj-X5l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vjL-g4-Lsn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1328" y="791"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jsJ-IF-CHt">
+            <objects>
+                <viewController id="hBk-qv-37d" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6vf-Hp-9OF"/>
+                        <viewControllerLayoutGuide type="bottom" id="OvY-nO-Jlp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zYX-Fb-ayT">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yhw-2M-6tq">
+                                <rect key="frame" x="0.0" y="4" width="320" height="496"/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NfY-yw-Mvh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lqh-W6-1im" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-878" y="791"/>
         </scene>
     </scenes>
 </document>

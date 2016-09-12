@@ -10,6 +10,10 @@
 #import "MoreMainTitleCell.h"
 #import "MoreMainMenuCell.h"
 
+@interface MoreMainModel ()<MoreMainMenuCellDelegate>
+
+@end
+
 @implementation MoreMainModel
 
 - (id) init {
@@ -66,6 +70,7 @@
         }
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.delegate = self;
         
         CAShapeLayer *firstShapeLayer = [CAShapeLayer layer];
         [firstShapeLayer setBounds:cell.bounds];
@@ -189,13 +194,22 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if ([self.delegate respondsToSelector:@selector(selectedIndexPath:)]) {
+    if (indexPath.row == 0) {
         
-        [self.delegate selectedIndexPath:indexPath];
+        if ([self.delegate respondsToSelector:@selector(selectedIndexPath:)]) {
+            
+            [self.delegate selectedIndexPath:indexPath.row];
+        }
     }
 }
 
-
+- (void) moreMenuTouchIndex:(NSInteger)index {        
+    
+    if ([self.delegate respondsToSelector:@selector(selectedIndexPath:)]) {
+        
+        [self.delegate selectedIndexPath:index];
+    }
+}
 
 
 

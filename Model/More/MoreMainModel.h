@@ -22,6 +22,6 @@
 
 @required
 
-- (void) selectedIndexPath : (NSIndexPath *) indexPath;
+- (void) selectedIndexPath : (NSInteger) index;
 
 @end
