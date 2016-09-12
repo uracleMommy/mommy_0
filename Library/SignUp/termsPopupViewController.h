@@ -16,6 +16,9 @@
 @interface termsPopupViewController : UIViewController
 
 @property (weak, nonatomic) id<termsPopupViewDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UIButton *button_0;
+@property (weak, nonatomic) IBOutlet UIButton *button_1;
+@property (weak, nonatomic) IBOutlet UIButton *button_2;
 
 - (IBAction)okButtonAction:(id)sender;
 - (IBAction)cancleButtonAction:(id)sender;

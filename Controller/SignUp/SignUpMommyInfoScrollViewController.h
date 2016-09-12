@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <Photos/Photos.h>
 #import "ImageCropView.h"
+#import "SingleImageViewController.h"
 #import "IQKeyboardManager.h"
 #import "IQDropDownTextField.h"
 #import "FXBlurView.h"
@@ -18,6 +19,7 @@
 
 -(void)callCameraView;
 -(void)callLibraryView;
+-(void)callImageView:(UIImage*)image;
 
 @end
 

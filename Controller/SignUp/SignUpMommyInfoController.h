@@ -11,13 +11,14 @@
 #import "IQKeyboardManager.h"
 #import "SignUpMommyInfoScrollViewController.h"
 
-@interface SignUpMommyInfoController : UIViewController<SignUpMommyInfoScrollViewDelegate, UIImagePickerControllerDelegate, ImageCropViewControllerDelegate>{
-    UIImage *image;
+@interface SignUpMommyInfoController : UIViewController<SignUpMommyInfoScrollViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, ImageCropViewControllerDelegate>{
     SignUpMommyInfoScrollViewController *scrollViewContoller;
-    ImageCropViewController *controller;
-    UIImagePickerController *cameraView;
-    UIImagePickerController *libraryView;
 }
 @property (weak, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
+
+@property (strong, nonatomic) SingleImageViewController *singleImageView;
+@property (strong, nonatomic) ImageCropViewController *controller;
+@property (strong, nonatomic) UIImagePickerController *cameraView;
+@property (strong, nonatomic) UIImagePickerController *libraryView;
 
 @end

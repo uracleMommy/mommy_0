@@ -138,7 +138,6 @@ float IMAGE_MIN_WIDTH = 400;
         }
         [self.delegate ImageCropViewControllerSuccess:self didFinishCroppingImage:cropped];
         
-        [self dismissViewControllerAnimated:YES completion:nil];
     }
     
 }

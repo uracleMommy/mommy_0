@@ -72,7 +72,8 @@
         [imageView setFrame:CGRectMake(0, newPositionY, windowSize.size.width, newHeight)];
     }
     
-    _pageControl.currentPage = 0;
+    [_scrollView setContentOffset:CGPointMake(windowSize.size.width*_index, 0)];
+    _pageControl.currentPage = _index;
     _pageControl.numberOfPages = _imgArray.count;
 }
 
