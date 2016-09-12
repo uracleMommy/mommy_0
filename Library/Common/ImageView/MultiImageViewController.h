@@ -11,5 +11,6 @@
 @interface MultiImageViewController : UIViewController<UIScrollViewDelegate>
 
 @property (strong, nonatomic) NSArray *imgArray;
+@property (assign, nonatomic) int index;
 
 @end

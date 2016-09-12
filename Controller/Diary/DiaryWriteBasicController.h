@@ -12,7 +12,7 @@
 #import "IQDropDownTextField.h"
 #import "AppDelegate.h"
 #import "emoticonPopupViewController.h"
-#import "SingleImageViewController.h"
+#import "MultiImageViewController.h"
 #import "ImageCropView.h"
 
 @interface DiaryWriteBasicController : UIViewController <UITextViewDelegate, IQDropDownTextFieldDelegate, ImageCropViewControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, UINavigationControllerDelegate, emoticonPopupViewDelegate> {
@@ -33,6 +33,7 @@
 @property (weak, nonatomic) IBOutlet IQDropDownTextField *dateButton;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIButton *emoticonButton;
+@property (strong, nonatomic) MultiImageViewController *imageViewer;
 
 #pragma mark 이모티콘 팝업 관련
 @property (strong, nonatomic) emoticonPopupViewController *emoticonPopupView;

@@ -252,6 +252,7 @@
     
     UIAlertAction *showAction = [UIAlertAction actionWithTitle:@"사진보기"
                                                          style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                                                             [self showImageView:sender];
                                                              NSLog(@"You pressed button one");
                                                          }]; // 2
     
@@ -288,6 +289,10 @@
     
     
     [self presentViewController:alert animated:YES completion:nil]; // 6
+}
+
+-(void)showImageView:(id)sender {
+    [_delegate callImageView:[(UIButton*)sender currentImage]];
 }
 
 -(void)setMommyImage:(UIImage *)croppedImage{

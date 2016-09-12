@@ -43,23 +43,33 @@
     }
 }
 
--(void)callCameraView{
-    if(cameraView == nil){
-        cameraView = [[UIImagePickerController alloc] init];
-        [cameraView setSourceType:UIImagePickerControllerSourceTypeCamera];
-        cameraView.delegate = self;
+-(void)callImageView:(UIImage*)image{
+    if(_singleImageView == nil){
+        _singleImageView = [[SingleImageViewController alloc] init];
     }
     
-    [self presentViewController:cameraView animated:YES completion:nil];
+    _singleImageView.originalImage = image;
+    
+    [self presentViewController:_singleImageView animated:YES completion:nil];
+}
+
+-(void)callCameraView{
+    if(_cameraView == nil){
+        _cameraView = [[UIImagePickerController alloc] init];
+        [_cameraView setSourceType:UIImagePickerControllerSourceTypeCamera];
+        _cameraView.delegate = self;
+    }
+    
+    [self presentViewController:_cameraView animated:YES completion:nil];
 }
 
 -(void)callLibraryView{
-    if(libraryView == nil){
-        libraryView = [[UIImagePickerController alloc] init];
-        [libraryView setDelegate:self];
+    if(_libraryView == nil){
+        _libraryView = [[UIImagePickerController alloc] init];
+        [_libraryView setDelegate:self];
     }
     
-    [self presentViewController:libraryView animated:YES completion:nil];
+    [self presentViewController:_libraryView animated:YES completion:nil];
 }
 
 
@@ -67,15 +77,15 @@
 {
     UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
     
-    controller = [[ImageCropViewController alloc] initWithImage:image];
+    _controller = [[ImageCropViewController alloc] initWithImage:image];
     
-    controller.delegate = self;
-    controller.blurredBackground = YES;
+    _controller.delegate = self;
+    _controller.blurredBackground = YES;
     
-    [cameraView dismissViewControllerAnimated:YES completion:nil];
-    [libraryView dismissViewControllerAnimated:YES completion:nil];
+    [_cameraView dismissViewControllerAnimated:YES completion:nil];
+    [_libraryView dismissViewControllerAnimated:YES completion:nil];
 
-    [[self navigationController] pushViewController:controller animated:YES];
+    [[self navigationController] pushViewController:_controller animated:YES];
 }
 
 

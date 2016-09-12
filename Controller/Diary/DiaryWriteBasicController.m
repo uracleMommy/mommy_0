@@ -159,6 +159,7 @@
     
     UIAlertAction *showAction = [UIAlertAction actionWithTitle:@"사진보기"
                                                          style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                                                             [self showImageViewer:sender];
                                                              NSLog(@"You pressed button one");
                                                          }];
     
@@ -198,7 +199,6 @@
     [self presentViewController:alert animated:YES completion:nil]; // 6
 }
 
-
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     NSLog(@"PSH picker!!");
@@ -223,19 +223,30 @@
     [selectedImageButton.imageView setContentMode:UIViewContentModeScaleAspectFill];
     
     [[self navigationController] popViewControllerAnimated:YES];
-    CGSize buttonSize = selectedImageButton.frame.size;
+//    CGSize buttonSize = selectedImageButton.frame.size;
+    UIView *imageView = selectedImageButton.superview;
+    CGPoint buttonRect = selectedImageButton.frame.origin;
     
+    if([imageView.subviews count] > 1){
+        for(int i = 0 ; i < [imageView.subviews count] ; i++){
+            NSLog(@"PSH : %@", imageView.subviews[i].class);
+            if(imageView.subviews[i].tag == 1){
+                [imageView.subviews[i] removeFromSuperview];
+            }
+        }
+    }
     //TODO delete button
-    UIButton *deleteButton = [[UIButton alloc]initWithFrame:CGRectMake(buttonSize.width-25, 5, 20, 20)];
+    UIButton *deleteButton = [[UIButton alloc]initWithFrame:CGRectMake(buttonRect.x+selectedImageButton.frame.size.width-15, buttonRect.y-5, 20, 20)];
+    deleteButton.tag = 1;
     [deleteButton setImage:[UIImage imageNamed:@"contents_bot_photo_delete.png"] forState:UIControlStateNormal];
     [deleteButton addTarget:self action:@selector(deleteImage:) forControlEvents:UIControlEventTouchUpInside];
     [deleteButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
-    [selectedImageButton addSubview:deleteButton];
+    [imageView addSubview:deleteButton];
 }
 
 -(void)deleteImage:(id)sender{
     NSLog(@"deleteImage");
-    UIButton *seletedButton = (UIButton*)[sender superview];
+    UIButton *seletedButton = (UIButton*)[sender superview].subviews[0];
     [seletedButton setImage:defaultImage forState:UIControlStateNormal];
     [sender removeFromSuperview];
 }
@@ -314,10 +325,23 @@
 }
 
 #pragma mark 사진보기
-- (void)showPicture{
-    SingleImageViewController *singleImageViewController = [[SingleImageViewController alloc] initWithNibName:@"SingleImageViewController" bundle:nil];
+- (void)showImageViewer:(id)sender{
+    _imageViewer = [[MultiImageViewController alloc] init];
     
-    [self presentViewController:singleImageViewController animated:YES completion:nil];
+    NSMutableArray *imgArray = [[NSMutableArray alloc] initWithArray: @[_imageButton01.currentImage, _imageButton02.currentImage, _imageButton03.currentImage, _imageButton04.currentImage]];
+    
+    for(int i = 0 ; i < [imgArray count] ; i++){
+        if([(UIImage*)imgArray[i] isEqual:defaultImage]){
+            [imgArray removeObject:imgArray[i]];
+        }
+    }
+    
+    _imageViewer.imgArray = [[NSArray alloc] initWithArray:imgArray];
+    _imageViewer.index = (int)[(UIButton*)sender tag];
+    
+    NSLog(@"%@", _imageViewer.imgArray);
+    
+    [self presentViewController:_imageViewer animated:YES completion:nil];
 
 }
 

@@ -33,7 +33,7 @@
 
 - (void) viewDidLayoutSubviews {
     
-    _originalImage = [UIImage imageNamed:@"screen1"];
+//    _originalImage = [UIImage imageNamed:@"screen1"];
     float oldImageWidth = _originalImage.size.width;
     float oldImageHeight = _originalImage.size.height;
     
@@ -67,7 +67,7 @@
 - (void) imageTap {
     
     JTSImageInfo *imageInfo = [[JTSImageInfo alloc] init];
-    imageInfo.image = [UIImage imageNamed:@"screen1"];
+    imageInfo.image = _originalImage;
     
     imageInfo.referenceRect = _imageView.frame;
     //imageInfo.referenceView = _imageView.superview;
