@@ -29,16 +29,18 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    scrollViewContoller = [self.storyboard instantiateViewControllerWithIdentifier:@"SignUpMommyInfoScrollView"];
-    
-    scrollViewContoller.delegate = self;
-    
-    [scrollViewContoller.view setFrame:CGRectMake(0, 0, _scrollView.frame.size.width, 530)];
-    _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width, 530);
-    
-    [_scrollView addSubview : scrollViewContoller.view];
-
-    [_scrollView sizeToFit];
+    if(!scrollViewContoller){
+        scrollViewContoller = [self.storyboard instantiateViewControllerWithIdentifier:@"SignUpMommyInfoScrollView"];
+        
+        scrollViewContoller.delegate = self;
+        
+        [scrollViewContoller.view setFrame:CGRectMake(0, 0, _scrollView.frame.size.width, 530)];
+        _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width, 530);
+        
+        [_scrollView addSubview : scrollViewContoller.view];
+        
+        [_scrollView sizeToFit];
+    }
 }
 
 -(void)callCameraView{
@@ -63,7 +65,7 @@
 
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    image = [info valueForKey:UIImagePickerControllerOriginalImage];
+    UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
     
     controller = [[ImageCropViewController alloc] initWithImage:image];
     
@@ -72,21 +74,16 @@
     
     [cameraView dismissViewControllerAnimated:YES completion:nil];
     [libraryView dismissViewControllerAnimated:YES completion:nil];
-    
-//    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:controller];
-//    
-//    [navController.navigationBar setTintColor:[UIColor colorWithRed:132.0/255.0 green:68.0/255.0 blue:240.0/255.0 alpha:1.0]];
-    
+
     [[self navigationController] pushViewController:controller animated:YES];
-//    [self presentViewController:controller animated:YES completion:nil];
-    
 }
 
 
 #pragma mark cropView Delegate
 -(void)ImageCropViewControllerSuccess:(UIViewController *)controller didFinishCroppingImage:(UIImage *)croppedImage{
     [scrollViewContoller setMommyImage:croppedImage];
-//    [[self navigationController] popViewControllerAnimated:YES];
+//    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 
 

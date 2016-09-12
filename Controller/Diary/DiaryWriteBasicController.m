@@ -223,6 +223,21 @@
     [selectedImageButton.imageView setContentMode:UIViewContentModeScaleAspectFill];
     
     [[self navigationController] popViewControllerAnimated:YES];
+    CGSize buttonSize = selectedImageButton.frame.size;
+    
+    //TODO delete button
+    UIButton *deleteButton = [[UIButton alloc]initWithFrame:CGRectMake(buttonSize.width-25, 5, 20, 20)];
+    [deleteButton setImage:[UIImage imageNamed:@"contents_bot_photo_delete.png"] forState:UIControlStateNormal];
+    [deleteButton addTarget:self action:@selector(deleteImage:) forControlEvents:UIControlEventTouchUpInside];
+    [deleteButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [selectedImageButton addSubview:deleteButton];
+}
+
+-(void)deleteImage:(id)sender{
+    NSLog(@"deleteImage");
+    UIButton *seletedButton = (UIButton*)[sender superview];
+    [seletedButton setImage:defaultImage forState:UIControlStateNormal];
+    [sender removeFromSuperview];
 }
 
 #pragma mark Library Function

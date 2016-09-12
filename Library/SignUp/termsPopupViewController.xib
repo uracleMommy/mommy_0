@@ -4,9 +4,20 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="NanumBarunGothic.ttf">
+            <string>NanumBarunGothic</string>
+            <string>NanumBarunGothic</string>
+            <string>NanumBarunGothic</string>
+            <string>NanumBarunGothic</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="termsPopupViewController">
             <connections>
+                <outlet property="button_0" destination="6NY-i1-j9I" id="vzh-dQ-Ufi"/>
+                <outlet property="button_1" destination="bW1-hW-lSw" id="CnF-Ev-rju"/>
+                <outlet property="button_2" destination="S9d-1O-jeM" id="d7f-CI-hts"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,10 +31,10 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIo-y9-Dau">
-                    <rect key="frame" x="0.0" y="393" width="320" height="175"/>
+                    <rect key="frame" x="0.0" y="379" width="320" height="189"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lx9-I4-5zm">
-                            <rect key="frame" x="0.0" y="131" width="160" height="44"/>
+                            <rect key="frame" x="0.0" y="145" width="160" height="44"/>
                             <color key="backgroundColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="YBn-ij-d2N"/>
@@ -41,24 +52,12 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="Tua-dB-9wv"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="17"/>
                             <color key="textColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q39-4X-Z3o">
-                            <rect key="frame" x="0.0" y="46" width="320" height="85"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="85" id="qEZ-Zv-LkK"/>
-                            </constraints>
-                            <string key="text">본 서비스는 서비스 이용약관, 개인정보수집 및 
-제3자 제공동의에 동의하셔야 이용 가능합니다.</string>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTE-eX-XNV">
-                            <rect key="frame" x="160" y="131" width="160" height="44"/>
+                            <rect key="frame" x="160" y="145" width="160" height="44"/>
                             <color key="backgroundColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="TdP-nn-hmu"/>
@@ -70,20 +69,159 @@
                                 <action selector="okButtonAction:" destination="-1" eventType="touchUpInside" id="KWW-JH-e51"/>
                             </connections>
                         </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egd-8u-Eb1">
+                            <rect key="frame" x="0.0" y="45" width="320" height="100"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qaH-Dq-sjy">
+                                    <rect key="frame" x="15" y="15" width="289" height="20"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="본 서비스는 " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyt-VY-YCG">
+                                            <rect key="frame" x="0.0" y="0.0" width="79" height="20"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="Zw2-8v-j57"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
+                                            <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6NY-i1-j9I">
+                                            <rect key="frame" x="79" y="0.0" width="109" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="Vgk-gU-dhh"/>
+                                            </constraints>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="서비스 이용약관">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="16" name="NanumBarunGothicBold"/>
+                                                            <font key="NSOriginalFont" size="16" name="NanumBarunGothicBold"/>
+                                                            <integer key="NSUnderline" value="1"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content=",">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="16" name="NanumBarunGothicBold"/>
+                                                            <integer key="NSUnderline" value="1"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bW1-hW-lSw">
+                                            <rect key="frame" x="188" y="0.0" width="86" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="XhH-3Q-KCZ"/>
+                                            </constraints>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="개인정보수집">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="16" name="NanumBarunGothicBold"/>
+                                                            <integer key="NSUnderline" value="1"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="및" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghe-Fk-NP8">
+                                            <rect key="frame" x="274" y="0.0" width="15" height="20"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="O1x-hM-aGF"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
+                                            <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="bW1-hW-lSw" firstAttribute="leading" secondItem="6NY-i1-j9I" secondAttribute="trailing" id="02d-3p-TiF"/>
+                                        <constraint firstAttribute="bottom" secondItem="Uyt-VY-YCG" secondAttribute="bottom" id="0tq-QI-ODh"/>
+                                        <constraint firstItem="Uyt-VY-YCG" firstAttribute="top" secondItem="qaH-Dq-sjy" secondAttribute="top" id="3Ge-eN-Fmp"/>
+                                        <constraint firstItem="bW1-hW-lSw" firstAttribute="top" secondItem="qaH-Dq-sjy" secondAttribute="top" id="3bB-0z-jcQ"/>
+                                        <constraint firstItem="ghe-Fk-NP8" firstAttribute="top" secondItem="qaH-Dq-sjy" secondAttribute="top" id="53L-Ri-lPx"/>
+                                        <constraint firstItem="ghe-Fk-NP8" firstAttribute="leading" secondItem="bW1-hW-lSw" secondAttribute="trailing" id="7yS-9p-buk"/>
+                                        <constraint firstItem="Uyt-VY-YCG" firstAttribute="leading" secondItem="qaH-Dq-sjy" secondAttribute="leading" id="OCU-Lf-MP3"/>
+                                        <constraint firstAttribute="bottom" secondItem="6NY-i1-j9I" secondAttribute="bottom" id="Qpx-Rw-xFn"/>
+                                        <constraint firstItem="6NY-i1-j9I" firstAttribute="leading" secondItem="Uyt-VY-YCG" secondAttribute="trailing" id="Uwu-TB-U1T"/>
+                                        <constraint firstItem="6NY-i1-j9I" firstAttribute="top" secondItem="qaH-Dq-sjy" secondAttribute="top" id="VGY-fa-Mr3"/>
+                                        <constraint firstAttribute="bottom" secondItem="bW1-hW-lSw" secondAttribute="bottom" id="cWk-K7-hFe"/>
+                                        <constraint firstAttribute="bottom" secondItem="ghe-Fk-NP8" secondAttribute="bottom" id="vOy-xv-RcC"/>
+                                        <constraint firstAttribute="trailing" secondItem="ghe-Fk-NP8" secondAttribute="trailing" id="vrg-0I-e5A"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FaV-oD-ywP">
+                                    <rect key="frame" x="9" y="50" width="301" height="20"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S9d-1O-jeM">
+                                            <rect key="frame" x="0.0" y="0.0" width="99" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="b06-ba-3QA"/>
+                                            </constraints>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="제3자 제공동의">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="16" name="NanumBarunGothicBold"/>
+                                                            <font key="NSOriginalFont" size="16" name="NanumBarunGothicBold"/>
+                                                            <integer key="NSUnderline" value="1"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="에 동의하셔야 이용 가능합니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvX-xz-PtX">
+                                            <rect key="frame" x="99" y="0.0" width="202" height="20"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="QpB-a5-Qp5"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
+                                            <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="rvX-xz-PtX" secondAttribute="bottom" id="2gJ-Tw-wcU"/>
+                                        <constraint firstItem="S9d-1O-jeM" firstAttribute="leading" secondItem="FaV-oD-ywP" secondAttribute="leading" id="7iH-sA-Ent"/>
+                                        <constraint firstAttribute="bottom" secondItem="S9d-1O-jeM" secondAttribute="bottom" id="8Z8-dK-Oas"/>
+                                        <constraint firstItem="S9d-1O-jeM" firstAttribute="top" secondItem="FaV-oD-ywP" secondAttribute="top" id="INX-eQ-tXB"/>
+                                        <constraint firstAttribute="trailing" secondItem="rvX-xz-PtX" secondAttribute="trailing" id="ZJd-3e-pXn"/>
+                                        <constraint firstItem="rvX-xz-PtX" firstAttribute="top" secondItem="FaV-oD-ywP" secondAttribute="top" id="iyl-gj-e2e"/>
+                                        <constraint firstItem="rvX-xz-PtX" firstAttribute="leading" secondItem="S9d-1O-jeM" secondAttribute="trailing" id="nIF-2C-7Lz"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="FaV-oD-ywP" firstAttribute="top" secondItem="qaH-Dq-sjy" secondAttribute="bottom" constant="15" id="05V-mD-gQ9"/>
+                                <constraint firstItem="qaH-Dq-sjy" firstAttribute="top" secondItem="egd-8u-Eb1" secondAttribute="top" constant="15" id="6yd-Ri-WDj"/>
+                                <constraint firstItem="qaH-Dq-sjy" firstAttribute="centerX" secondItem="egd-8u-Eb1" secondAttribute="centerX" id="O3Z-zD-Utp"/>
+                                <constraint firstItem="FaV-oD-ywP" firstAttribute="centerX" secondItem="egd-8u-Eb1" secondAttribute="centerX" id="QRN-p9-wDm"/>
+                                <constraint firstAttribute="height" constant="100" id="Wm3-Kd-5Lm"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="PfV-0a-rzY" firstAttribute="top" secondItem="tIo-y9-Dau" secondAttribute="top" id="1o6-YI-c5a"/>
-                        <constraint firstItem="q39-4X-Z3o" firstAttribute="top" secondItem="PfV-0a-rzY" secondAttribute="bottom" constant="2" id="3Jg-CE-aeR"/>
-                        <constraint firstAttribute="trailing" secondItem="q39-4X-Z3o" secondAttribute="trailing" id="Dxf-oz-0HJ"/>
+                        <constraint firstItem="egd-8u-Eb1" firstAttribute="top" secondItem="PfV-0a-rzY" secondAttribute="bottom" constant="1" id="5AP-YT-uhi"/>
+                        <constraint firstItem="egd-8u-Eb1" firstAttribute="leading" secondItem="tIo-y9-Dau" secondAttribute="leading" id="G5e-PA-Hra"/>
                         <constraint firstItem="Lx9-I4-5zm" firstAttribute="leading" secondItem="tIo-y9-Dau" secondAttribute="leading" id="L8w-dR-iCj"/>
                         <constraint firstAttribute="bottom" secondItem="mTE-eX-XNV" secondAttribute="bottom" id="Lyk-Eb-wXM"/>
                         <constraint firstItem="mTE-eX-XNV" firstAttribute="width" secondItem="Lx9-I4-5zm" secondAttribute="width" id="Ntf-fR-btM"/>
                         <constraint firstAttribute="trailing" secondItem="mTE-eX-XNV" secondAttribute="trailing" id="PRD-aY-8dz"/>
-                        <constraint firstItem="Lx9-I4-5zm" firstAttribute="top" secondItem="q39-4X-Z3o" secondAttribute="bottom" id="RK9-fQ-gNz"/>
                         <constraint firstAttribute="bottom" secondItem="Lx9-I4-5zm" secondAttribute="bottom" id="bop-TN-FNL"/>
+                        <constraint firstItem="mTE-eX-XNV" firstAttribute="top" secondItem="egd-8u-Eb1" secondAttribute="bottom" id="ggO-6f-Euw"/>
                         <constraint firstAttribute="trailing" secondItem="PfV-0a-rzY" secondAttribute="trailing" id="jpg-Dd-fRK"/>
-                        <constraint firstItem="q39-4X-Z3o" firstAttribute="leading" secondItem="tIo-y9-Dau" secondAttribute="leading" id="qfD-MB-qCs"/>
+                        <constraint firstAttribute="trailing" secondItem="egd-8u-Eb1" secondAttribute="trailing" id="k4N-Xr-Jso"/>
                         <constraint firstItem="mTE-eX-XNV" firstAttribute="leading" secondItem="Lx9-I4-5zm" secondAttribute="trailing" id="wgS-5c-Tdd"/>
                         <constraint firstItem="PfV-0a-rzY" firstAttribute="leading" secondItem="tIo-y9-Dau" secondAttribute="leading" id="zTR-vk-gBI"/>
                     </constraints>

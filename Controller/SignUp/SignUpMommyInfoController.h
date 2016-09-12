@@ -11,8 +11,7 @@
 #import "IQKeyboardManager.h"
 #import "SignUpMommyInfoScrollViewController.h"
 
-@interface SignUpMommyInfoController : UIViewController<SignUpMommyInfoScrollViewDelegate, UIImagePickerControllerDelegate, ImageCropViewControllerDelegate>{
-    UIImage *image;
+@interface SignUpMommyInfoController : UIViewController<SignUpMommyInfoScrollViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, ImageCropViewControllerDelegate>{
     SignUpMommyInfoScrollViewController *scrollViewContoller;
     ImageCropViewController *controller;
     UIImagePickerController *cameraView;
