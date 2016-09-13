@@ -75,6 +75,11 @@
 		DC3AAED21D75A11C007218E9 /* WeekProgramCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3AAED01D75A11C007218E9 /* WeekProgramCell.m */; };
 		DC3AAED31D75A11C007218E9 /* WeekProgramCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC3AAED11D75A11C007218E9 /* WeekProgramCell.xib */; };
 		DC3ACE161D5D853C00D68F80 /* DashBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3ACE151D5D853C00D68F80 /* DashBoard.storyboard */; };
+		DC4462161D87A65E006BFEBB /* MoreProfessionalAdviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4462151D87A65E006BFEBB /* MoreProfessionalAdviceViewController.m */; };
+		DC44621E1D87AD70006BFEBB /* MoreProfessionalAdviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44621D1D87AD70006BFEBB /* MoreProfessionalAdviceModel.m */; };
+		DC4462221D87ADB1006BFEBB /* MoreProfessionalAdviceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4462201D87ADB1006BFEBB /* MoreProfessionalAdviceCell.m */; };
+		DC4462231D87ADB1006BFEBB /* MoreProfessionalAdviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4462211D87ADB1006BFEBB /* MoreProfessionalAdviceCell.xib */; };
+		DC4462261D87B0AD006BFEBB /* MoreProfessionalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4462251D87B0AD006BFEBB /* MoreProfessionalInfoViewController.m */; };
 		DC44C37E1D7FADFA00519D96 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44C3771D7FADFA00519D96 /* TPKeyboardAvoidingCollectionView.m */; };
 		DC44C37F1D7FADFA00519D96 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44C3791D7FADFA00519D96 /* TPKeyboardAvoidingScrollView.m */; };
 		DC44C3801D7FADFA00519D96 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44C37B1D7FADFA00519D96 /* TPKeyboardAvoidingTableView.m */; };
@@ -332,6 +337,15 @@
 		DC3AAED01D75A11C007218E9 /* WeekProgramCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekProgramCell.m; sourceTree = "<group>"; };
 		DC3AAED11D75A11C007218E9 /* WeekProgramCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekProgramCell.xib; sourceTree = "<group>"; };
 		DC3ACE151D5D853C00D68F80 /* DashBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DashBoard.storyboard; sourceTree = "<group>"; };
+		DC4462141D87A65E006BFEBB /* MoreProfessionalAdviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreProfessionalAdviceViewController.h; sourceTree = "<group>"; };
+		DC4462151D87A65E006BFEBB /* MoreProfessionalAdviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreProfessionalAdviceViewController.m; sourceTree = "<group>"; };
+		DC44621C1D87AD70006BFEBB /* MoreProfessionalAdviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreProfessionalAdviceModel.h; sourceTree = "<group>"; };
+		DC44621D1D87AD70006BFEBB /* MoreProfessionalAdviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreProfessionalAdviceModel.m; sourceTree = "<group>"; };
+		DC44621F1D87ADB1006BFEBB /* MoreProfessionalAdviceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreProfessionalAdviceCell.h; sourceTree = "<group>"; };
+		DC4462201D87ADB1006BFEBB /* MoreProfessionalAdviceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreProfessionalAdviceCell.m; sourceTree = "<group>"; };
+		DC4462211D87ADB1006BFEBB /* MoreProfessionalAdviceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreProfessionalAdviceCell.xib; sourceTree = "<group>"; };
+		DC4462241D87B0AD006BFEBB /* MoreProfessionalInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreProfessionalInfoViewController.h; sourceTree = "<group>"; };
+		DC4462251D87B0AD006BFEBB /* MoreProfessionalInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreProfessionalInfoViewController.m; sourceTree = "<group>"; };
 		DC44C3761D7FADFA00519D96 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
 		DC44C3771D7FADFA00519D96 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
 		DC44C3781D7FADFA00519D96 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
@@ -923,6 +937,8 @@
 				DC4DE2ED1D829C59007CF9BF /* MoreWeekCheckModel.m */,
 				DC8EB7891D869BA300A0304D /* MoreWeekDetailModel.h */,
 				DC8EB78A1D869BA300A0304D /* MoreWeekDetailModel.m */,
+				DC44621C1D87AD70006BFEBB /* MoreProfessionalAdviceModel.h */,
+				DC44621D1D87AD70006BFEBB /* MoreProfessionalAdviceModel.m */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -938,6 +954,10 @@
 				DC4DE2FA1D82C4E7007CF9BF /* MoreWeekCheckViewController.m */,
 				DC8EB7861D869A1700A0304D /* MoreWeekCheckDetailViewController.h */,
 				DC8EB7871D869A1700A0304D /* MoreWeekCheckDetailViewController.m */,
+				DC4462141D87A65E006BFEBB /* MoreProfessionalAdviceViewController.h */,
+				DC4462151D87A65E006BFEBB /* MoreProfessionalAdviceViewController.m */,
+				DC4462241D87B0AD006BFEBB /* MoreProfessionalInfoViewController.h */,
+				DC4462251D87B0AD006BFEBB /* MoreProfessionalInfoViewController.m */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -969,6 +989,9 @@
 				DC8EB78C1D869D4800A0304D /* MoreWeekDetailInfoCell.h */,
 				DC8EB78D1D869D4800A0304D /* MoreWeekDetailInfoCell.m */,
 				DC8EB78E1D869D4800A0304D /* MoreWeekDetailInfoCell.xib */,
+				DC44621F1D87ADB1006BFEBB /* MoreProfessionalAdviceCell.h */,
+				DC4462201D87ADB1006BFEBB /* MoreProfessionalAdviceCell.m */,
+				DC4462211D87ADB1006BFEBB /* MoreProfessionalAdviceCell.xib */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -1409,6 +1432,7 @@
 				DCF6CAC11D7443E200703CAE /* PushNotice.storyboard in Resources */,
 				2A371A4C1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.xib in Resources */,
 				DC5FCCF91D7E858900957D73 /* SleepingHoursEvalCell.xib in Resources */,
+				DC4462231D87ADB1006BFEBB /* MoreProfessionalAdviceCell.xib in Resources */,
 				DC73E5C71D6DAE3B007D2DEE /* IndicatorViewController.xib in Resources */,
 				2AC781DB1D599C0800B86BE1 /* MembershipLogin.storyboard in Resources */,
 				DCA5AE371D598C6F0075B7AD /* LaunchScreen.storyboard in Resources */,
@@ -1492,6 +1516,7 @@
 				DC538EC21D781C3600E5949B /* IQUIScrollView+Additions.m in Sources */,
 				DC44C3951D800E2600519D96 /* MoreMainViewController.m in Sources */,
 				DC1FE6ED1D65A7D4006F7A50 /* fetusInfoController.m in Sources */,
+				DC4462221D87ADB1006BFEBB /* MoreProfessionalAdviceCell.m in Sources */,
 				2A54B1B81D66904000C538D1 /* JTCalendarWeekDayView.m in Sources */,
 				DC538EC51D781C3600E5949B /* IQUIViewController+Additions.m in Sources */,
 				DC44C3841D7FD03400519D96 /* SignUpMainScrollViewControllerTest.m in Sources */,
@@ -1507,14 +1532,17 @@
 				DCF6CAAB1D742B4000703CAE /* JTSImageViewController.m in Sources */,
 				DC5D20851D62AFA100ACDCA4 /* OTPageScrollView.m in Sources */,
 				DC4E95921D7D2D2B0087647B /* WeightInfoView.m in Sources */,
+				DC4462161D87A65E006BFEBB /* MoreProfessionalAdviceViewController.m in Sources */,
 				DC3AAECE1D759C19007218E9 /* WeekProgramModel.m in Sources */,
 				DC512AD21D66C62700885C26 /* MessageListController.m in Sources */,
 				2AB6277A1D5C0CF400BD7B84 /* SignUpMain.m in Sources */,
 				DC538ECC1D781C3600E5949B /* IQTitleBarButtonItem.m in Sources */,
 				2A54B1BB1D66904000C538D1 /* JTVerticalCalendarView.m in Sources */,
+				DC44621E1D87AD70006BFEBB /* MoreProfessionalAdviceModel.m in Sources */,
 				DC538EC71D781C3600E5949B /* IQKeyboardManager.m in Sources */,
 				2A4474C81D6EBB4A00D467C8 /* LoginUnlockAccountController.m in Sources */,
 				DC4DE2FB1D82C4E7007CF9BF /* MoreWeekCheckViewController.m in Sources */,
+				DC4462261D87B0AD006BFEBB /* MoreProfessionalInfoViewController.m in Sources */,
 				2AB627761D5C0CEC00BD7B84 /* LoginMain.m in Sources */,
 				DC538E651D78016B00E5949B /* WeightChartModel.m in Sources */,
 				DC1FE6E51D658E47006F7A50 /* TabbarDashBoardNavController.m in Sources */,

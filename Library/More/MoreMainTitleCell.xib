@@ -78,6 +78,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="jeon" width="240" height="222"/>
+        <image name="jeon" width="340" height="252"/>
     </resources>
 </document>

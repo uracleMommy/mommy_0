@@ -17,5 +17,11 @@ typedef enum {
     
 } ModifyStatus;
 
+#pragma 전문가 상담 버튼 상태
+typedef enum {
+    ProfessionalNormalMode = 0, // 일반
+    ProfessionalModifyMode = 1 // 편집
+    
+} ProfessionalButtonStatus;
 
 #endif /* EnumType_h */

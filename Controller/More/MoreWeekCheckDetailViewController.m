@@ -17,6 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSArray *arrayData = [NSArray arrayWithObjects:@"1", @"2", @"3", @"4", @"5", nil];
+    
+    _moreWeekDetailModel = [[MoreWeekDetailModel alloc] init];
+    _moreWeekDetailModel.arrayList = [NSArray arrayWithArray:arrayData];
+    _tableView.dataSource = _moreWeekDetailModel;
+    _tableView.delegate = _moreWeekDetailModel;
 }
 
 - (void)didReceiveMemoryWarning {

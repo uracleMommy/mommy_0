@@ -175,6 +175,14 @@
     }
 }
 
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if ([self.delegate respondsToSelector:@selector(tableView:selectedRowIndex:)]) {
+        
+        [self.delegate tableView:tableView selectedRowIndex:indexPath.row];
+    }
+}
+
 
 
 

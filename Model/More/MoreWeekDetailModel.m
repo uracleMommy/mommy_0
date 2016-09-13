@@ -7,6 +7,7 @@
 //
 
 #import "MoreWeekDetailModel.h"
+#import "MoreWeekDetailInfoCell.h"
 
 @implementation MoreWeekDetailModel
 
@@ -26,18 +27,31 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 0;
+    return _arrayList.count;
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return nil;
+    static NSString *CellIdentifierMoreWeekDetailInfoCell = @"MoreWeekDetailInfoCell";
+    
+    UINib *reuseMoreWeekDetailInfoCell = [UINib nibWithNibName:@"MoreWeekDetailInfoCell" bundle:nil];
+    [tableView registerNib:reuseMoreWeekDetailInfoCell forCellReuseIdentifier:CellIdentifierMoreWeekDetailInfoCell];
+    
+    MoreWeekDetailInfoCell *cell = (MoreWeekDetailInfoCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierMoreWeekDetailInfoCell];
+    
+    if (cell == nil) {
+        
+        cell = (MoreWeekDetailInfoCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierMoreWeekDetailInfoCell];
+    }
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    return cell;
 }
 
-
-
-
-
-
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 90;
+}
 
 @end
