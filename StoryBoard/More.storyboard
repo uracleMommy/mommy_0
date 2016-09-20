@@ -4,7 +4,161 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="NanumBarunGothic.ttf">
+            <string>NanumBarunGothic</string>
+            <string>NanumBarunGothic</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="XWR-0p-n2C">
+            <objects>
+                <navigationController id="N2k-Qr-wG1" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="516-Su-Ana">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="GJO-9y-l2N" kind="relationship" relationship="rootViewController" id="b15-xz-wBV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zfk-MR-fjn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2913" y="791"/>
+        </scene>
+        <!--1:1 전문가 상담-->
+        <scene sceneID="WfO-yb-t05">
+            <objects>
+                <viewController id="GJO-9y-l2N" customClass="MoreProfessionalAdviceViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gCX-85-gbe"/>
+                        <viewControllerLayoutGuide type="bottom" id="LGH-wO-DOV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ln4-iG-gLc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qez-Mt-d9c">
+                                <rect key="frame" x="207" y="500" width="88" height="45"/>
+                                <subviews>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="영양" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AaH-d6-D70">
+                                        <rect key="frame" x="0.0" y="12" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Al8-kT-JuL">
+                                        <rect key="frame" x="43" y="0.0" width="45" height="45"/>
+                                        <state key="normal" image="bottom_btn_write_nut"/>
+                                        <connections>
+                                            <action selector="nutritionAction:" destination="GJO-9y-l2N" eventType="touchUpInside" id="CC6-Ec-7de"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A60-jH-iZR">
+                                <rect key="frame" x="207" y="500" width="88" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhc-DP-7Lb">
+                                        <rect key="frame" x="43" y="0.0" width="45" height="45"/>
+                                        <state key="normal" image="bottom_btn_write_exe"/>
+                                        <connections>
+                                            <action selector="execersizeAction:" destination="GJO-9y-l2N" eventType="touchUpInside" id="qeu-e3-FO3"/>
+                                        </connections>
+                                    </button>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="운동" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZv-eF-Wjf">
+                                        <rect key="frame" x="0.0" y="12" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EX2-hI-Lo4">
+                                <rect key="frame" x="250" y="498" width="50" height="50"/>
+                                <state key="normal" image="bottom_btn_write_n"/>
+                                <connections>
+                                    <action selector="adviceAction:" destination="GJO-9y-l2N" eventType="touchUpInside" id="epF-Ga-Y3a"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="1:1 전문가 상담" id="1Wb-CM-hC8">
+                        <barButtonItem key="rightBarButtonItem" title="전문가" id="8BJ-uf-wS9">
+                            <connections>
+                                <action selector="professionalListAction:" destination="GJO-9y-l2N" id="9w9-lM-Sgp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnAdvice" destination="EX2-hI-Lo4" id="n1B-34-xYQ"/>
+                        <outlet property="btnExecersize" destination="jhc-DP-7Lb" id="fdY-tW-QWC"/>
+                        <outlet property="btnNutrition" destination="Al8-kT-JuL" id="CDv-Jn-rbL"/>
+                        <outlet property="containerExecersizeView" destination="A60-jH-iZR" id="eUi-la-OqA"/>
+                        <outlet property="containerNutritionView" destination="qez-Mt-d9c" id="Kdt-Sw-SEW"/>
+                        <outlet property="lblExecersize" destination="TZv-eF-Wjf" id="mCZ-Ok-yWo"/>
+                        <outlet property="lblNutrition" destination="AaH-d6-D70" id="AU6-LM-zZ2"/>
+                        <segue destination="BEM-KD-Ata" kind="modal" identifier="goProfessionalList" id="pK0-Wl-mWA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eo1-wg-Epc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2434" y="791"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Wev-ZK-XzL">
+            <objects>
+                <navigationController id="BEM-KD-Ata" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="nWI-b7-3Ws">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="NLJ-aQ-LXh" kind="relationship" relationship="rootViewController" id="hHI-XQ-rlp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kwT-Zh-bLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2913" y="1538"/>
+        </scene>
+        <!--More Professional Info View Controller-->
+        <scene sceneID="bo6-ah-OfC">
+            <objects>
+                <viewController id="NLJ-aQ-LXh" customClass="MoreProfessionalInfoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2sP-q9-aXP"/>
+                        <viewControllerLayoutGuide type="bottom" id="bJg-Ow-4Ge"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zc9-Os-7rp">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4qO-HH-Dtn" customClass="DZNSegmentedControl">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ubm-ga-0gM"/>
+                    <connections>
+                        <outlet property="segmentView" destination="4qO-HH-Dtn" id="zrI-Zr-WkY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="maT-DO-qwK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2434" y="1538"/>
+        </scene>
         <!--더보기-->
         <scene sceneID="Dec-On-eW3">
             <objects>
@@ -36,7 +190,8 @@
                     <connections>
                         <outlet property="tableView" destination="rTc-tw-4ix" id="BGZ-Ca-FH4"/>
                         <segue destination="O1c-g3-euU" kind="modal" identifier="goBloodPressure" id="aQA-uo-JLQ"/>
-                        <segue destination="1TF-S5-Wku" kind="modal" id="Jyy-HJ-Ko2"/>
+                        <segue destination="1TF-S5-Wku" kind="modal" identifier="goWeekCheckList" id="Jyy-HJ-Ko2"/>
+                        <segue destination="N2k-Qr-wG1" kind="modal" identifier="goProfessionalAdvice" id="2x0-sL-D9v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D2U-Bx-Q2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -141,21 +296,73 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CvS-oy-apj">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CvS-oy-apj">
                                 <rect key="frame" x="0.0" y="4" width="320" height="496"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="CvS-oy-apj" firstAttribute="top" secondItem="OaV-Mu-kkx" secondAttribute="bottom" constant="4" id="9O8-rW-jho"/>
+                            <constraint firstAttribute="trailing" secondItem="CvS-oy-apj" secondAttribute="trailing" id="Ldi-nq-GOM"/>
+                            <constraint firstItem="Z2A-ta-bUG" firstAttribute="top" secondItem="CvS-oy-apj" secondAttribute="bottom" constant="4" id="mfy-gS-BwY"/>
+                            <constraint firstItem="CvS-oy-apj" firstAttribute="leading" secondItem="Ula-4Y-32P" secondAttribute="leading" id="nj9-Ge-XP0"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="주차별 체크리스트" id="Htd-ZL-TYJ"/>
+                    <navigationItem key="navigationItem" title="주차별 체크리스트" id="Htd-ZL-TYJ">
+                        <barButtonItem key="leftBarButtonItem" title="닫기" id="QZU-dd-c4u">
+                            <connections>
+                                <action selector="closeModal:" destination="7mD-qb-8z0" id="crj-Kt-hwb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="CvS-oy-apj" id="ozc-Rn-uDq"/>
+                        <segue destination="hBk-qv-37d" kind="push" identifier="goDetailWeekCheck" id="ASb-YB-RJy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vjL-g4-Lsn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1328" y="791"/>
         </scene>
+        <!--주차-->
+        <scene sceneID="jsJ-IF-CHt">
+            <objects>
+                <viewController id="hBk-qv-37d" customClass="MoreWeekCheckDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6vf-Hp-9OF"/>
+                        <viewControllerLayoutGuide type="bottom" id="OvY-nO-Jlp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zYX-Fb-ayT">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yhw-2M-6tq">
+                                <rect key="frame" x="0.0" y="4" width="320" height="496"/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="yhw-2M-6tq" secondAttribute="trailing" id="GxT-rP-HId"/>
+                            <constraint firstItem="OvY-nO-Jlp" firstAttribute="top" secondItem="yhw-2M-6tq" secondAttribute="bottom" constant="4" id="V9q-SI-yV8"/>
+                            <constraint firstItem="yhw-2M-6tq" firstAttribute="leading" secondItem="zYX-Fb-ayT" secondAttribute="leading" id="bUn-LU-0po"/>
+                            <constraint firstItem="yhw-2M-6tq" firstAttribute="top" secondItem="6vf-Hp-9OF" secondAttribute="bottom" constant="4" id="m3d-jS-wam"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="주차" id="NfY-yw-Mvh"/>
+                    <connections>
+                        <outlet property="tableView" destination="yhw-2M-6tq" id="eDG-1L-blN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lqh-W6-1im" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-878" y="791"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="bottom_btn_write_exe" width="100" height="100"/>
+        <image name="bottom_btn_write_n" width="130" height="130"/>
+        <image name="bottom_btn_write_nut" width="100" height="100"/>
+    </resources>
 </document>

@@ -167,11 +167,19 @@
     
     if (indexPath.section == 0 || indexPath.section == 2 || indexPath.section == 4) {
         
-        return 30;
+        return 36;
     }
     else {
         
         return 70;
+    }
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if ([self.delegate respondsToSelector:@selector(tableView:selectedRowIndex:)]) {
+        
+        [self.delegate tableView:tableView selectedRowIndex:indexPath.row];
     }
 }
 

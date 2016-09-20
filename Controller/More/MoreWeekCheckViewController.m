@@ -35,6 +35,7 @@
     _weekData = [NSArray arrayWithObjects:title1, data1, title2, data2, title3, data3, nil];
     
     _moreWeekCheckModel = [[MoreWeekCheckModel alloc] init];
+    _moreWeekCheckModel.delegate = self;
     _moreWeekCheckModel.arrayList = [NSArray arrayWithArray:_weekData];
     _tableView.dataSource = _moreWeekCheckModel;
     _tableView.delegate = _moreWeekCheckModel;
@@ -43,6 +44,16 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)closeModal:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) tableView:(UITableView *)tableView selectedRowIndex:(NSInteger)index {
+    
+    [self performSegueWithIdentifier:@"goDetailWeekCheck" sender:nil];
 }
 
 @end

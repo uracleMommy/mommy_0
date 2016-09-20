@@ -33,4 +33,58 @@
     // Configure the view for the selected state
 }
 
+#pragma 혈압관리
+- (IBAction)goBloodPressure:(id)sender {
+    
+    if ([self.delegate respondsToSelector:@selector(moreMenuTouchIndex:)]) {
+        
+        [self.delegate moreMenuTouchIndex:1];
+    }
+}
+
+#pragma 포인트
+- (IBAction)goPoint:(id)sender {
+    
+    if ([self.delegate respondsToSelector:@selector(moreMenuTouchIndex:)]) {
+        
+        [self.delegate moreMenuTouchIndex:2];
+    }
+}
+
+#pragma 주차별 체크리스트
+- (IBAction)goWeekCheck:(id)sender {
+    
+    if ([self.delegate respondsToSelector:@selector(moreMenuTouchIndex:)]) {
+        
+        [self.delegate moreMenuTouchIndex:3];
+    }
+}
+
+#pragma 전문가 상담
+- (IBAction)goProfessionalAdvice:(id)sender {
+    
+    if ([self.delegate respondsToSelector:@selector(moreMenuTouchIndex:)]) {
+        
+        [self.delegate moreMenuTouchIndex:4];
+    }
+}
+
+#pragma 기기관리
+- (IBAction)goEquipmentManagement:(id)sender {
+    
+    if ([self.delegate respondsToSelector:@selector(moreMenuTouchIndex:)]) {
+        
+        [self.delegate moreMenuTouchIndex:5];
+    }
+}
+
+#pragma 환경설정
+- (IBAction)goEnvironmentSetup:(id)sender {
+    
+    if ([self.delegate respondsToSelector:@selector(moreMenuTouchIndex:)]) {
+        
+        [self.delegate moreMenuTouchIndex:6];
+    }
+}
+
 @end

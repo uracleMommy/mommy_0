@@ -26,9 +26,23 @@
 }
 
 #pragma 선택된 테이블 콜백
-- (void) selectedIndexPath:(NSIndexPath *)indexPath {
+- (void) selectedIndexPath:(NSInteger)index {
     
-    [self performSegueWithIdentifier:@"goBloodPressure" sender:nil];
+    // 혈압관리
+    if (index == 1) {
+        
+        [self performSegueWithIdentifier:@"goBloodPressure" sender:nil];
+    }
+    // 주별 체크 리스트
+    else if (index == 3) {
+        
+        [self performSegueWithIdentifier:@"goWeekCheckList" sender:nil];
+    }
+    // 전문가 상담
+    else if (index == 4) {
+        
+        [self performSegueWithIdentifier:@"goProfessionalAdvice" sender:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

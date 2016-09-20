@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "MoreWeekCheckModel.h"
 
-@interface MoreWeekCheckViewController : UIViewController
+@interface MoreWeekCheckViewController : UIViewController<MoreWeekCheckModelDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) MoreWeekCheckModel *moreWeekCheckModel;
 
 @property (strong, nonatomic) NSArray *weekData;
+
+- (IBAction)closeModal:(id)sender;
 
 @end
