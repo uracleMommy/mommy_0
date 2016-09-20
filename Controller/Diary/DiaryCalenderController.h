@@ -12,11 +12,11 @@
 
 @interface DiaryCalenderController : UIViewController<JTCalendarDelegate>
 
-@property (weak, nonatomic) IBOutlet JTCalendarMenuView *calendarMenuView;
+@property (strong, nonatomic) JTCalendarMenuView *calendarMenuView;
 @property (weak, nonatomic) IBOutlet JTHorizontalCalendarView *calendarContentView;
 
 @property (strong, nonatomic) JTCalendarManager *calendarManager;
 
-- (IBAction)closeView:(id)sender;
+//- (IBAction)closeView:(id)sender;
 
 @end

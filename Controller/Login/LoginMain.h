@@ -17,7 +17,5 @@
 - (IBAction)clickAutoLoginButton:(id)sender;
 - (IBAction)loginButtonAction:(id)sender;
 
-- (IBAction)closeView:(id)sender;
-
 
 @end

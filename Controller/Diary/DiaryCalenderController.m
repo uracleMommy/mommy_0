@@ -19,18 +19,18 @@
 @end
 
 @implementation DiaryCalenderController
-
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if(!self){
-        return nil;
-    }
-    
-    self.title = @"Basic";
-    
-    return self;
-}
+//
+//- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+//{
+//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+//    if(!self){
+//        return nil;
+//    }
+//    
+//    self.title = @"Basic";
+//    
+//    return self;
+//}
 
 
 - (void)viewDidLoad {
@@ -46,7 +46,7 @@
     // Create a min and max date for limit the calendar, optional
     [self createMinAndMaxDate];
     
-    [_calendarManager setMenuView:_calendarMenuView];
+//    [_calendarManager setMenuView:_calendarMenuView];
     [_calendarManager setContentView:_calendarContentView];
     [_calendarManager setDate:_todayDate];
 }
@@ -221,9 +221,9 @@
     }
 }
 
-- (IBAction)closeView:(id)sender {
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+//- (IBAction)closeView:(id)sender {
+//    
+//    [self dismissViewControllerAnimated:YES completion:nil];
+//}
 
 @end

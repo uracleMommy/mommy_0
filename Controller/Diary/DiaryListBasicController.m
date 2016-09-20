@@ -1,21 +1,21 @@
 //
-//  DiaryListController.m
+//  DiaryListBasicController.m
 //  co.medisolution
 //
-//  Created by uracle on 2016. 8. 18..
+//  Created by uracle on 2016. 9. 19..
 //  Copyright © 2016년 medisolution. All rights reserved.
 //
 
-#import "DiaryListController.h"
+#import "DiaryListBasicController.h"
 
-@interface DiaryListController ()
+@interface DiaryListBasicController ()
 
 @end
 
-@implementation DiaryListController
+@implementation DiaryListBasicController
 
 - (void)viewDidLoad {
-    _diaryListTableDelegate = [[DiaryListModel alloc]init];
+//    _diaryListTableDelegate = [[DiaryListModel alloc]init];
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -31,7 +31,7 @@
     [addBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithCustomView:addBtn];
     self.navigationItem.leftBarButtonItem = addButton;
-
+    
     
     //message Button Setting
     UIButton *messageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -53,12 +53,26 @@
     
     NSArray *rightBarButtonItems = [[NSArray alloc] initWithObjects: alarmButton, messageButton, nil];
     self.navigationItem.rightBarButtonItems = rightBarButtonItems;
-
     
-    [_listTableview setDelegate:_diaryListTableDelegate];
-    [_listTableview setDataSource:_diaryListTableDelegate];
-    _listTableview.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [_listTableview reloadData];
+    
+//    [_listTableview setDelegate:_diaryListTableDelegate];
+//    [_listTableview setDataSource:_diaryListTableDelegate];
+//    _listTableview.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    [_listTableview reloadData];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    if(!_listViewController){
+        _listViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DiaryListTableView"];
+        
+        //        _contentViewController.delegate = self;
+        
+        [_listViewController.view setFrame:CGRectMake(0, 0, _contentView.frame.size.width, 530)];
+        
+        [_contentView addSubview : _listViewController.view];
+        
+        //        [_scrollView sizeToFit];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,10 +90,11 @@
 }
 */
 
+
 - (void)showAddPopup{
     UIButton *imageView = self.navigationItem.leftBarButtonItem.customView;
     NSLog(@"PSH %@", self.navigationItem.leftBarButtonItem.customView);
-
+    
     UIImage *addImage = [UIImage imageNamed:@"title_icon_add.png"];
     UIImage *closeImage = [UIImage imageNamed:@"title_icon_close.png"];
     
@@ -109,7 +124,7 @@
                      menuItems:menuItems];
         
         [KxMenu setTarget:self action:@selector(dismissMenu)];
-
+        
     }else{
         [KxMenu dismissMenu];
         [imageView setImage:addImage forState:UIControlStateNormal];
@@ -146,7 +161,7 @@
     
     [self presentViewController:messageNavigationController animated:YES completion:nil];
     
-
+    
 }
 
 - (void)moveToAlarm{
@@ -156,6 +171,33 @@
     UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"PushListNavigation"];
     
     [self presentViewController:messageNavigationController animated:YES completion:nil];
+}
+
+- (IBAction)changeListViewAction:(id)sender {
+    if(!_calenderViewController){
+        _calenderViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DiaryListCalenderView"];
+//        [_calenderViewController setCalendarMenuView:_dateLabel];
+//        _calenderViewController.calendarMenuView = _dateLabel;
+        
+        [_calenderViewController.view setFrame:CGRectMake(0, 0, _contentView.frame.size.width, 530)];
+        
+        [_contentView.subviews[0] removeFromSuperview];
+        
+        [_contentView addSubview : _calenderViewController.view];
+    }else{
+        NSString *restorationIdentifier = _contentView.subviews[0].restorationIdentifier;
+        
+       [_contentView.subviews[0] removeFromSuperview];
+        if([restorationIdentifier isEqualToString:@"tableView"]){
+            [_contentView addSubview : _calenderViewController.view];
+        }else{
+            [_contentView addSubview : _listViewController.view];
+        }
+    }
+}
+
+- (JTCalendarMenuView*)getCalenderDateView{
+    return _dateLabel;
 }
 
 @end

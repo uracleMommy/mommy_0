@@ -75,6 +75,8 @@ float IMAGE_MIN_WIDTH = 400;
         [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:132.0/255.0 green:68.0/255.0 blue:240.0/255.0 alpha:1.0]];
         
         self.navigationItem.title = @"사진편집";
+        
+        [self.navigationItem setHidesBackButton:YES];
          
         //done button setting
         UIButton *doneBtn = [UIButton buttonWithType:UIButtonTypeCustom];

@@ -244,6 +244,11 @@
     [imageView addSubview:deleteButton];
 }
 
+-(void)ImageCropViewControllerDidCancel:(UIViewController *)controller{
+    
+}
+
+
 -(void)deleteImage:(id)sender{
     NSLog(@"deleteImage");
     UIButton *seletedButton = (UIButton*)[sender superview].subviews[0];

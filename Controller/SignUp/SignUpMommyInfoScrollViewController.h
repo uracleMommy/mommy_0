@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <Photos/Photos.h>
-#import "ImageCropView.h"
 #import "SingleImageViewController.h"
 #import "IQKeyboardManager.h"
 #import "IQDropDownTextField.h"
