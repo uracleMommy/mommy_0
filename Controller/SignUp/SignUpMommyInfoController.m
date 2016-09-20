@@ -95,6 +95,9 @@
 //    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
     [[self navigationController] popViewControllerAnimated:YES];
 }
+-(void)ImageCropViewControllerDidCancel:(UIViewController *)controller{
+    
+}
 
 
 

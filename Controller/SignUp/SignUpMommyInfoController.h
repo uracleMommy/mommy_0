@@ -10,6 +10,7 @@
 #import "TPKeyboardAvoidingScrollView.h"
 #import "IQKeyboardManager.h"
 #import "SignUpMommyInfoScrollViewController.h"
+#import "ImageCropView.h"
 
 @interface SignUpMommyInfoController : UIViewController<SignUpMommyInfoScrollViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, ImageCropViewControllerDelegate>{
     SignUpMommyInfoScrollViewController *scrollViewContoller;
