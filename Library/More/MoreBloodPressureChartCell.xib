@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="NanumBarunGothic.ttf">
+        <array key="NanumBarunGothic.ttf">
             <string>NanumBarunGothic</string>
-        </mutableArray>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -16,23 +17,19 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="263"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="th2-4q-ytV" id="3Gm-Mo-UaY">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="262.5"/>
+                <frame key="frameInset" width="320" height="262"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lka-cA-6wo">
-                        <rect key="frame" x="8" y="4" width="304" height="254"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weight_crop" translatesAutoresizingMaskIntoConstraints="NO" id="it4-DG-ViW">
-                                <rect key="frame" x="8" y="56" width="288" height="190"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="190" id="NJC-Se-707"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cp-ns-ldR">
-                                <rect key="frame" x="8" y="8" width="288" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oj9-ed-kdU">
-                                        <rect key="frame" x="16" y="0.0" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="FJq-V9-Ite"/>
                                             <constraint firstAttribute="width" constant="40" id="Wm2-aQ-1E4"/>
@@ -40,17 +37,15 @@
                                         <state key="normal" image="tab_btn_left"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 5건" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJW-H5-Yzg">
-                                        <rect key="frame" x="64" y="9" width="160" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="160" id="18C-xg-kTl"/>
                                             <constraint firstAttribute="height" constant="21" id="lhe-IR-l1c"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
-                                        <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pab-nh-Vol">
-                                        <rect key="frame" x="232" y="0.0" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="bc9-75-pi8"/>
                                             <constraint firstAttribute="width" constant="40" id="wvt-jG-g1V"/>
@@ -58,7 +53,7 @@
                                         <state key="normal" image="tab_btn_right"/>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="LJW-H5-Yzg" firstAttribute="leading" secondItem="oj9-ed-kdU" secondAttribute="trailing" constant="8" id="9Gh-fG-6Ix"/>
                                     <constraint firstAttribute="height" constant="40" id="9NU-3c-yaK"/>
@@ -70,7 +65,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7cp-ns-ldR" firstAttribute="top" secondItem="lka-cA-6wo" secondAttribute="top" constant="8" id="2Yh-EE-aGp"/>
                             <constraint firstAttribute="trailing" secondItem="it4-DG-ViW" secondAttribute="trailing" constant="8" id="5ga-MF-epi"/>
@@ -87,7 +82,7 @@
                         </variation>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="lka-cA-6wo" firstAttribute="top" secondItem="3Gm-Mo-UaY" secondAttribute="top" constant="4" id="A0s-oJ-zvw"/>
                     <constraint firstAttribute="bottom" secondItem="lka-cA-6wo" secondAttribute="bottom" constant="4" id="EVW-pJ-dW7"/>

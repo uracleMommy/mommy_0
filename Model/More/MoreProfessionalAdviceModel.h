@@ -8,6 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MoreProfessionalAdviceModel : NSObject
+@protocol MoreProfessionalAdviceModelDelegate;
+
+@interface MoreProfessionalAdviceModel : NSObject<UITableViewDelegate, UITableViewDataSource>
+
+@property (strong, nonatomic) NSArray *arrayList;
+
+@property (strong, nonatomic) id<MoreProfessionalAdviceModelDelegate> delegate;
+
+@end
+
+@protocol MoreProfessionalAdviceModelDelegate <NSObject>
+
+@optional
+
+- (void) tableView : (UITableView *) tableView moreProfessionalSelectedIndexPath : (NSIndexPath *) indexPath;
 
 @end

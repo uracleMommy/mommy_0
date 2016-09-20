@@ -13,4 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet DZNSegmentedControl *segmentView;
 
+- (IBAction)closeModal:(id)sender;
+
 @end

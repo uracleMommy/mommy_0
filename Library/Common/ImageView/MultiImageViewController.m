@@ -111,8 +111,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES
+                                            withAnimation:UIStatusBarAnimationFade];
+}
+
 - (IBAction)closeView:(id)sender {
     
+    [[UIApplication sharedApplication] setStatusBarHidden:NO
+                                            withAnimation:UIStatusBarAnimationFade];
     [self dismissViewControllerAnimated:YES completion:nil];
     
     // [self.view removeFromSuperview];

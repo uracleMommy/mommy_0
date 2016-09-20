@@ -1,18 +1,102 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumBarunGothic.ttf">
+            <string>NanumBarunGothic</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MoreProfessionalAdviceCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="MoreProfessionalAdviceCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <frame key="frameInset" width="320" height="99.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="miM-bh-gqM">
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qL-0c-T2L">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="xYJ-AC-cZf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contents_icon_clock" translatesAutoresizingMaskIntoConstraints="NO" id="guk-p3-fOZ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="6Yb-9A-JII"/>
+                                    <constraint firstAttribute="height" constant="20" id="gPd-R1-X3r"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016.06.10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcI-Gz-FnA">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="d0l-hD-dfB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요즘 살이 너무쩌서 고민이예요...요즘 살이 너무쩌서 고민이예요..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AF3-9a-O0R">
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
+                                <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bq-j7-DYe">
+                                <color key="backgroundColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="57" id="b5f-T3-hMv"/>
+                                    <constraint firstAttribute="height" constant="22" id="ua6-XP-EWN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="11"/>
+                                <state key="normal" title="답변완료">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2bq-j7-DYe" firstAttribute="leading" secondItem="AcI-Gz-FnA" secondAttribute="trailing" constant="8" id="36Q-3p-ej0"/>
+                            <constraint firstItem="4qL-0c-T2L" firstAttribute="leading" secondItem="miM-bh-gqM" secondAttribute="leading" constant="8" id="4pd-3o-uJN"/>
+                            <constraint firstItem="2bq-j7-DYe" firstAttribute="top" secondItem="miM-bh-gqM" secondAttribute="top" constant="9" id="8zr-Bk-Div"/>
+                            <constraint firstItem="AcI-Gz-FnA" firstAttribute="leading" secondItem="guk-p3-fOZ" secondAttribute="trailing" constant="8" id="I7m-eX-Yjz"/>
+                            <constraint firstItem="guk-p3-fOZ" firstAttribute="top" secondItem="miM-bh-gqM" secondAttribute="top" constant="13" id="JWO-2L-2JD"/>
+                            <constraint firstItem="AF3-9a-O0R" firstAttribute="top" secondItem="4qL-0c-T2L" secondAttribute="bottom" constant="11" id="NsF-p1-Lsq"/>
+                            <constraint firstAttribute="trailing" secondItem="AF3-9a-O0R" secondAttribute="trailing" constant="8" id="RRy-RH-oax"/>
+                            <constraint firstItem="AcI-Gz-FnA" firstAttribute="top" secondItem="miM-bh-gqM" secondAttribute="top" constant="13" id="VTX-fn-uxU"/>
+                            <constraint firstItem="4qL-0c-T2L" firstAttribute="top" secondItem="AcI-Gz-FnA" secondAttribute="bottom" constant="4" id="YGJ-hC-7HK"/>
+                            <constraint firstAttribute="bottom" secondItem="AF3-9a-O0R" secondAttribute="bottom" constant="8" id="Zh9-pX-mAu"/>
+                            <constraint firstItem="AF3-9a-O0R" firstAttribute="leading" secondItem="miM-bh-gqM" secondAttribute="leading" constant="8" id="jEd-ie-sf9"/>
+                            <constraint firstItem="guk-p3-fOZ" firstAttribute="leading" secondItem="miM-bh-gqM" secondAttribute="leading" constant="8" id="mDS-Ob-Kfv"/>
+                            <constraint firstAttribute="trailing" secondItem="4qL-0c-T2L" secondAttribute="trailing" constant="8" id="oQW-93-dnA"/>
+                            <constraint firstAttribute="trailing" secondItem="2bq-j7-DYe" secondAttribute="trailing" constant="12" id="vAm-QW-Wdm"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="miM-bh-gqM" secondAttribute="bottom" constant="4" id="6xA-F5-evY"/>
+                    <constraint firstAttribute="trailing" secondItem="miM-bh-gqM" secondAttribute="trailing" constant="8" id="jo5-kc-hbA"/>
+                    <constraint firstItem="miM-bh-gqM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="m1r-R2-dzH"/>
+                    <constraint firstItem="miM-bh-gqM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="mXa-Od-nST"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="containerView" destination="miM-bh-gqM" id="vsp-Be-tVc"/>
+                <outlet property="lblDotLine" destination="4qL-0c-T2L" id="1dZ-jh-D4s"/>
+                <outlet property="replyStatus" destination="2bq-j7-DYe" id="YlU-l5-VxS"/>
+            </connections>
+            <point key="canvasLocation" x="-990" y="-313"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="contents_icon_clock" width="28" height="28"/>
+    </resources>
 </document>

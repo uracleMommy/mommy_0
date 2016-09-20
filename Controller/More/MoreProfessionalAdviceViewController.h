@@ -8,35 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "CommonViewController.h"
+#import "MoreProfessionalButtonViewController.h"
+#import "MoreProfessionalAdviceModel.h"
 
-@interface MoreProfessionalAdviceViewController : CommonViewController
+@interface MoreProfessionalAdviceViewController : CommonViewController<MoreProfessionalButtonViewControllerDelegate, MoreProfessionalAdviceModelDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (weak, nonatomic) IBOutlet UIButton *btnAdvice;
+@property (strong, nonatomic) MoreProfessionalAdviceModel *moreProfessionalAdviceModel;
 
-@property (weak, nonatomic) IBOutlet UIButton *btnExecersize;
-
-@property (weak, nonatomic) IBOutlet UIButton *btnNutrition;
-
-@property (weak, nonatomic) IBOutlet UILabel *lblExecersize;
-
-@property (weak, nonatomic) IBOutlet UILabel *lblNutrition;
-
-@property (weak, nonatomic) IBOutlet UIView *containerNutritionView; // 영양 버튼 컨테이너
-
-@property (weak, nonatomic) IBOutlet UIView *containerExecersizeView; // 운동 버튼 컨테이너
-
-@property (assign) ProfessionalButtonStatus professionalButtonStatus;
-
-- (IBAction)adviceAction:(id)sender;
-
-- (IBAction)execersizeAction:(id)sender;
-
-- (IBAction)nutritionAction:(id)sender;
+@property (strong, nonatomic) MoreProfessionalButtonViewController *moreProfessionalButtonViewController;
 
 - (IBAction)professionalListAction:(id)sender;
 
-
+- (IBAction)closeView:(id)sender;
 
 @end

@@ -80,6 +80,26 @@
     [self.window makeKeyAndVisible];
 }
 
+#pragma mark 1:1 전문가 상담 버튼뷰 관련
+
+#pragma 버튼뷰 ADD
+- (void) buttonViewIn {
+    
+    if (!_moreProfessionalButtonViewController) {
+        
+        _moreProfessionalButtonViewController = [[MoreProfessionalButtonViewController alloc] initWithNibName:@"MoreProfessionalButtonViewController" bundle:nil];
+        _moreProfessionalButtonViewController.view.frame = CGRectMake(0, 0, [[UIScreen mainScreen] applicationFrame].size.width, [[UIScreen mainScreen] applicationFrame].size.height+20);
+    }
+    
+    [self.window addSubview:_moreProfessionalButtonViewController.view];
+}
+
+#pragma 버튼뷰 REMOVE
+- (void) buttonViewOut {
+    
+    [_moreProfessionalButtonViewController.view removeFromSuperview];
+}
+
 #pragma mark - Core Data stack
 
 @synthesize managedObjectContext = _managedObjectContext;

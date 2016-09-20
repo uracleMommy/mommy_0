@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MultiImageViewController">
@@ -14,17 +15,15 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfE-Rw-asr">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="J7h-ls-BBO"/>
                     </connections>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOR-d3-iPl">
-                    <rect key="frame" x="272" y="8" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="71h-uv-9No"/>
                         <constraint firstAttribute="width" constant="40" id="n1Q-i5-qnj"/>
@@ -35,14 +34,13 @@
                     </connections>
                 </button>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZRR-rg-ZBk">
-                    <rect key="frame" x="124" y="523" width="73" height="37"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="37" id="26W-ib-CAh"/>
                         <constraint firstAttribute="width" constant="73" id="D7p-Hg-Ofd"/>
                     </constraints>
                 </pageControl>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="UOR-d3-iPl" secondAttribute="trailing" constant="8" id="0HQ-vX-wpL"/>
                 <constraint firstItem="ZRR-rg-ZBk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="46q-SI-NYT"/>
@@ -53,10 +51,15 @@
                 <constraint firstAttribute="bottom" secondItem="ZRR-rg-ZBk" secondAttribute="bottom" constant="8" id="fnh-9V-OiK"/>
                 <constraint firstAttribute="bottom" secondItem="PfE-Rw-asr" secondAttribute="bottom" id="tCY-y6-KcC"/>
             </constraints>
-            <point key="canvasLocation" x="-53" y="429"/>
+            <point key="canvasLocation" x="-441" y="-76"/>
         </view>
     </objects>
     <resources>
         <image name="input_btn_del" width="90" height="90"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>

@@ -19,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSArray *items = @[@"홍길동", @"김나래", @"김정신", @"이유빈"];
+    NSArray *items = @[@"홍길동", @"김나래", @"김정신"];
     _segmentView.items = items;
     
     _segmentView.tintColor = [UIColor colorWithRed:132.0f/255.0f green:68.0f/255.0f blue:240.0f/255.0f alpha:1.0f];
@@ -32,6 +32,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)closeModal:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

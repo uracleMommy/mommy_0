@@ -38,8 +38,6 @@
 		2A54B1BE1D6691F600C538D1 /* DiaryCalenderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A54B1BD1D6691F600C538D1 /* DiaryCalenderController.m */; };
 		2A54B1C81D66E4E600C538D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A54B1C71D66E4E600C538D1 /* Assets.xcassets */; };
 		2AA6D6C21D64230A00316DD6 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA6D6C11D64230A00316DD6 /* Diary.storyboard */; };
-		2AA6D6CA1D64356000316DD6 /* DiaryWriteBasicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D6C91D64356000316DD6 /* DiaryWriteBasicController.m */; };
-		2AB3DD991D6BDB7C00512949 /* SignUpMommyInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB3DD981D6BDB7C00512949 /* SignUpMommyInfoController.m */; };
 		2AB627761D5C0CEC00BD7B84 /* LoginMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB627731D5C0CEC00BD7B84 /* LoginMain.m */; };
 		2AB627771D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB627751D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m */; };
 		2AB6277A1D5C0CF400BD7B84 /* SignUpMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB627791D5C0CF400BD7B84 /* SignUpMain.m */; };
@@ -47,7 +45,6 @@
 		2AC781DB1D599C0800B86BE1 /* MembershipLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC781DA1D599C0800B86BE1 /* MembershipLogin.storyboard */; };
 		2AD4A8911D7D660C0032E16C /* emoticonPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4A88F1D7D660C0032E16C /* emoticonPopupViewController.m */; };
 		2AD4A8921D7D660C0032E16C /* emoticonPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4A8901D7D660C0032E16C /* emoticonPopupViewController.xib */; };
-		2ADC0BE81D751A2E006E47B3 /* SignUpMommyInfoScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ADC0BE71D751A2E006E47B3 /* SignUpMommyInfoScrollViewController.m */; };
 		2AE11DE31D654C4E003C6690 /* DiaryListBasicCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11DE11D654C4E003C6690 /* DiaryListBasicCustomCell.m */; };
 		2AE11DE41D654C4E003C6690 /* DiaryListBasicCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AE11DE21D654C4E003C6690 /* DiaryListBasicCustomCell.xib */; };
 		2AE11DE81D657DE4003C6690 /* DiaryListImageCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11DE61D657DE4003C6690 /* DiaryListImageCustomCell.m */; };
@@ -77,7 +74,6 @@
 		DC3ACE161D5D853C00D68F80 /* DashBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3ACE151D5D853C00D68F80 /* DashBoard.storyboard */; };
 		DC4462161D87A65E006BFEBB /* MoreProfessionalAdviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4462151D87A65E006BFEBB /* MoreProfessionalAdviceViewController.m */; };
 		DC44621E1D87AD70006BFEBB /* MoreProfessionalAdviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44621D1D87AD70006BFEBB /* MoreProfessionalAdviceModel.m */; };
-		DC4462221D87ADB1006BFEBB /* MoreProfessionalAdviceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4462201D87ADB1006BFEBB /* MoreProfessionalAdviceCell.m */; };
 		DC4462231D87ADB1006BFEBB /* MoreProfessionalAdviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4462211D87ADB1006BFEBB /* MoreProfessionalAdviceCell.xib */; };
 		DC4462261D87B0AD006BFEBB /* MoreProfessionalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4462251D87B0AD006BFEBB /* MoreProfessionalInfoViewController.m */; };
 		DC44C37E1D7FADFA00519D96 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44C3771D7FADFA00519D96 /* TPKeyboardAvoidingCollectionView.m */; };
@@ -123,6 +119,11 @@
 		DC4E95AF1D7D66C40087647B /* ActiveMassExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E95AD1D7D66C40087647B /* ActiveMassExerciseCell.m */; };
 		DC4E95B01D7D66C40087647B /* ActiveMassExerciseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4E95AE1D7D66C40087647B /* ActiveMassExerciseCell.xib */; };
 		DC4EAA8B1D6E6F5E005370A8 /* notPasteField.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4EAA8A1D6E6F5E005370A8 /* notPasteField.m */; };
+		DC4F0F001D911066003CB09B /* MoreProfessionalDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4F0EFF1D911066003CB09B /* MoreProfessionalDetailViewController.m */; };
+		DC4F0F031D912936003CB09B /* MoreProfessionalAdviceContentSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4F0F021D912936003CB09B /* MoreProfessionalAdviceContentSegue.m */; };
+		DC4F0F061D912DC3003CB09B /* MoreProfessionalAdviceContentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4F0F051D912DC3003CB09B /* MoreProfessionalAdviceContentsViewController.m */; };
+		DC4F0F0B1D912F67003CB09B /* SignUpMommyInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4F0F081D912F67003CB09B /* SignUpMommyInfoController.m */; };
+		DC4F0F0C1D912F67003CB09B /* SignUpMommyInfoScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4F0F0A1D912F67003CB09B /* SignUpMommyInfoScrollViewController.m */; };
 		DC512AC01D6694D100885C26 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC512ABF1D6694D100885C26 /* Message.storyboard */; };
 		DC512AC61D66989000885C26 /* MessageListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC512AC51D66989000885C26 /* MessageListModel.m */; };
 		DC512ACC1D669BF900885C26 /* MessageListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC512ACA1D669BF900885C26 /* MessageListCell.xib */; };
@@ -202,6 +203,9 @@
 		DCF6CABF1D74430300703CAE /* PushViewListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCF6CABD1D74430300703CAE /* PushViewListCell.xib */; };
 		DCF6CAC11D7443E200703CAE /* PushNotice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCF6CAC01D7443E200703CAE /* PushNotice.storyboard */; };
 		DCF6CAC51D74453200703CAE /* PushNoticeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF6CAC41D74453200703CAE /* PushNoticeModel.m */; };
+		DCF8E1E91D8FA84B00E67402 /* MoreProfessionalButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF8E1E71D8FA84B00E67402 /* MoreProfessionalButtonViewController.m */; };
+		DCF8E1EA1D8FA84B00E67402 /* MoreProfessionalButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCF8E1E81D8FA84B00E67402 /* MoreProfessionalButtonViewController.xib */; };
+		DCF8E1EE1D8FD5C300E67402 /* MoreProfessionalAdviceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF8E1ED1D8FD5C300E67402 /* MoreProfessionalAdviceCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -270,10 +274,6 @@
 		2A54B1BD1D6691F600C538D1 /* DiaryCalenderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryCalenderController.m; sourceTree = "<group>"; };
 		2A54B1C71D66E4E600C538D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AA6D6C11D64230A00316DD6 /* Diary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
-		2AA6D6C81D64356000316DD6 /* DiaryWriteBasicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryWriteBasicController.h; sourceTree = "<group>"; };
-		2AA6D6C91D64356000316DD6 /* DiaryWriteBasicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryWriteBasicController.m; sourceTree = "<group>"; };
-		2AB3DD971D6BDB7C00512949 /* SignUpMommyInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpMommyInfoController.h; sourceTree = "<group>"; };
-		2AB3DD981D6BDB7C00512949 /* SignUpMommyInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpMommyInfoController.m; sourceTree = "<group>"; };
 		2AB627721D5C0CEC00BD7B84 /* LoginMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginMain.h; sourceTree = "<group>"; };
 		2AB627731D5C0CEC00BD7B84 /* LoginMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginMain.m; sourceTree = "<group>"; };
 		2AB627741D5C0CEC00BD7B84 /* LoginNewPasswordCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginNewPasswordCreate.h; sourceTree = "<group>"; };
@@ -285,8 +285,6 @@
 		2AD4A88E1D7D660C0032E16C /* emoticonPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = emoticonPopupViewController.h; sourceTree = "<group>"; };
 		2AD4A88F1D7D660C0032E16C /* emoticonPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = emoticonPopupViewController.m; sourceTree = "<group>"; };
 		2AD4A8901D7D660C0032E16C /* emoticonPopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = emoticonPopupViewController.xib; sourceTree = "<group>"; };
-		2ADC0BE61D751A2E006E47B3 /* SignUpMommyInfoScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpMommyInfoScrollViewController.h; sourceTree = "<group>"; };
-		2ADC0BE71D751A2E006E47B3 /* SignUpMommyInfoScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpMommyInfoScrollViewController.m; sourceTree = "<group>"; };
 		2AE11DE01D654C4E003C6690 /* DiaryListBasicCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryListBasicCustomCell.h; sourceTree = "<group>"; };
 		2AE11DE11D654C4E003C6690 /* DiaryListBasicCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryListBasicCustomCell.m; sourceTree = "<group>"; };
 		2AE11DE21D654C4E003C6690 /* DiaryListBasicCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiaryListBasicCustomCell.xib; sourceTree = "<group>"; };
@@ -341,8 +339,6 @@
 		DC4462151D87A65E006BFEBB /* MoreProfessionalAdviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreProfessionalAdviceViewController.m; sourceTree = "<group>"; };
 		DC44621C1D87AD70006BFEBB /* MoreProfessionalAdviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreProfessionalAdviceModel.h; sourceTree = "<group>"; };
 		DC44621D1D87AD70006BFEBB /* MoreProfessionalAdviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreProfessionalAdviceModel.m; sourceTree = "<group>"; };
-		DC44621F1D87ADB1006BFEBB /* MoreProfessionalAdviceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreProfessionalAdviceCell.h; sourceTree = "<group>"; };
-		DC4462201D87ADB1006BFEBB /* MoreProfessionalAdviceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreProfessionalAdviceCell.m; sourceTree = "<group>"; };
 		DC4462211D87ADB1006BFEBB /* MoreProfessionalAdviceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreProfessionalAdviceCell.xib; sourceTree = "<group>"; };
 		DC4462241D87B0AD006BFEBB /* MoreProfessionalInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreProfessionalInfoViewController.h; sourceTree = "<group>"; };
 		DC4462251D87B0AD006BFEBB /* MoreProfessionalInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreProfessionalInfoViewController.m; sourceTree = "<group>"; };
@@ -418,6 +414,16 @@
 		DC4E95AE1D7D66C40087647B /* ActiveMassExerciseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActiveMassExerciseCell.xib; sourceTree = "<group>"; };
 		DC4EAA891D6E6F5E005370A8 /* notPasteField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = notPasteField.h; sourceTree = "<group>"; };
 		DC4EAA8A1D6E6F5E005370A8 /* notPasteField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = notPasteField.m; sourceTree = "<group>"; };
+		DC4F0EFE1D911066003CB09B /* MoreProfessionalDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreProfessionalDetailViewController.h; sourceTree = "<group>"; };
+		DC4F0EFF1D911066003CB09B /* MoreProfessionalDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreProfessionalDetailViewController.m; sourceTree = "<group>"; };
+		DC4F0F011D912936003CB09B /* MoreProfessionalAdviceContentSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreProfessionalAdviceContentSegue.h; sourceTree = "<group>"; };
+		DC4F0F021D912936003CB09B /* MoreProfessionalAdviceContentSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreProfessionalAdviceContentSegue.m; sourceTree = "<group>"; };
+		DC4F0F041D912DC3003CB09B /* MoreProfessionalAdviceContentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreProfessionalAdviceContentsViewController.h; sourceTree = "<group>"; };
+		DC4F0F051D912DC3003CB09B /* MoreProfessionalAdviceContentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreProfessionalAdviceContentsViewController.m; sourceTree = "<group>"; };
+		DC4F0F071D912F67003CB09B /* SignUpMommyInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpMommyInfoController.h; sourceTree = "<group>"; };
+		DC4F0F081D912F67003CB09B /* SignUpMommyInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpMommyInfoController.m; sourceTree = "<group>"; };
+		DC4F0F091D912F67003CB09B /* SignUpMommyInfoScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpMommyInfoScrollViewController.h; sourceTree = "<group>"; };
+		DC4F0F0A1D912F67003CB09B /* SignUpMommyInfoScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpMommyInfoScrollViewController.m; sourceTree = "<group>"; };
 		DC512ABF1D6694D100885C26 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
 		DC512AC41D66989000885C26 /* MessageListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageListModel.h; sourceTree = "<group>"; };
 		DC512AC51D66989000885C26 /* MessageListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageListModel.m; sourceTree = "<group>"; };
@@ -555,6 +561,11 @@
 		DCF6CAC01D7443E200703CAE /* PushNotice.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PushNotice.storyboard; sourceTree = "<group>"; };
 		DCF6CAC31D74453200703CAE /* PushNoticeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNoticeModel.h; sourceTree = "<group>"; };
 		DCF6CAC41D74453200703CAE /* PushNoticeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNoticeModel.m; sourceTree = "<group>"; };
+		DCF8E1E61D8FA84B00E67402 /* MoreProfessionalButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreProfessionalButtonViewController.h; sourceTree = "<group>"; };
+		DCF8E1E71D8FA84B00E67402 /* MoreProfessionalButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreProfessionalButtonViewController.m; sourceTree = "<group>"; };
+		DCF8E1E81D8FA84B00E67402 /* MoreProfessionalButtonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreProfessionalButtonViewController.xib; sourceTree = "<group>"; };
+		DCF8E1EC1D8FD5C300E67402 /* MoreProfessionalAdviceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreProfessionalAdviceCell.h; sourceTree = "<group>"; };
+		DCF8E1ED1D8FD5C300E67402 /* MoreProfessionalAdviceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreProfessionalAdviceCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -704,8 +715,6 @@
 		2AA6D6C31D6434D600316DD6 /* Diary */ = {
 			isa = PBXGroup;
 			children = (
-				2AA6D6C81D64356000316DD6 /* DiaryWriteBasicController.h */,
-				2AA6D6C91D64356000316DD6 /* DiaryWriteBasicController.m */,
 				2AE11DF11D6583BC003C6690 /* DiaryListController.h */,
 				2AE11DF21D6583BC003C6690 /* DiaryListController.m */,
 				2A54B1BC1D6691F600C538D1 /* DiaryCalenderController.h */,
@@ -734,16 +743,16 @@
 		2AB627681D5C0C9500BD7B84 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				DC4F0F071D912F67003CB09B /* SignUpMommyInfoController.h */,
+				DC4F0F081D912F67003CB09B /* SignUpMommyInfoController.m */,
+				DC4F0F091D912F67003CB09B /* SignUpMommyInfoScrollViewController.h */,
+				DC4F0F0A1D912F67003CB09B /* SignUpMommyInfoScrollViewController.m */,
 				2AB627781D5C0CF400BD7B84 /* SignUpMain.h */,
 				2AB627791D5C0CF400BD7B84 /* SignUpMain.m */,
 				2A371A521D62E2C10051F278 /* SignUpFetusInfoController.h */,
 				2A371A531D62E2C10051F278 /* SignUpFetusInfoController.m */,
-				2AB3DD971D6BDB7C00512949 /* SignUpMommyInfoController.h */,
-				2AB3DD981D6BDB7C00512949 /* SignUpMommyInfoController.m */,
 				2A0CCB421D73B411001B6E1F /* SignUpMainScrollViewController.h */,
 				2A0CCB431D73B411001B6E1F /* SignUpMainScrollViewController.m */,
-				2ADC0BE61D751A2E006E47B3 /* SignUpMommyInfoScrollViewController.h */,
-				2ADC0BE71D751A2E006E47B3 /* SignUpMommyInfoScrollViewController.m */,
 				DC44C3821D7FD03400519D96 /* SignUpMainScrollViewControllerTest.h */,
 				DC44C3831D7FD03400519D96 /* SignUpMainScrollViewControllerTest.m */,
 			);
@@ -958,6 +967,10 @@
 				DC4462151D87A65E006BFEBB /* MoreProfessionalAdviceViewController.m */,
 				DC4462241D87B0AD006BFEBB /* MoreProfessionalInfoViewController.h */,
 				DC4462251D87B0AD006BFEBB /* MoreProfessionalInfoViewController.m */,
+				DC4F0EFE1D911066003CB09B /* MoreProfessionalDetailViewController.h */,
+				DC4F0EFF1D911066003CB09B /* MoreProfessionalDetailViewController.m */,
+				DC4F0F041D912DC3003CB09B /* MoreProfessionalAdviceContentsViewController.h */,
+				DC4F0F051D912DC3003CB09B /* MoreProfessionalAdviceContentsViewController.m */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -989,9 +1002,14 @@
 				DC8EB78C1D869D4800A0304D /* MoreWeekDetailInfoCell.h */,
 				DC8EB78D1D869D4800A0304D /* MoreWeekDetailInfoCell.m */,
 				DC8EB78E1D869D4800A0304D /* MoreWeekDetailInfoCell.xib */,
-				DC44621F1D87ADB1006BFEBB /* MoreProfessionalAdviceCell.h */,
-				DC4462201D87ADB1006BFEBB /* MoreProfessionalAdviceCell.m */,
+				DCF8E1EC1D8FD5C300E67402 /* MoreProfessionalAdviceCell.h */,
+				DCF8E1ED1D8FD5C300E67402 /* MoreProfessionalAdviceCell.m */,
 				DC4462211D87ADB1006BFEBB /* MoreProfessionalAdviceCell.xib */,
+				DCF8E1E61D8FA84B00E67402 /* MoreProfessionalButtonViewController.h */,
+				DCF8E1E71D8FA84B00E67402 /* MoreProfessionalButtonViewController.m */,
+				DCF8E1E81D8FA84B00E67402 /* MoreProfessionalButtonViewController.xib */,
+				DC4F0F011D912936003CB09B /* MoreProfessionalAdviceContentSegue.h */,
+				DC4F0F021D912936003CB09B /* MoreProfessionalAdviceContentSegue.m */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -1379,6 +1397,8 @@
 				TargetAttributes = {
 					DCA5AE201D598C6F0075B7AD = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = LUYT38Y3AT;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -1420,6 +1440,7 @@
 				DCF6CA911D740D0A00703CAE /* PageImageViewController.xib in Resources */,
 				2AD4A8921D7D660C0032E16C /* emoticonPopupViewController.xib in Resources */,
 				DC4DE2F81D82A212007CF9BF /* MoreWeekCheckInfoCell.xib in Resources */,
+				DCF8E1EA1D8FA84B00E67402 /* MoreProfessionalButtonViewController.xib in Resources */,
 				DCF6CA9B1D740DED00703CAE /* ChildPageImageViewController.xib in Resources */,
 				DC3AAED31D75A11C007218E9 /* WeekProgramCell.xib in Resources */,
 				DC4DE2F31D82A1ED007CF9BF /* MoreWeekCheckCategoryCell.xib in Resources */,
@@ -1485,6 +1506,7 @@
 				2A54B1BE1D6691F600C538D1 /* DiaryCalenderController.m in Sources */,
 				DC4E95991D7D62D60087647B /* ActiveMassModel.m in Sources */,
 				DC4DE2F21D82A1ED007CF9BF /* MoreWeekCheckCategoryCell.m in Sources */,
+				DCF8E1E91D8FA84B00E67402 /* MoreProfessionalButtonViewController.m in Sources */,
 				2AEBE3491D79419E0075B210 /* DiaryWriteScheduleController.m in Sources */,
 				2AEBE34C1D7941BF0075B210 /* DiaryDetailScheduleController.m in Sources */,
 				2A54B1B51D66904000C538D1 /* JTCalendarDayView.m in Sources */,
@@ -1493,6 +1515,7 @@
 				DCA5AE321D598C6F0075B7AD /* co_medisolution.xcdatamodeld in Sources */,
 				DC4E95AA1D7D66930087647B /* ActiveMassCalorieCell.m in Sources */,
 				DC4DE2C21D80F4CE007CF9BF /* MoreMainMenuCell.m in Sources */,
+				DC4F0F0C1D912F67003CB09B /* SignUpMommyInfoScrollViewController.m in Sources */,
 				DC538EC91D781C3600E5949B /* IQTextView.m in Sources */,
 				DC1FE6E41D658E47006F7A50 /* DiarySegue.m in Sources */,
 				2A309ACF1D79634E001C54C5 /* HFColorButton.m in Sources */,
@@ -1506,25 +1529,27 @@
 				DC1FE6E61D658E47006F7A50 /* TabbarDiaryNavController.m in Sources */,
 				2A309AD01D79634E001C54C5 /* HFColorPickerView.m in Sources */,
 				DC6070971D7030CF00F60148 /* SingleImageViewController.m in Sources */,
+				DC4F0F031D912936003CB09B /* MoreProfessionalAdviceContentSegue.m in Sources */,
 				DC5FCCEF1D7E83B500957D73 /* SleepingHoursModel.m in Sources */,
 				DCF6CAAE1D742B4000703CAE /* UIImage+JTSImageEffects.m in Sources */,
+				DC4F0F0B1D912F67003CB09B /* SignUpMommyInfoController.m in Sources */,
 				DC5D20951D62E01300ACDCA4 /* DashBoardScrollCellView.m in Sources */,
 				DC3AAEC01D7552EE007218E9 /* PushNoticeDetailViewController.m in Sources */,
 				DC3AAED21D75A11C007218E9 /* WeekProgramCell.m in Sources */,
+				DC4F0F001D911066003CB09B /* MoreProfessionalDetailViewController.m in Sources */,
 				DCF6CAAD1D742B4000703CAE /* UIApplication+JTSImageViewController.m in Sources */,
 				DC44C37E1D7FADFA00519D96 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				DC538EC21D781C3600E5949B /* IQUIScrollView+Additions.m in Sources */,
 				DC44C3951D800E2600519D96 /* MoreMainViewController.m in Sources */,
 				DC1FE6ED1D65A7D4006F7A50 /* fetusInfoController.m in Sources */,
-				DC4462221D87ADB1006BFEBB /* MoreProfessionalAdviceCell.m in Sources */,
 				2A54B1B81D66904000C538D1 /* JTCalendarWeekDayView.m in Sources */,
 				DC538EC51D781C3600E5949B /* IQUIViewController+Additions.m in Sources */,
 				DC44C3841D7FD03400519D96 /* SignUpMainScrollViewControllerTest.m in Sources */,
 				2A444C371D7EBA7E00B37E8A /* termsPopupViewController.m in Sources */,
 				DC5D20861D62AFA100ACDCA4 /* OTPageView.m in Sources */,
-				2ADC0BE81D751A2E006E47B3 /* SignUpMommyInfoScrollViewController.m in Sources */,
 				2A54B1B21D66904000C538D1 /* JTDateHelper.m in Sources */,
 				DCA5AE291D598C6F0075B7AD /* AppDelegate.m in Sources */,
+				DCF8E1EE1D8FD5C300E67402 /* MoreProfessionalAdviceCell.m in Sources */,
 				DC538ECE1D781C3600E5949B /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				DC5FCCF31D7E84CC00957D73 /* SleepingHoursChartViewCell.m in Sources */,
 				2AE11DE31D654C4E003C6690 /* DiaryListBasicCustomCell.m in Sources */,
@@ -1563,7 +1588,6 @@
 				DC4E95881D7D0B2B0087647B /* WeightDetailInfoHeaderCell.m in Sources */,
 				2A309ACE1D79634E001C54C5 /* ColorPickerTextField.m in Sources */,
 				2AD4A8911D7D660C0032E16C /* emoticonPopupViewController.m in Sources */,
-				2AB3DD991D6BDB7C00512949 /* SignUpMommyInfoController.m in Sources */,
 				DC44C37F1D7FADFA00519D96 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				2A54B1BA1D66904000C538D1 /* JTHorizontalCalendarView.m in Sources */,
 				DC3AAEC41D757D4A007218E9 /* SampleMainController.m in Sources */,
@@ -1572,6 +1596,7 @@
 				2A371A571D62E8F30051F278 /* SignUpFetusInfoModel.m in Sources */,
 				2A0CCB441D73B411001B6E1F /* SignUpMainScrollViewController.m in Sources */,
 				DC1FE6E31D658E47006F7A50 /* DashBoardSegue.m in Sources */,
+				DC4F0F061D912DC3003CB09B /* MoreProfessionalAdviceContentsViewController.m in Sources */,
 				2A371A4B1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.m in Sources */,
 				DCA5AE261D598C6F0075B7AD /* main.m in Sources */,
 				DC5FCCF81D7E858900957D73 /* SleepingHoursEvalCell.m in Sources */,
@@ -1583,7 +1608,6 @@
 				DC56F0A61D79728F00FB3A30 /* WeightDetailInfoFooterCell.m in Sources */,
 				2A54B1B31D66904000C538D1 /* JTCalendarDelegateManager.m in Sources */,
 				DC4E95AF1D7D66C40087647B /* ActiveMassExerciseCell.m in Sources */,
-				2AA6D6CA1D64356000316DD6 /* DiaryWriteBasicController.m in Sources */,
 				DC538ECB1D781C3600E5949B /* IQPreviousNextView.m in Sources */,
 				DC4E958D1D7D26EC0087647B /* WeightTotalInfoCell.m in Sources */,
 				DC4DE2CF1D814F56007CF9BF /* MoreBloodPressureModel.m in Sources */,
@@ -1725,7 +1749,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Park seohee (TDF9AJWPR5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Park seohee (TDF9AJWPR5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = LUYT38Y3AT;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1738,7 +1763,9 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.medisolution;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2b5156ca-69db-4d9e-8a21-2e22316c4da2";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -1748,7 +1775,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Park seohee (TDF9AJWPR5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Park seohee (TDF9AJWPR5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = LUYT38Y3AT;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1761,7 +1789,9 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.medisolution;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2b5156ca-69db-4d9e-8a21-2e22316c4da2";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};

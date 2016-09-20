@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumBarunGothic.ttf">
+            <string>NanumBarunGothic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoreProfessionalButtonViewController">
+            <connections>
+                <outlet property="btnAdvice" destination="W60-1r-K1q" id="KPW-WY-uy6"/>
+                <outlet property="containerExecersizeView" destination="pxb-mO-wS8" id="zgM-35-ynB"/>
+                <outlet property="containerNutritionView" destination="BBH-bN-H2m" id="0KQ-mI-Xxg"/>
+                <outlet property="lblExecersize" destination="bww-uW-qg8" id="y2m-9f-xDT"/>
+                <outlet property="lblNutrition" destination="60p-xL-vBf" id="vfy-hL-ikv"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxb-mO-wS8">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSw-s4-Xe4">
+                            <frame key="frameInset" minX="43" width="45" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="bottom_btn_write_exe"/>
+                            <connections>
+                                <action selector="execersizeAction:" destination="-1" eventType="touchUpInside" id="y6z-vb-we6"/>
+                            </connections>
+                        </button>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="운동" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bww-uW-qg8">
+                            <frame key="frameInset" minY="12" width="42" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="ELs-Us-aP3"/>
+                        <constraint firstAttribute="width" constant="88" id="WIO-ZM-HQS"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BBH-bN-H2m">
+                    <subviews>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="영양" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60p-xL-vBf">
+                            <frame key="frameInset" minY="12" width="42" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqQ-Ak-Oou">
+                            <frame key="frameInset" minX="43" width="45" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="bottom_btn_write_nut"/>
+                            <connections>
+                                <action selector="nutritionAction:" destination="-1" eventType="touchUpInside" id="Dwp-vA-t2f"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="3b1-FF-5uc"/>
+                        <constraint firstAttribute="width" constant="88" id="pWH-8I-VUm"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W60-1r-K1q">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="BIe-No-Upz"/>
+                        <constraint firstAttribute="width" constant="50" id="QOZ-bt-Eva"/>
+                    </constraints>
+                    <state key="normal" image="bottom_btn_write_n"/>
+                    <connections>
+                        <action selector="adviceAction:" destination="-1" eventType="touchUpInside" id="5XL-FC-QKF"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="BBH-bN-H2m" secondAttribute="trailing" constant="21" id="G8q-LR-wnq"/>
+                <constraint firstAttribute="trailing" secondItem="W60-1r-K1q" secondAttribute="trailing" constant="16" id="OFL-Em-xIJ"/>
+                <constraint firstAttribute="bottom" secondItem="pxb-mO-wS8" secondAttribute="bottom" constant="23" id="OmR-0o-VNO"/>
+                <constraint firstAttribute="bottom" secondItem="W60-1r-K1q" secondAttribute="bottom" constant="20" id="SKu-F4-RKk"/>
+                <constraint firstAttribute="bottom" secondItem="BBH-bN-H2m" secondAttribute="bottom" constant="23" id="Srf-6Z-ZNh"/>
+                <constraint firstAttribute="trailing" secondItem="pxb-mO-wS8" secondAttribute="trailing" constant="21" id="X4T-7d-mSf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-518" y="-236.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bottom_btn_write_exe" width="100" height="100"/>
+        <image name="bottom_btn_write_n" width="130" height="130"/>
+        <image name="bottom_btn_write_nut" width="100" height="100"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>
