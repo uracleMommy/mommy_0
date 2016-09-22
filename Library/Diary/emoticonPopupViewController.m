@@ -18,6 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    _popupView.layer.cornerRadius = 20;//half of the width
+    
+    _popupView.layer.masksToBounds = YES;
 }
 
 - (void)didReceiveMemoryWarning {

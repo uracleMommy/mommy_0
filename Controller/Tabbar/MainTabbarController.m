@@ -40,6 +40,12 @@
     
     
     // 커뮤니티 루트 컨트롤러 할당
+    UIStoryboard *communityStoryboard = [UIStoryboard storyboardWithName:@"Community" bundle:nil];
+    _thirdTabViewController = [communityStoryboard instantiateInitialViewController];
+    
+    UINavigationController *thirdController = (UINavigationController *)self.viewControllers[2];
+    [thirdController setViewControllers:@[_thirdTabViewController]];
+
     
     // 더보기 루트 컨트롤러 할당
     UIStoryboard *moreStoryboard = [UIStoryboard storyboardWithName:@"More" bundle:nil];

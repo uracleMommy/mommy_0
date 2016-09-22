@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UIView *cellView;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 
+
 @property (strong, nonatomic) CAShapeLayer *border;
 
 @end

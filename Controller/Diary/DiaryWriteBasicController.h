@@ -15,7 +15,7 @@
 #import "MultiImageViewController.h"
 #import "ImageCropView.h"
 
-@interface DiaryWriteBasicController : UIViewController <UITextViewDelegate, IQDropDownTextFieldDelegate, ImageCropViewControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, UINavigationControllerDelegate, emoticonPopupViewDelegate> {
+@interface DiaryWriteBasicController : UIViewController <UITextViewDelegate, IQDropDownTextFieldDelegate, ImageCropViewControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, UINavigationControllerDelegate, emoticonPopupViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
     UIButton *selectedImageButton;
     UIImage *image;
     UIImage *defaultImage;
@@ -23,6 +23,13 @@
     UIImagePickerController *imagePickerController;
     UIImagePickerController *imagePicker;
 }
+
+@property (strong, nonatomic) NSMutableArray *pickerData_0; //거주지 시
+@property (strong, nonatomic) NSMutableArray *pickerData_1; //거주지 구
+@property (strong, nonatomic) NSMutableArray *pickerData_2; //거주지 동
+@property (strong, nonatomic) UIPickerView *addressPicker;
+@property (weak, nonatomic) IBOutlet UILabel *addressTextField;
+@property (weak, nonatomic) IBOutlet UITextField *addressButton;
 
 @property (weak, nonatomic) IBOutlet UITextView *contentsTextView;
 @property (strong, nonatomic) UILabel *placeholderLabel;

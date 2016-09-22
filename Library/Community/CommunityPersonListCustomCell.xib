@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumBarunGothic.ttf">
+            <string>NanumBarunGothic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="KGk-i7-Jjw" customClass="CommunityPersonListCustomCell">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="400" height="89"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VwK-V1-Yeg">
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contents_profile_default" translatesAutoresizingMaskIntoConstraints="NO" id="BF5-oi-7JJ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="isO-FP-2Xa"/>
+                                    <constraint firstAttribute="height" constant="36" id="xQW-eB-dJ0"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도민준 xi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxL-Ir-MeK">
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
+                                <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="84년생" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snl-sv-HAb">
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O02-A5-aQ1">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="O02-A5-aQ1" secondAttribute="height" multiplier="1:1" id="6xu-OT-xpd"/>
+                                </constraints>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popup_btn_icon_mentor_add" translatesAutoresizingMaskIntoConstraints="NO" id="YxD-66-t1R">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="U7z-mk-2sQ"/>
+                                    <constraint firstAttribute="width" constant="25" id="lAg-WB-Ljt"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="O02-A5-aQ1" secondAttribute="trailing" id="05K-aM-6qo"/>
+                            <constraint firstAttribute="bottom" secondItem="YxD-66-t1R" secondAttribute="bottom" constant="22.5" id="8sK-Yp-QKs"/>
+                            <constraint firstAttribute="bottom" secondItem="O02-A5-aQ1" secondAttribute="bottom" id="9Ib-s0-H5e"/>
+                            <constraint firstAttribute="bottom" secondItem="Snl-sv-HAb" secondAttribute="bottom" constant="16" id="ARD-qf-pKA"/>
+                            <constraint firstItem="hxL-Ir-MeK" firstAttribute="top" secondItem="VwK-V1-Yeg" secondAttribute="top" constant="18" id="Drz-r1-Ug3"/>
+                            <constraint firstItem="BF5-oi-7JJ" firstAttribute="centerY" secondItem="VwK-V1-Yeg" secondAttribute="centerY" id="F1V-IB-jIB"/>
+                            <constraint firstItem="YxD-66-t1R" firstAttribute="centerY" secondItem="VwK-V1-Yeg" secondAttribute="centerY" id="Fii-1o-Lw1"/>
+                            <constraint firstItem="hxL-Ir-MeK" firstAttribute="leading" secondItem="BF5-oi-7JJ" secondAttribute="trailing" constant="5" id="Gbe-Bp-Qmh"/>
+                            <constraint firstItem="BF5-oi-7JJ" firstAttribute="leading" secondItem="VwK-V1-Yeg" secondAttribute="leading" constant="15" id="WNP-0h-bia"/>
+                            <constraint firstItem="Snl-sv-HAb" firstAttribute="top" secondItem="hxL-Ir-MeK" secondAttribute="bottom" constant="6" id="X0V-OB-yUB"/>
+                            <constraint firstItem="O02-A5-aQ1" firstAttribute="height" secondItem="VwK-V1-Yeg" secondAttribute="height" id="YLM-H1-F68"/>
+                            <constraint firstAttribute="trailing" secondItem="YxD-66-t1R" secondAttribute="trailing" constant="22.5" id="aG1-E9-r5j"/>
+                            <constraint firstItem="Snl-sv-HAb" firstAttribute="leading" secondItem="BF5-oi-7JJ" secondAttribute="trailing" constant="5" id="bpL-PQ-H9o"/>
+                            <constraint firstItem="hxL-Ir-MeK" firstAttribute="height" secondItem="Snl-sv-HAb" secondAttribute="height" id="fnu-59-Npe"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="VwK-V1-Yeg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="3uz-04-uZs"/>
+                    <constraint firstAttribute="trailing" secondItem="VwK-V1-Yeg" secondAttribute="trailing" constant="10" id="Ai9-C8-Vsw"/>
+                    <constraint firstAttribute="bottom" secondItem="VwK-V1-Yeg" secondAttribute="bottom" constant="10" id="YU6-Iu-x5i"/>
+                    <constraint firstItem="VwK-V1-Yeg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="pGu-Y8-83K"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+            <point key="canvasLocation" x="74" y="77"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="contents_profile_default" width="80" height="80"/>
+        <image name="popup_btn_icon_mentor_add" width="50" height="50"/>
+    </resources>
+</document>
