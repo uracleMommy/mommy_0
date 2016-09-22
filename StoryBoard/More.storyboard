@@ -525,6 +525,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oEM-HH-Jcu"/>
+                    <connections>
+                        <outlet property="infoViewBottomConstraint" destination="KQ2-0L-tpu" id="fln-d8-KcW"/>
+                        <outlet property="infoViewTopConstraint" destination="Wnf-ng-OXI" id="MDp-ps-LEg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qen-Ks-k0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

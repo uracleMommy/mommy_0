@@ -10,6 +10,10 @@
 
 @interface MoreMyPageMasterViewController ()
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *infoViewTopConstraint;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *infoViewBottomConstraint;
+
 @end
 
 @implementation MoreMyPageMasterViewController
@@ -17,6 +21,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    CGRect mainRect = [[UIScreen mainScreen] bounds];
+    
+    if (mainRect.size.height <= 480) {
+        
+        _infoViewTopConstraint.constant = _infoViewTopConstraint.constant - 17;
+        _infoViewBottomConstraint.constant = _infoViewBottomConstraint.constant - 10;
+    }
+    
+    //_infoViewTopConstraint.constant = _infoViewTopConstraint.constant - 17;
 }
 
 - (void)didReceiveMemoryWarning {
