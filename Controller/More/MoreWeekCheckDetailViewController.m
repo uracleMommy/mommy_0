@@ -24,11 +24,15 @@
     _moreWeekDetailModel.arrayList = [NSArray arrayWithArray:arrayData];
     _tableView.dataSource = _moreWeekDetailModel;
     _tableView.delegate = _moreWeekDetailModel;
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
     
 }
 

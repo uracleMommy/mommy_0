@@ -28,6 +28,12 @@
 #pragma 선택된 테이블 콜백
 - (void) selectedIndexPath:(NSInteger)index {
     
+    // 마이페이지
+    if (index == 0) {
+        
+        [self performSegueWithIdentifier:@"goMypageManagement" sender:nil];
+    }
+    
     // 혈압관리
     if (index == 1) {
         
@@ -42,6 +48,11 @@
     else if (index == 4) {
         
         [self performSegueWithIdentifier:@"goProfessionalAdvice" sender:nil];
+    }
+    // 기기관리
+    else if (index == 5) {
+        
+        [self performSegueWithIdentifier:@"goEquipmentManagement" sender:nil];        
     }
 }
 

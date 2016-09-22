@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MoreProfessionalDetailViewController.h"
+#import "MoreProfessionalAdviceContentsViewController.h"
 
 @interface MoreProfessionalAdviceContentSegue : UIStoryboardSegue
 
