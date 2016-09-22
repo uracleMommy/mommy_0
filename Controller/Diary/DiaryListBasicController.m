@@ -67,7 +67,7 @@
         
         //        _contentViewController.delegate = self;
         
-        [_listViewController.view setFrame:CGRectMake(0, 0, _contentView.frame.size.width, 530)];
+        [_listViewController.view setFrame:CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height)];
         
         [_contentView addSubview : _listViewController.view];
         
@@ -175,11 +175,8 @@
 
 - (IBAction)changeListViewAction:(id)sender {
     if(!_calenderViewController){
-        _calenderViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DiaryListCalenderView"];
-//        [_calenderViewController setCalendarMenuView:_dateLabel];
-//        _calenderViewController.calendarMenuView = _dateLabel;
-        
-        [_calenderViewController.view setFrame:CGRectMake(0, 0, _contentView.frame.size.width, 530)];
+        _calenderViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DiaryListCalenderView"];        
+        [_calenderViewController.view setFrame:CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height)];
         
         [_contentView.subviews[0] removeFromSuperview];
         

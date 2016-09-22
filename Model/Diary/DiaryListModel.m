@@ -19,6 +19,10 @@
         _diaryList = [[NSMutableArray alloc]init];
         
         [_diaryList addObject:@""];
+        [_diaryList addObject:@""];
+        [_diaryList addObject:@""];
+        [_diaryList addObject:@""];
+        [_diaryList addObject:@""];
         
     }
     return self;

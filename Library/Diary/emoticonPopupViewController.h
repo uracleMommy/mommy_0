@@ -17,6 +17,7 @@
 @interface emoticonPopupViewController : UIViewController
 
 @property (weak, nonatomic) id<emoticonPopupViewDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UIView *popupView;
 
 - (IBAction)closePopup:(id)sender;
 - (IBAction)clickButton:(id)sender;

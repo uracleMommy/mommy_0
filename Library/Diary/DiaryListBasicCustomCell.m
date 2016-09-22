@@ -31,7 +31,7 @@
     // Setup the path
     CGMutablePathRef path = CGPathCreateMutable();
     CGPathMoveToPoint(path, NULL, 0, -5);
-    CGPathAddLineToPoint(path, NULL, _contentLabel.layer.preferredFrameSize.width-40 ,-5);
+    CGPathAddLineToPoint(path, NULL, _contentLabel.layer.preferredFrameSize.width - 38.0 ,-5);
     
     [shapeLayer setPath:path];
     CGPathRelease(path);
