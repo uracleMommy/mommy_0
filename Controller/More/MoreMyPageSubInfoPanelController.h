@@ -10,4 +10,5 @@
 
 @interface MoreMyPageSubInfoPanelController : UIViewController
 
+
 @end

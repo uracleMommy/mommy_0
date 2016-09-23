@@ -7,8 +7,13 @@
 //
 
 #import "MoreMyPageSubInfoPanelController.h"
+#import "MoreMyPageMasterViewController.h"
 
 @interface MoreMyPageSubInfoPanelController ()
+
+@property (weak, nonatomic) IBOutlet UILabel *lblNickName;
+
+@property (weak, nonatomic) IBOutlet UILabel *lblFetus;
 
 @end
 
@@ -18,22 +23,32 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    UITapGestureRecognizer *nickNameTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(nickNameChange)];
+    UITapGestureRecognizer *fetusTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(fetusTap)];
     
+    [_lblNickName addGestureRecognizer:nickNameTap];
+    [_lblFetus addGestureRecognizer:fetusTap];
+    
+    
+}
+
+- (void) nickNameChange {
+    
+    MoreMyPageMasterViewController *parentController = (MoreMyPageMasterViewController *)self.parentViewController;
+    [parentController modalNickName];
+}
+
+- (void) fetusTap {
+    
+    MoreMyPageMasterViewController *parentController = (MoreMyPageMasterViewController *)self.parentViewController;
+    [parentController modalFetusChange];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
+    
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

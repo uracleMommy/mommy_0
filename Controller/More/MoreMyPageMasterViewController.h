@@ -7,9 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MoreMyPageSubImageController.h"
+#import "MoreMyPageSubInfoPanelController.h"
 
 @interface MoreMyPageMasterViewController : UIViewController
 
+@property (strong, nonatomic) MoreMyPageSubImageController *moreMyPageSubImageController;
 
+@property (strong, nonatomic) MoreMyPageSubInfoPanelController *moreMyPageSubInfoPanelController;
+
+#pragma mark 모달 창 관련
+
+- (IBAction)closeModal:(id)sender;
+
+- (void) modalNickName;
+
+- (void) modalFetusChange;
 
 @end

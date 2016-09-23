@@ -38,14 +38,36 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-#pragma mark - Navigation
-
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    
+    if ([segue.identifier isEqualToString:@"containerTableView"]) {
+        
+        _moreMyPageSubInfoPanelController = segue.destinationViewController;
+    }
+    else if ([segue.identifier isEqualToString:@"containerBlurView"]) {
+        
+        _moreMyPageSubImageController = segue.destinationViewController;
+    }
 }
 
+#pragma mark 모달 창 관련
+
+#pragma 닉네임 수정 모달
+- (void) modalNickName {
+    
+    [self performSegueWithIdentifier:@"goNickNameChangeModal" sender:nil];
+}
+
+#pragma 태아 수정 모달
+- (void) modalFetusChange {
+    
+    [self performSegueWithIdentifier:@"goFetusCountChangeModal" sender:nil];
+}
+
+- (IBAction)closeModal:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

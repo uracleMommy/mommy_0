@@ -149,7 +149,7 @@
 
 @end
 
-#pragma mark 기기검색중 모델
+#pragma mark 기기 검색중 모델
 @implementation MoreEquipmentSearchingModel
 
 - (id) init {
@@ -192,7 +192,7 @@
 
 @end
 
-#pragma mark 기기선택 모델
+#pragma mark 검색된 기기 선택 모델
 
 @implementation MoreEquipmentSelectModel
 
@@ -233,6 +233,7 @@
     
     return 100;
 }
+
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if ([self.delegate respondsToSelector:@selector(tableView:MoreEquipmentChoiceSelectedRow:)]) {

@@ -35,10 +35,16 @@
     }
     
     // 혈압관리
-    if (index == 1) {
+    else if (index == 1) {
         
         [self performSegueWithIdentifier:@"goBloodPressure" sender:nil];
     }
+    // 포인트
+    else if (index == 2) {
+        
+        [self performSegueWithIdentifier:@"goPointList" sender:nil];
+    }
+    
     // 주별 체크 리스트
     else if (index == 3) {
         
