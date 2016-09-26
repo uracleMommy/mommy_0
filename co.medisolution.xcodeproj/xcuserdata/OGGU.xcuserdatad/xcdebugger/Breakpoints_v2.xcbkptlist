@@ -23,14 +23,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Controller/More/MoreMyPageSubInfoPanelController.m"
-            timestampString = "496224491.487728"
+            filePath = "Library/Common/ImageCrop/ImageCropView.m"
+            timestampString = "496283717.8693"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "@implementation MoreMyPageSubInfoPanelController"
-            landmarkType = "3">
+            startingLineNumber = "842"
+            endingLineNumber = "842"
+            landmarkName = "-setImage:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

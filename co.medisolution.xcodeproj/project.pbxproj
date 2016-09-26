@@ -39,8 +39,6 @@
 		2A54B1C81D66E4E600C538D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A54B1C71D66E4E600C538D1 /* Assets.xcassets */; };
 		2A6B1BF01D91338200322A94 /* DiaryListBasicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6B1BED1D91338200322A94 /* DiaryListBasicController.m */; };
 		2A6B1BF11D91338200322A94 /* DiaryWriteBasicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6B1BEF1D91338200322A94 /* DiaryWriteBasicController.m */; };
-		2A9150C81D98B27A00EBE4BF /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9150C51D98B27A00EBE4BF /* FLAnimatedImage.m */; };
-		2A9150C91D98B27A00EBE4BF /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9150C71D98B27A00EBE4BF /* FLAnimatedImageView.m */; };
 		2AA6D6C21D64230A00316DD6 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA6D6C11D64230A00316DD6 /* Diary.storyboard */; };
 		2AB627761D5C0CEC00BD7B84 /* LoginMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB627731D5C0CEC00BD7B84 /* LoginMain.m */; };
 		2AB627771D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB627751D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m */; };
@@ -68,6 +66,16 @@
 		2AE11DF31D6583BC003C6690 /* DiaryListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11DF21D6583BC003C6690 /* DiaryListController.m */; };
 		2AEBE3491D79419E0075B210 /* DiaryWriteScheduleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBE3481D79419E0075B210 /* DiaryWriteScheduleController.m */; };
 		2AEBE34C1D7941BF0075B210 /* DiaryDetailScheduleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBE34B1D7941BF0075B210 /* DiaryDetailScheduleController.m */; };
+		DC1A77CE1D94EC1200F88693 /* MoreMyPageNickNameChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A77CD1D94EC1200F88693 /* MoreMyPageNickNameChangeViewController.m */; };
+		DC1A77D11D94F47E00F88693 /* MoreMyPagePasswordChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A77D01D94F47E00F88693 /* MoreMyPagePasswordChangeViewController.m */; };
+		DC1A77D51D94FC2E00F88693 /* MoreMyPagePasswordChangeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A77D31D94FC2E00F88693 /* MoreMyPagePasswordChangeCell.m */; };
+		DC1A77D61D94FC2E00F88693 /* MoreMyPagePasswordChangeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1A77D41D94FC2E00F88693 /* MoreMyPagePasswordChangeCell.xib */; };
+		DC1A77D91D950D2200F88693 /* MoreMyPageFetusInfoChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A77D81D950D2200F88693 /* MoreMyPageFetusInfoChangeViewController.m */; };
+		DC1A77DD1D950F9900F88693 /* MoreMyPageFetusHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A77DB1D950F9900F88693 /* MoreMyPageFetusHeaderCell.m */; };
+		DC1A77DE1D950F9900F88693 /* MoreMyPageFetusHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1A77DC1D950F9900F88693 /* MoreMyPageFetusHeaderCell.xib */; };
+		DC1A77E21D9512C900F88693 /* MoreMyPageFetusContentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A77E01D9512C900F88693 /* MoreMyPageFetusContentsCell.m */; };
+		DC1A77E31D9512C900F88693 /* MoreMyPageFetusContentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1A77E11D9512C900F88693 /* MoreMyPageFetusContentsCell.xib */; };
+		DC1A77E61D9535D200F88693 /* MoreMyPagePointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A77E51D9535D200F88693 /* MoreMyPagePointViewController.m */; };
 		DC1FE6E31D658E47006F7A50 /* DashBoardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6DC1D658E47006F7A50 /* DashBoardSegue.m */; };
 		DC1FE6E41D658E47006F7A50 /* DiarySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6DE1D658E47006F7A50 /* DiarySegue.m */; };
 		DC1FE6E51D658E47006F7A50 /* TabbarDashBoardNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6E01D658E47006F7A50 /* TabbarDashBoardNavController.m */; };
@@ -189,6 +197,10 @@
 		DC6070981D7030CF00F60148 /* SingleImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC6070961D7030CF00F60148 /* SingleImageViewController.xib */; };
 		DC60709C1D7030E700F60148 /* MultiImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC60709A1D7030E700F60148 /* MultiImageViewController.m */; };
 		DC60709D1D7030E700F60148 /* MultiImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC60709B1D7030E700F60148 /* MultiImageViewController.xib */; };
+		DC67EB5F1D94B4480096BCB3 /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = DC67EB5C1D94B4480096BCB3 /* FLAnimatedImage.m */; };
+		DC67EB601D94B4480096BCB3 /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC67EB5E1D94B4480096BCB3 /* FLAnimatedImageView.m */; };
+		DC67EB641D94BDAD0096BCB3 /* MoreMyPageNickNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC67EB621D94BDAD0096BCB3 /* MoreMyPageNickNameCell.m */; };
+		DC67EB651D94BDAD0096BCB3 /* MoreMyPageNickNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC67EB631D94BDAD0096BCB3 /* MoreMyPageNickNameCell.xib */; };
 		DC68F5261D93D7CC009D3B1E /* MoreEquipmentChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC68F50D1D93D7CC009D3B1E /* MoreEquipmentChoiceViewController.m */; };
 		DC68F5271D93D7CC009D3B1E /* MoreEquipmentEmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC68F50F1D93D7CC009D3B1E /* MoreEquipmentEmptySegue.m */; };
 		DC68F5281D93D7CC009D3B1E /* MoreEquipmentEmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC68F5111D93D7CC009D3B1E /* MoreEquipmentEmptyViewController.m */; };
@@ -313,10 +325,6 @@
 		2A6B1BED1D91338200322A94 /* DiaryListBasicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryListBasicController.m; sourceTree = "<group>"; };
 		2A6B1BEE1D91338200322A94 /* DiaryWriteBasicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryWriteBasicController.h; sourceTree = "<group>"; };
 		2A6B1BEF1D91338200322A94 /* DiaryWriteBasicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryWriteBasicController.m; sourceTree = "<group>"; };
-		2A9150C41D98B27A00EBE4BF /* FLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImage.h; sourceTree = "<group>"; };
-		2A9150C51D98B27A00EBE4BF /* FLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImage.m; sourceTree = "<group>"; };
-		2A9150C61D98B27A00EBE4BF /* FLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImageView.h; sourceTree = "<group>"; };
-		2A9150C71D98B27A00EBE4BF /* FLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImageView.m; sourceTree = "<group>"; };
 		2AA6D6C11D64230A00316DD6 /* Diary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
 		2AB627721D5C0CEC00BD7B84 /* LoginMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginMain.h; sourceTree = "<group>"; };
 		2AB627731D5C0CEC00BD7B84 /* LoginMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginMain.m; sourceTree = "<group>"; };
@@ -360,6 +368,23 @@
 		2AEBE3481D79419E0075B210 /* DiaryWriteScheduleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryWriteScheduleController.m; sourceTree = "<group>"; };
 		2AEBE34A1D7941BF0075B210 /* DiaryDetailScheduleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryDetailScheduleController.h; sourceTree = "<group>"; };
 		2AEBE34B1D7941BF0075B210 /* DiaryDetailScheduleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryDetailScheduleController.m; sourceTree = "<group>"; };
+		DC1A77CC1D94EC1200F88693 /* MoreMyPageNickNameChangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreMyPageNickNameChangeViewController.h; sourceTree = "<group>"; };
+		DC1A77CD1D94EC1200F88693 /* MoreMyPageNickNameChangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreMyPageNickNameChangeViewController.m; sourceTree = "<group>"; };
+		DC1A77CF1D94F47E00F88693 /* MoreMyPagePasswordChangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreMyPagePasswordChangeViewController.h; sourceTree = "<group>"; };
+		DC1A77D01D94F47E00F88693 /* MoreMyPagePasswordChangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreMyPagePasswordChangeViewController.m; sourceTree = "<group>"; };
+		DC1A77D21D94FC2E00F88693 /* MoreMyPagePasswordChangeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreMyPagePasswordChangeCell.h; sourceTree = "<group>"; };
+		DC1A77D31D94FC2E00F88693 /* MoreMyPagePasswordChangeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreMyPagePasswordChangeCell.m; sourceTree = "<group>"; };
+		DC1A77D41D94FC2E00F88693 /* MoreMyPagePasswordChangeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreMyPagePasswordChangeCell.xib; sourceTree = "<group>"; };
+		DC1A77D71D950D2200F88693 /* MoreMyPageFetusInfoChangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreMyPageFetusInfoChangeViewController.h; sourceTree = "<group>"; };
+		DC1A77D81D950D2200F88693 /* MoreMyPageFetusInfoChangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreMyPageFetusInfoChangeViewController.m; sourceTree = "<group>"; };
+		DC1A77DA1D950F9900F88693 /* MoreMyPageFetusHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreMyPageFetusHeaderCell.h; sourceTree = "<group>"; };
+		DC1A77DB1D950F9900F88693 /* MoreMyPageFetusHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreMyPageFetusHeaderCell.m; sourceTree = "<group>"; };
+		DC1A77DC1D950F9900F88693 /* MoreMyPageFetusHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreMyPageFetusHeaderCell.xib; sourceTree = "<group>"; };
+		DC1A77DF1D9512C900F88693 /* MoreMyPageFetusContentsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreMyPageFetusContentsCell.h; sourceTree = "<group>"; };
+		DC1A77E01D9512C900F88693 /* MoreMyPageFetusContentsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreMyPageFetusContentsCell.m; sourceTree = "<group>"; };
+		DC1A77E11D9512C900F88693 /* MoreMyPageFetusContentsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreMyPageFetusContentsCell.xib; sourceTree = "<group>"; };
+		DC1A77E41D9535D200F88693 /* MoreMyPagePointViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreMyPagePointViewController.h; sourceTree = "<group>"; };
+		DC1A77E51D9535D200F88693 /* MoreMyPagePointViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreMyPagePointViewController.m; sourceTree = "<group>"; };
 		DC1FE6DB1D658E47006F7A50 /* DashBoardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardSegue.h; sourceTree = "<group>"; };
 		DC1FE6DC1D658E47006F7A50 /* DashBoardSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardSegue.m; sourceTree = "<group>"; };
 		DC1FE6DD1D658E47006F7A50 /* DiarySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiarySegue.h; sourceTree = "<group>"; };
@@ -572,6 +597,13 @@
 		DC6070991D7030E700F60148 /* MultiImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiImageViewController.h; sourceTree = "<group>"; };
 		DC60709A1D7030E700F60148 /* MultiImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiImageViewController.m; sourceTree = "<group>"; };
 		DC60709B1D7030E700F60148 /* MultiImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiImageViewController.xib; sourceTree = "<group>"; };
+		DC67EB5B1D94B4480096BCB3 /* FLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImage.h; sourceTree = "<group>"; };
+		DC67EB5C1D94B4480096BCB3 /* FLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImage.m; sourceTree = "<group>"; };
+		DC67EB5D1D94B4480096BCB3 /* FLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImageView.h; sourceTree = "<group>"; };
+		DC67EB5E1D94B4480096BCB3 /* FLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImageView.m; sourceTree = "<group>"; };
+		DC67EB611D94BDAD0096BCB3 /* MoreMyPageNickNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreMyPageNickNameCell.h; sourceTree = "<group>"; };
+		DC67EB621D94BDAD0096BCB3 /* MoreMyPageNickNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreMyPageNickNameCell.m; sourceTree = "<group>"; };
+		DC67EB631D94BDAD0096BCB3 /* MoreMyPageNickNameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreMyPageNickNameCell.xib; sourceTree = "<group>"; };
 		DC68F50C1D93D7CC009D3B1E /* MoreEquipmentChoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreEquipmentChoiceViewController.h; sourceTree = "<group>"; };
 		DC68F50D1D93D7CC009D3B1E /* MoreEquipmentChoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreEquipmentChoiceViewController.m; sourceTree = "<group>"; };
 		DC68F50E1D93D7CC009D3B1E /* MoreEquipmentEmptySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreEquipmentEmptySegue.h; sourceTree = "<group>"; };
@@ -810,17 +842,6 @@
 				2A371A561D62E8F30051F278 /* SignUpFetusInfoModel.m */,
 			);
 			path = SignUp;
-			sourceTree = "<group>";
-		};
-		2A9150C31D98B26300EBE4BF /* FLAnimatedImage */ = {
-			isa = PBXGroup;
-			children = (
-				2A9150C41D98B27A00EBE4BF /* FLAnimatedImage.h */,
-				2A9150C51D98B27A00EBE4BF /* FLAnimatedImage.m */,
-				2A9150C61D98B27A00EBE4BF /* FLAnimatedImageView.h */,
-				2A9150C71D98B27A00EBE4BF /* FLAnimatedImageView.m */,
-			);
-			path = FLAnimatedImage;
 			sourceTree = "<group>";
 		};
 		2AA6D6C31D6434D600316DD6 /* Diary */ = {
@@ -1084,10 +1105,6 @@
 		DC44C38E1D800DB200519D96 /* More */ = {
 			isa = PBXGroup;
 			children = (
-				DC68F5451D93D7FD009D3B1E /* MoreEquipmentModel.h */,
-				DC68F5461D93D7FD009D3B1E /* MoreEquipmentModel.m */,
-				DC68F5471D93D7FD009D3B1E /* MoreMyPageModel.h */,
-				DC68F5481D93D7FD009D3B1E /* MoreMyPageModel.m */,
 				DC44C38F1D800DEB00519D96 /* MoreMainModel.h */,
 				DC44C3901D800DEB00519D96 /* MoreMainModel.m */,
 				DC4DE2CD1D814F56007CF9BF /* MoreBloodPressureModel.h */,
@@ -1098,6 +1115,10 @@
 				DC8EB78A1D869BA300A0304D /* MoreWeekDetailModel.m */,
 				DC44621C1D87AD70006BFEBB /* MoreProfessionalAdviceModel.h */,
 				DC44621D1D87AD70006BFEBB /* MoreProfessionalAdviceModel.m */,
+				DC68F5451D93D7FD009D3B1E /* MoreEquipmentModel.h */,
+				DC68F5461D93D7FD009D3B1E /* MoreEquipmentModel.m */,
+				DC68F5471D93D7FD009D3B1E /* MoreMyPageModel.h */,
+				DC68F5481D93D7FD009D3B1E /* MoreMyPageModel.m */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -1123,12 +1144,6 @@
 				DC68F51B1D93D7CC009D3B1E /* MoreEquipmentSearchingViewController.m */,
 				DC68F51C1D93D7CC009D3B1E /* MoreEquipmentSelectViewController.h */,
 				DC68F51D1D93D7CC009D3B1E /* MoreEquipmentSelectViewController.m */,
-				DC68F51E1D93D7CC009D3B1E /* MoreMyPageMasterViewController.h */,
-				DC68F51F1D93D7CC009D3B1E /* MoreMyPageMasterViewController.m */,
-				DC68F5201D93D7CC009D3B1E /* MoreMyPageSubImageController.h */,
-				DC68F5211D93D7CC009D3B1E /* MoreMyPageSubImageController.m */,
-				DC68F5221D93D7CC009D3B1E /* MoreMyPageSubInfoPanelController.h */,
-				DC68F5231D93D7CC009D3B1E /* MoreMyPageSubInfoPanelController.m */,
 				DC68F5241D93D7CC009D3B1E /* MoreProfessionalReplyContentsViewController.h */,
 				DC68F5251D93D7CC009D3B1E /* MoreProfessionalReplyContentsViewController.m */,
 				DC44C3931D800E2600519D96 /* MoreMainViewController.h */,
@@ -1147,6 +1162,20 @@
 				DC4F0EFF1D911066003CB09B /* MoreProfessionalDetailViewController.m */,
 				DC4F0F041D912DC3003CB09B /* MoreProfessionalAdviceContentsViewController.h */,
 				DC4F0F051D912DC3003CB09B /* MoreProfessionalAdviceContentsViewController.m */,
+				DC68F51E1D93D7CC009D3B1E /* MoreMyPageMasterViewController.h */,
+				DC68F51F1D93D7CC009D3B1E /* MoreMyPageMasterViewController.m */,
+				DC68F5201D93D7CC009D3B1E /* MoreMyPageSubImageController.h */,
+				DC68F5211D93D7CC009D3B1E /* MoreMyPageSubImageController.m */,
+				DC68F5221D93D7CC009D3B1E /* MoreMyPageSubInfoPanelController.h */,
+				DC68F5231D93D7CC009D3B1E /* MoreMyPageSubInfoPanelController.m */,
+				DC1A77CC1D94EC1200F88693 /* MoreMyPageNickNameChangeViewController.h */,
+				DC1A77CD1D94EC1200F88693 /* MoreMyPageNickNameChangeViewController.m */,
+				DC1A77CF1D94F47E00F88693 /* MoreMyPagePasswordChangeViewController.h */,
+				DC1A77D01D94F47E00F88693 /* MoreMyPagePasswordChangeViewController.m */,
+				DC1A77D71D950D2200F88693 /* MoreMyPageFetusInfoChangeViewController.h */,
+				DC1A77D81D950D2200F88693 /* MoreMyPageFetusInfoChangeViewController.m */,
+				DC1A77E41D9535D200F88693 /* MoreMyPagePointViewController.h */,
+				DC1A77E51D9535D200F88693 /* MoreMyPagePointViewController.m */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -1197,6 +1226,18 @@
 				DCF8E1E81D8FA84B00E67402 /* MoreProfessionalButtonViewController.xib */,
 				DC4F0F011D912936003CB09B /* MoreProfessionalAdviceContentSegue.h */,
 				DC4F0F021D912936003CB09B /* MoreProfessionalAdviceContentSegue.m */,
+				DC67EB611D94BDAD0096BCB3 /* MoreMyPageNickNameCell.h */,
+				DC67EB621D94BDAD0096BCB3 /* MoreMyPageNickNameCell.m */,
+				DC67EB631D94BDAD0096BCB3 /* MoreMyPageNickNameCell.xib */,
+				DC1A77D21D94FC2E00F88693 /* MoreMyPagePasswordChangeCell.h */,
+				DC1A77D31D94FC2E00F88693 /* MoreMyPagePasswordChangeCell.m */,
+				DC1A77D41D94FC2E00F88693 /* MoreMyPagePasswordChangeCell.xib */,
+				DC1A77DA1D950F9900F88693 /* MoreMyPageFetusHeaderCell.h */,
+				DC1A77DB1D950F9900F88693 /* MoreMyPageFetusHeaderCell.m */,
+				DC1A77DC1D950F9900F88693 /* MoreMyPageFetusHeaderCell.xib */,
+				DC1A77DF1D9512C900F88693 /* MoreMyPageFetusContentsCell.h */,
+				DC1A77E01D9512C900F88693 /* MoreMyPageFetusContentsCell.m */,
+				DC1A77E11D9512C900F88693 /* MoreMyPageFetusContentsCell.xib */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -1322,7 +1363,7 @@
 		DC5D20761D62AE8F00ACDCA4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				2A9150C31D98B26300EBE4BF /* FLAnimatedImage */,
+				DC67EB5A1D94B4480096BCB3 /* FLAnimatedImage */,
 				DC44C3751D7FADFA00519D96 /* TPKeyboardAvoiding */,
 				2A3026321D7E54640020C3B4 /* KkMenu */,
 				DC538E9C1D781C3600E5949B /* IQKeyboardManager */,
@@ -1445,6 +1486,17 @@
 				DCF6CA991D740DED00703CAE /* ChildPageImageViewController.xib */,
 			);
 			path = ImageView;
+			sourceTree = "<group>";
+		};
+		DC67EB5A1D94B4480096BCB3 /* FLAnimatedImage */ = {
+			isa = PBXGroup;
+			children = (
+				DC67EB5B1D94B4480096BCB3 /* FLAnimatedImage.h */,
+				DC67EB5C1D94B4480096BCB3 /* FLAnimatedImage.m */,
+				DC67EB5D1D94B4480096BCB3 /* FLAnimatedImageView.h */,
+				DC67EB5E1D94B4480096BCB3 /* FLAnimatedImageView.m */,
+			);
+			path = FLAnimatedImage;
 			sourceTree = "<group>";
 		};
 		DC73E5C11D6D896A007D2DEE /* Indicator */ = {
@@ -1585,7 +1637,7 @@
 				TargetAttributes = {
 					DCA5AE201D598C6F0075B7AD = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = JH5F2VBM8Z;
+						DevelopmentTeam = LUYT38Y3AT;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1624,10 +1676,12 @@
 				DC5FCCFE1D7E890200957D73 /* SleepingHoursInfoCell.xib in Resources */,
 				DC4E958E1D7D26EC0087647B /* WeightTotalInfoCell.xib in Resources */,
 				DC5D20961D62E01300ACDCA4 /* DashBoardScrollCellView.xib in Resources */,
+				DC1A77D61D94FC2E00F88693 /* MoreMyPagePasswordChangeCell.xib in Resources */,
 				DC4E95A61D7D66550087647B /* ActiveMassStepCell.xib in Resources */,
 				DC5D20741D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf in Resources */,
 				DC68F53F1D93D7E4009D3B1E /* MoreEquipmentListCell.xib in Resources */,
 				2AB670DD1D9267700060561C /* CommunityNewspeedImageCustomCell.xib in Resources */,
+				DC67EB651D94BDAD0096BCB3 /* MoreMyPageNickNameCell.xib in Resources */,
 				DCF6CA911D740D0A00703CAE /* PageImageViewController.xib in Resources */,
 				DC68F5411D93D7E4009D3B1E /* MoreEquipmentSelectCell.xib in Resources */,
 				2AD4A8921D7D660C0032E16C /* emoticonPopupViewController.xib in Resources */,
@@ -1660,9 +1714,11 @@
 				DC5FCCF41D7E84CC00957D73 /* SleepingHoursChartViewCell.xib in Resources */,
 				DC60709D1D7030E700F60148 /* MultiImageViewController.xib in Resources */,
 				DC68F53D1D93D7E4009D3B1E /* MoreEquipmentChoiceCell.xib in Resources */,
+				DC1A77E31D9512C900F88693 /* MoreMyPageFetusContentsCell.xib in Resources */,
 				DC512ACC1D669BF900885C26 /* MessageListCell.xib in Resources */,
 				DC4E95851D7CF0A80087647B /* More.storyboard in Resources */,
 				2AB670E21D9267DF0060561C /* CommunityPersonListCustomCell.xib in Resources */,
+				DC1A77DE1D950F9900F88693 /* MoreMyPageFetusHeaderCell.xib in Resources */,
 				DC4DE2D41D814F7A007CF9BF /* MoreBloodPressureChartCell.xib in Resources */,
 				DCA5AE2F1D598C6F0075B7AD /* Main.storyboard in Resources */,
 				DC4DE2BE1D80F4BD007CF9BF /* MoreMainTitleCell.xib in Resources */,
@@ -1744,6 +1800,7 @@
 				DC4F0F001D911066003CB09B /* MoreProfessionalDetailViewController.m in Sources */,
 				DCF6CAAD1D742B4000703CAE /* UIApplication+JTSImageViewController.m in Sources */,
 				DC44C37E1D7FADFA00519D96 /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				DC1A77D51D94FC2E00F88693 /* MoreMyPagePasswordChangeCell.m in Sources */,
 				DC538EC21D781C3600E5949B /* IQUIScrollView+Additions.m in Sources */,
 				DC44C3951D800E2600519D96 /* MoreMainViewController.m in Sources */,
 				DC1FE6ED1D65A7D4006F7A50 /* fetusInfoController.m in Sources */,
@@ -1755,6 +1812,7 @@
 				DC68F5441D93D7F0009D3B1E /* MoreProfessionalReplyContentSegue.m in Sources */,
 				DCA5AE291D598C6F0075B7AD /* AppDelegate.m in Sources */,
 				DCF8E1EE1D8FD5C300E67402 /* MoreProfessionalAdviceCell.m in Sources */,
+				DC1A77D91D950D2200F88693 /* MoreMyPageFetusInfoChangeViewController.m in Sources */,
 				DC68F54A1D93D7FD009D3B1E /* MoreMyPageModel.m in Sources */,
 				DC538ECE1D781C3600E5949B /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				2A6B1BF01D91338200322A94 /* DiaryListBasicController.m in Sources */,
@@ -1768,6 +1826,7 @@
 				DC4462161D87A65E006BFEBB /* MoreProfessionalAdviceViewController.m in Sources */,
 				DC3AAECE1D759C19007218E9 /* WeekProgramModel.m in Sources */,
 				DC512AD21D66C62700885C26 /* MessageListController.m in Sources */,
+				DC1A77CE1D94EC1200F88693 /* MoreMyPageNickNameChangeViewController.m in Sources */,
 				2AB6277A1D5C0CF400BD7B84 /* SignUpMain.m in Sources */,
 				DC538ECC1D781C3600E5949B /* IQTitleBarButtonItem.m in Sources */,
 				DC68F52C1D93D7CC009D3B1E /* MoreEquipmentParingViewController.m in Sources */,
@@ -1792,6 +1851,7 @@
 				DC8EB7881D869A1700A0304D /* MoreWeekCheckDetailViewController.m in Sources */,
 				2A371A501D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.m in Sources */,
 				DC3AAEB31D7514A3007218E9 /* PushViewListCell.m in Sources */,
+				DC1A77D11D94F47E00F88693 /* MoreMyPagePasswordChangeViewController.m in Sources */,
 				DC68F53E1D93D7E4009D3B1E /* MoreEquipmentListCell.m in Sources */,
 				DC4E959C1D7D64930087647B /* ActiveMassController.m in Sources */,
 				DC44C3871D7FD6F700519D96 /* ExerciseCountDownController.m in Sources */,
@@ -1818,24 +1878,28 @@
 				DC4F0F061D912DC3003CB09B /* MoreProfessionalAdviceContentsViewController.m in Sources */,
 				2A371A4B1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.m in Sources */,
 				DCA5AE261D598C6F0075B7AD /* main.m in Sources */,
-				2A9150C81D98B27A00EBE4BF /* FLAnimatedImage.m in Sources */,
+				DC67EB5F1D94B4480096BCB3 /* FLAnimatedImage.m in Sources */,
 				DC5FCCF81D7E858900957D73 /* SleepingHoursEvalCell.m in Sources */,
 				DC7D38491D6BDD8800314189 /* FXBlurView.m in Sources */,
 				2AB670E11D9267DF0060561C /* CommunityPersonListCustomCell.m in Sources */,
 				2A54B1B41D66904000C538D1 /* JTCalendarScrollManager.m in Sources */,
+				DC1A77E61D9535D200F88693 /* MoreMyPagePointViewController.m in Sources */,
 				DCF6CAA91D742B4000703CAE /* JTSAnimatedGIFUtility.m in Sources */,
 				2A54B1B91D66904000C538D1 /* JTCalendarWeekView.m in Sources */,
 				DC4DE2D81D814F9D007CF9BF /* MoreBloodPressureHistoryCell.m in Sources */,
 				DC56F0A61D79728F00FB3A30 /* WeightDetailInfoFooterCell.m in Sources */,
 				2A54B1B31D66904000C538D1 /* JTCalendarDelegateManager.m in Sources */,
+				DC1A77DD1D950F9900F88693 /* MoreMyPageFetusHeaderCell.m in Sources */,
 				DC4E95AF1D7D66C40087647B /* ActiveMassExerciseCell.m in Sources */,
 				DC538ECB1D781C3600E5949B /* IQPreviousNextView.m in Sources */,
 				DC4E958D1D7D26EC0087647B /* WeightTotalInfoCell.m in Sources */,
+				DC67EB641D94BDAD0096BCB3 /* MoreMyPageNickNameCell.m in Sources */,
 				DC4DE2CF1D814F56007CF9BF /* MoreBloodPressureModel.m in Sources */,
 				DC3AAEBA1D751EB6007218E9 /* PushNoticeViewController.m in Sources */,
-				2A9150C91D98B27A00EBE4BF /* FLAnimatedImageView.m in Sources */,
+				DC67EB601D94B4480096BCB3 /* FLAnimatedImageView.m in Sources */,
 				DC5D20911D62CB6500ACDCA4 /* DashBoardController.m in Sources */,
 				DC5FCCFD1D7E890200957D73 /* SleepingHoursInfoCell.m in Sources */,
+				DC1A77E21D9512C900F88693 /* MoreMyPageFetusContentsCell.m in Sources */,
 				2AB627771D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m in Sources */,
 				DC5FCCE91D7E417E00957D73 /* ActiveMassChartView.m in Sources */,
 				DC4DE2C61D810154007CF9BF /* MoreMainTitleCell.m in Sources */,
@@ -1974,7 +2038,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Park seohee (TDF9AJWPR5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = JH5F2VBM8Z;
+				DEVELOPMENT_TEAM = LUYT38Y3AT;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2000,7 +2064,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Park seohee (TDF9AJWPR5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = JH5F2VBM8Z;
+				DEVELOPMENT_TEAM = LUYT38Y3AT;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
