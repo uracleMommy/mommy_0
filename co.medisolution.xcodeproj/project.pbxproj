@@ -39,6 +39,8 @@
 		2A54B1C81D66E4E600C538D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A54B1C71D66E4E600C538D1 /* Assets.xcassets */; };
 		2A6B1BF01D91338200322A94 /* DiaryListBasicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6B1BED1D91338200322A94 /* DiaryListBasicController.m */; };
 		2A6B1BF11D91338200322A94 /* DiaryWriteBasicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6B1BEF1D91338200322A94 /* DiaryWriteBasicController.m */; };
+		2A9150C81D98B27A00EBE4BF /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9150C51D98B27A00EBE4BF /* FLAnimatedImage.m */; };
+		2A9150C91D98B27A00EBE4BF /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9150C71D98B27A00EBE4BF /* FLAnimatedImageView.m */; };
 		2AA6D6C21D64230A00316DD6 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA6D6C11D64230A00316DD6 /* Diary.storyboard */; };
 		2AB627761D5C0CEC00BD7B84 /* LoginMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB627731D5C0CEC00BD7B84 /* LoginMain.m */; };
 		2AB627771D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB627751D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m */; };
@@ -311,6 +313,10 @@
 		2A6B1BED1D91338200322A94 /* DiaryListBasicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryListBasicController.m; sourceTree = "<group>"; };
 		2A6B1BEE1D91338200322A94 /* DiaryWriteBasicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryWriteBasicController.h; sourceTree = "<group>"; };
 		2A6B1BEF1D91338200322A94 /* DiaryWriteBasicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryWriteBasicController.m; sourceTree = "<group>"; };
+		2A9150C41D98B27A00EBE4BF /* FLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImage.h; sourceTree = "<group>"; };
+		2A9150C51D98B27A00EBE4BF /* FLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImage.m; sourceTree = "<group>"; };
+		2A9150C61D98B27A00EBE4BF /* FLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImageView.h; sourceTree = "<group>"; };
+		2A9150C71D98B27A00EBE4BF /* FLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImageView.m; sourceTree = "<group>"; };
 		2AA6D6C11D64230A00316DD6 /* Diary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
 		2AB627721D5C0CEC00BD7B84 /* LoginMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginMain.h; sourceTree = "<group>"; };
 		2AB627731D5C0CEC00BD7B84 /* LoginMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginMain.m; sourceTree = "<group>"; };
@@ -804,6 +810,17 @@
 				2A371A561D62E8F30051F278 /* SignUpFetusInfoModel.m */,
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		2A9150C31D98B26300EBE4BF /* FLAnimatedImage */ = {
+			isa = PBXGroup;
+			children = (
+				2A9150C41D98B27A00EBE4BF /* FLAnimatedImage.h */,
+				2A9150C51D98B27A00EBE4BF /* FLAnimatedImage.m */,
+				2A9150C61D98B27A00EBE4BF /* FLAnimatedImageView.h */,
+				2A9150C71D98B27A00EBE4BF /* FLAnimatedImageView.m */,
+			);
+			path = FLAnimatedImage;
 			sourceTree = "<group>";
 		};
 		2AA6D6C31D6434D600316DD6 /* Diary */ = {
@@ -1305,6 +1322,7 @@
 		DC5D20761D62AE8F00ACDCA4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				2A9150C31D98B26300EBE4BF /* FLAnimatedImage */,
 				DC44C3751D7FADFA00519D96 /* TPKeyboardAvoiding */,
 				2A3026321D7E54640020C3B4 /* KkMenu */,
 				DC538E9C1D781C3600E5949B /* IQKeyboardManager */,
@@ -1800,6 +1818,7 @@
 				DC4F0F061D912DC3003CB09B /* MoreProfessionalAdviceContentsViewController.m in Sources */,
 				2A371A4B1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.m in Sources */,
 				DCA5AE261D598C6F0075B7AD /* main.m in Sources */,
+				2A9150C81D98B27A00EBE4BF /* FLAnimatedImage.m in Sources */,
 				DC5FCCF81D7E858900957D73 /* SleepingHoursEvalCell.m in Sources */,
 				DC7D38491D6BDD8800314189 /* FXBlurView.m in Sources */,
 				2AB670E11D9267DF0060561C /* CommunityPersonListCustomCell.m in Sources */,
@@ -1814,6 +1833,7 @@
 				DC4E958D1D7D26EC0087647B /* WeightTotalInfoCell.m in Sources */,
 				DC4DE2CF1D814F56007CF9BF /* MoreBloodPressureModel.m in Sources */,
 				DC3AAEBA1D751EB6007218E9 /* PushNoticeViewController.m in Sources */,
+				2A9150C91D98B27A00EBE4BF /* FLAnimatedImageView.m in Sources */,
 				DC5D20911D62CB6500ACDCA4 /* DashBoardController.m in Sources */,
 				DC5FCCFD1D7E890200957D73 /* SleepingHoursInfoCell.m in Sources */,
 				2AB627771D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m in Sources */,
