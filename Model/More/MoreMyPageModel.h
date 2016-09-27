@@ -11,6 +11,7 @@
 #import "MoreMyPagePasswordChangeCell.h"
 #import "MoreMyPageFetusHeaderCell.h"
 #import "MoreMyPageFetusContentsCell.h"
+#import "MorePointCell.h"
 
 #pragma mark 공통 프로토콜
 @protocol MoreMyPageModelDelegate <NSObject>

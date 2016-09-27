@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MoreMyPageModel.h"
 
 @interface MoreMyPagePointViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIView *pointContainerView;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+- (IBAction)closeModal:(id)sender;
+
+@property (strong, nonatomic) MoreMyPagePointModel *moreMyPagePointModel;
 
 @end

@@ -60,6 +60,11 @@
         
         [self performSegueWithIdentifier:@"goEquipmentManagement" sender:nil];        
     }
+    // 환경설정
+    else {
+        
+        [self performSegueWithIdentifier:@"goEnvironmentSetup" sender:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

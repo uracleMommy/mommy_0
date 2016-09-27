@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumBarunGothic.ttf">
+            <string>NanumBarunGothic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MoreEnvironmentMyPageCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="69"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QWt-T7-8dF">
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마이페이지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3iG-vD-DZ0">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="9SL-5Z-abD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
+                                <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용자 프로필 확인 및 변경이 가능합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1D-o5-A22">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="iKR-5G-Lmi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="M1D-o5-A22" firstAttribute="top" secondItem="3iG-vD-DZ0" secondAttribute="bottom" constant="1" id="3lE-Q2-QZz"/>
+                            <constraint firstItem="3iG-vD-DZ0" firstAttribute="top" secondItem="QWt-T7-8dF" secondAttribute="top" constant="12" id="Zzl-eC-jHf"/>
+                            <constraint firstAttribute="trailing" secondItem="3iG-vD-DZ0" secondAttribute="trailing" constant="8" id="fPj-de-yc3"/>
+                            <constraint firstItem="3iG-vD-DZ0" firstAttribute="leading" secondItem="QWt-T7-8dF" secondAttribute="leading" constant="8" id="loC-QH-g2O"/>
+                            <constraint firstItem="M1D-o5-A22" firstAttribute="leading" secondItem="QWt-T7-8dF" secondAttribute="leading" constant="8" id="oNg-uT-AwC"/>
+                            <constraint firstAttribute="trailing" secondItem="M1D-o5-A22" secondAttribute="trailing" constant="8" id="opc-gn-aeU"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="QWt-T7-8dF" secondAttribute="bottom" constant="4" id="T35-vT-YDU"/>
+                    <constraint firstItem="QWt-T7-8dF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="T7x-n1-4dx"/>
+                    <constraint firstAttribute="trailing" secondItem="QWt-T7-8dF" secondAttribute="trailing" constant="8" id="YYC-6i-2x7"/>
+                    <constraint firstItem="QWt-T7-8dF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="t0I-hl-dil"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="containerView" destination="QWt-T7-8dF" id="26O-7B-hW1"/>
+            </connections>
+            <point key="canvasLocation" x="-94" y="-204"/>
+        </tableViewCell>
+    </objects>
+</document>

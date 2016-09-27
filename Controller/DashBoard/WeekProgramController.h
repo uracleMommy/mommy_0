@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 #import "DZNSegmentedControl.h"
 
-@interface WeekProgramController : UIViewController<DZNSegmentedControlDelegate>
+@interface WeekProgramController : CommonViewController<DZNSegmentedControlDelegate>
 
 @property (weak, nonatomic) IBOutlet DZNSegmentedControl *segment;
 

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface fetusInfoController : UIViewController
+#import "CommonViewController.h"
+@interface fetusInfoController : CommonViewController
 
 @end

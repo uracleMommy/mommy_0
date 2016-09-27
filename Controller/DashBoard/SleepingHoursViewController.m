@@ -32,6 +32,10 @@
     _sleepingHoursModel = [[SleepingHoursModel alloc] init];
     _tableView.dataSource = _sleepingHoursModel;
     _tableView.delegate = _sleepingHoursModel;
+    
+    CGRect screenSize = [[UIScreen mainScreen] bounds];
+    
+    [_dayWeekTypeSegment setFrame:CGRectMake(0, 0, screenSize.size.width, 44)];
 }
 
 - (void)didChangeSegment:(DZNSegmentedControl *)control
