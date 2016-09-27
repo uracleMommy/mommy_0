@@ -10,13 +10,18 @@
 #import "JTCalendar.h"
 
 
+@protocol DiaryCalendarDelegate <NSObject>
+
+@optional
+-(void)moveCalendarMonthView:(NSDate *)date;
+
+@end
+
 @interface DiaryCalenderController : UIViewController<JTCalendarDelegate>
 
 @property (strong, nonatomic) JTCalendarMenuView *calendarMenuView;
 @property (weak, nonatomic) IBOutlet JTHorizontalCalendarView *calendarContentView;
-
+@property (strong, nonatomic) id<DiaryCalendarDelegate>delegate;
 @property (strong, nonatomic) JTCalendarManager *calendarManager;
-
-//- (IBAction)closeView:(id)sender;
 
 @end

@@ -82,7 +82,7 @@
     //fatesuan 선택됬을때 color여부 
 
     // Today
-    NSLog(@"PSH :%@", dayView.date);
+//    NSLog(@"PSH :%@", dayView.date);
     if([_calendarManager.dateHelper date:[NSDate date] isTheSameDayThan:dayView.date]){
         dayView.circleView.hidden = NO;
         dayView.circleView.backgroundColor = [UIColor whiteColor];
@@ -118,10 +118,20 @@
         dayView.dotView.hidden = YES;
     }
 }
-
+    
+-(void)calendarDidLoadNextPage:(JTCalendarManager *)calendar{
+    [self moveCalendarMonthView:calendar.date];
+}
+    
+-(void)calendarDidLoadPreviousPage:(JTCalendarManager *)calendar{
+    [self moveCalendarMonthView:calendar.date];
+}
+    
 - (void)calendar:(JTCalendarManager *)calendar didTouchDayView:(JTCalendarDayView *)dayView
 {
     _dateSelected = dayView.date;
+    
+//    NSLog(@"PSH _dateSelected : %@", _dateSelected);
     
     // Animation for the circleView
     dayView.circleView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.1, 0.1);
@@ -153,22 +163,8 @@
 
 #pragma mark - CalendarManager delegate - Page mangement
 
-// Used to limit the date for the calendar, optional
-- (BOOL)calendar:(JTCalendarManager *)calendar canDisplayPageWithDate:(NSDate *)date
-{
-    return YES;
-    //fatesuan customizing minDate, maxDate delete
-//    [_calendarManager.dateHelper date:date isEqualOrAfter:_minDate andEqualOrBefore:_maxDate];
-}
-
-- (void)calendarDidLoadNextPage:(JTCalendarManager *)calendar
-{
-    //    NSLog(@"Next page loaded");
-}
-
-- (void)calendarDidLoadPreviousPage:(JTCalendarManager *)calendar
-{
-    //    NSLog(@"Previous page loaded");
+-(void)moveCalendarMonthView:(NSData *)date{
+    [_delegate moveCalendarMonthView:date];
 }
 
 #pragma mark - Fake data

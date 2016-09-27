@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "DiaryListModel.h"
-#import "JTCalendar.h"
 #import "KxMenu.h"
 #import "DiaryListController.h"
 #import "DiaryCalenderController.h"
@@ -20,12 +19,14 @@
 
 @end
 
-@interface DiaryListBasicController : UIViewController
+@interface DiaryListBasicController : UIViewController<DiaryCalendarDelegate, DiaryListDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
-@property (strong, nonatomic) IBOutlet JTCalendarMenuView *dateLabel;
+@property (strong, nonatomic) IBOutlet UILabel *dateLabel;
 @property (strong, nonatomic) DiaryListController *listViewController;
 @property (strong, nonatomic) DiaryCalenderController *calenderViewController;
 - (IBAction)changeListViewAction:(id)sender;
+- (IBAction)prevMonthButton:(id)sender;
+- (IBAction)nextMonthButton:(id)sender;
 
 @end

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="b5Q-oJ-wcf">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="b5Q-oJ-wcf">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -15,10 +15,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Community My Group Controller-->
         <scene sceneID="ady-r1-Okg">
             <objects>
-                <viewController id="t80-GZ-GkZ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CommunityMyGroupView" id="t80-GZ-GkZ" customClass="CommunityMyGroupController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EMi-g6-iqa"/>
                         <viewControllerLayoutGuide type="bottom" id="SV9-o3-ii3"/>
@@ -125,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I4F-TH-RtE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1008" y="-102"/>
+            <point key="canvasLocation" x="-1099" y="-102"/>
         </scene>
         <!--Community Main Controller-->
         <scene sceneID="1av-cg-tUi">
@@ -145,15 +145,24 @@
                                     <constraint firstAttribute="height" constant="45" id="M90-U8-EBK"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eta-Z3-eGO">
+                                <frame key="frameInset" minY="66" width="375" height="601"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Eta-Z3-eGO" firstAttribute="leading" secondItem="fj2-t9-148" secondAttribute="leading" id="OvJ-ON-UGk"/>
                             <constraint firstAttribute="trailing" secondItem="4xp-Yo-y5q" secondAttribute="trailing" id="cdM-y1-oJp"/>
+                            <constraint firstAttribute="trailing" secondItem="Eta-Z3-eGO" secondAttribute="trailing" id="lxm-bT-aiJ"/>
                             <constraint firstItem="4xp-Yo-y5q" firstAttribute="leading" secondItem="fj2-t9-148" secondAttribute="leading" id="q6G-TS-4uK"/>
+                            <constraint firstItem="Eta-Z3-eGO" firstAttribute="top" secondItem="4xp-Yo-y5q" secondAttribute="bottom" id="q8E-Tu-Z1B"/>
+                            <constraint firstItem="Dmd-Fb-g7Y" firstAttribute="top" secondItem="Eta-Z3-eGO" secondAttribute="bottom" id="x5s-Nj-Swg"/>
                             <constraint firstItem="4xp-Yo-y5q" firstAttribute="top" secondItem="uzG-1H-sae" secondAttribute="bottom" id="x8G-bM-ffi"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="contentView" destination="Eta-Z3-eGO" id="VaN-eF-m8i"/>
                         <outlet property="tabView" destination="4xp-Yo-y5q" id="yUn-ca-SMf"/>
                         <segue destination="FBj-Mp-SID" kind="push" id="SV7-NV-bS5"/>
                     </connections>

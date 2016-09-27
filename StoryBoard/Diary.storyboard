@@ -292,7 +292,7 @@
         <!--다이어리-->
         <scene sceneID="gFj-bE-c0C">
             <objects>
-                <viewController id="hIr-g7-6ce" customClass="DiaryListBasicController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DairyNavigation" id="hIr-g7-6ce" customClass="DiaryListBasicController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Ds-cA-TbY"/>
                         <viewControllerLayoutGuide type="bottom" id="ifH-FQ-pDz"/>
@@ -328,6 +328,9 @@
                                             <constraint firstAttribute="width" constant="40" id="hDg-k1-YBB"/>
                                         </constraints>
                                         <state key="normal" image="tab_btn_left"/>
+                                        <connections>
+                                            <action selector="prevMonthButton:" destination="hIr-g7-6ce" eventType="touchUpInside" id="qlD-HO-wsg"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQt-vS-Aux">
                                         <constraints>
@@ -335,6 +338,9 @@
                                             <constraint firstAttribute="width" constant="40" id="l0d-YJ-cfL"/>
                                         </constraints>
                                         <state key="normal" image="tab_btn_right"/>
+                                        <connections>
+                                            <action selector="nextMonthButton:" destination="hIr-g7-6ce" eventType="touchUpInside" id="xhs-Cg-phS"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016년 12월" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D00-Tr-I0E">
                                         <constraints>
@@ -415,6 +421,7 @@
         <scene sceneID="qjV-BS-I1Z">
             <objects>
                 <navigationController id="OO6-eW-lDh" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="oeU-pZ-ryk"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="AxW-Oh-i0B">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -430,7 +437,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZm-fI-hT7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="430" y="1229"/>
+            <point key="canvasLocation" x="437" y="1298"/>
         </scene>
         <!--일정보기-->
         <scene sceneID="ohi-qZ-MsD">
@@ -521,7 +528,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GON-Rk-jUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="444" y="1956"/>
+            <point key="canvasLocation" x="472" y="2151"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oD1-3f-fjb">
@@ -687,7 +694,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQo-H1-ca3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="898" y="1962"/>
+            <point key="canvasLocation" x="1045" y="2237"/>
         </scene>
         <!--Diary List Controller-->
         <scene sceneID="Wie-Uj-NUj">

@@ -11,8 +11,16 @@
 #import "DiaryListBasicCustomCell.h"
 #import "DiaryListImageCustomCell.h"
 
+@protocol DiaryListModelDelegate <NSObject>
+
+@optional
+-(void) tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath;
+
+@end
+
 @interface DiaryListModel : NSObject<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *diaryList;
+@property (strong, nonatomic) id<DiaryListModelDelegate> delegate;
 
 @end
