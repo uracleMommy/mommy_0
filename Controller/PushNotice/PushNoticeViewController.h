@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 #import "PushNoticeModel.h"
 
-@interface PushNoticeViewController : UIViewController<PushNoticeModelDelegate>
+@interface PushNoticeViewController : CommonViewController<PushNoticeModelDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

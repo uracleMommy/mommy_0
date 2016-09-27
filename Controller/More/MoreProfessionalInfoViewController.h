@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 #import "DZNSegmentedControl.h"
 
-@interface MoreProfessionalInfoViewController : UIViewController
+@interface MoreProfessionalInfoViewController : CommonViewController
 
 @property (weak, nonatomic) IBOutlet DZNSegmentedControl *segmentView;
 

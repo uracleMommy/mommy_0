@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 #import "MoreEnvironmentModel.h"
 
-@interface MoreEnvironmentSetupViewController : UIViewController<MoreEnvironmentListModelDelegate>
+@interface MoreEnvironmentSetupViewController : CommonViewController<MoreEnvironmentListModelDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

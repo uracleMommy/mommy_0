@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 #import "MoreEnvironmentModel.h"
 
-@interface MoreCalendarListController : UIViewController
+@interface MoreCalendarListController : CommonViewController
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

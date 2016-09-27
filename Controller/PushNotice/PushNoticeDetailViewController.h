@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
-@interface PushNoticeDetailViewController : UIViewController
+@interface PushNoticeDetailViewController : CommonViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *lblType;
 

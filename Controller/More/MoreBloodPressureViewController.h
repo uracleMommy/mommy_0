@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 #import "MoreBloodPressureModel.h"
 
-@interface MoreBloodPressureViewController : UIViewController
+@interface MoreBloodPressureViewController : CommonViewController
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

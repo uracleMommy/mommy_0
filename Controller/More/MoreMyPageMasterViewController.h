@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 #import "MoreMyPageSubImageController.h"
 #import "MoreMyPageSubInfoPanelController.h"
 
-@interface MoreMyPageMasterViewController : UIViewController
+@interface MoreMyPageMasterViewController : CommonViewController
 
 @property (strong, nonatomic) MoreMyPageSubImageController *moreMyPageSubImageController;
 

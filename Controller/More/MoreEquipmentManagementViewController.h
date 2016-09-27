@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 #import "MoreEquipmentListViewController.h"
 #import "MoreEquipmentEmptyViewController.h"
 
-@interface MoreEquipmentManagementViewController : UIViewController
+@interface MoreEquipmentManagementViewController : CommonViewController
 
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 

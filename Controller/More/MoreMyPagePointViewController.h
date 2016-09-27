@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 #import "MoreMyPageModel.h"
 
-@interface MoreMyPagePointViewController : UIViewController
+@interface MoreMyPagePointViewController : CommonViewController
 
 @property (weak, nonatomic) IBOutlet UIView *pointContainerView;
 

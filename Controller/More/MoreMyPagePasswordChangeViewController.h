@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 #import "MoreMyPageModel.h"
 
-@interface MoreMyPagePasswordChangeViewController : UIViewController
+@interface MoreMyPagePasswordChangeViewController : CommonViewController
 
 - (IBAction)closeModal:(id)sender;
 

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 #import "MoreMyPageModel.h"
 
-@interface MoreMyPageNickNameChangeViewController : UIViewController
+@interface MoreMyPageNickNameChangeViewController : CommonViewController
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

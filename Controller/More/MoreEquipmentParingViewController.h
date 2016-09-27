@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
-@interface MoreEquipmentParingViewController : UIViewController
+@interface MoreEquipmentParingViewController : CommonViewController
 
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 

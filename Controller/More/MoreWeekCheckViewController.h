@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 #import "MoreWeekCheckModel.h"
 
-@interface MoreWeekCheckViewController : UIViewController<MoreWeekCheckModelDelegate>
+@interface MoreWeekCheckViewController : CommonViewController<MoreWeekCheckModelDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

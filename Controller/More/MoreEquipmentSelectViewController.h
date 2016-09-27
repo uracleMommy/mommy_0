@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 #import "MoreEquipmentModel.h"
 
-@interface MoreEquipmentSelectViewController : UIViewController<MoreEquipmentChoiceModelDelegate>
+@interface MoreEquipmentSelectViewController : CommonViewController<MoreEquipmentChoiceModelDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
