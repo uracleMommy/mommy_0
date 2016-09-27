@@ -298,7 +298,7 @@
 
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    NSLog(@"PSH picker!!");
+//    NSLog(@"PSH picker!!");
     image = [info valueForKey:UIImagePickerControllerOriginalImage];
     
     controller = [[ImageCropViewController alloc] initWithImage:image];
@@ -326,7 +326,7 @@
     
     if([imageView.subviews count] > 1){
         for(int i = 0 ; i < [imageView.subviews count] ; i++){
-            NSLog(@"PSH : %@", imageView.subviews[i].class);
+//            NSLog(@"PSH : %@", imageView.subviews[i].class);
             if(imageView.subviews[i].tag == 1){
                 [imageView.subviews[i] removeFromSuperview];
             }

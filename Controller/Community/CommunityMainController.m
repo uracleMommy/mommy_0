@@ -36,6 +36,22 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+    
+    
+-(void)viewDidAppear:(BOOL)animated{
+    if(!_myGroupViewController){
+        _myGroupViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CommunityMyGroupView"];
+        
+        //        _contentViewController.delegate = self;
+//        _myGroupViewController.delegate = self;
+        [_myGroupViewController.view setFrame:CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height)];
+        
+        [_contentView addSubview : _myGroupViewController.view];
+        
+        //        [_scrollView sizeToFit];
+    }
+}
+
 
 /*
 #pragma mark - Navigation

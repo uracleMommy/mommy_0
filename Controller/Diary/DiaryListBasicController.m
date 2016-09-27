@@ -66,7 +66,7 @@
         _listViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DiaryListTableView"];
         
         //        _contentViewController.delegate = self;
-        
+        _listViewController.delegate = self;
         [_listViewController.view setFrame:CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height)];
         
         [_contentView addSubview : _listViewController.view];
@@ -93,7 +93,7 @@
 
 - (void)showAddPopup{
     UIButton *imageView = self.navigationItem.leftBarButtonItem.customView;
-    NSLog(@"PSH %@", self.navigationItem.leftBarButtonItem.customView);
+//    NSLog(@"PSH %@", self.navigationItem.leftBarButtonItem.customView);
     
     UIImage *addImage = [UIImage imageNamed:@"title_icon_add.png"];
     UIImage *closeImage = [UIImage imageNamed:@"title_icon_close.png"];
@@ -120,7 +120,9 @@
         first.alignment = NSTextAlignmentCenter;
         
         [KxMenu showMenuInView:self.view
-                      fromRect:CGRectMake(imageView.frame.origin.x, imageView.frame.origin.x, imageView.frame.size.width, imageView.frame.size.height)
+                      fromRect:CGRectMake(imageView.frame.origin.x, imageView.frame.origin.y-10, 0, 0)
+//         CGRectMake(imageView.frame.origin.x, imageView.frame.origin.x, imageView.frame.size.width, imageView.frame.size.height)
+         
                      menuItems:menuItems];
         
         [KxMenu setTarget:self action:@selector(dismissMenu)];
@@ -178,6 +180,8 @@
         _calenderViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DiaryListCalenderView"];        
         [_calenderViewController.view setFrame:CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height)];
         
+        _calenderViewController.delegate = self;
+        
         [_contentView.subviews[0] removeFromSuperview];
         
         [_contentView addSubview : _calenderViewController.view];
@@ -193,8 +197,39 @@
     }
 }
 
-- (JTCalendarMenuView*)getCalenderDateView{
-    return _dateLabel;
+-(void)moveCalendarMonthView:(NSDate *)date{
+    NSLog(@"PSH : date : %@", date);
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"YYYY년 MM월"];
+    _dateLabel.text = [formatter stringFromDate:date];
 }
 
+- (void) 아:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"PSH :  indexPath : %@",indexPath);
+    
+    // 디테일 이동 로직
+    [self performSegueWithIdentifier:@"showDetailScheduleSegue" sender:nil];
+}
+    
+- (IBAction)prevMonthButton:(id)sender {
+    
+    NSString *restorationIdentifier = _contentView.subviews[0].restorationIdentifier;
+    
+    if([restorationIdentifier isEqualToString:@"tableView"]){
+    }else{
+        [_calenderViewController.calendarContentView loadPreviousPageWithAnimation];
+    }
+
+}
+    
+- (IBAction)nextMonthButton:(id)sender {
+    
+    NSString *restorationIdentifier = _contentView.subviews[0].restorationIdentifier;
+    
+    if([restorationIdentifier isEqualToString:@"tableView"]){
+    }else{
+        [_calenderViewController.calendarContentView loadNextPageWithAnimation];
+    }
+}
+    
 @end

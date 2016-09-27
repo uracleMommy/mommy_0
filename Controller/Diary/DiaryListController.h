@@ -10,8 +10,16 @@
 #import "DiaryListModel.h"
 #import "KxMenu.h"
 
-@interface DiaryListController : UIViewController
+@protocol DiaryListDelegate <NSObject>
+
+@optional
+-(void) tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath;
+
+@end
+
+@interface DiaryListController : UIViewController<DiaryListModelDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *listTableview;
-@property (strong, nonatomic) DiaryListModel *diaryListTableDelegate;
+@property (strong, nonatomic) DiaryListModel *diaryListTableController;
+@property (strong, nonatomic) id<DiaryListDelegate> delegate;
 
 @end

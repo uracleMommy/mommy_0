@@ -68,7 +68,7 @@
     
     for(UIView<JTCalendarDay> *dayView in _daysViews){
         // Must done before setDate to dayView for `prepareDayView` method
-        NSLog(@"PSH %lf", dayView.layer.frame.size.height);
+//        NSLog(@"PSH %lf", dayView.layer.frame.size.height);
 //        dayView.frame.size;
         if(!enable){
             [dayView setIsFromAnotherMonth:NO];
@@ -95,7 +95,7 @@
         for(int i = 0; i < NUMBER_OF_DAY_BY_WEEK; ++i){
             UIView<JTCalendarDay> *dayView = [_manager.delegateManager buildDayView];
             [_daysViews addObject:dayView];
-            NSLog(@"PSH %lf", dayView.frame.size.height);
+//            NSLog(@"PSH %lf", dayView.frame.size.height);
             [self addSubview:dayView];
             
             dayView.manager = _manager;

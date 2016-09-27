@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A0CCB441D73B411001B6E1F /* SignUpMainScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0CCB431D73B411001B6E1F /* SignUpMainScrollViewController.m */; };
+		2A1A86BD1D9A45640091399B /* CommunityMyGroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1A86BC1D9A45640091399B /* CommunityMyGroupController.m */; };
 		2A3026381D7E549D0020C3B4 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3026371D7E549D0020C3B4 /* KxMenu.m */; };
 		2A309ACE1D79634E001C54C5 /* ColorPickerTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A309AC31D79634E001C54C5 /* ColorPickerTextField.m */; };
 		2A309ACF1D79634E001C54C5 /* HFColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A309AC61D79634E001C54C5 /* HFColorButton.m */; };
@@ -259,6 +260,8 @@
 /* Begin PBXFileReference section */
 		2A0CCB421D73B411001B6E1F /* SignUpMainScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpMainScrollViewController.h; sourceTree = "<group>"; };
 		2A0CCB431D73B411001B6E1F /* SignUpMainScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpMainScrollViewController.m; sourceTree = "<group>"; };
+		2A1A86BB1D9A45640091399B /* CommunityMyGroupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityMyGroupController.h; sourceTree = "<group>"; };
+		2A1A86BC1D9A45640091399B /* CommunityMyGroupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityMyGroupController.m; sourceTree = "<group>"; };
 		2A3026361D7E549D0020C3B4 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
 		2A3026371D7E549D0020C3B4 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		2A309AC21D79634E001C54C5 /* ColorPickerTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerTextField.h; sourceTree = "<group>"; };
@@ -898,6 +901,8 @@
 			children = (
 				2AB670B41D92543B0060561C /* CommunityMainController.h */,
 				2AB670B51D92543B0060561C /* CommunityMainController.m */,
+				2A1A86BB1D9A45640091399B /* CommunityMyGroupController.h */,
+				2A1A86BC1D9A45640091399B /* CommunityMyGroupController.m */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -1637,7 +1642,7 @@
 				TargetAttributes = {
 					DCA5AE201D598C6F0075B7AD = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = LUYT38Y3AT;
+						DevelopmentTeam = JH5F2VBM8Z;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1920,6 +1925,7 @@
 				DC44C3911D800DEB00519D96 /* MoreMainModel.m in Sources */,
 				DC3AAECA1D759BA9007218E9 /* WeekProgramController.m in Sources */,
 				DC5FCCEC1D7E81B500957D73 /* SleepingHoursViewController.m in Sources */,
+				2A1A86BD1D9A45640091399B /* CommunityMyGroupController.m in Sources */,
 				2A309AD11D79634E001C54C5 /* UIColor+HexColors.m in Sources */,
 				2A54B1B01D66904000C538D1 /* JTCalendarManager.m in Sources */,
 			);
@@ -2038,7 +2044,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Park seohee (TDF9AJWPR5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LUYT38Y3AT;
+				DEVELOPMENT_TEAM = JH5F2VBM8Z;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2064,7 +2070,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Park seohee (TDF9AJWPR5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LUYT38Y3AT;
+				DEVELOPMENT_TEAM = JH5F2VBM8Z;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

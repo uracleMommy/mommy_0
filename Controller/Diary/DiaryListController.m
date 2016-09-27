@@ -15,7 +15,7 @@
 @implementation DiaryListController
 
 - (void)viewDidLoad {
-    _diaryListTableDelegate = [[DiaryListModel alloc]init];
+    _diaryListTableController = [[DiaryListModel alloc]init];
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -55,8 +55,10 @@
     self.navigationItem.rightBarButtonItems = rightBarButtonItems;
 
     
-    [_listTableview setDelegate:_diaryListTableDelegate];
-    [_listTableview setDataSource:_diaryListTableDelegate];
+    _diaryListTableController.delegate = self;
+    
+    [_listTableview setDelegate:_diaryListTableController];
+    [_listTableview setDataSource:_diaryListTableController];
     _listTableview.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_listTableview reloadData];
 }
@@ -78,7 +80,7 @@
 
 - (void)showAddPopup{
     UIButton *imageView = self.navigationItem.leftBarButtonItem.customView;
-    NSLog(@"PSH %@", self.navigationItem.leftBarButtonItem.customView);
+//    NSLog(@"PSH %@", self.navigationItem.leftBarButtonItem.customView);
 
     UIImage *addImage = [UIImage imageNamed:@"title_icon_add.png"];
     UIImage *closeImage = [UIImage imageNamed:@"title_icon_close.png"];
@@ -145,8 +147,6 @@
     UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"MessageNaivgation"];
     
     [self presentViewController:messageNavigationController animated:YES completion:nil];
-    
-
 }
 
 - (void)moveToAlarm{
@@ -156,6 +156,11 @@
     UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"PushListNavigation"];
     
     [self presentViewController:messageNavigationController animated:YES completion:nil];
+}
+
+-(void) tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath{
+//    [self performSegueWithIdentifier:@"showDetailScheduleSegue" sender:nil];
+    [_delegate tableView:tableView selectedIndexPath:indexPath];
 }
 
 @end

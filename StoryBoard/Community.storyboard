@@ -15,16 +15,16 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Community My Group Controller-->
         <scene sceneID="ady-r1-Okg">
             <objects>
-                <viewController id="t80-GZ-GkZ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CommunityMyGroupView" id="t80-GZ-GkZ" customClass="CommunityMyGroupController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EMi-g6-iqa"/>
                         <viewControllerLayoutGuide type="bottom" id="SV9-o3-ii3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="AcO-Xh-ows">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jig-A4-zI8">
@@ -125,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I4F-TH-RtE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1019" y="112"/>
+            <point key="canvasLocation" x="-1099" y="-102"/>
         </scene>
         <!--Community Main Controller-->
         <scene sceneID="1av-cg-tUi">
@@ -136,7 +136,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Dmd-Fb-g7Y"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fj2-t9-148">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4xp-Yo-y5q" customClass="DZNSegmentedControl">
@@ -145,15 +145,24 @@
                                     <constraint firstAttribute="height" constant="45" id="M90-U8-EBK"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eta-Z3-eGO">
+                                <frame key="frameInset" minY="66" width="375" height="601"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Eta-Z3-eGO" firstAttribute="leading" secondItem="fj2-t9-148" secondAttribute="leading" id="OvJ-ON-UGk"/>
                             <constraint firstAttribute="trailing" secondItem="4xp-Yo-y5q" secondAttribute="trailing" id="cdM-y1-oJp"/>
+                            <constraint firstAttribute="trailing" secondItem="Eta-Z3-eGO" secondAttribute="trailing" id="lxm-bT-aiJ"/>
                             <constraint firstItem="4xp-Yo-y5q" firstAttribute="leading" secondItem="fj2-t9-148" secondAttribute="leading" id="q6G-TS-4uK"/>
+                            <constraint firstItem="Eta-Z3-eGO" firstAttribute="top" secondItem="4xp-Yo-y5q" secondAttribute="bottom" id="q8E-Tu-Z1B"/>
+                            <constraint firstItem="Dmd-Fb-g7Y" firstAttribute="top" secondItem="Eta-Z3-eGO" secondAttribute="bottom" id="x5s-Nj-Swg"/>
                             <constraint firstItem="4xp-Yo-y5q" firstAttribute="top" secondItem="uzG-1H-sae" secondAttribute="bottom" id="x8G-bM-ffi"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="contentView" destination="Eta-Z3-eGO" id="VaN-eF-m8i"/>
                         <outlet property="tabView" destination="4xp-Yo-y5q" id="yUn-ca-SMf"/>
                         <segue destination="FBj-Mp-SID" kind="push" id="SV7-NV-bS5"/>
                     </connections>
@@ -171,7 +180,7 @@
                         <viewControllerLayoutGuide type="bottom" id="op6-Lb-aaU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bFI-wk-gfZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -190,7 +199,7 @@
                         <viewControllerLayoutGuide type="bottom" id="jv0-Cj-3wK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Yq5-0y-E8c">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hgY-OX-aGL">
@@ -215,7 +224,7 @@
                         <viewControllerLayoutGuide type="bottom" id="527-TE-BZw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dP7-0r-l9J">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XEQ-qd-3k2">
@@ -244,7 +253,7 @@
                         <viewControllerLayoutGuide type="bottom" id="hmt-N3-LO0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YNi-tn-rVH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E0G-NR-3kT">
@@ -393,6 +402,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_0.fullscreen"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
 </document>

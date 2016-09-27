@@ -36,6 +36,11 @@
     return [_diaryList count];
 }
 
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [_delegate tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
 //    if([indexPath indexAtPosition: 1] < [_diaryList count]){
@@ -46,7 +51,7 @@
             
             cell = [tableView dequeueReusableCellWithIdentifier:BASIC_CELL_ID];
         }
-//        cell.delegate = self;
+    //      cell.delegate = self;
         return cell;
         
         
