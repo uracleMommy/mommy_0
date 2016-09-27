@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumBarunGothic.ttf">
+            <string>NanumBarunGothic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ccA-nY-qGd" customClass="MoreEnvironmentCalendarCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ccA-nY-qGd" id="nsI-ZP-9l8">
+                <frame key="frameInset" width="320" height="69"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OYq-w7-rhR">
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="캘린더연결" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seV-IJ-4Uj">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="Cse-cg-hkS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
+                                <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="외부 캘린더를 연결하여 일정정보를 가져올 수 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="R55-KW-LZU">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Zbc-lL-APM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="seV-IJ-4Uj" firstAttribute="leading" secondItem="OYq-w7-rhR" secondAttribute="leading" constant="8" id="0va-IC-O0T"/>
+                            <constraint firstAttribute="trailing" secondItem="R55-KW-LZU" secondAttribute="trailing" constant="8" id="LIp-Bv-69d"/>
+                            <constraint firstAttribute="trailing" secondItem="seV-IJ-4Uj" secondAttribute="trailing" constant="8" id="SmB-wC-on4"/>
+                            <constraint firstItem="R55-KW-LZU" firstAttribute="leading" secondItem="OYq-w7-rhR" secondAttribute="leading" constant="8" id="Vfh-J1-nWq"/>
+                            <constraint firstItem="R55-KW-LZU" firstAttribute="top" secondItem="seV-IJ-4Uj" secondAttribute="bottom" constant="1" id="ogo-Eo-NEZ"/>
+                            <constraint firstItem="seV-IJ-4Uj" firstAttribute="top" secondItem="OYq-w7-rhR" secondAttribute="top" constant="12" id="uwv-Jq-97J"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="OYq-w7-rhR" firstAttribute="leading" secondItem="nsI-ZP-9l8" secondAttribute="leading" constant="8" id="TrT-Ez-TlM"/>
+                    <constraint firstAttribute="bottom" secondItem="OYq-w7-rhR" secondAttribute="bottom" constant="4" id="ZeE-Sk-TOs"/>
+                    <constraint firstAttribute="trailing" secondItem="OYq-w7-rhR" secondAttribute="trailing" constant="8" id="i9a-Me-wRy"/>
+                    <constraint firstItem="OYq-w7-rhR" firstAttribute="top" secondItem="nsI-ZP-9l8" secondAttribute="top" constant="4" id="x6A-2W-BG4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="containerView" destination="OYq-w7-rhR" id="HIB-ff-EQZ"/>
+            </connections>
+            <point key="canvasLocation" x="-202" y="-199"/>
+        </tableViewCell>
+    </objects>
+</document>

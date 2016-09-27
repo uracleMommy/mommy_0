@@ -49,6 +49,10 @@
     _scrollViewArray = [NSArray arrayWithObjects:view1, view2, view3, nil];
     
     [PScrollView.pageScrollView reloadData];
+    
+    
+    [self performSegueWithIdentifier:@"goQuestionModal" sender:nil];
+    
 }
 
 - (void) viewWillAppear:(BOOL)animated {

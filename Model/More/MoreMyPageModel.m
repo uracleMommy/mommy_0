@@ -215,7 +215,40 @@
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return nil;
+    static NSString *CellIdentifierMorePointCell = @"MorePointCell";
+    
+    UINib *reuseMorePointCell;
+    
+    if (tableView.frame.size.width <= 320) {
+        
+        reuseMorePointCell = [UINib nibWithNibName:@"MorePointCell_320" bundle:nil];
+    }
+    else if (tableView.frame.size.width <= 375) {
+        
+        reuseMorePointCell = [UINib nibWithNibName:@"MorePointCell_375" bundle:nil];
+    }
+    else {
+        
+        reuseMorePointCell = [UINib nibWithNibName:@"MorePointCell_414" bundle:nil];
+    }
+    
+    [tableView registerNib:reuseMorePointCell forCellReuseIdentifier:CellIdentifierMorePointCell];
+    
+    MorePointCell *cell = (MorePointCell *)[tableView dequeueReusableCellWithIdentifier:@"MorePointCell"];
+    
+    if (cell == nil) {
+        
+        cell = (MorePointCell *)[tableView dequeueReusableCellWithIdentifier:@"MorePointCell"];
+    }
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    return cell;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 79;
 }
 
 @end

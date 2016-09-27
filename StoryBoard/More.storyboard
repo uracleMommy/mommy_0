@@ -100,7 +100,7 @@
             <objects>
                 <navigationController id="N2k-Qr-wG1" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="516-Su-Ana">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="516-Su-Ana">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -395,7 +395,7 @@
             <objects>
                 <navigationController id="WaC-mG-fdw" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="nhm-RY-PW4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="nhm-RY-PW4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -416,7 +416,7 @@
             <objects>
                 <navigationController id="ohD-xh-o9V" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="yIT-9r-UD5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="yIT-9r-UD5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -853,7 +853,7 @@
             <objects>
                 <navigationController id="BEM-KD-Ata" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="nWI-b7-3Ws">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="nWI-b7-3Ws">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -918,7 +918,7 @@
             <objects>
                 <navigationController id="6gY-hi-GWI" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="lIJ-qc-BPW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="lIJ-qc-BPW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -969,6 +969,7 @@
                         <segue destination="6gY-hi-GWI" kind="modal" identifier="goEquipmentManagement" id="ots-zA-Y9t"/>
                         <segue destination="ohD-xh-o9V" kind="modal" identifier="goMypageManagement" id="6cB-sD-uVb"/>
                         <segue destination="plu-qQ-qqa" kind="modal" identifier="goPointList" id="Ii5-cl-0Nq"/>
+                        <segue destination="SBo-0t-0bm" kind="modal" identifier="goEnvironmentSetup" id="Xxk-Td-BY3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D2U-Bx-Q2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1017,7 +1018,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PLg-tX-EB6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-450" y="54"/>
+            <point key="canvasLocation" x="-325" y="-457"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jgj-fa-YZl">
@@ -1025,7 +1026,7 @@
                 <navigationController id="O1c-g3-euU" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="aLl-ce-VKh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="aLl-ce-VKh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1036,14 +1037,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cM7-dl-Tq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-972" y="54"/>
+            <point key="canvasLocation" x="-847" y="-457"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HZI-8b-9b2">
             <objects>
                 <navigationController id="plu-qQ-qqa" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="3vG-E3-5Bg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="3vG-E3-5Bg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -1056,7 +1057,7 @@
             </objects>
             <point key="canvasLocation" x="-2607" y="-1089"/>
         </scene>
-        <!--More My Page Point View Controller-->
+        <!-- 포인트-->
         <scene sceneID="1iM-bf-qBr">
             <objects>
                 <viewController id="POd-st-KJ8" customClass="MoreMyPagePointViewController" sceneMemberID="viewController">
@@ -1070,16 +1071,16 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrD-6G-2YZ">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="메디플님의 누적 포인트" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zm8-FM-EEQ">
-                                        <frame key="frameInset" minX="8" minY="10" width="162" height="45"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메디플님의 누적 포인트" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zm8-FM-EEQ">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="162" id="SY1-eo-UQo"/>
+                                            <constraint firstAttribute="height" constant="45" id="Ssw-uK-JKk"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
                                         <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bcb-6X-mHr">
-                                        <frame key="frameInset" minX="263" minY="16" width="104" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bcb-6X-mHr">
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="contents_icon_point" translatesAutoresizingMaskIntoConstraints="NO" id="OHi-23-omq">
                                                 <frame key="frameInset" minX="8" minY="4" width="25" height="25"/>
@@ -1094,27 +1095,43 @@
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="104" id="LIb-dC-NfU"/>
+                                            <constraint firstAttribute="height" constant="32" id="fee-K3-ilw"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="bcb-6X-mHr" firstAttribute="top" secondItem="yrD-6G-2YZ" secondAttribute="top" constant="16" id="0HT-KO-cK2"/>
                                     <constraint firstAttribute="height" constant="65" id="8Do-7F-d1T"/>
+                                    <constraint firstItem="Zm8-FM-EEQ" firstAttribute="leading" secondItem="yrD-6G-2YZ" secondAttribute="leading" constant="18" id="XyF-Ii-YFN"/>
+                                    <constraint firstAttribute="trailing" secondItem="bcb-6X-mHr" secondAttribute="trailing" constant="8" id="rQm-dx-zpn"/>
+                                    <constraint firstItem="Zm8-FM-EEQ" firstAttribute="top" secondItem="yrD-6G-2YZ" secondAttribute="top" constant="10" id="zza-Df-Ufu"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6jC-Tf-4lj">
-                                <frame key="frameInset" minY="65" width="375" height="538"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6jC-Tf-4lj">
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="yrD-6G-2YZ" firstAttribute="leading" secondItem="lLf-vz-02S" secondAttribute="leading" id="65S-DG-7Lz"/>
                             <constraint firstItem="yrD-6G-2YZ" firstAttribute="top" secondItem="Imh-ut-nYB" secondAttribute="bottom" id="Bym-Fo-XXh"/>
                             <constraint firstAttribute="trailing" secondItem="yrD-6G-2YZ" secondAttribute="trailing" id="Cpm-Qp-7vF"/>
+                            <constraint firstItem="d1a-UG-LBk" firstAttribute="top" secondItem="6jC-Tf-4lj" secondAttribute="bottom" constant="4" id="TJL-cJ-6aL"/>
+                            <constraint firstItem="6jC-Tf-4lj" firstAttribute="top" secondItem="yrD-6G-2YZ" secondAttribute="bottom" constant="4" id="ffa-yH-fQr"/>
+                            <constraint firstAttribute="trailing" secondItem="6jC-Tf-4lj" secondAttribute="trailing" id="jsG-AV-ehy"/>
+                            <constraint firstItem="6jC-Tf-4lj" firstAttribute="leading" secondItem="lLf-vz-02S" secondAttribute="leading" id="y1K-Pc-fhj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ZSI-NT-Bg6"/>
+                    <navigationItem key="navigationItem" title=" 포인트" id="ZSI-NT-Bg6">
+                        <barButtonItem key="leftBarButtonItem" title="닫기" id="L4B-Ff-dcB">
+                            <connections>
+                                <action selector="closeModal:" destination="POd-st-KJ8" id="0kS-Px-11H"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="pointContainerView" destination="bcb-6X-mHr" id="tBi-Jo-SCV"/>
                         <outlet property="tableView" destination="6jC-Tf-4lj" id="DFq-in-zt0"/>
@@ -1122,7 +1139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aKX-YG-Eb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2126" y="-1088"/>
+            <point key="canvasLocation" x="-2011" y="-1090"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sjy-p1-rq8">
@@ -1130,7 +1147,7 @@
                 <navigationController id="1TF-S5-Wku" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="y3y-tI-dP7">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="y3y-tI-dP7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1316,11 +1333,127 @@
             <point key="canvasLocation" x="-5311.5" y="2187.5"/>
         </scene>
         <!--Navigation Controller-->
+        <scene sceneID="MOO-cF-WNv">
+            <objects>
+                <navigationController id="SBo-0t-0bm" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="9Ue-GE-wEc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="q7F-hF-WnJ" kind="relationship" relationship="rootViewController" id="clz-mu-svy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z1z-7l-pUB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5312" y="-145"/>
+        </scene>
+        <!--환경설정-->
+        <scene sceneID="ylP-m9-mT4">
+            <objects>
+                <viewController id="q7F-hF-WnJ" customClass="MoreEnvironmentSetupViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7sj-n8-vZ8"/>
+                        <viewControllerLayoutGuide type="bottom" id="izH-QQ-jRP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YRx-Dq-r87">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r7p-h3-KGC">
+                                <frame key="frameInset" minY="4" width="375" height="595"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="환경설정" id="jQi-4W-CeY">
+                        <barButtonItem key="leftBarButtonItem" title="닫기" id="doI-wM-Q7V">
+                            <connections>
+                                <action selector="closeModal:" destination="q7F-hF-WnJ" id="9wP-Yd-skI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="r7p-h3-KGC" id="EQT-OB-dRh"/>
+                        <segue destination="0HN-w9-bkr" kind="push" identifier="goCalendarConnectList" id="2zg-kN-QUv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R2T-Pc-VU2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4747" y="-146"/>
+        </scene>
+        <!--캘린더 연결-->
+        <scene sceneID="95K-9N-c5o">
+            <objects>
+                <viewController id="0HN-w9-bkr" customClass="MoreCalendarListController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Ox-Ej-0jR"/>
+                        <viewControllerLayoutGuide type="bottom" id="dWV-gR-A1c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QJu-Qg-hZB">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gLd-0H-rQe">
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k22-jT-E4V">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구글 또는 네이버 캘린더 중 하나의 계정을 연결하여 해당 일정정보를 동기화할 수 있습니다. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cs2-zt-gBA">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="2pN-MN-vZ6"/>
+                                            <constraint firstAttribute="width" constant="359" id="hDK-cI-RjX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
+                                        <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="Wug-Sj-WEj"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="ijO-eC-efC"/>
+                                    <constraint firstItem="Cs2-zt-gBA" firstAttribute="centerY" secondItem="k22-jT-E4V" secondAttribute="centerY" id="qQg-RX-y3f"/>
+                                    <constraint firstItem="Cs2-zt-gBA" firstAttribute="centerX" secondItem="k22-jT-E4V" secondAttribute="centerX" id="wa2-wE-aKG"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="k22-jT-E4V" firstAttribute="top" secondItem="7Ox-Ej-0jR" secondAttribute="bottom" id="4dG-bG-ffa"/>
+                            <constraint firstItem="k22-jT-E4V" firstAttribute="leading" secondItem="QJu-Qg-hZB" secondAttribute="leading" id="7HW-aS-wGz"/>
+                            <constraint firstItem="gLd-0H-rQe" firstAttribute="leading" secondItem="QJu-Qg-hZB" secondAttribute="leading" id="H5o-05-UuY"/>
+                            <constraint firstItem="k22-jT-E4V" firstAttribute="top" secondItem="7Ox-Ej-0jR" secondAttribute="bottom" id="IjS-Rm-nEI"/>
+                            <constraint firstItem="k22-jT-E4V" firstAttribute="leading" secondItem="QJu-Qg-hZB" secondAttribute="leading" id="Mr1-Sn-9ax"/>
+                            <constraint firstAttribute="trailing" secondItem="k22-jT-E4V" secondAttribute="trailing" id="TXb-o6-BKp"/>
+                            <constraint firstItem="dWV-gR-A1c" firstAttribute="top" secondItem="gLd-0H-rQe" secondAttribute="bottom" constant="4" id="pML-dp-JbK"/>
+                            <constraint firstAttribute="trailing" secondItem="gLd-0H-rQe" secondAttribute="trailing" id="pMe-Qr-cyj"/>
+                            <constraint firstItem="gLd-0H-rQe" firstAttribute="top" secondItem="k22-jT-E4V" secondAttribute="bottom" constant="4" id="uWr-7r-VRf"/>
+                            <constraint firstAttribute="trailing" secondItem="k22-jT-E4V" secondAttribute="trailing" id="vZr-5C-yaO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="캘린더 연결" id="mVH-tE-Jsn"/>
+                    <connections>
+                        <outlet property="tableView" destination="gLd-0H-rQe" id="1dg-uE-pbJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KkW-o3-zJL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4208.5" y="-146.5"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="zua-3u-gwy">
             <objects>
                 <navigationController id="bHK-Sk-F1t" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="pcy-Sp-y9K">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="pcy-Sp-y9K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -1415,7 +1548,7 @@
             <objects>
                 <navigationController id="amu-Ln-LAV" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="EWF-sT-96o">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="EWF-sT-96o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -1436,7 +1569,7 @@
             <objects>
                 <navigationController id="Lr1-9i-yxE" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="tMQ-Xp-iPE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="tMQ-Xp-iPE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>

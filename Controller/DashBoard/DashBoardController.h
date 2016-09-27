@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 #import "MessageListController.h"
 
 @protocol DashBoardControllerDelegate;
 
-@interface DashBoardController : UIViewController
+@interface DashBoardController : CommonViewController
 
 @property (weak, nonatomic) IBOutlet UIView *pageViewContainer;
 
