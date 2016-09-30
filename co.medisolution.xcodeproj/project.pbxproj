@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2A0CCB441D73B411001B6E1F /* SignUpMainScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0CCB431D73B411001B6E1F /* SignUpMainScrollViewController.m */; };
 		2A1A86BD1D9A45640091399B /* CommunityMyGroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1A86BC1D9A45640091399B /* CommunityMyGroupController.m */; };
+		2A1A86C01D9A86AB0091399B /* CommunityMentorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1A86BF1D9A86AB0091399B /* CommunityMentorController.m */; };
+		2A1A86C41D9A92040091399B /* CommunityDetailCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1A86C21D9A92040091399B /* CommunityDetailCells.m */; };
 		2A3026381D7E549D0020C3B4 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3026371D7E549D0020C3B4 /* KxMenu.m */; };
 		2A309ACE1D79634E001C54C5 /* ColorPickerTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A309AC31D79634E001C54C5 /* ColorPickerTextField.m */; };
 		2A309ACF1D79634E001C54C5 /* HFColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A309AC61D79634E001C54C5 /* HFColorButton.m */; };
@@ -56,6 +58,11 @@
 		2AB670E61D9268120060561C /* CommunityProfilePopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB670E41D9268120060561C /* CommunityProfilePopupViewController.m */; };
 		2AB670E71D9268120060561C /* CommunityProfilePopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AB670E51D9268120060561C /* CommunityProfilePopupViewController.xib */; };
 		2AB97A281D5AAFDA0063EB5E /* MembershipSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AB97A271D5AAFDA0063EB5E /* MembershipSignUp.storyboard */; };
+		2AC1644B1D9CA36800533BB0 /* CommunityDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1644A1D9CA36800533BB0 /* CommunityDetailModel.m */; };
+		2AC1644E1D9CD05A00533BB0 /* CommunityDetailContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC1644D1D9CD05A00533BB0 /* CommunityDetailContentCell.xib */; };
+		2AC164501D9CD09500533BB0 /* CommunityDetailReplyPeopleInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC1644F1D9CD09500533BB0 /* CommunityDetailReplyPeopleInfoCell.xib */; };
+		2AC164521D9CD0B200533BB0 /* CommunityDetailReplyContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC164511D9CD0B200533BB0 /* CommunityDetailReplyContentCell.xib */; };
+		2AC164561D9CD0CD00533BB0 /* CommunityDetailWriterInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC164551D9CD0CD00533BB0 /* CommunityDetailWriterInfoCell.xib */; };
 		2AC781DB1D599C0800B86BE1 /* MembershipLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC781DA1D599C0800B86BE1 /* MembershipLogin.storyboard */; };
 		2AD4A8911D7D660C0032E16C /* emoticonPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4A88F1D7D660C0032E16C /* emoticonPopupViewController.m */; };
 		2AD4A8921D7D660C0032E16C /* emoticonPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4A8901D7D660C0032E16C /* emoticonPopupViewController.xib */; };
@@ -65,8 +72,13 @@
 		2AE11DE91D657DE4003C6690 /* DiaryListImageCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AE11DE71D657DE4003C6690 /* DiaryListImageCustomCell.xib */; };
 		2AE11DF01D6581D9003C6690 /* DiaryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11DEF1D6581D9003C6690 /* DiaryListModel.m */; };
 		2AE11DF31D6583BC003C6690 /* DiaryListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11DF21D6583BC003C6690 /* DiaryListController.m */; };
+		2AEAE5811D9CFF2700146596 /* CommunityPeopleListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAE5801D9CFF2700146596 /* CommunityPeopleListController.m */; };
 		2AEBE3491D79419E0075B210 /* DiaryWriteScheduleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBE3481D79419E0075B210 /* DiaryWriteScheduleController.m */; };
 		2AEBE34C1D7941BF0075B210 /* DiaryDetailScheduleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBE34B1D7941BF0075B210 /* DiaryDetailScheduleController.m */; };
+		2AFDD7611D9BA0CC00FE157C /* CommunityPersonListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDD7601D9BA0CC00FE157C /* CommunityPersonListModel.m */; };
+		2AFDD7641D9BAD1800FE157C /* CommunityNewspeedListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDD7631D9BAD1800FE157C /* CommunityNewspeedListModel.m */; };
+		2AFDD7671D9BAD2700FE157C /* CommunityNewspeedListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDD7661D9BAD2700FE157C /* CommunityNewspeedListController.m */; };
+		2AFDD76A1D9BB46D00FE157C /* CommunityDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDD7691D9BB46D00FE157C /* CommunityDetailController.m */; };
 		DC1A77CE1D94EC1200F88693 /* MoreMyPageNickNameChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A77CD1D94EC1200F88693 /* MoreMyPageNickNameChangeViewController.m */; };
 		DC1A77D11D94F47E00F88693 /* MoreMyPagePasswordChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A77D01D94F47E00F88693 /* MoreMyPagePasswordChangeViewController.m */; };
 		DC1A77D51D94FC2E00F88693 /* MoreMyPagePasswordChangeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A77D31D94FC2E00F88693 /* MoreMyPagePasswordChangeCell.m */; };
@@ -284,6 +296,10 @@
 		2A0CCB431D73B411001B6E1F /* SignUpMainScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpMainScrollViewController.m; sourceTree = "<group>"; };
 		2A1A86BB1D9A45640091399B /* CommunityMyGroupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityMyGroupController.h; sourceTree = "<group>"; };
 		2A1A86BC1D9A45640091399B /* CommunityMyGroupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityMyGroupController.m; sourceTree = "<group>"; };
+		2A1A86BE1D9A86AB0091399B /* CommunityMentorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityMentorController.h; sourceTree = "<group>"; };
+		2A1A86BF1D9A86AB0091399B /* CommunityMentorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityMentorController.m; sourceTree = "<group>"; };
+		2A1A86C11D9A92040091399B /* CommunityDetailCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityDetailCells.h; sourceTree = "<group>"; };
+		2A1A86C21D9A92040091399B /* CommunityDetailCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityDetailCells.m; sourceTree = "<group>"; };
 		2A3026361D7E549D0020C3B4 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
 		2A3026371D7E549D0020C3B4 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		2A309AC21D79634E001C54C5 /* ColorPickerTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerTextField.h; sourceTree = "<group>"; };
@@ -375,6 +391,12 @@
 		2AB670E41D9268120060561C /* CommunityProfilePopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityProfilePopupViewController.m; sourceTree = "<group>"; };
 		2AB670E51D9268120060561C /* CommunityProfilePopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityProfilePopupViewController.xib; sourceTree = "<group>"; };
 		2AB97A271D5AAFDA0063EB5E /* MembershipSignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MembershipSignUp.storyboard; sourceTree = "<group>"; };
+		2AC164491D9CA36800533BB0 /* CommunityDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityDetailModel.h; sourceTree = "<group>"; };
+		2AC1644A1D9CA36800533BB0 /* CommunityDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityDetailModel.m; sourceTree = "<group>"; };
+		2AC1644D1D9CD05A00533BB0 /* CommunityDetailContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityDetailContentCell.xib; sourceTree = "<group>"; };
+		2AC1644F1D9CD09500533BB0 /* CommunityDetailReplyPeopleInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityDetailReplyPeopleInfoCell.xib; sourceTree = "<group>"; };
+		2AC164511D9CD0B200533BB0 /* CommunityDetailReplyContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityDetailReplyContentCell.xib; sourceTree = "<group>"; };
+		2AC164551D9CD0CD00533BB0 /* CommunityDetailWriterInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityDetailWriterInfoCell.xib; sourceTree = "<group>"; };
 		2AC781DA1D599C0800B86BE1 /* MembershipLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MembershipLogin.storyboard; sourceTree = "<group>"; };
 		2AD4A88E1D7D660C0032E16C /* emoticonPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = emoticonPopupViewController.h; sourceTree = "<group>"; };
 		2AD4A88F1D7D660C0032E16C /* emoticonPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = emoticonPopupViewController.m; sourceTree = "<group>"; };
@@ -389,10 +411,20 @@
 		2AE11DEF1D6581D9003C6690 /* DiaryListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryListModel.m; sourceTree = "<group>"; };
 		2AE11DF11D6583BC003C6690 /* DiaryListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryListController.h; sourceTree = "<group>"; };
 		2AE11DF21D6583BC003C6690 /* DiaryListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryListController.m; sourceTree = "<group>"; };
+		2AEAE57F1D9CFF2700146596 /* CommunityPeopleListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityPeopleListController.h; sourceTree = "<group>"; };
+		2AEAE5801D9CFF2700146596 /* CommunityPeopleListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityPeopleListController.m; sourceTree = "<group>"; };
 		2AEBE3471D79419E0075B210 /* DiaryWriteScheduleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryWriteScheduleController.h; sourceTree = "<group>"; };
 		2AEBE3481D79419E0075B210 /* DiaryWriteScheduleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryWriteScheduleController.m; sourceTree = "<group>"; };
 		2AEBE34A1D7941BF0075B210 /* DiaryDetailScheduleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryDetailScheduleController.h; sourceTree = "<group>"; };
 		2AEBE34B1D7941BF0075B210 /* DiaryDetailScheduleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryDetailScheduleController.m; sourceTree = "<group>"; };
+		2AFDD75F1D9BA0CC00FE157C /* CommunityPersonListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityPersonListModel.h; sourceTree = "<group>"; };
+		2AFDD7601D9BA0CC00FE157C /* CommunityPersonListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityPersonListModel.m; sourceTree = "<group>"; };
+		2AFDD7621D9BAD1800FE157C /* CommunityNewspeedListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityNewspeedListModel.h; sourceTree = "<group>"; };
+		2AFDD7631D9BAD1800FE157C /* CommunityNewspeedListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityNewspeedListModel.m; sourceTree = "<group>"; };
+		2AFDD7651D9BAD2700FE157C /* CommunityNewspeedListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityNewspeedListController.h; sourceTree = "<group>"; };
+		2AFDD7661D9BAD2700FE157C /* CommunityNewspeedListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityNewspeedListController.m; sourceTree = "<group>"; };
+		2AFDD7681D9BB46D00FE157C /* CommunityDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityDetailController.h; sourceTree = "<group>"; };
+		2AFDD7691D9BB46D00FE157C /* CommunityDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityDetailController.m; sourceTree = "<group>"; };
 		DC1A77CC1D94EC1200F88693 /* MoreMyPageNickNameChangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreMyPageNickNameChangeViewController.h; sourceTree = "<group>"; };
 		DC1A77CD1D94EC1200F88693 /* MoreMyPageNickNameChangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreMyPageNickNameChangeViewController.m; sourceTree = "<group>"; };
 		DC1A77CF1D94F47E00F88693 /* MoreMyPagePasswordChangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreMyPagePasswordChangeViewController.h; sourceTree = "<group>"; };
@@ -885,6 +917,7 @@
 		2A743F561D62CA4B007DEB6B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2AFDD75B1D9BA00A00FE157C /* Community */,
 				DC44C38E1D800DB200519D96 /* More */,
 				DC3AAECB1D759BE5007218E9 /* DashBoard */,
 				DCF6CAC21D74450500703CAE /* PushNotice */,
@@ -960,6 +993,14 @@
 				2AB670B51D92543B0060561C /* CommunityMainController.m */,
 				2A1A86BB1D9A45640091399B /* CommunityMyGroupController.h */,
 				2A1A86BC1D9A45640091399B /* CommunityMyGroupController.m */,
+				2A1A86BE1D9A86AB0091399B /* CommunityMentorController.h */,
+				2A1A86BF1D9A86AB0091399B /* CommunityMentorController.m */,
+				2AFDD7651D9BAD2700FE157C /* CommunityNewspeedListController.h */,
+				2AFDD7661D9BAD2700FE157C /* CommunityNewspeedListController.m */,
+				2AFDD7681D9BB46D00FE157C /* CommunityDetailController.h */,
+				2AFDD7691D9BB46D00FE157C /* CommunityDetailController.m */,
+				2AEAE57F1D9CFF2700146596 /* CommunityPeopleListController.h */,
+				2AEAE5801D9CFF2700146596 /* CommunityPeopleListController.m */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -979,6 +1020,12 @@
 				2AB670E31D9268120060561C /* CommunityProfilePopupViewController.h */,
 				2AB670E41D9268120060561C /* CommunityProfilePopupViewController.m */,
 				2AB670E51D9268120060561C /* CommunityProfilePopupViewController.xib */,
+				2A1A86C11D9A92040091399B /* CommunityDetailCells.h */,
+				2A1A86C21D9A92040091399B /* CommunityDetailCells.m */,
+				2AC1644D1D9CD05A00533BB0 /* CommunityDetailContentCell.xib */,
+				2AC1644F1D9CD09500533BB0 /* CommunityDetailReplyPeopleInfoCell.xib */,
+				2AC164511D9CD0B200533BB0 /* CommunityDetailReplyContentCell.xib */,
+				2AC164551D9CD0CD00533BB0 /* CommunityDetailWriterInfoCell.xib */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -1041,6 +1088,19 @@
 				2AE11DEF1D6581D9003C6690 /* DiaryListModel.m */,
 			);
 			path = Diary;
+			sourceTree = "<group>";
+		};
+		2AFDD75B1D9BA00A00FE157C /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				2AFDD75F1D9BA0CC00FE157C /* CommunityPersonListModel.h */,
+				2AFDD7601D9BA0CC00FE157C /* CommunityPersonListModel.m */,
+				2AFDD7621D9BAD1800FE157C /* CommunityNewspeedListModel.h */,
+				2AFDD7631D9BAD1800FE157C /* CommunityNewspeedListModel.m */,
+				2AC164491D9CA36800533BB0 /* CommunityDetailModel.h */,
+				2AC1644A1D9CA36800533BB0 /* CommunityDetailModel.m */,
+			);
+			path = Community;
 			sourceTree = "<group>";
 		};
 		DC1FE6DA1D658E33006F7A50 /* Tabbar */ = {
@@ -1783,6 +1843,7 @@
 				2AB670DD1D9267700060561C /* CommunityNewspeedImageCustomCell.xib in Resources */,
 				DC67EB651D94BDAD0096BCB3 /* MoreMyPageNickNameCell.xib in Resources */,
 				DCA3BCC61D98BCCB009D3DD1 /* MoreEnvironmentMyPageCell.xib in Resources */,
+				2AC1644E1D9CD05A00533BB0 /* CommunityDetailContentCell.xib in Resources */,
 				DCF6CA911D740D0A00703CAE /* PageImageViewController.xib in Resources */,
 				DC68F5411D93D7E4009D3B1E /* MoreEquipmentSelectCell.xib in Resources */,
 				2AD4A8921D7D660C0032E16C /* emoticonPopupViewController.xib in Resources */,
@@ -1799,6 +1860,7 @@
 				2A54B1C81D66E4E600C538D1 /* Assets.xcassets in Resources */,
 				DCA3BCCB1D98BCFD009D3DD1 /* MoreEnvironmentAlramCell.xib in Resources */,
 				2AB97A281D5AAFDA0063EB5E /* MembershipSignUp.storyboard in Resources */,
+				2AC164561D9CD0CD00533BB0 /* CommunityDetailWriterInfoCell.xib in Resources */,
 				2A444C381D7EBA7E00B37E8A /* termsPopupViewController.xib in Resources */,
 				DCF6CAC11D7443E200703CAE /* PushNotice.storyboard in Resources */,
 				2A371A4C1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.xib in Resources */,
@@ -1813,6 +1875,7 @@
 				DC3AAEC51D757D4A007218E9 /* SampleMainController.xib in Resources */,
 				DCA3BCDA1D98BDDF009D3DD1 /* MoreEnvironmentVersionInfoCell.xib in Resources */,
 				2AA6D6C21D64230A00316DD6 /* Diary.storyboard in Resources */,
+				2AC164521D9CD0B200533BB0 /* CommunityDetailReplyContentCell.xib in Resources */,
 				DC4E95AB1D7D66930087647B /* ActiveMassCalorieCell.xib in Resources */,
 				DC56F0A51D79728F00FB3A30 /* WeightDetailInfoContentsCell.xib in Resources */,
 				DC5FCCF41D7E84CC00957D73 /* SleepingHoursChartViewCell.xib in Resources */,
@@ -1825,6 +1888,7 @@
 				DC4E95851D7CF0A80087647B /* More.storyboard in Resources */,
 				2AB670E21D9267DF0060561C /* CommunityPersonListCustomCell.xib in Resources */,
 				DC1A77DE1D950F9900F88693 /* MoreMyPageFetusHeaderCell.xib in Resources */,
+				2AC164501D9CD09500533BB0 /* CommunityDetailReplyPeopleInfoCell.xib in Resources */,
 				DC4DE2D41D814F7A007CF9BF /* MoreBloodPressureChartCell.xib in Resources */,
 				DCA5AE2F1D598C6F0075B7AD /* Main.storyboard in Resources */,
 				DC4DE2BE1D80F4BD007CF9BF /* MoreMainTitleCell.xib in Resources */,
@@ -1846,6 +1910,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AEAE5811D9CFF2700146596 /* CommunityPeopleListController.m in Sources */,
 				DC68F5301D93D7CC009D3B1E /* MoreMyPageSubImageController.m in Sources */,
 				2A309AD21D79634E001C54C5 /* IQDropDownTextField.m in Sources */,
 				DC538EC11D781C3600E5949B /* IQNSArray+Sort.m in Sources */,
@@ -1858,6 +1923,7 @@
 				DC68F5281D93D7CC009D3B1E /* MoreEquipmentEmptyViewController.m in Sources */,
 				DC538ECD1D781C3600E5949B /* IQToolbar.m in Sources */,
 				2A54B1B11D66904000C538D1 /* JTCalendarSettings.m in Sources */,
+				2AFDD7641D9BAD1800FE157C /* CommunityNewspeedListModel.m in Sources */,
 				DCF6CAC51D74453200703CAE /* PushNoticeModel.m in Sources */,
 				DC4E95A51D7D66550087647B /* ActiveMassStepCell.m in Sources */,
 				DCF6CA9A1D740DED00703CAE /* ChildPageImageViewController.m in Sources */,
@@ -1887,6 +1953,7 @@
 				DC1FE6E41D658E47006F7A50 /* DiarySegue.m in Sources */,
 				2A309ACF1D79634E001C54C5 /* HFColorButton.m in Sources */,
 				DC538EC81D781C3600E5949B /* IQKeyboardReturnKeyHandler.m in Sources */,
+				2AFDD7671D9BAD2700FE157C /* CommunityNewspeedListController.m in Sources */,
 				DC68F5261D93D7CC009D3B1E /* MoreEquipmentChoiceViewController.m in Sources */,
 				DC4DE2EE1D829C59007CF9BF /* MoreWeekCheckModel.m in Sources */,
 				DC68F5271D93D7CC009D3B1E /* MoreEquipmentEmptySegue.m in Sources */,
@@ -1989,9 +2056,12 @@
 				DC4F0F061D912DC3003CB09B /* MoreProfessionalAdviceContentsViewController.m in Sources */,
 				2A371A4B1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.m in Sources */,
 				DCA5AE261D598C6F0075B7AD /* main.m in Sources */,
+				2A1A86C01D9A86AB0091399B /* CommunityMentorController.m in Sources */,
 				DC67EB5F1D94B4480096BCB3 /* FLAnimatedImage.m in Sources */,
 				DC5FCCF81D7E858900957D73 /* SleepingHoursEvalCell.m in Sources */,
+				2AC1644B1D9CA36800533BB0 /* CommunityDetailModel.m in Sources */,
 				DCC017C71D99483700DC333F /* QuestionScrollViewController.m in Sources */,
+				2AFDD7611D9BA0CC00FE157C /* CommunityPersonListModel.m in Sources */,
 				DC7D38491D6BDD8800314189 /* FXBlurView.m in Sources */,
 				2AB670E11D9267DF0060561C /* CommunityPersonListCustomCell.m in Sources */,
 				2A54B1B41D66904000C538D1 /* JTCalendarScrollManager.m in Sources */,
@@ -2004,6 +2074,7 @@
 				2A54B1B31D66904000C538D1 /* JTCalendarDelegateManager.m in Sources */,
 				DC1A77DD1D950F9900F88693 /* MoreMyPageFetusHeaderCell.m in Sources */,
 				DC4E95AF1D7D66C40087647B /* ActiveMassExerciseCell.m in Sources */,
+				2AFDD76A1D9BB46D00FE157C /* CommunityDetailController.m in Sources */,
 				DCA3BCD41D98BDB7009D3DD1 /* MoreEnvironmentAgreementCell.m in Sources */,
 				DC538ECB1D781C3600E5949B /* IQPreviousNextView.m in Sources */,
 				DC4E958D1D7D26EC0087647B /* WeightTotalInfoCell.m in Sources */,
@@ -2017,6 +2088,7 @@
 				DC1A77E21D9512C900F88693 /* MoreMyPageFetusContentsCell.m in Sources */,
 				2AB627771D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m in Sources */,
 				DC5FCCE91D7E417E00957D73 /* ActiveMassChartView.m in Sources */,
+				2A1A86C41D9A92040091399B /* CommunityDetailCells.m in Sources */,
 				DC4DE2C61D810154007CF9BF /* MoreMainTitleCell.m in Sources */,
 				2A54B1B61D66904000C538D1 /* JTCalendarMenuView.m in Sources */,
 				DC1FE6F61D65C83C006F7A50 /* DZNSegmentedControl.m in Sources */,

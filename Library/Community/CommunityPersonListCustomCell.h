@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface CommunityPersonListCustomCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIView *cellView;
+@property (weak, nonatomic) IBOutlet UIButton *addButton;
+@property (weak, nonatomic) IBOutlet UIImageView *addLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *mentorButtonImage;
+- (IBAction)toggleMentorAction:(id)sender;
 
 @end

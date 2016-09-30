@@ -34,4 +34,7 @@
 }
 */
 
+- (IBAction)moveCommunityList:(id)sender {
+    [_delegate moveCommunityList];
+}
 @end

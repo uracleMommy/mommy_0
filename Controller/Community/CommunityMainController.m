@@ -30,7 +30,57 @@
     _tabView.delegate = self;
     _tabView.selectedSegmentIndex = 0;
     [_tabView setShowsCount:NO];
+    
+    [_tabView addTarget:self action:@selector(didChangeSegment:) forControlEvents:UIControlEventValueChanged];
+    
+    CGRect screenSize = [[UIScreen mainScreen] bounds];
+    [_tabView setFrame:CGRectMake(0, 0, screenSize.size.width, 40)];
+    
+    
+    //message Button Setting
+    UIButton *messageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *messageBtnImage = [UIImage imageNamed:@"title_icon_message.png"];
+    messageBtn.frame = CGRectMake(0, 0, 40, 40);
+    [messageBtn setImage:messageBtnImage forState:UIControlStateNormal];
+    [messageBtn addTarget:self action:@selector(moveToMessage) forControlEvents:UIControlEventTouchUpInside];
+    [messageBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 20, 0, -20)];
+    UIBarButtonItem *messageButton = [[UIBarButtonItem alloc] initWithCustomView:messageBtn];
+    
+    //alarm Button Setting
+    UIButton *alarmBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *alarmBtnImage = [UIImage imageNamed:@"title_icon_alarm.png"];
+    alarmBtn.frame = CGRectMake(0, 0, 40, 40);
+    [alarmBtn setImage:alarmBtnImage forState:UIControlStateNormal];
+    [alarmBtn addTarget:self action:@selector(moveToAlarm) forControlEvents:UIControlEventTouchUpInside];
+    [alarmBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
+    UIBarButtonItem *alarmButton = [[UIBarButtonItem alloc] initWithCustomView:alarmBtn];
+    
+    NSArray *rightBarButtonItems = [[NSArray alloc] initWithObjects: alarmButton, messageButton, nil];
+    self.navigationItem.rightBarButtonItems = rightBarButtonItems;
 }
+    
+- (void)didChangeSegment:(DZNSegmentedControl *)control
+{
+    [_contentView.subviews[0] removeFromSuperview];
+    
+    if([control selectedSegmentIndex] == 0){
+        [_contentView addSubview : _myGroupViewController.view];
+        
+    }else{
+        if(!_mentorViewController){
+            _mentorViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CommunityMentorView"];
+            [_mentorViewController.view setFrame:CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height)];
+            
+            _mentorViewController.delegate = self;
+        }
+        
+        [_contentView addSubview : _mentorViewController.view];
+        
+
+    }
+//    [control setFont:[UIFont fontWithName:@"NanumBarunGothicBold" size:15.0f]];
+}
+    
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -43,13 +93,39 @@
         _myGroupViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CommunityMyGroupView"];
         
         //        _contentViewController.delegate = self;
-//        _myGroupViewController.delegate = self;
+        _myGroupViewController.delegate = self;
         [_myGroupViewController.view setFrame:CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height)];
         
         [_contentView addSubview : _myGroupViewController.view];
         
         //        [_scrollView sizeToFit];
     }
+}
+
+
+- (void)moveToMessage{
+    NSLog(@"moveToMessage");
+    
+    // MessageNaivgation
+    UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
+    UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"MessageNaivgation"];
+    
+    [self presentViewController:messageNavigationController animated:YES completion:nil];
+    
+    
+}
+
+- (void)moveToAlarm{
+    NSLog(@"moveToAlarm");
+    
+    UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"PushNotice" bundle:nil];
+    UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"PushListNavigation"];
+    
+    [self presentViewController:messageNavigationController animated:YES completion:nil];
+}
+
+- (void)moveCommunityList{
+    [self performSegueWithIdentifier:@"showListCommunitySegue" sender:self];
 }
 
 

@@ -52,7 +52,28 @@
             cell = [tableView dequeueReusableCellWithIdentifier:BASIC_CELL_ID];
         }
     //      cell.delegate = self;
-        return cell;
+    
+    
+    CAShapeLayer *firstShapeLayer = [CAShapeLayer layer];
+    [firstShapeLayer setBounds:cell.bounds];
+    [firstShapeLayer setPosition:cell.center];
+    [firstShapeLayer setFillColor:[[UIColor clearColor] CGColor]];
+    [firstShapeLayer setStrokeColor:[[UIColor colorWithRed:217.0/255.0f green:217.0/255.0f  blue:217.0/255.0f alpha:1.0] CGColor]];
+    [firstShapeLayer setLineWidth:1.0f];
+    [firstShapeLayer setLineJoin:kCALineJoinRound];
+    [firstShapeLayer setLineDashPattern:
+     [NSArray arrayWithObjects:[NSNumber numberWithInt:3],
+      [NSNumber numberWithInt:3],nil]];
+    
+    CGMutablePathRef firstPath = CGPathCreateMutable();
+    CGPathMoveToPoint(firstPath, NULL, 0, 0);
+    CGPathAddLineToPoint(firstPath, NULL, tableView.frame.size.width - 38.0, 0);
+    
+    [firstShapeLayer setPath:firstPath];
+    CGPathRelease(firstPath);
+    
+    [[cell.lineLabel layer] addSublayer:firstShapeLayer];
+    return cell;
         
         
 //    }else{
@@ -105,7 +126,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    int height = 106;
+    int height = 130;
     
     return height;
 }

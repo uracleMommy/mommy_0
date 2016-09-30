@@ -61,7 +61,6 @@
 */
 
 -(void) goBack{
-    NSLog(@"PSH goBack");
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

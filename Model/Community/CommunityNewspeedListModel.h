@@ -1,0 +1,30 @@
+//
+//  CommunityNewspeedListModel.h
+//  co.medisolution
+//
+//  Created by uracle on 2016. 9. 28..
+//  Copyright © 2016년 medisolution. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "CommunityNewspeedBasicCustomCell.h"
+#import "CommunityNewspeedImageCustomCell.h"
+
+@protocol CommunityNewspeedListModelDelegate <NSObject>
+
+@optional
+- (void) tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath;
+- (void)moreButtonAction:(id)sender point:(CGPoint)point;
+- (void)moveDetailViewButtonAction:(id)sender;
+- (void)moveWriteMessageViewAction:(id)sender;
+- (void)showProfilePopupViewAction:(id)sender;
+
+@end
+
+@interface CommunityNewspeedListModel : NSObject<UITableViewDelegate, UITableViewDataSource, CommunityNewspeedBasicCustomCellDelegate>
+
+@property (nonatomic, strong) NSMutableArray *newspeedList;
+@property (strong, nonatomic) id<CommunityNewspeedListModelDelegate> delegate;
+
+@end

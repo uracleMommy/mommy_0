@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Controller/Diary/DiaryCalenderController.m"
-            timestampString = "496644383.150892"
+            filePath = "Controller/Community/CommunityNewspeedListController.m"
+            timestampString = "496829069.317284"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "-calendar:prepareDayView:"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "-moveWriteMessageViewAction:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
