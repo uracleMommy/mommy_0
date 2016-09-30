@@ -39,7 +39,7 @@
     messageBtn.frame = CGRectMake(0, 0, 40, 40);
     [messageBtn setImage:messageBtnImage forState:UIControlStateNormal];
     [messageBtn addTarget:self action:@selector(moveToMessage) forControlEvents:UIControlEventTouchUpInside];
-    [messageBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 20, 0, -20)];
+//    [messageBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 20, 0, -20)];
     UIBarButtonItem *messageButton = [[UIBarButtonItem alloc] initWithCustomView:messageBtn];
     
     //alarm Button Setting
@@ -48,7 +48,7 @@
     alarmBtn.frame = CGRectMake(0, 0, 40, 40);
     [alarmBtn setImage:alarmBtnImage forState:UIControlStateNormal];
     [alarmBtn addTarget:self action:@selector(moveToAlarm) forControlEvents:UIControlEventTouchUpInside];
-    [alarmBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
+//    [alarmBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
     UIBarButtonItem *alarmButton = [[UIBarButtonItem alloc] initWithCustomView:alarmBtn];
     
     NSArray *rightBarButtonItems = [[NSArray alloc] initWithObjects: alarmButton, messageButton, nil];

@@ -28,10 +28,16 @@
     addBtn.frame = CGRectMake(0, 0, 40, 40);
     [addBtn setImage:addBtnImage forState:UIControlStateNormal];
     [addBtn addTarget:self action:@selector(showAddPopup) forControlEvents:UIControlEventTouchUpInside];
-    [addBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithCustomView:addBtn];
-    self.navigationItem.leftBarButtonItem = addButton;
     
+//    [addBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithCustomView:addBtn];
+    
+//    [addBtn setContentEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
+    
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    negativeSpacer.width = -16;
+    [self.navigationItem setLeftBarButtonItems:@[negativeSpacer, addButton]];
+//    self.navigationItem.leftBarButtonItem = addButton;
     
     //message Button Setting
     UIButton *messageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -39,7 +45,7 @@
     messageBtn.frame = CGRectMake(0, 0, 40, 40);
     [messageBtn setImage:messageBtnImage forState:UIControlStateNormal];
     [messageBtn addTarget:self action:@selector(moveToMessage) forControlEvents:UIControlEventTouchUpInside];
-    [messageBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 20, 0, -20)];
+//    [messageBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 20, 0, -20)];
     UIBarButtonItem *messageButton = [[UIBarButtonItem alloc] initWithCustomView:messageBtn];
     
     //alarm Button Setting
@@ -48,10 +54,13 @@
     alarmBtn.frame = CGRectMake(0, 0, 40, 40);
     [alarmBtn setImage:alarmBtnImage forState:UIControlStateNormal];
     [alarmBtn addTarget:self action:@selector(moveToAlarm) forControlEvents:UIControlEventTouchUpInside];
-    [alarmBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
+//    [alarmBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
     UIBarButtonItem *alarmButton = [[UIBarButtonItem alloc] initWithCustomView:alarmBtn];
     
-    NSArray *rightBarButtonItems = [[NSArray alloc] initWithObjects: alarmButton, messageButton, nil];
+    UIBarButtonItem *negativeSpacer2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    negativeSpacer2.width = -16;
+    
+    NSArray *rightBarButtonItems = [[NSArray alloc] initWithObjects: negativeSpacer2, alarmButton, messageButton, nil];
     self.navigationItem.rightBarButtonItems = rightBarButtonItems;
     
     
