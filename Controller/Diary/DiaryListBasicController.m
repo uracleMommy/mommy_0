@@ -213,7 +213,7 @@
     _dateLabel.text = [formatter stringFromDate:date];
 }
 
-- (void) 아:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath {
+- (void) tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"PSH :  indexPath : %@",indexPath);
     
     // 디테일 이동 로직

@@ -384,22 +384,6 @@
             </constraints>
             <point key="canvasLocation" x="206" y="362"/>
         </view>
-        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contents_icon_emoticon01" translatesAutoresizingMaskIntoConstraints="NO" id="cje-ms-2IZ">
-            <constraints>
-                <constraint firstAttribute="height" constant="47" id="GJB-KY-G8Q"/>
-                <constraint firstAttribute="width" constant="42" id="Uyb-96-J19"/>
-            </constraints>
-            <point key="canvasLocation" x="430" y="471.5"/>
-        </imageView>
-        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCw-YX-LV5">
-            <constraints>
-                <constraint firstAttribute="width" constant="42" id="1IU-7E-oh2"/>
-            </constraints>
-            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-            <color key="textColor" red="0.97647058823529409" green="0.40392156862745099" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <nil key="highlightedColor"/>
-            <point key="canvasLocation" x="430" y="512"/>
-        </label>
     </objects>
     <resources>
         <image name="contents_icon_emoticon01" width="60" height="68"/>

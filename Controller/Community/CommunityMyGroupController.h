@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CommunityMyGroupDelegate <NSObject>
+
+@optional
+-(void) moveCommunityList;
+
+@end
+
 @interface CommunityMyGroupController : UIViewController
+@property (strong, nonatomic) id<CommunityMyGroupDelegate> delegate;
+
+- (IBAction)moveCommunityList:(id)sender;
 
 @end
