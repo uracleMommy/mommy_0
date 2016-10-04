@@ -27,31 +27,6 @@
     self.tabBarController.tabBar.translucent = NO;
     self.navigationController.navigationBar.translucent = NO;
     
-    CGRect containerFrame = _pageViewContainer.frame;
-    OTPageView *PScrollView = [[OTPageView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, containerFrame.size.height)];
-    PScrollView.pageScrollView.dataSource = self;
-    PScrollView.pageScrollView.delegate = self;
-    PScrollView.pageScrollView.padding = 0;
-    
-    PScrollView.pageScrollView.leftRightOffset = 10;
-    
-//    PScrollView.pageScrollView.frame = CGRectMake(([[UIScreen mainScreen] bounds].size.width -370)/2, 0, 280, 99);
-    PScrollView.pageScrollView.frame = CGRectMake(0, 0, 355, 99);
-//    PScrollView.backgroundColor = [UIColor colorWithRed:239.0f/255.0f green:79.0f/255.0f blue:104.0f/255.0f alpha:1.0f];
-    
-    [_pageViewContainer addSubview:PScrollView];
-    
-    // 페이지뷰에 담길 커스텀 뷰
-    DashBoardScrollCellView *view1 = [[DashBoardScrollCellView alloc] initWithNibName:@"DashBoardScrollCellView" bundle:nil];
-    [view1.view setFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width - 40, 99)];
-    DashBoardScrollCellView *view2 = [[DashBoardScrollCellView alloc] initWithNibName:@"DashBoardScrollCellView" bundle:nil];
-    [view2.view setFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width - 40, 99)];
-    DashBoardScrollCellView *view3 = [[DashBoardScrollCellView alloc] initWithNibName:@"DashBoardScrollCellView" bundle:nil];
-    [view3.view setFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width - 40, 99)];
-    
-    _scrollViewArray = [NSArray arrayWithObjects:view1, view2, view3, nil];
-    
-    [PScrollView.pageScrollView reloadData];
     
     [self performSegueWithIdentifier:@"goQuestionModal" sender:nil];
 }
@@ -156,6 +131,33 @@
     if ([self.delegate respondsToSelector:@selector(presentMessage)]) {
         
         [self.delegate presentMessage];
+    }
+}
+
+#pragma 메인 슬라이더 페이지 설정
+- (void) setMainSliderPage : (NSInteger) pageIndex {
+    
+    switch (pageIndex) {
+        case 0:
+            _firstLedBox.hidden = NO;
+            _secondLedBox.hidden = YES;
+            _thirdLedBox.hidden = YES;
+            break;
+            
+        case 1:
+            _firstLedBox.hidden = YES;
+            _secondLedBox.hidden = NO;
+            _thirdLedBox.hidden = YES;
+            break;
+            
+        case 2:
+            _firstLedBox.hidden = YES;
+            _secondLedBox.hidden = YES;
+            _thirdLedBox.hidden = NO;
+            break;
+            
+        default:
+            break;
     }
 }
 

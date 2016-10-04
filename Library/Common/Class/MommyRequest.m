@@ -92,10 +92,14 @@ static MommyRequest* instanceMommyRequest;
                                                               NSURLResponse *response,
                                                               NSError *error) {
         
-        NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+        if (error != nil) {
+            
+            errorBlock(error);
+            return;
+        }
         
+        NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
         successBlock(jsonDic);
-        errorBlock(error);
         
     }] resume];
 }

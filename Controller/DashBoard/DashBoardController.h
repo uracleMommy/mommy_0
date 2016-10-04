@@ -14,7 +14,11 @@
 
 @interface DashBoardController : CommonViewController
 
-@property (weak, nonatomic) IBOutlet UIView *pageViewContainer;
+@property (weak, nonatomic) IBOutlet UIView *firstLedBox;
+
+@property (weak, nonatomic) IBOutlet UIView *secondLedBox;
+
+@property (weak, nonatomic) IBOutlet UIView *thirdLedBox;
 
 @property (strong, nonatomic) NSArray *scrollViewArray;
 
@@ -32,6 +36,8 @@
 
 - (IBAction)MessageModal:(id)sender;
 
+- (void) setMainSliderPage : (NSInteger) pageIndex;
+
 @end
 
 @protocol DashBoardControllerDelegate <NSObject>
@@ -41,5 +47,6 @@
 - (void) presentMessage;
 
 - (void) presentWeight;
+
 
 @end

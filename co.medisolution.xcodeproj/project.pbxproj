@@ -284,6 +284,8 @@
 		DCA5AE371D598C6F0075B7AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA5AE351D598C6F0075B7AD /* LaunchScreen.storyboard */; };
 		DCBFDE641DA332D300A28B3A /* MainSliderViewContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBFDE631DA332D300A28B3A /* MainSliderViewContainerController.m */; };
 		DCBFDE681DA335D700A28B3A /* HWViewPager.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBFDE671DA335D700A28B3A /* HWViewPager.m */; };
+		DCBFDE6C1DA347C000A28B3A /* MainSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBFDE6A1DA347C000A28B3A /* MainSliderCell.m */; };
+		DCBFDE6D1DA347C000A28B3A /* MainSliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCBFDE6B1DA347C000A28B3A /* MainSliderCell.xib */; };
 		DCC017C71D99483700DC333F /* QuestionScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC017C61D99483700DC333F /* QuestionScrollViewController.m */; };
 		DCD8F5ED1D9D2A3300546B89 /* IntroDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD8F5EC1D9D2A3300546B89 /* IntroDeviceViewController.m */; };
 		DCD8F5F01D9D2BB400546B89 /* IntroDeviceImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD8F5EF1D9D2BB400546B89 /* IntroDeviceImageViewController.m */; };
@@ -798,6 +800,9 @@
 		DCBFDE631DA332D300A28B3A /* MainSliderViewContainerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainSliderViewContainerController.m; sourceTree = "<group>"; };
 		DCBFDE661DA335D700A28B3A /* HWViewPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWViewPager.h; sourceTree = "<group>"; };
 		DCBFDE671DA335D700A28B3A /* HWViewPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWViewPager.m; sourceTree = "<group>"; };
+		DCBFDE691DA347C000A28B3A /* MainSliderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainSliderCell.h; sourceTree = "<group>"; };
+		DCBFDE6A1DA347C000A28B3A /* MainSliderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainSliderCell.m; sourceTree = "<group>"; };
+		DCBFDE6B1DA347C000A28B3A /* MainSliderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainSliderCell.xib; sourceTree = "<group>"; };
 		DCC017C51D99483700DC333F /* QuestionScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionScrollViewController.h; sourceTree = "<group>"; };
 		DCC017C61D99483700DC333F /* QuestionScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionScrollViewController.m; sourceTree = "<group>"; };
 		DCD8F5EB1D9D2A3300546B89 /* IntroDeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroDeviceViewController.h; sourceTree = "<group>"; };
@@ -1673,6 +1678,9 @@
 				DC5FCCFA1D7E890200957D73 /* SleepingHoursInfoCell.h */,
 				DC5FCCFB1D7E890200957D73 /* SleepingHoursInfoCell.m */,
 				DC5FCCFC1D7E890200957D73 /* SleepingHoursInfoCell.xib */,
+				DCBFDE691DA347C000A28B3A /* MainSliderCell.h */,
+				DCBFDE6A1DA347C000A28B3A /* MainSliderCell.m */,
+				DCBFDE6B1DA347C000A28B3A /* MainSliderCell.xib */,
 			);
 			path = DashBoard;
 			sourceTree = "<group>";
@@ -1883,7 +1891,7 @@
 				TargetAttributes = {
 					DCA5AE201D598C6F0075B7AD = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = JH5F2VBM8Z;
+						DevelopmentTeam = LUYT38Y3AT;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1954,6 +1962,7 @@
 				DCF6CAC11D7443E200703CAE /* PushNotice.storyboard in Resources */,
 				2A371A4C1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.xib in Resources */,
 				DC5FCCF91D7E858900957D73 /* SleepingHoursEvalCell.xib in Resources */,
+				DCBFDE6D1DA347C000A28B3A /* MainSliderCell.xib in Resources */,
 				DCA3BCE21D98EAF3009D3DD1 /* MoreEnvironmentCalendarListCell.xib in Resources */,
 				DC4462231D87ADB1006BFEBB /* MoreProfessionalAdviceCell.xib in Resources */,
 				DC73E5C71D6DAE3B007D2DEE /* IndicatorViewController.xib in Resources */,
@@ -2021,6 +2030,7 @@
 				DCF6CA9A1D740DED00703CAE /* ChildPageImageViewController.m in Sources */,
 				DCF6CAAA1D742B4000703CAE /* JTSImageInfo.m in Sources */,
 				DC27E5131D9CCF880014C5C4 /* IntroPageContainerViewController.m in Sources */,
+				DCBFDE6C1DA347C000A28B3A /* MainSliderCell.m in Sources */,
 				2A54B1B71D66904000C538D1 /* JTCalendarPageView.m in Sources */,
 				2A6B1BF11D91338200322A94 /* DiaryWriteBasicController.m in Sources */,
 				DCA5AE2C1D598C6F0075B7AD /* ViewController.m in Sources */,
@@ -2334,7 +2344,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Park seohee (TDF9AJWPR5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = JH5F2VBM8Z;
+				DEVELOPMENT_TEAM = LUYT38Y3AT;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2360,7 +2370,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Park seohee (TDF9AJWPR5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = JH5F2VBM8Z;
+				DEVELOPMENT_TEAM = LUYT38Y3AT;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

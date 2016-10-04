@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumBarunGothic.ttf">
+            <string>NanumBarunGothic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MainSliderCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pu3-vW-IvL">
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="금주의 영양관리" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGH-ty-yvn">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="2Yg-Y4-fwG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="체질개선을 위한 영양식단을 만들어 보아요.(26자)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VpV-nq-hQp">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="Hjb-TJ-jBS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
+                                <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_icon_card02" translatesAutoresizingMaskIntoConstraints="NO" id="aKu-cW-fXN">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="AFo-os-X54"/>
+                                    <constraint firstAttribute="width" constant="60" id="jMm-v4-bXk"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aKu-cW-fXN" firstAttribute="leading" secondItem="Pu3-vW-IvL" secondAttribute="leading" constant="8" id="30m-uA-dHc"/>
+                            <constraint firstAttribute="trailing" secondItem="VpV-nq-hQp" secondAttribute="trailing" constant="8" id="43t-Dh-M9a"/>
+                            <constraint firstItem="aKu-cW-fXN" firstAttribute="top" secondItem="Pu3-vW-IvL" secondAttribute="top" constant="22" id="4Nq-2h-vmz"/>
+                            <constraint firstItem="VpV-nq-hQp" firstAttribute="top" secondItem="Pu3-vW-IvL" secondAttribute="top" constant="38" id="AsW-cF-JbO"/>
+                            <constraint firstAttribute="trailing" secondItem="GGH-ty-yvn" secondAttribute="trailing" constant="8" id="CPv-FX-hmo"/>
+                            <constraint firstItem="GGH-ty-yvn" firstAttribute="top" secondItem="Pu3-vW-IvL" secondAttribute="top" constant="18" id="IG7-GT-1rR"/>
+                            <constraint firstItem="GGH-ty-yvn" firstAttribute="leading" secondItem="aKu-cW-fXN" secondAttribute="trailing" constant="8" id="WoM-K4-XRC"/>
+                            <constraint firstItem="VpV-nq-hQp" firstAttribute="leading" secondItem="aKu-cW-fXN" secondAttribute="trailing" constant="8" id="xYD-Wj-pHd"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Pu3-vW-IvL" secondAttribute="bottom" constant="8" id="8CN-ao-HWC"/>
+                <constraint firstItem="Pu3-vW-IvL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="TLg-Yx-U2L"/>
+                <constraint firstAttribute="trailing" secondItem="Pu3-vW-IvL" secondAttribute="trailing" constant="1" id="YA7-sv-r2G"/>
+                <constraint firstItem="Pu3-vW-IvL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="wQ0-2T-NZz"/>
+            </constraints>
+            <size key="customSize" width="275" height="59"/>
+            <connections>
+                <outlet property="containerView" destination="Pu3-vW-IvL" id="vLx-Ay-Dll"/>
+                <outlet property="lblContent" destination="Pu3-vW-IvL" id="YSD-gf-TBz"/>
+                <outlet property="lblTitle" destination="Pu3-vW-IvL" id="gn8-vG-5Fz"/>
+            </connections>
+            <point key="canvasLocation" x="-947" y="-664"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="home_icon_card02" width="108" height="108"/>
+    </resources>
+</document>

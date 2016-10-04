@@ -29,6 +29,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZoV-Ij-5AA">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxT-0c-VSV">
+                                        <frame key="frameInset" minX="164" minY="33" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="96" id="Auj-Gr-fTG"/>
@@ -416,6 +423,10 @@
         <scene sceneID="dyW-Sa-fgm">
             <objects>
                 <viewController id="LfV-Fb-biX" customClass="IntroScrollImageViewContainer" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sCy-VS-UJq"/>
+                        <viewControllerLayoutGuide type="bottom" id="f3Q-5P-DMi"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cfK-qT-wFg">
                         <rect key="frame" x="0.0" y="0.0" width="184" height="304"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

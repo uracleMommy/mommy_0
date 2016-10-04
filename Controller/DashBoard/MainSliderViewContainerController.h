@@ -11,8 +11,6 @@
 
 @interface MainSliderViewContainerController : UIViewController<UICollectionViewDataSource, HWViewPagerDelegate>
 
-@property (weak, nonatomic) IBOutlet UICollectionView *tableView;
-
-
+@property (weak, nonatomic) IBOutlet HWViewPager *mainSlider;
 
 @end
