@@ -23,7 +23,9 @@ typedef enum {
 typedef enum {
     
     MemberSignUp,
-    DuplicateCheck
+    IdDuplicateCheck,
+    GetAddress,
+    InsertUserProfile
 } MommySignInWebServiceType;
 
 #pragma 추후 추가 관리

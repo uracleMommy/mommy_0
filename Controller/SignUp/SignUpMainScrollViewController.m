@@ -86,7 +86,7 @@
                          range:NSMakeRange(0, 9)];
             [_idValidationLabel setAttributedText: text];
         }else{
-            NSLog(@"2번째 빨강");
+            NSLog(@"1번째 빨강");
             NSMutableAttributedString *text =
             [[NSMutableAttributedString alloc]
              initWithAttributedString: _idValidationLabel.attributedText];
@@ -120,6 +120,42 @@
         }
         
         
+        NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+        [param setValue:[_idTextField text] forKey:@"id"];
+        
+        //TODO validation check
+        [[MommyRequest sharedInstance] mommySignInApiService:IdDuplicateCheck authKey:nil parameters:param success:^(NSDictionary *data){
+            NSLog(@"PSH data %@", data);
+            
+            
+            NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
+            if([code isEqual:@"0"]){
+                dispatch_async(dispatch_get_main_queue(), ^{
+                        NSMutableAttributedString *text =
+                        [[NSMutableAttributedString alloc]
+                         initWithAttributedString: _idValidationLabel.attributedText];
+                        
+                        [text addAttribute:NSForegroundColorAttributeName
+                                     value:[UIColor blackColor]
+                                     range:NSMakeRange(21, 8)];
+                        [_idValidationLabel setAttributedText: text];
+                    });
+            }else{
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    NSMutableAttributedString *text =
+                    [[NSMutableAttributedString alloc]
+                     initWithAttributedString: _idValidationLabel.attributedText];
+                    
+                    [text addAttribute:NSForegroundColorAttributeName
+                                 value:[UIColor redColor]
+                                 range:NSMakeRange(21, 8)];
+                    [_idValidationLabel setAttributedText: text];
+                });
+                
+            }
+        } error:^(NSError *error) {
+            NSLog(@"PSH error %@", error);
+        } ];
         
         
         //영문, 숫자구성
