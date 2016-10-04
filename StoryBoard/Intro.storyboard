@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -26,31 +28,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZoV-Ij-5AA">
-                                <frame key="frameInset" minY="500" width="375" height="167"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFi-pe-aaf">
-                                        <frame key="frameInset" minX="128" minY="84" width="118" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="로그인"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCd-if-Pqo">
-                                        <frame key="frameInset" minX="121" minY="122" width="133" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="회원가입"/>
-                                    </button>
-                                </subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZoV-Ij-5AA">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="Auj-Gr-fTG"/>
+                                </constraints>
                             </view>
-                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m6d-Mt-9aV">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m6d-Mt-9aV">
                                 <connections>
                                     <segue destination="ngH-CF-10Z" kind="embed" identifier="textContainerSegue" id="VtZ-J9-cZo"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pXU-hY-Kee">
-                                <frame key="frameInset" minX="85" height="373" maxX="86" maxY="96"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXU-hY-Kee" customClass="IntroCustomView">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pXU-hY-Kee" secondAttribute="height" multiplier="204:373" id="BdP-9n-loH"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="9hN-4k-YSI" kind="embed" identifier="imageContainerView" id="hB1-JC-Vs7"/>
                                 </connections>
@@ -58,7 +50,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ZoV-Ij-5AA" secondAttribute="trailing" id="2id-w3-26Y"/>
+                            <constraint firstItem="m6d-Mt-9aV" firstAttribute="top" secondItem="1Lm-aI-yl5" secondAttribute="top" id="4zL-64-7fl"/>
+                            <constraint firstItem="ZoV-Ij-5AA" firstAttribute="leading" secondItem="1Lm-aI-yl5" secondAttribute="leading" id="EVc-xh-PJ0"/>
                             <constraint firstItem="yBf-Ol-abp" firstAttribute="top" secondItem="m6d-Mt-9aV" secondAttribute="bottom" constant="96" id="FA4-PR-vKF"/>
+                            <constraint firstItem="ZoV-Ij-5AA" firstAttribute="top" secondItem="m6d-Mt-9aV" secondAttribute="bottom" id="Ka7-aP-vv9"/>
+                            <constraint firstItem="m6d-Mt-9aV" firstAttribute="leading" secondItem="1Lm-aI-yl5" secondAttribute="leading" id="R9E-kr-6e1"/>
+                            <constraint firstItem="yBf-Ol-abp" firstAttribute="top" secondItem="ZoV-Ij-5AA" secondAttribute="bottom" id="RBZ-mT-BLm"/>
+                            <constraint firstAttribute="trailing" secondItem="m6d-Mt-9aV" secondAttribute="trailing" id="XAf-cC-oz6"/>
+                            <constraint firstItem="pXU-hY-Kee" firstAttribute="leading" secondItem="1Lm-aI-yl5" secondAttribute="leadingMargin" constant="69" id="aFn-2T-lay"/>
+                            <constraint firstItem="ZoV-Ij-5AA" firstAttribute="top" secondItem="pXU-hY-Kee" secondAttribute="bottom" id="lAV-TU-Ffk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pXU-hY-Kee" secondAttribute="trailing" constant="70" id="nUc-l6-bAP"/>
                             <constraint firstItem="m6d-Mt-9aV" firstAttribute="leading" secondItem="1Lm-aI-yl5" secondAttribute="leading" id="tYr-En-G5G"/>
                             <constraint firstItem="m6d-Mt-9aV" firstAttribute="top" secondItem="1Lm-aI-yl5" secondAttribute="top" id="tcY-64-q14"/>
                             <constraint firstAttribute="trailing" secondItem="m6d-Mt-9aV" secondAttribute="trailing" id="zm8-zA-GTT"/>
@@ -89,9 +91,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35l-GP-tNW">
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e73-LV-fbO">
-                                        <frame key="frameInset" minX="163" minY="37" width="48" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e73-LV-fbO">
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="entry_page_icon_de" translatesAutoresizingMaskIntoConstraints="NO" id="vDF-g1-3hP">
                                                 <frame key="frameInset" minX="2" minY="2" width="14" height="14"/>
@@ -119,9 +119,17 @@
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="VbU-Db-hTh"/>
+                                            <constraint firstAttribute="height" constant="18" id="hPT-Jv-XKA"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="e73-LV-fbO" firstAttribute="centerX" secondItem="35l-GP-tNW" secondAttribute="centerX" id="0Ar-y2-Pec"/>
+                                    <constraint firstItem="e73-LV-fbO" firstAttribute="top" secondItem="35l-GP-tNW" secondAttribute="top" constant="37" id="57A-hK-zoA"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -311,7 +319,6 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zEh-z3-hJ3"/>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8dq-QP-exf" firstAttribute="top" secondItem="zEh-z3-hJ3" secondAttribute="bottom" id="1kl-f6-ZFj"/>
                             <constraint firstAttribute="trailing" secondItem="zEh-z3-hJ3" secondAttribute="trailing" id="PfT-hV-w86"/>
@@ -325,7 +332,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZEa-bv-pRb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1492" y="837"/>
+            <point key="canvasLocation" x="-1550" y="593"/>
         </scene>
         <!--Intro Device View Controller-->
         <scene sceneID="C1m-Vk-BAl">
@@ -339,13 +346,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="204" height="373"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="entry_img_device" translatesAutoresizingMaskIntoConstraints="NO" id="aha-SP-AtM"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="entry_img_device_i" translatesAutoresizingMaskIntoConstraints="NO" id="aha-SP-AtM"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JjH-mH-rHe">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="184" id="GIr-Ab-iBh"/>
+                                    <constraint firstAttribute="height" constant="304" id="gGG-ef-kBy"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="LfV-Fb-biX" kind="embed" identifier="goImageScrollViewContainer" id="uEr-1G-Oif"/>
+                                </connections>
+                            </containerView>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="aha-SP-AtM" secondAttribute="bottom" id="NKw-aO-5Q9"/>
                             <constraint firstItem="aha-SP-AtM" firstAttribute="leading" secondItem="kOc-ab-LEi" secondAttribute="leading" id="Uux-9n-WFA"/>
                             <constraint firstAttribute="trailing" secondItem="aha-SP-AtM" secondAttribute="trailing" id="Ya0-hh-Rmd"/>
+                            <constraint firstItem="JjH-mH-rHe" firstAttribute="centerX" secondItem="kOc-ab-LEi" secondAttribute="centerX" id="Zi4-7e-93y"/>
+                            <constraint firstItem="JjH-mH-rHe" firstAttribute="centerY" secondItem="kOc-ab-LEi" secondAttribute="centerY" id="cbb-cx-TPx"/>
                             <constraint firstItem="aha-SP-AtM" firstAttribute="top" secondItem="kOc-ab-LEi" secondAttribute="top" id="pls-FS-hol"/>
                         </constraints>
                     </view>
@@ -355,7 +372,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z29-hr-xen" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-624" y="746"/>
+            <point key="canvasLocation" x="-624" y="779.46026986506752"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="Ozg-RX-0hs">
@@ -363,7 +380,7 @@
                 <pageViewController storyboardIdentifier="DevicePageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ava-ay-Qj9" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UJm-qW-cAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="54" y="878"/>
+            <point key="canvasLocation" x="42" y="820"/>
         </scene>
         <!--Intro Device Image View Controller-->
         <scene sceneID="DfU-vk-yGR">
@@ -395,10 +412,24 @@
             </objects>
             <point key="canvasLocation" x="919" y="878"/>
         </scene>
+        <!--Intro Scroll Image View Container-->
+        <scene sceneID="dyW-Sa-fgm">
+            <objects>
+                <viewController id="LfV-Fb-biX" customClass="IntroScrollImageViewContainer" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cfK-qT-wFg">
+                        <rect key="frame" x="0.0" y="0.0" width="184" height="304"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F0S-mm-uD0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-624" y="1301"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="entry_img_device" width="330" height="644"/>
         <image name="entry_img_device_01" width="330" height="644"/>
+        <image name="entry_img_device_i" width="326" height="640"/>
         <image name="entry_page_icon_01" width="34" height="34"/>
         <image name="entry_page_icon_02" width="34" height="34"/>
         <image name="entry_page_icon_03" width="34" height="34"/>

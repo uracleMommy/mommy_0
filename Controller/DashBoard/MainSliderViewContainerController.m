@@ -1,27 +1,34 @@
 //
-//  IntroContentPageViewController.m
+//  MainSliderViewContainerController.m
 //  co.medisolution
 //
-//  Created by OGGU on 2016. 9. 29..
+//  Created by OGGU on 2016. 10. 4..
 //  Copyright © 2016년 medisolution. All rights reserved.
 //
 
-#import "IntroContentPageViewController.h"
+#import "MainSliderViewContainerController.h"
 
-@interface IntroContentPageViewController ()
+@interface MainSliderViewContainerController ()
+
+
 
 @end
 
-@implementation IntroContentPageViewController
+@implementation MainSliderViewContainerController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
+    
+    
 }
 
 @end

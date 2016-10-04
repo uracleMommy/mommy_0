@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IntroScrollImageViewController : UIViewController
+@interface IntroScrollImageViewController : UIViewController<UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
@@ -19,5 +19,14 @@
 @property (strong, nonatomic) UIImageView *secondImage;
 
 @property (strong, nonatomic) UIImageView *thirdImage;
+
+@property (assign) CGFloat scrollViewSize;
+
+@property (assign) NSUInteger currentPageIndex;
+
+- (void) moveScrollView : (UIScrollView *) scrollView;
+
+- (void) bridgePageMoveCompleted : (NSUInteger) pageIndex;
+
 
 @end

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "IntroDeviceImageViewController.h"
 #import "IntroScrollImageViewController.h"
+#import "IntroScrollImageViewContainer.h"
 
 @interface IntroDeviceViewController : UIViewController<UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate>
 
@@ -22,8 +23,10 @@
 
 @property (strong, nonatomic) UIScrollView *parentScrollView;
 
-@property (strong, nonatomic) IntroScrollImageViewController *introScrollImageViewController;
+@property (strong, nonatomic) IntroScrollImageViewContainer *introScrollImageViewContainer;
 
 - (void) moveScrollView;
+
+- (void) bridgePageMoveCompleted : (NSUInteger) pageIndex;
 
 @end

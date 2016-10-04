@@ -30,7 +30,13 @@
     
     _introDeviceViewController.parentScrollView = scrollView;
     [_introDeviceViewController moveScrollView];
+    
 //    [_introDeviceViewController moveScrollView:scrollView];
+}
+
+- (void) bridgePageMoveCompleted : (NSUInteger) pageIndex {
+    
+    [_introDeviceViewController bridgePageMoveCompleted:pageIndex];
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

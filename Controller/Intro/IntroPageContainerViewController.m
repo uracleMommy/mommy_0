@@ -125,9 +125,11 @@
 
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed {
     
+    IntroContentPageViewController *viewController;
+    
     if (completed) {
         
-        IntroContentPageViewController *viewController = [pageViewController.viewControllers lastObject];
+        viewController = [pageViewController.viewControllers lastObject];
         
         if (viewController.pageIndex == 0) {
             
@@ -147,6 +149,9 @@
             _imgSecondPage.hidden = YES;
             _imgThirdPage.hidden = NO;
         }
+        
+        IntroViewController *introViewController = (IntroViewController *)_selfParentViewController;
+        [introViewController bridgePageMoveCompleted:viewController.pageIndex];
     }
 }
 
@@ -162,7 +167,6 @@
     
     [introViewController scrollView:scrollView];
     
-//    [_introViewController scrollView:scrollView];
     NSLog(@"%f", scrollView.contentOffset.x);
 }
 

@@ -14,6 +14,8 @@
 
 - (void) scrollView : (UIScrollView *) scrollView;
 
+- (void) bridgePageMoveCompleted : (NSUInteger) pageIndex;
+
 @property (strong, nonatomic) IntroDeviceViewController *introDeviceViewController;
 
 @end

@@ -44,13 +44,6 @@
 //        }
 //    }
     
-    
-    
-    // 스크롤 뷰
-    
-    _introScrollImageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"scrollDeviceImageViewController"];
-    [self.view insertSubview:_introScrollImageViewController.view belowSubview:_deviceImage];
-    
 }
 
 - (void) viewDidLayoutSubviews {
@@ -58,8 +51,6 @@
     _pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     
     NSLog(@"%f %f", self.view.frame.size.width, self.view.frame.size.height);
-    
-    _introScrollImageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
 }
 
 - (IntroDeviceImageViewController *)viewControllerAtIndex:(NSUInteger)index {
@@ -136,11 +127,22 @@
 - (void) moveScrollView {
 //    _parentScrollView.contentOffset.x / _scrollView.contentOffset
     
+//    NSLog(@"무브 스크롤 포인트 : %f", _parentScrollView.contentOffset.x);
+    _introScrollImageViewContainer.parentScrollView = _parentScrollView;
+    [_introScrollImageViewContainer moveScrollView];
+}
+
+- (void) bridgePageMoveCompleted : (NSUInteger) pageIndex {
     
-    [_scrollView setContentOffset:CGPointMake(350, 0)];
-//    [_scrollView setContentSize:CGSizeMake(204, 0)];
+    [_introScrollImageViewContainer bridgePageMoveCompleted:pageIndex];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-//    NSLog(@" 움직여야할 스크롤 포인트 : %f", _parentScrollView.contentOffset.x);
+    if ([segue.identifier isEqualToString:@"goImageScrollViewContainer"]) {
+        
+        _introScrollImageViewContainer = (IntroScrollImageViewContainer *)segue.destinationViewController;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

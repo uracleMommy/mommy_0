@@ -12,6 +12,7 @@
 @protocol CommunityMentorDelegate <NSObject>
 
 @optional
+
 -(void) moveCommunityList;
 
 @end

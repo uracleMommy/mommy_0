@@ -75,11 +75,12 @@
 		2AEAE5811D9CFF2700146596 /* CommunityPeopleListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAE5801D9CFF2700146596 /* CommunityPeopleListController.m */; };
 		2AEBE3491D79419E0075B210 /* DiaryWriteScheduleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBE3481D79419E0075B210 /* DiaryWriteScheduleController.m */; };
 		2AEBE34C1D7941BF0075B210 /* DiaryDetailScheduleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBE34B1D7941BF0075B210 /* DiaryDetailScheduleController.m */; };
-		DC1856451D9DEA3500D9A957 /* MommyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1856441D9DEA3500D9A957 /* MommyRequest.m */; };
 		2AFDD7611D9BA0CC00FE157C /* CommunityPersonListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDD7601D9BA0CC00FE157C /* CommunityPersonListModel.m */; };
 		2AFDD7641D9BAD1800FE157C /* CommunityNewspeedListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDD7631D9BAD1800FE157C /* CommunityNewspeedListModel.m */; };
 		2AFDD7671D9BAD2700FE157C /* CommunityNewspeedListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDD7661D9BAD2700FE157C /* CommunityNewspeedListController.m */; };
 		2AFDD76A1D9BB46D00FE157C /* CommunityDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDD7691D9BB46D00FE157C /* CommunityDetailController.m */; };
+		DC1856451D9DEA3500D9A957 /* MommyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1856441D9DEA3500D9A957 /* MommyRequest.m */; };
+		DC1856481D9E40C700D9A957 /* IntroScrollImageViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1856471D9E40C700D9A957 /* IntroScrollImageViewContainer.m */; };
 		DC1A77CE1D94EC1200F88693 /* MoreMyPageNickNameChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A77CD1D94EC1200F88693 /* MoreMyPageNickNameChangeViewController.m */; };
 		DC1A77D11D94F47E00F88693 /* MoreMyPagePasswordChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A77D01D94F47E00F88693 /* MoreMyPagePasswordChangeViewController.m */; };
 		DC1A77D51D94FC2E00F88693 /* MoreMyPagePasswordChangeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A77D31D94FC2E00F88693 /* MoreMyPagePasswordChangeCell.m */; };
@@ -281,6 +282,8 @@
 		DCA5AE2F1D598C6F0075B7AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA5AE2D1D598C6F0075B7AD /* Main.storyboard */; };
 		DCA5AE321D598C6F0075B7AD /* co_medisolution.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCA5AE301D598C6F0075B7AD /* co_medisolution.xcdatamodeld */; };
 		DCA5AE371D598C6F0075B7AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA5AE351D598C6F0075B7AD /* LaunchScreen.storyboard */; };
+		DCBFDE641DA332D300A28B3A /* MainSliderViewContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBFDE631DA332D300A28B3A /* MainSliderViewContainerController.m */; };
+		DCBFDE681DA335D700A28B3A /* HWViewPager.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBFDE671DA335D700A28B3A /* HWViewPager.m */; };
 		DCC017C71D99483700DC333F /* QuestionScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC017C61D99483700DC333F /* QuestionScrollViewController.m */; };
 		DCD8F5ED1D9D2A3300546B89 /* IntroDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD8F5EC1D9D2A3300546B89 /* IntroDeviceViewController.m */; };
 		DCD8F5F01D9D2BB400546B89 /* IntroDeviceImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD8F5EF1D9D2BB400546B89 /* IntroDeviceImageViewController.m */; };
@@ -429,8 +432,6 @@
 		2AEBE3481D79419E0075B210 /* DiaryWriteScheduleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryWriteScheduleController.m; sourceTree = "<group>"; };
 		2AEBE34A1D7941BF0075B210 /* DiaryDetailScheduleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryDetailScheduleController.h; sourceTree = "<group>"; };
 		2AEBE34B1D7941BF0075B210 /* DiaryDetailScheduleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryDetailScheduleController.m; sourceTree = "<group>"; };
-		DC1856431D9DEA3500D9A957 /* MommyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MommyRequest.h; sourceTree = "<group>"; };
-		DC1856441D9DEA3500D9A957 /* MommyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MommyRequest.m; sourceTree = "<group>"; };
 		2AFDD75F1D9BA0CC00FE157C /* CommunityPersonListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityPersonListModel.h; sourceTree = "<group>"; };
 		2AFDD7601D9BA0CC00FE157C /* CommunityPersonListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityPersonListModel.m; sourceTree = "<group>"; };
 		2AFDD7621D9BAD1800FE157C /* CommunityNewspeedListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityNewspeedListModel.h; sourceTree = "<group>"; };
@@ -439,6 +440,10 @@
 		2AFDD7661D9BAD2700FE157C /* CommunityNewspeedListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityNewspeedListController.m; sourceTree = "<group>"; };
 		2AFDD7681D9BB46D00FE157C /* CommunityDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityDetailController.h; sourceTree = "<group>"; };
 		2AFDD7691D9BB46D00FE157C /* CommunityDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityDetailController.m; sourceTree = "<group>"; };
+		DC1856431D9DEA3500D9A957 /* MommyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MommyRequest.h; sourceTree = "<group>"; };
+		DC1856441D9DEA3500D9A957 /* MommyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MommyRequest.m; sourceTree = "<group>"; };
+		DC1856461D9E40C700D9A957 /* IntroScrollImageViewContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroScrollImageViewContainer.h; sourceTree = "<group>"; };
+		DC1856471D9E40C700D9A957 /* IntroScrollImageViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroScrollImageViewContainer.m; sourceTree = "<group>"; };
 		DC1A77CC1D94EC1200F88693 /* MoreMyPageNickNameChangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreMyPageNickNameChangeViewController.h; sourceTree = "<group>"; };
 		DC1A77CD1D94EC1200F88693 /* MoreMyPageNickNameChangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreMyPageNickNameChangeViewController.m; sourceTree = "<group>"; };
 		DC1A77CF1D94F47E00F88693 /* MoreMyPagePasswordChangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreMyPagePasswordChangeViewController.h; sourceTree = "<group>"; };
@@ -789,6 +794,10 @@
 		DCA5AE311D598C6F0075B7AD /* co_medisolution.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = co_medisolution.xcdatamodel; sourceTree = "<group>"; };
 		DCA5AE361D598C6F0075B7AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCA5AE381D598C6F0075B7AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCBFDE621DA332D300A28B3A /* MainSliderViewContainerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainSliderViewContainerController.h; sourceTree = "<group>"; };
+		DCBFDE631DA332D300A28B3A /* MainSliderViewContainerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainSliderViewContainerController.m; sourceTree = "<group>"; };
+		DCBFDE661DA335D700A28B3A /* HWViewPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWViewPager.h; sourceTree = "<group>"; };
+		DCBFDE671DA335D700A28B3A /* HWViewPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWViewPager.m; sourceTree = "<group>"; };
 		DCC017C51D99483700DC333F /* QuestionScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionScrollViewController.h; sourceTree = "<group>"; };
 		DCC017C61D99483700DC333F /* QuestionScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionScrollViewController.m; sourceTree = "<group>"; };
 		DCD8F5EB1D9D2A3300546B89 /* IntroDeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroDeviceViewController.h; sourceTree = "<group>"; };
@@ -1211,6 +1220,8 @@
 				DCD8F5EF1D9D2BB400546B89 /* IntroDeviceImageViewController.m */,
 				DCD8F5F11D9D464F00546B89 /* IntroScrollImageViewController.h */,
 				DCD8F5F21D9D464F00546B89 /* IntroScrollImageViewController.m */,
+				DC1856461D9E40C700D9A957 /* IntroScrollImageViewContainer.h */,
+				DC1856471D9E40C700D9A957 /* IntroScrollImageViewContainer.m */,
 			);
 			path = Intro;
 			sourceTree = "<group>";
@@ -1580,6 +1591,7 @@
 		DC5D20761D62AE8F00ACDCA4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				DCBFDE651DA335D700A28B3A /* HWViewPager */,
 				DC67EB5A1D94B4480096BCB3 /* FLAnimatedImage */,
 				DC44C3751D7FADFA00519D96 /* TPKeyboardAvoiding */,
 				2A3026321D7E54640020C3B4 /* KkMenu */,
@@ -1688,6 +1700,8 @@
 				DC2D34C21D9A131C00D70E8C /* QuestionScrollViewSegue.m */,
 				DC2D34C41D9A13D100D70E8C /* QuestionViewController.h */,
 				DC2D34C51D9A13D100D70E8C /* QuestionViewController.m */,
+				DCBFDE621DA332D300A28B3A /* MainSliderViewContainerController.h */,
+				DCBFDE631DA332D300A28B3A /* MainSliderViewContainerController.m */,
 			);
 			path = DashBoard;
 			sourceTree = "<group>";
@@ -1789,6 +1803,15 @@
 				DCA5AE251D598C6F0075B7AD /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DCBFDE651DA335D700A28B3A /* HWViewPager */ = {
+			isa = PBXGroup;
+			children = (
+				DCBFDE661DA335D700A28B3A /* HWViewPager.h */,
+				DCBFDE671DA335D700A28B3A /* HWViewPager.m */,
+			);
+			path = HWViewPager;
 			sourceTree = "<group>";
 		};
 		DCF6CA9C1D742AD500703CAE /* JTSImageViewer */ = {
@@ -1987,6 +2010,7 @@
 				DC4EAA8B1D6E6F5E005370A8 /* notPasteField.m in Sources */,
 				DCA3BCE91D9910F3009D3DD1 /* MorePointCell.m in Sources */,
 				DC4DE2CC1D814F3B007CF9BF /* MoreBloodPressureViewController.m in Sources */,
+				DCBFDE641DA332D300A28B3A /* MainSliderViewContainerController.m in Sources */,
 				DC68F5281D93D7CC009D3B1E /* MoreEquipmentEmptyViewController.m in Sources */,
 				DC538ECD1D781C3600E5949B /* IQToolbar.m in Sources */,
 				DC27E5161D9CD42A0014C5C4 /* IntroFirstContentPageViewController.m in Sources */,
@@ -2031,6 +2055,7 @@
 				DC68F5271D93D7CC009D3B1E /* MoreEquipmentEmptySegue.m in Sources */,
 				DC4DE2E01D815C35007CF9BF /* MoreBloodPressureInfoView.m in Sources */,
 				DC68F52E1D93D7CC009D3B1E /* MoreEquipmentSelectViewController.m in Sources */,
+				DC1856481D9E40C700D9A957 /* IntroScrollImageViewContainer.m in Sources */,
 				2A3026381D7E549D0020C3B4 /* KxMenu.m in Sources */,
 				DC8EB78F1D869D4800A0304D /* MoreWeekDetailInfoCell.m in Sources */,
 				DC1FE6F71D65C83C006F7A50 /* UIScrollView+DZNSegmentedControl.m in Sources */,
@@ -2054,6 +2079,7 @@
 				DC44C3951D800E2600519D96 /* MoreMainViewController.m in Sources */,
 				DC1FE6ED1D65A7D4006F7A50 /* fetusInfoController.m in Sources */,
 				2A54B1B81D66904000C538D1 /* JTCalendarWeekDayView.m in Sources */,
+				DCBFDE681DA335D700A28B3A /* HWViewPager.m in Sources */,
 				DC538EC51D781C3600E5949B /* IQUIViewController+Additions.m in Sources */,
 				DCA3BCCF1D98BD44009D3DD1 /* MoreEnvironmentCalendarCell.m in Sources */,
 				2A444C371D7EBA7E00B37E8A /* termsPopupViewController.m in Sources */,
