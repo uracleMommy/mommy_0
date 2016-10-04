@@ -38,7 +38,7 @@
     //id field Setting
     UIImage *idFieldImage = [UIImage imageNamed:@"login_id.png"];
     UIView *idFieldImageContainer = [[UIView alloc] init];
-    [idFieldImageContainer setFrame:CGRectMake(0.0f, 0.0f, 30, 30)];
+    [idFieldImageContainer setFrame:CGRectMake(0.0f, 0.0f, 38, 38)];
     
     UIImageView *idIcon = [[UIImageView alloc] init];
     [idIcon setImage:idFieldImage];
@@ -52,7 +52,7 @@
     //pw field Setting
     UIImage *pwFieldImage = [UIImage imageNamed:@"login_pw.png"];
     UIView *pwFieldImageContainer = [[UIView alloc] init];
-    [pwFieldImageContainer setFrame:CGRectMake(0.0f, 0.0f, 30, 30)];
+    [pwFieldImageContainer setFrame:CGRectMake(0.0f, 0.0f, 38, 38)];
     
     UIImageView *pwIcon = [[UIImageView alloc] init];
     [pwIcon setImage:pwFieldImage];
@@ -95,11 +95,23 @@
 }
 
 - (IBAction)loginButtonAction:(id)sender {
-    //TEMP 대쉬보드 이동
-    UIStoryboard *dashBoardStoryboard = [UIStoryboard storyboardWithName:@"MainTabBar" bundle:nil];
-    UINavigationController *dashBoardNavigationController = (UINavigationController *)[dashBoardStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarNavigation"];
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+    [param setValue:[_idTextField text] forKey:@"id"];
+    [param setValue:_pwTextField.text forKey:@"password"];
     
-    [self presentViewController:dashBoardNavigationController animated:YES completion:nil];
+    
+    
+    [[MommyRequest sharedInstance] mommyLoginApiService:LoginCheck authKey:nil parameters:param success:^(NSDictionary *data){
+        NSLog(@"PSH data %@", data);
+    } error:^(NSError *error) {
+        NSLog(@"PSH error %@", error);
+    }];
+
+    //TEMP 대쉬보드 이동
+//    UIStoryboard *dashBoardStoryboard = [UIStoryboard storyboardWithName:@"MainTabBar" bundle:nil];
+//    UINavigationController *dashBoardNavigationController = (UINavigationController *)[dashBoardStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarNavigation"];
+//    
+//    [self presentViewController:dashBoardNavigationController animated:YES completion:nil];
 }
 
 

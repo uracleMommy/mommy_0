@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DiaryListModel.h"
 #import "KxMenu.h"
+#import "CommonViewController.h"
 
 @protocol DiaryListDelegate <NSObject>
 
@@ -17,7 +18,8 @@
 
 @end
 
-@interface DiaryListController : UIViewController<DiaryListModelDelegate>
+@interface DiaryListController : CommonViewController <DiaryListModelDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *listTableview;
 @property (strong, nonatomic) DiaryListModel *diaryListTableController;
 @property (strong, nonatomic) id<DiaryListDelegate> delegate;

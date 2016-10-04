@@ -10,8 +10,9 @@
 #import "AppDelegate.h"
 #import "CommunityNewspeedListModel.h"
 #import "CommunityProfilePopupViewController.h"
+#import "CommonViewController.h"
 
-@interface CommunityNewspeedListController : ViewController<CommunityNewspeedListModelDelegate, CommunityProfilePopupViewDelegate>
+@interface CommunityNewspeedListController : CommonViewController <CommunityNewspeedListModelDelegate, CommunityProfilePopupViewDelegate>
 
 @property (nonatomic, strong) UIButton *moveWriteViewButton;
 @property (strong, nonatomic) CommunityNewspeedListModel *tableListController;

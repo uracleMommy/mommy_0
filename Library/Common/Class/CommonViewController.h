@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "EnumType.h"
+#import "MommyRequest.h"
 #import "AppDelegate.h"
 
 @interface CommonViewController : UIViewController

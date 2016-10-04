@@ -11,6 +11,7 @@
 #import "KxMenu.h"
 #import "DiaryListController.h"
 #import "DiaryCalenderController.h"
+#import "CommonViewController.h"
 
 @protocol DiaryListBasicDelegate <NSObject>
 
@@ -19,7 +20,7 @@
 
 @end
 
-@interface DiaryListBasicController : UIViewController<DiaryCalendarDelegate, DiaryListDelegate>
+@interface DiaryListBasicController : CommonViewController <DiaryCalendarDelegate, DiaryListDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;

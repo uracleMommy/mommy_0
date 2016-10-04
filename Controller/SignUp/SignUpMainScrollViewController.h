@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "IQDropDownTextField.h"
 #import "IQKeyboardManager.h"
+#import "CommonViewController.h"
 
-@interface SignUpMainScrollViewController : UIViewController <UITextFieldDelegate, IQDropDownTextFieldDelegate> {
+@interface SignUpMainScrollViewController : CommonViewController <UITextFieldDelegate, IQDropDownTextFieldDelegate> {
     int t_count;
     NSTimer *confirmNumberTimer;
 }

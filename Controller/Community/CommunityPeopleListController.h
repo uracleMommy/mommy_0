@@ -10,8 +10,9 @@
 #import "AppDelegate.h"
 #import "CommunityPersonListModel.h"
 #import "CommunityProfilePopupViewController.h"
+#import "CommonViewController.h"
 
-@interface CommunityPeopleListController : ViewController<CommunityPersonListModelDelegate, CommunityProfilePopupViewDelegate>
+@interface CommunityPeopleListController : CommonViewController <CommunityPersonListModelDelegate, CommunityProfilePopupViewDelegate>
 
 @property (strong, nonatomic) CommunityPersonListModel *tableListController;
 @property (strong, nonatomic) CommunityProfilePopupViewController *profilePopupView;

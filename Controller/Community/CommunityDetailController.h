@@ -11,8 +11,9 @@
 #import "CommunityDetailModel.h"
 #import "CommunityProfilePopupViewController.h"
 #import "AppDelegate.h"
+#import "CommonViewController.h"
 
-@interface CommunityDetailController : ViewController <UITextViewDelegate, CommunityProfilePopupViewDelegate>
+@interface CommunityDetailController : CommonViewController <UITextViewDelegate, CommunityProfilePopupViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *txtMessageContent;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *messageContainerHeight;

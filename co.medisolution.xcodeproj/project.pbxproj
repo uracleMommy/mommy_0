@@ -75,11 +75,11 @@
 		2AEAE5811D9CFF2700146596 /* CommunityPeopleListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAE5801D9CFF2700146596 /* CommunityPeopleListController.m */; };
 		2AEBE3491D79419E0075B210 /* DiaryWriteScheduleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBE3481D79419E0075B210 /* DiaryWriteScheduleController.m */; };
 		2AEBE34C1D7941BF0075B210 /* DiaryDetailScheduleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBE34B1D7941BF0075B210 /* DiaryDetailScheduleController.m */; };
-		DC1856451D9DEA3500D9A957 /* MommyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1856441D9DEA3500D9A957 /* MommyRequest.m */; };
 		2AFDD7611D9BA0CC00FE157C /* CommunityPersonListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDD7601D9BA0CC00FE157C /* CommunityPersonListModel.m */; };
 		2AFDD7641D9BAD1800FE157C /* CommunityNewspeedListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDD7631D9BAD1800FE157C /* CommunityNewspeedListModel.m */; };
 		2AFDD7671D9BAD2700FE157C /* CommunityNewspeedListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDD7661D9BAD2700FE157C /* CommunityNewspeedListController.m */; };
 		2AFDD76A1D9BB46D00FE157C /* CommunityDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDD7691D9BB46D00FE157C /* CommunityDetailController.m */; };
+		DC1856451D9DEA3500D9A957 /* MommyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1856441D9DEA3500D9A957 /* MommyRequest.m */; };
 		DC1A77CE1D94EC1200F88693 /* MoreMyPageNickNameChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A77CD1D94EC1200F88693 /* MoreMyPageNickNameChangeViewController.m */; };
 		DC1A77D11D94F47E00F88693 /* MoreMyPagePasswordChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A77D01D94F47E00F88693 /* MoreMyPagePasswordChangeViewController.m */; };
 		DC1A77D51D94FC2E00F88693 /* MoreMyPagePasswordChangeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A77D31D94FC2E00F88693 /* MoreMyPagePasswordChangeCell.m */; };
@@ -429,8 +429,6 @@
 		2AEBE3481D79419E0075B210 /* DiaryWriteScheduleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryWriteScheduleController.m; sourceTree = "<group>"; };
 		2AEBE34A1D7941BF0075B210 /* DiaryDetailScheduleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryDetailScheduleController.h; sourceTree = "<group>"; };
 		2AEBE34B1D7941BF0075B210 /* DiaryDetailScheduleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryDetailScheduleController.m; sourceTree = "<group>"; };
-		DC1856431D9DEA3500D9A957 /* MommyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MommyRequest.h; sourceTree = "<group>"; };
-		DC1856441D9DEA3500D9A957 /* MommyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MommyRequest.m; sourceTree = "<group>"; };
 		2AFDD75F1D9BA0CC00FE157C /* CommunityPersonListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityPersonListModel.h; sourceTree = "<group>"; };
 		2AFDD7601D9BA0CC00FE157C /* CommunityPersonListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityPersonListModel.m; sourceTree = "<group>"; };
 		2AFDD7621D9BAD1800FE157C /* CommunityNewspeedListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityNewspeedListModel.h; sourceTree = "<group>"; };
@@ -439,6 +437,8 @@
 		2AFDD7661D9BAD2700FE157C /* CommunityNewspeedListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityNewspeedListController.m; sourceTree = "<group>"; };
 		2AFDD7681D9BB46D00FE157C /* CommunityDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityDetailController.h; sourceTree = "<group>"; };
 		2AFDD7691D9BB46D00FE157C /* CommunityDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityDetailController.m; sourceTree = "<group>"; };
+		DC1856431D9DEA3500D9A957 /* MommyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MommyRequest.h; sourceTree = "<group>"; };
+		DC1856441D9DEA3500D9A957 /* MommyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MommyRequest.m; sourceTree = "<group>"; };
 		DC1A77CC1D94EC1200F88693 /* MoreMyPageNickNameChangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreMyPageNickNameChangeViewController.h; sourceTree = "<group>"; };
 		DC1A77CD1D94EC1200F88693 /* MoreMyPageNickNameChangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreMyPageNickNameChangeViewController.m; sourceTree = "<group>"; };
 		DC1A77CF1D94F47E00F88693 /* MoreMyPagePasswordChangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreMyPagePasswordChangeViewController.h; sourceTree = "<group>"; };
@@ -1860,7 +1860,7 @@
 				TargetAttributes = {
 					DCA5AE201D598C6F0075B7AD = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = LUYT38Y3AT;
+						DevelopmentTeam = JH5F2VBM8Z;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2308,7 +2308,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Park seohee (TDF9AJWPR5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LUYT38Y3AT;
+				DEVELOPMENT_TEAM = JH5F2VBM8Z;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2334,7 +2334,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Park seohee (TDF9AJWPR5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LUYT38Y3AT;
+				DEVELOPMENT_TEAM = JH5F2VBM8Z;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

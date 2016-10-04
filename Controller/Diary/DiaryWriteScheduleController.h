@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "IQDropDownTextField.h"
+#import "CommonViewController.h"
 
-@interface DiaryWriteScheduleController : UIViewController<IQDropDownTextFieldDelegate, UITextViewDelegate>{
+@interface DiaryWriteScheduleController : CommonViewController <IQDropDownTextFieldDelegate, UITextViewDelegate>{
     UIDatePicker *datePicker;
     UIDatePicker *timePicker;
 }
