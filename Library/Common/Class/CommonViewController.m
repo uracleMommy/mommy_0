@@ -11,6 +11,9 @@
 #import "IQKeyboardReturnKeyHandler.h"
 #import "IQUIView+IQKeyboardToolbar.h"
 #import "MommyRequest.h"
+#import "GlobalData.h"
+
+#define GET_AUTH_TOKEN [GlobalData sharedGlobalData].authToken // 인증토큰
 
 @implementation CommonViewController
 
@@ -31,6 +34,7 @@
 
 #pragma 인디케이터 비활성화
 - (void) hideIndicator {
+    
     
     AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate indicatorViewOut];

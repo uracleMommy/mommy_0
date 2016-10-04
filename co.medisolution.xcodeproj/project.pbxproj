@@ -100,6 +100,7 @@
 		DC1FE6ED1D65A7D4006F7A50 /* fetusInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6EC1D65A7D4006F7A50 /* fetusInfoController.m */; };
 		DC1FE6F61D65C83C006F7A50 /* DZNSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6F31D65C83C006F7A50 /* DZNSegmentedControl.m */; };
 		DC1FE6F71D65C83C006F7A50 /* UIScrollView+DZNSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6F51D65C83C006F7A50 /* UIScrollView+DZNSegmentedControl.m */; };
+		DC25AA521DA39384000E41FC /* GlobalData.m in Sources */ = {isa = PBXBuildFile; fileRef = DC25AA511DA39384000E41FC /* GlobalData.m */; };
 		DC27E5051D9C9C240014C5C4 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC27E5041D9C9C240014C5C4 /* Intro.storyboard */; };
 		DC27E50A1D9CA3F30014C5C4 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC27E5091D9CA3F30014C5C4 /* IntroViewController.m */; };
 		DC27E50D1D9CA4D00014C5C4 /* IntroCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC27E50C1D9CA4D00014C5C4 /* IntroCustomView.m */; };
@@ -482,6 +483,8 @@
 		DC1FE6F31D65C83C006F7A50 /* DZNSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZNSegmentedControl.m; sourceTree = "<group>"; };
 		DC1FE6F41D65C83C006F7A50 /* UIScrollView+DZNSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+DZNSegmentedControl.h"; sourceTree = "<group>"; };
 		DC1FE6F51D65C83C006F7A50 /* UIScrollView+DZNSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+DZNSegmentedControl.m"; sourceTree = "<group>"; };
+		DC25AA501DA39384000E41FC /* GlobalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalData.h; sourceTree = "<group>"; };
+		DC25AA511DA39384000E41FC /* GlobalData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalData.m; sourceTree = "<group>"; };
 		DC27E5041D9C9C240014C5C4 /* Intro.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
 		DC27E5081D9CA3F30014C5C4 /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
 		DC27E5091D9CA3F30014C5C4 /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
@@ -1251,6 +1254,8 @@
 				DC3266491D6E7EA1008B38A8 /* CommonViewController.m */,
 				DC1856431D9DEA3500D9A957 /* MommyRequest.h */,
 				DC1856441D9DEA3500D9A957 /* MommyRequest.m */,
+				DC25AA501DA39384000E41FC /* GlobalData.h */,
+				DC25AA511DA39384000E41FC /* GlobalData.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -2132,6 +2137,7 @@
 				DC4462261D87B0AD006BFEBB /* MoreProfessionalInfoViewController.m in Sources */,
 				2AB627761D5C0CEC00BD7B84 /* LoginMain.m in Sources */,
 				DC538E651D78016B00E5949B /* WeightChartModel.m in Sources */,
+				DC25AA521DA39384000E41FC /* GlobalData.m in Sources */,
 				DC68F52A1D93D7CC009D3B1E /* MoreEquipmentListViewController.m in Sources */,
 				DC1FE6E51D658E47006F7A50 /* TabbarDashBoardNavController.m in Sources */,
 				DC68F5321D93D7CC009D3B1E /* MoreProfessionalReplyContentsViewController.m in Sources */,
