@@ -13,6 +13,7 @@
 #import "IQKeyboardManager.h"
 #import "IQDropDownTextField.h"
 #import "FXBlurView.h"
+#import "CommonViewController.h"
 
 @protocol SignUpMommyInfoScrollViewDelegate <NSObject>
 
@@ -22,7 +23,7 @@
 
 @end
 
-@interface SignUpMommyInfoScrollViewController : UIViewController <UINavigationControllerDelegate, UITextFieldDelegate, UIAlertViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
+@interface SignUpMommyInfoScrollViewController : CommonViewController <UINavigationControllerDelegate, UITextFieldDelegate, UIAlertViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
     NSMutableArray *pickerData_0; //거주지 시
     NSMutableArray *pickerData_1; //거주지 구
     NSMutableArray *pickerData_2; //거주지 동

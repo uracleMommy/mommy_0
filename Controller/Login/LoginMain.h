@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
-@interface LoginMain : UIViewController
+@interface LoginMain : CommonViewController
 
 @property (strong, nonatomic) IBOutlet UITextField *idTextField;
 @property (strong, nonatomic) IBOutlet UITextField *pwTextField;

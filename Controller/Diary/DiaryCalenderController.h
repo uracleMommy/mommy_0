@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "JTCalendar.h"
+#import "CommonViewController.h"
 
 
 @protocol DiaryCalendarDelegate <NSObject>
@@ -17,7 +18,7 @@
 
 @end
 
-@interface DiaryCalenderController : UIViewController<JTCalendarDelegate>
+@interface DiaryCalenderController : CommonViewController <JTCalendarDelegate>
 
 @property (strong, nonatomic) JTCalendarMenuView *calendarMenuView;
 @property (weak, nonatomic) IBOutlet JTHorizontalCalendarView *calendarContentView;

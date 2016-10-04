@@ -10,8 +10,9 @@
 #import "DZNSegmentedControl.h"
 #import "CommunityMyGroupController.h"
 #import "CommunityMentorController.h"
+#import "CommonViewController.h"
 
-@interface CommunityMainController : UIViewController<DZNSegmentedControlDelegate, CommunityMyGroupDelegate, CommunityMentorDelegate>
+@interface CommunityMainController : CommonViewController <DZNSegmentedControlDelegate, CommunityMyGroupDelegate, CommunityMentorDelegate>
 
 @property (weak, nonatomic) IBOutlet DZNSegmentedControl *tabView;
 @property (strong, nonatomic) CommunityMyGroupController *myGroupViewController;

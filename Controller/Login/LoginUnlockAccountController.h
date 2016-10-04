@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
-@interface LoginUnlockAccountController : UIViewController{
+@interface LoginUnlockAccountController : CommonViewController {
     int t_count;
     NSTimer *confirmNumberTimer;
 }

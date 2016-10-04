@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
-@interface LoginNewPasswordCreate : UIViewController <UITextFieldDelegate>
+@interface LoginNewPasswordCreate : CommonViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *confirmPasswordTextField;

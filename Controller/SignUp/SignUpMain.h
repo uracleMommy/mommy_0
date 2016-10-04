@@ -12,8 +12,9 @@
 #import "termsPopupViewController.h"
 #import "AppDelegate.h"
 #import "emoticonPopupViewController.h"
+#import "CommonViewController.h"
 
-@interface SignUpMain : UIViewController <UITextFieldDelegate, UIPickerViewDelegate, termsPopupViewDelegate>{
+@interface SignUpMain : CommonViewController <UITextFieldDelegate, UIPickerViewDelegate, termsPopupViewDelegate>{
     UIViewController *scrollViewContoller;
 }
 

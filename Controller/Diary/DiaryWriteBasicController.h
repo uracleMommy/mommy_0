@@ -14,8 +14,9 @@
 #import "emoticonPopupViewController.h"
 #import "MultiImageViewController.h"
 #import "ImageCropView.h"
+#import "CommonViewController.h"
 
-@interface DiaryWriteBasicController : UIViewController <UITextViewDelegate, IQDropDownTextFieldDelegate, ImageCropViewControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, UINavigationControllerDelegate, emoticonPopupViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
+@interface DiaryWriteBasicController : CommonViewController <UITextViewDelegate, IQDropDownTextFieldDelegate, ImageCropViewControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, UINavigationControllerDelegate, emoticonPopupViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
     UIButton *selectedImageButton;
     UIImage *image;
     UIImage *defaultImage;

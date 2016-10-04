@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
-@interface DiaryDetailScheduleController : UIViewController
+@interface DiaryDetailScheduleController : CommonViewController
 
 @end

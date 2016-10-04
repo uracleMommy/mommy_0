@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CommunityPersonListModel.h"
+#import "CommonViewController.h"
 
 @protocol CommunityMentorDelegate <NSObject>
 
@@ -17,7 +18,7 @@
 
 @end
 
-@interface CommunityMentorController : UIViewController<CommunityPersonListModelDelegate>
+@interface CommunityMentorController : CommonViewController <CommunityPersonListModelDelegate>
 
 @property (strong, nonatomic) CommunityPersonListModel *tableListController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

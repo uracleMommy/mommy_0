@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "SignUpFetusInfoModel.h"
+#import "CommonViewController.h"
 
-@interface SignUpFetusInfoController : UIViewController<fetusInfoModelDelegate>
+@interface SignUpFetusInfoController : CommonViewController <fetusInfoModelDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *fetusInfoTableView;
 @property (strong, nonatomic) SignUpFetusInfoModel *fetusInfoTableDelegate;
