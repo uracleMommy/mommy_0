@@ -91,7 +91,6 @@ static MommyRequest* instanceMommyRequest;
     [[session dataTaskWithRequest:request completionHandler:^(NSData *data,
                                                               NSURLResponse *response,
                                                               NSError *error) {
-        
         if (error != nil) {
             
             errorBlock(error);
@@ -241,17 +240,17 @@ static MommyHttpUrls* instanceMommyHttpUrls;
             
             // 계정 잠금 해제
         case UnlockMember:
-            return [_mainDomain stringByAppendingString: @"/api/user/unlockMember"];
+            return [_mainDomain stringByAppendingString: @"/api/user/unlock-id"];
             break;
             
             // 비밀번호 재설정
         case ResetPassword:
-            return [_mainDomain stringByAppendingString: @"/api/user/resetPassword"];
+            return [_mainDomain stringByAppendingString: @"/api/user/password/reset"];
             break;
             
             // 신규 비밀번호 생성
         case SetPassword:
-            return [_mainDomain stringByAppendingString: @"/api/user/setNewPassword"];
+            return [_mainDomain stringByAppendingString: @"/api/user/password/new"];
             break;
             
         default:
@@ -265,12 +264,19 @@ static MommyHttpUrls* instanceMommyHttpUrls;
     
     switch (serviceType) {
         case MemberSignUp:
-            
             return [_mainDomain stringByAppendingString: @"/api/join/signup"];
             break;
-        case DuplicateCheck:
             
+        case IdDuplicateCheck:
             return [_mainDomain stringByAppendingString: @"/api/join/overlap/id"];
+            break;
+            
+        case GetAddress:
+            return [_mainDomain stringByAppendingString: @"/api/join/address"];
+            break;
+            
+        case InsertUserProfile:
+            return [_mainDomain stringByAppendingString: @"/api/join/insert/user-profile"];
             break;
             
         default:

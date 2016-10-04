@@ -61,6 +61,16 @@
     [delegate okButtonAction];
 }
 - (IBAction)cancleButtonAction:(id)sender {
-    [self.view removeFromSuperview];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                    message:@"서비스 및 개인정보 이용약관 미 동의 시 본 서비스를 이용하실 수 없습니다.\n 어플리케이션을 종료하시겠습니까?"                                   delegate:self                           cancelButtonTitle:@"취소"                              otherButtonTitles:@"종료", nil];
+    [alert show];
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex == 1){ //"종료" pressed
+        exit(0);
+    }
+}
+
 @end

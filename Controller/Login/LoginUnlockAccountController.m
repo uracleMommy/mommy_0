@@ -60,6 +60,58 @@
     }
 }
 
+- (IBAction)confirmButtonAction:(id)sender {
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+    [param setValue:_idText forKey:@"id"];
+    [param setValue:_phoneNumberTextField.text forKey:@"phone_num"];
+    //TODO validation check
+    [self showIndicator];
+    [[MommyRequest sharedInstance] mommyLoginApiService:LoginCheck authKey:nil parameters:param success:^(NSDictionary *data){
+        
+        NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
+        if([code isEqual:@"0"]){
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                                message:@"계정 잠금상태가 해제되었습니다. 아이디와 비밀번호를 다시 입력해 주세요."
+                                                               delegate:self
+                                                      cancelButtonTitle:@"확인"
+                                                      otherButtonTitles:nil, nil];
+                [alert setTag:0];
+                [alert show];
+            });
+
+        }else if([code isEqual:@"-6"]){
+            //등록된 사용자 조회 실패
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                                message:@"등록된 사용자 정보가 없습니다.\n확인 후 다시 입력해 주세요."
+                                                               delegate:self
+                                                      cancelButtonTitle:@"취소"
+                                                      otherButtonTitles:nil, nil];
+                [alert show];
+            });
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+    } error:^(NSError *error) {
+        NSLog(@"PSH error %@", error);
+        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+    } ];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+    switch(alertView.tag) {
+        case 0 : {
+            if(buttonIndex == 0){ //"확인" pressed
+                [self performSegueWithIdentifier:@"UnwindingSegue" sender:self];
+            }
+            break;
+        }
+    }
+}
+
 - (void)countTimer:(NSTimer *)timer{
     t_count++;
     

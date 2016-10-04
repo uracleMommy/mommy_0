@@ -154,11 +154,51 @@
     return YES;
 }
 - (IBAction)savePasswordButtonAction:(id)sender {
+    //TODO validation
+    NSMutableDictionary *param = [[NSMutableDictionary alloc]init];
     
-    //TEMP 가입이동
-    UIStoryboard *signUpStoryboard = [UIStoryboard storyboardWithName:@"MembershipSignUp" bundle:nil];
-    UINavigationController *signUpNavigationController = (UINavigationController *)[signUpStoryboard instantiateViewControllerWithIdentifier:@"MembershipSignUpNavigation"];
+    [param setValue:_idText forKey:@"id"];
+    [param setValue:_phoneNumberText forKey:@"phone_num"];
+    [param setValue:_passwordTextField.text forKey:@"password"];
     
-    [self presentViewController:signUpNavigationController animated:YES completion:nil];
+    [self showIndicator];
+    [[MommyRequest sharedInstance] mommyLoginApiService:SetPassword authKey:nil parameters:param success:^(NSDictionary *data){
+        
+        NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
+        if([code isEqual:@"0"]){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                                message:@"비밀번호가 재설정 되었습니다.\n새롭게 생성된 비밀번호로 다시 로그인해주세요."
+                                                               delegate:self
+                                                      cancelButtonTitle:@"확인"
+                                                      otherButtonTitles:nil, nil];
+                [alert show];
+            });
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+    } error:^(NSError *error) {
+        NSLog(@"PSH error %@", error);
+        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+    } ];
+    
+
+//    //TEMP 가입이동
+//    UIStoryboard *signUpStoryboard = [UIStoryboard storyboardWithName:@"MembershipSignUp" bundle:nil];
+//    UINavigationController *signUpNavigationController = (UINavigationController *)[signUpStoryboard instantiateViewControllerWithIdentifier:@"MembershipSignUpNavigation"];
+//    
+//    [self presentViewController:signUpNavigationController animated:YES completion:nil];
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+//    switch(alertView.tag) {
+//        case 2 : {
+            if(buttonIndex == 0){ //"확인" pressed
+                 [self performSegueWithIdentifier:@"UnwindingSegue" sender:self];
+            }
+//            break;
+//        }
+//    }
+}
+
 @end

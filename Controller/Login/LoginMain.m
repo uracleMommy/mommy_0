@@ -95,23 +95,111 @@
 }
 
 - (IBAction)loginButtonAction:(id)sender {
-    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
-    [param setValue:[_idTextField text] forKey:@"id"];
-    [param setValue:_pwTextField.text forKey:@"password"];
-    
-    
-    
-    [[MommyRequest sharedInstance] mommyLoginApiService:LoginCheck authKey:nil parameters:param success:^(NSDictionary *data){
-        NSLog(@"PSH data %@", data);
+//    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+//    [param setValue:[_idTextField text] forKey:@"id"];
+//    [param setValue:_pwTextField.text forKey:@"password"];
+//    //TODO validation check
+//    [self showIndicator];
+//    [[MommyRequest sharedInstance] mommyLoginApiService:LoginCheck authKey:nil parameters:param success:^(NSDictionary *data){
+//        NSLog(@"PSH data %@", data);
+//        
+//        
+//        NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
+//        if([code isEqual:@"0"]){
+//                UIStoryboard *dashBoardStoryboard = [UIStoryboard storyboardWithName:@"MainTabBar" bundle:nil];
+//                UINavigationController *dashBoardNavigationController = (UINavigationController *)[dashBoardStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarNavigation"];
+//            
+//                [self presentViewController:dashBoardNavigationController animated:YES completion:nil];
+//        }else if([code isEqual:@"-1"]){
+//            //로그인 실패
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+//                                                                message:@"로그인에 실패하셨습니다.\n다시 시도해주시기 바랍니다."
+//                                                               delegate:self
+//                                                      cancelButtonTitle:@"취소"
+//                                                      otherButtonTitles:nil, nil];
+////                [alert setTag:1];
+//                [alert show];
+//            });
+//        }else if([code isEqual:@"-2"]){
+//            //등록된사용자 없음
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+//                                                                                                        message:@"등록된 사용자 정보가 없습니다.\n회원가입 화면으로 이동하시겠습니까?"                                   delegate:self                           cancelButtonTitle:@"취소"                              otherButtonTitles:@"이동", nil];
+//                [alert setTag:2];
+//                [alert show];
+//            });
+//            
+//        }else if([code isEqual:@"-3"]){
+//            //비밀번호 실패
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+//                                                                message:@"비밀번호가 올바르지 않습니다.\n확인 후 다시 시도해 주세요."
+//                                                               delegate:self
+//                                                      cancelButtonTitle:@"확인"
+//                                                      otherButtonTitles:nil, nil];
+////                [alert setTag:3];
+//                [alert show];
+//            });
+//        }else if([code isEqual:@"-4"]){
+//            //id잠김
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+//                                                                message:@"사용자 계정이 잠금 처리 되었습니다.\n잠금해제 화면으로 이동하시겠습니까?"
+//                                                               delegate:self
+//                                                      cancelButtonTitle:@"취소"
+//                                                      otherButtonTitles:@"잠금해제", nil];
+//                
+//                [alert setTag:4];
+//                [alert show];
+//            });
+//        }
+//        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+//    } error:^(NSError *error) {
+//        NSLog(@"PSH error %@", error);
+//        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+//    } ];
+    NSDictionary *empty = [[NSDictionary alloc] init];
+    [[MommyRequest sharedInstance] mommySignInApiService:GetAddress authKey:nil parameters:empty success:^(NSDictionary *data){
+        NSLog(@"PSH data %@", data);        
     } error:^(NSError *error) {
         NSLog(@"PSH error %@", error);
-    }];
+    } ];
+}
 
-    //TEMP 대쉬보드 이동
-//    UIStoryboard *dashBoardStoryboard = [UIStoryboard storyboardWithName:@"MainTabBar" bundle:nil];
-//    UINavigationController *dashBoardNavigationController = (UINavigationController *)[dashBoardStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarNavigation"];
-//    
-//    [self presentViewController:dashBoardNavigationController animated:YES completion:nil];
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+    switch(alertView.tag) {
+        case 2 : {
+            if(buttonIndex == 1){ //"이동" pressed
+                UIStoryboard *signUpStoryboard = [UIStoryboard storyboardWithName:@"MembershipSignUp" bundle:nil];
+                UINavigationController *signUpNavigationController = (UINavigationController *)[signUpStoryboard instantiateViewControllerWithIdentifier:@"MembershipSignUpNavigation"];
+                
+                [self presentViewController:signUpNavigationController animated:YES completion:nil];
+            }
+            break;
+        }
+        case 4 : {
+            if(buttonIndex == 1){ //"잠금해제" pressed
+                [self performSegueWithIdentifier:@"moveLoginUnlockAccountSegue" sender:self];
+            }
+            break;
+        }
+    }
+}
+
+-(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"moveLoginUnlockAccountSegue"])
+    {
+        LoginUnlockAccountController *vc = [segue destinationViewController];
+        [vc setIdText:_idTextField.text];
+    }
 }
 
 

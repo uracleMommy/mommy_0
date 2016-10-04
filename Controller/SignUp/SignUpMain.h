@@ -13,9 +13,10 @@
 #import "AppDelegate.h"
 #import "emoticonPopupViewController.h"
 #import "CommonViewController.h"
+#import "SignUpMainScrollViewController.h"
 
 @interface SignUpMain : CommonViewController <UITextFieldDelegate, UIPickerViewDelegate, termsPopupViewDelegate>{
-    UIViewController *scrollViewContoller;
+    SignUpMainScrollViewController *scrollViewContoller;
 }
 
 @property (nonatomic, strong) IBOutlet TPKeyboardAvoidingScrollView *scrollView;

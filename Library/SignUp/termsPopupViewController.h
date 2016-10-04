@@ -11,6 +11,7 @@
 @protocol termsPopupViewDelegate <NSObject>
 
 - (void)okButtonAction;
+- (void)cancleButtonAction;
 
 @end
 @interface termsPopupViewController : UIViewController

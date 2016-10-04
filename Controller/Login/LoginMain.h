@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CommonViewController.h"
+#import "LoginUnlockAccountController.h"
 
 @interface LoginMain : CommonViewController
 

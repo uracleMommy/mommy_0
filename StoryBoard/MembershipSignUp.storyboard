@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="20"/>
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
@@ -168,6 +168,9 @@
                                         <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="8ny-is-QJW" id="ifA-gw-PDE"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -204,6 +207,9 @@
                                         <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="8ny-is-QJW" id="5gV-hQ-4Ra"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RCI-T6-9Bh" customClass="notPasteField">
                                         <constraints>
@@ -212,6 +218,9 @@
                                         <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="8ny-is-QJW" id="lGR-Gq-lg4"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -494,16 +503,19 @@
                     <connections>
                         <outlet property="birthdayTextField" destination="QAU-nJ-xmn" id="U1W-fe-vaW"/>
                         <outlet property="confirmPasswordTextField" destination="7Bn-Fp-J1v" id="zJg-Nb-fad"/>
+                        <outlet property="emailTextField" destination="6vs-kM-UHK" id="qGI-Q5-zhz"/>
                         <outlet property="idTextField" destination="fzi-JL-gmV" id="DFO-UP-S3R"/>
                         <outlet property="idValidationLabel" destination="pCV-6x-DW3" id="8q9-vZ-L3l"/>
+                        <outlet property="nameTextField" destination="jO3-9R-Mmd" id="rDM-FZ-k2i"/>
                         <outlet property="passwordTextField" destination="RCI-T6-9Bh" id="qLd-vT-avg"/>
                         <outlet property="passwordValidationLabel" destination="c3B-cC-KlN" id="33m-mR-2Nh"/>
+                        <outlet property="phoneNumberTextField" destination="ksy-8n-kPI" id="oc6-mq-8rM"/>
                         <outlet property="timerLabel" destination="Vr7-Sv-L4F" id="csM-NE-ZJl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ndw-sv-Ua8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="234" y="1162"/>
+            <point key="canvasLocation" x="233" y="1232"/>
         </scene>
         <!--Sign Up Mommy Info Scroll View Controller-->
         <scene sceneID="9AW-lx-mFE">
@@ -892,7 +904,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mdt-CM-MKy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="694" y="1220"/>
+            <point key="canvasLocation" x="774" y="1157"/>
         </scene>
         <!--태아 정보-->
         <scene sceneID="Htf-fo-5dt">
@@ -981,7 +993,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYX-5d-Wfy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1207" y="484"/>
+            <point key="canvasLocation" x="1279" y="478"/>
         </scene>
     </scenes>
     <resources>

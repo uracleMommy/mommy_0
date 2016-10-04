@@ -10,6 +10,7 @@
 #import "IQDropDownTextField.h"
 #import "IQKeyboardManager.h"
 #import "CommonViewController.h"
+#import "notPasteField.h"
 
 @interface SignUpMainScrollViewController : CommonViewController <UITextFieldDelegate, IQDropDownTextFieldDelegate> {
     int t_count;
@@ -22,8 +23,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *idTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *confirmPasswordTextField;
+@property (weak, nonatomic) IBOutlet notPasteField *nameTextField;
+@property (weak, nonatomic) IBOutlet IQDropDownTextField *birthdayTextField;
+@property (weak, nonatomic) IBOutlet notPasteField *emailTextField;
+@property (weak, nonatomic) IBOutlet notPasteField *phoneNumberTextField;
 @property (weak, nonatomic) IBOutlet UILabel *idValidationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *passwordValidationLabel;
-@property (weak, nonatomic) IBOutlet IQDropDownTextField *birthdayTextField;
 
 @end

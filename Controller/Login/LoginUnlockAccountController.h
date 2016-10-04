@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CommonViewController.h"
+#import "notPasteField.h"
 
 @interface LoginUnlockAccountController : CommonViewController {
     int t_count;
@@ -15,7 +16,10 @@
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet notPasteField *phoneNumberTextField;
+@property (strong, nonatomic) NSString *idText;
 
 - (IBAction)getConfirmNumberAction:(id)sender;
+- (IBAction)confirmButtonAction:(id)sender;
 
 @end
