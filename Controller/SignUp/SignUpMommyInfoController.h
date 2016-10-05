@@ -10,17 +10,21 @@
 #import "TPKeyboardAvoidingScrollView.h"
 #import "IQKeyboardManager.h"
 #import "SignUpMommyInfoScrollViewController.h"
-#import "ImageCropView.h"
+#import "SignUpFetusInfoController.h"
 #import "CommonViewController.h"
+#import "ImageCropView.h"
 
 @interface SignUpMommyInfoController : CommonViewController <SignUpMommyInfoScrollViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, ImageCropViewControllerDelegate>{
-    SignUpMommyInfoScrollViewController *scrollViewContoller;
+    
 }
 @property (weak, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
-
 @property (strong, nonatomic) SingleImageViewController *singleImageView;
+@property (strong, nonatomic) SignUpMommyInfoScrollViewController *scrollViewContoller;
 @property (strong, nonatomic) ImageCropViewController *controller;
 @property (strong, nonatomic) UIImagePickerController *cameraView;
 @property (strong, nonatomic) UIImagePickerController *libraryView;
+@property (strong, nonatomic) NSString *fileName;
+
+- (IBAction)confirmButtonAction:(id)sender;
 
 @end

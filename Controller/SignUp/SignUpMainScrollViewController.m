@@ -24,6 +24,8 @@
     [_birthdayTextField setDateFormatter:formatter];
     [_birthdayTextField setMaximumDate:[NSDate date]];
     
+    _idValidationArr = [[NSMutableArray alloc] initWithArray:@[@"N", @"N", @"N"]];
+    _passwordValidationArr = [[NSMutableArray alloc] initWithArray:@[@"N", @"N", @"N"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,8 +45,18 @@
 
 - (IBAction)getConfirmNumberAction:(id)sender {
     if(![confirmNumberTimer isValid]){
-        t_count = 0;
-        confirmNumberTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countTimer:) userInfo:nil repeats:YES];
+        if([_phoneNumberTextField.text isEqualToString:@""] || [_phoneNumberTextField.text length] < 10 || [_phoneNumberTextField.text length] > 13){
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                            message:@"휴대번호를 확인해주세요."
+                                                           delegate:self
+                                                  cancelButtonTitle:@"확인"
+                                                  otherButtonTitles:nil, nil];
+            [alert show];
+
+        }else{
+            t_count = 0;
+            confirmNumberTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countTimer:) userInfo:nil repeats:YES];
+        }
     }
 }
 
@@ -64,19 +76,21 @@
 
 -(BOOL)textFieldShouldEndEditing:(UITextField *)textField{
         NSLog(@"PSH textFieldShouldEndEditing");
-    //    NSLog(@"%@", textField.);
-    if(textField == _idTextField){
-        NSLog(@"id");
+    if(textField == _idTextField){  //id TextField end editing
         NSString *idText = [[NSString alloc] initWithString:_idTextField.text];
-        if([idText isEqualToString:@""]){
+        
+        if([idText isEqualToString:@""]){   //empty value
+            [_idValidationArr replaceObjectAtIndex:0 withObject:@"N"];
+            [_idValidationArr replaceObjectAtIndex:1 withObject:@"N"];
+            [_idValidationArr replaceObjectAtIndex:2 withObject:@"N"];
             _idValidationLabel.textColor = [UIColor lightGrayColor];
             return YES;
         }
         
-        NSRange match = [idText rangeOfString:@"([A-z]+[0-9]+)" options:  NSRegularExpressionSearch];
         
-        if(match.location != NSNotFound){
-            NSLog(@"영문 숫자 구성");
+        if([idText rangeOfString:@"([A-z]+[0-9]+)" options:  NSRegularExpressionSearch].location != NSNotFound){        //english & number Used Validation OK
+            
+            [_idValidationArr replaceObjectAtIndex:0 withObject:@"Y"];
             NSMutableAttributedString *text =
             [[NSMutableAttributedString alloc]
              initWithAttributedString: _idValidationLabel.attributedText];
@@ -86,7 +100,7 @@
                          range:NSMakeRange(0, 9)];
             [_idValidationLabel setAttributedText: text];
         }else{
-            NSLog(@"1번째 빨강");
+            [_idValidationArr replaceObjectAtIndex:0 withObject:@"N"];
             NSMutableAttributedString *text =
             [[NSMutableAttributedString alloc]
              initWithAttributedString: _idValidationLabel.attributedText];
@@ -97,8 +111,8 @@
             [_idValidationLabel setAttributedText: text];
         }
         
-        if([idText length] > 4 && [idText length] < 13){
-            NSLog(@"5~12자 이내");
+        if([idText length] > 4 && [idText length] < 13){    //id length Validation OK
+            [_idValidationArr replaceObjectAtIndex:1 withObject:@"Y"];
             NSMutableAttributedString *text =
             [[NSMutableAttributedString alloc]
              initWithAttributedString: _idValidationLabel.attributedText];
@@ -108,7 +122,7 @@
                          range:NSMakeRange(10, 10)];
             [_idValidationLabel setAttributedText: text];
         }else{
-            NSLog(@"2번째 빨강");
+            [_idValidationArr replaceObjectAtIndex:1 withObject:@"N"];
             NSMutableAttributedString *text =
             [[NSMutableAttributedString alloc]
              initWithAttributedString: _idValidationLabel.attributedText];
@@ -123,13 +137,10 @@
         NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
         [param setValue:[_idTextField text] forKey:@"id"];
         
-        //TODO validation check
         [[MommyRequest sharedInstance] mommySignInApiService:IdDuplicateCheck authKey:nil parameters:param success:^(NSDictionary *data){
-            NSLog(@"PSH data %@", data);
-            
-            
             NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
-            if([code isEqual:@"0"]){
+            if([code isEqual:@"0"]){    //id Duplicate OK
+                [_idValidationArr replaceObjectAtIndex:2 withObject:@"Y"];
                 dispatch_async(dispatch_get_main_queue(), ^{
                         NSMutableAttributedString *text =
                         [[NSMutableAttributedString alloc]
@@ -141,6 +152,7 @@
                         [_idValidationLabel setAttributedText: text];
                     });
             }else{
+                [_idValidationArr replaceObjectAtIndex:2 withObject:@"N"];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     NSMutableAttributedString *text =
                     [[NSMutableAttributedString alloc]
@@ -154,23 +166,24 @@
                 
             }
         } error:^(NSError *error) {
+            [_idValidationArr replaceObjectAtIndex:2 withObject:@"N"];
             NSLog(@"PSH error %@", error);
         } ];
         
-        
-        //영문, 숫자구성
-        //5~12자 이내
-        //중복되지않음
-    }else if(textField == _passwordTextField){
-        NSLog(@"password");
+    }else if(textField == _passwordTextField){  //password TextField end editing
         NSString *passwordText = [[NSString alloc] initWithString:_passwordTextField.text];
-        if([passwordText isEqualToString:@""]){
+        
+        if([passwordText isEqualToString:@""]){ //empty value
+            [_passwordValidationArr replaceObjectAtIndex:0 withObject:@"N"];
+            [_passwordValidationArr replaceObjectAtIndex:1 withObject:@"N"];
+            [_passwordValidationArr replaceObjectAtIndex:2 withObject:@"N"];
+            
             _passwordValidationLabel.textColor = [UIColor lightGrayColor];
             return YES;
         }
         
-        if([passwordText length] > 5 && [passwordText length] < 19){
-            NSLog(@"6~18자 이내");
+        if([passwordText length] > 5 && [passwordText length] < 19){    //password length validation OK
+            [_passwordValidationArr replaceObjectAtIndex:0 withObject:@"Y"];
             
             NSMutableAttributedString *text =
             [[NSMutableAttributedString alloc]
@@ -181,8 +194,7 @@
                          range:NSMakeRange(0, 10)];
             [_passwordValidationLabel setAttributedText: text];
         }else{
-            NSLog(@"1번째 빨강");
-            
+            [_passwordValidationArr replaceObjectAtIndex:0 withObject:@"N"];
             NSMutableAttributedString *text =
             [[NSMutableAttributedString alloc]
              initWithAttributedString: _passwordValidationLabel.attributedText];
@@ -193,10 +205,8 @@
             [_passwordValidationLabel setAttributedText: text];
         }
         
-        NSRange match = [passwordText rangeOfString:@"([A-z]+[0-9]+[?`_=~!@#$%^&*()+-]+)" options:  NSRegularExpressionSearch];
-        
-        if(match.location != NSNotFound){
-            NSLog(@"영문 숫자 특수문자 구성");
+        if([passwordText rangeOfString:@"([A-z]+[0-9]+[?`_=~!@#$%^&*()+-]+)" options:  NSRegularExpressionSearch].location != NSNotFound){  //english & number & special char Check OK
+            [_passwordValidationArr replaceObjectAtIndex:1 withObject:@"Y"];
             NSMutableAttributedString *text =
             [[NSMutableAttributedString alloc]
              initWithAttributedString: _passwordValidationLabel.attributedText];
@@ -206,7 +216,7 @@
                          range:NSMakeRange(11, 15)];
             [_passwordValidationLabel setAttributedText: text];
         }else{
-            NSLog(@"2번째 빨강");
+            [_passwordValidationArr replaceObjectAtIndex:1 withObject:@"N"];
             NSMutableAttributedString *text =
             [[NSMutableAttributedString alloc]
              initWithAttributedString: _passwordValidationLabel.attributedText];
@@ -217,26 +227,20 @@
             [_passwordValidationLabel setAttributedText: text];
         }
         
-        //6~18자 이내
-        //영문, 숫자, 특수문자 조합
-        
-        
-    }else if(textField == _confirmPasswordTextField){
-        NSLog(@"confirm password");
         NSString *confirmPasswordText = [[NSString alloc] initWithString:_confirmPasswordTextField.text];
         
-        if([confirmPasswordText isEqualToString: @""]){
-            //빈값
+        if([confirmPasswordText isEqualToString: @""]){ //empty value
+            [_passwordValidationArr replaceObjectAtIndex:2 withObject:@"N"];
             NSMutableAttributedString *text =
             [[NSMutableAttributedString alloc]
              initWithAttributedString: _passwordValidationLabel.attributedText];
             
             [text addAttribute:NSForegroundColorAttributeName
                          value:[UIColor lightGrayColor]
-                         range:NSMakeRange(16, 7)];
+                         range:NSMakeRange(28, 7)];
             [_passwordValidationLabel setAttributedText: text];
-        }else if([_passwordTextField.text isEqualToString:confirmPasswordText]){
-            //일치
+        }else if([passwordText isEqualToString:confirmPasswordText]){   //equal OK
+            [_passwordValidationArr replaceObjectAtIndex:2 withObject:@"Y"];
             NSMutableAttributedString *text =
             [[NSMutableAttributedString alloc]
              initWithAttributedString: _passwordValidationLabel.attributedText];
@@ -246,7 +250,7 @@
                          range:NSMakeRange(28, 7)];
             [_passwordValidationLabel setAttributedText: text];
         }else{
-            //불일치
+            [_passwordValidationArr replaceObjectAtIndex:2 withObject:@"N"];
             NSMutableAttributedString *text =
             [[NSMutableAttributedString alloc]
              initWithAttributedString: _passwordValidationLabel.attributedText];
@@ -256,8 +260,41 @@
                          range:NSMakeRange(28, 7)];
             [_passwordValidationLabel setAttributedText: text];
         }
+    }else if(textField == _confirmPasswordTextField){        //confirmPassWord TextField End Editing
+        NSString *passwordText = [[NSString alloc] initWithString:_passwordTextField.text];
+        NSString *confirmPasswordText = [[NSString alloc] initWithString:_confirmPasswordTextField.text];
         
-        //비밀번호 일치
+        if([confirmPasswordText isEqualToString: @""]){ //empty value
+            [_passwordValidationArr replaceObjectAtIndex:2 withObject:@"N"];
+            NSMutableAttributedString *text =
+            [[NSMutableAttributedString alloc]
+             initWithAttributedString: _passwordValidationLabel.attributedText];
+            
+            [text addAttribute:NSForegroundColorAttributeName
+                         value:[UIColor lightGrayColor]
+                         range:NSMakeRange(28, 7)];
+            [_passwordValidationLabel setAttributedText: text];
+        }else if([passwordText isEqualToString:confirmPasswordText]){   //equal OK
+            [_passwordValidationArr replaceObjectAtIndex:2 withObject:@"Y"];
+            NSMutableAttributedString *text =
+            [[NSMutableAttributedString alloc]
+             initWithAttributedString: _passwordValidationLabel.attributedText];
+            
+            [text addAttribute:NSForegroundColorAttributeName
+                         value:[UIColor blackColor]
+                         range:NSMakeRange(28, 7)];
+            [_passwordValidationLabel setAttributedText: text];
+        }else{
+            [_passwordValidationArr replaceObjectAtIndex:2 withObject:@"N"];
+            NSMutableAttributedString *text =
+            [[NSMutableAttributedString alloc]
+             initWithAttributedString: _passwordValidationLabel.attributedText];
+            
+            [text addAttribute:NSForegroundColorAttributeName
+                         value:[UIColor redColor]
+                         range:NSMakeRange(28, 7)];
+            [_passwordValidationLabel setAttributedText: text];
+        }
     }
     return YES;
 }

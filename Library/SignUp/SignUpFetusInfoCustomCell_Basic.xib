@@ -46,6 +46,9 @@
                     <constraint firstAttribute="bottom" secondItem="mRp-q1-N0S" secondAttribute="bottom" constant="7" id="ohk-fO-XRW"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="fetusNameTextField" destination="mRp-q1-N0S" id="cq0-gQ-ax4"/>
+            </connections>
             <point key="canvasLocation" x="247.5" y="279"/>
         </tableViewCell>
     </objects>

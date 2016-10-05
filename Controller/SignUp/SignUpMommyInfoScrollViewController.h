@@ -52,6 +52,7 @@
 @property (weak, nonatomic) IBOutlet IQDropDownTextField *fetusCountTextField;
 @property (weak, nonatomic) IBOutlet UIButton *mommyImageButton;
 @property (strong, nonatomic) UIImage *defaultImage;
+@property (strong, nonatomic) NSMutableArray *nicknameValidationArr;
 
 
 

@@ -24,6 +24,7 @@ typedef enum {
     
     MemberSignUp,
     IdDuplicateCheck,
+    NickNameDuplicateCheck,
     GetAddress,
     InsertUserProfile
 } MommySignInWebServiceType;

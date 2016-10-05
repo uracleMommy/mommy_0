@@ -14,6 +14,14 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *fetusInfoTableView;
 @property (strong, nonatomic) SignUpFetusInfoModel *fetusInfoTableDelegate;
+@property (strong, nonatomic) NSString *file_name;
+@property (strong, nonatomic) NSString *nickname;
+@property (strong, nonatomic) NSNumber *address;
+@property (strong, nonatomic) NSString *baby_birth;
+@property (strong, nonatomic) NSString *before_weight;
+@property (strong, nonatomic) NSString *weight;
+@property (strong, nonatomic) NSString *height;
+@property (strong, nonatomic) NSString *baby_cnt;
 
 - (IBAction)saveButtonAction:(id)sender;
 

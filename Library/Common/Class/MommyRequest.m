@@ -112,7 +112,7 @@ static MommyRequest* instanceMommyRequest;
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     request.HTTPMethod = @"POST";
     NSString *contentType = @"application/json";
-    NSString *authorization = authKey;
+    NSString *authorization = [NSString stringWithFormat:@"Bearer %@", authKey];
     NSMutableData *body = [NSMutableData data];
     [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
     [request addValue:authorization forHTTPHeaderField:@"Authorization"];
@@ -269,6 +269,10 @@ static MommyHttpUrls* instanceMommyHttpUrls;
             
         case IdDuplicateCheck:
             return [_mainDomain stringByAppendingString: @"/api/join/overlap/id"];
+            break;
+            
+        case NickNameDuplicateCheck:
+            return [_mainDomain stringByAppendingString:@"/api/join/overlap/nickname"];
             break;
             
         case GetAddress:

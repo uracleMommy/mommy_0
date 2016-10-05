@@ -29,5 +29,7 @@
 @property (weak, nonatomic) IBOutlet notPasteField *phoneNumberTextField;
 @property (weak, nonatomic) IBOutlet UILabel *idValidationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *passwordValidationLabel;
+@property (strong, nonatomic) NSMutableArray *idValidationArr;
+@property (strong, nonatomic) NSMutableArray *passwordValidationArr;
 
 @end

@@ -10,6 +10,10 @@
 #import "EnumType.h"
 #import "MommyRequest.h"
 #import "AppDelegate.h"
+#import "GlobalData.h"
+
+
+#define GET_AUTH_TOKEN [GlobalData sharedGlobalData].authToken // 인증토큰
 
 @interface CommonViewController : UIViewController
 

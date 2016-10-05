@@ -55,16 +55,22 @@
 
 - (IBAction)getConfirmNumberAction:(id)sender {
     if(![confirmNumberTimer isValid]){
-        t_count = 0;
-        confirmNumberTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countTimer:) userInfo:nil repeats:YES];
+        if([_phoneNumberTextField.text isEqualToString:@""] || [_phoneNumberTextField.text length] < 10 || [_phoneNumberTextField.text length] > 13){
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                            message:@"휴대번호를 다시 확인해주세요."                                                           delegate:self                                                  cancelButtonTitle:@"확인"                                                  otherButtonTitles:nil, nil];
+            [alert show];
+        }else{
+            t_count = 0;
+            confirmNumberTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countTimer:) userInfo:nil repeats:YES];
+        }
     }
 }
 
 - (IBAction)confirmButtonAction:(id)sender {
+    //TODO 인증번호 check
     NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
     [param setValue:_idText forKey:@"id"];
     [param setValue:_phoneNumberTextField.text forKey:@"phone_num"];
-    //TODO validation check
     [self showIndicator];
     [[MommyRequest sharedInstance] mommyLoginApiService:LoginCheck authKey:nil parameters:param success:^(NSDictionary *data){
         

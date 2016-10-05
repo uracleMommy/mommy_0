@@ -80,58 +80,109 @@
 }
 
 - (void)okButtonAction{
-    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+    //TODO 인증번호 체크
+    NSArray *allTextFields = [self findAllTextFieldsInView:_scrollView];
+    Boolean validationFlag = TRUE;
     
-    [param setValue:[scrollViewContoller.idTextField text] forKey:@"id"];
-    [param setValue:[scrollViewContoller.passwordTextField text] forKey:@"password"];
-    [param setValue:[scrollViewContoller.nameTextField text] forKey:@"name"];
-    [param setValue:[scrollViewContoller.birthdayTextField text] forKey:@"birth"];
-    [param setValue:[scrollViewContoller.emailTextField text] forKey:@"email"];
-    [param setValue:[scrollViewContoller.phoneNumberTextField text] forKey:@"phone_num"];
-
-    //TODO validation check
-    [self showIndicator];
-    [[MommyRequest sharedInstance] mommySignInApiService:MemberSignUp authKey:nil parameters:param success:^(NSDictionary *data){
-        NSLog(@"PSH data %@", data);
-        
-        NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
-        if([code isEqual:@"0"]){
-            [self performSegueWithIdentifier:@"moveMommyInfoSegue" sender:self];
-        }else if([code isEqual:@"-11"]){
-            //아이디 중복 에러
-            dispatch_async(dispatch_get_main_queue(), ^{
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
-                                                                message:@"아이디가 이미 존재합니다.\n다시 확인해주시기 바랍니다."
-                                                               delegate:self
-                                                      cancelButtonTitle:@"확인"
-                                                      otherButtonTitles:nil, nil];
-                [alert show];
-            });
-        }else if([code isEqual:@"-12"]){
-            //휴대번호 중복 에러
-            dispatch_async(dispatch_get_main_queue(), ^{
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
-                                                                message:@"휴대번호가 이미 존재합니다.\n다시 확인해주시기 바랍니다."                                   delegate:self                           cancelButtonTitle:@"확인"                              otherButtonTitles:nil, nil];
-                [alert show];
-            });
-            
-        }else if([code isEqual:@"-13"]){
-            //닉네임 중복 에러
-            dispatch_async(dispatch_get_main_queue(), ^{
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
-                                                                message:@"닉네임이 이미 존재합니다.\n다시 확인해주시기 바랍니다."
-                                                               delegate:self
-                                                      cancelButtonTitle:@"확인"
-                                                      otherButtonTitles:nil, nil];
-                [alert show];
-            });
+    for(int i=0 ; i<[allTextFields count] ; i++){
+        if([[(UITextField*)[allTextFields objectAtIndex:i] text] isEqualToString:@""]){
+            validationFlag = FALSE;
+            break;
         }
-        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
-    } error:^(NSError *error) {
-        NSLog(@"PSH error %@", error);
-        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
-    } ];
+    }
+    if(validationFlag){
+        for( int i=0 ; i<scrollViewContoller.idValidationArr.count ; i++){
+            if([[scrollViewContoller.idValidationArr objectAtIndex:i] isEqualToString:@"N"]){
+                validationFlag = FALSE;
+                break;
+            }
+        }
+    }
+    if(validationFlag){
+        for( int i=0 ; i<scrollViewContoller.passwordValidationArr.count ; i++){
+            if([[scrollViewContoller.passwordValidationArr objectAtIndex:i] isEqualToString:@"N"]){
+                validationFlag = FALSE;
+                break;
+            }
+        }
+    }
     
+    if(validationFlag){
+        [self showIndicator];
+        NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+        
+        [param setValue:[scrollViewContoller.idTextField text] forKey:@"id"];
+        [param setValue:[scrollViewContoller.passwordTextField text] forKey:@"password"];
+        [param setValue:[scrollViewContoller.nameTextField text] forKey:@"name"];
+        [param setValue:[scrollViewContoller.birthdayTextField text] forKey:@"birth"];
+        [param setValue:[scrollViewContoller.emailTextField text] forKey:@"email"];
+        [param setValue:[scrollViewContoller.phoneNumberTextField text] forKey:@"phone_num"];
+        
+        [[MommyRequest sharedInstance] mommySignInApiService:MemberSignUp authKey:nil parameters:param success:^(NSDictionary *data){
+            NSLog(@"PSH data %@", data);
+            
+            NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
+            if([code isEqual:@"0"]){
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    //TODO 가입이 완료되었습니다. ~~~~~
+                    [self performSegueWithIdentifier:@"UnwindingSegue" sender:self];
+                });
+            }else if([code isEqual:@"-11"]){
+                //아이디 중복 에러
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                                    message:@"아이디가 이미 존재합니다.\n다시 확인해주시기 바랍니다."
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"확인"
+                                                          otherButtonTitles:nil, nil];
+                    [alert show];
+                });
+            }else if([code isEqual:@"-12"]){
+                //휴대번호 중복 에러
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                                    message:@"휴대번호가 이미 존재합니다.\n다시 확인해주시기 바랍니다."                                   delegate:self                           cancelButtonTitle:@"확인"                              otherButtonTitles:nil, nil];
+                    [alert show];
+                });
+                
+            }else if([code isEqual:@"-13"]){
+                //닉네임 중복 에러
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                                    message:@"닉네임이 이미 존재합니다.\n다시 확인해주시기 바랍니다."
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"확인"
+                                                          otherButtonTitles:nil, nil];
+                    [alert show];
+                });
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+        } error:^(NSError *error) {
+            NSLog(@"PSH error %@", error);
+            dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+        } ];
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                        message:@"입력하신 정보를 다시 확인 부탁드립니다."
+                                                       delegate:self
+                                              cancelButtonTitle:@"확인"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+    }
+}
+
+-(NSArray*)findAllTextFieldsInView:(UIView*)view{
+    NSMutableArray* textfieldarray = [[NSMutableArray alloc] init];
+    for(id x in [view subviews]){
+        if([x isKindOfClass:[UITextField class]])
+            [textfieldarray addObject:x];
+        
+        if([x respondsToSelector:@selector(subviews)]){
+            // if it has subviews, loop through those, too
+            [textfieldarray addObjectsFromArray:[self findAllTextFieldsInView:x]];
+        }
+    }
+    return textfieldarray;
 }
 
 
