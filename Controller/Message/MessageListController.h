@@ -19,6 +19,8 @@
 
 @property (assign) ModifyStatus modifyStatus;
 
+@property (strong, nonatomic) NSDictionary *dicData;
+
 @property (strong, nonatomic) MessageListModel *messageListModel;
 
 - (IBAction)closeView:(id)sender;

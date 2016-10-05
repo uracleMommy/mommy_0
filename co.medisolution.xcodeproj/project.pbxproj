@@ -251,6 +251,7 @@
 		DC68F5491D93D7FD009D3B1E /* MoreEquipmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC68F5461D93D7FD009D3B1E /* MoreEquipmentModel.m */; };
 		DC68F54A1D93D7FD009D3B1E /* MoreMyPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC68F5481D93D7FD009D3B1E /* MoreMyPageModel.m */; };
 		DC723C2A1D63FE2200557E1E /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC723C291D63FE2200557E1E /* MainTabBar.storyboard */; };
+		DC7303D81DA48843001472F8 /* MommyUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7303D71DA48843001472F8 /* MommyUtils.m */; };
 		DC73E5C61D6DAE3B007D2DEE /* IndicatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC73E5C41D6DAE3B007D2DEE /* IndicatorViewController.m */; };
 		DC73E5C71D6DAE3B007D2DEE /* IndicatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC73E5C51D6DAE3B007D2DEE /* IndicatorViewController.xib */; };
 		DC7D38491D6BDD8800314189 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7D38481D6BDD8800314189 /* FXBlurView.m */; };
@@ -284,6 +285,7 @@
 		DCA5AE2F1D598C6F0075B7AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA5AE2D1D598C6F0075B7AD /* Main.storyboard */; };
 		DCA5AE321D598C6F0075B7AD /* co_medisolution.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCA5AE301D598C6F0075B7AD /* co_medisolution.xcdatamodeld */; };
 		DCA5AE371D598C6F0075B7AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA5AE351D598C6F0075B7AD /* LaunchScreen.storyboard */; };
+		DCB4FA3F1DA3A34B0050EA0A /* MainInfoContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB4FA3E1DA3A34B0050EA0A /* MainInfoContainerViewController.m */; };
 		DCBFDE641DA332D300A28B3A /* MainSliderViewContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBFDE631DA332D300A28B3A /* MainSliderViewContainerController.m */; };
 		DCBFDE681DA335D700A28B3A /* HWViewPager.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBFDE671DA335D700A28B3A /* HWViewPager.m */; };
 		DCBFDE6C1DA347C000A28B3A /* MainSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBFDE6A1DA347C000A28B3A /* MainSliderCell.m */; };
@@ -749,6 +751,8 @@
 		DC68F5471D93D7FD009D3B1E /* MoreMyPageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreMyPageModel.h; sourceTree = "<group>"; };
 		DC68F5481D93D7FD009D3B1E /* MoreMyPageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreMyPageModel.m; sourceTree = "<group>"; };
 		DC723C291D63FE2200557E1E /* MainTabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
+		DC7303D61DA48843001472F8 /* MommyUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MommyUtils.h; sourceTree = "<group>"; };
+		DC7303D71DA48843001472F8 /* MommyUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MommyUtils.m; sourceTree = "<group>"; };
 		DC73E5C31D6DAE3B007D2DEE /* IndicatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndicatorViewController.h; sourceTree = "<group>"; };
 		DC73E5C41D6DAE3B007D2DEE /* IndicatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndicatorViewController.m; sourceTree = "<group>"; };
 		DC73E5C51D6DAE3B007D2DEE /* IndicatorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndicatorViewController.xib; sourceTree = "<group>"; };
@@ -802,6 +806,8 @@
 		DCA5AE311D598C6F0075B7AD /* co_medisolution.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = co_medisolution.xcdatamodel; sourceTree = "<group>"; };
 		DCA5AE361D598C6F0075B7AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCA5AE381D598C6F0075B7AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCB4FA3D1DA3A34B0050EA0A /* MainInfoContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainInfoContainerViewController.h; sourceTree = "<group>"; };
+		DCB4FA3E1DA3A34B0050EA0A /* MainInfoContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainInfoContainerViewController.m; sourceTree = "<group>"; };
 		DCBFDE621DA332D300A28B3A /* MainSliderViewContainerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainSliderViewContainerController.h; sourceTree = "<group>"; };
 		DCBFDE631DA332D300A28B3A /* MainSliderViewContainerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainSliderViewContainerController.m; sourceTree = "<group>"; };
 		DCBFDE661DA335D700A28B3A /* HWViewPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWViewPager.h; sourceTree = "<group>"; };
@@ -1256,6 +1262,8 @@
 				DC1856441D9DEA3500D9A957 /* MommyRequest.m */,
 				DC25AA501DA39384000E41FC /* GlobalData.h */,
 				DC25AA511DA39384000E41FC /* GlobalData.m */,
+				DC7303D61DA48843001472F8 /* MommyUtils.h */,
+				DC7303D71DA48843001472F8 /* MommyUtils.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -1720,6 +1728,8 @@
 				DC2D34C51D9A13D100D70E8C /* QuestionViewController.m */,
 				DCBFDE621DA332D300A28B3A /* MainSliderViewContainerController.h */,
 				DCBFDE631DA332D300A28B3A /* MainSliderViewContainerController.m */,
+				DCB4FA3D1DA3A34B0050EA0A /* MainInfoContainerViewController.h */,
+				DCB4FA3E1DA3A34B0050EA0A /* MainInfoContainerViewController.m */,
 			);
 			path = DashBoard;
 			sourceTree = "<group>";
@@ -2031,6 +2041,7 @@
 				DC4DE2CC1D814F3B007CF9BF /* MoreBloodPressureViewController.m in Sources */,
 				DCBFDE641DA332D300A28B3A /* MainSliderViewContainerController.m in Sources */,
 				DC68F5281D93D7CC009D3B1E /* MoreEquipmentEmptyViewController.m in Sources */,
+				DC7303D81DA48843001472F8 /* MommyUtils.m in Sources */,
 				DC538ECD1D781C3600E5949B /* IQToolbar.m in Sources */,
 				DC27E5161D9CD42A0014C5C4 /* IntroFirstContentPageViewController.m in Sources */,
 				2A54B1B11D66904000C538D1 /* JTCalendarSettings.m in Sources */,
@@ -2110,6 +2121,7 @@
 				DCF8E1EE1D8FD5C300E67402 /* MoreProfessionalAdviceCell.m in Sources */,
 				DC1A77D91D950D2200F88693 /* MoreMyPageFetusInfoChangeViewController.m in Sources */,
 				DC68F54A1D93D7FD009D3B1E /* MoreMyPageModel.m in Sources */,
+				DCB4FA3F1DA3A34B0050EA0A /* MainInfoContainerViewController.m in Sources */,
 				DC538ECE1D781C3600E5949B /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				DC27E50D1D9CA4D00014C5C4 /* IntroCustomView.m in Sources */,
 				2A6B1BF01D91338200322A94 /* DiaryListBasicController.m in Sources */,

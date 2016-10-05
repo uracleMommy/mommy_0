@@ -20,10 +20,11 @@ const int messageViewHeight = 33;
 - (void) viewDidLoad {
     
     [super viewDidLoad];
+    
+    _txtContentMessage.text = _contentMessage;
 
     // 키보드 매니저 업 이벤트 비활성화
-//    [self setKeyboardEnabled:NO];
-    [[IQKeyboardManager sharedManager] setEnable:NO];    
+    [self setKeyboardEnabled:NO];
     
     // 점선처리
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
@@ -38,7 +39,6 @@ const int messageViewHeight = 33;
       [NSNumber numberWithInt:3],nil]];
     
     CGRect mainScreenRect = [[UIScreen mainScreen] bounds];
-    
     
     CGMutablePathRef path = CGPathCreateMutable();
     CGPathMoveToPoint(path, NULL, 0, 0);
@@ -61,7 +61,6 @@ const int messageViewHeight = 33;
                                              selector:@selector(keyboardWillAnimate:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
-    
 }
 
 #pragma mark 키보드 show/hide 시에 처리되는 코드

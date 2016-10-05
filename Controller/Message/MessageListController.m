@@ -7,6 +7,7 @@
 //
 
 #import "MessageListController.h"
+#import "MessageDetailController.h"
 #import "MessageListCell.h"
 
 @interface MessageListController ()
@@ -19,24 +20,55 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-
-    
-    // 편집모드
+    // 편집모드(일반)
     _messageListModel = NormalMode;
-    
-    // 네비바 버튼 추가
     _messageListModel = [[MessageListModel alloc] init];
     
-    for (int i = 0; i < 10; i++) {
-        
-        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"0", @"check", nil];
-        [_messageListModel.listArray addObject:dic];
-    }
+    NSString *auth_key = @"Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJnb2dvanNzIiwic3ViIjoiZ29nb2pzcyIsImV4cCI6MTQ3NjAwNzgyOSwibmFtZSI6IuyhsOyKueyLnSIsImlhdCI6MTQ3NTE0MzgyOX0.Qzl27M2ye-2pfomvsS8W7dQin_404Ds3YkTVYur_2_4";
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"10", @"pageSize", @"1", @"searchPage", nil];
     
-    _messageListModel.delegate = self;
-    _tableView.dataSource = _messageListModel;
-    _tableView.delegate = _messageListModel;
-    [_tableView reloadData];
+    [self showIndicator];
+    
+    [[MommyRequest sharedInstance] mommyMessageApiService:MessageList authKey:auth_key parameters:parameters success:^(NSDictionary *data){
+        
+        _dicData = [NSDictionary dictionaryWithDictionary:data];
+        
+        NSArray *resultArray = [NSArray arrayWithArray:_dicData[@"result"]];
+        
+        // 데이터 형식 만들기
+        for (NSDictionary *dic in resultArray) {
+            
+            NSString *messageContent = dic[@"content"];
+            NSString *fromNickname = dic[@"from_nickname"];
+            NSString *fromUser = dic[@"from_user"];
+            NSString *imgName = dic[@"img"];
+            NSString *messageKey = dic[@"message_key"];
+            NSString *regDttm = dic[@"reg_dttm"];
+            NSString *toUser = dic[@"to_user"];
+            NSString *totCnt = dic[@"tot_cnt"];
+            
+            NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"0", @"check", messageContent, @"content", fromNickname, @"from_nickname", fromUser, @"from_user", imgName, @"img", messageKey, @"message_key", regDttm, @"reg_dttm", toUser, @"to_user", totCnt, @"tot_cnt", nil];
+            
+            [_messageListModel.listArray addObject:dic];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            _messageListModel.delegate = self;
+            _tableView.dataSource = _messageListModel;
+            _tableView.delegate = _messageListModel;
+            [_tableView reloadData];
+            
+            [self hideIndicator];
+        });
+        
+    } error:^(NSError *error){
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self hideIndicator];
+        });
+    }];
 }
 
 - (void) tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath {
@@ -52,16 +84,38 @@
             
             if (view.tag == 1) {
                 
-                NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"0", @"check", nil];
-                [listArray replaceObjectAtIndex:indexPath.row withObject:dic];
+                NSDictionary *dic = listArray[indexPath.row];
+                NSString *messageContent = dic[@"content"];
+                NSString *fromNickname = dic[@"from_nickname"];
+                NSString *fromUser = dic[@"from_user"];
+                NSString *imgName = dic[@"img"];
+                NSString *messageKey = dic[@"message_key"];
+                NSString *regDttm = dic[@"reg_dttm"];
+                NSString *toUser = dic[@"to_user"];
+                NSString *totCnt = dic[@"tot_cnt"];
+                
+                NSDictionary *newDic = [NSDictionary dictionaryWithObjectsAndKeys:@"0", @"check", messageContent, @"content", fromNickname, @"from_nickname", fromUser, @"from_user", imgName, @"img", messageKey, @"message_key", regDttm, @"reg_dttm", toUser, @"to_user", totCnt, @"tot_cnt", nil];
+                
+                [listArray replaceObjectAtIndex:indexPath.row withObject:newDic];
                 
                 [view removeFromSuperview];
                 return;
             }
         }
         
-        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"1", @"check", nil];
-        [listArray replaceObjectAtIndex:indexPath.row withObject:dic];
+        NSDictionary *dic = listArray[indexPath.row];
+        NSString *messageContent = dic[@"content"];
+        NSString *fromNickname = dic[@"from_nickname"];
+        NSString *fromUser = dic[@"from_user"];
+        NSString *imgName = dic[@"img"];
+        NSString *messageKey = dic[@"message_key"];
+        NSString *regDttm = dic[@"reg_dttm"];
+        NSString *toUser = dic[@"to_user"];
+        NSString *totCnt = dic[@"tot_cnt"];
+        
+        NSDictionary *newDic = [NSDictionary dictionaryWithObjectsAndKeys:@"1", @"check", messageContent, @"content", fromNickname, @"from_nickname", fromUser, @"from_user", imgName, @"img", messageKey, @"message_key", regDttm, @"reg_dttm", toUser, @"to_user", totCnt, @"tot_cnt", nil];
+        
+        [listArray replaceObjectAtIndex:indexPath.row withObject:newDic];
         
         // 체크표시 추가
         img.tag = 1;
@@ -70,8 +124,10 @@
         return;
     }
     
+    NSNumber *selectedIndex = [NSNumber numberWithInteger:indexPath.row];
+    
     // 디테일 이동 로직
-    [self performSegueWithIdentifier:@"goMessageDetail" sender:nil];
+    [self performSegueWithIdentifier:@"goMessageDetail" sender:selectedIndex];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -96,8 +152,19 @@
         
         for (int i = 0; i < listArray.count; i++) {
             
-            NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"0", @"check", nil];
-            [listArray replaceObjectAtIndex:i withObject:dic];
+            NSDictionary *dic = listArray[i];
+            NSString *messageContent = dic[@"content"];
+            NSString *fromNickname = dic[@"from_nickname"];
+            NSString *fromUser = dic[@"from_user"];
+            NSString *imgName = dic[@"img"];
+            NSString *messageKey = dic[@"message_key"];
+            NSString *regDttm = dic[@"reg_dttm"];
+            NSString *toUser = dic[@"to_user"];
+            NSString *totCnt = dic[@"tot_cnt"];
+            
+            NSDictionary *newDic = [NSDictionary dictionaryWithObjectsAndKeys:@"0", @"check", messageContent, @"content", fromNickname, @"from_nickname", fromUser, @"from_user", imgName, @"img", messageKey, @"message_key", regDttm, @"reg_dttm", toUser, @"to_user", totCnt, @"tot_cnt", nil];
+            
+            [listArray replaceObjectAtIndex:i withObject:newDic];
         }
     }
     
@@ -108,6 +175,22 @@
 - (IBAction)closeView:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"goMessageDetail"]) {
+        
+        NSNumber *selectedIndex =(NSNumber *)sender;
+        NSArray *resultArray = _dicData[@"result"];
+        NSDictionary *dic = resultArray[[selectedIndex integerValue]];
+        MessageDetailController *messageDetailController = (MessageDetailController *)segue.destinationViewController;
+        NSLog(@"%@", dic[@"content"]);
+        messageDetailController.contentMessage = dic[@"content"];
+        messageDetailController.profileImageName = dic[@""];
+        
+    }
 }
 
 @end

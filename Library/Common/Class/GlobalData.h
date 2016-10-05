@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+
+
 @interface GlobalData : NSObject
 
 + (GlobalData *) sharedGlobalData;
 
 @property (retain, nonatomic) NSString *authToken;
+
+@property (retain, nonatomic) NSString *fileServerDomain;
 
 @end

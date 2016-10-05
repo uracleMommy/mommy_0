@@ -22,6 +22,8 @@
 
 @property (strong, nonatomic) id<MessageListModelDelegate> delegate;
 
+@property (strong, nonatomic) NSMutableDictionary *cachedImages;
+
 @end
 
 @protocol MessageListModelDelegate <NSObject>

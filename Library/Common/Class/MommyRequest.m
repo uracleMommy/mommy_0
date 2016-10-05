@@ -148,6 +148,52 @@ static MommyRequest* instanceMommyRequest;
     }] resume];
 }
 
+#pragma mark 쪽지관리 서비스 호출
+- (void) mommyMessageApiService : (MommyMessageWebServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock {
+    
+    NSString *requestUrl = [[MommyHttpUrls sharedInstance] requestMessageUrlType:serviceType];
+    
+    NSURL *url = [NSURL URLWithString:requestUrl];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"POST";
+    NSString *contentType = @"application/json";
+    NSString *authorization = authKey;
+    NSMutableData *body = [NSMutableData data];
+    [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
+    [request addValue:authorization forHTTPHeaderField:@"Authorization"];
+    
+    // dictionary -> json
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:parameters
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    [body appendData:[jsonString dataUsingEncoding:NSUTF8StringEncoding]];
+    [request setHTTPBody:body];
+    
+    
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    [[session dataTaskWithRequest:request completionHandler:^(NSData *data,
+                                                              NSURLResponse *response,
+                                                              NSError *error) {
+        
+        if (error != nil) {
+            
+            errorBlock(error);
+            return;
+        }
+        
+        NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+        successBlock(jsonDic);
+        
+        
+    }] resume];
+    
+}
+
 #pragma mark 이미지 업로드 서비스 호출
 - (void) mommyImageUploadApiService : (UIImage *) image success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock {
     
@@ -210,13 +256,6 @@ static MommyHttpUrls* instanceMommyHttpUrls;
     
     return instanceMommyHttpUrls;
 }
-
-#pragma mark 로그인 관련 API 주소
-
-
-
-#pragma mark 회원가입 관련
-
 
 #pragma mark 로그인 관련 리퀘스트 주소 리턴 메서드
 - (NSString *) requestLoginUrlType : (MommyLoginWebServiceType) serviceType {
@@ -285,10 +324,38 @@ static MommyHttpUrls* instanceMommyHttpUrls;
     }
 }
 
+#pragma mark 쪽지 관련 리퀘스트 주소 리턴 메서드
+- (NSString *) requestMessageUrlType : (MommyMessageWebServiceType) serviceType {
+    
+    switch (serviceType) {
+        case MessageList:
+            return [_mainDomain stringByAppendingString: @"/api/message/list"];
+            break;
+            
+        case MessageSend:
+            return [_mainDomain stringByAppendingString: @"/api/message/send"];
+            break;
+            
+        case MessageDelegate:
+            return [_mainDomain stringByAppendingString: @"/api/message/delete"];
+            break;
+            
+        default:
+            return @"";
+            break;
+    }
+}
+
 #pragma mark 이미지 업로드
 - (NSString *) requestImageUploadUrl {
     
     return [_mainDomain stringByAppendingString: @"/api/image/upload"];
+}
+
+#pragma mark 이미지 다운로드
+- (NSString *) requestImageDownloadUrl {
+    
+    return [_mainDomain stringByAppendingString: @"/api/image/view"];
 }
 
 @end

@@ -96,11 +96,12 @@
             <objects>
                 <navigationController id="xdW-ED-esc" customClass="TabbarDashBoardNavController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="i_bot_menu_home" id="dSq-zT-4GU"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Ke7-H9-Hs3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Ke7-H9-Hs3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>

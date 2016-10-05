@@ -26,6 +26,14 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *messageContainerHeight;
 
+@property (strong, nonatomic) NSString *contentMessage;
+
+@property (strong, nonatomic) NSString *profileImageName;
+
+@property (strong, nonatomic) NSString *toUserName;
+
+@property (strong, nonatomic) NSString *writeTime;
+
 @property (assign) CGRect originalContentRect;
 
 @end
