@@ -8,6 +8,10 @@
 
 #import "LoginNewPasswordCreate.h"
 
+#define PASSWROD_VALIDATION_01 ([passwordText length] > 5 && [passwordText length] < 19)
+#define PASSWROD_VALIDATION_02 ([passwordText rangeOfString:@"([A-z]+[0-9]+[?`_=~!@#$%^&*()+-]+)" options:  NSRegularExpressionSearch].location != NSNotFound)
+#define PASSWROD_VALIDATION_03 ([_passwordTextField.text isEqualToString:confirmPasswordText])
+
 @interface LoginNewPasswordCreate ()
 
 @end
@@ -61,7 +65,7 @@
             return YES;
         }
         
-        if([passwordText length] > 5 && [passwordText length] < 19){
+        if(PASSWROD_VALIDATION_01){
             NSLog(@"6~18자 이내");
             
             NSMutableAttributedString *text =
@@ -85,9 +89,9 @@
             [_passwordValidationLabel setAttributedText: text];
         }
         
-        NSRange match = [passwordText rangeOfString:@"([A-z]+[0-9]+[?`_=~!@#$%^&*()+-]+)" options:  NSRegularExpressionSearch];
+//        NSRange match = [passwordText rangeOfString:@"([A-z]+[0-9]+[?`_=~!@#$%^&*()+-]+)" options:  NSRegularExpressionSearch];
         
-        if(match.location != NSNotFound){
+        if(PASSWROD_VALIDATION_02){
             NSLog(@"영문 숫자 특수문자 구성");
             NSMutableAttributedString *text =
             [[NSMutableAttributedString alloc]
@@ -127,7 +131,7 @@
                          value:[UIColor lightGrayColor]
                          range:NSMakeRange(16, 7)];
             [_passwordValidationLabel setAttributedText: text];
-        }else if([_passwordTextField.text isEqualToString:confirmPasswordText]){
+        }else if(PASSWROD_VALIDATION_03){
             //일치
             NSMutableAttributedString *text =
             [[NSMutableAttributedString alloc]
@@ -154,51 +158,56 @@
     return YES;
 }
 - (IBAction)savePasswordButtonAction:(id)sender {
-    //TODO validation
-    NSMutableDictionary *param = [[NSMutableDictionary alloc]init];
+   
+    NSString *passwordText = [[NSString alloc] initWithString:_passwordTextField.text];
     
-    [param setValue:_idText forKey:@"id"];
-    [param setValue:_phoneNumberText forKey:@"phone_num"];
-    [param setValue:_passwordTextField.text forKey:@"password"];
+    NSString *confirmPasswordText = [[NSString alloc] initWithString:_confirmPasswordTextField.text];
     
-    [self showIndicator];
-    [[MommyRequest sharedInstance] mommyLoginApiService:SetPassword authKey:nil parameters:param success:^(NSDictionary *data){
+    if([_passwordTextField.text isEqualToString:@""] || [_confirmPasswordTextField.text isEqualToString:@""] || !PASSWROD_VALIDATION_01 || !PASSWROD_VALIDATION_02 || !PASSWROD_VALIDATION_03){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                        message:@"입력된 정보를 확인하시기 바랍니다."
+                                                       delegate:self
+                                              cancelButtonTitle:@"확인"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+    }else{
         
-        NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
-        if([code isEqual:@"0"]){
-            dispatch_async(dispatch_get_main_queue(), ^{
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
-                                                                message:@"비밀번호가 재설정 되었습니다.\n새롭게 생성된 비밀번호로 다시 로그인해주세요."
-                                                               delegate:self
-                                                      cancelButtonTitle:@"확인"
-                                                      otherButtonTitles:nil, nil];
-                [alert show];
-            });
-        }
-        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
-    } error:^(NSError *error) {
-        NSLog(@"PSH error %@", error);
-        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
-    } ];
-    
-
-//    //TEMP 가입이동
-//    UIStoryboard *signUpStoryboard = [UIStoryboard storyboardWithName:@"MembershipSignUp" bundle:nil];
-//    UINavigationController *signUpNavigationController = (UINavigationController *)[signUpStoryboard instantiateViewControllerWithIdentifier:@"MembershipSignUpNavigation"];
-//    
-//    [self presentViewController:signUpNavigationController animated:YES completion:nil];
+        NSMutableDictionary *param = [[NSMutableDictionary alloc]init];
+        
+        [param setValue:_idText forKey:@"id"];
+        [param setValue:_phoneNumberText forKey:@"phone_num"];
+        [param setValue:_passwordTextField.text forKey:@"password"];
+        
+        [self showIndicator];
+        [[MommyRequest sharedInstance] mommyLoginApiService:SetPassword authKey:nil parameters:param success:^(NSDictionary *data){
+            
+            NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
+            if([code isEqual:@"0"]){
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                                    message:@"비밀번호가 재설정 되었습니다.\n새롭게 생성된 비밀번호로 다시 로그인해주세요."
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"확인"
+                                                          otherButtonTitles:nil, nil];
+                    [alert setTag:1];
+                    [alert show];
+                });
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+        } error:^(NSError *error) {
+            NSLog(@"PSH error %@", error);
+            dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+        } ];
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-//    switch(alertView.tag) {
-//        case 2 : {
-            if(buttonIndex == 0){ //"확인" pressed
-                 [self performSegueWithIdentifier:@"UnwindingSegue" sender:self];
-            }
-//            break;
-//        }
-//    }
+    if(alertView.tag == 1){
+        if(buttonIndex == 0){ //"확인" pressed
+            [self performSegueWithIdentifier:@"UnwindingSegue" sender:self];
+        }
+    }
 }
 
 @end

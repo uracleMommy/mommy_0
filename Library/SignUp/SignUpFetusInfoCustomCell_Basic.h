@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "notPasteField.h"
 
 @protocol fetusInfoBasicCellDelegate <NSObject>
 
@@ -17,8 +18,9 @@
 
 @interface SignUpFetusInfoCustomCell_Basic : UITableViewCell
 
-- (IBAction)deleteInputContents:(id)sender;
-
 @property (weak, nonatomic) id<fetusInfoBasicCellDelegate> delegate;
+@property (weak, nonatomic) IBOutlet notPasteField *fetusNameTextField;
+
+- (IBAction)deleteInputContents:(id)sender;
 
 @end

@@ -17,7 +17,7 @@
             <objects>
                 <navigationController storyboardIdentifier="MembershipSignUpNavigation" id="POt-FL-3FG" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="nrF-aI-yuW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="nrF-aI-yuW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -82,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbV-ps-j7V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="234" y="478"/>
+            <point key="canvasLocation" x="295" y="478"/>
         </scene>
         <!--산모정보-->
         <scene sceneID="aR3-re-D57">

@@ -1911,7 +1911,7 @@
 				TargetAttributes = {
 					DCA5AE201D598C6F0075B7AD = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = LUYT38Y3AT;
+						DevelopmentTeam = JH5F2VBM8Z;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2368,7 +2368,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Park seohee (TDF9AJWPR5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LUYT38Y3AT;
+				DEVELOPMENT_TEAM = JH5F2VBM8Z;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2394,7 +2394,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Park seohee (TDF9AJWPR5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LUYT38Y3AT;
+				DEVELOPMENT_TEAM = JH5F2VBM8Z;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

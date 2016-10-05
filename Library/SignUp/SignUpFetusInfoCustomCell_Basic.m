@@ -27,5 +27,6 @@
 - (IBAction)deleteInputContents:(id)sender {
     NSLog(@"PSH deleteInputContents");
     [delegate deleteTableCell:sender];
+    _fetusNameTextField.text = @"";
 }
 @end

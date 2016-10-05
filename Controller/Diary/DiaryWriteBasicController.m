@@ -332,7 +332,7 @@
             }
         }
     }
-    //TODO delete button
+    //delete button
     UIButton *deleteButton = [[UIButton alloc]initWithFrame:CGRectMake(buttonRect.x+selectedImageButton.frame.size.width-15, buttonRect.y-5, 20, 20)];
     deleteButton.tag = 1;
     [deleteButton setImage:[UIImage imageNamed:@"contents_bot_photo_delete.png"] forState:UIControlStateNormal];

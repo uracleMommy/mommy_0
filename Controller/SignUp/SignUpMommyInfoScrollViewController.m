@@ -23,6 +23,7 @@
     _defaultImage = [UIImage imageNamed:@"join_profile_photo.png"];
     [_mommyImageButton setImage:_defaultImage forState:UIControlStateNormal];
     
+    _nicknameValidationArr = [[NSMutableArray alloc] initWithArray:@[@"N", @"N"]];
     
     pickerData_0 = [[NSMutableArray alloc]initWithArray:@[@"Select", @"서울시", @"경기도"]];
     pickerData_1 = [[NSMutableArray alloc]initWithArray:@[@"Select"]];
@@ -33,13 +34,13 @@
     pickerData_number_height = [[NSMutableArray alloc]initWithArray:@[@"Select"]]; //키
     pickerData_number_fetus = [[NSMutableArray alloc]init]; //태아 정보
     
-    for(int i = 0 ; i < 1000 ; i++){
+    for(int i = 0 ; i < 200 ; i++){
         if(i < 10){
             [pickerData_number_point addObject: [NSString stringWithFormat:@".%d", i]];
             [pickerData_number_fetus addObject: [NSString stringWithFormat:@"%d", i]];
-        }else if( i > 10 && i < 100){
+        }else if( i > 20 && i < 100){
             [pickerData_number_weight addObject: [NSString stringWithFormat:@"%d", i]];
-        }else if( i > 100 && i < 500){
+        }else if( i > 130){
             [pickerData_number_height addObject: [NSString stringWithFormat:@"%d", i]];
         }
     }
@@ -368,15 +369,18 @@
 #pragma mark UITextField Delegate
 
 -(BOOL)textFieldShouldEndEditing:(UITextField *)textField{
-    if([textField isEqual:_mommyNameTextField]){
+    if([textField isEqual:_mommyNameTextField]){    //nickname end editing
         NSString *mommyText = [[NSString alloc] initWithString:_mommyNameTextField.text];
-        if([mommyText isEqualToString:@""]){
+        
+        if([mommyText isEqualToString:@""]){    //empty nickname
+            [_nicknameValidationArr replaceObjectAtIndex:0 withObject:@"N"];
+            [_nicknameValidationArr replaceObjectAtIndex:1 withObject:@"N"];
             _mommyNameValidationLabel.textColor = [UIColor lightGrayColor];
             return YES;
         }
         
-        if([mommyText length] > 0 && [mommyText length] < 11){
-            NSLog(@"1~10자 이내");
+        if([mommyText length] > 0 && [mommyText length] < 11){  //nickname length validation OK
+            [_nicknameValidationArr replaceObjectAtIndex:0 withObject:@"Y"];
             NSMutableAttributedString *text =
             [[NSMutableAttributedString alloc]
              initWithAttributedString: _mommyNameValidationLabel.attributedText];
@@ -386,7 +390,7 @@
                          range:NSMakeRange(0, 5)];
             [_mommyNameValidationLabel setAttributedText: text];
         }else{
-            NSLog(@"2번째 빨강");
+            [_nicknameValidationArr replaceObjectAtIndex:0 withObject:@"N"];
             NSMutableAttributedString *text =
             [[NSMutableAttributedString alloc]
              initWithAttributedString: _mommyNameValidationLabel.attributedText];
@@ -396,6 +400,44 @@
                          range:NSMakeRange(0, 5)];
             [_mommyNameValidationLabel setAttributedText: text];
         }
+        
+        NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+        [param setValue:mommyText forKey:@"nickname"];
+        
+        [[MommyRequest sharedInstance] mommySignInApiService:NickNameDuplicateCheck authKey:nil parameters:param success:^(NSDictionary *data){
+            
+            NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
+            if([code isEqual:@"0"]){    //nickname duplicate OK
+                [_nicknameValidationArr replaceObjectAtIndex:1 withObject:@"Y"];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    NSMutableAttributedString *text =
+                    [[NSMutableAttributedString alloc]
+                     initWithAttributedString: _mommyNameValidationLabel.attributedText];
+                    
+                    [text addAttribute:NSForegroundColorAttributeName
+                                 value:[UIColor blackColor]
+                                 range:NSMakeRange(7, 8)];
+                    [_mommyNameValidationLabel setAttributedText: text];
+                });
+            }else{
+                [_nicknameValidationArr replaceObjectAtIndex:1 withObject:@"N"];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    NSMutableAttributedString *text =
+                    [[NSMutableAttributedString alloc]
+                     initWithAttributedString: _mommyNameValidationLabel.attributedText];
+                    
+                    [text addAttribute:NSForegroundColorAttributeName
+                                 value:[UIColor redColor]
+                                 range:NSMakeRange(7, 8)];
+                    [_mommyNameValidationLabel setAttributedText: text];
+                });
+                
+            }
+        } error:^(NSError *error) {
+            [_nicknameValidationArr replaceObjectAtIndex:1 withObject:@"N"];
+            NSLog(@"PSH error %@", error);
+        } ];
+        
     }
     return YES;
 }

@@ -21,6 +21,8 @@
     [self.navigationItem setHidesBackButton:YES];
     [[IQKeyboardManager sharedManager] setEnable:NO];
     
+    //기본 세팅
+    _fileName = @"";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,15 +31,15 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    if(!scrollViewContoller){
-        scrollViewContoller = [self.storyboard instantiateViewControllerWithIdentifier:@"SignUpMommyInfoScrollView"];
+    if(!_scrollViewContoller){
+        _scrollViewContoller = [self.storyboard instantiateViewControllerWithIdentifier:@"SignUpMommyInfoScrollView"];
         
-        scrollViewContoller.delegate = self;
+        _scrollViewContoller.delegate = self;
         
-        [scrollViewContoller.view setFrame:CGRectMake(0, 0, _scrollView.frame.size.width, 530)];
+        [_scrollViewContoller.view setFrame:CGRectMake(0, 0, _scrollView.frame.size.width, 530)];
         _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width, 530);
         
-        [_scrollView addSubview : scrollViewContoller.view];
+        [_scrollView addSubview : _scrollViewContoller.view];
         
         [_scrollView sizeToFit];
     }
@@ -91,15 +93,24 @@
 
 #pragma mark cropView Delegate
 -(void)ImageCropViewControllerSuccess:(UIViewController *)controller didFinishCroppingImage:(UIImage *)croppedImage{
-    [scrollViewContoller setMommyImage:croppedImage];
-//    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+    [[MommyRequest sharedInstance] mommyImageUploadApiService:croppedImage success:^(NSDictionary *data) {
+        if([[NSString stringWithFormat:@"%@", [data objectForKey:@"code"]] isEqualToString:@"0"]){
+            NSLog(@"Image Upload data : %@", data);
+            NSDictionary *result = [data objectForKey:@"result"];
+            _fileName = [result objectForKey:@"file_name"];
+            [_scrollViewContoller setMommyImage:croppedImage];
+        }else{
+            NSLog(@"Image Upload Fail");
+        }
+    } error:^(NSError *error) {
+        NSLog(@"Image Upload Fail");
+    }];
+    
     [[self navigationController] popViewControllerAnimated:YES];
 }
 -(void)ImageCropViewControllerDidCancel:(UIViewController *)controller{
     
 }
-
-
 
 /*
 #pragma mark - Navigation
@@ -110,5 +121,74 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)confirmButtonAction:(id)sender {
+    NSArray *allTextFields = [self findAllTextFieldsInView:_scrollView];
+    Boolean validationFlag = TRUE;
+    
+    for(int i=0 ; i<[allTextFields count] ; i++){
+        if([[(UITextField*)[allTextFields objectAtIndex:i] text] isEqualToString:@""]){
+            validationFlag = FALSE;
+            break;
+        }
+    }
+    
+    if(validationFlag){
+        for(int i=0 ; i<_scrollViewContoller.nicknameValidationArr.count ; i++){
+            if([[_scrollViewContoller.nicknameValidationArr objectAtIndex:i]isEqualToString:@"N"]){
+                validationFlag = FALSE;
+                break;
+            }
+        }
+    }
+    
+    if(validationFlag){
+        [self performSegueWithIdentifier:@"moveFetusInfoViewSegue" sender:self];
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                        message:@"입력하신 정보를 다시 확인 부탁드립니다."
+                                                       delegate:self
+                                              cancelButtonTitle:@"확인"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+
+    }
+}
+
+-(NSArray*)findAllTextFieldsInView:(UIView*)view{
+    NSMutableArray* textfieldarray = [[NSMutableArray alloc] init];
+    for(id x in [view subviews]){
+        if([x isKindOfClass:[UITextField class]])
+            [textfieldarray addObject:x];
+        
+        if([x respondsToSelector:@selector(subviews)]){
+            // if it has subviews, loop through those, too
+            [textfieldarray addObjectsFromArray:[self findAllTextFieldsInView:x]];
+        }
+    }
+    return textfieldarray;
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"moveFetusInfoViewSegue"])
+    {
+        NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+        [formatter setDateFormat:@"YYYYMMdd"];
+        NSString *baby_birth = [formatter stringFromDate:[_scrollViewContoller.dueDateTextField date]];
+        
+        SignUpFetusInfoController *vc = [segue destinationViewController];
+        [vc setFile_name:_fileName];
+        [vc setNickname:[_scrollViewContoller.mommyNameTextField text]];
+//        [vc setAddress:[scrollViewContoller.addressTextField text]];
+        [vc setAddress:[NSNumber numberWithInteger:104]];
+        [vc setBaby_birth:baby_birth];
+        [vc setBefore_weight:[_scrollViewContoller.beforeWeightTextField text]];
+        [vc setWeight:[_scrollViewContoller.nowWeightTextField text]];
+        [vc setHeight:[_scrollViewContoller.heightTextField text]];
+        [vc setBaby_cnt:[_scrollViewContoller.fetusCountTextField text]];
+    }
+}
 
 @end
