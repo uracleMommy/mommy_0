@@ -535,28 +535,6 @@ static MommyHttpUrls* instanceMommyHttpUrls;
     }
 }
 
-#pragma mark 쪽지 관련 리퀘스트 주소 리턴 메서드
-- (NSString *) requestMessageUrlType : (MommyMessageWebServiceType) serviceType {
-    
-    switch (serviceType) {
-        case MessageList:
-            return [_mainDomain stringByAppendingString: @"/api/message/list"];
-            break;
-            
-        case MessageSend:
-            return [_mainDomain stringByAppendingString: @"/api/message/send"];
-            break;
-            
-        case MessageDelegate:
-            return [_mainDomain stringByAppendingString: @"/api/message/delete"];
-            break;
-            
-        default:
-            return @"";
-            break;
-    }
-}
-
 #pragma mark 다이어리 관련 리퀘스트 주소 리턴 메서드
 - (NSString *) requestDiaryUrlType : (MommyDiaryWebServiceType) serviceType {
     
