@@ -1,16 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ZuB-Yt-R7H">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="ZuB-Yt-R7H">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="NanumBarunGothic.ttf">
+        <array key="NanumBarunGothic.ttf">
             <string>NanumBarunGothic</string>
-            <string>NanumBarunGothic</string>
-            <string>NanumBarunGothic</string>
-            <string>NanumBarunGothic</string>
-        </mutableArray>
+        </array>
     </customFonts>
     <scenes>
         <!--Navigation Controller-->
@@ -21,9 +19,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="dv5-GC-k9f">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -43,15 +41,14 @@
                         <viewControllerLayoutGuide type="bottom" id="CML-aE-7Fn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JsB-xn-gyw">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UK8-7y-cfP">
-                                <rect key="frame" x="0.0" y="4" width="320" height="496"/>
-                                <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="CML-aE-7Fn" firstAttribute="top" secondItem="UK8-7y-cfP" secondAttribute="bottom" constant="4" id="BQ4-re-TEt"/>
                             <constraint firstAttribute="trailing" secondItem="UK8-7y-cfP" secondAttribute="trailing" id="WKK-yp-Omd"/>
@@ -69,11 +66,12 @@
                     <connections>
                         <outlet property="tableView" destination="UK8-7y-cfP" id="IRi-xt-QFL"/>
                         <segue destination="AcN-7P-WVU" kind="push" identifier="goDetail" id="gk1-nL-Jg5"/>
+                        <segue destination="R61-aE-YLG" kind="custom" identifier="goEmptyMessage" customClass="PushNoticeSegue" id="KPJ-LP-GS2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7N5-up-xvU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="484" y="451"/>
+            <point key="canvasLocation" x="591" y="452"/>
         </scene>
         <!--상세정보-->
         <scene sceneID="OsN-YZ-POs">
@@ -84,54 +82,49 @@
                         <viewControllerLayoutGuide type="bottom" id="KFu-rz-2qa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3E3-OY-H6X">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="활동" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dtr-7s-llZ">
-                                <rect key="frame" x="7" y="10" width="41" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="41" id="tgR-4k-PZz"/>
                                     <constraint firstAttribute="height" constant="22" id="zY2-OR-OCp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
-                                <color key="textColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="푸시 메세지 제목이 제공됩니다. 푸시 메세지 제목이 제공됩니다. 푸시 메세지 제목이 제공됩니다. 푸시 메세지 제목이 제공됩니다. 푸시 메세지 제목이 제공됩니다. 푸시 메세지 제목이 제공됩니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWc-hC-3Ak">
-                                <rect key="frame" x="14" y="38" width="292" height="79"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="푸시 메세지 제목이 제공됩니다. 푸시 메세지 제목이 제공됩니다. 푸시 메세지 제목이 제공됩니다. 푸시 메세지 제목이 제공됩니다. 푸시 메세지 제목이 제공됩니다. 푸시 메세지 제목이 제공됩니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWc-hC-3Ak">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="79" id="88A-j0-yto"/>
+                                    <constraint firstAttribute="height" constant="20" id="88A-j0-yto"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
-                                <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSg-6h-esP">
-                                <rect key="frame" x="0.0" y="125" width="320" height="1"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Pv9-js-Jt0"/>
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msb-Pv-6Vp">
-                                <rect key="frame" x="14" y="134" width="292" height="362"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">푸쉬 메세지 내용이 제공됩니다. 푸쉬 메세지 내용이 제공됩니다.푸쉬 메세지 내용이 제공됩니다.푸쉬 메세지 내용이 제공됩니다.푸쉬 메세지 내용이 제공됩니다.푸쉬 메세지 내용이 제공됩니다.푸쉬 메세지 내용이 제공됩니다.푸쉬 메세지 내용이 제공됩니다.푸쉬 메세지 내용이 제공됩니다.푸쉬 메세지 내용이 제공됩니다.</string>
-                                <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016.06.10 오전06:17" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4I-DH-IFY">
-                                <rect key="frame" x="61" y="14" width="249" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="f6C-yY-chQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
-                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RSg-6h-esP" firstAttribute="top" secondItem="QWc-hC-3Ak" secondAttribute="bottom" constant="8" id="1Ra-2L-xqj"/>
                             <constraint firstItem="Msb-Pv-6Vp" firstAttribute="leading" secondItem="3E3-OY-H6X" secondAttribute="leading" constant="14" id="Aau-zf-TgJ"/>
@@ -160,7 +153,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOG-ao-Mtk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="923" y="451"/>
+            <point key="canvasLocation" x="1131" y="452"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="phW-12-JNZ">
+            <objects>
+                <viewController id="R61-aE-YLG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7ta-KD-OHk"/>
+                        <viewControllerLayoutGuide type="bottom" id="sCq-x9-ZRJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7l0-Ms-FhN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sR0-0e-bcA">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="contents_none_img07" translatesAutoresizingMaskIntoConstraints="NO" id="No9-an-e64">
+                                        <frame key="frameInset" minX="60" minY="8" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2h-Mi-eFK">
+                                        <frame key="frameInset" minX="8" minY="93" width="184" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">수신된 알림이 없습니다.
+수신된 알림은 이곳에 등록 됩니다.</string>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
+                                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="311" id="TXV-mP-bw6"/>
+                                    <constraint firstAttribute="width" constant="200" id="c31-tJ-pgd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sR0-0e-bcA" firstAttribute="centerX" secondItem="7l0-Ms-FhN" secondAttribute="centerX" id="EpE-4C-wSQ"/>
+                            <constraint firstItem="sR0-0e-bcA" firstAttribute="centerY" secondItem="7l0-Ms-FhN" secondAttribute="centerY" id="H52-jx-0ng"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="45H-4s-QSZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="591" y="1328"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="contents_none_img07" width="170" height="170"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>

@@ -8,6 +8,7 @@
 
 #import "MoreProfessionalAdviceModel.h"
 #import "MoreProfessionalAdviceCell.h"
+#import "MommyUtils.h"
 
 @implementation MoreProfessionalAdviceModel
 
@@ -15,6 +16,7 @@
     
     if (self = [super init]) {
         
+        _arrayList = [[NSMutableArray alloc] init];
     }
     
     return self;
@@ -44,6 +46,13 @@
         cell = (MoreProfessionalAdviceCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierMoreProfessionalAdviceCell];
     }
     
+    NSDictionary *dic = _arrayList[indexPath.row];
+    // 셀 데이터 바인딩
+    cell.lblContent.text = dic[@"content"];
+    cell.lblWriteTime.text =  [[MommyUtils sharedGlobalData] getMommyDateyyyyMMdd:dic[@"reg_dttm"]];
+    [cell.replyStatus setTitle:([dic[@"reply_yn"] isEqualToString:@"Y"] ? @"답변완료" : @"미답변") forState:UIControlStateNormal];
+    cell.replyStatus.backgroundColor = [dic[@"reply_yn"] isEqualToString:@"Y"] ? [UIColor colorWithRed:132.0f/255.0f green:68.0f/255.0f blue:240.0f/255.0f alpha:1.0f] : [UIColor colorWithRed:200.0f/255.0f green:200.0f/255.0f blue:200.0f/255.0f alpha:1.0f];
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     CAShapeLayer *firstShapeLayer = [CAShapeLayer layer];
@@ -65,6 +74,14 @@
     CGPathRelease(firstPath);
     
     [[cell.lblDotLine layer] addSublayer:firstShapeLayer];
+    
+    if (indexPath.row == _arrayList.count - 1 && _arrayList.count % 30 == 0) {
+        
+        if ([self.delegate respondsToSelector:@selector(tableView:totalPageCount:)]) {
+            
+            [self.delegate tableView:tableView totalPageCount:_arrayList.count];
+        }
+    }
     
     return cell;
 }

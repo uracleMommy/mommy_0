@@ -136,7 +136,7 @@
         // 이미지가 없을때
         else {
             
-            [cell.imgProfile setImage:nil];
+            [cell.imgProfile setImage:[UIImage imageNamed:@"contents_profile_default"]];
         }
     }
     
@@ -163,8 +163,15 @@
     
     [[cell.lblDotLine layer] addSublayer:shapeLayer];
     
-//    NSLog(@"%f", tableView.frame.size.width);
-//    NSLog(@"%f", cell.lblDotLine.layer.preferredFrameSize.width);
+    // 마지막 셀 체크 페이지 더보기 처리
+    if (indexPath.row == _listArray.count - 1 && _listArray.count % 30 == 0) {
+        
+        if ([self.delegate respondsToSelector:@selector(tableView:totalPageCount:)]) {
+            
+            [self.delegate tableView:tableView totalPageCount:_listArray.count];
+        }
+    }
+    
     
     return cell;
 }

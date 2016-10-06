@@ -31,7 +31,7 @@ static MommyUtils *sharedGlobalData = nil;
     return self;
 }
 
-#pragma mark 마미앤 날짜 형식 변환기
+#pragma mark 마미앤 날짜 형식 변환기(yyyy.MM.dd a hh:mm)
 - (NSString *) getMommyDate : (NSString *) dateFormatString {
     
     NSString *dateString = dateFormatString;
@@ -44,6 +44,24 @@ static MommyUtils *sharedGlobalData = nil;
     dateFromString = [dateFormatter dateFromString:dateString];
     
     [dateFormatter setDateFormat:@"yyyy.MM.dd a hh:mm"];
+    NSString *yyyymmdd = [dateFormatter stringFromDate:dateFromString];
+    
+    return yyyymmdd;
+}
+
+#pragma mark 마미앤 날짜 형식 변환기(yyyy.MM.dd)
+- (NSString *) getMommyDateyyyyMMdd : (NSString *) dateFormatString {
+    
+    NSString *dateString = dateFormatString;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    // this is imporant - we set our input date format to match our input string
+    // if format doesn't match you'll get nil from your string, so be careful
+    [dateFormatter setDateFormat:@"yyyyMMddHHmmss"];
+    NSDate *dateFromString = [[NSDate alloc] init];
+    // voila!
+    dateFromString = [dateFormatter dateFromString:dateString];
+    
+    [dateFormatter setDateFormat:@"yyyy.MM.dd"];
     NSString *yyyymmdd = [dateFormatter stringFromDate:dateFromString];
     
     return yyyymmdd;

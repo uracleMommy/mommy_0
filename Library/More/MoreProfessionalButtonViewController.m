@@ -39,8 +39,6 @@
     
     if (_professionalButtonStatus == ProfessionalNormalMode) {
         
-        
-        
         dispatch_async(dispatch_get_main_queue(), ^{
             
             self.view.frame = CGRectMake(0, 0, [[UIScreen mainScreen] applicationFrame].size.width, [[UIScreen mainScreen] applicationFrame].size.height+20);
@@ -98,8 +96,6 @@
             _professionalButtonStatus = ProfessionalNormalMode;
         }];
     }
-    
-    
 }
 
 #pragma 운동

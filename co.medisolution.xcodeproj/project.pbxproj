@@ -224,6 +224,8 @@
 		DC6070981D7030CF00F60148 /* SingleImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC6070961D7030CF00F60148 /* SingleImageViewController.xib */; };
 		DC60709C1D7030E700F60148 /* MultiImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC60709A1D7030E700F60148 /* MultiImageViewController.m */; };
 		DC60709D1D7030E700F60148 /* MultiImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC60709B1D7030E700F60148 /* MultiImageViewController.xib */; };
+		DC660F471DA604C600B106FB /* PushNoticeSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC660F461DA604C600B106FB /* PushNoticeSegue.m */; };
+		DC660F4B1DA6400A00B106FB /* MorePrefessionalEmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC660F4A1DA6400A00B106FB /* MorePrefessionalEmptySegue.m */; };
 		DC67EB5F1D94B4480096BCB3 /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = DC67EB5C1D94B4480096BCB3 /* FLAnimatedImage.m */; };
 		DC67EB601D94B4480096BCB3 /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC67EB5E1D94B4480096BCB3 /* FLAnimatedImageView.m */; };
 		DC67EB641D94BDAD0096BCB3 /* MoreMyPageNickNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC67EB621D94BDAD0096BCB3 /* MoreMyPageNickNameCell.m */; };
@@ -252,6 +254,7 @@
 		DC68F54A1D93D7FD009D3B1E /* MoreMyPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC68F5481D93D7FD009D3B1E /* MoreMyPageModel.m */; };
 		DC723C2A1D63FE2200557E1E /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC723C291D63FE2200557E1E /* MainTabBar.storyboard */; };
 		DC7303D81DA48843001472F8 /* MommyUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7303D71DA48843001472F8 /* MommyUtils.m */; };
+		DC7303DB1DA4F452001472F8 /* MessageEmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7303DA1DA4F452001472F8 /* MessageEmptySegue.m */; };
 		DC73E5C61D6DAE3B007D2DEE /* IndicatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC73E5C41D6DAE3B007D2DEE /* IndicatorViewController.m */; };
 		DC73E5C71D6DAE3B007D2DEE /* IndicatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC73E5C51D6DAE3B007D2DEE /* IndicatorViewController.xib */; };
 		DC7D38491D6BDD8800314189 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7D38481D6BDD8800314189 /* FXBlurView.m */; };
@@ -702,6 +705,10 @@
 		DC6070991D7030E700F60148 /* MultiImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiImageViewController.h; sourceTree = "<group>"; };
 		DC60709A1D7030E700F60148 /* MultiImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiImageViewController.m; sourceTree = "<group>"; };
 		DC60709B1D7030E700F60148 /* MultiImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiImageViewController.xib; sourceTree = "<group>"; };
+		DC660F451DA604C600B106FB /* PushNoticeSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNoticeSegue.h; sourceTree = "<group>"; };
+		DC660F461DA604C600B106FB /* PushNoticeSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNoticeSegue.m; sourceTree = "<group>"; };
+		DC660F491DA6400A00B106FB /* MorePrefessionalEmptySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorePrefessionalEmptySegue.h; sourceTree = "<group>"; };
+		DC660F4A1DA6400A00B106FB /* MorePrefessionalEmptySegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorePrefessionalEmptySegue.m; sourceTree = "<group>"; };
 		DC67EB5B1D94B4480096BCB3 /* FLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImage.h; sourceTree = "<group>"; };
 		DC67EB5C1D94B4480096BCB3 /* FLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImage.m; sourceTree = "<group>"; };
 		DC67EB5D1D94B4480096BCB3 /* FLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImageView.h; sourceTree = "<group>"; };
@@ -753,6 +760,8 @@
 		DC723C291D63FE2200557E1E /* MainTabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
 		DC7303D61DA48843001472F8 /* MommyUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MommyUtils.h; sourceTree = "<group>"; };
 		DC7303D71DA48843001472F8 /* MommyUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MommyUtils.m; sourceTree = "<group>"; };
+		DC7303D91DA4F452001472F8 /* MessageEmptySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageEmptySegue.h; sourceTree = "<group>"; };
+		DC7303DA1DA4F452001472F8 /* MessageEmptySegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageEmptySegue.m; sourceTree = "<group>"; };
 		DC73E5C31D6DAE3B007D2DEE /* IndicatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndicatorViewController.h; sourceTree = "<group>"; };
 		DC73E5C41D6DAE3B007D2DEE /* IndicatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndicatorViewController.m; sourceTree = "<group>"; };
 		DC73E5C51D6DAE3B007D2DEE /* IndicatorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndicatorViewController.xib; sourceTree = "<group>"; };
@@ -1275,6 +1284,8 @@
 				DC3AAEB91D751EB6007218E9 /* PushNoticeViewController.m */,
 				DC3AAEBE1D7552EE007218E9 /* PushNoticeDetailViewController.h */,
 				DC3AAEBF1D7552EE007218E9 /* PushNoticeDetailViewController.m */,
+				DC660F451DA604C600B106FB /* PushNoticeSegue.h */,
+				DC660F461DA604C600B106FB /* PushNoticeSegue.m */,
 			);
 			path = PushNotice;
 			sourceTree = "<group>";
@@ -1386,6 +1397,8 @@
 				DC4F0EFF1D911066003CB09B /* MoreProfessionalDetailViewController.m */,
 				DC4F0F041D912DC3003CB09B /* MoreProfessionalAdviceContentsViewController.h */,
 				DC4F0F051D912DC3003CB09B /* MoreProfessionalAdviceContentsViewController.m */,
+				DC660F491DA6400A00B106FB /* MorePrefessionalEmptySegue.h */,
+				DC660F4A1DA6400A00B106FB /* MorePrefessionalEmptySegue.m */,
 				DC68F51E1D93D7CC009D3B1E /* MoreMyPageMasterViewController.h */,
 				DC68F51F1D93D7CC009D3B1E /* MoreMyPageMasterViewController.m */,
 				DC68F5201D93D7CC009D3B1E /* MoreMyPageSubImageController.h */,
@@ -1509,6 +1522,8 @@
 				DC512AD11D66C62700885C26 /* MessageListController.m */,
 				DC60708B1D6FC85000F60148 /* MessageDetailController.h */,
 				DC60708C1D6FC85000F60148 /* MessageDetailController.m */,
+				DC7303D91DA4F452001472F8 /* MessageEmptySegue.h */,
+				DC7303DA1DA4F452001472F8 /* MessageEmptySegue.m */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -1911,7 +1926,7 @@
 				TargetAttributes = {
 					DCA5AE201D598C6F0075B7AD = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = JH5F2VBM8Z;
+						DevelopmentTeam = LUYT38Y3AT;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2108,10 +2123,12 @@
 				DC1A77D51D94FC2E00F88693 /* MoreMyPagePasswordChangeCell.m in Sources */,
 				DC538EC21D781C3600E5949B /* IQUIScrollView+Additions.m in Sources */,
 				DC44C3951D800E2600519D96 /* MoreMainViewController.m in Sources */,
+				DC660F4B1DA6400A00B106FB /* MorePrefessionalEmptySegue.m in Sources */,
 				DC1FE6ED1D65A7D4006F7A50 /* fetusInfoController.m in Sources */,
 				2A54B1B81D66904000C538D1 /* JTCalendarWeekDayView.m in Sources */,
 				DCBFDE681DA335D700A28B3A /* HWViewPager.m in Sources */,
 				DC538EC51D781C3600E5949B /* IQUIViewController+Additions.m in Sources */,
+				DC660F471DA604C600B106FB /* PushNoticeSegue.m in Sources */,
 				DCA3BCCF1D98BD44009D3DD1 /* MoreEnvironmentCalendarCell.m in Sources */,
 				2A444C371D7EBA7E00B37E8A /* termsPopupViewController.m in Sources */,
 				DC5D20861D62AFA100ACDCA4 /* OTPageView.m in Sources */,
@@ -2248,6 +2265,7 @@
 				DC44C3911D800DEB00519D96 /* MoreMainModel.m in Sources */,
 				DC3AAECA1D759BA9007218E9 /* WeekProgramController.m in Sources */,
 				DC5FCCEC1D7E81B500957D73 /* SleepingHoursViewController.m in Sources */,
+				DC7303DB1DA4F452001472F8 /* MessageEmptySegue.m in Sources */,
 				2A1A86BD1D9A45640091399B /* CommunityMyGroupController.m in Sources */,
 				2A309AD11D79634E001C54C5 /* UIColor+HexColors.m in Sources */,
 				2A54B1B01D66904000C538D1 /* JTCalendarManager.m in Sources */,
@@ -2368,7 +2386,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Park seohee (TDF9AJWPR5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = JH5F2VBM8Z;
+				DEVELOPMENT_TEAM = LUYT38Y3AT;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2394,7 +2412,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Park seohee (TDF9AJWPR5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = JH5F2VBM8Z;
+				DEVELOPMENT_TEAM = LUYT38Y3AT;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

@@ -7,6 +7,7 @@
 //
 
 #import "MessageDetailController.h"
+#import "MommyUtils.h"
 #import "IQKeyboardManager.h"
 #import "IQKeyboardReturnKeyHandler.h"
 #import "IQUIView+IQKeyboardToolbar.h"
@@ -22,7 +23,22 @@ const int messageViewHeight = 33;
     [super viewDidLoad];
     
     _txtContentMessage.text = _contentMessage;
-
+    _lblUserName.text = _toUserName;
+    _lblDateTime.text = [[MommyUtils sharedGlobalData] getMommyDate:_writeTime];
+    
+    // 백키 등록
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *addBtnImage = [UIImage imageNamed:@"title_icon_back"];
+    backButton.frame = CGRectMake(0, 0, 40, 40);
+    [backButton setImage:addBtnImage forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(goPrevious) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    
+    UIBarButtonItem *leftNegativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    leftNegativeSpacer.width = -16;
+    [self.navigationItem setLeftBarButtonItems:@[leftNegativeSpacer, addButton]];
+    
     // 키보드 매니저 업 이벤트 비활성화
     [self setKeyboardEnabled:NO];
     
@@ -61,6 +77,12 @@ const int messageViewHeight = 33;
                                              selector:@selector(keyboardWillAnimate:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
+}
+
+#pragma 뒤로가기
+- (void) goPrevious {
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark 키보드 show/hide 시에 처리되는 코드
@@ -132,6 +154,60 @@ const int messageViewHeight = 33;
     else if (newFrame.size.height >= 83 && newFrame.size.height < 99) {
         _messageContainerHeight.constant = containerViewHeight + newFrame.size.height -  messageViewHeight;
     }
+}
+
+- (IBAction)pushMessage:(id)sender {
+    
+    // 길이 체크
+    if (_txtMessageContent.text.length <= 0) {
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"내용을 입력해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+        [alert addAction:confirmAlertAction];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
+    
+    NSString *auth_key = @"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJnb2dvanNzIiwic3ViIjoiZ29nb2pzcyIsImV4cCI6MTQ3NjAwNzgyOSwibmFtZSI6IuyhsOyKueyLnSIsImlhdCI6MTQ3NTE0MzgyOX0.Qzl27M2ye-2pfomvsS8W7dQin_404Ds3YkTVYur_2_4";
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"gogojss", @"to_user", _txtMessageContent.text, @"content", nil];
+    
+    [[MommyRequest sharedInstance] mommyMessageApiService:MessageSend authKey:auth_key parameters:parameters success:^(NSDictionary *data){
+        
+        
+        if (data == nil) {
+            
+            // 실패처리
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"메세지 전송이 실패 했습니다.\n다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+            [alert addAction:confirmAlertAction];
+            [self presentViewController:alert animated:YES completion:nil];
+            return;
+        }
+        if (data != nil) {
+            
+            long result = [data[@"result"] longValue];
+            
+            // 실패처리
+            if (result != 1) {
+                
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"메세지 전송이 실패 했습니다.\n다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                [alert addAction:confirmAlertAction];
+                [self presentViewController:alert animated:YES completion:nil];
+                return;
+            }
+            
+            // 성공처리
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [self.navigationController popViewControllerAnimated:YES];
+            });
+        }
+        
+    } error:^(NSError *erro){
+        
+    }];
 }
 
 @end

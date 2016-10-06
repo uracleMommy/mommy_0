@@ -19,4 +19,12 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *txtContent;
 
+@property (strong, nonatomic) NSString *type;
+
+@property (strong, nonatomic) NSString *writeTime;
+
+@property (strong, nonatomic) NSString *pushTitle;
+
+@property (strong, nonatomic) NSString *content;
+
 @end

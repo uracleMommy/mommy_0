@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="d8O-Ij-A3J">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="d8O-Ij-A3J">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -128,7 +128,7 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C2P-Qq-no3">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C2P-Qq-no3">
                                 <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
@@ -140,27 +140,17 @@
                             <constraint firstItem="C2P-Qq-no3" firstAttribute="top" secondItem="gCX-85-gbe" secondAttribute="bottom" constant="4" id="Jbe-nV-dLX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="1:1 전문가 상담" id="1Wb-CM-hC8">
-                        <barButtonItem key="leftBarButtonItem" title="닫기" id="KvA-Dv-Ocx">
-                            <connections>
-                                <action selector="closeView:" destination="GJO-9y-l2N" id="a0b-2y-IcZ"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="전문가" id="8BJ-uf-wS9">
-                            <connections>
-                                <action selector="professionalListAction:" destination="GJO-9y-l2N" id="9w9-lM-Sgp"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="1:1 전문가 상담" id="1Wb-CM-hC8"/>
                     <connections>
                         <outlet property="tableView" destination="C2P-Qq-no3" id="7h8-Jo-SsU"/>
                         <segue destination="BEM-KD-Ata" kind="modal" identifier="goProfessionalList" id="pK0-Wl-mWA"/>
                         <segue destination="MTn-Wq-QGQ" kind="push" identifier="goProfessionalAdviceInfo" id="Rbi-gS-pVq"/>
+                        <segue destination="Vvi-i7-2h3" kind="custom" identifier="goProfessionalEmpty" customClass="MorePrefessionalEmptySegue" id="EY5-i6-4sb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eo1-wg-Epc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2825.390625" y="928.86795774647874"/>
+            <point key="canvasLocation" x="-2782" y="928"/>
         </scene>
         <!--상담내용(운동/영양)-->
         <scene sceneID="iFf-QO-xBQ">
@@ -867,7 +857,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kwT-Zh-bLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2826" y="1836"/>
+            <point key="canvasLocation" x="-2783" y="1836"/>
         </scene>
         <!--More Professional Info View Controller-->
         <scene sceneID="bo6-ah-OfC">
@@ -911,7 +901,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="maT-DO-qwK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2308" y="1836"/>
+            <point key="canvasLocation" x="-2234" y="1836"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8Pa-cL-toD">
@@ -1911,10 +1901,56 @@
             </objects>
             <point key="canvasLocation" x="-4880" y="1086"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="8Zc-KV-VWH">
+            <objects>
+                <viewController id="Vvi-i7-2h3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SDk-gU-MUA"/>
+                        <viewControllerLayoutGuide type="bottom" id="lPR-VJ-58g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aFt-Ri-VIW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qqy-e9-ahS">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="contents_none_img04" translatesAutoresizingMaskIntoConstraints="NO" id="IZD-ia-UE6">
+                                        <frame key="frameInset" minX="60" minY="8" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3NG-Qy-yyH">
+                                        <frame key="frameInset" minX="8" minY="93" width="184" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">상담기록이 없습니다.
+본인에 맞는 운동 또는 영양관련 상담을 해보세요.</string>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
+                                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="311" id="0Lb-u7-ovP"/>
+                                    <constraint firstAttribute="width" constant="200" id="rJe-YW-xQr"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Qqy-e9-ahS" firstAttribute="centerX" secondItem="aFt-Ri-VIW" secondAttribute="centerX" id="SEr-Ty-pwo"/>
+                            <constraint firstItem="Qqy-e9-ahS" firstAttribute="centerY" secondItem="aFt-Ri-VIW" secondAttribute="centerY" id="x4b-3l-r1I"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tFi-HQ-H7m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3415" y="1836"/>
+        </scene>
     </scenes>
     <resources>
         <image name="contents_icon_expert" width="70" height="70"/>
         <image name="contents_icon_point" width="60" height="60"/>
+        <image name="contents_none_img04" width="170" height="170"/>
         <image name="contents_none_img05" width="170" height="170"/>
         <image name="home_img_01" width="720" height="686"/>
         <image name="home_img_02" width="720" height="686"/>

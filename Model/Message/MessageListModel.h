@@ -32,4 +32,8 @@
 
 - (void) tableView : (UITableView *) tableView selectedIndexPath : (NSIndexPath *) indexPath;
 
+@optional
+
+- (void) tableView : (UITableView *) tableView totalPageCount : (NSInteger) count;
+
 @end

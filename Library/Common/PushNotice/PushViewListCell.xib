@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="NanumBarunGothic.ttf">
+        <array key="NanumBarunGothic.ttf">
             <string>NanumBarunGothic</string>
-            <string>NanumBarunGothic</string>
-        </mutableArray>
-        <mutableArray key="NanumBarunGothicBold.ttf">
+        </array>
+        <array key="NanumBarunGothicBold.ttf">
             <string>NanumBarunGothicBold</string>
-        </mutableArray>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -20,62 +20,55 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="128.5"/>
+                <frame key="frameInset" width="320" height="128"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="092-7M-hrp">
-                        <rect key="frame" x="8" y="4" width="304" height="120.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contents_icon_alarm01" translatesAutoresizingMaskIntoConstraints="NO" id="Gcd-0i-byc">
-                                <rect key="frame" x="11" y="36" width="31" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="31" id="T3H-Zb-juw"/>
                                     <constraint firstAttribute="height" constant="35" id="qTb-CA-HHU"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="체중" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqn-4j-FF2">
-                                <rect key="frame" x="10" y="75" width="33" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="gpj-Xb-UKh"/>
                                     <constraint firstAttribute="width" constant="33" id="hnT-b2-TpK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="14"/>
-                                <color key="textColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contents_icon_clock" translatesAutoresizingMaskIntoConstraints="NO" id="rXh-c9-G25">
-                                <rect key="frame" x="54" y="19" width="15" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="KW1-7G-aP6"/>
                                     <constraint firstAttribute="height" constant="15" id="XDQ-Xk-0sN"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016.06.10 오전 06:17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hu9-Nh-4jB">
-                                <rect key="frame" x="74" y="18" width="222" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="Wen-uN-zkG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
-                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiG-3s-z5l">
-                                <rect key="frame" x="54" y="40" width="242" height="2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="Ifz-JV-IKD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="푸쉬 메세지가 제공됩니다. 푸쉬 메세지가 제공됩니다. 푸쉬 메세지가 제공됩니다.푸쉬 메세지가 제공됩니다. 푸쉬 메세지가 제공됩니다. 푸쉬 메세지가 제공됩니다." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOO-O4-UZU">
-                                <rect key="frame" x="54" y="52" width="242" height="53"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
-                                <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="oiG-3s-z5l" secondAttribute="trailing" constant="8" id="1bs-EJ-9H9"/>
                             <constraint firstAttribute="trailing" secondItem="cOO-O4-UZU" secondAttribute="trailing" constant="8" id="1vN-Xs-Hsa"/>
@@ -96,7 +89,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="092-7M-hrp" secondAttribute="bottom" constant="4" id="J60-ez-8Oj"/>
                     <constraint firstAttribute="trailing" secondItem="092-7M-hrp" secondAttribute="trailing" constant="8" id="bO2-iQ-P29"/>
@@ -106,9 +99,11 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="containerView" destination="092-7M-hrp" id="TpH-yK-jGY"/>
+                <outlet property="imgType" destination="Gcd-0i-byc" id="gRp-UF-fxp"/>
                 <outlet property="lblDotLine" destination="oiG-3s-z5l" id="cGm-8d-Kly"/>
                 <outlet property="lblNoticeContent" destination="cOO-O4-UZU" id="exK-nb-yXB"/>
                 <outlet property="lblNoticeTime" destination="hu9-Nh-4jB" id="gid-7Q-8zG"/>
+                <outlet property="lblTypeName" destination="sqn-4j-FF2" id="ApP-X6-TQH"/>
             </connections>
             <point key="canvasLocation" x="311" y="431.5"/>
         </tableViewCell>
@@ -117,4 +112,9 @@
         <image name="contents_icon_alarm01" width="60" height="68"/>
         <image name="contents_icon_clock" width="28" height="28"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>

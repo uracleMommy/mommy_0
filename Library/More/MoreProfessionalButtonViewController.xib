@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -87,15 +87,15 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="BBH-bN-H2m" secondAttribute="trailing" constant="21" id="G8q-LR-wnq"/>
+                <constraint firstAttribute="trailing" secondItem="BBH-bN-H2m" secondAttribute="trailing" constant="19" id="G8q-LR-wnq"/>
                 <constraint firstAttribute="trailing" secondItem="W60-1r-K1q" secondAttribute="trailing" constant="16" id="OFL-Em-xIJ"/>
                 <constraint firstAttribute="bottom" secondItem="pxb-mO-wS8" secondAttribute="bottom" constant="23" id="OmR-0o-VNO"/>
                 <constraint firstAttribute="bottom" secondItem="W60-1r-K1q" secondAttribute="bottom" constant="20" id="SKu-F4-RKk"/>
                 <constraint firstAttribute="bottom" secondItem="BBH-bN-H2m" secondAttribute="bottom" constant="23" id="Srf-6Z-ZNh"/>
-                <constraint firstAttribute="trailing" secondItem="pxb-mO-wS8" secondAttribute="trailing" constant="21" id="X4T-7d-mSf"/>
+                <constraint firstAttribute="trailing" secondItem="pxb-mO-wS8" secondAttribute="trailing" constant="19" id="X4T-7d-mSf"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-518" y="-236.5"/>
+            <point key="canvasLocation" x="-627" y="-298"/>
         </view>
     </objects>
     <resources>

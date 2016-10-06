@@ -18,4 +18,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 
+@property (weak, nonatomic) IBOutlet UIImageView *imgType;
+
+@property (weak, nonatomic) IBOutlet UILabel *lblTypeName;
+
 @end

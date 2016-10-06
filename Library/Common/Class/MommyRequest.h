@@ -40,6 +40,23 @@ typedef enum {
     MessageDelegate
 } MommyMessageWebServiceType;
 
+#pragma 푸쉬알림 관련 열거형
+typedef enum {
+    
+    PushNoticeList
+} MommyPushNoticeWebServiceType;
+
+#pragma 전문가 상담 관련 열거형
+typedef enum {
+    
+    ProfessionalAdviceList,
+    ProfessionalList,
+    ProfessionalAdviceContentInsert,
+    ProfessionalAdviceContentDelete,
+    ProfessionalAdviceDetail,
+    ProfessionalAdviceContentUpdate
+} MommyProfessionalAdviceWebServiceType;
+
 #pragma 블록 타입 정의
 typedef void (^MommyApiServiceSuccessBlock) ( NSDictionary *data );
 typedef void (^MommyApiServiceErrorBlock) ( NSError *error );
@@ -59,11 +76,16 @@ typedef void (^MommyApiServiceErrorBlock) ( NSError *error );
 #pragma 쪽지 관련
 - (void) mommyMessageApiService : (MommyMessageWebServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
 
+#pragma 알림 관련
+- (void) mommyPushNoticeApiService : (MommyPushNoticeWebServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
+
+#pragma 전문가 상담 관련
+- (void) mommyProfessionalAdviceApiService : (MommyProfessionalAdviceWebServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
+
 #pragma 이미지 업로드 관련
 - (void) mommyImageUploadApiService : (UIImage *) image success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
 
 @end
-
 
 #pragma mark API 주소 정의
 @interface MommyHttpUrls : NSObject
@@ -75,6 +97,10 @@ typedef void (^MommyApiServiceErrorBlock) ( NSError *error );
 - (NSString *) requestSignInUrlType : (MommySignInWebServiceType) serviceType;
 
 - (NSString *) requestMessageUrlType : (MommyMessageWebServiceType) serviceType;
+
+- (NSString *) requestPushNoticeUrlType : (MommyPushNoticeWebServiceType) serviceType;
+
+- (NSString *) requestProfessionalAdviceUrlType : (MommyProfessionalAdviceWebServiceType) serviceType;
 
 - (NSString *) requestImageUploadUrl;
 

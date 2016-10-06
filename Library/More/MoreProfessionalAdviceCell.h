@@ -14,6 +14,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lblDotLine;
 
+@property (weak, nonatomic) IBOutlet UILabel *lblWriteTime;
+
+@property (weak, nonatomic) IBOutlet UILabel *lblContent;
+
 @property (weak, nonatomic) IBOutlet UIButton *replyStatus;
 
 @end

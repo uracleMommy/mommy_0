@@ -12,7 +12,7 @@
 
 @interface MoreProfessionalAdviceModel : NSObject<UITableViewDelegate, UITableViewDataSource>
 
-@property (strong, nonatomic) NSArray *arrayList;
+@property (strong, nonatomic) NSMutableArray *arrayList;
 
 @property (strong, nonatomic) id<MoreProfessionalAdviceModelDelegate> delegate;
 
@@ -23,5 +23,7 @@
 @optional
 
 - (void) tableView : (UITableView *) tableView moreProfessionalSelectedIndexPath : (NSIndexPath *) indexPath;
+
+- (void) tableView : (UITableView *) tableView totalPageCount : (NSInteger) count;
 
 @end

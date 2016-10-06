@@ -10,12 +10,9 @@
 #import "CommonViewController.h"
 #import "MessageListModel.h"
 
-
 @interface MessageListController : CommonViewController<MessageListModelDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
-- (IBAction)cellSelect:(id)sender;
 
 @property (assign) ModifyStatus modifyStatus;
 
@@ -23,6 +20,10 @@
 
 @property (strong, nonatomic) MessageListModel *messageListModel;
 
-- (IBAction)closeView:(id)sender;
+@property (strong, nonatomic) UIButton *btnCellMode;
+
+@property (strong, nonatomic) UIButton *btnClose;
+
+@property (assign) BOOL currentLastPageStatus; // 현재 마지막 페이지까지 로드가 되어있는지 여부
 
 @end

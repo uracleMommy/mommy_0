@@ -12,7 +12,7 @@
 
 @interface PushNoticeModel : NSObject<UITableViewDelegate, UITableViewDataSource>
 
-@property (strong, nonatomic) NSArray *arrayList;
+@property (strong, nonatomic) NSMutableArray *arrayList;
 
 @property (strong, nonatomic) id<PushNoticeModelDelegate> delegate;
 
@@ -23,5 +23,7 @@
 @optional
 
 - (void) tableView : (UITableView *) tableView didSelectRowAtIndexPath : (NSIndexPath *) indexPath;
+
+- (void) tableView : (UITableView *) tableView totalPageCount : (NSInteger) count;
 
 @end

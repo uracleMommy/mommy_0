@@ -14,4 +14,6 @@
 
 - (NSString *) getMommyDate : (NSString *) dateFormatString;
 
+- (NSString *) getMommyDateyyyyMMdd : (NSString *) dateFormatString;
+
 @end

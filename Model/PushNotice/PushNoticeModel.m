@@ -8,6 +8,7 @@
 
 #import "PushNoticeModel.h"
 #import "PushViewListCell.h"
+#import "MommyUtils.h"
 
 @implementation PushNoticeModel
 
@@ -15,6 +16,7 @@
     
     if (self = [super init]) {
         
+        _arrayList = [[NSMutableArray alloc] init];
     }
     
     return self;
@@ -44,6 +46,39 @@
         cell = (PushViewListCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierNoticeCell];
     }
     
+    NSDictionary *dic = _arrayList[indexPath.row];
+    
+    // 데이터 바인딩
+    cell.lblNoticeTime.text = [[MommyUtils sharedGlobalData] getMommyDate:dic[@"reg_dttm"]];
+    
+    // 체중
+    if ([dic[@"type"] isEqualToString:@"11"]) {
+        
+        cell.imgType.image = [UIImage imageNamed:@"contents_icon_alarm01"];
+        cell.lblTypeName.text = @"체중";
+    }
+    // 활동
+    else if([dic[@"type"] isEqualToString:@"12"]) {
+        
+        cell.imgType.image = [UIImage imageNamed:@"contents_icon_alarm02"];
+        cell.lblTypeName.text = @"활동";
+    }
+    // 혈압
+    else if([dic[@"type"] isEqualToString:@"13"]) {
+        
+        cell.imgType.image = [UIImage imageNamed:@"contents_icon_alarm03"];
+        cell.lblTypeName.text = @"혈압";
+    }
+    // 일반
+    else {
+        
+        cell.imgType.image = [UIImage imageNamed:@"contents_icon_alarm04"];
+        cell.lblTypeName.text = @"일반";
+    }
+    
+    // 내용
+    cell.lblNoticeContent.text = dic[@"content"];
+    
     // 점선처리
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
     [shapeLayer setBounds:cell.bounds];
@@ -66,6 +101,15 @@
     [[cell.lblDotLine layer] addSublayer:shapeLayer];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    // 마지막 셀일때 페이지 더보기 로드
+    if (indexPath.row == _arrayList.count - 1 && _arrayList.count % 30 == 0) {
+        
+        if ([self.delegate respondsToSelector:@selector(tableView:totalPageCount:)]) {
+            
+            [self.delegate tableView:tableView totalPageCount:_arrayList.count];
+        }
+    }
     
     return cell;
 }

@@ -16,7 +16,7 @@
             <objects>
                 <navigationController storyboardIdentifier="MessageNaivgation" id="zou-VE-hkq" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Sf8-Nm-7Dz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Sf8-Nm-7Dz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -56,23 +56,12 @@
                             <constraint firstItem="dvX-u5-gyg" firstAttribute="top" secondItem="YoL-Na-fTo" secondAttribute="bottom" constant="4" id="bJ2-it-hhl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="쪽지" id="TRV-NM-moO">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="jys-Tu-TLA">
-                            <connections>
-                                <action selector="cellSelect:" destination="RgS-Lv-ov4" id="4F0-Ew-dvG"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="닫기" id="mTF-gM-bqs">
-                            <connections>
-                                <action selector="closeView:" destination="RgS-Lv-ov4" id="fgs-A7-6rS"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="쪽지" id="TRV-NM-moO"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="dvX-u5-gyg" id="6he-lv-1HE"/>
                         <segue destination="c8R-dW-6fv" kind="push" identifier="goMessageDetail" id="wSp-B4-KwN"/>
-                        <segue destination="8Il-h4-mYg" kind="custom" animates="NO" id="nXp-7O-UXN"/>
+                        <segue destination="8Il-h4-mYg" kind="custom" identifier="goEmptyMessage" customClass="MessageEmptySegue" animates="NO" id="nXp-7O-UXN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nnw-TB-HDd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -148,6 +137,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
                                         <state key="normal" title="보내기"/>
+                                        <connections>
+                                            <action selector="pushMessage:" destination="c8R-dW-6fv" eventType="touchUpInside" id="u9U-6o-Lek"/>
+                                        </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wes-ta-fx6">
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -168,7 +160,6 @@
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6JA-DC-YcN">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -233,21 +224,21 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="4NS-DZ-8KZ"/>
-                                    <constraint firstAttribute="height" constant="164" id="SJD-eT-KPm"/>
+                                    <constraint firstAttribute="width" constant="200" id="cNi-dy-KJV"/>
+                                    <constraint firstAttribute="height" constant="311" id="h5i-vi-SxN"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Y5V-et-IOT" firstAttribute="centerX" secondItem="vba-Ty-6qY" secondAttribute="centerX" id="8I5-j5-y5r"/>
-                            <constraint firstItem="Y5V-et-IOT" firstAttribute="centerY" secondItem="vba-Ty-6qY" secondAttribute="centerY" id="jTG-oA-NX8"/>
+                            <constraint firstItem="Y5V-et-IOT" firstAttribute="centerY" secondItem="vba-Ty-6qY" secondAttribute="centerY" id="7b1-KE-xq7"/>
+                            <constraint firstItem="Y5V-et-IOT" firstAttribute="centerX" secondItem="vba-Ty-6qY" secondAttribute="centerX" id="8TO-yL-IRV"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxk-jk-Mdm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="765" y="1272"/>
+            <point key="canvasLocation" x="764.5" y="1271.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="cKb-zj-8b6">

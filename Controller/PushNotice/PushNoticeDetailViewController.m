@@ -7,6 +7,7 @@
 //
 
 #import "PushNoticeDetailViewController.h"
+#import "MommyUtils.h"
 
 @interface PushNoticeDetailViewController ()
 
@@ -23,6 +24,29 @@
     _lblType.layer.borderWidth = 1.0f;
     _lblType.layer.cornerRadius = 12;
     
+    // 백키 등록
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *addBtnImage = [UIImage imageNamed:@"title_icon_back"];
+    backButton.frame = CGRectMake(0, 0, 40, 40);
+    [backButton setImage:addBtnImage forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(goPrevious) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    
+    UIBarButtonItem *leftNegativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    leftNegativeSpacer.width = -16;
+    [self.navigationItem setLeftBarButtonItems:@[leftNegativeSpacer, addButton]];
+    
+    _lblType.text = _type;
+    _lblWriteTime.text = [[MommyUtils sharedGlobalData] getMommyDate:_writeTime];
+    _lblTitle.text = _pushTitle;
+    _txtContent.text = _content;
+    
+}
+
+- (void) goPrevious {
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
