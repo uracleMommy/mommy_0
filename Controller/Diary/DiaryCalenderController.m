@@ -27,16 +27,24 @@
         return nil;
     }
     
-//    self.title = @"Basic";
-    
     return self;
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
+    /** taleView Setting **/
+    _diaryListTableController = [[DiaryListModel alloc]init];
+    _diaryListTableController.delegate = self;
+    
+    [_listTableview setDelegate:_diaryListTableController];
+    [_listTableview setDataSource:_diaryListTableController];
+    _listTableview.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [_listTableview reloadData];
+    
+    
+    /** calendarView Setting **/
     _calendarManager = [JTCalendarManager new];
     _calendarManager.delegate = self;
     
@@ -46,9 +54,8 @@
     // Create a min and max date for limit the calendar, optional
     [self createMinAndMaxDate];
     
-//    [_calendarManager setMenuView:_calendarMenuView];
     [_calendarManager setContentView:_calendarContentView];
-    [_calendarManager setDate:_todayDate];
+//    [_calendarManager setDate:_todayDate];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,11 +73,9 @@
 }
  */
 
-#pragma mark - Buttons callback
-
-- (IBAction)didGoTodayTouch
-{
-    [_calendarManager setDate:_todayDate];
+#pragma mark tableView delegate
+- (void)tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath{
+    [_delegate tableView:tableView selectedIndexPath:indexPath];
 }
 
 #pragma mark - CalendarManager delegate
@@ -79,10 +84,7 @@
 // Used to customize the appearance of dayView
 - (void)calendar:(JTCalendarManager *)calendar prepareDayView:(JTCalendarDayView *)dayView
 {
-    //fatesuan 선택됬을때 color여부 
-
     // Today
-//    NSLog(@"PSH :%@", dayView.date);
     if([_calendarManager.dateHelper date:[NSDate date] isTheSameDayThan:dayView.date]){
         dayView.circleView.hidden = NO;
         dayView.circleView.backgroundColor = [UIColor whiteColor];
@@ -118,20 +120,11 @@
         dayView.dotView.hidden = YES;
     }
 }
-    
--(void)calendarDidLoadNextPage:(JTCalendarManager *)calendar{
-    [self moveCalendarMonthView:calendar.date];
-}
-    
--(void)calendarDidLoadPreviousPage:(JTCalendarManager *)calendar{
-    [self moveCalendarMonthView:calendar.date];
-}
+
     
 - (void)calendar:(JTCalendarManager *)calendar didTouchDayView:(JTCalendarDayView *)dayView
 {
     _dateSelected = dayView.date;
-    
-//    NSLog(@"PSH _dateSelected : %@", _dateSelected);
     
     // Animation for the circleView
     dayView.circleView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.1, 0.1);
@@ -161,7 +154,14 @@
     }
 }
 
-#pragma mark - CalendarManager delegate - Page mangement
+#pragma mark - CalendarManager delegate - Page mangement didLoadAnotherPage
+-(void)calendarDidLoadNextPage:(JTCalendarManager *)calendar{
+    [self moveCalendarMonthView:calendar.date];
+}
+
+-(void)calendarDidLoadPreviousPage:(JTCalendarManager *)calendar{
+    [self moveCalendarMonthView:calendar.date];
+}
 
 -(void)moveCalendarMonthView:(NSData *)date{
     [_delegate moveCalendarMonthView:date];
@@ -216,10 +216,5 @@
         [_eventsByDate[key] addObject:randomDate];
     }
 }
-
-//- (IBAction)closeView:(id)sender {
-//    
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//}
 
 @end

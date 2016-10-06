@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "JTCalendar.h"
+#import "DiaryListModel.h"
 #import "CommonViewController.h"
 
 
@@ -15,11 +16,15 @@
 
 @optional
 -(void)moveCalendarMonthView:(NSDate *)date;
+-(void) tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath;
+
 
 @end
 
-@interface DiaryCalenderController : CommonViewController <JTCalendarDelegate>
+@interface DiaryCalenderController : CommonViewController <JTCalendarDelegate, DiaryListModelDelegate>
 
+@property (weak, nonatomic) IBOutlet UITableView *listTableview;
+@property (strong, nonatomic) DiaryListModel *diaryListTableController;
 @property (strong, nonatomic) JTCalendarMenuView *calendarMenuView;
 @property (weak, nonatomic) IBOutlet JTHorizontalCalendarView *calendarContentView;
 @property (strong, nonatomic) id<DiaryCalendarDelegate>delegate;

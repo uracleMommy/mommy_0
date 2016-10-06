@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="app-An-DLK">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="app-An-DLK">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -39,12 +39,12 @@
             <objects>
                 <navigationController id="EFY-Xr-HtP" customClass="TabbarDiaryNavController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Diary" image="i_bot_menu_diary" id="ero-zh-Qmr"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="7df-Tw-uJ1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="7df-Tw-uJ1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="24"/>
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
@@ -58,11 +58,11 @@
             <objects>
                 <navigationController id="LjI-bj-dEN" customClass="CommunityNavController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Community" image="i_bot_menu_community" id="rCJ-Pq-h5g"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="w4L-AA-VSi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="w4L-AA-VSi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
@@ -78,7 +78,7 @@
                     <tabBarItem key="tabBarItem" title="More" image="i_bot_menu_more" id="3q9-Sg-05c"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="lPf-M2-8vp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="lPf-M2-8vp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -23,13 +23,14 @@
     
     //back Button Setting
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    UIImage *backBtnImage = [UIImage imageNamed:@"title_icon_back.png"];
+    UIImage *backBtnImage = [UIImage imageNamed:@"title_icon_close.png"];
     backBtn.frame = CGRectMake(0, 0, 40, 40);
     [backBtn setImage:backBtnImage forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
-    [backBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
+    [backBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
-    self.navigationItem.leftBarButtonItem = backButton;
+    self.navigationItem.rightBarButtonItem = backButton;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,6 +50,7 @@
 
 
 -(void)goBack{
+    [confirmNumberTimer invalidate];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -72,7 +74,7 @@
     [param setValue:_idText forKey:@"id"];
     [param setValue:_phoneNumberTextField.text forKey:@"phone_num"];
     [self showIndicator];
-    [[MommyRequest sharedInstance] mommyLoginApiService:LoginCheck authKey:nil parameters:param success:^(NSDictionary *data){
+    [[MommyRequest sharedInstance] mommyLoginApiService:UnlockMember authKey:nil parameters:param success:^(NSDictionary *data){
         
         NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
         if([code isEqual:@"0"]){
@@ -111,6 +113,7 @@
     switch(alertView.tag) {
         case 0 : {
             if(buttonIndex == 0){ //"확인" pressed
+                [confirmNumberTimer invalidate];
                 [self performSegueWithIdentifier:@"UnwindingSegue" sender:self];
             }
             break;
@@ -125,6 +128,13 @@
     _timerLabel.text = [NSString stringWithFormat:@"%02d : %02d", timerText/60, timerText%60];
     
     if(t_count == 180){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                        message:@"인증번호 입력 제한시간을 초과하였습니다."
+                                                       delegate:self
+                                              cancelButtonTitle:@"확인"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+
         [confirmNumberTimer invalidate];
     }
     

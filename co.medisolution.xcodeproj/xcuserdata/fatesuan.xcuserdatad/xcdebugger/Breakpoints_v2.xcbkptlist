@@ -9,13 +9,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Controller/Community/CommunityNewspeedListController.m"
-            timestampString = "496829069.317284"
+            filePath = "Controller/Diary/DiaryWriteBasicController.m"
+            timestampString = "497448706.494595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
-            landmarkName = "-moveWriteMessageViewAction:"
+            startingLineNumber = "608"
+            endingLineNumber = "608"
+            landmarkName = "-deleteImage:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Controller/Diary/DiaryWriteBasicController.m"
+            timestampString = "497448804.248887"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "-alertView:clickedButtonAtIndex:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

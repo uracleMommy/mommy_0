@@ -8,6 +8,7 @@
 
 #import "CommunityNewspeedListModel.h"
 #define BASIC_CELL_ID @"BASIC_CELL_ID"
+#define IMAGE_CELL_ID @"IMAGE_CELL_ID"
 
 @implementation CommunityNewspeedListModel
 
@@ -42,37 +43,74 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    CommunityNewspeedBasicCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:BASIC_CELL_ID];
-    
-    if(cell == nil){
-        [tableView registerNib:[UINib nibWithNibName:@"CommunityNewspeedBasicCustomCell" bundle:nil] forCellReuseIdentifier:BASIC_CELL_ID];
+    if([indexPath indexAtPosition:1] < 2){
         
-        cell = [tableView dequeueReusableCellWithIdentifier:BASIC_CELL_ID];
+        CommunityNewspeedBasicCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:BASIC_CELL_ID];
+        
+        if(cell == nil){
+            [tableView registerNib:[UINib nibWithNibName:@"CommunityNewspeedBasicCustomCell" bundle:nil] forCellReuseIdentifier:BASIC_CELL_ID];
+            
+            cell = [tableView dequeueReusableCellWithIdentifier:BASIC_CELL_ID];
+        }
+        
+        cell.delegate = self;
+        
+        CAShapeLayer *firstShapeLayer = [CAShapeLayer layer];
+        [firstShapeLayer setBounds:cell.bounds];
+        [firstShapeLayer setPosition:cell.center];
+        [firstShapeLayer setFillColor:[[UIColor clearColor] CGColor]];
+        [firstShapeLayer setStrokeColor:[[UIColor colorWithRed:217.0/255.0f green:217.0/255.0f  blue:217.0/255.0f alpha:1.0] CGColor]];
+        [firstShapeLayer setLineWidth:1.0f];
+        [firstShapeLayer setLineJoin:kCALineJoinRound];
+        [firstShapeLayer setLineDashPattern:
+         [NSArray arrayWithObjects:[NSNumber numberWithInt:3],
+          [NSNumber numberWithInt:3],nil]];
+        
+        CGMutablePathRef firstPath = CGPathCreateMutable();
+        CGPathMoveToPoint(firstPath, NULL, 0, 0);
+        CGPathAddLineToPoint(firstPath, NULL, tableView.frame.size.width - 38.0, 0);
+        
+        [firstShapeLayer setPath:firstPath];
+        CGPathRelease(firstPath);
+        
+        [[cell.writerInfoView layer] addSublayer:firstShapeLayer];
+        
+        return cell;
+
+    }else{
+        
+        CommunityNewspeedImageCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:IMAGE_CELL_ID];
+        
+        if(cell == nil){
+            [tableView registerNib:[UINib nibWithNibName:@"CommunityNewspeedImageCustomCell" bundle:nil] forCellReuseIdentifier:IMAGE_CELL_ID];
+            
+            cell = [tableView dequeueReusableCellWithIdentifier:IMAGE_CELL_ID];
+        }
+        
+        cell.delegate = self;
+        
+        CAShapeLayer *firstShapeLayer = [CAShapeLayer layer];
+        [firstShapeLayer setBounds:cell.bounds];
+        [firstShapeLayer setPosition:cell.center];
+        [firstShapeLayer setFillColor:[[UIColor clearColor] CGColor]];
+        [firstShapeLayer setStrokeColor:[[UIColor colorWithRed:217.0/255.0f green:217.0/255.0f  blue:217.0/255.0f alpha:1.0] CGColor]];
+        [firstShapeLayer setLineWidth:1.0f];
+        [firstShapeLayer setLineJoin:kCALineJoinRound];
+        [firstShapeLayer setLineDashPattern:
+         [NSArray arrayWithObjects:[NSNumber numberWithInt:3],
+          [NSNumber numberWithInt:3],nil]];
+        
+        CGMutablePathRef firstPath = CGPathCreateMutable();
+        CGPathMoveToPoint(firstPath, NULL, 0, 0);
+        CGPathAddLineToPoint(firstPath, NULL, tableView.frame.size.width - 38.0, 0);
+        
+        [firstShapeLayer setPath:firstPath];
+        CGPathRelease(firstPath);
+        
+        [[cell.writerInfoView layer] addSublayer:firstShapeLayer];
+        
+        return cell;
     }
-    
-    cell.delegate = self;
-    
-    CAShapeLayer *firstShapeLayer = [CAShapeLayer layer];
-    [firstShapeLayer setBounds:cell.bounds];
-    [firstShapeLayer setPosition:cell.center];
-    [firstShapeLayer setFillColor:[[UIColor clearColor] CGColor]];
-    [firstShapeLayer setStrokeColor:[[UIColor colorWithRed:217.0/255.0f green:217.0/255.0f  blue:217.0/255.0f alpha:1.0] CGColor]];
-    [firstShapeLayer setLineWidth:1.0f];
-    [firstShapeLayer setLineJoin:kCALineJoinRound];
-    [firstShapeLayer setLineDashPattern:
-     [NSArray arrayWithObjects:[NSNumber numberWithInt:3],
-      [NSNumber numberWithInt:3],nil]];
-    
-    CGMutablePathRef firstPath = CGPathCreateMutable();
-    CGPathMoveToPoint(firstPath, NULL, 0, 0);
-    CGPathAddLineToPoint(firstPath, NULL, tableView.frame.size.width - 38.0, 0);
-    
-    [firstShapeLayer setPath:firstPath];
-    CGPathRelease(firstPath);
-    
-    [[cell.writerInfoView layer] addSublayer:firstShapeLayer];
-    
-    return cell;
 }
 
 /*
@@ -112,7 +150,11 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 202;
+    if([indexPath indexAtPosition:1] < 2){
+        return 202;
+    }else{
+        return 382;
+    }
 }
 
 

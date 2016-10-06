@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 #import "DiaryListBasicCustomCell.h"
 #import "DiaryListImageCustomCell.h"
+#import "MommyUtils.h"
+#import "MommyRequest.h"
 
 @protocol DiaryListModelDelegate <NSObject>
 
@@ -22,5 +24,7 @@
 
 @property (nonatomic, strong) NSMutableArray *diaryList;
 @property (strong, nonatomic) id<DiaryListModelDelegate> delegate;
+
+@property (strong, nonatomic) NSMutableDictionary *cachedImages;
 
 @end

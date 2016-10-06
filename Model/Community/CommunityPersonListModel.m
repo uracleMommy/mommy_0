@@ -22,6 +22,10 @@
         [_personList addObject:@""];
         [_personList addObject:@""];
         [_personList addObject:@""];
+        [_personList addObject:@""];
+        [_personList addObject:@""];
+        [_personList addObject:@""];
+        [_personList addObject:@""];
         
     }
     return self;

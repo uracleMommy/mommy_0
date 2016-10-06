@@ -10,4 +10,13 @@
 
 @interface DiaryListImageCustomCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIView *cellView;
+@property (weak, nonatomic) IBOutlet UILabel *lineLabel;
+@property (weak, nonatomic) IBOutlet UILabel *regDateLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *isvalidImageView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *emoticonImageView;
+@property (weak, nonatomic) IBOutlet UILabel *emoticonLabel;
+@property (weak, readwrite, nonatomic) IBOutlet UIImageView *contentImageView;
+
 @end

@@ -38,14 +38,6 @@
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_tableView reloadData];
     
-    //alarm Button Setting
-    UIButton *alarmBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    UIImage *alarmBtnImage = [UIImage imageNamed:@"title_icon_alarm.png"];
-    alarmBtn.frame = CGRectMake(0, 0, 40, 40);
-    [alarmBtn setImage:alarmBtnImage forState:UIControlStateNormal];
-    [alarmBtn addTarget:self action:@selector(moveToAlarm) forControlEvents:UIControlEventTouchUpInside];
-    [alarmBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
-    UIBarButtonItem *alarmButton = [[UIBarButtonItem alloc] initWithCustomView:alarmBtn];
     
     //mentor Button Setting
     UIButton *mentorBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -53,8 +45,23 @@
     mentorBtn.frame = CGRectMake(0, 0, 40, 40);
     [mentorBtn setImage:mentorBtnImage forState:UIControlStateNormal];
     [mentorBtn addTarget:self action:@selector(toggleMentor) forControlEvents:UIControlEventTouchUpInside];
-    [mentorBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 20, 0, -20)];
+//    [mentorBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 20, 0, -20)];
     UIBarButtonItem *mentorButton = [[UIBarButtonItem alloc] initWithCustomView:mentorBtn];
+    
+    //message Button Setting
+    UIButton *messageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *messageBtnImage = [UIImage imageNamed:@"title_icon_message.png"];
+    messageBtn.frame = CGRectMake(0, 0, 40, 40);
+    [messageBtn setImage:messageBtnImage forState:UIControlStateNormal];
+    [messageBtn addTarget:self action:@selector(moveToMessage) forControlEvents:UIControlEventTouchUpInside];
+    //    [messageBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 20, 0, -20)];
+    UIBarButtonItem *messageButton = [[UIBarButtonItem alloc] initWithCustomView:messageBtn];
+    
+    UIBarButtonItem *negativeSpacer2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    negativeSpacer2.width = -16;
+    
+    NSArray *rightBarButtonItems = [[NSArray alloc] initWithObjects: negativeSpacer2, mentorButton, messageButton, nil];
+//    self.navigationItem.rightBarButtonItems = rightBarButtonItems;
     
     
     //showPeople Button Setting
@@ -66,10 +73,6 @@
     [memberBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
     UIBarButtonItem *memberButton = [[UIBarButtonItem alloc] initWithCustomView:memberBtn];
     self.navigationItem.rightBarButtonItem = memberButton;
-    
-//    NSArray *rightBarButtonItems = [[NSArray alloc] initWithObjects: mentorButton, alarmButton, nil];
-//    self.navigationItem.rightBarButtonItems = rightBarButtonItems;
-
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -88,22 +91,31 @@
 }
 
 -(void)moveWriteView{
-//    [_moveWriteViewButton removeFromSuperview];
-//    
-//    UIStoryboard *diaryStoryboard = [UIStoryboard storyboardWithName:@"Diary" bundle:nil];
-//    UINavigationController *diaryNavigationController = (UINavigationController *)[diaryStoryboard instantiateViewControllerWithIdentifier:@"DiaryWriteBasicController"];
-//    
-//    [self presentViewController:diaryNavigationController animated:YES completion:nil];
-
+    [_moveWriteViewButton removeFromSuperview];
+    
+    UIStoryboard *diaryStoryboard = [UIStoryboard storyboardWithName:@"Diary" bundle:nil];
+    UINavigationController *diaryNavigationController = (UINavigationController *)[diaryStoryboard instantiateViewControllerWithIdentifier:@"DiaryWriteBasicController"];
+    
+    [self presentViewController:diaryNavigationController animated:YES completion:nil];
 }
 
-- (void)moveToAlarm{
-    NSLog(@"moveToAlarm");
+- (void)moveToMessage{
+    NSLog(@"moveToMessage");
     
-    UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"PushNotice" bundle:nil];
-    UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"PushListNavigation"];
+//    // MessageNaivgation
+//    UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
+//    UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"MessageWriteController"];
+ 
     
-    [self presentViewController:messageNavigationController animated:YES completion:nil];
+//    [self presentViewController:messageNavigationController animated:YES completion:nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
+    
+    UINavigationController *messageNavigationController = [[UINavigationController alloc] initWithRootViewController:[storyboard instantiateViewControllerWithIdentifier:@"MessageWriteController"]];
+    [[self navigationController] pushViewController:messageNavigationController animated:YES];
+}
+
+- (void)toggleMentor{
+    NSLog(@"toggleMentor");
 }
 
 -(void)goBack{
@@ -112,7 +124,6 @@
 }
 
 -(void)tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath{
-    
 }
 
 - (void)moreButtonAction:(id)sender point:(CGPoint)point{
@@ -158,9 +169,8 @@
     [_moveWriteViewButton removeFromSuperview];
     // MessageNaivgation
     UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
-    UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"MessageNaivgation"];
-    
-    [self presentViewController:messageNavigationController animated:YES completion:nil];
+    UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"MessageWriteController"];
+    [[self navigationController] pushViewController:messageNavigationController animated:YES];
 }
 
 
@@ -178,6 +188,9 @@
 - (void)movePeopleList{
     [_moveWriteViewButton removeFromSuperview];
     [self performSegueWithIdentifier:@"moveShowPeopleSegue" sender:self];
+}
+
+-(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
 }
 
 /*

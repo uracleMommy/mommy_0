@@ -22,7 +22,7 @@
 
 @end
 
-@interface CommunityNewspeedListModel : NSObject<UITableViewDelegate, UITableViewDataSource, CommunityNewspeedBasicCustomCellDelegate>
+@interface CommunityNewspeedListModel : NSObject<UITableViewDelegate, UITableViewDataSource, CommunityNewspeedBasicCustomCellDelegate, CommunityNewspeedImageCustomCellDelegate>
 
 @property (nonatomic, strong) NSMutableArray *newspeedList;
 @property (strong, nonatomic) id<CommunityNewspeedListModelDelegate> delegate;

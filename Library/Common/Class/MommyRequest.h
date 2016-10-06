@@ -40,6 +40,16 @@ typedef enum {
     MessageDelegate
 } MommyMessageWebServiceType;
 
+#pragma 다이어리 관련 열거형
+typedef enum {
+    
+    DiaryList,
+    DiaryInsert,
+    DiaryDetail,
+    DiaryDelete,
+    DiaryUpdate
+} MommyDiaryWebServiceType;
+
 #pragma 블록 타입 정의
 typedef void (^MommyApiServiceSuccessBlock) ( NSDictionary *data );
 typedef void (^MommyApiServiceErrorBlock) ( NSError *error );
@@ -59,6 +69,9 @@ typedef void (^MommyApiServiceErrorBlock) ( NSError *error );
 #pragma 쪽지 관련
 - (void) mommyMessageApiService : (MommyMessageWebServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
 
+#pragma 다이어리 관련
+- (void) mommyDiaryApiService : (MommyDiaryWebServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
+
 #pragma 이미지 업로드 관련
 - (void) mommyImageUploadApiService : (UIImage *) image success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
 
@@ -75,6 +88,8 @@ typedef void (^MommyApiServiceErrorBlock) ( NSError *error );
 - (NSString *) requestSignInUrlType : (MommySignInWebServiceType) serviceType;
 
 - (NSString *) requestMessageUrlType : (MommyMessageWebServiceType) serviceType;
+
+- (NSString *) requestDiaryUrlType : (MommyDiaryWebServiceType) serviceType;
 
 - (NSString *) requestImageUploadUrl;
 

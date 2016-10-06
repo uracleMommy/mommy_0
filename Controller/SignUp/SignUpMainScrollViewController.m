@@ -44,7 +44,7 @@
 */
 
 - (IBAction)getConfirmNumberAction:(id)sender {
-    if(![confirmNumberTimer isValid]){
+    if(![_confirmNumberTimer isValid]){
         if([_phoneNumberTextField.text isEqualToString:@""] || [_phoneNumberTextField.text length] < 10 || [_phoneNumberTextField.text length] > 13){
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
                                                             message:@"휴대번호를 확인해주세요."
@@ -55,7 +55,7 @@
 
         }else{
             t_count = 0;
-            confirmNumberTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countTimer:) userInfo:nil repeats:YES];
+            _confirmNumberTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countTimer:) userInfo:nil repeats:YES];
         }
     }
 }
@@ -67,7 +67,14 @@
     _timerLabel.text = [NSString stringWithFormat:@"%02d : %02d", timerText/60, timerText%60];
     
     if(t_count == 180){
-        [confirmNumberTimer invalidate];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                        message:@"인증번호 입력 제한시간을 초과하였습니다."
+                                                       delegate:self
+                                              cancelButtonTitle:@"확인"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+
+        [_confirmNumberTimer invalidate];
     }
     
 }

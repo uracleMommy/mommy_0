@@ -273,8 +273,8 @@
                 <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="r0g-I1-wxF" firstAttribute="top" secondItem="7TS-Vh-cZ3" secondAttribute="top" constant="3" id="0c6-eh-Wds"/>
-                    <constraint firstItem="r0g-I1-wxF" firstAttribute="leading" secondItem="7TS-Vh-cZ3" secondAttribute="leading" constant="3" id="5PL-PP-kc3"/>
-                    <constraint firstAttribute="trailing" secondItem="r0g-I1-wxF" secondAttribute="trailing" constant="3" id="Eyf-gs-27S"/>
+                    <constraint firstItem="r0g-I1-wxF" firstAttribute="leading" secondItem="7TS-Vh-cZ3" secondAttribute="leading" constant="13" id="5PL-PP-kc3"/>
+                    <constraint firstAttribute="trailing" secondItem="r0g-I1-wxF" secondAttribute="trailing" constant="13" id="Eyf-gs-27S"/>
                     <constraint firstAttribute="bottom" secondItem="r0g-I1-wxF" secondAttribute="bottom" constant="3" id="F3K-iL-adL"/>
                 </constraints>
             </tableViewCellContentView>

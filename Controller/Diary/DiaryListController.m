@@ -15,52 +15,19 @@
 @implementation DiaryListController
 
 - (void)viewDidLoad {
-    _diaryListTableController = [[DiaryListModel alloc]init];
     
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    [self.navigationItem setHidesBackButton:YES];
-    
-    //add Button Setting
-    UIButton *addBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    UIImage *addBtnImage = [UIImage imageNamed:@"title_icon_add.png"];
-    addBtn.frame = CGRectMake(0, 0, 40, 40);
-    [addBtn setImage:addBtnImage forState:UIControlStateNormal];
-    [addBtn addTarget:self action:@selector(showAddPopup) forControlEvents:UIControlEventTouchUpInside];
-    [addBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithCustomView:addBtn];
-    self.navigationItem.leftBarButtonItem = addButton;
-
-    
-    //message Button Setting
-    UIButton *messageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    UIImage *messageBtnImage = [UIImage imageNamed:@"title_icon_message.png"];
-    messageBtn.frame = CGRectMake(0, 0, 40, 40);
-    [messageBtn setImage:messageBtnImage forState:UIControlStateNormal];
-    [messageBtn addTarget:self action:@selector(moveToMessage) forControlEvents:UIControlEventTouchUpInside];
-//    [messageBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 20, 0, -20)];
-    UIBarButtonItem *messageButton = [[UIBarButtonItem alloc] initWithCustomView:messageBtn];
-    
-    //alarm Button Setting
-    UIButton *alarmBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    UIImage *alarmBtnImage = [UIImage imageNamed:@"title_icon_alarm.png"];
-    alarmBtn.frame = CGRectMake(0, 0, 40, 40);
-    [alarmBtn setImage:alarmBtnImage forState:UIControlStateNormal];
-    [alarmBtn addTarget:self action:@selector(moveToAlarm) forControlEvents:UIControlEventTouchUpInside];
-//    [alarmBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
-    UIBarButtonItem *alarmButton = [[UIBarButtonItem alloc] initWithCustomView:alarmBtn];
-    
-    NSArray *rightBarButtonItems = [[NSArray alloc] initWithObjects: alarmButton, messageButton, nil];
-    self.navigationItem.rightBarButtonItems = rightBarButtonItems;
-
-    
+    /** tableView Setting **/
+    _diaryListTableController = [[DiaryListModel alloc]init];
     _diaryListTableController.delegate = self;
     
     [_listTableview setDelegate:_diaryListTableController];
     [_listTableview setDataSource:_diaryListTableController];
     _listTableview.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_listTableview reloadData];
+    
+    _searchPage = [[NSNumber alloc] initWithInt:1];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -78,89 +45,52 @@
 }
 */
 
-- (void)showAddPopup{
-    UIButton *imageView = self.navigationItem.leftBarButtonItem.customView;
-//    NSLog(@"PSH %@", self.navigationItem.leftBarButtonItem.customView);
-
-    UIImage *addImage = [UIImage imageNamed:@"title_icon_add.png"];
-    UIImage *closeImage = [UIImage imageNamed:@"title_icon_close.png"];
-    
-    NSData *clickImage = UIImagePNGRepresentation([imageView currentImage]);
-    NSData *addImageData = UIImagePNGRepresentation(addImage);
-    
-    if([clickImage isEqual:addImageData]){
-        [imageView setImage:closeImage forState:UIControlStateNormal];
-        
-        NSArray *menuItems =
-        @[
-          [KxMenuItem menuItem:@"다이어리"
-                        target:self
-                        action:@selector(moveWriteDiary:)],
-          
-          [KxMenuItem menuItem:@"일정"
-                        target:self
-                        action:@selector(moveWriteSchedule:)],
-          ];
-        
-        KxMenuItem *first = menuItems[0];
-        first.foreColor = [UIColor colorWithRed:47/255.0f green:112/255.0f blue:225/255.0f alpha:1.0];
-        first.alignment = NSTextAlignmentCenter;
-        
-        [KxMenu showMenuInView:self.view
-                      fromRect:CGRectMake(imageView.frame.origin.x, imageView.frame.origin.x, imageView.frame.size.width, imageView.frame.size.height)
-                     menuItems:menuItems];
-        
-        [KxMenu setTarget:self action:@selector(dismissMenu)];
-
-    }else{
-        [KxMenu dismissMenu];
-        [imageView setImage:addImage forState:UIControlStateNormal];
-        
-    }
-}
-
-- (void)dismissMenu{
-    NSLog(@"dismissMenu");
-    UIButton *imageView = self.navigationItem.leftBarButtonItem.customView;
-    [imageView setImage:[UIImage imageNamed:@"title_icon_add.png"] forState:UIControlStateNormal];
-}
-
-- (void) moveWriteDiary:(id)sender{
-    UIButton *imageView = self.navigationItem.leftBarButtonItem.customView;
-    [imageView setImage:[UIImage imageNamed:@"title_icon_add.png"] forState:UIControlStateNormal];
-    
-    [self performSegueWithIdentifier:@"writeDiarySegue" sender:self];
-}
-
-- (void) moveWriteSchedule:(id)sender{
-    UIButton *imageView = self.navigationItem.leftBarButtonItem.customView;
-    [imageView setImage:[UIImage imageNamed:@"title_icon_add.png"] forState:UIControlStateNormal];
-    
-    [self performSegueWithIdentifier:@"writeDetailScheduleSegue" sender:self];
-}
-
-- (void)moveToMessage{
-    NSLog(@"moveToMessage");
-    
-    // MessageNaivgation
-    UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
-    UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"MessageNaivgation"];
-    
-    [self presentViewController:messageNavigationController animated:YES completion:nil];
-}
-
-- (void)moveToAlarm{
-    NSLog(@"moveToAlarm");
-    
-    UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"PushNotice" bundle:nil];
-    UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"PushListNavigation"];
-    
-    [self presentViewController:messageNavigationController animated:YES completion:nil];
-}
-
--(void) tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath{
-//    [self performSegueWithIdentifier:@"showDetailScheduleSegue" sender:nil];
+#pragma mark tableView delegate
+- (void)tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *) indexPath{
     [_delegate tableView:tableView selectedIndexPath:indexPath];
+}
+
+- (void)setListFirst:(NSDate *)date{
+    [self showIndicator];
+    
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+    NSDateFormatter *formatter2 = [[NSDateFormatter alloc]init];
+    [formatter2 setDateFormat:@"YYYYMM"];
+    [param setValue:[formatter2 stringFromDate:date] forKey:@"search_month"];
+    [param setValue:PAGE_SIZE forKey:@"pageSize"];
+    [param setValue:_searchPage forKey:@"searchPage"];
+    
+    [[MommyRequest sharedInstance] mommyDiaryApiService:DiaryList authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data) {
+        
+        NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
+        NSLog(@"data : %@", data);
+        if([code isEqualToString:@"0"]){
+            NSArray *result = [data objectForKey:@"result"];
+            if([result count] == 0){
+                NSLog(@"empty");
+            }
+            [_diaryListTableController.diaryList removeAllObjects];
+            [_diaryListTableController.diaryList addObjectsFromArray:result];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [_listTableview reloadData];
+                [self hideIndicator];
+            });
+        }else{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self hideIndicator];
+            });
+        }
+    } error:^(NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self hideIndicator];
+        });
+        
+    }];
+}
+
+- (void)setListMore:(NSDate *)date{
+    
 }
 
 @end

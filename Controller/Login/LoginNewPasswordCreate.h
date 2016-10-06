@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *passwordValidationLabel;
 @property (strong, nonatomic) NSString *idText;
 @property (strong, nonatomic) NSString *phoneNumberText;
+@property (strong, nonatomic) NSMutableArray *passwordValidationArr;
 
 - (IBAction)savePasswordButtonAction:(id)sender;
 @end

@@ -14,11 +14,12 @@
 
 @interface SignUpMainScrollViewController : CommonViewController <UITextFieldDelegate, IQDropDownTextFieldDelegate> {
     int t_count;
-    NSTimer *confirmNumberTimer;
+    
 }
 
 - (IBAction)getConfirmNumberAction:(id)sender;
 
+@property (strong, nonatomic) NSTimer *confirmNumberTimer;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UITextField *idTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;

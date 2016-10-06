@@ -18,12 +18,14 @@
 
 @interface DiaryWriteBasicController : CommonViewController <UITextViewDelegate, IQDropDownTextFieldDelegate, ImageCropViewControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, UINavigationControllerDelegate, emoticonPopupViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
     UIButton *selectedImageButton;
-    UIImage *image;
     UIImage *defaultImage;
     ImageCropViewController *controller;
     UIImagePickerController *imagePickerController;
     UIImagePickerController *imagePicker;
 }
+
+@property (strong, nonatomic) MultiImageViewController *imageViewer;
+@property (strong, nonatomic) NSMutableArray *files;
 
 @property (strong, nonatomic) NSMutableArray *pickerData_0; //거주지 시
 @property (strong, nonatomic) NSMutableArray *pickerData_1; //거주지 구
@@ -32,16 +34,20 @@
 @property (weak, nonatomic) IBOutlet UILabel *addressTextField;
 @property (weak, nonatomic) IBOutlet UITextField *addressButton;
 
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextView *contentsTextView;
 @property (strong, nonatomic) UILabel *placeholderLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet IQDropDownTextField *timeButton;
+@property (weak, nonatomic) IBOutlet IQDropDownTextField *dateButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *emoticonButton;
 @property (weak, nonatomic) IBOutlet UIButton *imageButton01;
 @property (weak, nonatomic) IBOutlet UIButton *imageButton02;
 @property (weak, nonatomic) IBOutlet UIButton *imageButton03;
 @property (weak, nonatomic) IBOutlet UIButton *imageButton04;
-@property (weak, nonatomic) IBOutlet IQDropDownTextField *dateButton;
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UIButton *emoticonButton;
-@property (strong, nonatomic) MultiImageViewController *imageViewer;
 
 #pragma mark 이모티콘 팝업 관련
 @property (strong, nonatomic) emoticonPopupViewController *emoticonPopupView;

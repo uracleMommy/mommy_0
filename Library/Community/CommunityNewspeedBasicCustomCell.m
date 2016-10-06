@@ -17,6 +17,7 @@
     [_cellView.layer setBorderColor:[UIColor colorWithRed:153.0/255.0f green:153.0/255.0f  blue:153.0/255.0f alpha:1.0].CGColor];
     [_cellView.layer setBorderWidth:1.0f];
     _cellView.layer.cornerRadius = 10;//half of the width
+    _cellView.layer.masksToBounds = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
