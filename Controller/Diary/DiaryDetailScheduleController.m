@@ -29,14 +29,13 @@
     
     self.navigationItem.leftBarButtonItem = backButton;
     
-    
     //edit Button Setting
     UIButton *editBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *editBtnImage = [UIImage imageNamed:@"title_icon_edit.png"];
     editBtn.frame = CGRectMake(0, 0, 40, 40);
     [editBtn setImage:editBtnImage forState:UIControlStateNormal];
     [editBtn addTarget:self action:@selector(editSchedule) forControlEvents:UIControlEventTouchUpInside];
-    [editBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 20, 0, -20)];
+//    [editBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 20, 0, -20)];
     UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithCustomView:editBtn];
     
     //delete Button Setting
@@ -45,11 +44,14 @@
     deleteBtn.frame = CGRectMake(0, 0, 40, 40);
     [deleteBtn setImage:deleteBtnImage forState:UIControlStateNormal];
     [deleteBtn addTarget:self action:@selector(deleteSchedule) forControlEvents:UIControlEventTouchUpInside];
-    [deleteBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
+//    [deleteBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
     UIBarButtonItem *deleteButton = [[UIBarButtonItem alloc] initWithCustomView:deleteBtn];
     
-    NSArray *rightBarButtonItems = [[NSArray alloc] initWithObjects: deleteButton, editButton, nil];
-    self.navigationItem.rightBarButtonItems = rightBarButtonItems;    
+    UIBarButtonItem *negativeSpacer2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    negativeSpacer2.width = -16;
+    
+    NSArray *rightBarButtonItems = [[NSArray alloc] initWithObjects: negativeSpacer2, deleteButton, editButton, nil];
+    self.navigationItem.rightBarButtonItems = rightBarButtonItems;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,11 +74,11 @@
 }
 
 - (void)editSchedule {
-    
+    NSLog(@"editSchedule");
 }
 
 - (void)deleteSchedule {
-    
+    NSLog(@"deleteSchedule");
 }
 
 @end

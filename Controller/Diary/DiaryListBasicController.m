@@ -15,46 +15,37 @@
 @implementation DiaryListBasicController
 
 - (void)viewDidLoad {
-//    _diaryListTableDelegate = [[DiaryListModel alloc]init];
-    
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
+    /** navigation Setting **/
     [self.navigationItem setHidesBackButton:YES];
     
-    //add Button Setting
+    //add Button
     UIButton *addBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *addBtnImage = [UIImage imageNamed:@"title_icon_add.png"];
     addBtn.frame = CGRectMake(0, 0, 40, 40);
     [addBtn setImage:addBtnImage forState:UIControlStateNormal];
     [addBtn addTarget:self action:@selector(showAddPopup) forControlEvents:UIControlEventTouchUpInside];
     
-//    [addBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
+    [addBtn setContentEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithCustomView:addBtn];
     
-//    [addBtn setContentEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
+    self.navigationItem.leftBarButtonItem = addButton;
     
-    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-    negativeSpacer.width = -16;
-    [self.navigationItem setLeftBarButtonItems:@[negativeSpacer, addButton]];
-//    self.navigationItem.leftBarButtonItem = addButton;
-    
-    //message Button Setting
+    //message Button
     UIButton *messageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *messageBtnImage = [UIImage imageNamed:@"title_icon_message.png"];
     messageBtn.frame = CGRectMake(0, 0, 40, 40);
     [messageBtn setImage:messageBtnImage forState:UIControlStateNormal];
     [messageBtn addTarget:self action:@selector(moveToMessage) forControlEvents:UIControlEventTouchUpInside];
-//    [messageBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 20, 0, -20)];
     UIBarButtonItem *messageButton = [[UIBarButtonItem alloc] initWithCustomView:messageBtn];
     
-    //alarm Button Setting
+    //alarm Button
     UIButton *alarmBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *alarmBtnImage = [UIImage imageNamed:@"title_icon_alarm.png"];
     alarmBtn.frame = CGRectMake(0, 0, 40, 40);
     [alarmBtn setImage:alarmBtnImage forState:UIControlStateNormal];
     [alarmBtn addTarget:self action:@selector(moveToAlarm) forControlEvents:UIControlEventTouchUpInside];
-//    [alarmBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
     UIBarButtonItem *alarmButton = [[UIBarButtonItem alloc] initWithCustomView:alarmBtn];
     
     UIBarButtonItem *negativeSpacer2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
@@ -63,25 +54,26 @@
     NSArray *rightBarButtonItems = [[NSArray alloc] initWithObjects: negativeSpacer2, alarmButton, messageButton, nil];
     self.navigationItem.rightBarButtonItems = rightBarButtonItems;
     
+    /** searchPage setting **/
+    _searchPage = [[NSNumber alloc] initWithInt:1];
     
-//    [_listTableview setDelegate:_diaryListTableDelegate];
-//    [_listTableview setDataSource:_diaryListTableDelegate];
-//    _listTableview.separatorStyle = UITableViewCellSeparatorStyleNone;
-//    [_listTableview reloadData];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     if(!_listViewController){
         _listViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DiaryListTableView"];
-        
-        //        _contentViewController.delegate = self;
         _listViewController.delegate = self;
         [_listViewController.view setFrame:CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height)];
         
         [_contentView addSubview : _listViewController.view];
         
-        //        [_scrollView sizeToFit];
+        /** today setting **/
+        [self moveCalendarMonthView:[NSDate new]];
     }
+}
+
+-(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
 }
 
 - (void)didReceiveMemoryWarning {
@@ -99,11 +91,9 @@
 }
 */
 
-
+#pragma mark KkMenuPopup (다이어리, 일정)
 - (void)showAddPopup{
     UIButton *imageView = self.navigationItem.leftBarButtonItem.customView;
-//    NSLog(@"PSH %@", self.navigationItem.leftBarButtonItem.customView);
-    
     UIImage *addImage = [UIImage imageNamed:@"title_icon_add.png"];
     UIImage *closeImage = [UIImage imageNamed:@"title_icon_close.png"];
     
@@ -130,8 +120,6 @@
         
         [KxMenu showMenuInView:self.view
                       fromRect:CGRectMake(imageView.frame.origin.x, imageView.frame.origin.y-10, 0, 0)
-//         CGRectMake(imageView.frame.origin.x, imageView.frame.origin.x, imageView.frame.size.width, imageView.frame.size.height)
-         
                      menuItems:menuItems];
         
         [KxMenu setTarget:self action:@selector(dismissMenu)];
@@ -139,24 +127,23 @@
     }else{
         [KxMenu dismissMenu];
         [imageView setImage:addImage forState:UIControlStateNormal];
-        
     }
 }
 
 - (void)dismissMenu{
-    NSLog(@"dismissMenu");
     UIButton *imageView = self.navigationItem.leftBarButtonItem.customView;
     [imageView setImage:[UIImage imageNamed:@"title_icon_add.png"] forState:UIControlStateNormal];
 }
 
-- (void) moveWriteDiary:(id)sender{
+#pragma mark moveView Functions
+- (void)moveWriteDiary:(id)sender{
     UIButton *imageView = self.navigationItem.leftBarButtonItem.customView;
     [imageView setImage:[UIImage imageNamed:@"title_icon_add.png"] forState:UIControlStateNormal];
     
     [self performSegueWithIdentifier:@"writeDiarySegue" sender:self];
 }
 
-- (void) moveWriteSchedule:(id)sender{
+- (void)moveWriteSchedule:(id)sender{
     UIButton *imageView = self.navigationItem.leftBarButtonItem.customView;
     [imageView setImage:[UIImage imageNamed:@"title_icon_add.png"] forState:UIControlStateNormal];
     
@@ -164,26 +151,20 @@
 }
 
 - (void)moveToMessage{
-    NSLog(@"moveToMessage");
-    
-    // MessageNaivgation
     UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
     UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"MessageNaivgation"];
     
     [self presentViewController:messageNavigationController animated:YES completion:nil];
-    
-    
 }
 
 - (void)moveToAlarm{
-    NSLog(@"moveToAlarm");
-    
     UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"PushNotice" bundle:nil];
     UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"PushListNavigation"];
     
     [self presentViewController:messageNavigationController animated:YES completion:nil];
 }
 
+#pragma mark calendarView&ListView Swap
 - (IBAction)changeListViewAction:(id)sender {
     if(!_calenderViewController){
         _calenderViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DiaryListCalenderView"];        
@@ -194,51 +175,75 @@
         [_contentView.subviews[0] removeFromSuperview];
         
         [_contentView addSubview : _calenderViewController.view];
+        
+        [_calenderViewController.calendarManager setDate:_listDate];
     }else{
         NSString *restorationIdentifier = _contentView.subviews[0].restorationIdentifier;
         
        [_contentView.subviews[0] removeFromSuperview];
         if([restorationIdentifier isEqualToString:@"tableView"]){
+            [_calenderViewController.calendarManager setDate:_listDate];
             [_contentView addSubview : _calenderViewController.view];
         }else{
             [_contentView addSubview : _listViewController.view];
         }
     }
+    
+    [self moveCalendarMonthView:_listDate];
 }
 
--(void)moveCalendarMonthView:(NSDate *)date{
-    NSLog(@"PSH : date : %@", date);
+#pragma month move action
+- (void)moveCalendarMonthView:(NSDate *)date{
+    _listDate = date;
+    
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
     [formatter setDateFormat:@"YYYY년 MM월"];
     _dateLabel.text = [formatter stringFromDate:date];
-}
-
-- (void) tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"PSH :  indexPath : %@",indexPath);
-    
-    // 디테일 이동 로직
-    [self performSegueWithIdentifier:@"showDetailScheduleSegue" sender:nil];
-}
-    
-- (IBAction)prevMonthButton:(id)sender {
     
     NSString *restorationIdentifier = _contentView.subviews[0].restorationIdentifier;
     
     if([restorationIdentifier isEqualToString:@"tableView"]){
+        [_listViewController setListFirst:date];
+    }else{
+//        [_calenderViewController.calendarContentView loadPreviousPageWithAnimation];
+    }
+}
+
+- (IBAction)prevMonthButton:(id)sender {
+    NSString *restorationIdentifier = _contentView.subviews[0].restorationIdentifier;
+
+    if([restorationIdentifier isEqualToString:@"tableView"]){
+        [self moveCalendarMonthView:[self addMonth:-1 date:_listDate]];
     }else{
         [_calenderViewController.calendarContentView loadPreviousPageWithAnimation];
     }
-
 }
     
 - (IBAction)nextMonthButton:(id)sender {
-    
     NSString *restorationIdentifier = _contentView.subviews[0].restorationIdentifier;
     
     if([restorationIdentifier isEqualToString:@"tableView"]){
+        [self moveCalendarMonthView:[self addMonth:1 date:_listDate]];
     }else{
         [_calenderViewController.calendarContentView loadNextPageWithAnimation];
     }
 }
+
+- (NSDate *)addMonth:(int)addCount date:(NSDate *)date {
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    [dateComponents setMonth:addCount];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDate *newDate = [calendar dateByAddingComponents:dateComponents toDate:date options:0];
     
+    return newDate;
+}
+
+#pragma tableView delegate
+- (void) tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath{
+    // 디테일 이동 로직
+//    long test2 = [tableView cellForRowAtIndexPath:indexPath].tag;
+    [self performSegueWithIdentifier:@"showDetailScheduleSegue" sender:nil];
+}
+
+
 @end

@@ -11,6 +11,10 @@
 @interface DiaryListBasicCustomCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIView *cellView;
 @property (weak, nonatomic) IBOutlet UILabel *lineLabel;
-@property (strong, nonatomic) CAShapeLayer *border;
+@property (weak, nonatomic) IBOutlet UILabel *regDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *isvalidImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *emoticonImageView;
+@property (weak, nonatomic) IBOutlet UILabel *emoticonLabel;
 
 @end

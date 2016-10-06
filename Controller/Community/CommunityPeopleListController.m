@@ -63,6 +63,7 @@
 
 - (void)moveNewspeedViewAction:(id)sender{
     NSLog(@"moveNewspeed");
+    [self performSegueWithIdentifier:@"UnwindingSegue" sender:self];
 }
 
 - (void)moveWriteMessageViewAction:(id)sender{

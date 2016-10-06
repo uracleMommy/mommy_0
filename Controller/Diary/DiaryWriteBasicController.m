@@ -1,4 +1,4 @@
-//
+ //
 //  DiaryWriteBasicController.m
 //  co.medisolution
 //
@@ -16,22 +16,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    //TODO keypad remove
     
-    defaultImage = [UIImage imageNamed:@"contents_btn_photo_update.png"];
-   
+    /** Navigation Setting **/
+    //close Button
+    UIButton *closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *closeBtnImage = [UIImage imageNamed:@"title_icon_close.png"];
+    closeBtn.frame = CGRectMake(0, 0, 40, 40);
+    [closeBtn setImage:closeBtnImage forState:UIControlStateNormal];
+    [closeBtn addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
+    [closeBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
+    UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithCustomView:closeBtn];
+    self.navigationItem.rightBarButtonItem = closeButton;
+    
+    //save Button
+    UIButton *saveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *saveBtnImage = [UIImage imageNamed:@"title_icon_save.png"];
+    saveBtn.frame = CGRectMake(0, 0, 40, 40);
+    [saveBtn setImage:saveBtnImage forState:UIControlStateNormal];
+    [saveBtn addTarget:self action:@selector(saveDiary) forControlEvents:UIControlEventTouchUpInside];
+    [saveBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithCustomView:saveBtn];
+    self.navigationItem.leftBarButtonItem = saveButton;
+
+    
+    /** Placeholder Setting **/
     _placeholderLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, _contentsTextView.frame.size.width - 10.0, 34.0)];
     
     [_placeholderLabel setText:@"내용을 입력해주세요"];
     [_placeholderLabel setBackgroundColor:[UIColor clearColor]];
     [_placeholderLabel setTextColor:[UIColor colorWithRed:199.0/255.0f green:199.0/255.0f  blue:205.0/255.0f alpha:1.0]];
-    
     [_placeholderLabel setFont:[UIFont fontWithName:@"NanumBarunGothic" size:15]];
     _contentsTextView.delegate = self;
-    
     [_contentsTextView addSubview:_placeholderLabel];
     [_contentsTextView setTextContainerInset:UIEdgeInsetsMake(8, -5, 0, 0)];
+    
+    /** imageButton Radius, defaultImage Setting **/
+    defaultImage = [UIImage imageNamed:@"contents_btn_photo_update.png"];
     
     _imageButton01.layer.cornerRadius = 20;//half of the width
     _imageButton01.layer.borderColor = [UIColor colorWithRed:236.0/255.0f green:236.0/255.0f  blue:236.0/255.0f alpha:1.0].CGColor;
@@ -57,35 +77,15 @@
     _imageButton04.layer.masksToBounds = YES;
     [_imageButton04 setImage:defaultImage forState:UIControlStateNormal];
     
+    /** PickerView Setting **/
     _pickerData_0 = [[NSMutableArray alloc]initWithArray:@[@"Select", @"서울시", @"경기도"]];
     _pickerData_1 = [[NSMutableArray alloc]initWithArray:@[@"Select"]];
     _pickerData_2 = [[NSMutableArray alloc]initWithArray:@[@"Select"]];
 
-    
     _addressPicker = [[UIPickerView alloc] init];
     _addressPicker.dataSource = self;
     _addressPicker.delegate = self;
     [_addressButton setInputView:_addressPicker];
-
-    //close Button Setting
-    UIButton *closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    UIImage *closeBtnImage = [UIImage imageNamed:@"title_icon_close.png"];
-    closeBtn.frame = CGRectMake(0, 0, 40, 40);
-    [closeBtn setImage:closeBtnImage forState:UIControlStateNormal];
-    [closeBtn addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
-    [closeBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
-    UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithCustomView:closeBtn];
-    self.navigationItem.rightBarButtonItem = closeButton;
-    
-    //save Button Setting
-    UIButton *saveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    UIImage *saveBtnImage = [UIImage imageNamed:@"title_icon_save.png"];
-    saveBtn.frame = CGRectMake(0, 0, 40, 40);
-    [saveBtn setImage:saveBtnImage forState:UIControlStateNormal];
-    [saveBtn addTarget:self action:@selector(saveDiary) forControlEvents:UIControlEventTouchUpInside];
-    [saveBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithCustomView:saveBtn];
-    self.navigationItem.leftBarButtonItem = saveButton;
     
     [_dateButton setDropDownMode:IQDropDownModeDatePicker];
     [_dateButton setInputTextFlag:YES];
@@ -97,19 +97,19 @@
     [_dateButton setDate:NSDate.date];
     _dateLabel.text = [formatter stringFromDate:NSDate.date];
     
-
-}
-
-- (void)goBack{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)saveDiary{
     
-}
-
--(void)textField:(IQDropDownTextField*)textField didSelectItem:(NSString*)item{
-    _dateLabel.text = item;
+    [_timeButton setDropDownMode:IQDropDownModeTimePicker];
+    [_timeButton setInputTextFlag:YES];
+    
+    NSDateFormatter *formatter2 = [[NSDateFormatter alloc]init];
+    [formatter2 setDateFormat:@"HH:mm"];
+    [_timeButton setTimeFormatter:formatter2];
+    [_timeButton setDelegate:self];
+    
+    [_timeButton setDate:NSDate.date];
+    _timeLabel.text = [formatter2 stringFromDate:NSDate.date];
+        
+    _files = [[NSMutableArray alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -117,7 +117,164 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark UITextView Delegate
+#pragma mark Navigation Button Action
+- (void)goBack{
+    if(![_titleTextField.text isEqualToString:@""] && ![_contentsTextView.text isEqualToString:@""]){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                        message:@"작성 중이던 다이어리를 저장하지 않고 이전 화면으로 이동하시겠습니까?."
+                                                       delegate:self
+                                              cancelButtonTitle:@"취소"
+                                              otherButtonTitles:@"임시저장", @"나가기", nil];
+        [alert setTag:0];
+        [alert show];
+    }else{
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
+#pragma mark alertView delegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(alertView.tag == 0){
+        switch (buttonIndex) {
+            case 1 : {
+                [self showIndicator];
+                NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+                NSMutableArray *images = [[NSMutableArray alloc] init];
+                
+                for(int i = 0 ; i<_files.count ; i++){
+                    NSMutableDictionary *imageObj = [[NSMutableDictionary alloc] init];
+                    [imageObj setValue:[_files objectAtIndex:i] forKey:@"file_name"];
+                    [images addObject:imageObj];
+                }
+                
+                NSDateFormatter *formatterMonth = [[NSDateFormatter alloc]init];
+                [formatterMonth setDateFormat:@"YYYYMMdd"];
+                NSDateFormatter *formatterTime = [[NSDateFormatter alloc]init];
+                [formatterTime setDateFormat:@"HHmm"];
+                
+                NSString *reg_dttm = [NSString stringWithFormat:@"%@%@", [formatterMonth stringFromDate:_dateButton.date], [formatterTime stringFromDate:_timeButton.date]];
+                
+                NSString *emoticon;
+                if(_emoticonButton.tag == -1){
+                    emoticon = @"";
+                }else{
+                    emoticon = [NSString stringWithFormat:@"%ld", (long)_emoticonButton.tag+500];
+                }
+                
+                [param setValue:@"N" forKey:@"isvalid"];
+                [param setValue:_titleTextField.text forKey:@"title"];
+                [param setValue:_contentsTextView.text forKey:@"content"];
+                [param setValue:_addressTextField.text forKey:@"address_name"];
+                [param setValue:emoticon forKey:@"emoticon"];
+                [param setValue:reg_dttm forKey:@"reg_dttm"];
+                [param setValue:images forKey:@"images"];
+                
+                [[MommyRequest sharedInstance] mommyDiaryApiService:DiaryInsert authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data) {
+                    NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
+                    NSLog(@"data : %@", data);
+                    if([code isEqualToString:@"0"]){
+                        dispatch_sync(dispatch_get_main_queue(), ^{
+                            [self performSegueWithIdentifier:@"UnwindingSegue" sender:self];
+                        });
+                    }else{
+                        NSLog(@"Fail");
+                    }
+                    dispatch_sync(dispatch_get_main_queue(), ^{
+                        [self hideIndicator];
+                    });
+                } error:^(NSError *error) {
+                    dispatch_sync(dispatch_get_main_queue(), ^{
+                        [self hideIndicator];
+                    });
+                }];
+                break;
+            }
+                
+            case 2 : {
+                [self dismissViewControllerAnimated:YES completion:nil];
+                break;
+            }
+                
+            default:
+                break;
+        }
+    }
+}
+
+- (void)saveDiary{
+    if([_titleTextField.text isEqualToString:@""] || [_contentsTextView.text isEqualToString:@""]){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                        message:@"입력하신 내용을 다시 확인해주세요."
+                                                       delegate:self
+                                              cancelButtonTitle:@"확인"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+
+    }else{
+        [self showIndicator];
+        NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+        NSMutableArray *images = [[NSMutableArray alloc] init];
+
+        for(int i = 0 ; i<_files.count ; i++){
+            NSMutableDictionary *imageObj = [[NSMutableDictionary alloc] init];
+            [imageObj setValue:[_files objectAtIndex:i] forKey:@"file_name"];
+            [images addObject:imageObj];
+        }
+        
+        NSDateFormatter *formatterMonth = [[NSDateFormatter alloc]init];
+        [formatterMonth setDateFormat:@"YYYYMMdd"];
+        NSDateFormatter *formatterTime = [[NSDateFormatter alloc]init];
+        [formatterTime setDateFormat:@"HHmm"];
+        
+        NSString *reg_dttm = [NSString stringWithFormat:@"%@%@", [formatterMonth stringFromDate:_dateButton.date], [formatterTime stringFromDate:_timeButton.date]];
+        
+        NSString *emoticon;
+        if(_emoticonButton.tag == -1){
+            emoticon = @"";
+        }else{
+            emoticon = [NSString stringWithFormat:@"%ld", (long)_emoticonButton.tag+500];
+        }
+        
+        [param setValue:@"Y" forKey:@"isvalid"];
+        [param setValue:_titleTextField.text forKey:@"title"];
+        [param setValue:_contentsTextView.text forKey:@"content"];
+        [param setValue:_addressTextField.text forKey:@"address_name"];
+        [param setValue:emoticon forKey:@"emoticon"];
+        [param setValue:reg_dttm forKey:@"reg_dttm"];
+        [param setValue:images forKey:@"images"];
+        
+        [[MommyRequest sharedInstance] mommyDiaryApiService:DiaryInsert authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data) {
+            NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
+            NSLog(@"data : %@", data);
+            if([code isEqualToString:@"0"]){
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [self performSegueWithIdentifier:@"UnwindingSegue" sender:self];
+                });
+            }else{
+                NSLog(@"Fail");
+            }
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [self hideIndicator];
+            });
+        } error:^(NSError *error) {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [self hideIndicator];
+            });
+        }];
+    }
+}
+
+#pragma mark dateField & timeField
+-(void)textField:(IQDropDownTextField*)textField didSelectItem:(NSString*)item{
+    NSLog(@"selected : %@", item);
+    if([textField isEqual:_dateButton]){
+        _dateLabel.text = item;
+    }else{
+        _timeLabel.text = item;
+    }
+}
+
+#pragma mark UITextView Delegate (placeholder)
 - (BOOL) textViewShouldBeginEditing:(UITextView *)textView
 {
     if (![textView hasText]) {
@@ -128,7 +285,6 @@
 
 -(void) textViewDidChange:(UITextView *)textView
 {
-    
     if(![textView hasText]) {
         _placeholderLabel.hidden = NO;
     }
@@ -137,7 +293,7 @@
     }
 }
 
-#pragma mark pikerView
+#pragma mark pikerView delegate
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
 {
     UILabel *labelText = [[UILabel alloc] init];
@@ -241,12 +397,13 @@
     
     [emoticonImageName appendFormat:@"%d", tag+1];
     [_emoticonButton setImage:[UIImage imageNamed:emoticonImageName] forState:UIControlStateNormal];
+    [_emoticonButton setTag:tag+1];
     
     [_emoticonButton setImageEdgeInsets:UIEdgeInsetsMake(7, 7, 7, 7)];
     [_emoticonButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
 }
 
-#pragma mark - picturebutton action
+#pragma mark - ImageClick Action
 - (IBAction)mommyPictureButtonAction:(id)sender {
     selectedImageButton = sender;
     
@@ -296,12 +453,10 @@
     [self presentViewController:alert animated:YES completion:nil]; // 6
 }
 
+#pragma imagePickerView delegate
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-//    NSLog(@"PSH picker!!");
-    image = [info valueForKey:UIImagePickerControllerOriginalImage];
-    
-    controller = [[ImageCropViewController alloc] initWithImage:image];
+    controller = [[ImageCropViewController alloc] initWithImage:[info valueForKey:UIImagePickerControllerOriginalImage]];
     controller.delegate = self;
     controller.blurredBackground = YES;
 
@@ -311,30 +466,43 @@
     [[self navigationController] pushViewController:controller animated:YES];
 }
 
-
 #pragma mark cropView Delegate
 -(void)ImageCropViewControllerSuccess:(UIViewController *)controller didFinishCroppingImage:(UIImage *)croppedImage{
-    image = croppedImage;
+    [[MommyRequest sharedInstance] mommyImageUploadApiService:croppedImage success:^(NSDictionary *data) {
+        if([[NSString stringWithFormat:@"%@", [data objectForKey:@"code"]] isEqualToString:@"0"]){
+            NSLog(@"Image Upload data : %@", data);
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                NSDictionary *result = [data objectForKey:@"result"];
+                [_files addObject:[result objectForKey:@"file_name"]];
+                [selectedImageButton setTag:_files.count-1];
+                [selectedImageButton setImage:croppedImage forState:UIControlStateNormal];
+                [selectedImageButton.imageView setContentMode:UIViewContentModeScaleAspectFill];
+                
+            });
+        }else{
+            NSLog(@"Image Upload Fail");
+        }
+    } error:^(NSError *error) {
+        NSLog(@"Image Upload Fail");
+    }];
     
-    [selectedImageButton setImage:image forState:UIControlStateNormal];
-    [selectedImageButton.imageView setContentMode:UIViewContentModeScaleAspectFill];
     
     [[self navigationController] popViewControllerAnimated:YES];
-//    CGSize buttonSize = selectedImageButton.frame.size;
     UIView *imageView = selectedImageButton.superview;
     CGPoint buttonRect = selectedImageButton.frame.origin;
     
-    if([imageView.subviews count] > 1){
-        for(int i = 0 ; i < [imageView.subviews count] ; i++){
-//            NSLog(@"PSH : %@", imageView.subviews[i].class);
-            if(imageView.subviews[i].tag == 1){
-                [imageView.subviews[i] removeFromSuperview];
-            }
-        }
-    }
-    //delete button
+    /** deleteButton이 존재 시 삭제 **/
+//    if([imageView.subviews count] > 1){
+//        for(int i = 0 ; i < [imageView.subviews count] ; i++){
+//            if(imageView.subviews[i].tag == 1){
+//                [imageView.subviews[i] removeFromSuperview];
+//            }
+//        }
+//    }
+    
+    /** deleteButton 추가 **/
     UIButton *deleteButton = [[UIButton alloc]initWithFrame:CGRectMake(buttonRect.x+selectedImageButton.frame.size.width-15, buttonRect.y-5, 20, 20)];
-    deleteButton.tag = 1;
+//    deleteButton.tag = 1;
     [deleteButton setImage:[UIImage imageNamed:@"contents_bot_photo_delete.png"] forState:UIControlStateNormal];
     [deleteButton addTarget:self action:@selector(deleteImage:) forControlEvents:UIControlEventTouchUpInside];
     [deleteButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
@@ -345,14 +513,6 @@
     
 }
 
-
--(void)deleteImage:(id)sender{
-    NSLog(@"deleteImage");
-    UIButton *seletedButton = (UIButton*)[sender superview].subviews[0];
-    [seletedButton setImage:defaultImage forState:UIControlStateNormal];
-    [sender removeFromSuperview];
-}
-
 #pragma mark Library Function
 
 -(void) checkLibraryAuthorization {
@@ -360,8 +520,6 @@
     PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
     
     if(status == PHAuthorizationStatusAuthorized) { // authorized
-        NSLog(@"library authorized");
-        
         [self libraryAuthorized];
     }
     else if(status == PHAuthorizationStatusDenied){ // denied
@@ -396,8 +554,6 @@
     AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
     
     if(status == AVAuthorizationStatusAuthorized) { // authorized
-        NSLog(@"camera authorized");
-        
         [self cameraAuthorized];
     }
     else if(status == AVAuthorizationStatusDenied){ // denied
@@ -426,7 +582,7 @@
     [alert show];
 }
 
-#pragma mark 사진보기
+#pragma mark Image Action
 - (void)showImageViewer:(id)sender{
     _imageViewer = [[MultiImageViewController alloc] init];
     
@@ -441,10 +597,16 @@
     _imageViewer.imgArray = [[NSArray alloc] initWithArray:imgArray];
     _imageViewer.index = (int)[(UIButton*)sender tag];
     
-    NSLog(@"%@", _imageViewer.imgArray);
-    
     [self presentViewController:_imageViewer animated:YES completion:nil];
-
 }
+
+
+-(void)deleteImage:(id)sender{
+    UIButton *seletedButton = (UIButton*)[sender superview].subviews[0];
+    [seletedButton setImage:defaultImage forState:UIControlStateNormal];
+    [_files removeObjectAtIndex:seletedButton.tag];
+    [sender removeFromSuperview];
+}
+
 
 @end

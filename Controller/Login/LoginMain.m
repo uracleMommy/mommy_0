@@ -71,8 +71,6 @@
 }
 
 - (void)goBack {
-    //임시로 계정 잠금 화면으로 이동
-    [self performSegueWithIdentifier:@"moveLoginUnlockAccount" sender:self];
 }
 
 -(IBAction)clickAutoLoginButton:(id)sender {
@@ -127,11 +125,10 @@
                 GET_AUTH_TOKEN = [result objectForKey:@"token"];
                 
                 if([[result objectForKey:@"profile_yn"] isEqual:@"Y"]){
-                    
-                    UIStoryboard *dashBoardStoryboard = [UIStoryboard storyboardWithName:@"MainTabBar" bundle:nil];
-                    UINavigationController *dashBoardNavigationController = (UINavigationController *)[dashBoardStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarNavigation"];
-                    
-                    [self presentViewController:dashBoardNavigationController animated:YES completion:nil];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+                        [appDelegate go_story_board:@"MainTabBar"];
+                    });
                 }else{
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [self performSegueWithIdentifier:@"moveMommyInfoSegue" sender:self];

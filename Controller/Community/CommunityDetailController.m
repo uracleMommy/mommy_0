@@ -209,7 +209,8 @@ static BOOL keyboardShow = NO;
 }
 
 - (void)moveNewspeedViewAction:(id)sender{
-    NSLog(@"moveNewspeed");    
+    NSLog(@"moveNewspeed");
+    [self performSegueWithIdentifier:@"UnwindingSegue" sender:self];
 }
 
 @end

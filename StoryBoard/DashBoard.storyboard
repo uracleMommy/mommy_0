@@ -180,7 +180,7 @@
         <scene sceneID="SAB-CZ-1RF">
             <objects>
                 <navigationController id="GwF-kI-Oep" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eb0-SQ-pwN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eb0-SQ-pwN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -200,7 +200,7 @@
         <scene sceneID="vlU-ru-4KT">
             <objects>
                 <navigationController id="GFT-SH-6XH" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="sO4-CD-Lj3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sO4-CD-Lj3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -278,7 +278,7 @@
         <scene sceneID="uKo-aJ-KXU">
             <objects>
                 <navigationController id="2V9-q2-tdq" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="9TX-8c-t8a">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9TX-8c-t8a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -344,7 +344,7 @@
             <objects>
                 <navigationController id="F5w-hf-GR2" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Tb7-0Q-BHq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Tb7-0Q-BHq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -429,7 +429,7 @@
         <scene sceneID="NKl-Bm-BI6">
             <objects>
                 <navigationController id="2U5-a1-C3D" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EK3-bh-W43">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EK3-bh-W43">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -515,7 +515,7 @@
             <objects>
                 <navigationController id="pEE-u8-grd" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Eqv-a1-YTT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Eqv-a1-YTT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

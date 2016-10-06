@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="hIr-g7-6ce">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="hIr-g7-6ce">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -22,7 +22,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Opd-nR-pFt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kKk-ov-n9P">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4g-ox-dn9">
@@ -34,6 +34,7 @@
                                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="TvE-kn-wGJ"/>
+                                                    <constraint firstAttribute="width" constant="165" id="dBK-eY-7b5"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
                                                 <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -48,14 +49,36 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqC-Nk-tt8">
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="B5s-4f-rgT"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
+                                                <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" background="contents_btn_time" translatesAutoresizingMaskIntoConstraints="NO" id="OBe-fY-Gdo" customClass="IQDropDownTextField">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="Edf-fO-tba"/>
+                                                    <constraint firstAttribute="width" constant="45" id="g92-GJ-JM6"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstItem="tqC-Nk-tt8" firstAttribute="top" secondItem="wNa-sg-UGb" secondAttribute="top" constant="8" id="3mM-Cq-fE8"/>
                                             <constraint firstItem="ChB-ho-0Le" firstAttribute="top" secondItem="wNa-sg-UGb" secondAttribute="top" constant="8" id="C6i-9c-2eC"/>
+                                            <constraint firstItem="tqC-Nk-tt8" firstAttribute="leading" secondItem="fWY-ph-cWp" secondAttribute="trailing" constant="2" id="DgT-ye-4av"/>
                                             <constraint firstItem="fWY-ph-cWp" firstAttribute="top" secondItem="wNa-sg-UGb" secondAttribute="top" id="Ilr-cj-fRd"/>
                                             <constraint firstAttribute="height" constant="45" id="MZz-uF-bGS"/>
-                                            <constraint firstItem="fWY-ph-cWp" firstAttribute="leading" secondItem="ChB-ho-0Le" secondAttribute="trailing" constant="5" id="lyW-4f-Thx"/>
-                                            <constraint firstAttribute="trailing" secondItem="fWY-ph-cWp" secondAttribute="trailing" constant="5" id="sZK-0e-fHi"/>
+                                            <constraint firstItem="OBe-fY-Gdo" firstAttribute="leading" secondItem="tqC-Nk-tt8" secondAttribute="trailing" id="Mrb-bs-8th"/>
+                                            <constraint firstAttribute="trailing" secondItem="OBe-fY-Gdo" secondAttribute="trailing" constant="5" id="kel-SH-UVQ"/>
+                                            <constraint firstItem="fWY-ph-cWp" firstAttribute="leading" secondItem="ChB-ho-0Le" secondAttribute="trailing" id="lyW-4f-Thx"/>
+                                            <constraint firstItem="OBe-fY-Gdo" firstAttribute="top" secondItem="wNa-sg-UGb" secondAttribute="top" id="rDq-GP-1EU"/>
                                             <constraint firstItem="ChB-ho-0Le" firstAttribute="leading" secondItem="wNa-sg-UGb" secondAttribute="leading" constant="15" id="tPX-BZ-yIY"/>
                                         </constraints>
                                     </view>
@@ -101,7 +124,7 @@
                                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFZ-Sj-VSa">
+                                            <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFZ-Sj-VSa">
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="ukd-Dl-LMp"/>
                                                     <constraint firstAttribute="width" constant="45" id="xXp-hk-JXv"/>
@@ -283,11 +306,16 @@
                         <outlet property="imageButton02" destination="zon-KK-vDk" id="Lkn-wU-8OP"/>
                         <outlet property="imageButton03" destination="HP4-OB-b1k" id="KPY-sD-F7n"/>
                         <outlet property="imageButton04" destination="cdg-Kg-Yj7" id="0tH-hh-Zy8"/>
+                        <outlet property="timeButton" destination="OBe-fY-Gdo" id="3eT-7G-8cA"/>
+                        <outlet property="timeLabel" destination="tqC-Nk-tt8" id="4cP-tB-VSK"/>
+                        <outlet property="titleTextField" destination="kfS-DN-MkK" id="Jwp-Ph-tyt"/>
+                        <segue destination="mFH-dt-LSr" kind="unwind" identifier="UnwindingSegue" unwindAction="prepareForUnwind:" id="zuA-qY-yhQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sxb-fF-Hx7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="mFH-dt-LSr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1411" y="419"/>
+            <point key="canvasLocation" x="1462" y="419"/>
         </scene>
         <!--다이어리-->
         <scene sceneID="gFj-bE-c0C">
@@ -298,7 +326,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ifH-FQ-pDz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dB2-ou-BLg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSX-6n-Tgh">
@@ -342,7 +370,7 @@
                                             <action selector="nextMonthButton:" destination="hIr-g7-6ce" eventType="touchUpInside" id="xhs-Cg-phS"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016년 12월" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D00-Tr-I0E">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D00-Tr-I0E">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="SO5-34-bKB"/>
                                         </constraints>
@@ -400,12 +428,13 @@
         <scene sceneID="BSY-EC-bLM">
             <objects>
                 <navigationController id="LlJ-1Y-l7t" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CJm-G8-ANi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="CJm-G8-ANi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
@@ -421,13 +450,13 @@
         <scene sceneID="qjV-BS-I1Z">
             <objects>
                 <navigationController id="OO6-eW-lDh" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="oeU-pZ-ryk"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AxW-Oh-i0B">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="AxW-Oh-i0B">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
@@ -448,7 +477,7 @@
                         <viewControllerLayoutGuide type="bottom" id="O89-vZ-dIA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bFy-D9-oCT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v2D-sa-kWp">
@@ -528,18 +557,19 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GON-Rk-jUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="472" y="2151"/>
+            <point key="canvasLocation" x="437" y="2153"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oD1-3f-fjb">
             <objects>
                 <navigationController id="1U4-qw-0Zd" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Ax-GJ-aXd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="1Ax-GJ-aXd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
@@ -549,7 +579,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UxH-fe-DBe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="979" y="1274"/>
+            <point key="canvasLocation" x="979" y="1298"/>
         </scene>
         <!--일정입력-->
         <scene sceneID="5kS-h0-0Qw">
@@ -560,7 +590,7 @@
                         <viewControllerLayoutGuide type="bottom" id="K4C-C7-YWY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TtE-t0-fVM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KkK-T6-HgT">
@@ -694,7 +724,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQo-H1-ca3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1045" y="2237"/>
+            <point key="canvasLocation" x="979" y="2153"/>
         </scene>
         <!--Diary List Controller-->
         <scene sceneID="Wie-Uj-NUj">
@@ -719,10 +749,10 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="IrT-it-CB3" firstAttribute="leading" secondItem="wOq-fW-yPE" secondAttribute="leading" constant="10" id="G3J-ef-Uyi"/>
+                                    <constraint firstItem="IrT-it-CB3" firstAttribute="leading" secondItem="wOq-fW-yPE" secondAttribute="leading" id="G3J-ef-Uyi"/>
                                     <constraint firstItem="IrT-it-CB3" firstAttribute="top" secondItem="wOq-fW-yPE" secondAttribute="top" constant="10" id="hTO-6c-2md"/>
-                                    <constraint firstAttribute="bottom" secondItem="IrT-it-CB3" secondAttribute="bottom" id="o6q-0f-7bt"/>
-                                    <constraint firstAttribute="trailing" secondItem="IrT-it-CB3" secondAttribute="trailing" constant="10" id="sqC-Rz-9qo"/>
+                                    <constraint firstAttribute="bottom" secondItem="IrT-it-CB3" secondAttribute="bottom" constant="10" id="o6q-0f-7bt"/>
+                                    <constraint firstAttribute="trailing" secondItem="IrT-it-CB3" secondAttribute="trailing" id="sqC-Rz-9qo"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -770,13 +800,13 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="uej-np-hMu" secondAttribute="trailing" constant="10" id="AmO-3M-YPh"/>
-                                    <constraint firstItem="uej-np-hMu" firstAttribute="leading" secondItem="bXO-H0-xhq" secondAttribute="leading" constant="10" id="CoW-TV-IjS"/>
+                                    <constraint firstAttribute="trailing" secondItem="uej-np-hMu" secondAttribute="trailing" id="AmO-3M-YPh"/>
+                                    <constraint firstItem="uej-np-hMu" firstAttribute="leading" secondItem="bXO-H0-xhq" secondAttribute="leading" id="CoW-TV-IjS"/>
                                     <constraint firstItem="vgy-eE-xzo" firstAttribute="top" secondItem="bXO-H0-xhq" secondAttribute="top" constant="2" id="DZC-J8-zhc"/>
-                                    <constraint firstAttribute="bottom" secondItem="uej-np-hMu" secondAttribute="bottom" id="TH9-vs-Wqa"/>
+                                    <constraint firstAttribute="bottom" secondItem="uej-np-hMu" secondAttribute="bottom" constant="5" id="TH9-vs-Wqa"/>
                                     <constraint firstItem="vgy-eE-xzo" firstAttribute="leading" secondItem="bXO-H0-xhq" secondAttribute="leading" id="TRj-Vp-6O5"/>
                                     <constraint firstItem="uej-np-hMu" firstAttribute="top" secondItem="vgy-eE-xzo" secondAttribute="bottom" constant="5" id="ioZ-A1-2Rm"/>
                                     <constraint firstAttribute="trailing" secondItem="vgy-eE-xzo" secondAttribute="trailing" id="ovA-oT-Rv6"/>
@@ -795,6 +825,7 @@
                     <size key="freeformSize" width="320" height="500"/>
                     <connections>
                         <outlet property="calendarContentView" destination="vgy-eE-xzo" id="4N5-HJ-lbz"/>
+                        <outlet property="listTableview" destination="uej-np-hMu" id="R8u-Gp-kl0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5d8-dZ-scQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -863,6 +894,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_0.fullscreen"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
 </document>

@@ -61,6 +61,7 @@
 */
 
 -(void) goBack{
+    [scrollViewContoller.confirmNumberTimer invalidate];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -125,6 +126,7 @@
             if([code isEqual:@"0"]){
                 dispatch_async(dispatch_get_main_queue(), ^{
                     //TODO 가입이 완료되었습니다. ~~~~~
+                    [scrollViewContoller.confirmNumberTimer invalidate];
                     [self performSegueWithIdentifier:@"UnwindingSegue" sender:self];
                 });
             }else if([code isEqual:@"-11"]){

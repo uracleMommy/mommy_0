@@ -258,8 +258,8 @@
 {
     switch (self.dropDownMode)
     {
-        case IQDropDownModeDatePicker:  return  [self.text length]  ?   self.datePicker.date    :   nil;    break;
-        case IQDropDownModeTimePicker:  return  [self.text length]  ?   self.timePicker.date    :   nil;    break;
+        case IQDropDownModeDatePicker:  return  [self.text length] || _inputTextFlag ?   self.datePicker.date    :   nil;    break;
+        case IQDropDownModeTimePicker:  return  [self.text length]  || _inputTextFlag ?   self.timePicker.date    :   nil;    break;
         default:                        return  nil;                     break;
     }
 }

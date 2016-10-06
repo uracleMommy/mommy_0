@@ -17,6 +17,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self.navigationItem setHidesBackButton:YES];
+    
+    
+    //back Button Setting
+    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *backBtnImage = [UIImage imageNamed:@"title_icon_back.png"];
+    backBtn.frame = CGRectMake(0, 0, 40, 40);
+    [backBtn setImage:backBtnImage forState:UIControlStateNormal];
+    [backBtn addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
+    [backBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+    self.navigationItem.leftBarButtonItem = backButton;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,6 +46,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)goBack {
+    [_confirmNumberTimer invalidate];
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (IBAction)getConfirmNumberAction:(id)sender {
     if(![_confirmNumberTimer isValid]){
@@ -99,6 +117,7 @@
 
 - (IBAction)confirmButtonAction:(id)sender {
     //TODO 인증번호 체크
+    [_confirmNumberTimer invalidate];
     [self performSegueWithIdentifier:@"moveCreatePasswordViewSegue" sender:self];
 }
 

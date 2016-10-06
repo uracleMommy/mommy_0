@@ -194,6 +194,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="AeC-Cx-Tx1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="ERs-GJ-7DK" kind="relationship" relationship="rootViewController" id="h1p-Aa-kHE"/>
@@ -201,7 +205,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LQx-8u-gpx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-79" y="761"/>
+            <point key="canvasLocation" x="-10" y="-102"/>
         </scene>
         <!--Community Newspeed List Controller-->
         <scene sceneID="GKm-fI-mzf">
@@ -221,10 +225,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="nQU-E7-Zju" secondAttribute="bottom" id="5o3-Fg-dXm"/>
-                            <constraint firstAttribute="trailing" secondItem="nQU-E7-Zju" secondAttribute="trailing" constant="10" id="Ei0-mn-9Q7"/>
+                            <constraint firstAttribute="bottom" secondItem="nQU-E7-Zju" secondAttribute="bottom" constant="10" id="5o3-Fg-dXm"/>
+                            <constraint firstAttribute="trailing" secondItem="nQU-E7-Zju" secondAttribute="trailing" id="Ei0-mn-9Q7"/>
                             <constraint firstItem="nQU-E7-Zju" firstAttribute="top" secondItem="9vb-mA-Gj4" secondAttribute="bottom" constant="10" id="InQ-JQ-ZLq"/>
-                            <constraint firstItem="nQU-E7-Zju" firstAttribute="leading" secondItem="a0A-7u-NH2" secondAttribute="leading" constant="10" id="cJr-O5-PAq"/>
+                            <constraint firstItem="nQU-E7-Zju" firstAttribute="leading" secondItem="a0A-7u-NH2" secondAttribute="leading" id="cJr-O5-PAq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rgD-jr-x8w"/>
@@ -236,7 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M4K-Bu-TOD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="493" y="761"/>
+            <point key="canvasLocation" x="461" y="-105"/>
         </scene>
         <!--구성원-->
         <scene sceneID="i0r-Io-nff">
@@ -256,20 +260,22 @@
                         </subviews>
                         <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="sWw-wP-SMI" firstAttribute="top" secondItem="OEb-uS-bcc" secondAttribute="bottom" id="21Z-AL-37u"/>
-                            <constraint firstAttribute="trailing" secondItem="OEb-uS-bcc" secondAttribute="trailing" constant="10" id="Wny-Lt-dEj"/>
+                            <constraint firstItem="sWw-wP-SMI" firstAttribute="top" secondItem="OEb-uS-bcc" secondAttribute="bottom" constant="10" id="21Z-AL-37u"/>
+                            <constraint firstAttribute="trailing" secondItem="OEb-uS-bcc" secondAttribute="trailing" id="Wny-Lt-dEj"/>
                             <constraint firstItem="OEb-uS-bcc" firstAttribute="top" secondItem="SCm-6B-Ewb" secondAttribute="bottom" constant="10" id="on0-6P-xX1"/>
-                            <constraint firstItem="OEb-uS-bcc" firstAttribute="leading" secondItem="Is0-fX-zVQ" secondAttribute="leading" constant="10" id="wt9-zr-uWL"/>
+                            <constraint firstItem="OEb-uS-bcc" firstAttribute="leading" secondItem="Is0-fX-zVQ" secondAttribute="leading" id="wt9-zr-uWL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="구성원" id="4OM-DQ-goL"/>
                     <connections>
                         <outlet property="tableView" destination="OEb-uS-bcc" id="d98-v0-DKC"/>
+                        <segue destination="Tk4-Ps-hdK" kind="unwind" identifier="UnwindingSegue" unwindAction="prepareForUnwind:" id="jKz-QJ-slq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JiD-K3-Upw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Tk4-Ps-hdK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1001" y="982"/>
+            <point key="canvasLocation" x="939" y="741"/>
         </scene>
         <!--Community Mentor Controller-->
         <scene sceneID="6xC-e1-3os">
@@ -290,9 +296,9 @@
                         <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="XEQ-qd-3k2" firstAttribute="top" secondItem="ned-jF-IIi" secondAttribute="bottom" constant="10" id="Jo7-Vg-x1b"/>
-                            <constraint firstItem="527-TE-BZw" firstAttribute="top" secondItem="XEQ-qd-3k2" secondAttribute="bottom" id="Ry9-xQ-Iwd"/>
-                            <constraint firstItem="XEQ-qd-3k2" firstAttribute="leading" secondItem="dP7-0r-l9J" secondAttribute="leading" constant="10" id="Y5z-c6-m4k"/>
-                            <constraint firstAttribute="trailing" secondItem="XEQ-qd-3k2" secondAttribute="trailing" constant="10" id="uYA-Nh-BRq"/>
+                            <constraint firstItem="527-TE-BZw" firstAttribute="top" secondItem="XEQ-qd-3k2" secondAttribute="bottom" constant="10" id="Ry9-xQ-Iwd"/>
+                            <constraint firstItem="XEQ-qd-3k2" firstAttribute="leading" secondItem="dP7-0r-l9J" secondAttribute="leading" id="Y5z-c6-m4k"/>
+                            <constraint firstAttribute="trailing" secondItem="XEQ-qd-3k2" secondAttribute="trailing" id="uYA-Nh-BRq"/>
                         </constraints>
                     </view>
                     <connections>
@@ -301,7 +307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lnJ-0G-fye" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1100" y="631"/>
+            <point key="canvasLocation" x="-1009" y="-820"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Pr6-wJ-ZVp">
@@ -349,7 +355,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GAN-5L-tbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-645.5" y="630.5"/>
+            <point key="canvasLocation" x="-473" y="-821"/>
         </scene>
         <!--상세정보-->
         <scene sceneID="gny-xu-XrP">
@@ -432,11 +438,13 @@
                         <outlet property="messageContainerHeight" destination="IXD-n2-dLU" id="Fdc-aY-J4L"/>
                         <outlet property="tableView" destination="ZWD-25-K7Q" id="ep7-pA-9XJ"/>
                         <outlet property="txtMessageContent" destination="YCI-H3-J5c" id="ClZ-Pa-nt0"/>
+                        <segue destination="sJ0-1q-f8b" kind="unwind" identifier="UnwindingSegue" unwindAction="prepareForUnwind:" id="h3v-oX-pUS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fyo-fw-cHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="sJ0-1q-f8b" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="551" y="-112"/>
+            <point key="canvasLocation" x="939" y="-102"/>
         </scene>
     </scenes>
     <resources>

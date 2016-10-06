@@ -11,6 +11,8 @@
 #import "KxMenu.h"
 #import "CommonViewController.h"
 
+#define PAGE_SIZE [[NSNumber alloc] initWithInt:30]
+
 @protocol DiaryListDelegate <NSObject>
 
 @optional
@@ -23,5 +25,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *listTableview;
 @property (strong, nonatomic) DiaryListModel *diaryListTableController;
 @property (strong, nonatomic) id<DiaryListDelegate> delegate;
+@property (strong, nonatomic) NSNumber *searchPage;
+
+- (void)setListFirst:(NSDate *)date;
 
 @end

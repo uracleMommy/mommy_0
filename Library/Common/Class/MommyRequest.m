@@ -157,7 +157,7 @@ static MommyRequest* instanceMommyRequest;
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     request.HTTPMethod = @"POST";
     NSString *contentType = @"application/json";
-    NSString *authorization = authKey;
+    NSString *authorization = [NSString stringWithFormat:@"Bearer %@", authKey];
     NSMutableData *body = [NSMutableData data];
     [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
     [request addValue:authorization forHTTPHeaderField:@"Authorization"];
@@ -193,7 +193,6 @@ static MommyRequest* instanceMommyRequest;
     }] resume];
     
 }
-
 #pragma mark 알림 서비스 호출
 - (void) mommyPushNoticeApiService : (MommyPushNoticeWebServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock {
     
@@ -244,6 +243,50 @@ static MommyRequest* instanceMommyRequest;
 - (void) mommyProfessionalAdviceApiService : (MommyProfessionalAdviceWebServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock {
     
     NSString *requestUrl = [[MommyHttpUrls sharedInstance] requestProfessionalAdviceUrlType:serviceType];
+    
+    NSURL *url = [NSURL URLWithString:requestUrl];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"POST";
+    NSString *contentType = @"application/json";
+    NSString *authorization = [NSString stringWithFormat:@"Bearer %@", authKey];
+    NSMutableData *body = [NSMutableData data];
+    [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
+    [request addValue:authorization forHTTPHeaderField:@"Authorization"];
+    
+    // dictionary -> json
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:parameters
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    [body appendData:[jsonString dataUsingEncoding:NSUTF8StringEncoding]];
+    [request setHTTPBody:body];
+    
+    
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    [[session dataTaskWithRequest:request completionHandler:^(NSData *data,
+                                                              NSURLResponse *response,
+                                                              NSError *error) {
+        
+        if (error != nil) {
+            
+            errorBlock(error);
+            return;
+        }
+        
+        NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+        successBlock(jsonDic);
+        
+        
+    }] resume];
+}
+
+- (void) mommyDiaryApiService : (MommyDiaryWebServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock{
+    
+    NSString *requestUrl = [[MommyHttpUrls sharedInstance] requestDiaryUrlType:serviceType];
     
     NSURL *url = [NSURL URLWithString:requestUrl];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -491,6 +534,60 @@ static MommyHttpUrls* instanceMommyHttpUrls;
             break;
     }
 }
+
+#pragma mark 쪽지 관련 리퀘스트 주소 리턴 메서드
+- (NSString *) requestMessageUrlType : (MommyMessageWebServiceType) serviceType {
+    
+    switch (serviceType) {
+        case MessageList:
+            return [_mainDomain stringByAppendingString: @"/api/message/list"];
+            break;
+            
+        case MessageSend:
+            return [_mainDomain stringByAppendingString: @"/api/message/send"];
+            break;
+            
+        case MessageDelegate:
+            return [_mainDomain stringByAppendingString: @"/api/message/delete"];
+            break;
+            
+        default:
+            return @"";
+            break;
+    }
+}
+
+#pragma mark 다이어리 관련 리퀘스트 주소 리턴 메서드
+- (NSString *) requestDiaryUrlType : (MommyDiaryWebServiceType) serviceType {
+    
+    switch (serviceType) {
+        case DiaryList:
+            return [_mainDomain stringByAppendingString: @"/api/diary/list"];
+            break;
+            
+        case DiaryInsert:
+            return [_mainDomain stringByAppendingString: @"/api/diary/insert"];
+            break;
+            
+        case DiaryDetail:
+            return [_mainDomain stringByAppendingString: @"/api/diary/detail"];
+            break;
+            
+        case DiaryDelete:
+            return [_mainDomain stringByAppendingString: @"/api/diary/delete"];
+            break;
+            
+        case DiaryUpdate:
+            return [_mainDomain stringByAppendingString: @"/api/diary/update"];
+            break;
+            
+        default:
+            return @"";
+            break;
+    }
+}
+
+
 
 #pragma mark 이미지 업로드
 - (NSString *) requestImageUploadUrl {
