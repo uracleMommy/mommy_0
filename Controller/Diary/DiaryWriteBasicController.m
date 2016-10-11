@@ -491,15 +491,6 @@
     UIView *imageView = selectedImageButton.superview;
     CGPoint buttonRect = selectedImageButton.frame.origin;
     
-    /** deleteButton이 존재 시 삭제 **/
-//    if([imageView.subviews count] > 1){
-//        for(int i = 0 ; i < [imageView.subviews count] ; i++){
-//            if(imageView.subviews[i].tag == 1){
-//                [imageView.subviews[i] removeFromSuperview];
-//            }
-//        }
-//    }
-    
     /** deleteButton 추가 **/
     UIButton *deleteButton = [[UIButton alloc]initWithFrame:CGRectMake(buttonRect.x+selectedImageButton.frame.size.width-15, buttonRect.y-5, 20, 20)];
 //    deleteButton.tag = 1;

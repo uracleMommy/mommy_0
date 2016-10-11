@@ -61,29 +61,6 @@
     NSArray *rightBarButtonItems = [[NSArray alloc] initWithObjects: negativeSpacer2, alarmButton, messageButton, nil];
     self.navigationItem.rightBarButtonItems = rightBarButtonItems;
 }
-    
-- (void)didChangeSegment:(DZNSegmentedControl *)control
-{
-    [_contentView.subviews[0] removeFromSuperview];
-    
-    if([control selectedSegmentIndex] == 0){
-        [_contentView addSubview : _myGroupViewController.view];
-        
-    }else{
-        if(!_mentorViewController){
-            _mentorViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CommunityMentorView"];
-            [_mentorViewController.view setFrame:CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height)];
-            
-            _mentorViewController.delegate = self;
-        }
-        
-        [_contentView addSubview : _mentorViewController.view];
-        
-
-    }
-//    [control setFont:[UIFont fontWithName:@"NanumBarunGothicBold" size:15.0f]];
-}
-    
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -100,16 +77,26 @@
         [_myGroupViewController.view setFrame:CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height)];
         
         [_contentView addSubview : _myGroupViewController.view];
-        
-        //        [_scrollView sizeToFit];
+        _mode = GroupMode;
     }
 }
 
+#pragma mark - Navigation
 
-- (void)moveToMessage{
-    NSLog(@"moveToMessage");
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([[segue identifier] isEqualToString:@"showListCommunitySegue"]){
+        UINavigationController *navController = [segue destinationViewController];
+        CommunityNewspeedListController *vc = (CommunityNewspeedListController *)([navController viewControllers][0]);
+        [vc setGroupKey:_groupKey];
+        [vc setMentorKey:_mentorKey];
+        [vc setGroupValue:_groupValue];
+        [vc setMode:_mode];
+    }
     
-    // MessageNaivgation
+}
+
+#pragma mark navigation Action
+- (void)moveToMessage{
     UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
     UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"MessageNaivgation"];
     
@@ -119,27 +106,42 @@
 }
 
 - (void)moveToAlarm{
-    NSLog(@"moveToAlarm");
-    
     UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"PushNotice" bundle:nil];
     UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"PushListNavigation"];
     
     [self presentViewController:messageNavigationController animated:YES completion:nil];
 }
 
-- (void)moveCommunityList{
+#pragma mark tab delegate
+- (void)didChangeSegment:(DZNSegmentedControl *)control
+{
+    [_contentView.subviews[0] removeFromSuperview];
+    
+    if([control selectedSegmentIndex] == 0){
+        [_contentView addSubview : _myGroupViewController.view];
+        _mode = GroupMode;
+        
+    }else{
+        if(!_mentorViewController){
+            _mentorViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CommunityMentorView"];
+            [_mentorViewController.view setFrame:CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height)];
+            
+            _mentorViewController.delegate = self;
+        }
+        
+        [_contentView addSubview : _mentorViewController.view];
+        _mode = MentorMode;
+        
+    }
+}
+
+#pragma mark views delegate
+- (void)moveCommunityList:(NSString *)key value:(NSString *)value{
+    _groupKey = key;
+    _mentorKey = key;
+    _groupValue = value;
     [self performSegueWithIdentifier:@"showListCommunitySegue" sender:self];
 }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

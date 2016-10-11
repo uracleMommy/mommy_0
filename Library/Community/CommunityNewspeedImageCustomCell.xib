@@ -296,9 +296,15 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="cellView" destination="hqa-tX-jiB" id="Bhc-W5-UZI"/>
+                <outlet property="contentsLabel" destination="bbF-UK-6oe" id="OYz-44-Oe1"/>
                 <outlet property="imageSlider" destination="wzO-pm-EVi" id="V0k-kg-VhI"/>
                 <outlet property="likeButtonImage" destination="oWQ-5S-fuA" id="Qrg-c6-vRL"/>
+                <outlet property="likeCountLabel" destination="VwE-da-wii" id="7eS-H6-Yyh"/>
+                <outlet property="mentoImageButton" destination="hWH-LD-5AJ" id="xhz-a6-uV7"/>
+                <outlet property="mentoNicknameLabel" destination="KJX-Mi-1aw" id="T96-Zf-PKB"/>
                 <outlet property="moreButton" destination="nia-uS-xER" id="hYo-Si-6Zi"/>
+                <outlet property="regDttmLabel" destination="IXe-GH-fZI" id="vdz-ax-jDD"/>
+                <outlet property="replyCountLabel" destination="gu4-W3-Xsj" id="mbX-Ut-oWj"/>
                 <outlet property="writerInfoView" destination="VJa-9d-aj5" id="e8r-Xs-We8"/>
             </connections>
             <point key="canvasLocation" x="31.5" y="234"/>

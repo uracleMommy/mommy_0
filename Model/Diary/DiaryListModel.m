@@ -32,7 +32,11 @@
 
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [_delegate tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath];
+    [_delegate tableView:tableView selectedIndexPath:indexPath];
+}
+
+- (void) tableView:(UITableView *)tableView totalPageCount:(NSInteger)count{
+    [_delegate tableView:tableView totalPageCount:count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -77,57 +81,8 @@
                                        }
                                };
 
-    
-    if([data objectForKey:@"img"] == nil || [[data objectForKey:@"img"] isEqualToString:@""]){
-        DiaryListBasicCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:BASIC_CELL_ID];
+    if([data objectForKey:@"img"] && ![[data objectForKey:@"img"] isEqual:[NSNull null]] && ![[data objectForKey:@"img"] isEqualToString:@""]){
         
-        if(cell == nil){
-            [tableView registerNib:[UINib nibWithNibName:@"DiaryListBasicCustomCell" bundle:nil] forCellReuseIdentifier:BASIC_CELL_ID];
-            
-            cell = [tableView dequeueReusableCellWithIdentifier:BASIC_CELL_ID];
-        }
-        //      cell.delegate = self;
-        
-        if([[data objectForKey:@"isvalid"] isEqualToString:@"N"]){
-            cell.isvalidImageView.image = [UIImage imageNamed:@"contents_icon_temsave.png"];
-            cell.regDateLabel.text = @"(임시저장)";
-            cell.regDateLabel.textColor = [UIColor colorWithRed:80.0f/255.0f green:80.0f/255.0f blue:80.0f/255.0f alpha:1.0f];
-        }else{
-            cell.regDateLabel.text = [[MommyUtils sharedGlobalData] getMommyDate:[data objectForKey:@"reg_dttm"]];
-        }
-        
-        
-        if(![[data objectForKey:@"emoticon"] isEqualToString:@""]){
-            cell.emoticonImageView.image = [[emoticon objectForKey:[data objectForKey:@"emoticon"]] objectForKey:@"image"];
-            cell.emoticonLabel.textColor = [[emoticon objectForKey:[data objectForKey:@"emoticon"]] objectForKey:@"color"];
-            cell.emoticonLabel.text = [[emoticon objectForKey:[data objectForKey:@"emoticon"]] objectForKey:@"text"];
-        }
-        
-        cell.titleLabel.text = [data objectForKey:@"title"];
-        cell.tag = [[data objectForKey:@"diary_key"] integerValue];
-        
-        CAShapeLayer *firstShapeLayer = [CAShapeLayer layer];
-        [firstShapeLayer setBounds:cell.bounds];
-        [firstShapeLayer setPosition:cell.center];
-        [firstShapeLayer setFillColor:[[UIColor clearColor] CGColor]];
-        [firstShapeLayer setStrokeColor:[[UIColor colorWithRed:217.0/255.0f green:217.0/255.0f  blue:217.0/255.0f alpha:1.0] CGColor]];
-        [firstShapeLayer setLineWidth:1.0f];
-        [firstShapeLayer setLineJoin:kCALineJoinRound];
-        [firstShapeLayer setLineDashPattern:
-         [NSArray arrayWithObjects:[NSNumber numberWithInt:3],
-          [NSNumber numberWithInt:3],nil]];
-        
-        CGMutablePathRef firstPath = CGPathCreateMutable();
-        CGPathMoveToPoint(firstPath, NULL, 0, 0);
-        CGPathAddLineToPoint(firstPath, NULL, tableView.frame.size.width - 38.0, 0);
-        
-        [firstShapeLayer setPath:firstPath];
-        CGPathRelease(firstPath);
-        
-        [[cell.lineLabel layer] addSublayer:firstShapeLayer];
-        return cell;
-   
-    }else{
         DiaryListImageCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:IMAGE_CELL_ID];
         
         if(cell == nil){
@@ -136,7 +91,7 @@
             cell = [tableView dequeueReusableCellWithIdentifier:IMAGE_CELL_ID];
         }
         
-        if([[data objectForKey:@"isvalid"] isEqualToString:@"N"]){
+        if([data objectForKey:@"isvalid"] && [[data objectForKey:@"isvalid"] isEqualToString:@"N"]){
             cell.isvalidImageView.image = [UIImage imageNamed:@"contents_icon_temsave.png"];
             cell.regDateLabel.text = @"(임시저장)";
             cell.regDateLabel.textColor = [UIColor colorWithRed:80.0f/255.0f green:80.0f/255.0f blue:80.0f/255.0f alpha:1.0f];
@@ -145,15 +100,16 @@
         }
         
         
-        if(![[data objectForKey:@"emoticon"] isEqualToString:@""]){
+        if([data objectForKey:@"emoticon"] && ![[data objectForKey:@"emoticon"] isEqualToString:@""]){
             cell.emoticonImageView.image = [[emoticon objectForKey:[data objectForKey:@"emoticon"]] objectForKey:@"image"];
             cell.emoticonLabel.textColor = [[emoticon objectForKey:[data objectForKey:@"emoticon"]] objectForKey:@"color"];
             cell.emoticonLabel.text = [[emoticon objectForKey:[data objectForKey:@"emoticon"]] objectForKey:@"text"];
         }
         
-        cell.tag = [[data objectForKey:@"diary_key"] integerValue];
+        cell.tag = 1;
         cell.titleLabel.text = [data objectForKey:@"title"];
-    
+        cell.diaryKey = [data objectForKey:@"diary_key"];
+        
         
         // 이미지 캐시 바인딩
         NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [data objectForKey:@"img"]];
@@ -178,7 +134,7 @@
                 });
             });
         }
-
+        
         
         CAShapeLayer *firstShapeLayer = [CAShapeLayer layer];
         [firstShapeLayer setBounds:cell.bounds];
@@ -199,6 +155,76 @@
         CGPathRelease(firstPath);
         
         [[cell.lineLabel layer] addSublayer:firstShapeLayer];
+        
+        // 마지막 셀 체크 페이지 더보기 처리
+        if (indexPath.row == _diaryList.count - 1) {
+            
+            if ([self.delegate respondsToSelector:@selector(tableView:totalPageCount:)]) {
+                
+                [self.delegate tableView:tableView totalPageCount:_diaryList.count];
+            }
+        }
+        
+        
+        return cell;
+    }else{
+        DiaryListBasicCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:BASIC_CELL_ID];
+        
+        if(cell == nil){
+            [tableView registerNib:[UINib nibWithNibName:@"DiaryListBasicCustomCell" bundle:nil] forCellReuseIdentifier:BASIC_CELL_ID];
+            
+            cell = [tableView dequeueReusableCellWithIdentifier:BASIC_CELL_ID];
+        }
+        //      cell.delegate = self;
+        
+        if([data objectForKey:@"isvalid"] && [[data objectForKey:@"isvalid"] isEqualToString:@"N"]){
+            cell.isvalidImageView.image = [UIImage imageNamed:@"contents_icon_temsave.png"];
+            cell.regDateLabel.text = @"(임시저장)";
+            cell.regDateLabel.textColor = [UIColor colorWithRed:80.0f/255.0f green:80.0f/255.0f blue:80.0f/255.0f alpha:1.0f];
+        }else{
+            cell.regDateLabel.text = [[MommyUtils sharedGlobalData] getMommyDate:[data objectForKey:@"reg_dttm"]];
+        }
+        
+        
+        if([data objectForKey:@"emoticon"] && ![[data objectForKey:@"emoticon"] isEqualToString:@""]){
+            cell.emoticonImageView.image = [[emoticon objectForKey:[data objectForKey:@"emoticon"]] objectForKey:@"image"];
+            cell.emoticonLabel.textColor = [[emoticon objectForKey:[data objectForKey:@"emoticon"]] objectForKey:@"color"];
+            cell.emoticonLabel.text = [[emoticon objectForKey:[data objectForKey:@"emoticon"]] objectForKey:@"text"];
+        }
+        
+        cell.titleLabel.text = [data objectForKey:@"title"];
+        cell.tag = 0;
+        cell.diaryKey = [data objectForKey:@"diary_key"];
+        
+        CAShapeLayer *firstShapeLayer = [CAShapeLayer layer];
+        [firstShapeLayer setBounds:cell.bounds];
+        [firstShapeLayer setPosition:cell.center];
+        [firstShapeLayer setFillColor:[[UIColor clearColor] CGColor]];
+        [firstShapeLayer setStrokeColor:[[UIColor colorWithRed:217.0/255.0f green:217.0/255.0f  blue:217.0/255.0f alpha:1.0] CGColor]];
+        [firstShapeLayer setLineWidth:1.0f];
+        [firstShapeLayer setLineJoin:kCALineJoinRound];
+        [firstShapeLayer setLineDashPattern:
+         [NSArray arrayWithObjects:[NSNumber numberWithInt:3],
+          [NSNumber numberWithInt:3],nil]];
+        
+        CGMutablePathRef firstPath = CGPathCreateMutable();
+        CGPathMoveToPoint(firstPath, NULL, 0, 0);
+        CGPathAddLineToPoint(firstPath, NULL, tableView.frame.size.width - 38.0, 0);
+        
+        [firstShapeLayer setPath:firstPath];
+        CGPathRelease(firstPath);
+        
+        [[cell.lineLabel layer] addSublayer:firstShapeLayer];
+        
+        // 마지막 셀 체크 페이지 더보기 처리
+        if (indexPath.row == _diaryList.count - 1) {
+            
+            if ([self.delegate respondsToSelector:@selector(tableView:totalPageCount:)]) {
+                
+                [self.delegate tableView:tableView totalPageCount:_diaryList.count];
+            }
+        }
+        
         return cell;
     }
 }
@@ -240,13 +266,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    int height = 0;
-//    if([[[tableView cellForRowAtIndexPath:indexPath] reuseIdentifier] isEqualToString:BASIC_CELL_ID]){
-        height = 120;
-//    }else{
-//        height = 115;
-//    }
-    
-    return height;
+    return 120;
 }
 @end

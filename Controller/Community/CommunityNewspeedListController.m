@@ -30,6 +30,9 @@
     self.navigationItem.hidesBackButton = YES;
     
     
+    _searchPage = [[NSNumber alloc] initWithInt:1];
+    _currentLastPageStatus = NO;
+    
     _tableListController = [[CommunityNewspeedListModel alloc] init];
     
     _tableListController.delegate = self;
@@ -61,8 +64,6 @@
     negativeSpacer2.width = -16;
     
     NSArray *rightBarButtonItems = [[NSArray alloc] initWithObjects: negativeSpacer2, mentorButton, messageButton, nil];
-//    self.navigationItem.rightBarButtonItems = rightBarButtonItems;
-    
     
     //showPeople Button Setting
     UIButton *memberBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -72,7 +73,14 @@
     [memberBtn addTarget:self action:@selector(movePeopleList) forControlEvents:UIControlEventTouchUpInside];
     [memberBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
     UIBarButtonItem *memberButton = [[UIBarButtonItem alloc] initWithCustomView:memberBtn];
-    self.navigationItem.rightBarButtonItem = memberButton;
+    
+    if(_mode == MentorMode){
+        self.navigationItem.rightBarButtonItems = rightBarButtonItems;
+    }else{
+        self.navigationItem.rightBarButtonItems = @[memberButton];
+    }
+    
+    [self setListFirst];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -83,39 +91,37 @@
     UIWindow *currentWindow = [UIApplication sharedApplication].keyWindow;
     [currentWindow addSubview:_moveWriteViewButton];
     
-    [_moveWriteViewButton addTarget:self action:@selector(moveWriteView) forControlEvents:UIControlEventTouchUpInside];}
+    [_moveWriteViewButton addTarget:self action:@selector(moveWriteView) forControlEvents:UIControlEventTouchUpInside];
+}
+
+#pragma mark - Navigation
+
+-(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    [_moveWriteViewButton removeFromSuperview];
+    
+    if([[segue identifier] isEqualToString:@"moveShowPeopleSegue"]){
+        CommunityPeopleListController *vc = [segue destinationViewController];
+        [vc setGroupKey:_groupKey];
+        [vc setGroupValue:_groupValue];
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
--(void)moveWriteView{
-    [_moveWriteViewButton removeFromSuperview];
-    
-    UIStoryboard *diaryStoryboard = [UIStoryboard storyboardWithName:@"Diary" bundle:nil];
-    UINavigationController *diaryNavigationController = (UINavigationController *)[diaryStoryboard instantiateViewControllerWithIdentifier:@"DiaryWriteBasicController"];
-    
-    [self presentViewController:diaryNavigationController animated:YES completion:nil];
-}
-
+#pragma mark navigation Action
 - (void)moveToMessage{
-    NSLog(@"moveToMessage");
-    
-//    // MessageNaivgation
-//    UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
-//    UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"MessageWriteController"];
- 
-    
-//    [self presentViewController:messageNavigationController animated:YES completion:nil];
+    [_moveWriteViewButton removeFromSuperview];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
     
     UINavigationController *messageNavigationController = [[UINavigationController alloc] initWithRootViewController:[storyboard instantiateViewControllerWithIdentifier:@"MessageWriteController"]];
     [[self navigationController] pushViewController:messageNavigationController animated:YES];
-}
-
-- (void)toggleMentor{
-    NSLog(@"toggleMentor");
 }
 
 -(void)goBack{
@@ -123,12 +129,35 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)movePeopleList{
+//    [_moveWriteViewButton removeFromSuperview];
+    [self performSegueWithIdentifier:@"moveShowPeopleSegue" sender:self];
+}
+
+#pragma mark tableView delegate
+- (void) tableView:(UITableView *)tableView totalPageCount:(NSInteger)count{
+    if (!_currentLastPageStatus) {
+        return;
+    }
+    
+    [self setListMore:[[NSNumber alloc] initWithInt:([_searchPage intValue]+[PAGE_SIZE intValue]) ]];
+    
+}
+
 -(void)tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath{
 }
 
-- (void)moreButtonAction:(id)sender point:(CGPoint)point{
-    NSLog(@"moreButton");
+-(void)moveWriteView{
+    [_moveWriteViewButton removeFromSuperview];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Diary" bundle:nil];
     
+    UINavigationController *diaryNavigationController = [[UINavigationController alloc] initWithRootViewController:[storyboard instantiateViewControllerWithIdentifier:@"DiaryWriteBasicController"]];
+    [[self navigationController] pushViewController:diaryNavigationController animated:YES];
+}
+
+#pragma mark in table button Action
+- (void)moreButtonAction:(id)sender point:(CGPoint)point{
+  
     NSArray *menuItems =
     @[
       [KxMenuItem menuItem:@"멘토추가"
@@ -153,6 +182,10 @@
     
 }
 
+- (void)toggleMentor{
+    NSLog(@"toggleMentor");
+}
+
 -(void) addMentor:(id)sender{
     NSLog(@"addMentor");
 }
@@ -161,8 +194,21 @@
 }
 
 - (void)moveDetailViewButtonAction:(id)sender{
-    [_moveWriteViewButton removeFromSuperview];
+//    [_moveWriteViewButton removeFromSuperview];
     [self performSegueWithIdentifier:@"moveShowDetailSegue" sender:self];
+}
+
+#pragma mark profile show & delegate
+-(void)showProfilePopupViewAction:(id)sender{
+    if (!_profilePopupView) {
+        _profilePopupView = [[CommunityProfilePopupViewController alloc] initWithNibName:@"CommunityProfilePopupViewController" bundle:nil];
+        _profilePopupView.delegate = self;
+        _profilePopupView.view.frame = CGRectMake(0, 0, [[UIScreen mainScreen] applicationFrame].size.width, [[UIScreen mainScreen] applicationFrame].size.height+20);
+    }
+    _profilePopupView.mentorKey = @"test40";
+    
+    AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate.window addSubview:_profilePopupView.view];
 }
 
 - (void)moveWriteMessageViewAction:(id)sender{
@@ -173,38 +219,109 @@
     [[self navigationController] pushViewController:messageNavigationController animated:YES];
 }
 
-
--(void)showProfilePopupViewAction:(id)sender{
-    if (!_profilePopupView) {
-        _profilePopupView = [[CommunityProfilePopupViewController alloc] initWithNibName:@"CommunityProfilePopupViewController" bundle:nil];
-        _profilePopupView.delegate = self;
-        _profilePopupView.view.frame = CGRectMake(0, 0, [[UIScreen mainScreen] applicationFrame].size.width, [[UIScreen mainScreen] applicationFrame].size.height+20);
-    }
-    
-    AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate.window addSubview:_profilePopupView.view];
-}
-
-- (void)movePeopleList{
-    [_moveWriteViewButton removeFromSuperview];
-    [self performSegueWithIdentifier:@"moveShowPeopleSegue" sender:self];
-}
-
--(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (void)moveNewspeedViewAction:(id)sender{
     NSLog(@"moveNewspeed");
+}
+
+
+#pragma mark setting list
+- (void)setListFirst{
+    _searchPage = [[NSNumber alloc]initWithInt:1];
+    
+    MommyCommunityWebServiceType service;
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+    
+    if(_mode == GroupMode){
+        service = CommunityGroupBoardList;
+        [param setValue:_groupValue forKey:@"group_value"];
+        [param setValue:_groupKey forKey:@"group_key"];
+    }else{
+        service = CommunityMentoBoardList;
+        [param setValue:_mentorKey forKey:@"mento_key"];
+    }
+    
+    [param setValue:PAGE_SIZE forKey:@"pageSize"];
+    [param setValue:_searchPage forKey:@"searchPage"];
+    
+    [self showIndicator];
+    [[MommyRequest sharedInstance] mommyCommunityApiService:service authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data){
+        NSLog(@"PSH data %@", data);
+        
+        NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
+        if([code isEqual:@"0"]){
+            NSArray *result = [data objectForKey:@"result"];
+            if([result count] == 0){
+                NSLog(@"empty");
+            }
+            
+            if([[[result objectAtIndex:0] objectForKey:@"tot_cnt"] intValue] >= ([_searchPage intValue]+[PAGE_SIZE intValue]) ){
+                _currentLastPageStatus = YES;
+            }else{
+                _currentLastPageStatus = NO;
+            }
+            
+            [_tableListController.newspeedList removeAllObjects];
+            [_tableListController.newspeedList addObjectsFromArray:result];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [_tableView reloadData];
+            });
+        }else{
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+    } error:^(NSError *error) {
+        NSLog(@"PSH error %@", error);
+        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+    } ];
+}
+
+- (void)setListMore:(NSNumber *)searchPage{
+    MommyCommunityWebServiceType service;
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+
+    if(_mode == GroupMode){
+        service = CommunityGroupBoardList;
+        [param setValue:_groupValue forKey:@"group_value"];
+        [param setValue:_groupKey forKey:@"group_key"];
+    }else{
+        service = CommunityMentoBoardList;
+        [param setValue:_mentorKey forKey:@"mento_key"];
+    }
+    
+    [param setValue:PAGE_SIZE forKey:@"pageSize"];
+    [param setValue:searchPage forKey:@"searchPage"];
+    
+    
+    [self showIndicator];
+    [[MommyRequest sharedInstance] mommyCommunityApiService:service authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data){
+        NSLog(@"PSH data %@", data);
+        
+        NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
+        if([code isEqual:@"0"]){
+            _searchPage = searchPage;
+            
+            NSArray *result = [data objectForKey:@"result"];
+            if([result count] == 0){
+                NSLog(@"empty");
+            }
+            if([[[result objectAtIndex:0] objectForKey:@"tot_cnt"] intValue] >= [_searchPage intValue]+[PAGE_SIZE intValue] ){
+                _currentLastPageStatus = YES;
+            }else{
+                _currentLastPageStatus = NO;
+            }
+            
+            [_tableListController.newspeedList addObjectsFromArray:result];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [_tableView reloadData];
+            });
+        }else{
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+    } error:^(NSError *error) {
+        NSLog(@"PSH error %@", error);
+        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+    } ];
 }
 
 @end

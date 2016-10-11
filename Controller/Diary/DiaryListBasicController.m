@@ -70,10 +70,13 @@
         
         /** today setting **/
         [self moveCalendarMonthView:[NSDate new]];
+    }else{
+        [self moveCalendarMonthView:_listDate];
     }
 }
 
 -(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
+    NSLog(@"prepareForUnwind");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -81,15 +84,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if([[segue identifier] isEqualToString:@"showDetailListSegue"]){
+        UINavigationController *navController = [segue destinationViewController];
+        DiaryDetailListController *vc = (DiaryDetailListController *)([navController viewControllers][0]);
+        [vc setDiaryKey:_selectedDiaryKey];
+    }
 }
-*/
 
 #pragma mark KkMenuPopup (다이어리, 일정)
 - (void)showAddPopup{
@@ -241,8 +245,13 @@
 #pragma tableView delegate
 - (void) tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath{
     // 디테일 이동 로직
-//    long test2 = [tableView cellForRowAtIndexPath:indexPath].tag;
-    [self performSegueWithIdentifier:@"showDetailScheduleSegue" sender:nil];
+    if([tableView cellForRowAtIndexPath:indexPath].tag == 0){
+        _selectedDiaryKey = [(DiaryListBasicCustomCell *)[tableView cellForRowAtIndexPath:indexPath] diaryKey];
+    }else{
+        _selectedDiaryKey = [(DiaryListImageCustomCell *)[tableView cellForRowAtIndexPath:indexPath] diaryKey];
+    }
+
+    [self performSegueWithIdentifier:@"showDetailListSegue" sender:nil];
 }
 
 

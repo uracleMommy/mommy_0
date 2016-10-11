@@ -47,7 +47,60 @@
     
     _profileImage.layer.cornerRadius = 50;
     _profileImage.layer.masksToBounds = YES;
+    
 
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+    [param setValue:_mentorKey forKey:@"mento_key"];
+    
+    [[MommyRequest sharedInstance] mommyCommunityApiService:CommunityMentoProfile authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data){
+        NSLog(@"PSH data %@", data);
+        
+        NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
+        if([code isEqual:@"0"]){
+            NSDictionary *stepInfo = [[data objectForKey:@"result"] objectForKey:@"step_info"];
+            NSDictionary *mentoInfo = [[data objectForKey:@"result"] objectForKey:@"mento_info"];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                _totalKalLabel.text = [NSString stringWithFormat:@"%@", [stepInfo objectForKey:@"total_step_kal"]];
+                _avgKalLabel.text = [NSString stringWithFormat:@"%@", [stepInfo objectForKey:@"avg_step_kal"] ];
+                _totalStepLabel.text = [NSString stringWithFormat:@"%@", [stepInfo objectForKey:@"total_step"]];
+                _avgStepLabel.text = [NSString stringWithFormat:@"%@", [stepInfo objectForKey:@"avg_step"]];
+                
+                _nameLabel.text = [mentoInfo objectForKey:@"mento_nickname"];
+                _babyBirthLabel.text = [NSString stringWithFormat:@"출산예정일 %@", [mentoInfo objectForKey:@"baby_birth"]];
+                
+                if([[mentoInfo objectForKey:@"mento_yn"] isEqualToString:@"Y"]){
+                    [_mentorButton setImage:[UIImage imageNamed:@"popup_btn_icon_mentor.png"] forState:UIControlStateNormal];
+                }else{
+                    [_mentorButton setImage:[UIImage imageNamed:@"popup_btn_icon_mentor_add.png"] forState:UIControlStateNormal];
+                }
+                
+                NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [mentoInfo objectForKey:@"img"]];
+                
+                char const * s = [profileImageIdentifier  UTF8String];
+                dispatch_queue_t queue = dispatch_queue_create(s, 0);
+                dispatch_async(queue, ^{
+                    
+                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [mentoInfo objectForKey:@"img"]];
+                    
+                    UIImage *profileImg = nil;
+                    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                    profileImg = [[UIImage alloc] initWithData:firstImageData];
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [_profileImage setImage:profileImg];
+                    });
+                });
+                
+            });
+        }else{
+            
+        }
+    } error:^(NSError *error) {
+        NSLog(@"PSH error %@", error);
+    } ];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,10 +133,36 @@
 }
 
 - (IBAction)toggleMentorAction:(id)sender {
+    
     if([_mentorButton.imageView.image isEqual:[UIImage imageNamed:@"popup_btn_icon_mentor_add.png"]]){
-        [_mentorButton setImage:[UIImage imageNamed:@"popup_btn_icon_mentor.png"] forState:UIControlStateNormal];
+        
+        NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+        [param setObject:_mentorKey forKey:@"mento_key"];
+        
+        [[MommyRequest sharedInstance] mommyCommunityApiService:CommunityMentoInsert authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data) {
+            if([[NSString stringWithFormat:@"%@", [data objectForKey:@"code"]] isEqualToString:@"0"]){
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [_mentorButton setImage:[UIImage imageNamed:@"popup_btn_icon_mentor.png"] forState:UIControlStateNormal];
+                });
+            }
+        } error:^(NSError *error) {
+            
+        }];
+        
     }else{
-        [_mentorButton setImage:[UIImage imageNamed:@"popup_btn_icon_mentor_add.png"] forState:UIControlStateNormal];
+        
+        NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+        [param setObject:_mentorKey forKey:@"mento_key"];
+        
+        [[MommyRequest sharedInstance] mommyCommunityApiService:CommunityMentoDelete authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data) {
+            if([[NSString stringWithFormat:@"%@", [data objectForKey:@"code"]] isEqualToString:@"0"]){
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [_mentorButton setImage:[UIImage imageNamed:@"popup_btn_icon_mentor_add.png"] forState:UIControlStateNormal];
+                });
+            }
+        } error:^(NSError *error) {
+            
+        }];
     }
 }
 

@@ -29,7 +29,10 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jig-A4-zI8">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울엄마" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGx-KC-VAA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGx-KC-VAA">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="fXW-Pf-Q0h"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="15"/>
                                         <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -38,7 +41,9 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vPx-ws-A14" secondAttribute="height" multiplier="1:1" id="KlI-Vb-TAz"/>
                                         </constraints>
-                                        <state key="normal" image="contents_icon_emoticon02"/>
+                                        <state key="normal" image="contents_icon_emoticon02">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="moveCommunityList:" destination="t80-GZ-GkZ" eventType="touchUpInside" id="J0j-FF-Jnj"/>
                                         </connections>
@@ -46,17 +51,21 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="sGx-KC-VAA" secondAttribute="trailing" id="JeL-nu-ihY"/>
+                                    <constraint firstItem="sGx-KC-VAA" firstAttribute="leading" secondItem="jig-A4-zI8" secondAttribute="leading" id="N1j-IS-LFe"/>
                                     <constraint firstItem="sGx-KC-VAA" firstAttribute="top" secondItem="vPx-ws-A14" secondAttribute="bottom" constant="10" id="PSS-fW-RE8"/>
                                     <constraint firstItem="vPx-ws-A14" firstAttribute="top" secondItem="jig-A4-zI8" secondAttribute="top" constant="10" id="YCC-eC-ft2"/>
                                     <constraint firstAttribute="width" secondItem="jig-A4-zI8" secondAttribute="height" multiplier="1:1" id="a5M-Bh-0fN"/>
                                     <constraint firstAttribute="bottom" secondItem="sGx-KC-VAA" secondAttribute="bottom" constant="15" id="lbG-qX-Iug"/>
                                     <constraint firstItem="vPx-ws-A14" firstAttribute="centerX" secondItem="jig-A4-zI8" secondAttribute="centerX" id="qcf-6l-AuD"/>
-                                    <constraint firstItem="sGx-KC-VAA" firstAttribute="centerX" secondItem="jig-A4-zI8" secondAttribute="centerX" id="rFj-M7-DXd"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nkq-gS-OCi">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016년 세글자띠 아기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZt-du-RtS">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZt-du-RtS">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="Qpf-Mf-VTT"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="15"/>
                                         <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -65,7 +74,9 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="KIH-JO-2bp" secondAttribute="height" multiplier="1:1" id="7zo-az-kLx"/>
                                         </constraints>
-                                        <state key="normal" image="contents_icon_emoticon02"/>
+                                        <state key="normal" image="contents_icon_emoticon02">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="moveCommunityList:" destination="t80-GZ-GkZ" eventType="touchUpInside" id="yPK-ui-Ppp"/>
                                         </connections>
@@ -74,15 +85,19 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="LZt-du-RtS" secondAttribute="bottom" constant="15" id="5pL-SJ-2Fm"/>
-                                    <constraint firstItem="LZt-du-RtS" firstAttribute="centerX" secondItem="Nkq-gS-OCi" secondAttribute="centerX" id="fZl-rg-tMQ"/>
                                     <constraint firstItem="LZt-du-RtS" firstAttribute="top" secondItem="KIH-JO-2bp" secondAttribute="bottom" constant="10" id="glb-fg-tmt"/>
+                                    <constraint firstItem="LZt-du-RtS" firstAttribute="leading" secondItem="Nkq-gS-OCi" secondAttribute="leading" id="hke-Jm-qWz"/>
                                     <constraint firstItem="KIH-JO-2bp" firstAttribute="top" secondItem="Nkq-gS-OCi" secondAttribute="top" constant="10" id="lDM-k5-nZ7"/>
                                     <constraint firstItem="KIH-JO-2bp" firstAttribute="centerX" secondItem="Nkq-gS-OCi" secondAttribute="centerX" id="tU7-pG-bVO"/>
+                                    <constraint firstAttribute="trailing" secondItem="LZt-du-RtS" secondAttribute="trailing" id="tmm-YV-qx3"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fal-22-bke">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="84년생 엄마" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7QX-nx-Ufi">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7QX-nx-Ufi">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="xnf-uG-SW1"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="15"/>
                                         <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -91,7 +106,9 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="XR9-jR-Wb8" secondAttribute="height" multiplier="1:1" id="L0e-5I-uUz"/>
                                         </constraints>
-                                        <state key="normal" image="contents_icon_emoticon02"/>
+                                        <state key="normal" image="contents_icon_emoticon02">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="moveCommunityList:" destination="t80-GZ-GkZ" eventType="touchUpInside" id="Bse-df-xt5"/>
                                         </connections>
@@ -102,7 +119,8 @@
                                     <constraint firstAttribute="width" secondItem="fal-22-bke" secondAttribute="height" multiplier="1:1" id="5ea-O8-tJ5"/>
                                     <constraint firstItem="7QX-nx-Ufi" firstAttribute="top" secondItem="XR9-jR-Wb8" secondAttribute="bottom" constant="10" id="DuS-o8-X6T"/>
                                     <constraint firstItem="XR9-jR-Wb8" firstAttribute="centerX" secondItem="fal-22-bke" secondAttribute="centerX" id="IG8-Q3-acB"/>
-                                    <constraint firstItem="7QX-nx-Ufi" firstAttribute="centerX" secondItem="fal-22-bke" secondAttribute="centerX" id="kL6-qP-u28"/>
+                                    <constraint firstItem="7QX-nx-Ufi" firstAttribute="leading" secondItem="fal-22-bke" secondAttribute="leading" id="N7S-lU-VkM"/>
+                                    <constraint firstAttribute="trailing" secondItem="7QX-nx-Ufi" secondAttribute="trailing" id="kma-qJ-VkL"/>
                                     <constraint firstAttribute="bottom" secondItem="7QX-nx-Ufi" secondAttribute="bottom" constant="15" id="nv5-F0-8pU"/>
                                     <constraint firstItem="XR9-jR-Wb8" firstAttribute="top" secondItem="fal-22-bke" secondAttribute="top" constant="10" id="uKK-J4-pwb"/>
                                 </constraints>
@@ -131,6 +149,14 @@
                             <constraint firstAttribute="trailing" secondItem="I9f-UI-xPb" secondAttribute="trailing" id="zgg-wc-wWa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="groupButton01" destination="vPx-ws-A14" id="cQR-ae-LiV"/>
+                        <outlet property="groupButton02" destination="XR9-jR-Wb8" id="D2i-Ye-lE2"/>
+                        <outlet property="groupButton03" destination="KIH-JO-2bp" id="P9n-D8-Avr"/>
+                        <outlet property="groupNameLabel01" destination="sGx-KC-VAA" id="5RO-XX-k4y"/>
+                        <outlet property="groupNameLabel02" destination="7QX-nx-Ufi" id="1hm-nX-Z4e"/>
+                        <outlet property="groupNameLabel03" destination="LZt-du-RtS" id="Jif-ly-0xb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I4F-TH-RtE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

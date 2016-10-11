@@ -17,13 +17,7 @@
     self = [super init];
     if (self) {
         _newspeedList = [[NSMutableArray alloc]init];
-        
-        [_newspeedList addObject:@""];
-        [_newspeedList addObject:@""];
-        [_newspeedList addObject:@""];
-        [_newspeedList addObject:@""];
-        [_newspeedList addObject:@""];
-        
+        _cachedImages = [[NSMutableDictionary alloc]init];
     }
     return self;
 }
@@ -42,42 +36,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSDictionary *data = [_newspeedList objectAtIndex:[indexPath indexAtPosition:1]];
     
-    if([indexPath indexAtPosition:1] < 2){
-        
-        CommunityNewspeedBasicCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:BASIC_CELL_ID];
-        
-        if(cell == nil){
-            [tableView registerNib:[UINib nibWithNibName:@"CommunityNewspeedBasicCustomCell" bundle:nil] forCellReuseIdentifier:BASIC_CELL_ID];
-            
-            cell = [tableView dequeueReusableCellWithIdentifier:BASIC_CELL_ID];
-        }
-        
-        cell.delegate = self;
-        
-        CAShapeLayer *firstShapeLayer = [CAShapeLayer layer];
-        [firstShapeLayer setBounds:cell.bounds];
-        [firstShapeLayer setPosition:cell.center];
-        [firstShapeLayer setFillColor:[[UIColor clearColor] CGColor]];
-        [firstShapeLayer setStrokeColor:[[UIColor colorWithRed:217.0/255.0f green:217.0/255.0f  blue:217.0/255.0f alpha:1.0] CGColor]];
-        [firstShapeLayer setLineWidth:1.0f];
-        [firstShapeLayer setLineJoin:kCALineJoinRound];
-        [firstShapeLayer setLineDashPattern:
-         [NSArray arrayWithObjects:[NSNumber numberWithInt:3],
-          [NSNumber numberWithInt:3],nil]];
-        
-        CGMutablePathRef firstPath = CGPathCreateMutable();
-        CGPathMoveToPoint(firstPath, NULL, 0, 0);
-        CGPathAddLineToPoint(firstPath, NULL, tableView.frame.size.width - 38.0, 0);
-        
-        [firstShapeLayer setPath:firstPath];
-        CGPathRelease(firstPath);
-        
-        [[cell.writerInfoView layer] addSublayer:firstShapeLayer];
-        
-        return cell;
-
-    }else{
+    //이미지 존재
+    if([data objectForKey:@"files"] && [[data objectForKey:@"files"] count] > 0){
         
         CommunityNewspeedImageCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:IMAGE_CELL_ID];
         
@@ -86,8 +48,49 @@
             
             cell = [tableView dequeueReusableCellWithIdentifier:IMAGE_CELL_ID];
         }
+
+        
+        cell.contentsLabel.text = [data objectForKey:@"content"];
+        if([[data objectForKey:@"like_cnt"] intValue] != 0){
+            cell.likeCountLabel.text = [NSString stringWithFormat:@"%@", [data objectForKey:@"like_cnt"]];
+        }
+        
+        if([[data objectForKey:@"reply_cnt"] intValue] != 0){
+            cell.replyCountLabel.text = [NSString stringWithFormat:@"%@", [data objectForKey:@"reply_cnt"]];
+        }
+        cell.mentoNicknameLabel.text = [data objectForKey:@"mento_nickname"];
+        cell.regDttmLabel.text = [[MommyUtils sharedGlobalData] getMommyDate:[data objectForKey:@"reg_dttm"]];
+        if([[data objectForKey:@"like"] isEqualToString:@"Y"]){
+            [cell.likeButtonImage setImage:[UIImage imageNamed:@"contents_comm_icon_like_on"]];
+        }else{
+            [cell.likeButtonImage setImage:[UIImage imageNamed:@"contents_comm_icon_like"]];
+        }
+        NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [data objectForKey:@"mento_img"]];
+        
+        if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
+            [cell.mentoImageButton setImage:[_cachedImages valueForKey:profileImageIdentifier]forState:UIControlStateNormal];
+        }else {
+            char const * s = [profileImageIdentifier  UTF8String];
+            dispatch_queue_t queue = dispatch_queue_create(s, 0);
+            dispatch_async(queue, ^{
+                
+                NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [data objectForKey:@"mento_img"]];
+                
+                UIImage *profileImg = nil;
+                NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                profileImg = [[UIImage alloc] initWithData:firstImageData];
+                
+                [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [cell.mentoImageButton setImage:[_cachedImages valueForKey:profileImageIdentifier] forState:UIControlStateNormal];
+                });
+            });
+        }
+
         
         cell.delegate = self;
+        cell.tag = 1;
         
         CAShapeLayer *firstShapeLayer = [CAShapeLayer layer];
         [firstShapeLayer setBounds:cell.bounds];
@@ -108,6 +111,93 @@
         CGPathRelease(firstPath);
         
         [[cell.writerInfoView layer] addSublayer:firstShapeLayer];
+        
+        // 마지막 셀 체크 페이지 더보기 처리
+        if (indexPath.row == _newspeedList.count - 1) {
+            if ([self.delegate respondsToSelector:@selector(tableView:totalPageCount:)]) {
+                [self.delegate tableView:tableView totalPageCount:_newspeedList.count];
+            }
+        }
+        
+        return cell;
+
+    }else{
+        CommunityNewspeedBasicCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:BASIC_CELL_ID];
+        
+        if(cell == nil){
+            [tableView registerNib:[UINib nibWithNibName:@"CommunityNewspeedBasicCustomCell" bundle:nil] forCellReuseIdentifier:BASIC_CELL_ID];
+            
+            cell = [tableView dequeueReusableCellWithIdentifier:BASIC_CELL_ID];
+        }
+        
+        cell.contentsLabel.text = [data objectForKey:@"content"];
+        if([[data objectForKey:@"like_cnt"] intValue] != 0){
+            cell.likeCountLabel.text = [NSString stringWithFormat:@"%@", [data objectForKey:@"like_cnt"]];
+        }
+        
+        if([[data objectForKey:@"reply_cnt"] intValue] != 0){
+            cell.replyCountLabel.text = [NSString stringWithFormat:@"%@", [data objectForKey:@"reply_cnt"]];
+        }
+        cell.mentoNicknameLabel.text = [data objectForKey:@"mento_nickname"];
+        cell.regDttmLabel.text = [[MommyUtils sharedGlobalData] getMommyDate:[data objectForKey:@"reg_dttm"]];
+        if([[data objectForKey:@"like"] isEqualToString:@"Y"]){
+            [cell.likeButtonImage setImage:[UIImage imageNamed:@"contents_comm_icon_like_on"]];
+        }else{
+            [cell.likeButtonImage setImage:[UIImage imageNamed:@"contents_comm_icon_like"]];
+        }
+        NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [data objectForKey:@"mento_img"]];
+        
+        if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
+            [cell.mentoImageButton setImage:[_cachedImages valueForKey:profileImageIdentifier]forState:UIControlStateNormal];
+        }else {
+            char const * s = [profileImageIdentifier  UTF8String];
+            dispatch_queue_t queue = dispatch_queue_create(s, 0);
+            dispatch_async(queue, ^{
+                
+                NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [data objectForKey:@"mento_img"]];
+                
+                UIImage *profileImg = nil;
+                NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                profileImg = [[UIImage alloc] initWithData:firstImageData];
+                
+                [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [cell.mentoImageButton setImage:[_cachedImages valueForKey:profileImageIdentifier] forState:UIControlStateNormal];
+                });
+            });
+        }
+
+        
+        cell.delegate = self;
+        cell.tag = 0;
+        
+        CAShapeLayer *firstShapeLayer = [CAShapeLayer layer];
+        [firstShapeLayer setBounds:cell.bounds];
+        [firstShapeLayer setPosition:cell.center];
+        [firstShapeLayer setFillColor:[[UIColor clearColor] CGColor]];
+        [firstShapeLayer setStrokeColor:[[UIColor colorWithRed:217.0/255.0f green:217.0/255.0f  blue:217.0/255.0f alpha:1.0] CGColor]];
+        [firstShapeLayer setLineWidth:1.0f];
+        [firstShapeLayer setLineJoin:kCALineJoinRound];
+        [firstShapeLayer setLineDashPattern:
+         [NSArray arrayWithObjects:[NSNumber numberWithInt:3],
+          [NSNumber numberWithInt:3],nil]];
+        
+        CGMutablePathRef firstPath = CGPathCreateMutable();
+        CGPathMoveToPoint(firstPath, NULL, 0, 0);
+        CGPathAddLineToPoint(firstPath, NULL, tableView.frame.size.width - 38.0, 0);
+        
+        [firstShapeLayer setPath:firstPath];
+        CGPathRelease(firstPath);
+        
+        [[cell.writerInfoView layer] addSublayer:firstShapeLayer];
+        
+        // 마지막 셀 체크 페이지 더보기 처리
+        if (indexPath.row == _newspeedList.count - 1) {
+            if ([self.delegate respondsToSelector:@selector(tableView:totalPageCount:)]) {
+                [self.delegate tableView:tableView totalPageCount:_newspeedList.count];
+            }
+        }
         
         return cell;
     }
@@ -147,14 +237,19 @@
  }
  */
 
+- (void) tableView:(UITableView *)tableView totalPageCount:(NSInteger)count{
+    [_delegate tableView:tableView totalPageCount:count];
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if([indexPath indexAtPosition:1] < 2){
+//    tableView cell
+    NSLog(@"%@", indexPath);
+//    if([tableView cellForRowAtIndexPath:indexPath].tag == 0){
         return 202;
-    }else{
-        return 382;
-    }
+//    }else{
+//        return 382;
+//    }
 }
 
 

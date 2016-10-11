@@ -24,8 +24,10 @@
     _tableView.delegate = _tableListController;
     _tableView.dataSource = _tableListController;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [_tableView reloadData];
     
+    
+    _searchPage = [[NSNumber alloc] initWithInt:1];
+    _currentLastPageStatus = NO;    
     
     //close Button Setting
     UIButton *closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -38,12 +40,23 @@
     self.navigationItem.rightBarButtonItem = closeButton;
     self.navigationItem.hidesBackButton = YES;
     
-
+    [self setListFirst];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark table delegate
+- (void) tableView:(UITableView *)tableView totalPageCount:(NSInteger)count{
+    if (!_currentLastPageStatus) {
+        return;
+    }
+    
+    [self setListMore:[[NSNumber alloc] initWithInt:([_searchPage intValue]+[PAGE_SIZE intValue]) ]];
+
 }
 
 -(void)tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath{
@@ -52,26 +65,108 @@
         _profilePopupView.delegate = self;
         _profilePopupView.view.frame = CGRectMake(0, 0, [[UIScreen mainScreen] applicationFrame].size.width, [[UIScreen mainScreen] applicationFrame].size.height+20);
     }
+    _profilePopupView.mentorKey = [(CommunityPersonListCustomCell *)[tableView cellForRowAtIndexPath:indexPath] mentorKey];
     
     AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate.window addSubview:_profilePopupView.view];
 }
 
+
+#pragma mark setting list
+- (void)setListFirst{
+    _searchPage = [[NSNumber alloc]initWithInt:1];
+    
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+    [param setValue:PAGE_SIZE forKey:@"pageSize"];
+    [param setValue:_searchPage forKey:@"searchPage"];
+    [param setValue:_groupValue forKey:@"group_value"];
+    [param setValue:_groupKey forKey:@"group_key"];
+    
+    [self showIndicator];
+    [[MommyRequest sharedInstance] mommyCommunityApiService:CommunityGroupMentoList authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data){
+        NSLog(@"PSH data %@", data);
+        
+        NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
+        if([code isEqual:@"0"]){
+            NSArray *result = [data objectForKey:@"result"];
+            if([result count] == 0){
+                NSLog(@"empty");
+            }
+            if([[[result objectAtIndex:0] objectForKey:@"tot_cnt"] intValue] >= [_searchPage intValue]+[PAGE_SIZE intValue] ){
+                _currentLastPageStatus = YES;
+            }else{
+                _currentLastPageStatus = NO;
+            }
+            
+            [_tableListController.personList removeAllObjects];
+            [_tableListController.personList addObjectsFromArray:result];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [_tableView reloadData];
+            });
+        }else{
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+    } error:^(NSError *error) {
+        NSLog(@"PSH error %@", error);
+        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+    } ];
+}
+
+- (void)setListMore:(NSNumber *)searchPage{
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+    [param setValue:PAGE_SIZE forKey:@"pageSize"];
+    [param setValue:searchPage forKey:@"searchPage"];
+    [param setValue:_groupValue forKey:@"group_value"];
+    [param setValue:_groupKey forKey:@"group_key"];
+    
+    [self showIndicator];
+    [[MommyRequest sharedInstance] mommyCommunityApiService:CommunityGroupMentoList authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data){
+        NSLog(@"PSH data %@", data);
+        
+        NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
+        if([code isEqual:@"0"]){
+            _searchPage = searchPage;
+            
+            NSArray *result = [data objectForKey:@"result"];
+            if([result count] == 0){
+                NSLog(@"empty");
+            }
+            if([[[result objectAtIndex:0] objectForKey:@"tot_cnt"] intValue] >= [_searchPage intValue]+[PAGE_SIZE intValue] ){
+                _currentLastPageStatus = YES;
+            }else{
+                _currentLastPageStatus = NO;
+            }
+            
+            [_tableListController.personList addObjectsFromArray:result];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [_tableView reloadData];
+            });
+        }else{
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+    } error:^(NSError *error) {
+        NSLog(@"PSH error %@", error);
+        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+    } ];
+}
+
+
+#pragma mark navigation Action
 -(void)goBack{
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+#pragma mark profile delegate
 - (void)moveNewspeedViewAction:(id)sender{
-    NSLog(@"moveNewspeed");
     [self performSegueWithIdentifier:@"UnwindingSegue" sender:self];
 }
 
-- (void)moveWriteMessageViewAction:(id)sender{
-    // MessageNaivgation
+- (void)moveWriteMessageViewAction:(id)sender{   // MessageNaivgation
     UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
-    UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"MessageNaivgation"];
-    
-    [self presentViewController:messageNavigationController animated:YES completion:nil];
+    UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"MessageWriteController"];
+    [[self navigationController] pushViewController:messageNavigationController animated:YES];
 }
 
 /*

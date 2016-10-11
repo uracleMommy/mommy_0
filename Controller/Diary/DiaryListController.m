@@ -28,6 +28,7 @@
     [_listTableview reloadData];
     
     _searchPage = [[NSNumber alloc] initWithInt:1];
+    _currentLastPageStatus = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,7 +52,9 @@
 }
 
 - (void)setListFirst:(NSDate *)date{
-    [self showIndicator];
+    _selectedDate = date;
+    _searchPage = [[NSNumber alloc]initWithInt:1];
+//    [self showIndicator];
     
     NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
     NSDateFormatter *formatter2 = [[NSDateFormatter alloc]init];
@@ -69,28 +72,89 @@
             if([result count] == 0){
                 NSLog(@"empty");
             }
+            if((int)[[result objectAtIndex:0] objectForKey:@"tot_cnt"] >= [_searchPage intValue]+[PAGE_SIZE intValue] ){
+                _currentLastPageStatus = YES;
+            }else{
+                _currentLastPageStatus = NO;
+            }
+            
             [_diaryListTableController.diaryList removeAllObjects];
             [_diaryListTableController.diaryList addObjectsFromArray:result];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [_listTableview reloadData];
-                [self hideIndicator];
+//                [self hideIndicator];
             });
         }else{
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self hideIndicator];
-            });
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [self hideIndicator];
+//            });
         }
     } error:^(NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self hideIndicator];
-        });
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [self hideIndicator];
+//        });
         
     }];
 }
 
-- (void)setListMore:(NSDate *)date{
+#pragma 테이블뷰 맨마지막 셀 도달시 추가 로드
+- (void) tableView:(UITableView *)tableView totalPageCount:(NSInteger)count {
+    if (!_currentLastPageStatus) {
+        return;
+    }
     
+    [self setListMore:_selectedDate searchPage:[[NSNumber alloc] initWithInt:([_searchPage intValue]+[PAGE_SIZE intValue]) ]];
+}
+
+
+- (void)setListMore:(NSDate *)date searchPage:(NSNumber *)searchPage{
+    
+    _selectedDate = date;
+    //    [self showIndicator];
+    
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+    NSDateFormatter *formatter2 = [[NSDateFormatter alloc]init];
+    [formatter2 setDateFormat:@"YYYYMM"];
+    [param setValue:[formatter2 stringFromDate:date] forKey:@"search_month"];
+    [param setValue:PAGE_SIZE forKey:@"pageSize"];
+    [param setValue:searchPage forKey:@"searchPage"];
+    
+    [[MommyRequest sharedInstance] mommyDiaryApiService:DiaryList authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data) {
+        
+        NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
+        NSLog(@"data : %@", data);
+        if([code isEqualToString:@"0"]){
+            _searchPage = searchPage;
+            
+            NSArray *result = [data objectForKey:@"result"];
+            if([result count] == 0){
+                NSLog(@"empty");
+            }
+            
+            if(([[[result objectAtIndex:0] objectForKey:@"tot_cnt"] intValue]) >= ([_searchPage intValue]+[PAGE_SIZE intValue])){
+                _currentLastPageStatus = YES;
+            }else{
+                _currentLastPageStatus = NO;
+            }
+            
+            [_diaryListTableController.diaryList addObjectsFromArray:result];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [_listTableview reloadData];
+                //                [self hideIndicator];
+            });
+        }else{
+            //            dispatch_async(dispatch_get_main_queue(), ^{
+            //                [self hideIndicator];
+            //            });
+        }
+    } error:^(NSError *error) {
+        //        dispatch_async(dispatch_get_main_queue(), ^{
+        //            [self hideIndicator];
+        //        });
+        
+    }];
 }
 
 @end

@@ -58,6 +58,7 @@
 		2AB670E61D9268120060561C /* CommunityProfilePopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB670E41D9268120060561C /* CommunityProfilePopupViewController.m */; };
 		2AB670E71D9268120060561C /* CommunityProfilePopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AB670E51D9268120060561C /* CommunityProfilePopupViewController.xib */; };
 		2ABDB8D91DA36FB500239967 /* LoginResetPasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABDB8D81DA36FB500239967 /* LoginResetPasswordController.m */; };
+		2ABF43481DA7272700AE735F /* DiaryDetailListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABF43471DA7272700AE735F /* DiaryDetailListController.m */; };
 		2AC1644B1D9CA36800533BB0 /* CommunityDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1644A1D9CA36800533BB0 /* CommunityDetailModel.m */; };
 		2AC1644E1D9CD05A00533BB0 /* CommunityDetailContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC1644D1D9CD05A00533BB0 /* CommunityDetailContentCell.xib */; };
 		2AC164501D9CD09500533BB0 /* CommunityDetailReplyPeopleInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC1644F1D9CD09500533BB0 /* CommunityDetailReplyPeopleInfoCell.xib */; };
@@ -416,6 +417,8 @@
 		2AB670E51D9268120060561C /* CommunityProfilePopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityProfilePopupViewController.xib; sourceTree = "<group>"; };
 		2ABDB8D71DA36FB500239967 /* LoginResetPasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginResetPasswordController.h; sourceTree = "<group>"; };
 		2ABDB8D81DA36FB500239967 /* LoginResetPasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginResetPasswordController.m; sourceTree = "<group>"; };
+		2ABF43461DA7272700AE735F /* DiaryDetailListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryDetailListController.h; sourceTree = "<group>"; };
+		2ABF43471DA7272700AE735F /* DiaryDetailListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryDetailListController.m; sourceTree = "<group>"; };
 		2AC164491D9CA36800533BB0 /* CommunityDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityDetailModel.h; sourceTree = "<group>"; };
 		2AC1644A1D9CA36800533BB0 /* CommunityDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityDetailModel.m; sourceTree = "<group>"; };
 		2AC1644D1D9CD05A00533BB0 /* CommunityDetailContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityDetailContentCell.xib; sourceTree = "<group>"; };
@@ -1023,6 +1026,8 @@
 				2AEBE3481D79419E0075B210 /* DiaryWriteScheduleController.m */,
 				2AEBE34A1D7941BF0075B210 /* DiaryDetailScheduleController.h */,
 				2AEBE34B1D7941BF0075B210 /* DiaryDetailScheduleController.m */,
+				2ABF43461DA7272700AE735F /* DiaryDetailListController.h */,
+				2ABF43471DA7272700AE735F /* DiaryDetailListController.m */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -1928,7 +1933,7 @@
 				TargetAttributes = {
 					DCA5AE201D598C6F0075B7AD = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = LUYT38Y3AT;
+						DevelopmentTeam = JH5F2VBM8Z;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2251,6 +2256,7 @@
 				DC1FE6F61D65C83C006F7A50 /* DZNSegmentedControl.m in Sources */,
 				DC512AC61D66989000885C26 /* MessageListModel.m in Sources */,
 				DC56F0A21D79728F00FB3A30 /* WeightChartViewCell.m in Sources */,
+				2ABF43481DA7272700AE735F /* DiaryDetailListController.m in Sources */,
 				2AB670C21D9256C80060561C /* CommunityNavController.m in Sources */,
 				DC5D20841D62AFA100ACDCA4 /* OTPageCell.m in Sources */,
 				DC68F52D1D93D7CC009D3B1E /* MoreEquipmentSearchingViewController.m in Sources */,
@@ -2388,7 +2394,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Park seohee (TDF9AJWPR5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LUYT38Y3AT;
+				DEVELOPMENT_TEAM = JH5F2VBM8Z;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2414,7 +2420,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Park seohee (TDF9AJWPR5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LUYT38Y3AT;
+				DEVELOPMENT_TEAM = JH5F2VBM8Z;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

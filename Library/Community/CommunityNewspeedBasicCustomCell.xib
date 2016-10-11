@@ -280,8 +280,14 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="cellView" destination="r0g-I1-wxF" id="ypi-JI-5ky"/>
+                <outlet property="contentsLabel" destination="cf5-zM-ndT" id="EZh-n5-OCn"/>
                 <outlet property="likeButtonImage" destination="eXp-Mu-CFc" id="gO3-Ew-5wf"/>
+                <outlet property="likeCountLabel" destination="D16-ua-iaR" id="6Vw-Vr-oyl"/>
+                <outlet property="mentoImageButton" destination="ARK-cp-xSL" id="Ame-Yp-fMe"/>
+                <outlet property="mentoNicknameLabel" destination="GnH-iU-zvK" id="I4B-xJ-aot"/>
                 <outlet property="moreButton" destination="MkE-KT-1cz" id="DQI-7c-ehc"/>
+                <outlet property="regDttmLabel" destination="ybd-kT-WNR" id="3C0-Wf-jEs"/>
+                <outlet property="replyCountLabel" destination="k4O-XE-4j0" id="Jm0-k6-JZP"/>
                 <outlet property="writerInfoView" destination="FKc-mc-BNb" id="yox-IK-LEZ"/>
             </connections>
             <point key="canvasLocation" x="31.5" y="144.5"/>

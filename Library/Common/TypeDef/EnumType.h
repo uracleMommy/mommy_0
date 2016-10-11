@@ -24,4 +24,12 @@ typedef enum {
     
 } ProfessionalButtonStatus;
 
+#pragma 커뮤니티 모드
+typedef enum {
+    
+    GroupMode = 0, // 그룹
+    MentorMode = 1  // 멘토
+    
+} ViewMode;
+
 #endif /* EnumType_h */

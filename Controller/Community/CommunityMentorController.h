@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "CommunityPersonListModel.h"
 #import "CommonViewController.h"
+#import "MommyRequest.h"
 
 @protocol CommunityMentorDelegate <NSObject>
 
 @optional
 
--(void) moveCommunityList;
+-(void) moveCommunityList:(NSString *)key value:(NSString *)value;
 
 @end
 
