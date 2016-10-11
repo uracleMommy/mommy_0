@@ -11,6 +11,9 @@
 #import "CommunityNewspeedListModel.h"
 #import "CommunityProfilePopupViewController.h"
 #import "CommonViewController.h"
+#import "CommunityPeopleListController.h"
+
+#define PAGE_SIZE [[NSNumber alloc] initWithInt:30]
 
 @interface CommunityNewspeedListController : CommonViewController <CommunityNewspeedListModelDelegate, CommunityProfilePopupViewDelegate>
 
@@ -18,5 +21,13 @@
 @property (strong, nonatomic) CommunityNewspeedListModel *tableListController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) CommunityProfilePopupViewController *profilePopupView;
+@property (strong, nonatomic) NSString *titleText;
+@property (strong, nonatomic) NSString *groupKey;
+@property (strong, nonatomic) NSString *mentorKey;
+@property (strong, nonatomic) NSString *groupValue;
+@property (strong, nonatomic) NSNumber *searchPage;
+@property (assign, nonatomic) Boolean currentLastPageStatus;
+@property (assign) ViewMode mode;
+
 
 @end

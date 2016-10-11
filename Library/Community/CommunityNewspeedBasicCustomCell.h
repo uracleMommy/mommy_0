@@ -27,6 +27,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *writerInfoView;
 @property (strong, nonatomic) id<CommunityNewspeedBasicCustomCellDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UIImageView *likeButtonImage;
+@property (weak, nonatomic) IBOutlet UIButton *mentoImageButton;
+@property (weak, nonatomic) IBOutlet UILabel *mentoNicknameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *regDttmLabel;
+@property (weak, nonatomic) IBOutlet UILabel *contentsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *likeCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *replyCountLabel;
 
 - (IBAction)moreButtonAction:(id)sender;
 - (IBAction)likeButtonAction:(id)sender;

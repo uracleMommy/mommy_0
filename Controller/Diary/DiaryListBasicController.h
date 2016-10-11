@@ -12,6 +12,7 @@
 #import "DiaryListController.h"
 #import "DiaryCalenderController.h"
 #import "CommonViewController.h"
+#import "DiaryDetailListController.h"
 
 #define PAGE_SIZE [[NSNumber alloc] initWithInt:30]
 
@@ -29,8 +30,8 @@
 @property (strong, nonatomic) DiaryListController *listViewController;
 @property (strong, nonatomic) DiaryCalenderController *calenderViewController;
 @property (strong, nonatomic) NSDate *listDate;
-//@property (strong, nonatomic) NSNumber *pageSize;
 @property (strong, nonatomic) NSNumber *searchPage;
+@property (strong, nonatomic) NSString *selectedDiaryKey;
 
 - (IBAction)changeListViewAction:(id)sender;
 - (IBAction)prevMonthButton:(id)sender;

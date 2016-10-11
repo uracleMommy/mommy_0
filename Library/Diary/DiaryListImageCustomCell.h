@@ -18,5 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *emoticonImageView;
 @property (weak, nonatomic) IBOutlet UILabel *emoticonLabel;
 @property (weak, readwrite, nonatomic) IBOutlet UIImageView *contentImageView;
+@property (strong, nonatomic) NSString *diaryKey;
 
 @end

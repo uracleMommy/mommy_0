@@ -17,6 +17,7 @@
 
 @optional
 -(void) tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath;
+-(void) tableView:(UITableView *)tableView totalPageCount:(NSInteger)count;
 
 @end
 
@@ -24,7 +25,6 @@
 
 @property (nonatomic, strong) NSMutableArray *diaryList;
 @property (strong, nonatomic) id<DiaryListModelDelegate> delegate;
-
 @property (strong, nonatomic) NSMutableDictionary *cachedImages;
 
 @end

@@ -18,6 +18,9 @@
     [_cellView.layer setBorderWidth:1.0f];
     _cellView.layer.cornerRadius = 10;//half of the width
     _cellView.layer.masksToBounds = YES;
+    
+    _mentoImageButton.layer.cornerRadius = 20;
+    _mentoImageButton.layer.masksToBounds = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

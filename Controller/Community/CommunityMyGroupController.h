@@ -12,13 +12,22 @@
 @protocol CommunityMyGroupDelegate <NSObject>
 
 @optional
--(void) moveCommunityList;
+-(void) moveCommunityList:(NSString *)key value:(NSString *)value;
 
 @end
 
 @interface CommunityMyGroupController : CommonViewController
 
 @property (strong, nonatomic) id<CommunityMyGroupDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UIButton *groupButton01;
+@property (weak, nonatomic) IBOutlet UIButton *groupButton02;
+@property (weak, nonatomic) IBOutlet UIButton *groupButton03;
+@property (weak, nonatomic) IBOutlet UILabel *groupNameLabel01;
+@property (weak, nonatomic) IBOutlet UILabel *groupNameLabel02;
+@property (weak, nonatomic) IBOutlet UILabel *groupNameLabel03;
+@property (strong, nonatomic) NSMutableArray *groupKeyArr;
+@property (strong, nonatomic) NSMutableArray *groupValueArr;
+
 
 - (IBAction)moveCommunityList:(id)sender;
 

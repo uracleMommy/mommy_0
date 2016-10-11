@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
+#import "MommyUtils.h"
 #import "CommunityNewspeedBasicCustomCell.h"
 #import "CommunityNewspeedImageCustomCell.h"
 
@@ -15,6 +17,7 @@
 
 @optional
 - (void) tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath;
+- (void) tableView:(UITableView *)tableView totalPageCount:(NSInteger)count;
 - (void)moreButtonAction:(id)sender point:(CGPoint)point;
 - (void)moveDetailViewButtonAction:(id)sender;
 - (void)moveWriteMessageViewAction:(id)sender;
@@ -26,5 +29,6 @@
 
 @property (nonatomic, strong) NSMutableArray *newspeedList;
 @property (strong, nonatomic) id<CommunityNewspeedListModelDelegate> delegate;
+@property (strong, nonatomic) NSMutableDictionary *cachedImages;
 
 @end

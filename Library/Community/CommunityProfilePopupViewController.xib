@@ -16,11 +16,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommunityProfilePopupViewController">
             <connections>
+                <outlet property="avgKalLabel" destination="7DR-mk-Zy4" id="ZBj-9I-izM"/>
+                <outlet property="avgStepLabel" destination="cP9-C8-DLt" id="FYF-bL-XEh"/>
+                <outlet property="babyBirthLabel" destination="hmm-8W-6uw" id="hwg-E0-DzQ"/>
                 <outlet property="lineLabel" destination="Q0X-7R-za8" id="ZOo-Q9-Pgt"/>
                 <outlet property="mentorButton" destination="EZU-bo-rI5" id="Ar0-pV-pHf"/>
+                <outlet property="nameLabel" destination="xX3-v9-F4I" id="s1m-ox-Nwe"/>
                 <outlet property="popupView" destination="AbE-jM-WGo" id="lnz-rY-qdn"/>
                 <outlet property="profileImage" destination="hsQ-f6-cVD" id="czP-fn-jGV"/>
                 <outlet property="todayTitleLabel" destination="fce-sJ-3bN" id="NPn-y1-nI3"/>
+                <outlet property="totalKalLabel" destination="49C-rd-4MY" id="Q4K-06-xsy"/>
+                <outlet property="totalStepLabel" destination="bfO-v1-dXy" id="xs5-eE-REi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

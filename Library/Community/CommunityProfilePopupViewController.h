@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
+#import "MommyRequest.h"
 
 @protocol CommunityProfilePopupViewDelegate <NSObject>
 
@@ -21,9 +23,17 @@
 @property (weak, nonatomic) IBOutlet UIView *popupView;
 @property (weak, nonatomic) IBOutlet UILabel *lineLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *babyBirthLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalStepLabel;
+@property (weak, nonatomic) IBOutlet UILabel *avgStepLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalKalLabel;
+@property (weak, nonatomic) IBOutlet UILabel *avgKalLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *todayTitleLabel;
 @property (strong, nonatomic) id<CommunityProfilePopupViewDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UIButton *mentorButton;
+@property (strong, nonatomic) NSString *mentorKey;
 
 - (IBAction)closePopupAction:(id)sender;
 - (IBAction)moveWriteMessageViewAction:(id)sender;

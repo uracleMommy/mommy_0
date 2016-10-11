@@ -17,7 +17,6 @@
 
 @optional
 -(void) tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath;
-
 @end
 
 @interface DiaryListController : CommonViewController <DiaryListModelDelegate>
@@ -26,6 +25,8 @@
 @property (strong, nonatomic) DiaryListModel *diaryListTableController;
 @property (strong, nonatomic) id<DiaryListDelegate> delegate;
 @property (strong, nonatomic) NSNumber *searchPage;
+@property (strong, nonatomic) NSDate *selectedDate;
+@property (assign, nonatomic) Boolean currentLastPageStatus;
 
 - (void)setListFirst:(NSDate *)date;
 

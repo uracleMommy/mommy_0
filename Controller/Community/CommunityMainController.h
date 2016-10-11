@@ -11,6 +11,7 @@
 #import "CommunityMyGroupController.h"
 #import "CommunityMentorController.h"
 #import "CommonViewController.h"
+#import "CommunityNewspeedListController.h"
 
 @interface CommunityMainController : CommonViewController <DZNSegmentedControlDelegate, CommunityMyGroupDelegate, CommunityMentorDelegate>
 
@@ -18,5 +19,9 @@
 @property (strong, nonatomic) CommunityMyGroupController *myGroupViewController;
 @property (strong, nonatomic) CommunityMentorController *mentorViewController;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (strong, nonatomic) NSString *groupKey;
+@property (strong, nonatomic) NSString *groupValue;
+@property (strong, nonatomic) NSString *mentorKey;
+@property (assign) ViewMode mode;
 
 @end

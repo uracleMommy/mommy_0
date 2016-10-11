@@ -86,9 +86,11 @@
             <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="addButton" destination="O02-A5-aQ1" id="nb6-30-7SV"/>
-                <outlet property="addLabel" destination="YxD-66-t1R" id="pmD-1M-6g8"/>
                 <outlet property="cellView" destination="VwK-V1-Yeg" id="cU6-zh-u9V"/>
+                <outlet property="mentorBirthdayLabel" destination="Snl-sv-HAb" id="poe-K5-GNM"/>
                 <outlet property="mentorButtonImage" destination="YxD-66-t1R" id="6iQ-3u-RZe"/>
+                <outlet property="mentorImageView" destination="BF5-oi-7JJ" id="Xue-hU-3ga"/>
+                <outlet property="mentorNicknameLabel" destination="hxL-Ir-MeK" id="0Up-Bi-VHP"/>
             </connections>
             <point key="canvasLocation" x="74" y="57"/>
         </tableViewCell>

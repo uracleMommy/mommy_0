@@ -68,6 +68,25 @@ typedef enum {
     DiaryUpdate
 } MommyDiaryWebServiceType;
 
+#pragma 커뮤니티 관련 열거형
+typedef enum {
+    
+    CommunityGroupList,
+    CommunityMentoList,
+    CommunityMentoDelete,
+    CommunityMentoInsert,
+    CommunityMentoBoardList,
+    CommunityGroupBoardList,
+    CommunityDelete,
+    CommunityLike,
+    CommunityMentoProfile,
+    CommunityReplyInfo,
+    CommunityReplyList,
+    CommunityInsertReply,
+    CommunityGroupMentoList,
+    CommunityInsert
+} MommyCommunityWebServiceType;
+
 #pragma 블록 타입 정의
 typedef void (^MommyApiServiceSuccessBlock) ( NSDictionary *data );
 typedef void (^MommyApiServiceErrorBlock) ( NSError *error );
@@ -96,6 +115,9 @@ typedef void (^MommyApiServiceErrorBlock) ( NSError *error );
 #pragma 다이어리 관련
 - (void) mommyDiaryApiService : (MommyDiaryWebServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
 
+#pragma 커뮤니티 관련
+- (void) mommyCommunityApiService : (MommyCommunityWebServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
+
 #pragma 이미지 업로드 관련
 - (void) mommyImageUploadApiService : (UIImage *) image success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
 
@@ -117,6 +139,8 @@ typedef void (^MommyApiServiceErrorBlock) ( NSError *error );
 - (NSString *) requestProfessionalAdviceUrlType : (MommyProfessionalAdviceWebServiceType) serviceType;
 
 - (NSString *) requestDiaryUrlType : (MommyDiaryWebServiceType) serviceType;
+
+- (NSString *) requestCommunityUrlType : (MommyCommunityWebServiceType) serviceType;
 
 - (NSString *) requestImageUploadUrl;
 
