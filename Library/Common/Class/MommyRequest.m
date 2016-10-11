@@ -271,6 +271,7 @@ static MommyRequest* instanceMommyRequest;
                                                               NSURLResponse *response,
                                                               NSError *error) {
         
+        NSString *aaa = [[NSString alloc] initWithData:data encoding:4];
         if (error != nil) {
             
             errorBlock(error);
@@ -564,8 +565,6 @@ static MommyHttpUrls* instanceMommyHttpUrls;
             break;
     }
 }
-
-
 
 #pragma mark 이미지 업로드
 - (NSString *) requestImageUploadUrl {

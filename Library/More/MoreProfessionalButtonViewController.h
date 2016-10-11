@@ -41,4 +41,6 @@
 
 - (void) professionalButtonStatus : (ProfessionalButtonStatus) professionalButtonStatus;
 
+- (void) professionalButtonTouch : (ProfessionalButtonKind) professionalButtonKind;
+
 @end

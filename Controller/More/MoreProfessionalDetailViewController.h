@@ -27,8 +27,6 @@
 
 @property (strong, nonatomic) MoreProfessionalReplyContentsViewController *moreProfessionalReplyContentsViewController;
 
-- (IBAction)goAdvice:(id)sender;
-
-- (IBAction)goReply:(id)sender;
+@property (assign) ProfessionalButtonKind *professionalButtonKind;
 
 @end

@@ -14,6 +14,8 @@
 
 @property (weak, nonatomic) IBOutlet DZNSegmentedControl *segmentView;
 
-- (IBAction)closeModal:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *txtContent;
+
+@property (strong, nonatomic) NSArray *arrayList;
 
 @end

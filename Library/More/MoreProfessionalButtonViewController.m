@@ -101,11 +101,21 @@
 #pragma 운동
 - (IBAction)execersizeAction:(id)sender {
     
+    [self adviceAction:nil];
+    
+    if ([self.delegate respondsToSelector:@selector(professionalButtonTouch:)]) {
+        [self.delegate professionalButtonTouch:ProfessionalButtonExecersize];
+    }
 }
 
 #pragma 영양
 - (IBAction)nutritionAction:(id)sender {
     
+    [self adviceAction:nil];
+    
+    if ([self.delegate respondsToSelector:@selector(professionalButtonTouch:)]) {
+        [self.delegate professionalButtonTouch:ProfessionalButtonNutrition];
+    }
 }
 
 @end

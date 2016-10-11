@@ -122,6 +122,9 @@
 		DC3AAED21D75A11C007218E9 /* WeekProgramCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3AAED01D75A11C007218E9 /* WeekProgramCell.m */; };
 		DC3AAED31D75A11C007218E9 /* WeekProgramCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC3AAED11D75A11C007218E9 /* WeekProgramCell.xib */; };
 		DC3ACE161D5D853C00D68F80 /* DashBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3ACE151D5D853C00D68F80 /* DashBoard.storyboard */; };
+		DC3FFDDE1DA75F990095A395 /* MoreProfessionalWriteAdviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3FFDDD1DA75F990095A395 /* MoreProfessionalWriteAdviceController.m */; };
+		DC3FFDE11DA793490095A395 /* Coffee.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3FFDE01DA793490095A395 /* Coffee.m */; };
+		DC3FFDE41DA793870095A395 /* CoffeeCall.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3FFDE31DA793870095A395 /* CoffeeCall.m */; };
 		DC4462161D87A65E006BFEBB /* MoreProfessionalAdviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4462151D87A65E006BFEBB /* MoreProfessionalAdviceViewController.m */; };
 		DC44621E1D87AD70006BFEBB /* MoreProfessionalAdviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44621D1D87AD70006BFEBB /* MoreProfessionalAdviceModel.m */; };
 		DC4462231D87ADB1006BFEBB /* MoreProfessionalAdviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4462211D87ADB1006BFEBB /* MoreProfessionalAdviceCell.xib */; };
@@ -259,6 +262,7 @@
 		DC73E5C71D6DAE3B007D2DEE /* IndicatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC73E5C51D6DAE3B007D2DEE /* IndicatorViewController.xib */; };
 		DC7D38491D6BDD8800314189 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7D38481D6BDD8800314189 /* FXBlurView.m */; };
 		DC7D384C1D6BDD9A00314189 /* ImageCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7D384B1D6BDD9A00314189 /* ImageCropView.m */; };
+		DC85CF1E1DAB29A100DEA166 /* MorePointModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC85CF1D1DAB29A100DEA166 /* MorePointModel.m */; };
 		DC8EB7881D869A1700A0304D /* MoreWeekCheckDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8EB7871D869A1700A0304D /* MoreWeekCheckDetailViewController.m */; };
 		DC8EB78B1D869BA300A0304D /* MoreWeekDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8EB78A1D869BA300A0304D /* MoreWeekDetailModel.m */; };
 		DC8EB78F1D869D4800A0304D /* MoreWeekDetailInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8EB78D1D869D4800A0304D /* MoreWeekDetailInfoCell.m */; };
@@ -530,6 +534,12 @@
 		DC3AAED01D75A11C007218E9 /* WeekProgramCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekProgramCell.m; sourceTree = "<group>"; };
 		DC3AAED11D75A11C007218E9 /* WeekProgramCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekProgramCell.xib; sourceTree = "<group>"; };
 		DC3ACE151D5D853C00D68F80 /* DashBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DashBoard.storyboard; sourceTree = "<group>"; };
+		DC3FFDDC1DA75F990095A395 /* MoreProfessionalWriteAdviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreProfessionalWriteAdviceController.h; sourceTree = "<group>"; };
+		DC3FFDDD1DA75F990095A395 /* MoreProfessionalWriteAdviceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreProfessionalWriteAdviceController.m; sourceTree = "<group>"; };
+		DC3FFDDF1DA793490095A395 /* Coffee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coffee.h; sourceTree = "<group>"; };
+		DC3FFDE01DA793490095A395 /* Coffee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coffee.m; sourceTree = "<group>"; };
+		DC3FFDE21DA793870095A395 /* CoffeeCall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoffeeCall.h; sourceTree = "<group>"; };
+		DC3FFDE31DA793870095A395 /* CoffeeCall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoffeeCall.m; sourceTree = "<group>"; };
 		DC4462141D87A65E006BFEBB /* MoreProfessionalAdviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreProfessionalAdviceViewController.h; sourceTree = "<group>"; };
 		DC4462151D87A65E006BFEBB /* MoreProfessionalAdviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreProfessionalAdviceViewController.m; sourceTree = "<group>"; };
 		DC44621C1D87AD70006BFEBB /* MoreProfessionalAdviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreProfessionalAdviceModel.h; sourceTree = "<group>"; };
@@ -770,6 +780,8 @@
 		DC7D38481D6BDD8800314189 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		DC7D384A1D6BDD9A00314189 /* ImageCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCropView.h; sourceTree = "<group>"; };
 		DC7D384B1D6BDD9A00314189 /* ImageCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCropView.m; sourceTree = "<group>"; };
+		DC85CF1C1DAB29A100DEA166 /* MorePointModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorePointModel.h; sourceTree = "<group>"; };
+		DC85CF1D1DAB29A100DEA166 /* MorePointModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorePointModel.m; sourceTree = "<group>"; };
 		DC8EB7861D869A1700A0304D /* MoreWeekCheckDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreWeekCheckDetailViewController.h; sourceTree = "<group>"; };
 		DC8EB7871D869A1700A0304D /* MoreWeekCheckDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreWeekCheckDetailViewController.m; sourceTree = "<group>"; };
 		DC8EB7891D869BA300A0304D /* MoreWeekDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreWeekDetailModel.h; sourceTree = "<group>"; };
@@ -1354,6 +1366,8 @@
 				DC68F5481D93D7FD009D3B1E /* MoreMyPageModel.m */,
 				DCA3BCBF1D98BBD0009D3DD1 /* MoreEnvironmentModel.h */,
 				DCA3BCC01D98BBD0009D3DD1 /* MoreEnvironmentModel.m */,
+				DC85CF1C1DAB29A100DEA166 /* MorePointModel.h */,
+				DC85CF1D1DAB29A100DEA166 /* MorePointModel.m */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -1391,6 +1405,8 @@
 				DC8EB7871D869A1700A0304D /* MoreWeekCheckDetailViewController.m */,
 				DC4462141D87A65E006BFEBB /* MoreProfessionalAdviceViewController.h */,
 				DC4462151D87A65E006BFEBB /* MoreProfessionalAdviceViewController.m */,
+				DC3FFDDC1DA75F990095A395 /* MoreProfessionalWriteAdviceController.h */,
+				DC3FFDDD1DA75F990095A395 /* MoreProfessionalWriteAdviceController.m */,
 				DC4462241D87B0AD006BFEBB /* MoreProfessionalInfoViewController.h */,
 				DC4462251D87B0AD006BFEBB /* MoreProfessionalInfoViewController.m */,
 				DC4F0EFE1D911066003CB09B /* MoreProfessionalDetailViewController.h */,
@@ -1417,6 +1433,10 @@
 				DCA3BCBD1D98BAF6009D3DD1 /* MoreEnvironmentSetupViewController.m */,
 				DCA3BCDB1D98E648009D3DD1 /* MoreCalendarListController.h */,
 				DCA3BCDC1D98E648009D3DD1 /* MoreCalendarListController.m */,
+				DC3FFDDF1DA793490095A395 /* Coffee.h */,
+				DC3FFDE01DA793490095A395 /* Coffee.m */,
+				DC3FFDE21DA793870095A395 /* CoffeeCall.h */,
+				DC3FFDE31DA793870095A395 /* CoffeeCall.m */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -2072,6 +2092,7 @@
 				2A6B1BF11D91338200322A94 /* DiaryWriteBasicController.m in Sources */,
 				DCA5AE2C1D598C6F0075B7AD /* ViewController.m in Sources */,
 				2AB670DC1D9267700060561C /* CommunityNewspeedImageCustomCell.m in Sources */,
+				DC85CF1E1DAB29A100DEA166 /* MorePointModel.m in Sources */,
 				DC60709C1D7030E700F60148 /* MultiImageViewController.m in Sources */,
 				2A54B1BE1D6691F600C538D1 /* DiaryCalenderController.m in Sources */,
 				DC4E95991D7D62D60087647B /* ActiveMassModel.m in Sources */,
@@ -2154,6 +2175,7 @@
 				DC4462161D87A65E006BFEBB /* MoreProfessionalAdviceViewController.m in Sources */,
 				DC3AAECE1D759C19007218E9 /* WeekProgramModel.m in Sources */,
 				DC512AD21D66C62700885C26 /* MessageListController.m in Sources */,
+				DC3FFDE41DA793870095A395 /* CoffeeCall.m in Sources */,
 				DC1A77CE1D94EC1200F88693 /* MoreMyPageNickNameChangeViewController.m in Sources */,
 				2AB6277A1D5C0CF400BD7B84 /* SignUpMain.m in Sources */,
 				DC538ECC1D781C3600E5949B /* IQTitleBarButtonItem.m in Sources */,
@@ -2224,12 +2246,14 @@
 				DCA3BCE51D98EEC9009D3DD1 /* MoreEnvironmentCalendarListCell.m in Sources */,
 				DC1A77E61D9535D200F88693 /* MoreMyPagePointViewController.m in Sources */,
 				DCF6CAA91D742B4000703CAE /* JTSAnimatedGIFUtility.m in Sources */,
+				DC3FFDE11DA793490095A395 /* Coffee.m in Sources */,
 				2A54B1B91D66904000C538D1 /* JTCalendarWeekView.m in Sources */,
 				DC4DE2D81D814F9D007CF9BF /* MoreBloodPressureHistoryCell.m in Sources */,
 				DC56F0A61D79728F00FB3A30 /* WeightDetailInfoFooterCell.m in Sources */,
 				2A54B1B31D66904000C538D1 /* JTCalendarDelegateManager.m in Sources */,
 				DC1A77DD1D950F9900F88693 /* MoreMyPageFetusHeaderCell.m in Sources */,
 				DC4E95AF1D7D66C40087647B /* ActiveMassExerciseCell.m in Sources */,
+				DC3FFDDE1DA75F990095A395 /* MoreProfessionalWriteAdviceController.m in Sources */,
 				2AFDD76A1D9BB46D00FE157C /* CommunityDetailController.m in Sources */,
 				DCA3BCD41D98BDB7009D3DD1 /* MoreEnvironmentAgreementCell.m in Sources */,
 				DC538ECB1D781C3600E5949B /* IQPreviousNextView.m in Sources */,

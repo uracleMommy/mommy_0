@@ -55,7 +55,7 @@
     
     if (indexPath.row == 0) {
         
-        MoreEnvironmentMyPageCell *cell = (MoreEnvironmentMyPageCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierMoreEnvironmentMyPageCell];
+        MoreEnvironmentMyPageCell *cell =   (MoreEnvironmentMyPageCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierMoreEnvironmentMyPageCell];
         
         if (cell == nil) {
             

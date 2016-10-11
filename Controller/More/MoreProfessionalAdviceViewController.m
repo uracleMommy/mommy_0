@@ -7,6 +7,8 @@
 //
 
 #import "MoreProfessionalAdviceViewController.h"
+#import "MoreProfessionalWriteAdviceController.h"
+#import "MoreProfessionalDetailViewController.h"
 
 @interface MoreProfessionalAdviceViewController ()
 
@@ -51,8 +53,8 @@
 #pragma 전문가 상담 내역 리스트 가져오기
 - (void) getAdviceList : (NSInteger) currentPage {
     
-    NSString *auth_key = @"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJnb2dvanNzIiwic3ViIjoiZ29nb2pzcyIsImV4cCI6MTQ3NjAwNzgyOSwibmFtZSI6IuyhsOyKueyLnSIsImlhdCI6MTQ3NTE0MzgyOX0.Qzl27M2ye-2pfomvsS8W7dQin_404Ds3YkTVYur_2_4";
-    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"0", @"pageSize", [NSString stringWithFormat:@"%ld", (long)currentPage], @"searchPage", nil];
+    NSString *auth_key = @"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJnb2dvanNzIiwic3ViIjoiZ29nb2pzcyIsImV4cCI6MTQ3NjkyNTk4OSwibmFtZSI6IuyhsOyKueyLnSIsImlhdCI6MTQ3NjA2MTk4OX0.qw3Bg3NuEbH1tA0yz06uUVM1TDncn78RhZO4eR0UQtU";
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"30", @"pageSize", [NSString stringWithFormat:@"%ld", (long)currentPage], @"searchPage", nil];
     
     [[MommyRequest sharedInstance] mommyProfessionalAdviceApiService:ProfessionalAdviceList authKey:auth_key parameters:parameters success:^(NSDictionary *data){
         
@@ -168,14 +170,56 @@
 #pragma 테이블뷰 셀렉티드 콜백
 - (void) tableView:(UITableView *)tableView moreProfessionalSelectedIndexPath:(NSIndexPath *)indexPath {
     
+    NSDictionary *dic = _moreProfessionalAdviceModel.arrayList[indexPath.row];
+    
     [_moreProfessionalButtonViewController.view removeFromSuperview];
-    [self performSegueWithIdentifier:@"goProfessionalAdviceInfo" sender:nil];
+    [self performSegueWithIdentifier:@"goProfessionalAdviceInfo" sender:dic[@"type"]];
 }
 
 #pragma 테이블뷰 더보기 콜백
 - (void) tableView:(UITableView *)tableView totalPageCount:(NSInteger)count {
     
     [self getAdviceList:count + 1];
+}
+
+#pragma 쓰기 버튼 콜백
+- (void) professionalButtonTouch:(ProfessionalButtonKind)professionalButtonKind {
+    
+    [_moreProfessionalButtonViewController.view removeFromSuperview];
+    
+    // 운동
+    if (professionalButtonKind == ProfessionalButtonExecersize) {
+        
+        [self performSegueWithIdentifier:@"goProfessionalAdviceWrite" sender:@"0"];
+    }
+    // 영양
+    else if (professionalButtonKind == ProfessionalButtonNutrition) {
+        
+        [self performSegueWithIdentifier:@"goProfessionalAdviceWrite" sender:@"1"];
+        
+        //[self performSegueWithIdentifier:@"goProfessionalAdviceWrite" sender:ProfessionalButtonnutrition];
+    }
+}
+
+#pragma 파라미터 전달
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    // 상담글 올리기
+    if ([segue.identifier isEqualToString:@"goProfessionalAdviceWrite"]) {
+        
+        NSString *kind = sender;
+        
+        MoreProfessionalWriteAdviceController *moreProfessionalWriteAdviceController = (MoreProfessionalWriteAdviceController *)segue.destinationViewController;
+        moreProfessionalWriteAdviceController.professionalButtonKind = [kind isEqualToString:@"0"] ? ProfessionalButtonExecersize : ProfessionalButtonNutrition;
+    }
+    // 디테일 정보 보기
+    else if ([segue.identifier isEqualToString:@"goProfessionalAdviceInfo"]) {
+        
+        NSString *writeType = sender;
+        MoreProfessionalDetailViewController *moreProfessionalDetailViewController = (MoreProfessionalDetailViewController *)segue.destinationViewController;
+        moreProfessionalDetailViewController.professionalButtonKind = [writeType isEqualToString:@"11"] ? ProfessionalButtonExecersize : ProfessionalButtonNutrition;
+        
+    }
 }
 
 @end
