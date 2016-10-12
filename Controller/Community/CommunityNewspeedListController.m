@@ -102,7 +102,6 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     [_moveWriteViewButton removeFromSuperview];
-    
     if([[segue identifier] isEqualToString:@"moveShowPeopleSegue"]){
         CommunityPeopleListController *vc = [segue destinationViewController];
         [vc setGroupKey:_groupKey];
@@ -118,10 +117,10 @@
 #pragma mark navigation Action
 - (void)moveToMessage{
     [_moveWriteViewButton removeFromSuperview];
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
+    UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
+    UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"MessageNaivgation"];
     
-    UINavigationController *messageNavigationController = [[UINavigationController alloc] initWithRootViewController:[storyboard instantiateViewControllerWithIdentifier:@"MessageWriteController"]];
-    [[self navigationController] pushViewController:messageNavigationController animated:YES];
+    [self presentViewController:messageNavigationController animated:YES completion:nil];
 }
 
 -(void)goBack{
@@ -149,54 +148,146 @@
 
 -(void)moveWriteView{
     [_moveWriteViewButton removeFromSuperview];
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Diary" bundle:nil];
     
-    UINavigationController *diaryNavigationController = [[UINavigationController alloc] initWithRootViewController:[storyboard instantiateViewControllerWithIdentifier:@"DiaryWriteBasicController"]];
-    [[self navigationController] pushViewController:diaryNavigationController animated:YES];
+    [self performSegueWithIdentifier:@"moveWriteCommunitySegue" sender:self];
 }
 
 #pragma mark in table button Action
+- (void)moveWriteMessageViewAction:(id)sender{
+    [self moveWriteMessageView:[[_tableListController.newspeedList objectAtIndex:[sender tag]] objectForKey:@"mento_id"] mentoNickName:[[_tableListController.newspeedList objectAtIndex:[sender tag]] objectForKey:@"mento_nickname"]];
+}
+
+-(void) toggleMentor{
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+    [param setObject:_mentorKey forKey:@"mento_key"];
+    
+    UIButton *imageView = self.navigationItem.rightBarButtonItems[1].customView;
+    
+    UIImage *cancelImage = [UIImage imageNamed:@"title_icon_mentor_cancel.png"];
+    UIImage *addImage = [UIImage imageNamed:@"title_icon_mentor_add.png"];
+    
+    NSData *clickImage = UIImagePNGRepresentation([imageView currentImage]);
+    NSData *addImageData = UIImagePNGRepresentation(addImage);
+    
+    if([clickImage isEqual:addImageData]){
+        [[MommyRequest sharedInstance] mommyCommunityApiService:CommunityMentoInsert authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data) {
+            if([[NSString stringWithFormat:@"%@", [data objectForKey:@"code"]] isEqualToString:@"0"]){
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [self changedMento:0 insert:@"Y"];
+                    [imageView setImage:cancelImage forState:UIControlStateNormal];
+                });
+            }
+        } error:^(NSError *error) {
+            
+        }];
+    }else{
+        [[MommyRequest sharedInstance] mommyCommunityApiService:CommunityMentoDelete authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data) {
+            if([[NSString stringWithFormat:@"%@", [data objectForKey:@"code"]] isEqualToString:@"0"]){
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [self changedMento:0 insert:@"N"];
+                    [imageView setImage:addImage forState:UIControlStateNormal];
+                });
+            }
+        } error:^(NSError *error) {
+            
+        }];
+    }
+
+}
+
+- (void)moveDetailViewButtonAction:(id)sender{
+    [self performSegueWithIdentifier:@"moveShowDetailSegue" sender:self];
+}
+
+#pragma mark KkMenu Setting
 - (void)moreButtonAction:(id)sender point:(CGPoint)point{
-  
-    NSArray *menuItems =
-    @[
-      [KxMenuItem menuItem:@"멘토추가"
-                    target:self
-                    action:@selector(addMentor:)],
-      
-      [KxMenuItem menuItem:@"삭제"
-                    target:self
-                    action:@selector(deleteMessage:)],
-      ];
+    NSMutableArray *menuItems = [[NSMutableArray alloc] init];
+    _cellTag = [sender tag];
+    if([[[_tableListController.newspeedList objectAtIndex:[sender tag]] objectForKey:@"mento_yn"] isEqualToString:@"N"]){
+        [menuItems addObject:[KxMenuItem menuItem:@"멘토추가"
+                                           target:self
+                                           action: @selector(addMentor:)]];
+    }else{
+        [menuItems addObject:[KxMenuItem menuItem:@"멘토취소"
+                                           target:self
+                                           action: @selector(deleteMentor:)]];
+    }
+    
+    if([[[_tableListController.newspeedList objectAtIndex:[sender tag]] objectForKey:@"mento_id"] isEqualToString:GET_USER_ID]){
+        [menuItems addObject:[KxMenuItem menuItem:@"삭제"
+                                           target:self
+                                           action:@selector(deleteMessage:)]];
+    }
+    
+    if([menuItems count] == 0){
+        return ;
+    }
     
     KxMenuItem *first = menuItems[0];
     first.foreColor = [UIColor colorWithRed:47/255.0f green:112/255.0f blue:225/255.0f alpha:1.0];
     first.alignment = NSTextAlignmentCenter;
     
+    
     [KxMenu showMenuInView:self.view
                   fromRect:CGRectMake(point.x, point.y-_tableView.contentOffset.y, 0, 0)
-     
                  menuItems:menuItems];
     
     [KxMenu setTarget:self action:@selector(dismissMenu)];
     
 }
 
-- (void)toggleMentor{
-    NSLog(@"toggleMentor");
-}
-
 -(void) addMentor:(id)sender{
     NSLog(@"addMentor");
-}
--(void) deleteMessage:(id)sender{
-    NSLog(@"deleteMessage");
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+    int cellTag = _cellTag;
+
+    [param setObject: [[_tableListController.newspeedList objectAtIndex:_cellTag] objectForKey:@"mento_key"] forKey:@"mento_key"];
+    
+    [[MommyRequest sharedInstance] mommyCommunityApiService:CommunityMentoInsert authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data) {
+        if([[NSString stringWithFormat:@"%@", [data objectForKey:@"code"]] isEqualToString:@"0"]){
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [self changedMento:cellTag insert:@"Y"];
+            });
+        }
+    } error:^(NSError *error) {
+        
+    }];
 }
 
-- (void)moveDetailViewButtonAction:(id)sender{
-//    [_moveWriteViewButton removeFromSuperview];
-    [self performSegueWithIdentifier:@"moveShowDetailSegue" sender:self];
+-(void) deleteMentor:(id)sender{
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+    int cellTag = _cellTag;
+    [param setObject: [[_tableListController.newspeedList objectAtIndex:cellTag] objectForKey:@"mento_key"] forKey:@"mento_key"];
+    
+    [[MommyRequest sharedInstance] mommyCommunityApiService:CommunityMentoDelete authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data) {
+        if([[NSString stringWithFormat:@"%@", [data objectForKey:@"code"]] isEqualToString:@"0"]){
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [self changedMento:cellTag insert:@"N"];
+            });
+        }
+    } error:^(NSError *error) {
+        
+    }];
 }
+
+-(void) deleteMessage:(id)sender{
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+    int cellTag = _cellTag;
+    
+    [param setObject:[[_tableListController.newspeedList objectAtIndex:cellTag] objectForKey:@"community_key"] forKey:@"community_key"];
+    
+    [[MommyRequest sharedInstance] mommyCommunityApiService:CommunityDelete authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data) {
+        if([[NSString stringWithFormat:@"%@", [data objectForKey:@"code"]] isEqualToString:@"0"]){
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [_tableListController.newspeedList removeObjectAtIndex:cellTag];
+                [_tableView reloadData];
+            });
+        }
+    } error:^(NSError *error) {
+        
+    }];
+}
+
 
 #pragma mark profile show & delegate
 -(void)showProfilePopupViewAction:(id)sender{
@@ -205,22 +296,41 @@
         _profilePopupView.delegate = self;
         _profilePopupView.view.frame = CGRectMake(0, 0, [[UIScreen mainScreen] applicationFrame].size.width, [[UIScreen mainScreen] applicationFrame].size.height+20);
     }
-    _profilePopupView.mentorKey = @"test40";
+    
+    _profilePopupView.mentorKey = [[_tableListController.newspeedList objectAtIndex:[sender tag]] objectForKey:@"mento_key"];
+    _profilePopupView.mentorId = [[_tableListController.newspeedList objectAtIndex:[sender tag]] objectForKey:@"mento_id"];
+    _profilePopupView.mentorNickname = [[_tableListController.newspeedList objectAtIndex:[sender tag]] objectForKey:@"mento_nickname"];
     
     AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate.window addSubview:_profilePopupView.view];
 }
 
-- (void)moveWriteMessageViewAction:(id)sender{
+- (void)moveWriteMessageView:(NSString *)mento_id mentoNickName:(NSString *)mento_nickname{
     [_moveWriteViewButton removeFromSuperview];
-    // MessageNaivgation
+    
     UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
-    UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"MessageWriteController"];
+    MessageWriteController *messageNavigationController = [messageStoryboard instantiateViewControllerWithIdentifier:@"MessageWriteController"];
+    
+    messageNavigationController.toUserCode = mento_id;
+    messageNavigationController.toUserNickname = mento_nickname;
+    
     [[self navigationController] pushViewController:messageNavigationController animated:YES];
 }
 
 - (void)moveNewspeedViewAction:(id)sender{
     NSLog(@"moveNewspeed");
+}
+
+- (void)changedMento:(int)tableIndex insert:(NSString *)insert{
+    NSString *user_key = [[_tableListController.newspeedList objectAtIndex:tableIndex] objectForKey:@"mento_key"];
+    for( int i = 0 ; i<[_tableListController.newspeedList count] ; i++){
+        
+        if([[[_tableListController.newspeedList objectAtIndex:i] objectForKey:@"mento_key"] isEqualToString:user_key]){
+            NSMutableDictionary *changedData = [_tableListController.newspeedList objectAtIndex:i];
+            [changedData setValue:insert forKeyPath:@"mento_yn"];
+            [_tableListController.newspeedList replaceObjectAtIndex:i withObject:changedData];
+        }
+    }
 }
 
 

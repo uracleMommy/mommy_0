@@ -94,6 +94,8 @@
             <connections>
                 <outlet property="lineLabel" destination="xX2-by-XPS" id="WrP-jy-Nj6"/>
                 <outlet property="moreButton" destination="FQK-du-paN" id="mVU-SI-mi1"/>
+                <outlet property="regDateLabel" destination="qwx-yM-MtS" id="HSr-sl-Uh5"/>
+                <outlet property="writerNicknameLabel" destination="Hss-vy-7GT" id="9uh-kE-ViF"/>
                 <outlet property="writerPersonImage" destination="cWh-8c-6at" id="6Vn-Cu-3Ju"/>
             </connections>
             <point key="canvasLocation" x="14.5" y="-0.5"/>

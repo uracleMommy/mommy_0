@@ -28,6 +28,8 @@
     _writerPersonImage.layer.masksToBounds = YES;
     _replyPersonButton.layer.cornerRadius = 20;//half of the width
     _replyPersonButton.layer.masksToBounds = YES;
+    
+    _moreButton.hidden = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

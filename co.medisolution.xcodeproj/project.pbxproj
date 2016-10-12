@@ -75,6 +75,7 @@
 		2AE11DF31D6583BC003C6690 /* DiaryListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11DF21D6583BC003C6690 /* DiaryListController.m */; };
 		2AE9833C1DA51CEF001637AF /* MessageWriteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE9833B1DA51CEF001637AF /* MessageWriteController.m */; };
 		2AEAE5811D9CFF2700146596 /* CommunityPeopleListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAE5801D9CFF2700146596 /* CommunityPeopleListController.m */; };
+		2AEB7F601DAC84E30032AD47 /* CommunityWriteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEB7F5F1DAC84E30032AD47 /* CommunityWriteController.m */; };
 		2AEBE3491D79419E0075B210 /* DiaryWriteScheduleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBE3481D79419E0075B210 /* DiaryWriteScheduleController.m */; };
 		2AEBE34C1D7941BF0075B210 /* DiaryDetailScheduleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBE34B1D7941BF0075B210 /* DiaryDetailScheduleController.m */; };
 		2AFDD7611D9BA0CC00FE157C /* CommunityPersonListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDD7601D9BA0CC00FE157C /* CommunityPersonListModel.m */; };
@@ -448,6 +449,8 @@
 		2AE9833B1DA51CEF001637AF /* MessageWriteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageWriteController.m; sourceTree = "<group>"; };
 		2AEAE57F1D9CFF2700146596 /* CommunityPeopleListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityPeopleListController.h; sourceTree = "<group>"; };
 		2AEAE5801D9CFF2700146596 /* CommunityPeopleListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityPeopleListController.m; sourceTree = "<group>"; };
+		2AEB7F5E1DAC84E30032AD47 /* CommunityWriteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityWriteController.h; sourceTree = "<group>"; };
+		2AEB7F5F1DAC84E30032AD47 /* CommunityWriteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityWriteController.m; sourceTree = "<group>"; };
 		2AEBE3471D79419E0075B210 /* DiaryWriteScheduleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryWriteScheduleController.h; sourceTree = "<group>"; };
 		2AEBE3481D79419E0075B210 /* DiaryWriteScheduleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryWriteScheduleController.m; sourceTree = "<group>"; };
 		2AEBE34A1D7941BF0075B210 /* DiaryDetailScheduleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryDetailScheduleController.h; sourceTree = "<group>"; };
@@ -1094,6 +1097,8 @@
 				2AFDD7691D9BB46D00FE157C /* CommunityDetailController.m */,
 				2AEAE57F1D9CFF2700146596 /* CommunityPeopleListController.h */,
 				2AEAE5801D9CFF2700146596 /* CommunityPeopleListController.m */,
+				2AEB7F5E1DAC84E30032AD47 /* CommunityWriteController.h */,
+				2AEB7F5F1DAC84E30032AD47 /* CommunityWriteController.m */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -2307,6 +2312,7 @@
 				2A1A86BD1D9A45640091399B /* CommunityMyGroupController.m in Sources */,
 				2A309AD11D79634E001C54C5 /* UIColor+HexColors.m in Sources */,
 				2A54B1B01D66904000C538D1 /* JTCalendarManager.m in Sources */,
+				2AEB7F601DAC84E30032AD47 /* CommunityWriteController.m in Sources */,
 				DC2D34C31D9A131C00D70E8C /* QuestionScrollViewSegue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

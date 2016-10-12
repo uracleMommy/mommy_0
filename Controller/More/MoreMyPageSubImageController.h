@@ -11,5 +11,9 @@
 @interface MoreMyPageSubImageController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
+@property (weak, nonatomic) IBOutlet UIImageView *userImage;
+@property (weak, nonatomic) IBOutlet UILabel *user_name;
+@property (weak, nonatomic) IBOutlet UILabel *user_birth;
+
 
 @end

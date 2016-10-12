@@ -23,6 +23,16 @@
 @property (strong, nonatomic) CommunityDetailModel *tableListController;
 @property (strong, nonatomic) CommunityProfilePopupViewController *profilePopupView;
 
+@property (strong, nonatomic) NSString *communityKey;
+@property (strong, nonatomic) NSString *content;
+@property (strong, nonatomic) NSString *writerNickname;
+@property (strong, nonatomic) NSString *writerImage;
+@property (strong, nonatomic) NSString *writerKey;
+@property (strong, nonatomic) NSString *regDate;
+@property (strong, nonatomic) NSString *likeYN;
+
+
 - (IBAction)likeButtonAction:(id)sender;
+- (IBAction)insertReplyAction:(id)sender;
 
 @end

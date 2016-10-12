@@ -25,6 +25,9 @@
     _tableView.dataSource = _tableListController;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+}
+
+- (void)viewDidAppear:(BOOL)animated{
     NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
     
     [self showIndicator];
@@ -34,7 +37,8 @@
         NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
         if([code isEqual:@"0"]){
             NSArray *result = [data objectForKey:@"result"];
-
+            
+            [_tableListController.personList removeAllObjects];
             [_tableListController.personList addObjectsFromArray:result];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [_tableView reloadData];

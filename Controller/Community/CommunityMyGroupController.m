@@ -17,9 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
     _groupKeyArr = [[NSMutableArray alloc] init];
     _groupValueArr = [[NSMutableArray alloc] init];
+    
+}
+
+- (void) viewDidAppear:(BOOL)animated{
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
     
     [self showIndicator];
     [[MommyRequest sharedInstance] mommyCommunityApiService:CommunityGroupList authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data){
@@ -41,19 +45,19 @@
                         dispatch_sync(dispatch_get_main_queue(), ^{
                             _groupNameLabel01.text = [groupDic objectForKey:@"group_name"];
                             _groupButton01.tag = [_groupKeyArr count]-1;
-//                            [_groupButton01 setTitle:[groupDic objectForKey:@"group_key"] forState:UIControlStateNormal];
+                            //                            [_groupButton01 setTitle:[groupDic objectForKey:@"group_key"] forState:UIControlStateNormal];
                         });
                     }else if(i == 1){
                         dispatch_sync(dispatch_get_main_queue(), ^{
                             _groupNameLabel02.text = [groupDic objectForKey:@"group_name"];
                             _groupButton02.tag = [_groupKeyArr count]-1;
-//                            [_groupButton02 setTitle:[groupDic objectForKey:@"group_key"] forState:UIControlStateNormal];
+                            //                            [_groupButton02 setTitle:[groupDic objectForKey:@"group_key"] forState:UIControlStateNormal];
                         });
                     }else if(i == 2){
                         dispatch_sync(dispatch_get_main_queue(), ^{
                             _groupNameLabel03.text = [groupDic objectForKey:@"group_name"];
                             _groupButton03.tag = [_groupKeyArr count]-1;
-//                            [_groupButton03 setTitle:[groupDic objectForKey:@"group_key"] forState:UIControlStateNormal];
+                            //                            [_groupButton03 setTitle:[groupDic objectForKey:@"group_key"] forState:UIControlStateNormal];
                         });
                     }
                 }

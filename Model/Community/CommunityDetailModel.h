@@ -23,5 +23,6 @@
 
 @property (nonatomic, strong) NSMutableArray *detailList;
 @property (strong, nonatomic) id<CommunityDetailModelDelegate> delegate;
+@property (strong, nonatomic) NSDictionary *replayInfo;
 
 @end

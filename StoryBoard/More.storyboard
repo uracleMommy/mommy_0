@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="d8O-Ij-A3J">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="d8O-Ij-A3J">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -1260,6 +1260,9 @@
                     </view>
                     <connections>
                         <outlet property="backgroundImage" destination="2TZ-bY-AaE" id="7cQ-wt-TKe"/>
+                        <outlet property="userImage" destination="pdr-9S-gOf" id="Awe-vQ-cqH"/>
+                        <outlet property="user_birth" destination="L1n-Uy-CiH" id="Mdo-GH-Syx"/>
+                        <outlet property="user_name" destination="qtk-0X-FOf" id="n6L-KE-aAu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qVt-jc-XDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1614,7 +1617,7 @@
                                         <color key="textColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="jeonjiheyun@gmail.com" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rfe-Ov-hgX">
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="jeonjiheyun@gmail.com" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rfe-Ov-hgX">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="AoK-0v-vg9"/>
                                         </constraints>
@@ -1643,7 +1646,7 @@
                                         <color key="textColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="꽃보다 여자" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8K-8Y-Z9A">
+                                    <label opaque="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="꽃보다 여자" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8K-8Y-Z9A">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="D0q-dC-445"/>
                                         </constraints>
@@ -1672,7 +1675,7 @@
                                         <color key="textColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울시 강남구 삼성동" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXe-mL-Bea">
+                                    <label opaque="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울시 강남구 삼성동" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXe-mL-Bea">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="Kd4-Ih-fkd"/>
                                         </constraints>
@@ -1701,7 +1704,7 @@
                                         <color key="textColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017년 03월 12일" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yL-8g-9sX">
+                                    <label opaque="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017년 03월 12일" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yL-8g-9sX">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="AgB-Nb-pyB"/>
                                         </constraints>
@@ -1730,7 +1733,7 @@
                                         <color key="textColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45.0Kg" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HE4-Cc-MEE">
+                                    <label opaque="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45.0Kg" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HE4-Cc-MEE">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="Te3-Ay-bFV"/>
                                         </constraints>
@@ -1759,7 +1762,7 @@
                                         <color key="textColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="52.0Kg" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSI-ly-YqU">
+                                    <label opaque="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="52.0Kg" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSI-ly-YqU">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="9TA-Jn-eyA"/>
                                         </constraints>
@@ -1788,7 +1791,7 @@
                                         <color key="textColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="170cm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pq-9y-lAq">
+                                    <label opaque="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="170cm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pq-9y-lAq">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="ckF-YI-JDz"/>
                                         </constraints>
@@ -1873,8 +1876,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lblAddress" destination="RXe-mL-Bea" id="yKX-z3-88N"/>
+                        <outlet property="lblBabyBirth" destination="5yL-8g-9sX" id="Ao9-84-7ak"/>
+                        <outlet property="lblBeforeWeight" destination="HE4-Cc-MEE" id="s0t-Tg-UTK"/>
+                        <outlet property="lblEmail" destination="Rfe-Ov-hgX" id="BdT-cR-bLp"/>
                         <outlet property="lblFetus" destination="Gvd-BQ-6hm" id="pCV-iy-zFO"/>
+                        <outlet property="lblHeight" destination="5Pq-9y-lAq" id="aqd-rl-EHS"/>
                         <outlet property="lblNickName" destination="G8K-8Y-Z9A" id="QcO-5I-3OS"/>
+                        <outlet property="lblWeight" destination="qSI-ly-YqU" id="G11-9b-3XY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qsw-Tl-7cZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

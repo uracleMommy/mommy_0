@@ -100,7 +100,7 @@
         }
         
         
-        if([data objectForKey:@"emoticon"] && ![[data objectForKey:@"emoticon"] isEqualToString:@""]){
+        if([data objectForKey:@"emoticon"] && ![[data objectForKey:@"emoticon"] isEqual:[NSNull null]] && ![[data objectForKey:@"emoticon"] isEqualToString:@""]){
             cell.emoticonImageView.image = [[emoticon objectForKey:[data objectForKey:@"emoticon"]] objectForKey:@"image"];
             cell.emoticonLabel.textColor = [[emoticon objectForKey:[data objectForKey:@"emoticon"]] objectForKey:@"color"];
             cell.emoticonLabel.text = [[emoticon objectForKey:[data objectForKey:@"emoticon"]] objectForKey:@"text"];
@@ -186,7 +186,7 @@
         }
         
         
-        if([data objectForKey:@"emoticon"] && ![[data objectForKey:@"emoticon"] isEqualToString:@""]){
+        if([data objectForKey:@"emoticon"] && ![[data objectForKey:@"emoticon"] isEqual:[NSNull null]] && ![[data objectForKey:@"emoticon"] isEqualToString:@""]){
             cell.emoticonImageView.image = [[emoticon objectForKey:[data objectForKey:@"emoticon"]] objectForKey:@"image"];
             cell.emoticonLabel.textColor = [[emoticon objectForKey:[data objectForKey:@"emoticon"]] objectForKey:@"color"];
             cell.emoticonLabel.text = [[emoticon objectForKey:[data objectForKey:@"emoticon"]] objectForKey:@"text"];

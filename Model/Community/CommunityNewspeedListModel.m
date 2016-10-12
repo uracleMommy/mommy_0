@@ -90,7 +90,7 @@
 
         
         cell.delegate = self;
-        cell.tag = 1;
+        cell.tag = [indexPath indexAtPosition:1];
         
         CAShapeLayer *firstShapeLayer = [CAShapeLayer layer];
         [firstShapeLayer setBounds:cell.bounds];
@@ -170,7 +170,7 @@
 
         
         cell.delegate = self;
-        cell.tag = 0;
+        cell.tag = [indexPath indexAtPosition:1];
         
         CAShapeLayer *firstShapeLayer = [CAShapeLayer layer];
         [firstShapeLayer setBounds:cell.bounds];
@@ -272,6 +272,83 @@
 
 - (void)showProfilePopupViewAction:(id)sender{
     [_delegate showProfilePopupViewAction:sender];
+}
+
+- (void)likeButtonAction:(id)sender like:(NSString *)like type:(NSString *)type{
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+    
+    [param setObject:[[_newspeedList objectAtIndex:[sender tag]] objectForKey:@"community_key"] forKey:@"community_key"];
+    [param setObject:like forKey:@"like"];
+    
+    if([type isEqualToString:@"BASIC"]){
+            [[MommyRequest sharedInstance] mommyCommunityApiService:CommunityLike authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data) {
+                if([[NSString stringWithFormat:@"%@", [data objectForKey:@"code"]] isEqualToString:@"0"]){
+                    if([[[data objectForKey:@"result"] objectForKey:@"like"] isEqualToString:@"Y"]){
+                        dispatch_sync(dispatch_get_main_queue(), ^{
+                            [[(CommunityNewspeedBasicCustomCell *)sender likeButtonImage] setImage:[UIImage imageNamed:@"contents_comm_icon_like_on"]];
+                        });
+                    }else{
+                        dispatch_sync(dispatch_get_main_queue(), ^{
+                            [[(CommunityNewspeedBasicCustomCell *)sender likeButtonImage] setImage:[UIImage imageNamed:@"contents_comm_icon_like"]];
+                        });
+                    }
+                    
+                    //like setting
+                    if([[[data objectForKey:@"result"] objectForKey:@"like_cnt"] intValue] != 0){
+                        dispatch_sync(dispatch_get_main_queue(), ^{
+                            [(CommunityNewspeedBasicCustomCell *)sender likeCountLabel].text = [NSString stringWithFormat:@"%@", [[data objectForKey:@"result"] objectForKey:@"like_cnt"]];
+                        });
+                        NSMutableDictionary *changedData = [_newspeedList objectAtIndex:[sender tag]];
+                        
+                        [changedData setValue:[[data objectForKey:@"result"] objectForKey:@"like_cnt"] forKeyPath:@"like_cnt"];
+                        
+                        [_newspeedList replaceObjectAtIndex:[sender tag] withObject:changedData];
+                    }else{
+                        dispatch_sync(dispatch_get_main_queue(), ^{
+                            [(CommunityNewspeedBasicCustomCell *)sender likeCountLabel].text = @"좋아요";
+                        });
+                    }
+                    
+                    
+                }
+            } error:^(NSError *error) {
+                
+            }];
+    }else{
+        [[MommyRequest sharedInstance] mommyCommunityApiService:CommunityLike authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data) {
+            if([[NSString stringWithFormat:@"%@", [data objectForKey:@"code"]] isEqualToString:@"0"]){
+                if([[[data objectForKey:@"result"] objectForKey:@"like"] isEqualToString:@"Y"]){
+                    dispatch_sync(dispatch_get_main_queue(), ^{
+                        [[(CommunityNewspeedImageCustomCell *)sender likeButtonImage] setImage:[UIImage imageNamed:@"contents_comm_icon_like_on"]];
+                    });
+                }else{
+                    dispatch_sync(dispatch_get_main_queue(), ^{
+                        [[(CommunityNewspeedImageCustomCell *)sender likeButtonImage] setImage:[UIImage imageNamed:@"contents_comm_icon_like"]];
+                    });
+                }
+                
+                //like setting
+                if([[[data objectForKey:@"result"] objectForKey:@"like_cnt"] intValue] != 0){
+                    dispatch_sync(dispatch_get_main_queue(), ^{
+                        [(CommunityNewspeedImageCustomCell *)sender likeCountLabel].text = [NSString stringWithFormat:@"%@", [[data objectForKey:@"result"] objectForKey:@"like_cnt"]];
+                    });
+                    NSMutableDictionary *changedData = [_newspeedList objectAtIndex:[sender tag]];
+                    
+                    [changedData setValue:[[data objectForKey:@"result"] objectForKey:@"like_cnt"] forKeyPath:@"like_cnt"];
+                    
+                    [_newspeedList replaceObjectAtIndex:[sender tag] withObject:changedData];
+                }else{
+                    dispatch_sync(dispatch_get_main_queue(), ^{
+                        [(CommunityNewspeedBasicCustomCell *)sender likeCountLabel].text = @"좋아요";
+                    });
+                }
+                
+                
+            }
+        } error:^(NSError *error) {
+            
+        }];
+     }
 }
 
 

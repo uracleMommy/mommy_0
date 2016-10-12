@@ -12,6 +12,7 @@
 #import "CommunityProfilePopupViewController.h"
 #import "CommonViewController.h"
 #import "CommunityPeopleListController.h"
+#import "MessageWriteController.h"
 
 #define PAGE_SIZE [[NSNumber alloc] initWithInt:30]
 
@@ -27,6 +28,7 @@
 @property (strong, nonatomic) NSString *groupValue;
 @property (strong, nonatomic) NSNumber *searchPage;
 @property (assign, nonatomic) Boolean currentLastPageStatus;
+@property (assign, nonatomic) int cellTag;
 @property (assign) ViewMode mode;
 
 

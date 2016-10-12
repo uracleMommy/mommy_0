@@ -6,6 +6,11 @@
 //  Copyright © 2016년 medisolution. All rights reserved.
 //
 
+/* params
+ * toUserNickname : 받는사람 닉네임
+ * toUserCode : 받는사람 코드
+ **/
+
 #import "MessageWriteController.h"
 
 @interface MessageWriteController ()
@@ -18,7 +23,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self navigationController].title = @"쪽지 보내기";
+    /** navigation Setting **/
+    self.navigationItem.hidesBackButton = YES;
+    self.navigationController.title = @"쪽지 보내기";
     //back Button Setting
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *backBtnImage = [UIImage imageNamed:@"title_icon_close.png"];
@@ -29,18 +36,18 @@
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
     self.navigationItem.rightBarButtonItem = backButton;
     
+    /** placeholder Setting **/
     _placeholderLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, _contentsTextView.frame.size.width - 10.0, 34.0)];
     
     [_placeholderLabel setText:@"내용을 입력해주세요"];
     [_placeholderLabel setBackgroundColor:[UIColor clearColor]];
     [_placeholderLabel setTextColor:[UIColor colorWithRed:199.0/255.0f green:199.0/255.0f  blue:205.0/255.0f alpha:1.0]];
-    
     [_placeholderLabel setFont:[UIFont fontWithName:@"NanumBarunGothic" size:15]];
-//    _contentsTextView.delegate = self;
-    
     [_contentsTextView addSubview:_placeholderLabel];
     [_contentsTextView setTextContainerInset:UIEdgeInsetsMake(8, -5, 0, 0)];
 
+    /** nickname Setting **/
+    [_toUserButton setTitle:_toUserNickname forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,10 +86,12 @@
     }
 }
 
+#pragma mark navigation Action
 - (void)goBack {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+#pragma mark Buttons Action
 - (IBAction)sendMessageAction:(id)sender {
     if(_contentsTextView.text.length == 0){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
@@ -94,8 +103,7 @@
 
     }else{
         [self showIndicator];
-        
-        _toUserCode = @"gogojss";
+
         NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
         [param setValue:_toUserCode forKey:@"to_user"];
         [param setValue:_contentsTextView.text forKey:@"content"];
