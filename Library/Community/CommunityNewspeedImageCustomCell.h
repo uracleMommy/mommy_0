@@ -13,7 +13,7 @@
 
 @optional
 - (void)moreButtonAction:(id)sender point:(CGPoint)point;
-- (void)likeButtonAction:(id)sender;
+- (void)likeButtonAction:(id)sender like:(NSString *)like type:(NSString *)type;
 - (void)moveDetailViewButtonAction:(id)sender;
 - (void)moveWriteMessageViewAction:(id)sender;
 - (void)showProfilePopupViewAction:(id)sender;

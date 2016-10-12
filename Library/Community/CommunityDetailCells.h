@@ -28,6 +28,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *replyPersonButton;
 @property (weak, nonatomic) IBOutlet UIButton *writerPersonImage;
 @property (weak, nonatomic) IBOutlet UIButton *moreButton;
+@property (weak, nonatomic) IBOutlet UILabel *writerNicknameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *regDateLabel;
 
 - (IBAction)moreButtonAction:(id)sender;
 - (IBAction)showProfilePopupViewAction:(id)sender;

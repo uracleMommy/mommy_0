@@ -21,6 +21,7 @@ static BOOL keyboardShow = NO;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    /** navigation Setting **/
     //back Button Setting
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *backBtnImage = [UIImage imageNamed:@"title_icon_back.png"];
@@ -31,10 +32,10 @@ static BOOL keyboardShow = NO;
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
     
     self.navigationItem.leftBarButtonItem = backButton;
-    
     self.navigationItem.hidesBackButton = YES;
     
     
+    /** keypad Setting **/
     // 키보드 노티피케이션
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillAnimate:)
@@ -46,13 +47,15 @@ static BOOL keyboardShow = NO;
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
     
+    /** table Setting **/
     _tableListController = [[CommunityDetailModel alloc] init];
-    
     _tableListController.delegate = self;
     _tableView.delegate = _tableListController;
     _tableView.dataSource = _tableListController;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_tableView reloadData];
+    
+    [self setReplyInfo];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -148,11 +151,13 @@ static BOOL keyboardShow = NO;
     }
 }
 
+#pragma mark navigation Action
 -(void)goBack{
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 
+#pragma mark KkMenuPopup
 - (void)moreButtonAction:(id)sender point:(CGPoint)point{
     NSLog(@"moreButton");
     
@@ -180,6 +185,7 @@ static BOOL keyboardShow = NO;
     
 }
 
+#pragma mark footer Button Action
 - (IBAction)likeButtonAction:(id)sender {
     if([_likeButton.imageView.image isEqual:[UIImage imageNamed:@"comment_btn_like"]]){
         [_likeButton setImage:[UIImage imageNamed:@"comment_btn_like_on"] forState:UIControlStateNormal];
@@ -188,6 +194,45 @@ static BOOL keyboardShow = NO;
     }
 }
 
+- (IBAction)insertReplyAction:(id)sender {
+    
+    if([_txtMessageContent.text isEqualToString:@""]){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                        message:@"내용을 입력해주세요."
+                                                       delegate:self
+                                              cancelButtonTitle:@"취소"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+    }else{
+        NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+//        [param setValue:_communityKey forKey:@"community_upper_key"];
+        [param setValue:@"1475736055791" forKey:@"community_upper_key"];
+        [param setValue:_txtMessageContent.text forKey:@"content"];
+        
+        [self showIndicator];
+        [[MommyRequest sharedInstance] mommyCommunityApiService:CommunityInsertReply authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data){
+            NSLog(@"PSH data %@", data);
+            
+            NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
+            if([code isEqual:@"0"]){
+                //TODO 댓글 초기화....?
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    _txtMessageContent.text = @"";
+                });
+            }else{
+                
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+        } error:^(NSError *error) {
+            NSLog(@"PSH error %@", error);
+            dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+        } ];
+    }
+}
+
+
+#pragma mark profilePopup Action
 -(void)showProfilePopupViewAction:(id)sender{
     if (!_profilePopupView) {
         _profilePopupView = [[CommunityProfilePopupViewController alloc] initWithNibName:@"CommunityProfilePopupViewController" bundle:nil];
@@ -211,6 +256,37 @@ static BOOL keyboardShow = NO;
 - (void)moveNewspeedViewAction:(id)sender{
     NSLog(@"moveNewspeed");
     [self performSegueWithIdentifier:@"UnwindingSegue" sender:self];
+}
+
+
+#pragma mark
+- (void)setReplyInfo{
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+//    [param setValue:_communityKey forKey:@"community_key"];
+    [param setValue:@"1475651976616" forKey:@"community_key"];
+    
+    [self showIndicator];
+    [[MommyRequest sharedInstance] mommyCommunityApiService:CommunityReplyInfo authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data){
+        NSLog(@"PSH data %@", data);
+        
+        NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
+        if([code isEqual:@"0"]){
+            _tableListController.replayInfo = [data objectForKey:@"result"];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+    } error:^(NSError *error) {
+        NSLog(@"PSH error %@", error);
+        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+    } ];
+}
+
+- (void)first{
+    
+}
+
+- (void)more{
+    
 }
 
 @end

@@ -123,6 +123,7 @@
                 NSDictionary *result = [[NSDictionary alloc] initWithDictionary:[data objectForKey:@"result"]];
                 
                 GET_AUTH_TOKEN = [result objectForKey:@"token"];
+                GET_USER_ID = [result objectForKey:@"id"];
                 
                 if([[result objectForKey:@"profile_yn"] isEqual:@"Y"]){
                     dispatch_async(dispatch_get_main_queue(), ^{

@@ -16,6 +16,8 @@
 
 @property (retain, nonatomic) NSString *authToken;
 
+@property (retain, nonatomic) NSString *userId;
+
 @property (retain, nonatomic) NSString *fileServerDomain;
 
 @end

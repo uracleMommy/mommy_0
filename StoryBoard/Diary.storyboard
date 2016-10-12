@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="hIr-g7-6ce">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="hIr-g7-6ce">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -22,7 +22,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Opd-nR-pFt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kKk-ov-n9P">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4g-ox-dn9">
@@ -326,7 +326,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ifH-FQ-pDz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dB2-ou-BLg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSX-6n-Tgh">
@@ -429,7 +429,7 @@
         <scene sceneID="BSY-EC-bLM">
             <objects>
                 <navigationController id="LlJ-1Y-l7t" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="CJm-G8-ANi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="CJm-G8-ANi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -451,7 +451,7 @@
         <scene sceneID="qjV-BS-I1Z">
             <objects>
                 <navigationController id="OO6-eW-lDh" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="AxW-Oh-i0B">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="AxW-Oh-i0B">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -478,7 +478,7 @@
                         <viewControllerLayoutGuide type="bottom" id="O89-vZ-dIA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bFy-D9-oCT">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v2D-sa-kWp">
@@ -564,7 +564,7 @@
         <scene sceneID="oD1-3f-fjb">
             <objects>
                 <navigationController id="1U4-qw-0Zd" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="1Ax-GJ-aXd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="1Ax-GJ-aXd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -591,7 +591,7 @@
                         <viewControllerLayoutGuide type="bottom" id="K4C-C7-YWY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TtE-t0-fVM">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KkK-T6-HgT">
@@ -842,7 +842,7 @@
                         <viewControllerLayoutGuide type="bottom" id="NG6-KR-Lev"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="f8a-qP-LGP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ak-RR-wEB">
@@ -885,7 +885,7 @@
         <scene sceneID="X0M-zy-M0S">
             <objects>
                 <navigationController id="kZe-wd-UG8" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="UlS-S2-SHX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="UlS-S2-SHX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1220,6 +1220,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_0.fullscreen"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
 </document>

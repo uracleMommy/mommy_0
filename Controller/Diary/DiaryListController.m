@@ -72,14 +72,15 @@
             if([result count] == 0){
                 NSLog(@"empty");
             }
-            if((int)[[result objectAtIndex:0] objectForKey:@"tot_cnt"] >= [_searchPage intValue]+[PAGE_SIZE intValue] ){
+            
+            [_diaryListTableController.diaryList removeAllObjects];
+            [_diaryListTableController.diaryList addObjectsFromArray:result];
+            
+            if([result count] == 0 || [[[result objectAtIndex:0] objectForKey:@"tot_cnt"] intValue] >= [_searchPage intValue]+[PAGE_SIZE intValue] ){
                 _currentLastPageStatus = YES;
             }else{
                 _currentLastPageStatus = NO;
             }
-            
-            [_diaryListTableController.diaryList removeAllObjects];
-            [_diaryListTableController.diaryList addObjectsFromArray:result];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [_listTableview reloadData];
@@ -132,13 +133,14 @@
                 NSLog(@"empty");
             }
             
-            if(([[[result objectAtIndex:0] objectForKey:@"tot_cnt"] intValue]) >= ([_searchPage intValue]+[PAGE_SIZE intValue])){
+            [_diaryListTableController.diaryList addObjectsFromArray:result];
+            
+            
+            if([result count] == 0 || ([[[result objectAtIndex:0] objectForKey:@"tot_cnt"] intValue]) >= ([_searchPage intValue]+[PAGE_SIZE intValue])){
                 _currentLastPageStatus = YES;
             }else{
                 _currentLastPageStatus = NO;
             }
-            
-            [_diaryListTableController.diaryList addObjectsFromArray:result];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [_listTableview reloadData];

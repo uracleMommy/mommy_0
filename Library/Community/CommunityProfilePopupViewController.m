@@ -122,9 +122,9 @@
     [self.view removeFromSuperview];
 }
 
-- (IBAction)moveWriteMessageViewAction:(id)sender {
+- (IBAction)moveWriteMessageView:(id)sender {
     [self.view removeFromSuperview];
-    [_delegate moveWriteMessageViewAction:sender];
+    [_delegate moveWriteMessageView:_mentorId mentoNickName:_mentorNickname];
 }
 
 - (IBAction)moveNewspeedViewAction:(id)sender {
@@ -133,7 +133,6 @@
 }
 
 - (IBAction)toggleMentorAction:(id)sender {
-    
     if([_mentorButton.imageView.image isEqual:[UIImage imageNamed:@"popup_btn_icon_mentor_add.png"]]){
         
         NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
@@ -143,14 +142,13 @@
             if([[NSString stringWithFormat:@"%@", [data objectForKey:@"code"]] isEqualToString:@"0"]){
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     [_mentorButton setImage:[UIImage imageNamed:@"popup_btn_icon_mentor.png"] forState:UIControlStateNormal];
+                    [_delegate changedMento:_tableIndex insert:@"Y"];
                 });
             }
         } error:^(NSError *error) {
             
         }];
-        
     }else{
-        
         NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
         [param setObject:_mentorKey forKey:@"mento_key"];
         
@@ -158,6 +156,7 @@
             if([[NSString stringWithFormat:@"%@", [data objectForKey:@"code"]] isEqualToString:@"0"]){
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     [_mentorButton setImage:[UIImage imageNamed:@"popup_btn_icon_mentor_add.png"] forState:UIControlStateNormal];
+                    [_delegate changedMento:_tableIndex insert:@"N"];
                 });
             }
         } error:^(NSError *error) {

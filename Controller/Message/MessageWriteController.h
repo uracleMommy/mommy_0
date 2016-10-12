@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *contentsTextView;
 @property (strong, nonatomic) UILabel *placeholderLabel;
 @property (strong, nonatomic) NSString *toUserCode;
+@property (strong, nonatomic) NSString *toUserNickname;
 @property (weak, nonatomic) IBOutlet UIButton *toUserButton;
 @property (weak, nonatomic) IBOutlet UILabel *contentsLengthLabel;
 

@@ -34,23 +34,26 @@
 }
 
 - (IBAction)likeButtonAction:(id)sender {
-//    [_delegate likeButtonAction:sender];
-    if([_likeButtonImage.image isEqual:[UIImage imageNamed:@"contents_comm_icon_like"]]){
-        [_likeButtonImage setImage:[UIImage imageNamed:@"contents_comm_icon_like_on"]];
+    NSString *like;
+    if([[self likeButtonImage].image isEqual:[UIImage imageNamed:@"contents_comm_icon_like"]]){
+        like = @"Y";
     }else{
-        [_likeButtonImage setImage:[UIImage imageNamed:@"contents_comm_icon_like"]];
+        like = @"N";
     }
+    
+    [_delegate likeButtonAction:self like:like type:@"IMAGE"];
 }
 
+
 - (IBAction)moveDetailViewButtonAction:(id)sender {
-    [_delegate moveDetailViewButtonAction:sender];
+    [_delegate moveDetailViewButtonAction:self];
 }
 
 - (IBAction)moveWriteMessageViewAction:(id)sender {
-    [_delegate moveWriteMessageViewAction:sender];
+    [_delegate moveWriteMessageViewAction:self];
 }
 
 - (IBAction)showProfilePopupViewAction:(id)sender {
-    [_delegate showProfilePopupViewAction:sender];
+    [_delegate showProfilePopupViewAction:self];
 }
 @end

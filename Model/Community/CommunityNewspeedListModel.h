@@ -18,10 +18,10 @@
 @optional
 - (void) tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath;
 - (void) tableView:(UITableView *)tableView totalPageCount:(NSInteger)count;
-- (void)moreButtonAction:(id)sender point:(CGPoint)point;
-- (void)moveDetailViewButtonAction:(id)sender;
-- (void)moveWriteMessageViewAction:(id)sender;
-- (void)showProfilePopupViewAction:(id)sender;
+- (void) moreButtonAction:(id)sender point:(CGPoint)point;
+- (void) moveDetailViewButtonAction:(id)sender;
+- (void) moveWriteMessageViewAction:(id)sender;
+- (void) showProfilePopupViewAction:(id)sender;
 
 @end
 

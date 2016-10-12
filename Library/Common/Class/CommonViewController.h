@@ -15,6 +15,8 @@
 
 #define GET_AUTH_TOKEN [GlobalData sharedGlobalData].authToken // 인증토큰
 
+#define GET_USER_ID [GlobalData sharedGlobalData].userId // 유저 아이디
+
 @interface CommonViewController : UIViewController
 
 #pragma mark 인디케이터 관련

@@ -59,7 +59,7 @@
     
     [self showIndicator];
     
-    [[MommyRequest sharedInstance] mommyMessageApiService:MessageList authKey:auth_key parameters:parameters success:^(NSDictionary *data){
+    [[MommyRequest sharedInstance] mommyMessageApiService:MessageList authKey:GET_AUTH_TOKEN parameters:parameters success:^(NSDictionary *data){
         
         _dicData = [NSDictionary dictionaryWithDictionary:data];
         
@@ -206,7 +206,7 @@
     
     [self showIndicator];
     
-    [[MommyRequest sharedInstance] mommyMessageApiService:MessageList authKey:auth_key parameters:parameters success:^(NSDictionary *data){
+    [[MommyRequest sharedInstance] mommyMessageApiService:MessageList authKey:GET_AUTH_TOKEN parameters:parameters success:^(NSDictionary *data){
         
         _dicData = [NSDictionary dictionaryWithDictionary:data];
         
@@ -360,7 +360,7 @@
         NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:deleteKey, @"del_list", nil];
         
         // 삭제 처리
-        [[MommyRequest sharedInstance] mommyMessageApiService:MessageDelegate authKey:authKey parameters:parameters success:^(NSDictionary *data) {
+        [[MommyRequest sharedInstance] mommyMessageApiService:MessageDelegate authKey:GET_AUTH_TOKEN parameters:parameters success:^(NSDictionary *data) {
             
             // 편집모드(일반)
             _messageListModel = NormalMode;
@@ -373,7 +373,7 @@
                 
                 [self showIndicator];
                 
-                [[MommyRequest sharedInstance] mommyMessageApiService:MessageList authKey:auth_key parameters:parameters success:^(NSDictionary *data){
+                [[MommyRequest sharedInstance] mommyMessageApiService:MessageList authKey:GET_AUTH_TOKEN parameters:parameters success:^(NSDictionary *data){
                     
                     _dicData = [NSDictionary dictionaryWithDictionary:data];
                     
