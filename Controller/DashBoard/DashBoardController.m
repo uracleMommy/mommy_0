@@ -13,6 +13,7 @@
 #import "SingleImageViewController.h"
 #import "MultiImageViewController.h"
 #import "PageImageViewController.h"
+#import "QuestionViewController.h"
 
 @interface DashBoardController ()<OTPageScrollViewDataSource,OTPageScrollViewDelegate>
 
@@ -27,8 +28,51 @@
     self.tabBarController.tabBar.translucent = NO;
     self.navigationController.navigationBar.translucent = NO;
     
+    [self dashboardInfoBind];
     
-    [self performSegueWithIdentifier:@"goQuestionModal" sender:nil];
+    //[self performSegueWithIdentifier:@"goQuestionModal" sender:nil];
+}
+
+#pragma 대쉬보드 메인정보 바인드
+- (void) dashboardInfoBind {
+    
+    [self showIndicator];
+    
+    NSString *auth_key = [GlobalData sharedGlobalData].authToken;
+    NSDictionary *parameters = [[NSDictionary alloc] init];
+    
+    [[MommyRequest sharedInstance] mommyDashboardApiService:DashboardMain authKey:auth_key parameters:parameters success:^(NSDictionary *data){
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            long code = [data[@"code"] longValue];
+            
+            // 실패시
+            if (code != 0) {
+                
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                [alert addAction:confirmAlertAction];
+                [self presentViewController:alert animated:YES completion:nil];
+                [self hideIndicator];
+                return;
+            }
+            
+            // 문진정보 띄우기(제출을 하지 않았으면)
+            [self performSegueWithIdentifier:@"goQuestionModal" sender:data[@"result"][@"baby_info"][@"mom_week"]];
+            
+            [self hideIndicator];
+        });
+        
+    } error:^(NSError *error) {
+        
+        [self hideIndicator];
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+        [alert addAction:confirmAlertAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -87,7 +131,6 @@
     [self presentViewController:messageNavigationController animated:YES completion:nil];
     
     //[self.view addSubview:messageNavigationController.topViewController.view];
-    
     
 //    [self.navigationController presentViewController:messageNavigationController.topViewController animated:YES completion:nil];
     
@@ -158,6 +201,16 @@
             
         default:
             break;
+    }
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"goQuestionModal"]) {
+        
+        UINavigationController *navController = segue.destinationViewController;
+        QuestionViewController *questionViewController = (QuestionViewController *)navController.viewControllers[0];
+        questionViewController.momWeek = [NSNumber numberWithInt:[sender intValue]];
     }
 }
 

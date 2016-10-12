@@ -7,6 +7,7 @@
 //
 
 #import "QuestionViewController.h"
+#import "QuestionScrollViewController.h"
 
 @interface QuestionViewController ()
 
@@ -23,7 +24,14 @@
 
 - (void) viewDidLayoutSubviews {
     
-    [self performSegueWithIdentifier:@"goQuestionScrollView" sender:nil];
+    if ([_momWeek intValue] >= 21) {
+        
+        [self performSegueWithIdentifier:@"goQuestionScrollView21" sender:_momWeek];
+    }
+    else {
+        
+        [self performSegueWithIdentifier:@"goQuestionScrollView" sender:_momWeek];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,6 +42,15 @@
 - (IBAction)submitResult:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"goQuestionScrollView21"] || [segue.identifier isEqualToString:@"goQuestionScrollView"]) {
+        
+        QuestionScrollViewController *questionScrollViewController = (QuestionScrollViewController *)segue.destinationViewController;
+        questionScrollViewController.momWeek = _momWeek;
+    }
 }
 
 @end

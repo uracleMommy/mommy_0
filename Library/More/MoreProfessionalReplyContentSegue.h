@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "MoreProfessionalDetailViewController.h"
-#import "MoreProfessionalReplyContentsViewController.h"
+#import "MoreProfessionalAdviceReplyViewController.h"
 
 @interface MoreProfessionalReplyContentSegue : UIStoryboardSegue
-
-
 
 @end

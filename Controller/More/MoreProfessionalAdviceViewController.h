@@ -23,4 +23,6 @@
 
 @property (assign) ProfessionalButtonKind professionalButtonKind;
 
+@property (strong, nonatomic) NSString *afterCUDYN; // 입력/업데이트/삭제후 진입인지 판별
+
 @end

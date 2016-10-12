@@ -42,7 +42,7 @@
 #pragma 전문가 목록 가져오기
 - (void) getProfessionalList : (NSInteger) currentPage {
     
-    NSString *auth_key = @"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJnb2dvanNzIiwic3ViIjoiZ29nb2pzcyIsImV4cCI6MTQ3NjkyNTk4OSwibmFtZSI6IuyhsOyKueyLnSIsImlhdCI6MTQ3NjA2MTk4OX0.qw3Bg3NuEbH1tA0yz06uUVM1TDncn78RhZO4eR0UQtU";
+    NSString *auth_key = [GlobalData sharedGlobalData].authToken;
     NSDictionary *parameters = [[NSDictionary alloc] init];
     
     [[MommyRequest sharedInstance] mommyProfessionalAdviceApiService:ProfessionalList authKey:auth_key parameters:parameters success:^(NSDictionary *data) {

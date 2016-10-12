@@ -7,6 +7,8 @@
 //
 
 #import "MoreProfessionalWriteAdviceController.h"
+#import "MoreProfessionalDetailViewController.h"
+#import "MoreProfessionalAdviceViewController.h"
 
 @interface MoreProfessionalWriteAdviceController ()
 
@@ -45,6 +47,14 @@
     /** imageButton Radius, defaultImage Setting **/
     defaultImage = [UIImage imageNamed:@"contents_btn_photo_update.png"];
     _files = [[NSMutableArray alloc] init];
+    _imageFiles = [[NSMutableArray alloc] init];
+    
+    // 업데이트 모드일때 실행되는 코드
+//    NSLog(@"%@", _qnaKey);
+    if (_professionalQuestionWriteUpdateMode == ProfessionalQuestionUpdateMode) {
+        
+        [self bindUpdateMode];
+    }
 }
 
 #pragma 뒤로가기
@@ -56,75 +66,306 @@
 #pragma 상담요청 게시물 저장
 - (void) saveRequestAdvice {
     
-    // 유효성 체크
-    if ([_txtContent.text isEqualToString:@""]) {
+    // 글쓰기
+    if (_professionalQuestionWriteUpdateMode == ProfessionalQuestionWriteMode) {
         
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"내용을 입력해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+        // 유효성 체크
+        if ([_txtContent.text isEqualToString:@""]) {
+            
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"내용을 입력해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+            [alert addAction:confirmAlertAction];
+            [self presentViewController:alert animated:YES completion:nil];
+            return;
+        }
+        
+        NSString *auth_key = [GlobalData sharedGlobalData].authToken;
+        
+        NSMutableArray *imageArrayList  = [[NSMutableArray alloc] init];
+        
+        for (int i = 0; i < _files.count; i++) {
+            
+            [imageArrayList addObject:[NSDictionary dictionaryWithObjectsAndKeys:_files[i], @"file_name", nil]];
+        }
+        
+        NSDictionary *parameters;
+        
+        if (_files.count > 0) {
+            parameters = [NSDictionary dictionaryWithObjectsAndKeys:_txtContent.text, @"content", (_professionalButtonKind == ProfessionalButtonExecersize ? @"11" : @"12"), @"type",  imageArrayList, @"images", nil];
+        }
+        else {
+            parameters = [NSDictionary dictionaryWithObjectsAndKeys:_txtContent.text, @"content", (_professionalButtonKind == ProfessionalButtonExecersize ? @"11" : @"12"), @"type", nil];
+        }
+        
+        [[MommyRequest sharedInstance] mommyProfessionalAdviceApiService:ProfessionalAdviceContentInsert authKey:auth_key parameters:parameters success:^(NSDictionary *data) {
+            
+            
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                
+                if (data == nil) {
+                    
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
+                        [self.navigationController popViewControllerAnimated:YES];
+                    }];
+                    [alert addAction:confirmAlertAction];
+                    [self presentViewController:alert animated:YES completion:nil];
+                    return;
+                }
+                
+                long code = [data[@"code"] longValue];
+                
+                // 실패시
+                if (code != 0) {
+                    
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
+                        [self.navigationController popViewControllerAnimated:YES];
+                    }];
+                    [alert addAction:confirmAlertAction];
+                    [self presentViewController:alert animated:YES completion:nil];
+                    return;
+                }
+                
+                NSArray *viewList = self.navigationController.viewControllers;
+                MoreProfessionalAdviceViewController *moreProfessionalAdviceViewController = viewList[viewList.count - 2];
+                moreProfessionalAdviceViewController.afterCUDYN = @"Y";
+                [self.navigationController popViewControllerAnimated:YES];
+                
+            });
+            
+            NSLog(@"%@", data);
+            
+        } error:^(NSError *error){
+            
+            NSLog(@"%@", error);
+        }];
+    }
+    // 수정하기
+    else {
+        
+        // 유효성 체크
+        if ([_txtContent.text isEqualToString:@""]) {
+            
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"내용을 입력해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+            [alert addAction:confirmAlertAction];
+            [self presentViewController:alert animated:YES completion:nil];
+            return;
+        }
+        
+        NSString *auth_key = [GlobalData sharedGlobalData].authToken;
+        
+        NSMutableArray *imageArrayList  = [[NSMutableArray alloc] init];
+        
+        for (int i = 0; i < _files.count; i++) {
+            
+            [imageArrayList addObject:[NSDictionary dictionaryWithObjectsAndKeys:_files[i], @"file_name", nil]];
+        }
+        
+        NSDictionary *parameters;
+        
+        if (_files.count > 0) {
+            parameters = [NSDictionary dictionaryWithObjectsAndKeys:_txtContent.text, @"content", imageArrayList, @"images", _qnaKey, @"qna_key", nil];
+        }
+        else {
+            parameters = [NSDictionary dictionaryWithObjectsAndKeys:_txtContent.text, @"content", _qnaKey, @"qna_key", nil];
+        }
+        
+        [[MommyRequest sharedInstance] mommyProfessionalAdviceApiService:ProfessionalAdviceContentUpdate authKey:auth_key parameters:parameters success:^(NSDictionary *data) {
+            
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                
+                if (data == nil) {
+                    
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
+                        [self.navigationController popViewControllerAnimated:YES];
+                    }];
+                    [alert addAction:confirmAlertAction];
+                    [self presentViewController:alert animated:YES completion:nil];
+                    return;
+                }
+                
+                long code = [data[@"code"] longValue];
+                
+                // 실패시
+                if (code != 0) {
+                    
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
+                        [self.navigationController popViewControllerAnimated:YES];
+                    }];
+                    [alert addAction:confirmAlertAction];
+                    [self presentViewController:alert animated:YES completion:nil];
+                    return;
+                }
+                
+                NSArray *viewList = self.navigationController.viewControllers;
+                MoreProfessionalDetailViewController *moreProfessionalDetailViewController = viewList[viewList.count - 2];
+                moreProfessionalDetailViewController.afterCUDYN = @"Y";
+                
+                [self.navigationController popViewControllerAnimated:YES];
+                
+            });
+            
+            NSLog(@"%@", data);
+            
+        } error:^(NSError *error){
+            
+            NSLog(@"%@", error);
+        }];
+    }
+}
+
+#pragma 업데이트 모드일때 바인드
+- (void) bindUpdateMode {
+    
+    // 0. 디테일 정보 가져오기
+    
+    [self showIndicator];
+    
+    NSString *auth_key = [GlobalData sharedGlobalData].authToken;
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:_qnaKey, @"qna_key", nil];
+    
+    [[MommyRequest sharedInstance] mommyProfessionalAdviceApiService:ProfessionalAdviceDetail authKey:auth_key parameters:parameters success:^(NSDictionary *data){
+        
+        long code = [data[@"code"] longValue];
+        
+        // 실패시
+        if (code != 0) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                [alert addAction:confirmAlertAction];
+                [self presentViewController:alert animated:YES completion:nil];
+                [self hideIndicator];
+                return;
+            });
+        }
+        
+        // 1. 이미지 바인드
+        if ([data[@"result"][@"files"] isKindOfClass:[NSArray class]]) {
+            
+            NSArray *imageList = [NSArray arrayWithArray:data[@"result"][@"files"]];
+            
+            for (NSDictionary *imageInfoDic in imageList) {
+                
+                NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], imageInfoDic[@"atch_file_key"]];
+                
+                UIImage *profileImg = nil;
+                NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                profileImg = [[UIImage alloc] initWithData:firstImageData];
+                [_files addObject:imageInfoDic[@"file_name"]];
+                [_imageFiles addObject:profileImg];
+            }
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            int i = 0;
+            
+            for (UIImage *image in _imageFiles) {
+                
+                if (i == 0) {
+                    
+                    [_imageButton01 setTag:i];
+                    [_imageButton01 setImage:image forState:UIControlStateNormal];
+                    [_imageButton01.imageView setContentMode:UIViewContentModeScaleAspectFill];
+                    
+                    UIView *imageView = _imageButton01.superview;
+                    CGPoint buttonRect = _imageButton01.frame.origin;
+                    
+                    /** deleteButton 추가 **/
+                    UIButton *deleteButton = [[UIButton alloc]initWithFrame:CGRectMake(buttonRect.x+_imageButton01.frame.size.width-15, buttonRect.y-5, 20, 20)];
+                    //    deleteButton.tag = 1;
+                    [deleteButton setImage:[UIImage imageNamed:@"contents_bot_photo_delete.png"] forState:UIControlStateNormal];
+                    [deleteButton addTarget:self action:@selector(deleteImage:) forControlEvents:UIControlEventTouchUpInside];
+                    [deleteButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
+                    [imageView addSubview:deleteButton];
+                }
+                else if (i == 1) {
+                    
+                    [_imageButton02 setTag:i];
+                    [_imageButton02 setImage:image forState:UIControlStateNormal];
+                    [_imageButton02.imageView setContentMode:UIViewContentModeScaleAspectFill];
+                    
+                    UIView *imageView = _imageButton02.superview;
+                    CGPoint buttonRect = _imageButton02.frame.origin;
+                    
+                    /** deleteButton 추가 **/
+                    UIButton *deleteButton = [[UIButton alloc]initWithFrame:CGRectMake(buttonRect.x+_imageButton02.frame.size.width-15, buttonRect.y-5, 20, 20)];
+                    //    deleteButton.tag = 1;
+                    [deleteButton setImage:[UIImage imageNamed:@"contents_bot_photo_delete.png"] forState:UIControlStateNormal];
+                    [deleteButton addTarget:self action:@selector(deleteImage:) forControlEvents:UIControlEventTouchUpInside];
+                    [deleteButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
+                    [imageView addSubview:deleteButton];
+                }
+                
+                else if (i == 2) {
+                    
+                    [_imageButton03 setTag:i];
+                    [_imageButton03 setImage:image forState:UIControlStateNormal];
+                    [_imageButton03.imageView setContentMode:UIViewContentModeScaleAspectFill];
+                    
+                    UIView *imageView = _imageButton03.superview;
+                    CGPoint buttonRect = _imageButton03.frame.origin;
+                    
+                    /** deleteButton 추가 **/
+                    UIButton *deleteButton = [[UIButton alloc]initWithFrame:CGRectMake(buttonRect.x+_imageButton03.frame.size.width-15, buttonRect.y-5, 20, 20)];
+                    //    deleteButton.tag = 1;
+                    [deleteButton setImage:[UIImage imageNamed:@"contents_bot_photo_delete.png"] forState:UIControlStateNormal];
+                    [deleteButton addTarget:self action:@selector(deleteImage:) forControlEvents:UIControlEventTouchUpInside];
+                    [deleteButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
+                    [imageView addSubview:deleteButton];
+                }
+                else {
+                    
+                    [_imageButton04 setTag:i];
+                    [_imageButton04 setImage:image forState:UIControlStateNormal];
+                    [_imageButton04.imageView setContentMode:UIViewContentModeScaleAspectFill];
+                    
+                    UIView *imageView = _imageButton04.superview;
+                    CGPoint buttonRect = _imageButton04.frame.origin;
+                    
+                    /** deleteButton 추가 **/
+                    UIButton *deleteButton = [[UIButton alloc]initWithFrame:CGRectMake(buttonRect.x+_imageButton04.frame.size.width-15, buttonRect.y-5, 20, 20)];
+                    //    deleteButton.tag = 1;
+                    [deleteButton setImage:[UIImage imageNamed:@"contents_bot_photo_delete.png"] forState:UIControlStateNormal];
+                    [deleteButton addTarget:self action:@selector(deleteImage:) forControlEvents:UIControlEventTouchUpInside];
+                    [deleteButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
+                    [imageView addSubview:deleteButton];
+                }
+                
+                i++;
+            }
+            
+            // 2. 컨텐츠 바인드
+            
+            if (data[@"result"][@"detail"][@"content"] != [NSNull null]) {
+                
+                _txtContent.text = data[@"result"][@"detail"][@"content"];
+            }
+            
+            [self hideIndicator];
+        });
+        
+    } error:^(NSError *error) {
+        
+        [self hideIndicator];
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
         [alert addAction:confirmAlertAction];
         [self presentViewController:alert animated:YES completion:nil];
-        return;
-    }
-    
-    NSString *auth_key = @"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJnb2dvanNzIiwic3ViIjoiZ29nb2pzcyIsImV4cCI6MTQ3NjkyNTk4OSwibmFtZSI6IuyhsOyKueyLnSIsImlhdCI6MTQ3NjA2MTk4OX0.qw3Bg3NuEbH1tA0yz06uUVM1TDncn78RhZO4eR0UQtU";
-    
-    NSMutableArray *imageArrayList  = [[NSMutableArray alloc] init];
-    
-    for (int i = 0; i < _files.count; i++) {
-        
-        [imageArrayList addObject:[NSDictionary dictionaryWithObjectsAndKeys:_files[i], @"file_name", nil]];
-    }
-    
-    NSDictionary *parameters;
-    
-    if (_files.count > 0) {
-        parameters = [NSDictionary dictionaryWithObjectsAndKeys:_txtContent.text, @"content", (_professionalButtonKind == ProfessionalButtonExecersize ? @"11" : @"12"), @"type",  imageArrayList, @"images", nil];
-    }
-    else {
-        parameters = [NSDictionary dictionaryWithObjectsAndKeys:_txtContent.text, @"content", (_professionalButtonKind == ProfessionalButtonExecersize ? @"11" : @"12"), @"type", nil];
-    }
-    
-    [[MommyRequest sharedInstance] mommyProfessionalAdviceApiService:ProfessionalAdviceContentInsert authKey:auth_key parameters:parameters success:^(NSDictionary *data) {
-        
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            
-            if (data == nil) {
-                
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
-                    [self.navigationController popViewControllerAnimated:YES];
-                }];
-                [alert addAction:confirmAlertAction];
-                [self presentViewController:alert animated:YES completion:nil];
-                return;
-            }
-            
-            long code = [data[@"code"] longValue];
-            
-            // 실패시
-            if (code != 0) {
-                
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
-                    [self.navigationController popViewControllerAnimated:YES];
-                }];
-                [alert addAction:confirmAlertAction];
-                [self presentViewController:alert animated:YES completion:nil];
-                return;
-            }
-            
-            [self.navigationController popViewControllerAnimated:YES];
-            
-        });
-        
-        NSLog(@"%@", data);
-        
-    } error:^(NSError *error){
-        
-        NSLog(@"%@", error);
     }];
     
     
+    // 2. 이미지 바인드
+    
+    // 3.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -216,10 +457,10 @@
         NSLog(@"Image Upload Fail");
     }];
     
-    
     [[self navigationController] popViewControllerAnimated:YES];
     UIView *imageView = selectedImageButton.superview;
     CGPoint buttonRect = selectedImageButton.frame.origin;
+    
     
     /** deleteButton이 존재 시 삭제 **/
     //    if([imageView.subviews count] > 1){
@@ -229,6 +470,7 @@
     //            }
     //        }
     //    }
+   
     
     /** deleteButton 추가 **/
     UIButton *deleteButton = [[UIButton alloc]initWithFrame:CGRectMake(buttonRect.x+selectedImageButton.frame.size.width-15, buttonRect.y-5, 20, 20)];
@@ -318,18 +560,20 @@
     NSMutableArray *imgArray = [[NSMutableArray alloc] initWithArray: @[_imageButton01.currentImage, _imageButton02.currentImage, _imageButton03.currentImage, _imageButton04.currentImage]];
     
     for(int i = 0 ; i < [imgArray count] ; i++){
+        
         if([(UIImage*)imgArray[i] isEqual:defaultImage]){
+            
             [imgArray removeObject:imgArray[i]];
         }
     }
-    
+
     _imageViewer.imgArray = [[NSArray alloc] initWithArray:imgArray];
     _imageViewer.index = (int)[(UIButton*)sender tag];
     
     [self presentViewController:_imageViewer animated:YES completion:nil];
 }
 
--(void)deleteImage:(id)sender{
+- (void) deleteImage:(id)sender{
     UIButton *seletedButton = (UIButton*)[sender superview].subviews[0];
     [seletedButton setImage:defaultImage forState:UIControlStateNormal];
     [_files removeObjectAtIndex:seletedButton.tag];

@@ -20,6 +20,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    _afterCUDYN = @"N";
+    
     _currentLastPageStatus = NO;
     _moreProfessionalAdviceModel = [[MoreProfessionalAdviceModel alloc] init];
     
@@ -53,7 +55,7 @@
 #pragma 전문가 상담 내역 리스트 가져오기
 - (void) getAdviceList : (NSInteger) currentPage {
     
-    NSString *auth_key = @"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJnb2dvanNzIiwic3ViIjoiZ29nb2pzcyIsImV4cCI6MTQ3NjkyNTk4OSwibmFtZSI6IuyhsOyKueyLnSIsImlhdCI6MTQ3NjA2MTk4OX0.qw3Bg3NuEbH1tA0yz06uUVM1TDncn78RhZO4eR0UQtU";
+    NSString *auth_key = [GlobalData sharedGlobalData].authToken;
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"30", @"pageSize", [NSString stringWithFormat:@"%ld", (long)currentPage], @"searchPage", nil];
     
     [[MommyRequest sharedInstance] mommyProfessionalAdviceApiService:ProfessionalAdviceList authKey:auth_key parameters:parameters success:^(NSDictionary *data){
@@ -136,6 +138,13 @@
     
     UIWindow *currentWindow = [UIApplication sharedApplication].keyWindow;
     [currentWindow addSubview:_moreProfessionalButtonViewController.view];
+    
+    // 수정/삭제/추가 후 재진입시 새로운 리퀘스트
+    if ([_afterCUDYN isEqualToString:@"Y"]) {
+        _moreProfessionalAdviceModel.arrayList = [[NSMutableArray alloc] init];
+        [self getAdviceList:1];
+        _afterCUDYN = @"N";
+    }
 }
 
 - (void) professionalButtonStatus:(ProfessionalButtonStatus)professionalButtonStatus {
@@ -173,7 +182,7 @@
     NSDictionary *dic = _moreProfessionalAdviceModel.arrayList[indexPath.row];
     
     [_moreProfessionalButtonViewController.view removeFromSuperview];
-    [self performSegueWithIdentifier:@"goProfessionalAdviceInfo" sender:dic[@"type"]];
+    [self performSegueWithIdentifier:@"goProfessionalAdviceInfo" sender:dic];
 }
 
 #pragma 테이블뷰 더보기 콜백
@@ -215,10 +224,19 @@
     // 디테일 정보 보기
     else if ([segue.identifier isEqualToString:@"goProfessionalAdviceInfo"]) {
         
-        NSString *writeType = sender;
-        MoreProfessionalDetailViewController *moreProfessionalDetailViewController = (MoreProfessionalDetailViewController *)segue.destinationViewController;
-        moreProfessionalDetailViewController.professionalButtonKind = [writeType isEqualToString:@"11"] ? ProfessionalButtonExecersize : ProfessionalButtonNutrition;
+        NSDictionary *dic = sender;
         
+        NSString *writeType = dic[@"type"];
+        NSString *qnaKey = dic[@"qna_key"];
+        MoreProfessionalDetailViewController *moreProfessionalDetailViewController = (MoreProfessionalDetailViewController *)segue.destinationViewController;
+        moreProfessionalDetailViewController.qnaKey = qnaKey;
+        moreProfessionalDetailViewController.replyYN = dic[@"reply_yn"];
+        if ([writeType isEqualToString:@"0"]) {
+            moreProfessionalDetailViewController.professionalButtonKind = ProfessionalButtonExecersize;
+        }
+        else {
+            moreProfessionalDetailViewController.professionalButtonKind = ProfessionalButtonNutrition;
+        }
     }
 }
 

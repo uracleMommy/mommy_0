@@ -264,6 +264,7 @@
 		DC7D38491D6BDD8800314189 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7D38481D6BDD8800314189 /* FXBlurView.m */; };
 		DC7D384C1D6BDD9A00314189 /* ImageCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7D384B1D6BDD9A00314189 /* ImageCropView.m */; };
 		DC85CF1E1DAB29A100DEA166 /* MorePointModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC85CF1D1DAB29A100DEA166 /* MorePointModel.m */; };
+		DC85CF211DACA34100DEA166 /* MoreProfessionalAdviceReplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC85CF201DACA34100DEA166 /* MoreProfessionalAdviceReplyViewController.m */; };
 		DC8EB7881D869A1700A0304D /* MoreWeekCheckDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8EB7871D869A1700A0304D /* MoreWeekCheckDetailViewController.m */; };
 		DC8EB78B1D869BA300A0304D /* MoreWeekDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8EB78A1D869BA300A0304D /* MoreWeekDetailModel.m */; };
 		DC8EB78F1D869D4800A0304D /* MoreWeekDetailInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8EB78D1D869D4800A0304D /* MoreWeekDetailInfoCell.m */; };
@@ -785,6 +786,8 @@
 		DC7D384B1D6BDD9A00314189 /* ImageCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCropView.m; sourceTree = "<group>"; };
 		DC85CF1C1DAB29A100DEA166 /* MorePointModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorePointModel.h; sourceTree = "<group>"; };
 		DC85CF1D1DAB29A100DEA166 /* MorePointModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorePointModel.m; sourceTree = "<group>"; };
+		DC85CF1F1DACA34100DEA166 /* MoreProfessionalAdviceReplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreProfessionalAdviceReplyViewController.h; sourceTree = "<group>"; };
+		DC85CF201DACA34100DEA166 /* MoreProfessionalAdviceReplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreProfessionalAdviceReplyViewController.m; sourceTree = "<group>"; };
 		DC8EB7861D869A1700A0304D /* MoreWeekCheckDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreWeekCheckDetailViewController.h; sourceTree = "<group>"; };
 		DC8EB7871D869A1700A0304D /* MoreWeekCheckDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreWeekCheckDetailViewController.m; sourceTree = "<group>"; };
 		DC8EB7891D869BA300A0304D /* MoreWeekDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreWeekDetailModel.h; sourceTree = "<group>"; };
@@ -1418,6 +1421,8 @@
 				DC4F0EFF1D911066003CB09B /* MoreProfessionalDetailViewController.m */,
 				DC4F0F041D912DC3003CB09B /* MoreProfessionalAdviceContentsViewController.h */,
 				DC4F0F051D912DC3003CB09B /* MoreProfessionalAdviceContentsViewController.m */,
+				DC85CF1F1DACA34100DEA166 /* MoreProfessionalAdviceReplyViewController.h */,
+				DC85CF201DACA34100DEA166 /* MoreProfessionalAdviceReplyViewController.m */,
 				DC660F491DA6400A00B106FB /* MorePrefessionalEmptySegue.h */,
 				DC660F4A1DA6400A00B106FB /* MorePrefessionalEmptySegue.m */,
 				DC68F51E1D93D7CC009D3B1E /* MoreMyPageMasterViewController.h */,
@@ -1449,8 +1454,6 @@
 		DC44C3961D80192600519D96 /* More */ = {
 			isa = PBXGroup;
 			children = (
-				DC68F5421D93D7F0009D3B1E /* MoreProfessionalReplyContentSegue.h */,
-				DC68F5431D93D7F0009D3B1E /* MoreProfessionalReplyContentSegue.m */,
 				DC68F5331D93D7E4009D3B1E /* MoreEquipmentChoiceCell.h */,
 				DC68F5341D93D7E4009D3B1E /* MoreEquipmentChoiceCell.m */,
 				DC68F5351D93D7E4009D3B1E /* MoreEquipmentChoiceCell.xib */,
@@ -1492,6 +1495,8 @@
 				DCF8E1E81D8FA84B00E67402 /* MoreProfessionalButtonViewController.xib */,
 				DC4F0F011D912936003CB09B /* MoreProfessionalAdviceContentSegue.h */,
 				DC4F0F021D912936003CB09B /* MoreProfessionalAdviceContentSegue.m */,
+				DC68F5421D93D7F0009D3B1E /* MoreProfessionalReplyContentSegue.h */,
+				DC68F5431D93D7F0009D3B1E /* MoreProfessionalReplyContentSegue.m */,
 				DC67EB611D94BDAD0096BCB3 /* MoreMyPageNickNameCell.h */,
 				DC67EB621D94BDAD0096BCB3 /* MoreMyPageNickNameCell.m */,
 				DC67EB631D94BDAD0096BCB3 /* MoreMyPageNickNameCell.xib */,
@@ -1953,7 +1958,7 @@
 				TargetAttributes = {
 					DCA5AE201D598C6F0075B7AD = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = JH5F2VBM8Z;
+						DevelopmentTeam = LUYT38Y3AT;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2095,6 +2100,7 @@
 				DCBFDE6C1DA347C000A28B3A /* MainSliderCell.m in Sources */,
 				2A54B1B71D66904000C538D1 /* JTCalendarPageView.m in Sources */,
 				2A6B1BF11D91338200322A94 /* DiaryWriteBasicController.m in Sources */,
+				DC85CF211DACA34100DEA166 /* MoreProfessionalAdviceReplyViewController.m in Sources */,
 				DCA5AE2C1D598C6F0075B7AD /* ViewController.m in Sources */,
 				2AB670DC1D9267700060561C /* CommunityNewspeedImageCustomCell.m in Sources */,
 				DC85CF1E1DAB29A100DEA166 /* MorePointModel.m in Sources */,
@@ -2418,7 +2424,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Park seohee (TDF9AJWPR5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = JH5F2VBM8Z;
+				DEVELOPMENT_TEAM = LUYT38Y3AT;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2444,7 +2450,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Park seohee (TDF9AJWPR5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = JH5F2VBM8Z;
+				DEVELOPMENT_TEAM = LUYT38Y3AT;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

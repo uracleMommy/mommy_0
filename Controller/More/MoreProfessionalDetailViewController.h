@@ -11,9 +11,16 @@
 #import "DZNSegmentedControl.h"
 #import "MultiImageViewController.h"
 #import "MoreProfessionalAdviceContentsViewController.h"
-#import "MoreProfessionalReplyContentsViewController.h"
+#import "MoreProfessionalAdviceReplyViewController.h"
+#import "MoreProfessionalWriteAdviceController.h"
 
 @interface MoreProfessionalDetailViewController : CommonViewController<MoreProfessionalAdviceContentsViewControllerDelegate>
+
+@property (strong, nonatomic) NSString *replyYN;
+
+@property (strong, nonatomic) NSDictionary *adviceInfo;
+
+@property (strong, nonatomic) NSDictionary *fileInfo;
 
 @property (weak, nonatomic) IBOutlet DZNSegmentedControl *segmentView;
 
@@ -25,8 +32,16 @@
 
 @property (strong, nonatomic) MoreProfessionalAdviceContentsViewController *detailContentViewController;
 
-@property (strong, nonatomic) MoreProfessionalReplyContentsViewController *moreProfessionalReplyContentsViewController;
+@property (strong, nonatomic) MoreProfessionalAdviceReplyViewController *moreProfessionalAdviceReplyViewController;
 
-@property (assign) ProfessionalButtonKind *professionalButtonKind;
+@property (strong, nonatomic) NSString *qnaKey;
+
+@property (assign, readwrite) ProfessionalButtonKind professionalButtonKind;
+
+@property (strong, nonatomic) UIButton *btnQuestionUpdate;
+
+@property (strong, nonatomic) UIButton *btnQuestionDelete;
+
+@property (strong, nonatomic) NSString *afterCUDYN;
 
 @end

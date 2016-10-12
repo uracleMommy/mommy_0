@@ -28,6 +28,8 @@
 
 @property (strong, nonatomic) NSMutableArray *files;
 
+@property (strong, nonatomic) NSMutableArray *imageFiles;
+
 @property (weak, nonatomic) IBOutlet UITextView *txtContent;
 
 @property (weak, nonatomic) IBOutlet UIButton *imageButton01;
@@ -41,5 +43,10 @@
 @property (assign) ProfessionalButtonKind professionalButtonKind;
 
 - (IBAction)mommyPictureButtonAction:(id)sender;
+
+@property (strong, nonatomic) NSString *qnaKey; // 게시글 키
+
+@property (assign, readwrite) ProfessionalQuestionWriteUpdateMode professionalQuestionWriteUpdateMode; // 글쓰기/업데이트 모드
+
 
 @end

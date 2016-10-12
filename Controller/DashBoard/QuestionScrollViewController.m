@@ -18,6 +18,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self setKeyboardEnabled:NO];
+    
     _containerView.layer.borderColor = [[UIColor colorWithRed:217.0f/255.0f green:217.0f/255.0f blue:217.0f/255.0f alpha:1.0f] CGColor];
     _containerView.layer.borderWidth = 1.0f;
     _containerView.layer.cornerRadius = 10;
@@ -62,6 +64,8 @@
         default:
             break;
     }
+    
+    _firstQuestionSelectedNumber = [NSString stringWithFormat:@"%ld", (long)button.tag + 1];
 }
 - (IBAction)secondButtonSelect:(id)sender {
     
@@ -86,6 +90,8 @@
         default:
             break;
     }
+    
+    _secondQuestionSelectedNumber = [NSString stringWithFormat:@"%ld", (long)button.tag + 1];
 }
 - (IBAction)thirdButtonSelect:(id)sender {
     
@@ -110,6 +116,62 @@
         default:
             break;
     }
+    
+    _thirdQuestionSelectedNumber = [NSString stringWithFormat:@"%ld", (long)button.tag + 1];
+}
+
+#pragma 문진정보 보내기
+- (void) questionResultInfoSend {
+    
+    // 21주차 미만
+    if ([_momWeek intValue] <= 21) {
+        
+    }
+    else {
+        
+    }
+    
+    
+    [self showIndicator];
+    
+    NSString *auth_key = [GlobalData sharedGlobalData].authToken;
+    
+    //
+    
+    NSDictionary *parameters = [[NSDictionary alloc] init];
+    
+    [[MommyRequest sharedInstance] mommyDashboardApiService:DashboardQuestionInfoInsert authKey:auth_key parameters:parameters success:^(NSDictionary *data){
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            long code = [data[@"code"] longValue];
+            
+            // 실패시
+            if (code != 0) {
+                
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                [alert addAction:confirmAlertAction];
+                [self presentViewController:alert animated:YES completion:nil];
+                [self hideIndicator];
+                return;
+            }
+            
+            // 문진정보 띄우기(제출을 하지 않았으면)
+            [self performSegueWithIdentifier:@"goQuestionModal" sender:data[@"result"][@"baby_info"][@"mom_week"]];
+            
+            [self hideIndicator];
+        });
+        
+    } error:^(NSError *error) {
+        
+        [self hideIndicator];
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+        [alert addAction:confirmAlertAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }];
 }
 
 @end

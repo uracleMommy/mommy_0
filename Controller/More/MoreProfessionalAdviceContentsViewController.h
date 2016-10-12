@@ -8,10 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "MultiImageViewController.h"
+#import "CommonViewController.h"
 
 @protocol MoreProfessionalAdviceContentsViewControllerDelegate;
 
-@interface MoreProfessionalAdviceContentsViewController : UIViewController
+@interface MoreProfessionalAdviceContentsViewController : CommonViewController
+
+@property (strong, nonatomic) NSDictionary *adviceInfo;
+
+@property (weak, nonatomic) IBOutlet UIView *imageViewContainer;
+
+@property (weak, nonatomic) IBOutlet UITextView *txtContent;
 
 @property (weak, nonatomic) IBOutlet UIImageView *firstImgView;
 

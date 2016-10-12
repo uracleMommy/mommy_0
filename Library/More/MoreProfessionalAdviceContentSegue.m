@@ -17,10 +17,7 @@
     moreProfessionalDetailViewController.detailContentViewController.delegate = moreProfessionalDetailViewController;
     
     [moreProfessionalDetailViewController.detailContentViewController.view setFrame:CGRectMake(0, 0, moreProfessionalDetailViewController.containerView.frame.size.width, moreProfessionalDetailViewController.containerView.frame.size.height)];
-    [moreProfessionalDetailViewController.containerView addSubview:moreProfessionalDetailViewController.detailContentViewController.view];
-    
-    
-    
+    [moreProfessionalDetailViewController.containerView addSubview:moreProfessionalDetailViewController.detailContentViewController.view];    
 }
 
 @end

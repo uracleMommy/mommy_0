@@ -35,8 +35,15 @@ typedef enum {
 #pragma 전문가 상담 버튼 터치
 typedef enum {
 
-    ProfessionalButtonExecersize = 0,
-    ProfessionalButtonNutrition = 1
+    ProfessionalButtonExecersize,
+    ProfessionalButtonNutrition
 } ProfessionalButtonKind;
+
+#pragma 전문가 상담 글쓰기모드
+typedef enum {
+    
+    ProfessionalQuestionWriteMode,
+    ProfessionalQuestionUpdateMode
+} ProfessionalQuestionWriteUpdateMode;
 
 #endif /* EnumType_h */

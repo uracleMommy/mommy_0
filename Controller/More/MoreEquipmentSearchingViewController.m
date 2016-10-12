@@ -37,8 +37,7 @@
     _gifImageView.animatedImage = animatedImage;
     
     
-    // 서치후에 검색이 되는 기기들이 있으면 다음화면으로 분기
-    
+    // 서치후에 검색이 되는 기기들이 있으면 다음화면으로 분기    
     [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(moveToSelect) userInfo:nil repeats:NO];
     
 }

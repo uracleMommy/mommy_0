@@ -13,6 +13,8 @@
 
 @interface QuestionViewController : CommonViewController
 
+@property (strong, nonatomic) NSNumber *momWeek; // 임신주차
+
 @property (weak, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
 
 @property (strong, nonatomic) QuestionScrollViewController *questionScrollViewController;

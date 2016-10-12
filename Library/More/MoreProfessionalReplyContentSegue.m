@@ -13,10 +13,10 @@
 - (void) perform {
     
     MoreProfessionalDetailViewController *moreProfessionalDetailViewController = (MoreProfessionalDetailViewController *)self.sourceViewController;
-    moreProfessionalDetailViewController.moreProfessionalReplyContentsViewController = self.destinationViewController;
+    moreProfessionalDetailViewController.moreProfessionalAdviceReplyViewController  = self.destinationViewController;
     
-    [moreProfessionalDetailViewController.moreProfessionalReplyContentsViewController.view setFrame:CGRectMake(0, 0, moreProfessionalDetailViewController.containerView.frame.size.width, moreProfessionalDetailViewController.containerView.frame.size.height)];
-    [moreProfessionalDetailViewController.containerView addSubview:moreProfessionalDetailViewController.moreProfessionalReplyContentsViewController.view];
+    [moreProfessionalDetailViewController.moreProfessionalAdviceReplyViewController.view setFrame:CGRectMake(0, 0, moreProfessionalDetailViewController.containerView.frame.size.width, moreProfessionalDetailViewController.containerView.frame.size.height)];
+    [moreProfessionalDetailViewController.containerView addSubview:moreProfessionalDetailViewController.moreProfessionalAdviceReplyViewController.view];
 }
 
 @end
