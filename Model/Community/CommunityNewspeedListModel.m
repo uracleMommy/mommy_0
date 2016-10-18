@@ -48,7 +48,7 @@
             
             cell = [tableView dequeueReusableCellWithIdentifier:IMAGE_CELL_ID];
         }
-
+        cell.imageArr = [data objectForKey:@"files"];
         
         cell.contentsLabel.text = [data objectForKey:@"content"];
         if([[data objectForKey:@"like_cnt"] intValue] != 0){

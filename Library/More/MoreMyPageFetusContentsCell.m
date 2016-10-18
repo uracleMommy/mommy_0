@@ -21,4 +21,8 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)deleteBabyNicknameButton:(id)sender {
+    _txtFetusName.text = @"";
+    [_delegate deleteBabyNicknameButton:self];
+}
 @end

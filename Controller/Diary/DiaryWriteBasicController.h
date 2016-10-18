@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <Photos/Photos.h>
+#import <CoreLocation/CoreLocation.h>
 #import "IQDropDownTextField.h"
 #import "AppDelegate.h"
 #import "emoticonPopupViewController.h"
@@ -16,7 +17,8 @@
 #import "MultiImageViewController.h"
 #import "CommonViewController.h"
 
-@interface DiaryWriteBasicController : CommonViewController <UITextViewDelegate, IQDropDownTextFieldDelegate, ImageCropViewControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, UINavigationControllerDelegate, emoticonPopupViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
+
+@interface DiaryWriteBasicController : CommonViewController <UITextViewDelegate, IQDropDownTextFieldDelegate, ImageCropViewControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, UINavigationControllerDelegate, emoticonPopupViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, CLLocationManagerDelegate> {
     UIButton *selectedImageButton;
     UIImage *defaultImage;
     ImageCropViewController *controller;
@@ -24,8 +26,10 @@
     UIImagePickerController *imagePicker;
 }
 
+
 @property (strong, nonatomic) MultiImageViewController *imageViewer;
 @property (strong, nonatomic) NSMutableArray *files;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @property (strong, nonatomic) NSMutableArray *pickerData_0; //거주지 시
 @property (strong, nonatomic) NSMutableArray *pickerData_1; //거주지 구
@@ -54,5 +58,7 @@
 - (IBAction)showEmoticonPopup:(id)sender;
 - (IBAction)mommyPictureButtonAction:(id)sender;
 - (void)clickButton:(int)tag;
+
+- (IBAction)getGPSAction:(id)sender;
 
 @end

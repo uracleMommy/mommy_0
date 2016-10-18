@@ -94,23 +94,24 @@
                                                 <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" background="contents_btn_location" translatesAutoresizingMaskIntoConstraints="NO" id="cMF-FT-s2k" customClass="notPasteField">
-                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u06-Qo-D9n">
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="45" id="E1V-AL-5gn"/>
-                                                    <constraint firstAttribute="width" constant="45" id="Zdn-vK-9hS"/>
+                                                    <constraint firstAttribute="height" constant="45" id="3aj-n3-CH6"/>
+                                                    <constraint firstAttribute="width" constant="45" id="Gm8-F0-7UL"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                                <state key="normal" image="contents_btn_location"/>
+                                                <connections>
+                                                    <action selector="getGPSAction:" destination="Bdo-gd-LLw" eventType="touchUpInside" id="WAk-q5-jc0"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="cMF-FT-s2k" firstAttribute="top" secondItem="z80-Vf-prO" secondAttribute="top" id="HaR-Z3-svQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="u06-Qo-D9n" secondAttribute="trailing" constant="5" id="3c6-kN-hbb"/>
+                                            <constraint firstItem="u06-Qo-D9n" firstAttribute="top" secondItem="z80-Vf-prO" secondAttribute="top" id="Bo4-6b-LZh"/>
                                             <constraint firstItem="h3x-Qn-CpK" firstAttribute="top" secondItem="z80-Vf-prO" secondAttribute="top" constant="8" id="MzA-74-zPv"/>
-                                            <constraint firstAttribute="bottom" secondItem="cMF-FT-s2k" secondAttribute="bottom" id="VXm-cX-BiP"/>
-                                            <constraint firstItem="cMF-FT-s2k" firstAttribute="leading" secondItem="h3x-Qn-CpK" secondAttribute="trailing" constant="5" id="iYC-Uj-hUV"/>
-                                            <constraint firstAttribute="trailing" secondItem="cMF-FT-s2k" secondAttribute="trailing" constant="5" id="nFM-XQ-QDD"/>
+                                            <constraint firstAttribute="bottom" secondItem="u06-Qo-D9n" secondAttribute="bottom" id="dBj-Yx-qxq"/>
+                                            <constraint firstItem="u06-Qo-D9n" firstAttribute="leading" secondItem="h3x-Qn-CpK" secondAttribute="trailing" constant="5" id="f9a-84-soh"/>
                                             <constraint firstItem="h3x-Qn-CpK" firstAttribute="leading" secondItem="z80-Vf-prO" secondAttribute="leading" constant="15" id="vrB-Xs-bjF"/>
                                         </constraints>
                                     </view>
@@ -296,7 +297,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="다이어리 쓰기" id="9nE-Md-0iD"/>
                     <connections>
-                        <outlet property="addressButton" destination="cMF-FT-s2k" id="hUs-Id-sjV"/>
                         <outlet property="addressTextField" destination="h3x-Qn-CpK" id="yFK-Bi-Obm"/>
                         <outlet property="contentsTextView" destination="URd-z2-3jQ" id="cbT-ju-Te4"/>
                         <outlet property="dateButton" destination="fWY-ph-cWp" id="2F4-Sk-tDz"/>
@@ -315,7 +315,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sxb-fF-Hx7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="mFH-dt-LSr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1462" y="419"/>
+            <point key="canvasLocation" x="1461.5" y="418.5"/>
         </scene>
         <!--다이어리-->
         <scene sceneID="gFj-bE-c0C">
@@ -429,7 +429,7 @@
         <scene sceneID="BSY-EC-bLM">
             <objects>
                 <navigationController id="LlJ-1Y-l7t" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="CJm-G8-ANi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="CJm-G8-ANi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -451,7 +451,7 @@
         <scene sceneID="qjV-BS-I1Z">
             <objects>
                 <navigationController id="OO6-eW-lDh" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="AxW-Oh-i0B">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="AxW-Oh-i0B">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -564,7 +564,7 @@
         <scene sceneID="oD1-3f-fjb">
             <objects>
                 <navigationController id="1U4-qw-0Zd" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="1Ax-GJ-aXd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="1Ax-GJ-aXd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -885,7 +885,7 @@
         <scene sceneID="X0M-zy-M0S">
             <objects>
                 <navigationController id="kZe-wd-UG8" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="UlS-S2-SHX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="UlS-S2-SHX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

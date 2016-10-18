@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -13,19 +13,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="42" id="WMC-mp-cc7" customClass="MoreMyPageFetusContentsCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="46" id="WMC-mp-cc7" customClass="MoreMyPageFetusContentsCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WMC-mp-cc7" id="LtJ-Q3-6BM">
-                <frame key="frameInset" width="320" height="39"/>
+                <frame key="frameInset" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EC6-ZO-vKE">
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="뜬금이" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OcY-He-aJr">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OcY-He-aJr">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="cga-kj-w47"/>
-                                    <constraint firstAttribute="width" constant="250" id="qGm-w0-ZWL"/>
                                 </constraints>
                                 <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
@@ -37,13 +36,17 @@
                                     <constraint firstAttribute="width" constant="30" id="GmD-Kg-Vwc"/>
                                 </constraints>
                                 <state key="normal" image="input_btn_del"/>
+                                <connections>
+                                    <action selector="deleteBabyNicknameButton:" destination="WMC-mp-cc7" eventType="touchUpInside" id="P4G-lg-ete"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="t4T-dd-uL5" firstAttribute="top" secondItem="EC6-ZO-vKE" secondAttribute="top" constant="4" id="0At-sN-FGQ"/>
-                            <constraint firstItem="OcY-He-aJr" firstAttribute="leading" secondItem="EC6-ZO-vKE" secondAttribute="leading" constant="8" id="5Mk-UV-I4W"/>
-                            <constraint firstItem="OcY-He-aJr" firstAttribute="top" secondItem="EC6-ZO-vKE" secondAttribute="top" constant="4" id="9Po-kc-uRg"/>
+                            <constraint firstItem="OcY-He-aJr" firstAttribute="centerY" secondItem="EC6-ZO-vKE" secondAttribute="centerY" id="1IP-Yq-phB"/>
+                            <constraint firstItem="OcY-He-aJr" firstAttribute="leading" secondItem="EC6-ZO-vKE" secondAttribute="leading" constant="10" id="5Mk-UV-I4W"/>
+                            <constraint firstItem="t4T-dd-uL5" firstAttribute="leading" secondItem="OcY-He-aJr" secondAttribute="trailing" id="DcX-RZ-O4D"/>
+                            <constraint firstItem="t4T-dd-uL5" firstAttribute="centerY" secondItem="EC6-ZO-vKE" secondAttribute="centerY" id="DyK-az-301"/>
                             <constraint firstAttribute="trailing" secondItem="t4T-dd-uL5" secondAttribute="trailing" constant="8" id="mcK-a9-eRY"/>
                         </constraints>
                     </view>
@@ -52,14 +55,14 @@
                 <constraints>
                     <constraint firstItem="EC6-ZO-vKE" firstAttribute="top" secondItem="LtJ-Q3-6BM" secondAttribute="top" constant="1" id="UdS-XT-u4z"/>
                     <constraint firstAttribute="bottom" secondItem="EC6-ZO-vKE" secondAttribute="bottom" id="dYZ-0I-sC8"/>
-                    <constraint firstAttribute="trailing" secondItem="EC6-ZO-vKE" secondAttribute="trailing" constant="8" id="lR5-Sa-BS2"/>
-                    <constraint firstItem="EC6-ZO-vKE" firstAttribute="leading" secondItem="LtJ-Q3-6BM" secondAttribute="leading" constant="8" id="wcJ-dW-cze"/>
+                    <constraint firstAttribute="trailing" secondItem="EC6-ZO-vKE" secondAttribute="trailing" constant="15" id="lR5-Sa-BS2"/>
+                    <constraint firstItem="EC6-ZO-vKE" firstAttribute="leading" secondItem="LtJ-Q3-6BM" secondAttribute="leading" constant="15" id="wcJ-dW-cze"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="txtFetusName" destination="OcY-He-aJr" id="Ukp-mr-OfA"/>
             </connections>
-            <point key="canvasLocation" x="-464" y="-165"/>
+            <point key="canvasLocation" x="-464" y="-163"/>
         </tableViewCell>
     </objects>
     <resources>

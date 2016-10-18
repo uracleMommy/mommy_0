@@ -11,11 +11,12 @@
 #import "MoreMyPageModel.h"
 
 
-@interface MoreMyPageFetusInfoChangeViewController : CommonViewController
+@interface MoreMyPageFetusInfoChangeViewController : CommonViewController<MoreMyPageFetusContentsCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) MoreMyPageFetusChangeModel *moreMyPageFetusChangeModel;
+@property (strong, nonatomic) NSArray *babyNickNames;
 
 - (IBAction)closeModal:(id)sender;
 

@@ -98,23 +98,27 @@
     }
     [self showIndicator];
     NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+    NSMutableArray *baby_nicknames = [[NSMutableArray alloc] init];
     
-    if([sender tag] == 0){
+    if([sender tag] == 0 || [fetusInfoArr count] == 0){
         [param setValue:@"" forKey:@"baby_names"];
     }else{
-        [param setValue:[fetusInfoArr componentsJoinedByString:@"|"] forKey:@"baby_names"];
+        for(int i=0 ; i<[fetusInfoArr count] ; i++){
+            [baby_nicknames addObject:@{@"baby_nickname" : [fetusInfoArr objectAtIndex:i]}];
+        }
     }
     
     NSMutableDictionary *images = [[NSMutableDictionary alloc] init];
     [images setValue:_file_name forKey:@"file_name"];
     
+    [param setValue:baby_nicknames forKey:@"baby_nicknames"];
     [param setValue:@[images] forKey:@"images"];
     [param setValue:_nickname forKey:@"nickname"];
     [param setValue:_address forKey:@"address"];
     [param setValue:_baby_birth forKey:@"baby_birth"];
-    [param setValue:_before_weight forKey:@"before_weight"];
-    [param setValue:_weight forKey:@"weight"];
-    [param setValue:_height forKey:@"height"];
+    [param setValue:[NSNumber numberWithDouble:[_before_weight doubleValue]] forKey:@"before_weight"];
+    [param setValue:[NSNumber numberWithDouble:[_weight doubleValue]] forKey:@"weight"];
+    [param setValue:[NSNumber numberWithInt:[_height intValue] ] forKey:@"height"];
     [param setValue:_baby_cnt forKey:@"baby_cnt"];
     
     NSLog(@"param : %@", param);

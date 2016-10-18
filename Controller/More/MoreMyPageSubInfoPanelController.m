@@ -7,7 +7,6 @@
 //
 
 #import "MoreMyPageSubInfoPanelController.h"
-#import "MoreMyPageMasterViewController.h"
 
 @interface MoreMyPageSubInfoPanelController ()
 
@@ -37,25 +36,19 @@
     [_lblBeforeWeight addGestureRecognizer:beforeWeightTap];
     [_lblWeight addGestureRecognizer:weightTap];
     [_lblHeight addGestureRecognizer:heightTap];
-    [_lblFetus addGestureRecognizer:fetusTap];
-    
+    [_lblFetus addGestureRecognizer:fetusTap];    
+}
+
+
+- (void)viewDidAppear:(BOOL)animated{
 }
 
 -(void) labelChange:(id)sender{
-    
-    int test = [[sender view] tag];
-    NSString *testText = [(UILabel *)[sender view] text];
-    
-}
-
-- (void) nickNameChange {
-    
     MoreMyPageMasterViewController *parentController = (MoreMyPageMasterViewController *)self.parentViewController;
-    [parentController modalNickName];
+    [parentController modalChangeInfo:[(UIGestureRecognizer *)sender view]];
 }
 
 - (void) fetusTap {
-    
     MoreMyPageMasterViewController *parentController = (MoreMyPageMasterViewController *)self.parentViewController;
     [parentController modalFetusChange];
 }

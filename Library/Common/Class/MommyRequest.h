@@ -58,6 +58,15 @@ typedef enum {
     ProfessionalAdviceContentUpdate
 } MommyProfessionalAdviceWebServiceType;
 
+#pragma 마이페이지 상담 관련 열거형
+typedef enum {
+    
+    MyPageProfile,
+    MyPageDeleteUser,
+    MyPageUpdateProfile,
+    MyPageUpdatePassword
+} MommyMyPageWebServiceType;
+
 #pragma 다이어리 관련 열거형
 typedef enum {
     
@@ -119,6 +128,12 @@ typedef void (^MommyApiServiceErrorBlock) ( NSError *error );
 #pragma 전문가 상담 관련
 - (void) mommyProfessionalAdviceApiService : (MommyProfessionalAdviceWebServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
 
+#pragma 마이페이지 관련
+- (void) mommyMyPageApiService : (MommyMyPageWebServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
+
+#pragma 마이페이지 이미지 업로드 관련
+- (void) mommyMyPageImageUploadApiService : (UIImage *) image authKey:(NSString *)authKey success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
+
 #pragma 다이어리 관련
 - (void) mommyDiaryApiService : (MommyDiaryWebServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
 
@@ -147,6 +162,10 @@ typedef void (^MommyApiServiceErrorBlock) ( NSError *error );
 - (NSString *) requestPushNoticeUrlType : (MommyPushNoticeWebServiceType) serviceType;
 
 - (NSString *) requestProfessionalAdviceUrlType : (MommyProfessionalAdviceWebServiceType) serviceType;
+
+- (NSString *) requestMyPageUrlType : (MommyMyPageWebServiceType) serviceType;
+
+- (NSString *) requestMyPageImageUploadUrl;
 
 - (NSString *) requestDiaryUrlType : (MommyDiaryWebServiceType) serviceType;
 

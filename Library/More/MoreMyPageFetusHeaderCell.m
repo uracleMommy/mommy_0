@@ -16,7 +16,15 @@
     
     _txtFetusCount.keyboardDistanceFromTextField = 150;
     
+    _txtFetusCount.delegate = self;
+    
     [_txtFetusCount setItemList:@[@"1명", @"2명", @"3명", @"4명", @"5명"]];
+    
+}
+
+#pragma mark delegate
+-(void)textField:(IQDropDownTextField*)textField didSelectItem:(NSString*)item{
+    [_delegate changeCell:[[item substringWithRange:NSMakeRange(0, 1)] integerValue]];
     
 }
 

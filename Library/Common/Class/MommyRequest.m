@@ -282,6 +282,96 @@ static MommyRequest* instanceMommyRequest;
     }] resume];
 }
 
+#pragma 마이페이지 서비스 호출
+- (void) mommyMyPageApiService : (MommyMyPageWebServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock{
+    
+    NSString *requestUrl = [[MommyHttpUrls sharedInstance] requestMyPageUrlType:serviceType];
+    
+    NSURL *url = [NSURL URLWithString:requestUrl];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"POST";
+    NSString *contentType = @"application/json";
+    NSString *authorization = [NSString stringWithFormat:@"Bearer %@", authKey];
+    NSMutableData *body = [NSMutableData data];
+    [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
+    [request addValue:authorization forHTTPHeaderField:@"Authorization"];
+    
+    // dictionary -> json
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:parameters
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    [body appendData:[jsonString dataUsingEncoding:NSUTF8StringEncoding]];
+    [request setHTTPBody:body];
+    
+    
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    [[session dataTaskWithRequest:request completionHandler:^(NSData *data,
+                                                              NSURLResponse *response,
+                                                              NSError *error) {
+        
+        if (error != nil) {
+            
+            errorBlock(error);
+            return;
+        }
+        
+        
+        NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+        successBlock(jsonDic);
+        
+        
+    }] resume];
+}
+
+#pragma mark 이미지 업로드 서비스 호출
+- (void) mommyMyPageImageUploadApiService : (UIImage *) image authKey:(NSString *)authKey success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock {
+    
+    NSString *requestUrl = [[MommyHttpUrls sharedInstance] requestMyPageImageUploadUrl];
+    
+    NSURL *url = [NSURL URLWithString:requestUrl];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    NSString *boundary = @"0xKhTmLbOuNdArY";
+    request.HTTPMethod = @"POST";
+    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
+    NSString *authorization = [NSString stringWithFormat:@"Bearer %@", authKey];
+    NSMutableData *body = [NSMutableData data];
+    [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
+    [request addValue:authorization forHTTPHeaderField:@"Authorization"];
+    
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[@"Content-Disposition: form-data; name=\"file\"; filename=\"abc.jpg\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[@"Content-Type: image/jpeg\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    // jpeg 변환
+    NSData *imageData = UIImageJPEGRepresentation(image, 1.0f);
+    [body appendData:[NSData dataWithData:imageData]];
+    
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    [[session uploadTaskWithRequest:request fromData:body completionHandler:^(NSData *data,
+                                                                              NSURLResponse *response,
+                                                                              NSError *error) {
+        
+        if (error != nil) {
+            
+            errorBlock(error);
+            return;
+        }
+        
+        NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+        successBlock(jsonDic);
+        
+    }] resume];
+}
+
+#pragma 다이어리 서비스 호출
 - (void) mommyDiaryApiService : (MommyDiaryWebServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock{
     
     NSString *requestUrl = [[MommyHttpUrls sharedInstance] requestDiaryUrlType:serviceType];
@@ -327,7 +417,7 @@ static MommyRequest* instanceMommyRequest;
     }] resume];
 }
 
-
+#pragma 커뮤니티 서비스 호출
 - (void) mommyCommunityApiService : (MommyCommunityWebServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock{
     
     NSString *requestUrl = [[MommyHttpUrls sharedInstance] requestCommunityUrlType:serviceType];
@@ -623,6 +713,39 @@ static MommyHttpUrls* instanceMommyHttpUrls;
             return @"";
             break;
     }
+}
+
+#pragma mark 마이페이지 관련 리퀘스트 주소 리턴 메서드
+- (NSString *) requestMyPageUrlType : (MommyMyPageWebServiceType) serviceType {
+    
+    switch (serviceType) {
+        case MyPageProfile:
+            return [_mainDomain stringByAppendingString: @"/api/mypage/profile"];
+            break;
+            
+        case MyPageDeleteUser:
+            return [_mainDomain stringByAppendingString: @"/api/mypage/delete/user"];
+            break;
+            
+        case MyPageUpdateProfile:
+            return [_mainDomain stringByAppendingString: @"/api/mypage/update/profile"];
+            break;
+            
+        case MyPageUpdatePassword:
+            return [_mainDomain stringByAppendingString: @"/api/mypage/update/password"];
+            break;
+            
+        default:
+            return @"";
+            break;
+    }
+
+}
+
+#pragma mark 마이페이지 이미지 업로드
+- (NSString *) requestMyPageImageUploadUrl {
+    
+    return [_mainDomain stringByAppendingString: @"/api/mypage/update/profile-img"];
 }
 
 #pragma mark 다이어리 관련 리퀘스트 주소 리턴 메서드

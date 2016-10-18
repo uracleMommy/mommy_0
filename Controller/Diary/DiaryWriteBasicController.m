@@ -17,6 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Location Manager 생성
+    _locationManager = [[CLLocationManager alloc] init];
+    
+    // Location Receiver 콜백에 대한 delegate 설정
+    _locationManager.delegate = self;
+    
     /** Navigation Setting **/
     //close Button
     UIButton *closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -599,5 +605,25 @@
     [sender removeFromSuperview];
 }
 
+- (IBAction)getGPSAction:(id)sender {
+    // Location Manager 생성
+//    self.locationManager = [[CLLocationManager alloc] init];
+//    
+//    // Location Receiver 콜백에 대한 delegate 설정
+//    self.locationManager.delegate = self;
+//    
+//    // 사용중에만 위치 정보 요청
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+    
+    // Location Manager 시작하기
+    [self.locationManager startUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    NSLog(@"%@", [locations lastObject]);
+}
 
 @end
