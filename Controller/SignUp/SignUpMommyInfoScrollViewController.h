@@ -24,9 +24,10 @@
 @end
 
 @interface SignUpMommyInfoScrollViewController : CommonViewController <UINavigationControllerDelegate, UITextFieldDelegate, UIAlertViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
-    NSMutableArray *pickerData_0; //거주지 시
-    NSMutableArray *pickerData_1; //거주지 구
-    NSMutableArray *pickerData_2; //거주지 동
+//    NSMutableArray *pickerData_0; //거주지 시
+//    NSMutableArray *pickerData_1; //거주지 구
+//    NSMutableArray *pickerData_2; //거주지 동
+    NSMutableArray *pickerData_address; //거주지
     NSMutableArray *pickerData_number_point; //소수점 1자리
     NSMutableArray *pickerData_number_fetus; //태아 정보
     NSMutableArray *pickerData_number_weight; //체중
@@ -44,11 +45,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *mommyBackImageView;
 @property (weak, nonatomic) IBOutlet UITextField *mommyNameTextField;
 @property (weak, nonatomic) IBOutlet UILabel *mommyNameValidationLabel;
-@property (weak, nonatomic) IBOutlet UITextField *addressTextField;
+@property (weak, nonatomic) IBOutlet IQDropDownTextField *addressTextField;
 @property (weak, nonatomic) IBOutlet IQDropDownTextField *dueDateTextField;
 @property (weak, nonatomic) IBOutlet UITextField *beforeWeightTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nowWeightTextField;
-@property (weak, nonatomic) IBOutlet UITextField *heightTextField;
+@property (weak, nonatomic) IBOutlet IQDropDownTextField *heightTextField;
 @property (weak, nonatomic) IBOutlet IQDropDownTextField *fetusCountTextField;
 @property (weak, nonatomic) IBOutlet UIButton *mommyImageButton;
 @property (strong, nonatomic) UIImage *defaultImage;

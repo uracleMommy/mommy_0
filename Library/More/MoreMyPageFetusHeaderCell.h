@@ -12,8 +12,17 @@
 #import "IQUIView+IQKeyboardToolbar.h"
 #import "IQUITextFieldView+Additions.h"
 
-@interface MoreMyPageFetusHeaderCell : UITableViewCell
+@protocol MoreMyPageFetusHeaderCellDelegate <NSObject>
+
+@optional
+
+-(void)changeCell:(NSInteger)count;
+
+@end
+
+@interface MoreMyPageFetusHeaderCell : UITableViewCell <IQDropDownTextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet IQDropDownTextField *txtFetusCount;
+@property (strong, nonatomic) id<MoreMyPageFetusHeaderCellDelegate> delegate;
 
 @end

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HWViewPager.h"
+#import "MommyRequest.h"
 
 @protocol CommunityNewspeedImageCustomCellDelegate <NSObject>
 
@@ -35,6 +36,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *contentsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *likeCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *replyCountLabel;
+@property (strong, nonatomic) NSArray *imageArr;
+@property (strong, nonatomic) NSMutableDictionary *cachedImages;
 
 - (IBAction)moreButtonAction:(id)sender;
 - (IBAction)likeButtonAction:(id)sender;

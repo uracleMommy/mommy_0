@@ -7,6 +7,7 @@
 //
 
 #import "CommunityNewspeedImageCustomCell.h"
+#import "CommunitySliderImageCell.h"
 #import "MainSliderCell.h"
 
 @implementation CommunityNewspeedImageCustomCell
@@ -15,6 +16,7 @@
     [super awakeFromNib];
     // Initialization code
     
+    _cachedImages = [[NSMutableDictionary alloc] init];
 //    _imageSlider.userPage = self;
 //    _imageSlider.dataSource = self;
     
@@ -63,27 +65,48 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *cellIdentifier = @"MainSliderCell";
+    static NSString *cellIdentifier = @"CommunitySliderImageCell";
     
+    UINib *reuseImageSliderCell = [UINib nibWithNibName:@"CommunitySliderImageCell" bundle:nil];
+    [collectionView registerNib:reuseImageSliderCell forCellWithReuseIdentifier:cellIdentifier];
     
-    UINib *reuseMainSliderCell = [UINib nibWithNibName:@"MainSliderCell" bundle:nil];
-    [collectionView registerNib:reuseMainSliderCell forCellWithReuseIdentifier:cellIdentifier];
+    CommunitySliderImageCell *cell =  (CommunitySliderImageCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    MainSliderCell *cell =  (MainSliderCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [[_imageArr objectAtIndex:indexPath.row] objectForKey:@"atch_file_key"]];
+    
+    if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
+        [cell.imageView setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+    }else {
+        char const * s = [profileImageIdentifier  UTF8String];
+        dispatch_queue_t queue = dispatch_queue_create(s, 0);
+        dispatch_async(queue, ^{
+            
+            NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [[_imageArr objectAtIndex:indexPath.row] objectForKey:@"atch_file_key"]];
+            
+            UIImage *profileImg = nil;
+            NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+            profileImg = [[UIImage alloc] initWithData:firstImageData];
+            
+            [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [cell.imageView setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+            });
+        });
+    }
+    
+
     
     return cell;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    return 3;
+    return [_imageArr count];
 }
 - (void)pagerDidSelectedPage:(NSInteger)selectedPage {
     
     NSLog(@"PSH selectedPage : %li", (long)selectedPage);
-//    DashBoardController *dashBoardController = (DashBoardController *)self.parentViewController;
-//    [dashBoardController setMainSliderPage:selectedPage];
-    
 }
 
 

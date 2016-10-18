@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "CommonViewController.h"
-#import "MoreMyPageModel.h"
+#import "notPasteField.h"
 
-@interface MoreMyPagePasswordChangeViewController : CommonViewController
+@interface MoreMyPagePasswordChangeViewController : CommonViewController <UITextFieldDelegate>
 
-- (IBAction)closeModal:(id)sender;
+@property (weak, nonatomic) IBOutlet notPasteField *beforePasswordTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UITextField *confirmPasswordTextField;
+@property (weak, nonatomic) IBOutlet UILabel *passwordValidationLabel;
+@property (strong, nonatomic) NSMutableArray *passwordValidationArr;
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-
-@property (strong, nonatomic) MoreMyPagePasswordChangeModel *moreMyPagePasswordChangeModel;
+- (IBAction)saveButtonAction:(id)sender;
 
 @end

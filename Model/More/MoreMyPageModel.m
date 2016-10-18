@@ -158,6 +158,8 @@
         }
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.delegate = self;
+        cell.txtFetusCount.text = [NSString stringWithFormat:@"%lu명", (unsigned long)[_arrayList count]];
         
         return cell;
     }
@@ -171,6 +173,10 @@
         }
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.delegate = self;
+        if([cell.txtFetusName.text isEqualToString:@""]){
+            cell.txtFetusName.text = [[_arrayList objectAtIndex:indexPath.row-1] objectForKey:@"baby_nickname"];
+        }
         
         return cell;
     }
@@ -180,14 +186,20 @@
 
     // 헤더셀
     if (indexPath.row == 0) {
-        
-        return 54;
+        return 70;
     }
     // 컨텐츠 셀
     else {
-        
-        return 40;
+        return 46;
     }
+}
+
+-(void)deleteBabyNicknameButton:(id)sender{
+    [_delegate deleteBabyNicknameButton:sender];
+}
+
+-(void)changeCell:(NSInteger)count{
+    [_delegate changeCell:count];
 }
 
 @end

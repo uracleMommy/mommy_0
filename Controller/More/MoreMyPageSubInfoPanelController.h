@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MoreMyPageMasterViewController.h"
 
 @interface MoreMyPageSubInfoPanelController : UIViewController
 

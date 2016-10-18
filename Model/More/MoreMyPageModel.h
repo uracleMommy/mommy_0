@@ -45,10 +45,19 @@
 
 @end
 
-#pragma mark 태아정보 변경 모댈
-@interface MoreMyPageFetusChangeModel : NSObject<UITableViewDelegate, UITableViewDataSource>
+@protocol MoreMyPageFetusContentsCellDelegate <NSObject>
 
-@property (strong, nonatomic) NSArray *arrayList;
+@optional
+
+-(void)deleteBabyNicknameButton:(id)sender;
+-(void)changeCell:(NSInteger)count;
+
+@end
+#pragma mark 태아정보 변경 모댈
+@interface MoreMyPageFetusChangeModel : NSObject<UITableViewDelegate, UITableViewDataSource, MoreMyPageFetusContentsCellModel, MoreMyPageFetusHeaderCellDelegate>
+
+@property (strong, nonatomic) NSMutableArray *arrayList;
+@property (strong, nonatomic) id<MoreMyPageFetusContentsCellDelegate> delegate;
 
 @end
 

@@ -78,6 +78,9 @@
 		2AEB7F601DAC84E30032AD47 /* CommunityWriteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEB7F5F1DAC84E30032AD47 /* CommunityWriteController.m */; };
 		2AEBE3491D79419E0075B210 /* DiaryWriteScheduleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBE3481D79419E0075B210 /* DiaryWriteScheduleController.m */; };
 		2AEBE34C1D7941BF0075B210 /* DiaryDetailScheduleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBE34B1D7941BF0075B210 /* DiaryDetailScheduleController.m */; };
+		2AF695F91DB4B0B200072FC2 /* CommunitySliderImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF695F71DB4B0B200072FC2 /* CommunitySliderImageCell.m */; };
+		2AF695FB1DB4B40F00072FC2 /* CommunitySliderImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AF695F81DB4B0B200072FC2 /* CommunitySliderImageCell.xib */; };
+		2AF695FE1DB4C52D00072FC2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF695FD1DB4C52D00072FC2 /* CoreLocation.framework */; };
 		2AFDD7611D9BA0CC00FE157C /* CommunityPersonListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDD7601D9BA0CC00FE157C /* CommunityPersonListModel.m */; };
 		2AFDD7641D9BAD1800FE157C /* CommunityNewspeedListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDD7631D9BAD1800FE157C /* CommunityNewspeedListModel.m */; };
 		2AFDD7671D9BAD2700FE157C /* CommunityNewspeedListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDD7661D9BAD2700FE157C /* CommunityNewspeedListController.m */; };
@@ -461,6 +464,10 @@
 		2AEBE3481D79419E0075B210 /* DiaryWriteScheduleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryWriteScheduleController.m; sourceTree = "<group>"; };
 		2AEBE34A1D7941BF0075B210 /* DiaryDetailScheduleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryDetailScheduleController.h; sourceTree = "<group>"; };
 		2AEBE34B1D7941BF0075B210 /* DiaryDetailScheduleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryDetailScheduleController.m; sourceTree = "<group>"; };
+		2AF695F61DB4B0B200072FC2 /* CommunitySliderImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunitySliderImageCell.h; sourceTree = "<group>"; };
+		2AF695F71DB4B0B200072FC2 /* CommunitySliderImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunitySliderImageCell.m; sourceTree = "<group>"; };
+		2AF695F81DB4B0B200072FC2 /* CommunitySliderImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunitySliderImageCell.xib; sourceTree = "<group>"; };
+		2AF695FD1DB4C52D00072FC2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2AFDD75F1D9BA0CC00FE157C /* CommunityPersonListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityPersonListModel.h; sourceTree = "<group>"; };
 		2AFDD7601D9BA0CC00FE157C /* CommunityPersonListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityPersonListModel.m; sourceTree = "<group>"; };
 		2AFDD7621D9BAD1800FE157C /* CommunityNewspeedListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityNewspeedListModel.h; sourceTree = "<group>"; };
@@ -904,6 +911,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AF695FE1DB4C52D00072FC2 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1139,6 +1147,9 @@
 				2AC1644F1D9CD09500533BB0 /* CommunityDetailReplyPeopleInfoCell.xib */,
 				2AC164511D9CD0B200533BB0 /* CommunityDetailReplyContentCell.xib */,
 				2AC164551D9CD0CD00533BB0 /* CommunityDetailWriterInfoCell.xib */,
+				2AF695F61DB4B0B200072FC2 /* CommunitySliderImageCell.h */,
+				2AF695F71DB4B0B200072FC2 /* CommunitySliderImageCell.m */,
+				2AF695F81DB4B0B200072FC2 /* CommunitySliderImageCell.xib */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -1202,6 +1213,14 @@
 				2AE11DEF1D6581D9003C6690 /* DiaryListModel.m */,
 			);
 			path = Diary;
+			sourceTree = "<group>";
+		};
+		2AF695FC1DB4C52D00072FC2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2AF695FD1DB4C52D00072FC2 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		2AFDD75B1D9BA00A00FE157C /* Community */ = {
@@ -1870,6 +1889,7 @@
 				2AC781D71D5998D700B86BE1 /* StoryBoard */,
 				DCA5AE231D598C6F0075B7AD /* co.medisolution */,
 				DCA5AE221D598C6F0075B7AD /* Products */,
+				2AF695FC1DB4C52D00072FC2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1987,7 +2007,7 @@
 				TargetAttributes = {
 					DCA5AE201D598C6F0075B7AD = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = LUYT38Y3AT;
+						DevelopmentTeam = JH5F2VBM8Z;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2015,6 +2035,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AF695FB1DB4B40F00072FC2 /* CommunitySliderImageCell.xib in Resources */,
 				2AB670B11D924EAD0060561C /* Community.storyboard in Resources */,
 				DCA3BCD51D98BDB7009D3DD1 /* MoreEnvironmentAgreementCell.xib in Resources */,
 				DC4DE2D91D814F9D007CF9BF /* MoreBloodPressureHistoryCell.xib in Resources */,
@@ -2202,6 +2223,7 @@
 				2A54B1B21D66904000C538D1 /* JTDateHelper.m in Sources */,
 				DC68F5441D93D7F0009D3B1E /* MoreProfessionalReplyContentSegue.m in Sources */,
 				DCA5AE291D598C6F0075B7AD /* AppDelegate.m in Sources */,
+				2AF695F91DB4B0B200072FC2 /* CommunitySliderImageCell.m in Sources */,
 				DCF8E1EE1D8FD5C300E67402 /* MoreProfessionalAdviceCell.m in Sources */,
 				DC1A77D91D950D2200F88693 /* MoreMyPageFetusInfoChangeViewController.m in Sources */,
 				DC68F54A1D93D7FD009D3B1E /* MoreMyPageModel.m in Sources */,
@@ -2460,7 +2482,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jung Ho Park (JMP587VVKV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LUYT38Y3AT;
+				DEVELOPMENT_TEAM = JH5F2VBM8Z;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2486,7 +2508,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jung Ho Park (JMP587VVKV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LUYT38Y3AT;
+				DEVELOPMENT_TEAM = JH5F2VBM8Z;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
