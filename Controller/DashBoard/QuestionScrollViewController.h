@@ -28,6 +28,7 @@
 @property (strong, nonatomic) NSString *firstQuestionSelectedNumber;
 
 
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageSecondQuestion1;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageSecondQuestion2;
@@ -39,6 +40,7 @@
 @property (strong, nonatomic) NSString *secondQuestionSelectedNumber;
 
 
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageThirdQuestion1;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageThirdQuestion2;
@@ -48,5 +50,7 @@
 - (IBAction)thirdButtonSelect:(id)sender;
 
 @property (strong, nonatomic) NSString *thirdQuestionSelectedNumber;
+
+- (void) questionResultInfoSend; // 문진정보 결과 보내기
 
 @end

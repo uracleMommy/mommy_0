@@ -54,37 +54,49 @@
     _messageListModel = [[MessageListModel alloc] init];
     _messageListModel.modifyStatus = _modifyStatus;
     
-    NSString *auth_key = @"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJnb2dvanNzIiwic3ViIjoiZ29nb2pzcyIsImV4cCI6MTQ3NjAwNzgyOSwibmFtZSI6IuyhsOyKueyLnSIsImlhdCI6MTQ3NTE0MzgyOX0.Qzl27M2ye-2pfomvsS8W7dQin_404Ds3YkTVYur_2_4";
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"30", @"pageSize", @"1", @"searchPage", nil];
     
     [self showIndicator];
     
     [[MommyRequest sharedInstance] mommyMessageApiService:MessageList authKey:GET_AUTH_TOKEN parameters:parameters success:^(NSDictionary *data){
         
-        _dicData = [NSDictionary dictionaryWithDictionary:data];
-        
-        NSArray *resultArray = [NSArray arrayWithArray:_dicData[@"result"]];
-        
-        long totCnt = 0;
-        
-        // 데이터 형식 만들기
-        for (NSDictionary *dic in resultArray) {
-            
-            NSString *messageContent = dic[@"content"];
-            NSString *fromNickname = dic[@"from_nickname"];
-            NSString *fromUser = dic[@"from_user"];
-            NSString *imgName = dic[@"img"];
-            NSString *messageKey = dic[@"message_key"];
-            NSString *regDttm = dic[@"reg_dttm"];
-            NSString *toUser = dic[@"to_user"];
-            totCnt = [dic[@"tot_cnt"] longValue] ;
-            
-            NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"0", @"check", messageContent, @"content", fromNickname, @"from_nickname", fromUser, @"from_user", imgName, @"img", messageKey, @"message_key", regDttm, @"reg_dttm", toUser, @"to_user", nil];
-            
-            [_messageListModel.listArray addObject:dic];
-        }
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            
+            long code = [data[@"code"] longValue];
+            
+            // 실패시
+            if (code != 0) {
+                
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                [alert addAction:confirmAlertAction];
+                [self hideIndicator];
+                return;
+            }
+            
+            _dicData = [NSDictionary dictionaryWithDictionary:data];
+            
+            NSArray *resultArray = [NSArray arrayWithArray:_dicData[@"result"]];
+            
+            long totCnt = 0;
+            
+            // 데이터 형식 만들기
+            for (NSDictionary *dic in resultArray) {
+                
+                NSString *messageContent = dic[@"content"];
+                NSString *fromNickname = dic[@"from_nickname"];
+                NSString *fromUser = dic[@"from_user"];
+                NSString *imgName = dic[@"img"];
+                NSString *messageKey = dic[@"message_key"];
+                NSString *regDttm = dic[@"reg_dttm"];
+                NSString *toUser = dic[@"to_user"];
+                totCnt = [dic[@"tot_cnt"] longValue] ;
+                
+                NSDictionary *newDic = [NSDictionary dictionaryWithObjectsAndKeys:@"0", @"check", messageContent, @"content", fromNickname, @"from_nickname", fromUser, @"from_user", imgName, @"img", messageKey, @"message_key", regDttm, @"reg_dttm", toUser, @"to_user", nil];
+                
+                [_messageListModel.listArray addObject:newDic];
+            }
             
             // 카운터 없으면 empty 분기
             if (totCnt <= 0) {
@@ -200,8 +212,7 @@
     }
     
     NSString *startPageIndex = [NSString stringWithFormat:@"%ld", (long)count];
-    
-    NSString *auth_key = @"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJnb2dvanNzIiwic3ViIjoiZ29nb2pzcyIsImV4cCI6MTQ3NjAwNzgyOSwibmFtZSI6IuyhsOyKueyLnSIsImlhdCI6MTQ3NTE0MzgyOX0.Qzl27M2ye-2pfomvsS8W7dQin_404Ds3YkTVYur_2_4";
+        
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"30", @"pageSize", startPageIndex, @"searchPage", nil];
     
     [self showIndicator];
@@ -356,7 +367,6 @@
         [_btnClose addTarget:self action:@selector(closeModal) forControlEvents:UIControlEventTouchUpInside];
         _modifyStatus = NormalMode;
         
-        NSString *authKey = @"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJnb2dvanNzIiwic3ViIjoiZ29nb2pzcyIsImV4cCI6MTQ3NjAwNzgyOSwibmFtZSI6IuyhsOyKueyLnSIsImlhdCI6MTQ3NTE0MzgyOX0.Qzl27M2ye-2pfomvsS8W7dQin_404Ds3YkTVYur_2_4";
         NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:deleteKey, @"del_list", nil];
         
         // 삭제 처리
@@ -366,7 +376,6 @@
             _messageListModel = NormalMode;
             _messageListModel = [[MessageListModel alloc] init];
             
-            NSString *auth_key = @"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJnb2dvanNzIiwic3ViIjoiZ29nb2pzcyIsImV4cCI6MTQ3NjAwNzgyOSwibmFtZSI6IuyhsOyKueyLnSIsImlhdCI6MTQ3NTE0MzgyOX0.Qzl27M2ye-2pfomvsS8W7dQin_404Ds3YkTVYur_2_4";
             NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"10", @"pageSize", @"1", @"searchPage", nil];
             
             dispatch_async(dispatch_get_main_queue(), ^{

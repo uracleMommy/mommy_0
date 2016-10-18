@@ -14,6 +14,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DashBoardScrollCellView">
             <connections>
+                <outlet property="sliderContent" destination="Aax-Mg-Zk6" id="rLl-CQ-XGX"/>
+                <outlet property="sliderImage" destination="c4A-wb-rgi" id="3L4-7Z-hgj"/>
+                <outlet property="sliderTitle" destination="H5B-55-Gz5" id="mOf-en-p2s"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

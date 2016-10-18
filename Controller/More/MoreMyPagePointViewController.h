@@ -10,7 +10,7 @@
 #import "CommonViewController.h"
 #import "MoreMyPageModel.h"
 
-@interface MoreMyPagePointViewController : CommonViewController
+@interface MoreMyPagePointViewController : CommonViewController<MoreMyPageModelDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *pointContainerView;
 
@@ -19,5 +19,9 @@
 - (IBAction)closeModal:(id)sender;
 
 @property (strong, nonatomic) MoreMyPagePointModel *moreMyPagePointModel;
+
+@property (weak, nonatomic) IBOutlet UILabel *lblTotalPoint;
+
+@property (weak, nonatomic) IBOutlet UILabel *lblName;
 
 @end

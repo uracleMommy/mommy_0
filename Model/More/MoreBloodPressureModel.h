@@ -12,5 +12,7 @@
 
 @property (strong, nonatomic) NSArray *arrayList;
 
+@property (strong, nonatomic) NSMutableArray *buttonArray;
+
 @end
 

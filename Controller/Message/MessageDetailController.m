@@ -168,7 +168,7 @@ const int messageViewHeight = 33;
         return;
     }
     
-    NSString *auth_key = @"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJnb2dvanNzIiwic3ViIjoiZ29nb2pzcyIsImV4cCI6MTQ3NjAwNzgyOSwibmFtZSI6IuyhsOyKueyLnSIsImlhdCI6MTQ3NTE0MzgyOX0.Qzl27M2ye-2pfomvsS8W7dQin_404Ds3YkTVYur_2_4";
+    NSString *auth_key = [GlobalData sharedGlobalData].authToken;
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"gogojss", @"to_user", _txtMessageContent.text, @"content", nil];
     
     [[MommyRequest sharedInstance] mommyMessageApiService:MessageSend authKey:auth_key parameters:parameters success:^(NSDictionary *data){

@@ -16,8 +16,6 @@
 
 @property (strong, nonatomic) MoreBloodPressureModel *moreBloodPressureModel;
 
-- (IBAction)closeModal:(id)sender;
-
 - (IBAction)addHistory:(id)sender;
 
 @end

@@ -68,9 +68,10 @@
             </constraints>
             <size key="customSize" width="275" height="59"/>
             <connections>
-                <outlet property="containerView" destination="Pu3-vW-IvL" id="vLx-Ay-Dll"/>
-                <outlet property="lblContent" destination="Pu3-vW-IvL" id="YSD-gf-TBz"/>
-                <outlet property="lblTitle" destination="Pu3-vW-IvL" id="gn8-vG-5Fz"/>
+                <outlet property="containerView" destination="Pu3-vW-IvL" id="VjJ-zP-Y8f"/>
+                <outlet property="lblContent" destination="VpV-nq-hQp" id="yjC-JT-mbR"/>
+                <outlet property="lblTitle" destination="GGH-ty-yvn" id="v6x-0l-wnA"/>
+                <outlet property="titleImage" destination="aKu-cW-fXN" id="mWz-zC-Nnk"/>
             </connections>
             <point key="canvasLocation" x="-947" y="-664"/>
         </collectionViewCell>

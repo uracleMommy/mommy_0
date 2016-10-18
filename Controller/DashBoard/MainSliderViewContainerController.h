@@ -13,4 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet HWViewPager *mainSlider;
 
+@property (strong, nonatomic) NSArray *programList;
+
 @end

@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -138,14 +140,12 @@
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                 <connections>
-                                    <segue destination="abO-WL-GvK" kind="embed" id="MFS-kl-ISe"/>
+                                    <segue destination="abO-WL-GvK" kind="embed" identifier="goDashboardProgramInfo" id="MFS-kl-ISe"/>
                                 </connections>
                             </containerView>
-                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lng-Pm-zMK">
-                                <frame key="frameInset" height="381"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lng-Pm-zMK">
                                 <connections>
-                                    <segue destination="6XP-Bz-MBv" kind="embed" id="Tf3-hr-osN"/>
+                                    <segue destination="6XP-Bz-MBv" kind="embed" identifier="goDashboardTotalInfo" id="Tf3-hr-osN"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -154,11 +154,15 @@
                             <constraint firstItem="1iz-EX-ELd" firstAttribute="centerX" secondItem="lhh-2C-1mv" secondAttribute="centerX" id="1Lr-EK-ttl"/>
                             <constraint firstItem="Ho8-af-Jk8" firstAttribute="leading" secondItem="lhh-2C-1mv" secondAttribute="leading" id="3Il-OV-vj1"/>
                             <constraint firstItem="L49-sC-bjT" firstAttribute="leading" secondItem="lhh-2C-1mv" secondAttribute="leading" id="GO6-yr-00U"/>
+                            <constraint firstItem="lng-Pm-zMK" firstAttribute="top" secondItem="zQh-xI-Xue" secondAttribute="bottom" id="Pwd-5C-ceU"/>
                             <constraint firstItem="Ho8-af-Jk8" firstAttribute="top" secondItem="zQh-xI-Xue" secondAttribute="bottom" id="QiQ-JC-K8Z"/>
                             <constraint firstItem="L49-sC-bjT" firstAttribute="top" secondItem="Ho8-af-Jk8" secondAttribute="bottom" constant="21" id="R2z-xc-ghW"/>
+                            <constraint firstAttribute="trailing" secondItem="lng-Pm-zMK" secondAttribute="trailing" id="ZOS-JQ-xnt"/>
                             <constraint firstAttribute="trailing" secondItem="L49-sC-bjT" secondAttribute="trailing" id="fML-xd-UgM"/>
                             <constraint firstItem="1iz-EX-ELd" firstAttribute="top" secondItem="L49-sC-bjT" secondAttribute="bottom" constant="12" id="fiV-Lf-gca"/>
+                            <constraint firstItem="lng-Pm-zMK" firstAttribute="leading" secondItem="lhh-2C-1mv" secondAttribute="leading" id="guq-w1-Gtm"/>
                             <constraint firstItem="Mgy-Sr-baA" firstAttribute="top" secondItem="1iz-EX-ELd" secondAttribute="bottom" constant="17" id="ivD-0i-nLZ"/>
+                            <constraint firstItem="L49-sC-bjT" firstAttribute="top" secondItem="lng-Pm-zMK" secondAttribute="bottom" constant="21" id="mds-f6-Zre"/>
                             <constraint firstAttribute="trailing" secondItem="Ho8-af-Jk8" secondAttribute="trailing" id="xBw-tT-Hrk"/>
                         </constraints>
                     </view>
@@ -819,9 +823,10 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUs-tB-aDy">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1. 자연분만을 2회 이상 경험 하셨나요?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kga-8w-R4x">
-                                        <frame key="frameInset" minX="8" minY="8" width="288" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. 자연분만을 2회 이상 경험 하셨나요?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kga-8w-R4x">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="X3f-V1-eTs"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
                                         <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1190,9 +1195,12 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="xgi-aE-xBU" firstAttribute="leading" secondItem="bUs-tB-aDy" secondAttribute="leading" constant="8" id="3IB-ee-xN3"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kga-8w-R4x" secondAttribute="trailing" constant="8" id="DpE-VX-2I8"/>
                                     <constraint firstAttribute="trailing" secondItem="xgi-aE-xBU" secondAttribute="trailing" constant="8" id="Im0-iZ-lvp"/>
+                                    <constraint firstItem="Kga-8w-R4x" firstAttribute="leading" secondItem="bUs-tB-aDy" secondAttribute="leading" constant="8" id="KyZ-fI-4t8"/>
                                     <constraint firstAttribute="height" constant="397" id="WlM-QJ-v1K"/>
                                     <constraint firstAttribute="bottom" secondItem="xgi-aE-xBU" secondAttribute="bottom" constant="8" id="Yfj-c1-tQF"/>
+                                    <constraint firstItem="Kga-8w-R4x" firstAttribute="top" secondItem="bUs-tB-aDy" secondAttribute="top" constant="8" id="cLv-tk-fX0"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="산모에게 가장 적합한 영양/운동관리 컨텐츠를 제공하기 위해서 아래의 정보를 입력해 주세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2L-Zl-uvg">
@@ -1300,127 +1308,169 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="381"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_img_01" translatesAutoresizingMaskIntoConstraints="NO" id="mSd-vN-dKR">
-                                <frame key="frameInset" minY="-6" width="375" height="387"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="눈과 코, 턱이 사람의 모습에 가까워지고 있어요. 드디어 태동이 느껴집니다. (48자)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJI-UO-VIP">
-                                <frame key="frameInset" minX="16" minY="140" width="343" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_img_01" translatesAutoresizingMaskIntoConstraints="NO" id="mSd-vN-dKR"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="눈과 코, 턱이 사람의 모습에 가까워지고 있어요. 드디어 태동이 느껴집니다. (48자)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJI-UO-VIP">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="Sqs-zh-Lc9"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RYQ-YY-liA">
-                                <frame key="frameInset" minX="16" minY="207" width="343" height="170"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RYQ-YY-liA">
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQk-rb-WdN">
-                                        <frame key="frameInset" width="114" height="170"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sQk-rb-WdN">
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="시간" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gao-VF-qn2">
-                                                <frame key="frameInset" minX="33" minY="104" width="30" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="24" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8U-Sd-enf">
-                                                <frame key="frameInset" minX="8" minY="102" width="25" height="24"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="분" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4v-rK-wB1">
-                                                <frame key="frameInset" minX="86" minY="104" width="15" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3m-zH-VUL">
-                                                <frame key="frameInset" minX="61" minY="102" width="25" height="24"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GOOD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Tc-y3-rOi">
-                                                <frame key="frameInset" minX="8" minY="134" width="98" height="24"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_icon_sleep" translatesAutoresizingMaskIntoConstraints="NO" id="OxS-qI-7LL">
-                                                <frame key="frameInset" minX="17" minY="8" width="80" height="80"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VPP-ZF-r5V">
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="시간" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gao-VF-qn2">
+                                                        <frame key="frameInset" minX="26" minY="98" width="30" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="24" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8U-Sd-enf">
+                                                        <frame key="frameInset" minX="2" minY="96" width="25" height="24"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="분" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4v-rK-wB1">
+                                                        <frame key="frameInset" minX="79" minY="98" width="15" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3m-zH-VUL">
+                                                        <frame key="frameInset" minX="54" minY="96" width="25" height="24"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GOOD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Tc-y3-rOi">
+                                                        <frame key="frameInset" minX="2" minY="128" width="98" height="24"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_icon_sleep" translatesAutoresizingMaskIntoConstraints="NO" id="OxS-qI-7LL">
+                                                        <frame key="frameInset" minX="10" minY="2" width="80" height="80"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="156" id="DR7-Pv-hLf"/>
+                                                    <constraint firstAttribute="width" constant="102" id="Sr4-Ww-cPy"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="VPP-ZF-r5V" firstAttribute="centerX" secondItem="sQk-rb-WdN" secondAttribute="centerX" id="2oO-m1-j6X"/>
+                                            <constraint firstItem="VPP-ZF-r5V" firstAttribute="top" secondItem="sQk-rb-WdN" secondAttribute="top" constant="7" id="M3R-4T-hJO"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ekJ-Eu-Jib">
-                                        <frame key="frameInset" minX="114" width="114" height="170"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekJ-Eu-Jib">
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="68.9" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OvT-GQ-Yt3">
-                                                <frame key="frameInset" minY="104" width="84" height="24"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="25"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="kg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b16-72-q3G">
-                                                <frame key="frameInset" minX="85" minY="108" width="19" height="19"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_icon_sleep" translatesAutoresizingMaskIntoConstraints="NO" id="ppT-hU-sOo">
-                                                <frame key="frameInset" minX="17" minY="8" width="80" height="80"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="정상체중" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edH-OM-kMn">
-                                                <frame key="frameInset" minX="8" minY="134" width="98" height="24"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PvY-SW-izL">
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="68.9" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OvT-GQ-Yt3">
+                                                        <frame key="frameInset" minX="2" minY="96" width="75" height="24"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="25"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="kg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b16-72-q3G">
+                                                        <frame key="frameInset" minX="78" minY="100" width="19" height="19"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="정상체중" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edH-OM-kMn">
+                                                        <frame key="frameInset" minX="6" minY="129" width="91" height="24"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_icon_weight" translatesAutoresizingMaskIntoConstraints="NO" id="ppT-hU-sOo">
+                                                        <frame key="frameInset" minX="11" minY="2" width="80" height="80"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="102" id="EOz-wN-uDR"/>
+                                                    <constraint firstAttribute="height" constant="156" id="Sgx-Of-LPh"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="PvY-SW-izL" firstAttribute="centerX" secondItem="ekJ-Eu-Jib" secondAttribute="centerX" id="dXN-dS-Yb3"/>
+                                            <constraint firstItem="PvY-SW-izL" firstAttribute="top" secondItem="ekJ-Eu-Jib" secondAttribute="top" constant="7" id="nlB-sj-Nlw"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aY4-je-rwG">
-                                        <frame key="frameInset" minX="228" width="115" height="170"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aY4-je-rwG">
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_icon_sleep" translatesAutoresizingMaskIntoConstraints="NO" id="nBO-uo-8Vf">
-                                                <frame key="frameInset" minX="17" minY="8" width="80" height="80"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1,0000걸음" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rn1-2V-dC6">
-                                                <frame key="frameInset" minX="8" minY="104" width="98" height="24"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-1,000kcal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cF-CQ-BzZ">
-                                                <frame key="frameInset" minX="8" minY="134" width="98" height="24"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Djf-Ue-2zy">
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_icon_activity" translatesAutoresizingMaskIntoConstraints="NO" id="nBO-uo-8Vf">
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="Kfg-cW-ryt"/>
+                                                            <constraint firstAttribute="width" constant="80" id="ffR-jF-ncc"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1,0000걸음" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rn1-2V-dC6">
+                                                        <frame key="frameInset" minX="2" minY="97" width="98" height="24"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-1,000kcal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cF-CQ-BzZ">
+                                                        <frame key="frameInset" minX="2" minY="129" width="98" height="24"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="nBO-uo-8Vf" firstAttribute="centerX" secondItem="Djf-Ue-2zy" secondAttribute="centerX" id="2fS-2c-XO1"/>
+                                                    <constraint firstItem="nBO-uo-8Vf" firstAttribute="top" secondItem="Djf-Ue-2zy" secondAttribute="top" constant="2" id="RfT-mJ-Pg8"/>
+                                                    <constraint firstAttribute="height" constant="156" id="mZc-Me-7NN"/>
+                                                    <constraint firstAttribute="width" constant="102" id="s3Q-kB-LyA"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Djf-Ue-2zy" firstAttribute="top" secondItem="aY4-je-rwG" secondAttribute="top" constant="7" id="KMI-b2-JLN"/>
+                                            <constraint firstItem="Djf-Ue-2zy" firstAttribute="centerX" secondItem="aY4-je-rwG" secondAttribute="centerX" id="rAw-al-66c"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="sQk-rb-WdN" firstAttribute="leading" secondItem="RYQ-YY-liA" secondAttribute="leading" id="44C-Oy-odF"/>
+                                    <constraint firstAttribute="trailing" secondItem="aY4-je-rwG" secondAttribute="trailing" id="FPq-hT-hLJ"/>
+                                    <constraint firstItem="aY4-je-rwG" firstAttribute="width" secondItem="RYQ-YY-liA" secondAttribute="width" multiplier="1:3" id="GCN-RA-vL7"/>
+                                    <constraint firstItem="aY4-je-rwG" firstAttribute="leading" secondItem="ekJ-Eu-Jib" secondAttribute="trailing" id="JZU-p6-8Pt"/>
+                                    <constraint firstAttribute="bottom" secondItem="ekJ-Eu-Jib" secondAttribute="bottom" id="NHy-P3-d7b"/>
+                                    <constraint firstItem="sQk-rb-WdN" firstAttribute="width" secondItem="RYQ-YY-liA" secondAttribute="width" multiplier="1:3" id="Oz5-Yw-K9e"/>
+                                    <constraint firstItem="aY4-je-rwG" firstAttribute="top" secondItem="RYQ-YY-liA" secondAttribute="top" id="TkM-0v-Zp0"/>
+                                    <constraint firstItem="sQk-rb-WdN" firstAttribute="top" secondItem="RYQ-YY-liA" secondAttribute="top" id="VX4-L6-5Lo"/>
+                                    <constraint firstAttribute="bottom" secondItem="aY4-je-rwG" secondAttribute="bottom" id="bUa-uD-dNJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="sQk-rb-WdN" secondAttribute="bottom" id="dNX-t9-jaQ"/>
+                                    <constraint firstItem="ekJ-Eu-Jib" firstAttribute="top" secondItem="RYQ-YY-liA" secondAttribute="top" id="rRQ-A7-0x0"/>
+                                    <constraint firstItem="ekJ-Eu-Jib" firstAttribute="leading" secondItem="sQk-rb-WdN" secondAttribute="trailing" id="rj6-lR-CKg"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7rz-lt-KMm">
-                                <frame key="frameInset" minX="128" minY="46" width="119" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7rz-lt-KMm">
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_icon_heart" translatesAutoresizingMaskIntoConstraints="NO" id="oJb-Up-iIZ">
                                         <frame key="frameInset" minX="7" minY="8" width="30" height="30"/>
@@ -1434,10 +1484,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="119" id="Ys8-GL-72j"/>
+                                    <constraint firstAttribute="height" constant="47" id="bOb-7z-ZXD"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WTo-Cp-v9Y">
-                                <frame key="frameInset" minX="143" minY="96" width="88" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WTo-Cp-v9Y">
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="D-170" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlj-XZ-uHK">
                                         <frame key="frameInset" minX="5" minY="4" width="77" height="28"/>
@@ -1448,9 +1500,30 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Cj0-bt-d1N"/>
+                                    <constraint firstAttribute="width" constant="88" id="D4f-xy-TJO"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="RYQ-YY-liA" secondAttribute="trailing" constant="16" id="0pO-76-8pV"/>
+                            <constraint firstItem="jIT-i8-6UE" firstAttribute="top" secondItem="RYQ-YY-liA" secondAttribute="bottom" constant="4" id="8YA-9v-S79"/>
+                            <constraint firstItem="RYQ-YY-liA" firstAttribute="top" secondItem="sJI-UO-VIP" secondAttribute="bottom" constant="24" id="8or-Ed-wOW"/>
+                            <constraint firstItem="mSd-vN-dKR" firstAttribute="leading" secondItem="Ctc-UH-oId" secondAttribute="leading" id="ARv-aC-hec"/>
+                            <constraint firstItem="WTo-Cp-v9Y" firstAttribute="centerX" secondItem="Ctc-UH-oId" secondAttribute="centerX" id="Lpr-eH-ZcI"/>
+                            <constraint firstItem="jIT-i8-6UE" firstAttribute="top" secondItem="mSd-vN-dKR" secondAttribute="bottom" id="Oyc-L3-ZB0"/>
+                            <constraint firstItem="7rz-lt-KMm" firstAttribute="centerX" secondItem="Ctc-UH-oId" secondAttribute="centerX" id="P7W-S8-nEH"/>
+                            <constraint firstItem="mSd-vN-dKR" firstAttribute="top" secondItem="e3U-OL-jML" secondAttribute="bottom" id="R97-nV-YxM"/>
+                            <constraint firstItem="WTo-Cp-v9Y" firstAttribute="top" secondItem="7rz-lt-KMm" secondAttribute="bottom" constant="3" id="ZZB-w3-xqF"/>
+                            <constraint firstItem="sJI-UO-VIP" firstAttribute="top" secondItem="WTo-Cp-v9Y" secondAttribute="bottom" constant="8" id="cEb-AF-6c0"/>
+                            <constraint firstItem="7rz-lt-KMm" firstAttribute="top" secondItem="e3U-OL-jML" secondAttribute="bottom" constant="46" id="lqK-ah-oKe"/>
+                            <constraint firstAttribute="trailing" secondItem="mSd-vN-dKR" secondAttribute="trailing" id="n0v-WY-U36"/>
+                            <constraint firstItem="sJI-UO-VIP" firstAttribute="leading" secondItem="Ctc-UH-oId" secondAttribute="leadingMargin" id="neK-6h-07B"/>
+                            <constraint firstItem="sJI-UO-VIP" firstAttribute="trailing" secondItem="Ctc-UH-oId" secondAttribute="trailingMargin" id="p3G-FR-dtu"/>
+                            <constraint firstItem="RYQ-YY-liA" firstAttribute="leading" secondItem="Ctc-UH-oId" secondAttribute="leading" constant="16" id="szy-4d-e5H"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="dDayContainerView" destination="WTo-Cp-v9Y" id="lwN-9M-3Ve"/>
@@ -1459,7 +1532,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gyR-4F-cOe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-634.5" y="-748.5"/>
+            <point key="canvasLocation" x="-779" y="-552"/>
         </scene>
         <!--Question Scroll View Controller-->
         <scene sceneID="Xgt-NT-Mih">
@@ -1716,10 +1789,11 @@
                                         <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fT6-a5-Omn">
-                                        <frame key="frameInset" minX="8" minY="224" width="288" height="66"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fT6-a5-Omn">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="66" id="cri-5P-lY7"/>
+                                        </constraints>
                                         <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1728,6 +1802,9 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="397" id="Fr6-Hq-sWV"/>
+                                    <constraint firstItem="fT6-a5-Omn" firstAttribute="leading" secondItem="IdE-EH-rNY" secondAttribute="leading" constant="8" id="FsY-Bf-rws"/>
+                                    <constraint firstAttribute="trailing" secondItem="fT6-a5-Omn" secondAttribute="trailing" constant="8" id="LlM-4O-dKV"/>
+                                    <constraint firstAttribute="bottom" secondItem="fT6-a5-Omn" secondAttribute="bottom" constant="107" id="ges-L8-yzt"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="산모에게 가장 적합한 영양/운동관리 컨텐츠를 제공하기 위해서 아래의 정보를 입력해 주세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRC-RZ-pYz">
@@ -1774,8 +1851,10 @@
         <image name="contents_btn_play" width="160" height="160"/>
         <image name="contents_btn_save" width="160" height="160"/>
         <image name="contents_btn_stop" width="160" height="160"/>
+        <image name="home_icon_activity" width="120" height="120"/>
         <image name="home_icon_heart" width="60" height="60"/>
         <image name="home_icon_sleep" width="120" height="120"/>
+        <image name="home_icon_weight" width="120" height="120"/>
         <image name="home_img_01" width="720" height="686"/>
         <image name="home_img_02" width="720" height="686"/>
         <image name="radio_btn_off" width="46" height="46"/>

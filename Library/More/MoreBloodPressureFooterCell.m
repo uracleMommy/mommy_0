@@ -1,22 +1,18 @@
 //
-//  MoreBloodPressureHistoryCell.m
+//  MoreBloodPressureFooterCell.m
 //  co.medisolution
 //
-//  Created by OGGU on 2016. 9. 8..
+//  Created by OGGU on 2016. 10. 17..
 //  Copyright © 2016년 medisolution. All rights reserved.
 //
 
-#import "MoreBloodPressureHistoryCell.h"
+#import "MoreBloodPressureFooterCell.h"
 
-@implementation MoreBloodPressureHistoryCell
+@implementation MoreBloodPressureFooterCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    
-//    _containerView.layer.borderColor = [[UIColor colorWithRed:217.0f/255.0f green:217.0f/255.0f blue:217.0f/255.0f alpha:1.0f] CGColor];
-//    _containerView.layer.borderWidth = 1.0f;
-//    _containerView.layer.cornerRadius = 10;
     
     
 }
@@ -29,7 +25,7 @@
 
 - (void) drawRect:(CGRect)rect {
     
-    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:_containerView.bounds byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerTopRight) cornerRadii:CGSizeMake(10.0, 10.0)];
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:_containerView.bounds byRoundingCorners:(UIRectCornerBottomLeft | UIRectCornerBottomRight) cornerRadii:CGSizeMake(10.0, 10.0)];
     
     CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
     maskLayer.frame = self.contentView.bounds;

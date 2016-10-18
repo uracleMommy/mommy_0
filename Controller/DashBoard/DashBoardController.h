@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "CommonViewController.h"
 #import "MessageListController.h"
+#import "MainSliderViewContainerController.h"
+#import "MainInfoContainerViewController.h"
 
 @protocol DashBoardControllerDelegate;
 
@@ -37,6 +39,14 @@
 - (IBAction)MessageModal:(id)sender;
 
 - (void) setMainSliderPage : (NSInteger) pageIndex;
+
+@property (strong, nonatomic) NSArray *programList;
+
+@property (strong, nonatomic) NSDictionary *dashboardDic;
+
+@property (strong, nonatomic) MainSliderViewContainerController *mainSliderViewContainerController;
+
+@property (strong, nonatomic) MainInfoContainerViewController *mainInfoContainerViewController;
 
 @end
 

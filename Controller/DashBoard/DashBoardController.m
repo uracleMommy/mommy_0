@@ -58,8 +58,17 @@
                 return;
             }
             
+            // 프로그램 리스트 바인드
+            _programList = [NSArray arrayWithArray:data[@"result"][@"program_list"]];
+            
             // 문진정보 띄우기(제출을 하지 않았으면)
             [self performSegueWithIdentifier:@"goQuestionModal" sender:data[@"result"][@"baby_info"][@"mom_week"]];
+            
+            // 프로그램 리스트 바인드
+            [self programListBind];
+            
+            // 대쉬보드 정보 바인드
+            _dashboardDic = data[@"result"];
             
             [self hideIndicator];
         });
@@ -82,6 +91,19 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma 프로그램 리스트 바인드
+- (void) programListBind {
+    
+    _mainSliderViewContainerController.programList = _programList;
+    [_mainSliderViewContainerController.mainSlider reloadData];
+}
+
+#pragma 대쉬보드 정보 바인드
+- (void) dashboardDetailInfoBind {
+    
+    
 }
 
 #pragma mark OTPageScrollViewDataSource CallBackMethod
@@ -109,7 +131,6 @@
 }
 
 - (void)pageScrollView:(OTPageScrollView *)pageScrollView didTapPageAtIndex:(NSInteger)index {
-    
     
 }
 
@@ -181,6 +202,7 @@
 - (void) setMainSliderPage : (NSInteger) pageIndex {
     
     switch (pageIndex) {
+            
         case 0:
             _firstLedBox.hidden = NO;
             _secondLedBox.hidden = YES;
@@ -212,6 +234,25 @@
         QuestionViewController *questionViewController = (QuestionViewController *)navController.viewControllers[0];
         questionViewController.momWeek = [NSNumber numberWithInt:[sender intValue]];
     }
+    else if ([segue.identifier isEqualToString:@"goDashboardTotalInfo"]) {
+        
+        
+        NSLog(@"여기");
+    }
+    else if ([segue.identifier isEqualToString:@"goDashboardProgramInfo"]) {
+        
+        _mainSliderViewContainerController = segue.destinationViewController;
+    }
 }
 
 @end
+
+
+
+
+
+
+
+
+
+

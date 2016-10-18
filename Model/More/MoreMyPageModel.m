@@ -7,13 +7,14 @@
 //
 
 #import "MoreMyPageModel.h"
-
+#import "MommyUtils.h"
 #pragma mark 닉네임 변경 모델
 @implementation MoreMyNickNameChangeModel
 
 - (id) init {
     
     if (self = [super init]) {
+        
         
     }
     
@@ -198,6 +199,7 @@
     
     if (self = [super init]) {
         
+        _arrayList = [[NSMutableArray alloc] init];
     }
     
     return self;
@@ -242,6 +244,20 @@
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    NSDictionary *dic = _arrayList[indexPath.row];
+    
+    cell.lblPoint.text = [NSString stringWithFormat:@"%d", [dic[@"amount"] intValue]];
+    cell.lblType.text = dic[@"name"];
+    cell.lblAcquisitionDay.text = [NSString stringWithFormat:@"획득일 %@", [[MommyUtils sharedGlobalData] getMommyDateyyyyMMdd:dic[@"reg_dttm"]]];
+    
+    if (indexPath.row == _arrayList.count - 1 && _arrayList.count % 30 == 0) {
+        
+        if ([self.delegate respondsToSelector:@selector(tableView:totalPageCount:)]) {
+            
+            [self.delegate tableView:tableView totalPageCount:_arrayList.count];
+        }
+    }
     
     return cell;
 }

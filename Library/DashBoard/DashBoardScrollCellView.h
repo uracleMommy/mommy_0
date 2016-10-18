@@ -10,4 +10,10 @@
 
 @interface DashBoardScrollCellView : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *sliderImage;
+
+@property (weak, nonatomic) IBOutlet UILabel *sliderTitle;
+
+@property (weak, nonatomic) IBOutlet UILabel *sliderContent;
+
 @end

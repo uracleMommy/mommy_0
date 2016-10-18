@@ -59,7 +59,7 @@
             <connections>
                 <outlet property="txtFetusName" destination="OcY-He-aJr" id="Ukp-mr-OfA"/>
             </connections>
-            <point key="canvasLocation" x="-464" y="-165"/>
+            <point key="canvasLocation" x="-442" y="-151"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -34,6 +34,10 @@
     _imageSecondQuestion1.image = [UIImage imageNamed:@"radio_btn_on"];
     _imageThirdQuestion1.image = [UIImage imageNamed:@"radio_btn_on"];
     
+    _firstQuestionSelectedNumber = @"1";
+    _secondQuestionSelectedNumber = @"1";
+    _thirdQuestionSelectedNumber = @"1";
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -123,26 +127,36 @@
 #pragma 문진정보 보내기
 - (void) questionResultInfoSend {
     
-    // 21주차 미만
-    if ([_momWeek intValue] <= 21) {
+    NSDictionary *parameters;
+    
+    // 21주차 이상
+    if ([_momWeek intValue] >= 21) {
         
+        parameters = [NSDictionary dictionaryWithObjectsAndKeys:_momWeek, @"mom_week", _firstQuestionSelectedNumber, @"question1", _secondQuestionSelectedNumber, @"question2", _thirdQuestionSelectedNumber, @"question3", _txtView.text, @"question4", nil];
     }
+    // 21주차 미만
     else {
         
+        parameters = [NSDictionary dictionaryWithObjectsAndKeys:_momWeek, @"mom_week", _firstQuestionSelectedNumber, @"question1", _secondQuestionSelectedNumber, @"question2", _txtView.text, @"question4", nil];
     }
-    
     
     [self showIndicator];
     
     NSString *auth_key = [GlobalData sharedGlobalData].authToken;
     
-    //
-    
-    NSDictionary *parameters = [[NSDictionary alloc] init];
-    
     [[MommyRequest sharedInstance] mommyDashboardApiService:DashboardQuestionInfoInsert authKey:auth_key parameters:parameters success:^(NSDictionary *data){
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if (data == nil) {
+                
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                [alert addAction:confirmAlertAction];
+                //[self presentViewController:alert animated:YES completion:nil];
+                [self hideIndicator];
+                return;
+            }
             
             long code = [data[@"code"] longValue];
             
@@ -157,8 +171,6 @@
                 return;
             }
             
-            // 문진정보 띄우기(제출을 하지 않았으면)
-            [self performSegueWithIdentifier:@"goQuestionModal" sender:data[@"result"][@"baby_info"][@"mom_week"]];
             
             [self hideIndicator];
         });

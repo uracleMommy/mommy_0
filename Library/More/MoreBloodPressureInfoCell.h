@@ -1,14 +1,14 @@
 //
-//  MoreBloodPressureHistoryCell.h
+//  MoreBloodPressureInfoCell.h
 //  co.medisolution
 //
-//  Created by OGGU on 2016. 9. 8..
+//  Created by OGGU on 2016. 10. 17..
 //  Copyright © 2016년 medisolution. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface MoreBloodPressureHistoryCell : UITableViewCell
+@interface MoreBloodPressureInfoCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 

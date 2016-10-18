@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="d8O-Ij-A3J">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="d8O-Ij-A3J">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -100,7 +100,7 @@
             <objects>
                 <navigationController id="N2k-Qr-wG1" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="516-Su-Ana">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="516-Su-Ana">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -359,7 +359,7 @@
             <objects>
                 <navigationController id="WaC-mG-fdw" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="nhm-RY-PW4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="nhm-RY-PW4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -380,7 +380,7 @@
             <objects>
                 <navigationController id="ohD-xh-o9V" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="yIT-9r-UD5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="yIT-9r-UD5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -821,7 +821,7 @@
             <objects>
                 <navigationController id="BEM-KD-Ata" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="nWI-b7-3Ws">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="nWI-b7-3Ws">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -888,7 +888,7 @@
             <objects>
                 <navigationController id="6gY-hi-GWI" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="lIJ-qc-BPW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="lIJ-qc-BPW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -970,18 +970,7 @@
                             <constraint firstItem="zsh-9K-en3" firstAttribute="leading" secondItem="2SV-nv-VL5" secondAttribute="leading" id="hUC-Om-iHX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="혈압관리" id="vbC-dA-ciD">
-                        <barButtonItem key="leftBarButtonItem" title="닫기" id="x13-vH-n6G">
-                            <connections>
-                                <action selector="closeModal:" destination="aFA-9D-0sv" id="V13-T3-r2g"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="추가" id="uuC-ZH-3T4">
-                            <connections>
-                                <action selector="addHistory:" destination="aFA-9D-0sv" id="ijI-ec-Wlu"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="혈압관리" id="vbC-dA-ciD"/>
                     <connections>
                         <outlet property="tableView" destination="zsh-9K-en3" id="wgr-eg-iRl"/>
                     </connections>
@@ -996,7 +985,7 @@
                 <navigationController id="O1c-g3-euU" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="aLl-ce-VKh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="aLl-ce-VKh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1014,7 +1003,7 @@
             <objects>
                 <navigationController id="plu-qQ-qqa" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="3vG-E3-5Bg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="3vG-E3-5Bg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -1056,7 +1045,7 @@
                                                 <frame key="frameInset" minX="8" minY="4" width="25" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100,000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5q-Dt-0gx">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5q-Dt-0gx">
                                                 <frame key="frameInset" minX="28" minY="6" width="71" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="15"/>
@@ -1103,6 +1092,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="lblName" destination="Zm8-FM-EEQ" id="Ck2-Gn-FnI"/>
+                        <outlet property="lblTotalPoint" destination="n5q-Dt-0gx" id="ch9-vg-Rt8"/>
                         <outlet property="pointContainerView" destination="bcb-6X-mHr" id="tBi-Jo-SCV"/>
                         <outlet property="tableView" destination="6jC-Tf-4lj" id="DFq-in-zt0"/>
                     </connections>
@@ -1117,7 +1108,7 @@
                 <navigationController id="1TF-S5-Wku" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="y3y-tI-dP7">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="y3y-tI-dP7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1310,7 +1301,7 @@
             <objects>
                 <navigationController id="SBo-0t-0bm" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="9Ue-GE-wEc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="9Ue-GE-wEc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -1426,7 +1417,7 @@
             <objects>
                 <navigationController id="bHK-Sk-F1t" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="pcy-Sp-y9K">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="pcy-Sp-y9K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -1521,7 +1512,7 @@
             <objects>
                 <navigationController id="amu-Ln-LAV" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="EWF-sT-96o">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="EWF-sT-96o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -1542,7 +1533,7 @@
             <objects>
                 <navigationController id="Lr1-9i-yxE" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="tMQ-Xp-iPE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="tMQ-Xp-iPE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>

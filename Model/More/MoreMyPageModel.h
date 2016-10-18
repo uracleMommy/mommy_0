@@ -20,6 +20,8 @@
 
 - (void) tableView : (UITableView *) tableView MoreMyPageModelSelectedIndexPath : (NSIndexPath *) indexPath;
 
+- (void) tableView : (UITableView *) tableView totalPageCount : (NSInteger) count;
+
 @end
 
 #pragma mark 닉네임 변경 프로토콜
@@ -53,6 +55,8 @@
 #pragma mark 포인트
 @interface MoreMyPagePointModel : NSObject<UITableViewDelegate, UITableViewDataSource>
 
-@property (strong, nonatomic) NSArray *arrayList;
+@property (strong, nonatomic) NSMutableArray *arrayList;
+
+@property (strong, nonatomic) id<MoreMyPageModelDelegate> delegate;
 
 @end

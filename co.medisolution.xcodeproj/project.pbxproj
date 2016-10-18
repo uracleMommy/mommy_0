@@ -113,6 +113,8 @@
 		DC27E51F1D9CE0B40014C5C4 /* IntroContentPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC27E51E1D9CE0B40014C5C4 /* IntroContentPageViewController.m */; };
 		DC2D34C31D9A131C00D70E8C /* QuestionScrollViewSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2D34C21D9A131C00D70E8C /* QuestionScrollViewSegue.m */; };
 		DC2D34C61D9A13D100D70E8C /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2D34C51D9A13D100D70E8C /* QuestionViewController.m */; };
+		DC2D90021DB4EB180032FD2D /* MoreBloodPressureFooterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2D90001DB4EB180032FD2D /* MoreBloodPressureFooterCell.m */; };
+		DC2D90031DB4EB180032FD2D /* MoreBloodPressureFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC2D90011DB4EB180032FD2D /* MoreBloodPressureFooterCell.xib */; };
 		DC32664A1D6E7EA1008B38A8 /* CommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3266491D6E7EA1008B38A8 /* CommonViewController.m */; };
 		DC3AAEB31D7514A3007218E9 /* PushViewListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3AAEB21D7514A3007218E9 /* PushViewListCell.m */; };
 		DC3AAEBA1D751EB6007218E9 /* PushNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3AAEB91D751EB6007218E9 /* PushNoticeViewController.m */; };
@@ -295,6 +297,10 @@
 		DCA5AE2F1D598C6F0075B7AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA5AE2D1D598C6F0075B7AD /* Main.storyboard */; };
 		DCA5AE321D598C6F0075B7AD /* co_medisolution.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCA5AE301D598C6F0075B7AD /* co_medisolution.xcdatamodeld */; };
 		DCA5AE371D598C6F0075B7AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA5AE351D598C6F0075B7AD /* LaunchScreen.storyboard */; };
+		DCA8B7131DB4B501008A626A /* MoreBloodPressureInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B7111DB4B501008A626A /* MoreBloodPressureInfoCell.m */; };
+		DCA8B7141DB4B501008A626A /* MoreBloodPressureInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCA8B7121DB4B501008A626A /* MoreBloodPressureInfoCell.xib */; };
+		DCA8B7181DB4CDE1008A626A /* MoreBloodPressureDeleteButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B7161DB4CDE1008A626A /* MoreBloodPressureDeleteButtonController.m */; };
+		DCA8B7191DB4CDE1008A626A /* MoreBloodPressureDeleteButtonController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCA8B7171DB4CDE1008A626A /* MoreBloodPressureDeleteButtonController.xib */; };
 		DCB4FA3F1DA3A34B0050EA0A /* MainInfoContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB4FA3E1DA3A34B0050EA0A /* MainInfoContainerViewController.m */; };
 		DCBFDE641DA332D300A28B3A /* MainSliderViewContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBFDE631DA332D300A28B3A /* MainSliderViewContainerController.m */; };
 		DCBFDE681DA335D700A28B3A /* HWViewPager.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBFDE671DA335D700A28B3A /* HWViewPager.m */; };
@@ -521,6 +527,9 @@
 		DC2D34C21D9A131C00D70E8C /* QuestionScrollViewSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionScrollViewSegue.m; sourceTree = "<group>"; };
 		DC2D34C41D9A13D100D70E8C /* QuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionViewController.h; sourceTree = "<group>"; };
 		DC2D34C51D9A13D100D70E8C /* QuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
+		DC2D8FFF1DB4EB180032FD2D /* MoreBloodPressureFooterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreBloodPressureFooterCell.h; sourceTree = "<group>"; };
+		DC2D90001DB4EB180032FD2D /* MoreBloodPressureFooterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreBloodPressureFooterCell.m; sourceTree = "<group>"; };
+		DC2D90011DB4EB180032FD2D /* MoreBloodPressureFooterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreBloodPressureFooterCell.xib; sourceTree = "<group>"; };
 		DC3266461D6E7E0C008B38A8 /* EnumType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnumType.h; sourceTree = "<group>"; };
 		DC3266481D6E7EA1008B38A8 /* CommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonViewController.h; sourceTree = "<group>"; };
 		DC3266491D6E7EA1008B38A8 /* CommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonViewController.m; sourceTree = "<group>"; };
@@ -837,6 +846,12 @@
 		DCA5AE311D598C6F0075B7AD /* co_medisolution.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = co_medisolution.xcdatamodel; sourceTree = "<group>"; };
 		DCA5AE361D598C6F0075B7AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCA5AE381D598C6F0075B7AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCA8B7101DB4B501008A626A /* MoreBloodPressureInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreBloodPressureInfoCell.h; sourceTree = "<group>"; };
+		DCA8B7111DB4B501008A626A /* MoreBloodPressureInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreBloodPressureInfoCell.m; sourceTree = "<group>"; };
+		DCA8B7121DB4B501008A626A /* MoreBloodPressureInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreBloodPressureInfoCell.xib; sourceTree = "<group>"; };
+		DCA8B7151DB4CDE1008A626A /* MoreBloodPressureDeleteButtonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreBloodPressureDeleteButtonController.h; sourceTree = "<group>"; };
+		DCA8B7161DB4CDE1008A626A /* MoreBloodPressureDeleteButtonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreBloodPressureDeleteButtonController.m; sourceTree = "<group>"; };
+		DCA8B7171DB4CDE1008A626A /* MoreBloodPressureDeleteButtonController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreBloodPressureDeleteButtonController.xib; sourceTree = "<group>"; };
 		DCB4FA3D1DA3A34B0050EA0A /* MainInfoContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainInfoContainerViewController.h; sourceTree = "<group>"; };
 		DCB4FA3E1DA3A34B0050EA0A /* MainInfoContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainInfoContainerViewController.m; sourceTree = "<group>"; };
 		DCBFDE621DA332D300A28B3A /* MainSliderViewContainerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainSliderViewContainerController.h; sourceTree = "<group>"; };
@@ -1483,6 +1498,15 @@
 				DC4DE2DD1D815C35007CF9BF /* MoreBloodPressureInfoView.h */,
 				DC4DE2DE1D815C35007CF9BF /* MoreBloodPressureInfoView.m */,
 				DC4DE2DF1D815C35007CF9BF /* MoreBloodPressureInfoView.xib */,
+				DCA8B7101DB4B501008A626A /* MoreBloodPressureInfoCell.h */,
+				DCA8B7111DB4B501008A626A /* MoreBloodPressureInfoCell.m */,
+				DCA8B7121DB4B501008A626A /* MoreBloodPressureInfoCell.xib */,
+				DC2D8FFF1DB4EB180032FD2D /* MoreBloodPressureFooterCell.h */,
+				DC2D90001DB4EB180032FD2D /* MoreBloodPressureFooterCell.m */,
+				DC2D90011DB4EB180032FD2D /* MoreBloodPressureFooterCell.xib */,
+				DCA8B7151DB4CDE1008A626A /* MoreBloodPressureDeleteButtonController.h */,
+				DCA8B7161DB4CDE1008A626A /* MoreBloodPressureDeleteButtonController.m */,
+				DCA8B7171DB4CDE1008A626A /* MoreBloodPressureDeleteButtonController.xib */,
 				DC4DE2EF1D82A1ED007CF9BF /* MoreWeekCheckCategoryCell.h */,
 				DC4DE2F01D82A1ED007CF9BF /* MoreWeekCheckCategoryCell.m */,
 				DC4DE2F11D82A1ED007CF9BF /* MoreWeekCheckCategoryCell.xib */,
@@ -1997,6 +2021,7 @@
 				DCF6CABF1D74430300703CAE /* PushViewListCell.xib in Resources */,
 				2AE11DE91D657DE4003C6690 /* DiaryListImageCustomCell.xib in Resources */,
 				DC56F0A91D79728F00FB3A30 /* WeightDetailInfoHeaderCell.xib in Resources */,
+				DCA8B7141DB4B501008A626A /* MoreBloodPressureInfoCell.xib in Resources */,
 				DC8EB7901D869D4800A0304D /* MoreWeekDetailInfoCell.xib in Resources */,
 				DCA3BCD01D98BD44009D3DD1 /* MoreEnvironmentCalendarCell.xib in Resources */,
 				2AE11DE41D654C4E003C6690 /* DiaryListBasicCustomCell.xib in Resources */,
@@ -2053,6 +2078,7 @@
 				DCA3BCEA1D9910F3009D3DD1 /* MorePointCell_320.xib in Resources */,
 				DCA3BCEE1D9915F4009D3DD1 /* MorePointCell_414.xib in Resources */,
 				DC1A77E31D9512C900F88693 /* MoreMyPageFetusContentsCell.xib in Resources */,
+				DCA8B7191DB4CDE1008A626A /* MoreBloodPressureDeleteButtonController.xib in Resources */,
 				DC512ACC1D669BF900885C26 /* MessageListCell.xib in Resources */,
 				DC4E95851D7CF0A80087647B /* More.storyboard in Resources */,
 				2AB670E21D9267DF0060561C /* CommunityPersonListCustomCell.xib in Resources */,
@@ -2070,6 +2096,7 @@
 				DC4DE2C31D80F4CE007CF9BF /* MoreMainMenuCell.xib in Resources */,
 				DC538ECF1D781C3600E5949B /* IQKeyboardManager.bundle in Resources */,
 				DC27E5051D9C9C240014C5C4 /* Intro.storyboard in Resources */,
+				DC2D90031DB4EB180032FD2D /* MoreBloodPressureFooterCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2113,6 +2140,7 @@
 				2A54B1BE1D6691F600C538D1 /* DiaryCalenderController.m in Sources */,
 				DC4E95991D7D62D60087647B /* ActiveMassModel.m in Sources */,
 				DC4DE2F21D82A1ED007CF9BF /* MoreWeekCheckCategoryCell.m in Sources */,
+				DCA8B7131DB4B501008A626A /* MoreBloodPressureInfoCell.m in Sources */,
 				DCA3BCD91D98BDDF009D3DD1 /* MoreEnvironmentVersionInfoCell.m in Sources */,
 				2AB670E61D9268120060561C /* CommunityProfilePopupViewController.m in Sources */,
 				DCF8E1E91D8FA84B00E67402 /* MoreProfessionalButtonViewController.m in Sources */,
@@ -2146,6 +2174,7 @@
 				DC1FE6EA1D659912006F7A50 /* MainTabbarController.m in Sources */,
 				DC1FE6E61D658E47006F7A50 /* TabbarDiaryNavController.m in Sources */,
 				2A309AD01D79634E001C54C5 /* HFColorPickerView.m in Sources */,
+				DCA8B7181DB4CDE1008A626A /* MoreBloodPressureDeleteButtonController.m in Sources */,
 				DC6070971D7030CF00F60148 /* SingleImageViewController.m in Sources */,
 				DC4F0F031D912936003CB09B /* MoreProfessionalAdviceContentSegue.m in Sources */,
 				DC5FCCEF1D7E83B500957D73 /* SleepingHoursModel.m in Sources */,
@@ -2247,6 +2276,7 @@
 				DC1FE6E31D658E47006F7A50 /* DashBoardSegue.m in Sources */,
 				DC4F0F061D912DC3003CB09B /* MoreProfessionalAdviceContentsViewController.m in Sources */,
 				2A371A4B1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.m in Sources */,
+				DC2D90021DB4EB180032FD2D /* MoreBloodPressureFooterCell.m in Sources */,
 				DCA5AE261D598C6F0075B7AD /* main.m in Sources */,
 				2A1A86C01D9A86AB0091399B /* CommunityMentorController.m in Sources */,
 				DC67EB5F1D94B4480096BCB3 /* FLAnimatedImage.m in Sources */,
@@ -2428,7 +2458,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Park seohee (TDF9AJWPR5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jung Ho Park (JMP587VVKV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = LUYT38Y3AT;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
@@ -2454,7 +2484,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Park seohee (TDF9AJWPR5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jung Ho Park (JMP587VVKV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = LUYT38Y3AT;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";

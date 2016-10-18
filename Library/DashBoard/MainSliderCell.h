@@ -10,10 +10,13 @@
 
 @interface MainSliderCell : UICollectionViewCell
 
+
+@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
+
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 
-@property (weak, nonatomic) IBOutlet UIView *lblTitle;
+@property (weak, nonatomic) IBOutlet UILabel *lblContent;
 
-@property (weak, nonatomic) IBOutlet UIView *lblContent;
+@property (weak, nonatomic) IBOutlet UIImageView *titleImage;
 
 @end

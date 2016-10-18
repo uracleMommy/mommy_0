@@ -94,6 +94,13 @@ typedef enum {
     DashboardQuestionInfoInsert // 문진정보
 } MommyDashboardWebServiceType;
 
+#pragma 포인트 관련 열거형
+typedef enum {
+    
+    PointInfo,
+    PointList
+} MommyPointWebServiceType;
+
 #pragma 블록 타입 정의
 typedef void (^MommyApiServiceSuccessBlock) ( NSDictionary *data );
 typedef void (^MommyApiServiceErrorBlock) ( NSError *error );
@@ -128,6 +135,9 @@ typedef void (^MommyApiServiceErrorBlock) ( NSError *error );
 #pragma 대쉬보드 관련
 - (void) mommyDashboardApiService : (MommyDashboardWebServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
 
+#pragma 포인트 관련
+- (void) mommyPointApiService : (MommyPointWebServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
+
 #pragma 이미지 업로드 관련
 - (void) mommyImageUploadApiService : (UIImage *) image success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
 
@@ -153,6 +163,8 @@ typedef void (^MommyApiServiceErrorBlock) ( NSError *error );
 - (NSString *) requestCommunityUrlType : (MommyCommunityWebServiceType) serviceType;
 
 - (NSString *) requestDashboardUrlType : (MommyDashboardWebServiceType) serviceType;
+
+- (NSString *) requestPointUrlType : (MommyPointWebServiceType) serviceType;
 
 - (NSString *) requestImageUploadUrl;
 

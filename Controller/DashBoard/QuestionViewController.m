@@ -24,10 +24,12 @@
 
 - (void) viewDidLayoutSubviews {
     
+    // 21주차 미만
     if ([_momWeek intValue] >= 21) {
         
         [self performSegueWithIdentifier:@"goQuestionScrollView21" sender:_momWeek];
     }
+    //21 주차 이상
     else {
         
         [self performSegueWithIdentifier:@"goQuestionScrollView" sender:_momWeek];
@@ -39,8 +41,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma 문진정보 결과 제출
 - (IBAction)submitResult:(id)sender {
     
+    [_questionScrollViewController questionResultInfoSend];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

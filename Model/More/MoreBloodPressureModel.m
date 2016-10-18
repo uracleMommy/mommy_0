@@ -9,7 +9,10 @@
 #import "MoreBloodPressureModel.h"
 #import "MoreBloodPressureChartCell.h"
 #import "MoreBloodPressureHistoryCell.h"
+#import "MoreBloodPressureInfoCell.h"
 #import "MoreBloodPressureInfoView.h"
+#import "MoreBloodPressureFooterCell.h"
+#import "MoreBloodPressureDeleteButtonController.h"
 
 @implementation MoreBloodPressureModel
 
@@ -17,6 +20,7 @@
     
     if (self = [super init]) {
         
+        _buttonArray = [[NSMutableArray alloc] init];
     }
     
     return self;
@@ -32,7 +36,7 @@
     if (_arrayList.count > 0) {
         
         // 차트셀 + 인포셀 헤더 풋터
-        return 2;
+        return _arrayList.count + 3;
     }
     else {
         
@@ -41,16 +45,26 @@
     }
 }
 
+#pragma 셀 버전
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *CellIdentifierMoreBloodPressureChartCell = @"MoreBloodPressureChartCell";
     static NSString *CellIdentifierMoreBloodPressureHistoryCell = @"MoreBloodPressureHistoryCell";
+    static NSString *CellIdentifierMoreBloodPressureInfoCell = @"MoreBloodPressureInfoCell";
+    static NSString *CellIdentifierMoreBloodPressureFooterCell = @"MoreBloodPressureFooterCell";
     
     UINib *reuseMoreBloodPressureChartCell = [UINib nibWithNibName:@"MoreBloodPressureChartCell" bundle:nil];
     [tableView registerNib:reuseMoreBloodPressureChartCell forCellReuseIdentifier:CellIdentifierMoreBloodPressureChartCell];
     
-    UINib *reuseMoreBloodPressureHistoryCell = [UINib nibWithNibName:@"MoreBloodPressureHistoryCell" bundle:nil];;
+    UINib *reuseMoreBloodPressureHistoryCell = [UINib nibWithNibName:@"MoreBloodPressureHistoryCell" bundle:nil];
     [tableView registerNib:reuseMoreBloodPressureHistoryCell forCellReuseIdentifier:CellIdentifierMoreBloodPressureHistoryCell];
+    
+    UINib *reuseMoreBloodPressureInfoCell = [UINib nibWithNibName:@"MoreBloodPressureInfoCell" bundle:nil];
+    [tableView registerNib:reuseMoreBloodPressureInfoCell forCellReuseIdentifier:CellIdentifierMoreBloodPressureInfoCell];
+    
+    UINib *reuseMoreBloodPressureFooterCell = [UINib nibWithNibName:@"MoreBloodPressureFooterCell" bundle:nil];
+    [tableView registerNib:reuseMoreBloodPressureFooterCell forCellReuseIdentifier:CellIdentifierMoreBloodPressureFooterCell];
+    
     
     if (_arrayList.count > 0) {
         
@@ -67,7 +81,7 @@
             
             return cell;
         }
-        else {
+        else if (indexPath.row == 1) {
             
             MoreBloodPressureHistoryCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifierMoreBloodPressureHistoryCell];
             
@@ -78,21 +92,36 @@
             
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
-            for (int i = 0; i < _arrayList.count; i++) {
+            return cell;
+        }
+        else if (indexPath.row == _arrayList.count + 2) {
+            
+            MoreBloodPressureFooterCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifierMoreBloodPressureFooterCell];
+            
+            if (cell == nil) {
                 
-                float viewYPosition = i * 70;
-                MoreBloodPressureInfoView *moreBloodPressureInfoView = [[MoreBloodPressureInfoView alloc] initWithNibName:@"MoreBloodPressureInfoView" bundle:nil];
-                
-                // 컨테이너뷰 사이즈 조절
-                [cell.containerView setFrame:CGRectMake(8, 45, tableView.frame.size.width - 16, 124 + (70.0f * i))];
-                
-                // 인포뷰에 애드
-                
-                [moreBloodPressureInfoView.view setFrame:CGRectMake(0, viewYPosition, cell.infoViewContainer.frame.size.width, 70.0f)];
-                [cell.infoViewContainer addSubview:moreBloodPressureInfoView.view];
-                
-                NSLog(@"%f", moreBloodPressureInfoView.view.frame.size.width);
+                cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifierMoreBloodPressureFooterCell];
             }
+            
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            
+            return cell;
+        }
+        else {
+            
+            MoreBloodPressureInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifierMoreBloodPressureInfoCell];
+            
+            if (cell == nil) {
+                
+                cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifierMoreBloodPressureInfoCell];
+            }
+            
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            
+            MoreBloodPressureDeleteButtonController *moreBloodPressureDeleteButtonController = [[MoreBloodPressureDeleteButtonController alloc] initWithNibName:@"MoreBloodPressureDeleteButtonController" bundle:nil];
+            [moreBloodPressureDeleteButtonController.view setFrame:CGRectMake(0, 0, 70, 70)];
+            
+            cell.editingAccessoryView = moreBloodPressureDeleteButtonController.view;
             
             return cell;
         }
@@ -100,6 +129,7 @@
     else {
         
         MoreBloodPressureChartCell *cell = (MoreBloodPressureChartCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierMoreBloodPressureChartCell];
+        
         
         if (cell == nil) {
             
@@ -112,6 +142,82 @@
     }
 }
 
+#pragma 뷰 버전
+//- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    static NSString *CellIdentifierMoreBloodPressureChartCell = @"MoreBloodPressureChartCell";
+//    static NSString *CellIdentifierMoreBloodPressureHistoryCell = @"MoreBloodPressureHistoryCell";
+//    
+//    UINib *reuseMoreBloodPressureChartCell = [UINib nibWithNibName:@"MoreBloodPressureChartCell" bundle:nil];
+//    [tableView registerNib:reuseMoreBloodPressureChartCell forCellReuseIdentifier:CellIdentifierMoreBloodPressureChartCell];
+//    
+//    UINib *reuseMoreBloodPressureHistoryCell = [UINib nibWithNibName:@"MoreBloodPressureHistoryCell" bundle:nil];;
+//    [tableView registerNib:reuseMoreBloodPressureHistoryCell forCellReuseIdentifier:CellIdentifierMoreBloodPressureHistoryCell];
+//    
+//    if (_arrayList.count > 0) {
+//        
+//        if (indexPath.row == 0) {
+//            
+//            MoreBloodPressureChartCell *cell = (MoreBloodPressureChartCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierMoreBloodPressureChartCell];
+//            
+//            if (cell == nil) {
+//                
+//                cell = (MoreBloodPressureChartCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierMoreBloodPressureChartCell];
+//            }
+//            
+//            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//            
+//            return cell;
+//        }
+//        else {
+//            
+//            MoreBloodPressureHistoryCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifierMoreBloodPressureHistoryCell];
+//            
+//            if (cell == nil) {
+//                
+//                cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifierMoreBloodPressureHistoryCell];
+//            }
+//            
+//            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//            
+//            for (int i = 0; i < _arrayList.count; i++) {
+//                
+//                float viewYPosition = i * 70;
+//                MoreBloodPressureInfoView *moreBloodPressureInfoView = [[MoreBloodPressureInfoView alloc] initWithNibName:@"MoreBloodPressureInfoView" bundle:nil];
+//                
+//                // 컨테이너뷰 사이즈 조절
+//                [cell.containerView setFrame:CGRectMake(8, 45, tableView.frame.size.width - 16, 124 + (70.0f * i))];
+//                
+//                // 인포뷰에 애드
+//                
+//                [moreBloodPressureInfoView.view setFrame:CGRectMake(0, viewYPosition, cell.infoViewContainer.frame.size.width, 70.0f)];
+//                [cell.infoViewContainer addSubview:moreBloodPressureInfoView.view];
+//                
+//                [_buttonArray addObject:moreBloodPressureInfoView];
+//                
+//                //NSLog(@"%f", moreBloodPressureInfoView.view.frame.size.width);
+//            }
+//            
+//            return cell;
+//        }
+//    }
+//    else {
+//        
+//        MoreBloodPressureChartCell *cell = (MoreBloodPressureChartCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierMoreBloodPressureChartCell];
+//        
+//        
+//        if (cell == nil) {
+//            
+//            cell = (MoreBloodPressureChartCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierMoreBloodPressureChartCell];
+//        }
+//        
+//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//        
+//        return cell;
+//    }
+//}
+
+#pragma 셀 버전
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // 데이터가 있을 때(전체 리턴)
@@ -122,9 +228,15 @@
             
             return 263.0f;
         }
-        else {
+        else if(indexPath.row == 1) {
             
-            return 124.0f + (_arrayList.count - 1) * 70.0f;
+            return 40.0f;
+        }
+        else if (indexPath.row == _arrayList.count + 2) {
+            return 15.0f;
+        }
+        else {
+            return 70.0f;
         }
     }
     // 데이터가 없을 때(차트만 리턴)
@@ -134,12 +246,47 @@
     }
 }
 
+#pragma 뷰 버전
+//- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    // 데이터가 있을 때(전체 리턴)
+//    if (_arrayList.count > 0) {
+//        
+//        // 차트 높이
+//        if (indexPath.row == 0) {
+//            
+//            return 263.0f;
+//        }
+//        else {
+//            
+//            return 124.0f + (_arrayList.count - 1) * 70.0f;
+//        }
+//    }
+//    // 데이터가 없을 때(차트만 리턴)
+//    else {
+//        
+//        return 263.0f;
+//    }
+//}
+
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 //    if ([self.delegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]) {
 //        
 //        [self.delegate tableView:tableView didSelectRowAtIndexPath:indexPath];
 //    }
+}
+
+- (BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath   {
+    
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Perform the real delete action here. Note: you may need to check editing style
+    //   if you do not perform delete only.
+    NSLog(@"Deleted row.");
 }
 
 @end
