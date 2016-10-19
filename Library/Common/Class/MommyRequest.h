@@ -110,6 +110,13 @@ typedef enum {
     PointList
 } MommyPointWebServiceType;
 
+#pragma 혈압관리 관련 열거형
+typedef enum {
+    BloodPressureList,
+    BloodPressureInsert,
+    BloodPressureDelete
+} MommyBloodPressureWebServiceType;
+
 #pragma 블록 타입 정의
 typedef void (^MommyApiServiceSuccessBlock) ( NSDictionary *data );
 typedef void (^MommyApiServiceErrorBlock) ( NSError *error );
@@ -153,6 +160,9 @@ typedef void (^MommyApiServiceErrorBlock) ( NSError *error );
 #pragma 포인트 관련
 - (void) mommyPointApiService : (MommyPointWebServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
 
+#pragma 혈압관리 관련
+- (void) mommyBloodPressureApiService : (MommyBloodPressureWebServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
+
 #pragma 이미지 업로드 관련
 - (void) mommyImageUploadApiService : (UIImage *) image success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
 
@@ -184,6 +194,8 @@ typedef void (^MommyApiServiceErrorBlock) ( NSError *error );
 - (NSString *) requestDashboardUrlType : (MommyDashboardWebServiceType) serviceType;
 
 - (NSString *) requestPointUrlType : (MommyPointWebServiceType) serviceType;
+
+- (NSString *) requestBloodPressureUrlType : (MommyBloodPressureWebServiceType) serviceType;
 
 - (NSString *) requestImageUploadUrl;
 

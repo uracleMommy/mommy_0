@@ -7,12 +7,30 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MoreBloodPressureChartCell.h"
 
-@interface MoreBloodPressureModel : NSObject<UITableViewDelegate, UITableViewDataSource>
+@protocol MoreBloodPressureModelDelegate <NSObject>
 
-@property (strong, nonatomic) NSArray *arrayList;
+@optional
 
-@property (strong, nonatomic) NSMutableArray *buttonArray;
+- (void) tableView : (UITableView *) tableView MoreBloodPressureModelSelectedIndexPath : (NSIndexPath *) indexPath;
+
+- (void) tableView : (UITableView *) tableView totalPageCount : (NSInteger) count;
+
+- (void) tableView:(UITableView *) tableView deleteIndex : (NSInteger) row;
+
+- (void) goChartPrevious;
+
+- (void) goChartNext;
 
 @end
 
+@interface MoreBloodPressureModel : NSObject<UITableViewDelegate, UITableViewDataSource, MoreBloodPressureChartCellDelegate>
+
+@property (strong, nonatomic) NSMutableArray *arrayList;
+
+@property (strong, nonatomic) NSMutableArray *buttonArray;
+
+@property (strong, nonatomic) id<MoreBloodPressureModelDelegate> delegate;
+
+@end

@@ -12,4 +12,12 @@
 
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 
+@property (weak, nonatomic) IBOutlet UILabel *lblWriteTime;
+
+@property (weak, nonatomic) IBOutlet UILabel *lblBlooodPressure;
+
+@property (weak, nonatomic) IBOutlet UILabel *lblPurse;
+
+@property (weak, nonatomic) IBOutlet UILabel *lblComment;
+
 @end

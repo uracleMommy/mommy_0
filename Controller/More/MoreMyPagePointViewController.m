@@ -94,7 +94,7 @@
 }
 
 #pragma 포인트 리스트 바인드
-- (void) pointListBind : (NSInteger) currentPage{
+- (void) pointListBind : (NSInteger) currentPage {
     
     [self showIndicator];
     

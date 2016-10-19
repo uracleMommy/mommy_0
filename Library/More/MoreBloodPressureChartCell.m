@@ -26,4 +26,20 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)goPrevious:(id)sender {
+    
+    if ([self.delegate respondsToSelector:@selector(previousAction)]) {
+        
+        [self.delegate previousAction];
+    }
+}
+
+- (IBAction)goNext:(id)sender {
+    
+    if ([self.delegate respondsToSelector:@selector(nextAction)]) {
+        
+        [self.delegate nextAction];
+    }
+}
+
 @end

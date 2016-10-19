@@ -7,19 +7,19 @@
 //
 
 #import "MoreBloodPressureModel.h"
-#import "MoreBloodPressureChartCell.h"
 #import "MoreBloodPressureHistoryCell.h"
 #import "MoreBloodPressureInfoCell.h"
 #import "MoreBloodPressureInfoView.h"
 #import "MoreBloodPressureFooterCell.h"
 #import "MoreBloodPressureDeleteButtonController.h"
+#import "MommyUtils.h"
 
 @implementation MoreBloodPressureModel
 
 - (id) init {
     
     if (self = [super init]) {
-        
+        _arrayList = [[NSMutableArray alloc] init];
         _buttonArray = [[NSMutableArray alloc] init];
     }
     
@@ -79,6 +79,8 @@
             
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
+            cell.delegate = self;
+            
             return cell;
         }
         else if (indexPath.row == 1) {
@@ -107,6 +109,7 @@
             
             return cell;
         }
+        // 데이터 부분
         else {
             
             MoreBloodPressureInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifierMoreBloodPressureInfoCell];
@@ -123,13 +126,19 @@
             
             cell.editingAccessoryView = moreBloodPressureDeleteButtonController.view;
             
+            NSDictionary *dic = _arrayList[indexPath.row - 2];
+            cell.lblWriteTime.text = [[MommyUtils sharedGlobalData] getMommyDate:dic[@"reg_dttm"]];
+            cell.lblBlooodPressure.text = [NSString stringWithFormat:@"%@ / %@", dic[@"diastolic"], dic[@"systolic"]];
+            NSNumber *pulse = dic[@"pulse"];
+            cell.lblPurse.text = [NSString stringWithFormat:@"%ld", (long)[pulse integerValue]];
+            cell.lblComment.text = dic[@"result"];
+            
             return cell;
         }
     }
     else {
         
         MoreBloodPressureChartCell *cell = (MoreBloodPressureChartCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierMoreBloodPressureChartCell];
-        
         
         if (cell == nil) {
             
@@ -143,6 +152,7 @@
 }
 
 #pragma 뷰 버전
+
 //- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    
 //    static NSString *CellIdentifierMoreBloodPressureChartCell = @"MoreBloodPressureChartCell";
@@ -287,6 +297,27 @@
     // Perform the real delete action here. Note: you may need to check editing style
     //   if you do not perform delete only.
     NSLog(@"Deleted row.");
+    
+    if ([self.delegate respondsToSelector:@selector(tableView:deleteIndex:)]) {
+        
+        [self.delegate tableView:tableView deleteIndex:indexPath.row];
+    }
+}
+
+- (void) previousAction {
+    
+    if ([self.delegate respondsToSelector:@selector(goChartPrevious)]) {
+        
+        [self.delegate goChartPrevious];
+    }
+}
+
+- (void) nextAction {
+    
+    if ([self.delegate respondsToSelector:@selector(goChartNext)]) {
+        
+        [self.delegate goChartNext];
+    }
 }
 
 @end

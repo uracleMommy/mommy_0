@@ -10,12 +10,20 @@
 #import "CommonViewController.h"
 #import "MoreBloodPressureModel.h"
 
-@interface MoreBloodPressureViewController : CommonViewController
+@interface MoreBloodPressureViewController : CommonViewController<MoreBloodPressureModelDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) MoreBloodPressureModel *moreBloodPressureModel;
 
-- (IBAction)addHistory:(id)sender;
+@property (assign, nonatomic) NSInteger currentPage; // 기본 1
+
+@property (assign, nonatomic) NSInteger totalPage; // 토탈 페이지 갯수
+
+@property (strong, nonatomic) UITextField *txtSystolic; // 수축기 텍스트
+
+@property (strong, nonatomic) UITextField *txtDiastolic; // 이완기 텍스트
+
+@property (strong, nonatomic) UITextField *pulse; // 맥박
 
 @end

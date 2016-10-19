@@ -28,7 +28,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWr-o5-R2G">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999 / 999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxr-en-oEh">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxr-en-oEh">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="Rtc-pQ-GDJ"/>
                                         </constraints>
@@ -36,7 +36,7 @@
                                         <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016.06.10 오후05시20분" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9c-lL-5jI">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9c-lL-5jI">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="12" id="j6k-aj-RfP"/>
                                         </constraints>
@@ -75,10 +75,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1t4-rZ-Ueo">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정상" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1a-WX-qzL">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="eZ3-GV-ig6"/>
-                                        </constraints>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정상" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1a-WX-qzL">
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
                                         <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -86,9 +83,10 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="B1a-WX-qzL" secondAttribute="trailing" id="SN0-rt-eZb"/>
-                                    <constraint firstItem="B1a-WX-qzL" firstAttribute="leading" secondItem="1t4-rZ-Ueo" secondAttribute="leading" id="W2E-Nd-qWs"/>
-                                    <constraint firstItem="B1a-WX-qzL" firstAttribute="top" secondItem="1t4-rZ-Ueo" secondAttribute="top" constant="23" id="iEy-kQ-cKY"/>
+                                    <constraint firstItem="B1a-WX-qzL" firstAttribute="leading" secondItem="1t4-rZ-Ueo" secondAttribute="leading" id="N1e-G0-Bre"/>
+                                    <constraint firstItem="B1a-WX-qzL" firstAttribute="top" secondItem="1t4-rZ-Ueo" secondAttribute="top" constant="8" id="W0g-pa-1Ik"/>
+                                    <constraint firstAttribute="bottom" secondItem="B1a-WX-qzL" secondAttribute="bottom" constant="8" id="sPL-HB-iPb"/>
+                                    <constraint firstAttribute="trailing" secondItem="B1a-WX-qzL" secondAttribute="trailing" id="yfO-GY-yju"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -137,6 +135,10 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="containerView" destination="7OL-dS-n0H" id="XLI-lv-tUI"/>
+                <outlet property="lblBlooodPressure" destination="uxr-en-oEh" id="3hb-t8-Bio"/>
+                <outlet property="lblComment" destination="B1a-WX-qzL" id="DVU-nE-Ode"/>
+                <outlet property="lblPurse" destination="Qs5-cY-chj" id="L7m-S5-sr1"/>
+                <outlet property="lblWriteTime" destination="H9c-lL-5jI" id="73b-9m-KrR"/>
             </connections>
             <point key="canvasLocation" x="-83" y="-137"/>
         </tableViewCell>
