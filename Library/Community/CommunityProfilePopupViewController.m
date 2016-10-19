@@ -142,7 +142,9 @@
             if([[NSString stringWithFormat:@"%@", [data objectForKey:@"code"]] isEqualToString:@"0"]){
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     [_mentorButton setImage:[UIImage imageNamed:@"popup_btn_icon_mentor.png"] forState:UIControlStateNormal];
-                    [_delegate changedMento:_tableIndex insert:@"Y"];
+                    if ([self.delegate respondsToSelector:@selector(changedMento:insert:)]) {
+                        [_delegate changedMento:_tableIndex insert:@"Y"];
+                    }
                 });
             }
         } error:^(NSError *error) {
@@ -156,7 +158,9 @@
             if([[NSString stringWithFormat:@"%@", [data objectForKey:@"code"]] isEqualToString:@"0"]){
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     [_mentorButton setImage:[UIImage imageNamed:@"popup_btn_icon_mentor_add.png"] forState:UIControlStateNormal];
-                    [_delegate changedMento:_tableIndex insert:@"N"];
+                    if ([self.delegate respondsToSelector:@selector(changedMento:insert:)]) {
+                        [_delegate changedMento:_tableIndex insert:@"N"];
+                    }
                 });
             }
         } error:^(NSError *error) {

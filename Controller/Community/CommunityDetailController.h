@@ -12,8 +12,9 @@
 #import "CommunityProfilePopupViewController.h"
 #import "AppDelegate.h"
 #import "CommonViewController.h"
+#define PAGE_SIZE [[NSNumber alloc] initWithInt:30]
 
-@interface CommunityDetailController : CommonViewController <UITextViewDelegate, CommunityProfilePopupViewDelegate>
+@interface CommunityDetailController : CommonViewController <UITextViewDelegate, CommunityProfilePopupViewDelegate, CommunityDetailModelDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *txtMessageContent;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *messageContainerHeight;
@@ -23,13 +24,9 @@
 @property (strong, nonatomic) CommunityDetailModel *tableListController;
 @property (strong, nonatomic) CommunityProfilePopupViewController *profilePopupView;
 
-@property (strong, nonatomic) NSString *communityKey;
-@property (strong, nonatomic) NSString *content;
-@property (strong, nonatomic) NSString *writerNickname;
-@property (strong, nonatomic) NSString *writerImage;
-@property (strong, nonatomic) NSString *writerKey;
-@property (strong, nonatomic) NSString *regDate;
-@property (strong, nonatomic) NSString *likeYN;
+@property (strong, nonatomic) NSDictionary *motherData;
+@property (strong, nonatomic) NSNumber *searchPage;
+@property (assign, nonatomic) Boolean currentLastPageStatus;
 
 
 - (IBAction)likeButtonAction:(id)sender;

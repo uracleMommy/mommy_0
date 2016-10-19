@@ -59,6 +59,9 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저도 그것때문에 잠을 못이루고 있어요 ㅜㅜ 저도 그것때문에 잠을 못이루고 있어요 ㅜㅜ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Gc-y6-Xfk">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="nwh-5w-zWa"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
                         <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -78,7 +81,11 @@
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
+                <outlet property="replyContentTextField" destination="3Gc-y6-Xfk" id="4wU-L8-VVm"/>
+                <outlet property="replyContentsHeightConstraint" destination="nwh-5w-zWa" id="PTX-2l-yZU"/>
                 <outlet property="replyPersonButton" destination="YOq-9C-7Y4" id="F1m-9v-YAt"/>
+                <outlet property="replyPersonKickname" destination="bKf-cX-wAe" id="8UW-Fu-tuD"/>
+                <outlet property="replyRegDate" destination="tNx-lF-Pbl" id="Pu9-6X-PQR"/>
             </connections>
             <point key="canvasLocation" x="521.5" y="345.5"/>
         </tableViewCell>
