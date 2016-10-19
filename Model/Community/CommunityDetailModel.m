@@ -19,14 +19,7 @@
     self = [super init];
     if (self) {
         _detailList = [[NSMutableArray alloc]init];
-        
-        //기본
-        [_detailList addObject:@""];
-        [_detailList addObject:@""];
-        [_detailList addObject:@""];
-        [_detailList addObject:@""];
-        [_detailList addObject:@""];
-        
+        _cachedImages = [[NSMutableDictionary alloc]init];
     }
     return self;
 }
@@ -36,7 +29,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_detailList count];
+    return [_detailList count]+3;
 }
 
 
@@ -59,6 +52,37 @@
                 cell = [tableView dequeueReusableCellWithIdentifier:CELL0];
             }
             
+//            cell.writerNicknameLabel.text = [_motherData objectForKey:@"mento_nickname"];
+//            cell.regDateLabel.text = [_motherData objectForKey:@"reg_dttm"];
+            
+//            cell.contentsLabel.text = [_motherData objectForKey:@"content"];
+            
+            cell.writerNicknameLabel.text = [_motherData objectForKey:@"mento_nickname"];
+            cell.regDateLabel.text = [[MommyUtils sharedGlobalData] getMommyDate:[_motherData objectForKey:@"reg_dttm"]];
+            NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [_motherData objectForKey:@"mento_img"]];
+            cell.personKey = [_motherData objectForKey:@"mento_key"];
+            
+            if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
+                [cell.writerPersonImage setImage:[_cachedImages valueForKey:profileImageIdentifier]forState:UIControlStateNormal];
+            }else {
+                char const * s = [profileImageIdentifier  UTF8String];
+                dispatch_queue_t queue = dispatch_queue_create(s, 0);
+                dispatch_async(queue, ^{
+                    
+                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [_motherData objectForKey:@"mento_img"]];
+                    
+                    UIImage *profileImg = nil;
+                    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                    profileImg = [[UIImage alloc] initWithData:firstImageData];
+                    
+                    [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [cell.writerPersonImage setImage:[_cachedImages valueForKey:profileImageIdentifier] forState:UIControlStateNormal];
+                    });
+                });
+            }
+
             CAShapeLayer *firstShapeLayer = [CAShapeLayer layer];
             [firstShapeLayer setBounds:cell.bounds];
             [firstShapeLayer setPosition:cell.center];
@@ -83,6 +107,7 @@
         }
         case 1:
         {
+            
             cell = [tableView dequeueReusableCellWithIdentifier:CELL1];
             
             if(cell == nil){
@@ -90,6 +115,19 @@
                 
                 cell = [tableView dequeueReusableCellWithIdentifier:CELL1];
             }
+
+            cell.contentTextView.text = [_motherData objectForKey:@"content"];
+            UILabel *gettingSizeLabel = [[UILabel alloc] init];
+            gettingSizeLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            CGSize maximumLabelSize = CGSizeMake(310, CGFLOAT_MAX);
+            
+            CGRect textRect = [cell.contentTextView.text boundingRectWithSize:maximumLabelSize
+                                                                    options:NSStringDrawingUsesLineFragmentOrigin| NSStringDrawingUsesFontLeading
+                                                                 attributes:@{NSFontAttributeName:cell.contentTextView.font}
+                                                                    context:nil];
+            
+            cell.contentsHeightConstraint.constant = textRect.size.height + 20;
+           
             break;
         }
         case 2:
@@ -101,6 +139,163 @@
                 
                 cell = [tableView dequeueReusableCellWithIdentifier:CELL2];
             }
+            
+            //초기화
+            
+            cell.replyPersonImage01.hidden = YES;
+            cell.replyPersonImage02.hidden = YES;
+            cell.replyPersonImage03.hidden = YES;
+            cell.replyPersonImage04.hidden = YES;
+            cell.replyPersonImage05.hidden = YES;
+            
+            for(int i=0 ; i<5 ; i++){
+                if([_detailList count] > i){
+                    NSDictionary *result = [_detailList objectAtIndex:i];
+                    
+                    NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [result objectForKey:@"img"]];
+                    
+
+                    switch (i) {
+                        case 0:
+                        {
+                            cell.replyPersonImage01.hidden = NO;
+                            if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
+                                [cell.replyPersonImage01 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                            }else {
+                                char const * s = [profileImageIdentifier  UTF8String];
+                                dispatch_queue_t queue = dispatch_queue_create(s, 0);
+                                dispatch_async(queue, ^{
+                                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [result objectForKey:@"img"]];
+                                    
+                                    UIImage *profileImg = nil;
+                                    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                                    profileImg = [[UIImage alloc] initWithData:firstImageData];
+                                    
+                                    [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
+                                    
+                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                        [cell.replyPersonImage01 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                                    });
+                                });
+                            }
+                            break;
+                        }
+                        case 1:
+                        {
+                            cell.replyPersonImage02.hidden = NO;
+                            if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
+                                [cell.replyPersonImage02 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                            }else {
+                                char const * s = [profileImageIdentifier  UTF8String];
+                                dispatch_queue_t queue = dispatch_queue_create(s, 0);
+                                dispatch_async(queue, ^{
+                                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [result objectForKey:@"img"]];
+                                    
+                                    UIImage *profileImg = nil;
+                                    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                                    profileImg = [[UIImage alloc] initWithData:firstImageData];
+                                    
+                                    [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
+                                    
+                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                        [cell.replyPersonImage02 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                                    });
+                                });
+                            }
+                            break;
+                        }
+                            
+                        case 2:
+                        {
+                            cell.replyPersonImage03.hidden = NO;
+                            if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
+                                [cell.replyPersonImage03 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                            }else {
+                                char const * s = [profileImageIdentifier  UTF8String];
+                                dispatch_queue_t queue = dispatch_queue_create(s, 0);
+                                dispatch_async(queue, ^{
+                                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [result objectForKey:@"img"]];
+                                    
+                                    UIImage *profileImg = nil;
+                                    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                                    profileImg = [[UIImage alloc] initWithData:firstImageData];
+                                    
+                                    [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
+                                    
+                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                        [cell.replyPersonImage03 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                                    });
+                                });
+                            }
+                            break;
+                        }
+                        case 3:
+                        {
+                            cell.replyPersonImage04.hidden = NO;
+                            if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
+                                [cell.replyPersonImage04 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                            }else {
+                                char const * s = [profileImageIdentifier  UTF8String];
+                                dispatch_queue_t queue = dispatch_queue_create(s, 0);
+                                dispatch_async(queue, ^{
+                                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [result objectForKey:@"img"]];
+                                    
+                                    UIImage *profileImg = nil;
+                                    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                                    profileImg = [[UIImage alloc] initWithData:firstImageData];
+                                    
+                                    [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
+                                    
+                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                        [cell.replyPersonImage04 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                                    });
+                                });
+                            }
+                            break;
+                        }
+                            
+                        case 4:
+                        {
+                            cell.replyPersonImage05.hidden = NO;
+                            if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
+                                [cell.replyPersonImage05 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                            }else {
+                                char const * s = [profileImageIdentifier  UTF8String];
+                                dispatch_queue_t queue = dispatch_queue_create(s, 0);
+                                dispatch_async(queue, ^{
+                                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [result objectForKey:@"img"]];
+                                    
+                                    UIImage *profileImg = nil;
+                                    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                                    profileImg = [[UIImage alloc] initWithData:firstImageData];
+                                    
+                                    [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
+                                    
+                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                        [cell.replyPersonImage05 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                                    });
+                                });
+                            }
+                            
+                            break;
+                        }
+                            
+                        default:
+                            break;
+                    }
+                }
+            }
+            
+            
+            if([[_motherData objectForKey:@"like_cnt"] intValue] != 0){
+                cell.likeCountLabel.hidden = NO;
+                cell.likeButton.hidden = NO;
+                cell.likeCountLabel.text = [NSString stringWithFormat:@"%@", [_motherData objectForKey:@"like_cnt"]];
+            }else{
+                cell.likeCountLabel.hidden = YES;
+                cell.likeButton.hidden = YES;
+            }
+            
             break;
         }
         default:
@@ -112,30 +307,49 @@
                 
                 cell = [tableView dequeueReusableCellWithIdentifier:CELL_REPLY];
             }
+            NSDictionary *result = [_detailList objectAtIndex:indexPath.row-3];
+            
+            UILabel *gettingSizeLabel = [[UILabel alloc] init];
+            gettingSizeLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            CGSize maximumLabelSize = CGSizeMake(310, CGFLOAT_MAX);
+            
+            CGRect textRect = [cell.replyContentTextField.text boundingRectWithSize:maximumLabelSize
+                                                                      options:NSStringDrawingUsesLineFragmentOrigin| NSStringDrawingUsesFontLeading
+                                                                   attributes:@{NSFontAttributeName:cell.replyContentTextField.font}
+                                                                      context:nil];
+            cell.replyRegDate.text = [[MommyUtils sharedGlobalData] getMommyDate:[result objectForKey:@"reg_dttm"]];
+            cell.replyPersonKickname.text = [result objectForKey:@"mento_nickname"];
+            cell.replyContentTextField.text = [result objectForKey:@"content"];
+            cell.replyContentsHeightConstraint.constant = textRect.size.height;
+            cell.personKey = [result objectForKey:@"mento_key"];
+            
+            NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [result objectForKey:@"img"]];
+            
+            if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
+                [cell.replyPersonButton setImage:[_cachedImages valueForKey:profileImageIdentifier]forState:UIControlStateNormal];
+            }else {
+                char const * s = [profileImageIdentifier  UTF8String];
+                dispatch_queue_t queue = dispatch_queue_create(s, 0);
+                dispatch_async(queue, ^{
+                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [result objectForKey:@"img"]];
+                    
+                    UIImage *profileImg = nil;
+                    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                    profileImg = [[UIImage alloc] initWithData:firstImageData];
+                    
+                    [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [cell.writerPersonImage setImage:[_cachedImages valueForKey:profileImageIdentifier] forState:UIControlStateNormal];
+                    });
+                });
+            }
+
             break;
         }
     }
     
     cell.delegate = self;
-//    CAShapeLayer *firstShapeLayer = [CAShapeLayer layer];
-//    [firstShapeLayer setBounds:cell.bounds];
-//    [firstShapeLayer setPosition:cell.center];
-//    [firstShapeLayer setFillColor:[[UIColor clearColor] CGColor]];
-//    [firstShapeLayer setStrokeColor:[[UIColor colorWithRed:217.0/255.0f green:217.0/255.0f  blue:217.0/255.0f alpha:1.0] CGColor]];
-//    [firstShapeLayer setLineWidth:1.0f];
-//    [firstShapeLayer setLineJoin:kCALineJoinRound];
-//    [firstShapeLayer setLineDashPattern:
-//     [NSArray arrayWithObjects:[NSNumber numberWithInt:3],
-//      [NSNumber numberWithInt:3],nil]];
-//    
-//    CGMutablePathRef firstPath = CGPathCreateMutable();
-//    CGPathMoveToPoint(firstPath, NULL, 0, 0);
-//    CGPathAddLineToPoint(firstPath, NULL, tableView.frame.size.width - 38.0, 0);
-//    
-//    [firstShapeLayer setPath:firstPath];
-//    CGPathRelease(firstPath);
-//    
-//    [[cell.writerInfoView layer] addSublayer:firstShapeLayer];
     
     return cell;
 }
@@ -177,30 +391,29 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGFloat height;
     switch (indexPath.row) {
         case 0:
-            height = 73;
+            return 73;
           break;
         case 1:
-            height = 219;
+            return UITableViewAutomaticDimension;
             break;
         case 2:
-            height = 60;
+            return 60;
             break;
         default:
-            height = 85;
+            return UITableViewAutomaticDimension;
             break;
     }
-    return height;
+    
 }
 
 -(void) moreButtonAction:(id)sender point:(CGPoint)point{
      [_delegate moreButtonAction:sender point:point];   
 }
 
--(void) showProfilePopupViewAction:(id)sender{
-    [_delegate showProfilePopupViewAction:sender];
+-(void) showProfilePopupViewAction:(NSString *)personKey{
+    [_delegate showProfilePopupViewAction:personKey];
 }
 
 @end

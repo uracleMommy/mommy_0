@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     //back Button Setting
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *backBtnImage = [UIImage imageNamed:@"title_icon_back.png"];
@@ -39,6 +40,8 @@
     _tableView.delegate = _tableListController;
     _tableView.dataSource = _tableListController;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.estimatedRowHeight = 68.0;
+    _tableView.rowHeight = UITableViewAutomaticDimension;
     [_tableView reloadData];
     
     
@@ -106,6 +109,9 @@
         CommunityPeopleListController *vc = [segue destinationViewController];
         [vc setGroupKey:_groupKey];
         [vc setGroupValue:_groupValue];
+    }else if([[segue identifier] isEqualToString:@"moveShowDetailSegue"]){
+        CommunityDetailController *vc = [segue destinationViewController];
+        [vc setMotherData:_detailData];
     }
 }
 
@@ -129,7 +135,6 @@
 }
 
 - (void)movePeopleList{
-//    [_moveWriteViewButton removeFromSuperview];
     [self performSegueWithIdentifier:@"moveShowPeopleSegue" sender:self];
 }
 
@@ -195,7 +200,8 @@
 
 }
 
-- (void)moveDetailViewButtonAction:(id)sender{
+- (void)moveDetailViewButtonAction:(NSDictionary *)data{
+    _detailData = data;
     [self performSegueWithIdentifier:@"moveShowDetailSegue" sender:self];
 }
 
@@ -362,19 +368,19 @@
             NSArray *result = [data objectForKey:@"result"];
             if([result count] == 0){
                 NSLog(@"empty");
-            }
-            
-            if([[[result objectAtIndex:0] objectForKey:@"tot_cnt"] intValue] >= ([_searchPage intValue]+[PAGE_SIZE intValue]) ){
-                _currentLastPageStatus = YES;
             }else{
-                _currentLastPageStatus = NO;
+                if([[[result objectAtIndex:0] objectForKey:@"tot_cnt"] intValue] >= ([_searchPage intValue]+[PAGE_SIZE intValue]) ){
+                    _currentLastPageStatus = YES;
+                }else{
+                    _currentLastPageStatus = NO;
+                }
+                
+                [_tableListController.newspeedList removeAllObjects];
+                [_tableListController.newspeedList addObjectsFromArray:result];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [_tableView reloadData];
+                });
             }
-            
-            [_tableListController.newspeedList removeAllObjects];
-            [_tableListController.newspeedList addObjectsFromArray:result];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [_tableView reloadData];
-            });
         }else{
         }
         
@@ -413,17 +419,18 @@
             NSArray *result = [data objectForKey:@"result"];
             if([result count] == 0){
                 NSLog(@"empty");
-            }
-            if([[[result objectAtIndex:0] objectForKey:@"tot_cnt"] intValue] >= [_searchPage intValue]+[PAGE_SIZE intValue] ){
-                _currentLastPageStatus = YES;
             }else{
-                _currentLastPageStatus = NO;
+                if([[[result objectAtIndex:0] objectForKey:@"tot_cnt"] intValue] >= [_searchPage intValue]+[PAGE_SIZE intValue] ){
+                    _currentLastPageStatus = YES;
+                }else{
+                    _currentLastPageStatus = NO;
+                }
+                
+                [_tableListController.newspeedList addObjectsFromArray:result];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [_tableView reloadData];
+                });
             }
-            
-            [_tableListController.newspeedList addObjectsFromArray:result];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [_tableView reloadData];
-            });
         }else{
         }
         

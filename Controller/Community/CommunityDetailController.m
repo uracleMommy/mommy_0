@@ -21,6 +21,9 @@ static BOOL keyboardShow = NO;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    _searchPage = [[NSNumber alloc] initWithInt:1];
+    _currentLastPageStatus = NO;
+    
     /** navigation Setting **/
     //back Button Setting
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -53,9 +56,14 @@ static BOOL keyboardShow = NO;
     _tableView.delegate = _tableListController;
     _tableView.dataSource = _tableListController;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.estimatedRowHeight = 60.0;
+    _tableView.rowHeight = UITableViewAutomaticDimension;
+    _tableListController.motherData = _motherData;
     [_tableView reloadData];
     
-    [self setReplyInfo];
+    
+//    [self setReplyInfo];
+    [self setListFirst];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -205,8 +213,7 @@ static BOOL keyboardShow = NO;
         [alert show];
     }else{
         NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
-//        [param setValue:_communityKey forKey:@"community_upper_key"];
-        [param setValue:@"1475736055791" forKey:@"community_upper_key"];
+        [param setValue:[_motherData objectForKey:@"community_key"] forKey:@"community_upper_key"];
         [param setValue:_txtMessageContent.text forKey:@"content"];
         
         [self showIndicator];
@@ -215,9 +222,9 @@ static BOOL keyboardShow = NO;
             
             NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
             if([code isEqual:@"0"]){
-                //TODO 댓글 초기화....?
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     _txtMessageContent.text = @"";
+                    [self setListFirst];
                 });
             }else{
                 
@@ -233,13 +240,14 @@ static BOOL keyboardShow = NO;
 
 
 #pragma mark profilePopup Action
--(void)showProfilePopupViewAction:(id)sender{
+-(void)showProfilePopupViewAction:(NSString *)personKey{
     if (!_profilePopupView) {
         _profilePopupView = [[CommunityProfilePopupViewController alloc] initWithNibName:@"CommunityProfilePopupViewController" bundle:nil];
         _profilePopupView.delegate = self;
         _profilePopupView.view.frame = CGRectMake(0, 0, [[UIScreen mainScreen] applicationFrame].size.width, [[UIScreen mainScreen] applicationFrame].size.height+20);
     }
     
+    _profilePopupView.mentorKey = personKey;
     AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate.window addSubview:_profilePopupView.view];
 }
@@ -258,12 +266,30 @@ static BOOL keyboardShow = NO;
     [self performSegueWithIdentifier:@"UnwindingSegue" sender:self];
 }
 
+#pragma mark tableView delegate
+- (void) tableView:(UITableView *)tableView totalPageCount:(NSInteger)count{
+    if (!_currentLastPageStatus) {
+        return;
+    }
+    
+    [self setListMore:[[NSNumber alloc] initWithInt:([_searchPage intValue]+[PAGE_SIZE intValue]) ]];
+    
+}
+
+-(void)tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath{
+}
 
 #pragma mark
 - (void)setReplyInfo{
+    
+    if([[_motherData objectForKey:@"like"] isEqualToString:@"Y"]){
+        [_likeButton setImage:[UIImage imageNamed:@"comment_btn_like_on"] forState:UIControlStateNormal];
+    }else{
+        [_likeButton setImage:[UIImage imageNamed:@"comment_btn_like"] forState:UIControlStateNormal];
+    }
+    
     NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
-//    [param setValue:_communityKey forKey:@"community_key"];
-    [param setValue:@"1475651976616" forKey:@"community_key"];
+    [param setValue:[_motherData objectForKey:@"community_key"] forKey:@"community_key"];
     
     [self showIndicator];
     [[MommyRequest sharedInstance] mommyCommunityApiService:CommunityReplyInfo authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data){
@@ -271,7 +297,21 @@ static BOOL keyboardShow = NO;
         
         NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
         if([code isEqual:@"0"]){
-            _tableListController.replayInfo = [data objectForKey:@"result"];
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                /** table Setting **/
+                _tableListController = [[CommunityDetailModel alloc] init];
+                _tableListController.delegate = self;
+                _tableView.delegate = _tableListController;
+                _tableView.dataSource = _tableListController;
+                _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+                _tableView.estimatedRowHeight = 60.0;
+                _tableView.rowHeight = UITableViewAutomaticDimension;
+                
+//                _tableListController.replayInfo = [data objectForKey:@"result"];
+                _tableListController.motherData = _motherData;
+                [_tableView reloadData];
+            });
+            
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
@@ -281,12 +321,83 @@ static BOOL keyboardShow = NO;
     } ];
 }
 
-- (void)first{
+#pragma mark setting list
+- (void)setListFirst{
     
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+    [param setValue:[_motherData objectForKey:@"community_key"] forKey:@"community_key"];
+    [param setValue:PAGE_SIZE forKey:@"pageSize"];
+    [param setValue:_searchPage forKey:@"searchPage"];
+    
+    [self showIndicator];
+    [[MommyRequest sharedInstance] mommyCommunityApiService:CommunityReplyList authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data){
+        NSLog(@"PSH data %@", data);
+        
+        NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
+        if([code isEqual:@"0"]){
+            NSArray *result = [data objectForKey:@"result"];
+            if([result count] == 0){
+                NSLog(@"empty");
+            }else{
+                if([[[result objectAtIndex:0] objectForKey:@"tot_cnt"] intValue] >= ([_searchPage intValue]+[PAGE_SIZE intValue]) ){
+                    _currentLastPageStatus = YES;
+                }else{
+                    _currentLastPageStatus = NO;
+                }
+                
+                [_tableListController.detailList removeAllObjects];
+                [_tableListController.detailList addObjectsFromArray:result];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [_tableView reloadData];
+                });
+            }
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+    } error:^(NSError *error) {
+        NSLog(@"PSH error %@", error);
+        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+    } ];
 }
 
-- (void)more{
+
+- (void)setListMore:(NSNumber *)searchPage{
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
+    [param setValue:PAGE_SIZE forKey:@"pageSize"];
+    [param setValue:searchPage forKey:@"searchPage"];
     
+    
+    [self showIndicator];
+    [[MommyRequest sharedInstance] mommyCommunityApiService:CommunityReplyList authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data){
+        NSLog(@"PSH data %@", data);
+        
+        NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
+        if([code isEqual:@"0"]){
+            _searchPage = searchPage;
+            
+            NSArray *result = [data objectForKey:@"result"];
+            if([result count] == 0){
+                NSLog(@"empty");
+            }else{
+                if([[[result objectAtIndex:0] objectForKey:@"tot_cnt"] intValue] >= [_searchPage intValue]+[PAGE_SIZE intValue] ){
+                    _currentLastPageStatus = YES;
+                }else{
+                    _currentLastPageStatus = NO;
+                }
+                
+                [_tableListController.detailList addObjectsFromArray:result];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [_tableView reloadData];
+                });
+            }
+        }else{
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+    } error:^(NSError *error) {
+        NSLog(@"PSH error %@", error);
+        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+    } ];
 }
 
 @end

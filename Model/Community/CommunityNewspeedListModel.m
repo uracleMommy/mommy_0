@@ -48,7 +48,9 @@
             
             cell = [tableView dequeueReusableCellWithIdentifier:IMAGE_CELL_ID];
         }
+        [_cellTypeDic insertObject:@"IMAGE" atIndex:indexPath.row];
         cell.imageArr = [data objectForKey:@"files"];
+        cell.data = data;
         
         cell.contentsLabel.text = [data objectForKey:@"content"];
         if([[data objectForKey:@"like_cnt"] intValue] != 0){
@@ -110,6 +112,22 @@
         [firstShapeLayer setPath:firstPath];
         CGPathRelease(firstPath);
         
+        
+        UILabel *gettingSizeLabel = [[UILabel alloc] init];
+        gettingSizeLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        CGSize maximumLabelSize = CGSizeMake(310, CGFLOAT_MAX);
+        
+        CGRect textRect = [cell.contentsLabel.text boundingRectWithSize:maximumLabelSize
+                                                                options:NSStringDrawingUsesLineFragmentOrigin| NSStringDrawingUsesFontLeading
+                                                             attributes:@{NSFontAttributeName:cell.contentsLabel.font}
+                                                                context:nil];
+        
+        if(textRect.size.height >=66){
+            cell.contentsHeightConstraint.constant = 66.0f;
+        }else{
+            cell.contentsHeightConstraint.constant = textRect.size.height;
+        }
+        
         [[cell.writerInfoView layer] addSublayer:firstShapeLayer];
         
         // 마지막 셀 체크 페이지 더보기 처리
@@ -123,6 +141,8 @@
 
     }else{
         CommunityNewspeedBasicCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:BASIC_CELL_ID];
+        [_cellTypeDic insertObject:@"BASIC" atIndex:indexPath.row];
+//        [_cellTypeDic setObject:@"BASIC" forKey:indexPath.row];
         
         if(cell == nil){
             [tableView registerNib:[UINib nibWithNibName:@"CommunityNewspeedBasicCustomCell" bundle:nil] forCellReuseIdentifier:BASIC_CELL_ID];
@@ -171,6 +191,7 @@
         
         cell.delegate = self;
         cell.tag = [indexPath indexAtPosition:1];
+        cell.data = data;
         
         CAShapeLayer *firstShapeLayer = [CAShapeLayer layer];
         [firstShapeLayer setBounds:cell.bounds];
@@ -191,6 +212,21 @@
         CGPathRelease(firstPath);
         
         [[cell.writerInfoView layer] addSublayer:firstShapeLayer];
+        
+        UILabel *gettingSizeLabel = [[UILabel alloc] init];
+        gettingSizeLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        CGSize maximumLabelSize = CGSizeMake(310, CGFLOAT_MAX);
+        
+        CGRect textRect = [cell.contentsLabel.text boundingRectWithSize:maximumLabelSize
+                                                 options:NSStringDrawingUsesLineFragmentOrigin| NSStringDrawingUsesFontLeading
+                                              attributes:@{NSFontAttributeName:cell.contentsLabel.font}
+                                                 context:nil];
+        
+        if(textRect.size.height >=66){
+            cell.contentsHeightConstraint.constant = 66.0f;
+        }else{
+            cell.contentsHeightConstraint.constant = textRect.size.height;
+        }
         
         // 마지막 셀 체크 페이지 더보기 처리
         if (indexPath.row == _newspeedList.count - 1) {
@@ -241,15 +277,10 @@
     [_delegate tableView:tableView totalPageCount:count];
 }
 
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    tableView cell
-    NSLog(@"%@", indexPath);
-//    if([tableView cellForRowAtIndexPath:indexPath].tag == 0){
-        return 202;
-//    }else{
-//        return 382;
-//    }
+    return UITableViewAutomaticDimension;
 }
 
 
@@ -260,9 +291,9 @@
     [_delegate moreButtonAction:sender point:point];
 }
 
-- (void)moveDetailViewButtonAction:(id)sender{
+- (void)moveDetailViewButtonAction:(NSDictionary *)data{
     NSLog(@"moveDetailViewButtonAction");
-    [_delegate moveDetailViewButtonAction:sender];
+    [_delegate moveDetailViewButtonAction:data];
 }
 
 - (void)moveWriteMessageViewAction:(id)sender{

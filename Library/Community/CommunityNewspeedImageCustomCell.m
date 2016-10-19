@@ -51,7 +51,7 @@
 }
 
 - (IBAction)moveDetailViewButtonAction:(id)sender {
-    [_delegate moveDetailViewButtonAction:self];
+    [_delegate moveDetailViewButtonAction:_data];
 }
 
 - (IBAction)moveWriteMessageViewAction:(id)sender {

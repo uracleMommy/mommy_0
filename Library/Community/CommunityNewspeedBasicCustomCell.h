@@ -14,7 +14,7 @@
 @optional
 - (void)moreButtonAction:(id)sender point:(CGPoint)point;
 - (void)likeButtonAction:(id)sender like:(NSString *)like type:(NSString *)type;
-- (void)moveDetailViewButtonAction:(id)sender;
+- (void)moveDetailViewButtonAction:(NSDictionary *)data;
 - (void)moveWriteMessageViewAction:(id)sender;
 - (void)showProfilePopupViewAction:(id)sender;
 
@@ -33,6 +33,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *contentsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *likeCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *replyCountLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentsHeightConstraint;
+@property (strong, nonatomic) NSDictionary *data;
 
 - (IBAction)moreButtonAction:(id)sender;
 - (IBAction)likeButtonAction:(id)sender;

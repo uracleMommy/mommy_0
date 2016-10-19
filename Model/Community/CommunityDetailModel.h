@@ -9,13 +9,15 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "CommunityDetailCells.h"
+#import "MommyUtils.h"
+#import "MommyRequest.h"
 
 @protocol CommunityDetailModelDelegate <NSObject>
 
 @optional
 //- (void)tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath;
 - (void)moreButtonAction:(id)sender point:(CGPoint)point;
-- (void)showProfilePopupViewAction:(id)sender;
+- (void)showProfilePopupViewAction:(NSString *)personKey;
 
 @end
 
@@ -23,6 +25,7 @@
 
 @property (nonatomic, strong) NSMutableArray *detailList;
 @property (strong, nonatomic) id<CommunityDetailModelDelegate> delegate;
-@property (strong, nonatomic) NSDictionary *replayInfo;
+@property (strong, nonatomic) NSMutableDictionary *cachedImages;
+@property (strong, nonatomic) NSDictionary *motherData;
 
 @end
