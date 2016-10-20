@@ -14,7 +14,7 @@
 
 @optional
 - (void)moveWriteMessageView:(NSString *)mento_id mentoNickName:(NSString *)mento_nickname;
-- (void)moveNewspeedViewAction:(id)sender;
+- (void)moveNewspeedViewAction:(NSString *)mento_id mentoNickName:(NSString *)mento_nickname;
 - (void)changedMento:(int)tableIndex insert:(NSString *)insert;
 
 @end
@@ -35,7 +35,6 @@
 @property (strong, nonatomic) id<CommunityProfilePopupViewDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UIButton *mentorButton;
 @property (strong, nonatomic) NSString *mentorKey;
-@property (strong, nonatomic) NSString *mentorId;
 @property (strong, nonatomic) NSString *mentorNickname;
 @property (assign, nonatomic) int tableIndex;
 

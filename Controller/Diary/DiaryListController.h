@@ -10,6 +10,7 @@
 #import "DiaryListModel.h"
 #import "KxMenu.h"
 #import "CommonViewController.h"
+#import "noDataDiaryController.h"
 
 #define PAGE_SIZE [[NSNumber alloc] initWithInt:30]
 
@@ -27,6 +28,7 @@
 @property (strong, nonatomic) NSNumber *searchPage;
 @property (strong, nonatomic) NSDate *selectedDate;
 @property (assign, nonatomic) Boolean currentLastPageStatus;
+@property (strong, nonatomic) noDataDiaryController *noDataController;
 
 - (void)setListFirst:(NSDate *)date;
 

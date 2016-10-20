@@ -47,9 +47,13 @@
     
     [[MommyRequest sharedInstance] mommySignInApiService:GetAddress authKey:GET_AUTH_TOKEN parameters:@{} success:^(NSDictionary *data) {
         if([[NSString stringWithFormat:@"%@", [data objectForKey:@"code"]] isEqualToString:@"0"]){
-            NSArray *addressNameArr = [data objectForKey:@"result"];
-            for(int i=0 ; i < [addressNameArr count] ; i++){
-                [pickerData_address addObject:[[addressNameArr objectAtIndex:i] objectForKey:@"address_name"]];
+            pickerData_address = [[NSMutableArray alloc] init];
+            _addressCodeDic = [[NSMutableDictionary alloc] init];
+            NSArray *addressArr = [data objectForKey:@"result"];
+            for(int i=0 ; i < [addressArr count] ; i++){
+                [pickerData_address addObject:[[addressArr objectAtIndex:i] objectForKey:@"address_name"]];
+                [_addressCodeDic setObject:[[addressArr objectAtIndex:i] objectForKey:@"address_code"] forKey:[[addressArr objectAtIndex:i] objectForKey:@"address_name"]];
+//                [pickerData_address addObject:[[addressArr objectAtIndex:i] objectForKey:@"address_name"]];
             }
             dispatch_sync(dispatch_get_main_queue(), ^{
                 [_addressTextField setDropDownMode : IQDropDownModeTextPicker];

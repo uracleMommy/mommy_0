@@ -12,7 +12,7 @@
 @protocol CommunityMyGroupDelegate <NSObject>
 
 @optional
--(void) moveCommunityList:(NSString *)key value:(NSString *)value;
+-(void) moveCommunityList:(NSString *)key value:(NSString *)value title:(NSString *)title;
 
 @end
 
@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *groupNameLabel03;
 @property (strong, nonatomic) NSMutableArray *groupKeyArr;
 @property (strong, nonatomic) NSMutableArray *groupValueArr;
+@property (strong, nonatomic) NSMutableArray *groupTitleArr;
 
 
 - (IBAction)moveCommunityList:(id)sender;

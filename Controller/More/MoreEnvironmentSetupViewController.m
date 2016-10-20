@@ -34,6 +34,10 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)logoutButtonAction:(id)sender {
+    
+}
+
 - (void) tableView:(UITableView *)tableView MoreMyPageModelSelectedIndexPath:(NSIndexPath *)indexPath {
     
     [self performSegueWithIdentifier:@"goCalendarConnectList" sender:nil];

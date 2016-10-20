@@ -25,7 +25,7 @@
     
     /** navigation Setting **/
     self.navigationItem.hidesBackButton = YES;
-    self.navigationController.title = @"쪽지 보내기";
+    self.navigationItem.title = @"쪽지 보내기";
     //back Button Setting
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *backBtnImage = [UIImage imageNamed:@"title_icon_close.png"];

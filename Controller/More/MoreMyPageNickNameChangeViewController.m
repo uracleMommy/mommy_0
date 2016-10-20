@@ -78,9 +78,11 @@
             
             [[MommyRequest sharedInstance] mommySignInApiService:GetAddress authKey:GET_AUTH_TOKEN parameters:@{} success:^(NSDictionary *data) {
                 if([[NSString stringWithFormat:@"%@", [data objectForKey:@"code"]] isEqualToString:@"0"]){
-                    NSArray *addressNameArr = [data objectForKey:@"result"];
-                    for(int i=0 ; i < [addressNameArr count] ; i++){
-                        [_pickerData_text addObject:[[addressNameArr objectAtIndex:i] objectForKey:@"address_name"]];
+                    _addressCodeDic = [[NSMutableDictionary alloc] init];
+                    NSArray *addressArr = [data objectForKey:@"result"];
+                    for(int i=0 ; i < [addressArr count] ; i++){
+                        [_pickerData_text addObject:[[addressArr objectAtIndex:i] objectForKey:@"address_name"]];
+                        [_addressCodeDic setObject:[[addressArr objectAtIndex:i] objectForKey:@"address_code"] forKey:[[addressArr objectAtIndex:i] objectForKey:@"address_name"]];
                     }
                     dispatch_sync(dispatch_get_main_queue(), ^{
                         [_dropDownTextField setDropDownMode : IQDropDownModeTextPicker];
@@ -207,7 +209,7 @@
             
         case 2: //거주지
         {
-//            param setValue: forKey:<#(nonnull NSString *)#>
+            [param setValue:[NSNumber numberWithInteger:[[_addressCodeDic objectForKey:[_basicTextField text]] intValue]] forKey:@"address"];
             break;
         }
             

@@ -53,6 +53,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *imageButton03;
 @property (weak, nonatomic) IBOutlet UIButton *imageButton04;
 
+@property (assign, nonatomic) NSString *latitude;
+@property (assign, nonatomic) NSString *longitude;
+
 #pragma mark 이모티콘 팝업 관련
 @property (strong, nonatomic) emoticonPopupViewController *emoticonPopupView;
 - (IBAction)showEmoticonPopup:(id)sender;

@@ -64,7 +64,7 @@
    
 }
 
-- (IBAction)showProfilePopupViewAction:(NSString *)personKey {
-    [_delegate showProfilePopupViewAction:_personKey];
+- (IBAction)showProfilePopupViewAction:(id)sender{
+    [_delegate showProfilePopupViewAction:_personKey personNickname:_personNickname];
 }
 @end

@@ -129,8 +129,8 @@
     [_timeButton setTimeFormatter:formatter2];
     [_timeButton setDelegate:self];
     
-    [_timeButton setDate:NSDate.date];
-    _timeLabel.text = [formatter2 stringFromDate:NSDate.date];
+//    [_timeButton setDate:NSDate.date];
+//    _timeLabel.text = [formatter2 stringFromDate:NSDate.date];
   
     [self initDiary];
 }
@@ -326,12 +326,17 @@
     [formatter setDateFormat:@"YYYY년 MM월 dd일 EEEE"];
     [_dateButton setDate:[formatter dateFromString:[self getyyyyMMddeeee:[detail objectForKey:@"reg_dttm"]]]];
     
+    _timeLabel.text = [self getHHmm:[detail objectForKey:@"reg_dttm"]];
+    
+    NSDateFormatter *formatter2 = [[NSDateFormatter alloc]init];
+    [formatter2 setDateFormat:@"HH:mm"];
+    [_timeButton setDate:[formatter2 dateFromString:[self getHHmm:[detail objectForKey:@"reg_dttm"]]]];    
     
     //address
     _adressLabel.text = [detail objectForKey:@"address_name"];
     
     //emoticon
-    if([detail objectForKey:@"emoticon"] && ![[detail objectForKey:@"emoticon"] isEqualToString:@""]){
+    if([detail objectForKey:@"emoticon"] && ![[detail objectForKey:@"emoticon"] isEqual:[NSNull null]] && ![[detail objectForKey:@"emoticon"] isEqualToString:@""]){
         [_emoticonButton setImage:[UIImage imageNamed:[NSString stringWithFormat:@"contents_icon_emoticon0%d", ([[detail objectForKey:@"emoticon"] intValue] - 500)]] forState:UIControlStateNormal] ;
         [_emoticonButton setTag:([[detail objectForKey:@"emoticon"] intValue] - 500)+1];
         
@@ -344,7 +349,7 @@
     _contentsTextView.text = [detail objectForKey:@"content"];
     
     //image
-    if([result objectForKey:@"files"] && ![[result objectForKey:@"files"] isEqual:@""]){
+    if([result objectForKey:@"files"] && ![[result objectForKey:@"files"] isEqual:[NSNull null]] && ![[result objectForKey:@"files"] isEqual:@""]){
         
         NSArray *files = [result objectForKey:@"files"];
         
@@ -379,7 +384,7 @@
                 dispatch_queue_t queue = dispatch_queue_create(s, 0);
                 dispatch_async(queue, ^{
                     
-                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], fileImageName];
+                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@&s=%d", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], fileImageName, i];
                     
                     UIImage *profileImg = nil;
                     NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
@@ -787,6 +792,23 @@
     NSString *yyyymmddeeee = [dateFormatter stringFromDate:dateFromString];
     
     return yyyymmddeeee;
+}
+
+- (NSString *) getHHmm : (NSString *) dateFormatString {
+    
+    NSString *dateString = dateFormatString;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    // this is imporant - we set our input date format to match our input string
+    // if format doesn't match you'll get nil from your string, so be careful
+    [dateFormatter setDateFormat:@"yyyyMMddHHmmss"];
+    NSDate *dateFromString = [[NSDate alloc] init];
+    // voila!
+    dateFromString = [dateFormatter dateFromString:dateString];
+    
+    [dateFormatter setDateFormat:@"HH:mm"];
+    NSString *HHmm = [dateFormatter stringFromDate:dateFromString];
+    
+    return HHmm;
 }
 
 -(NSArray*)findAllTextFieldsInView:(UIView*)view{

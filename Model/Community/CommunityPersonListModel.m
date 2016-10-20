@@ -50,8 +50,9 @@
     }
     
     cell.mentorKey = [data objectForKey:@"mento_key"];
+//    cell.mentorId = [data objectForKey:@"mento_id"];
     cell.mentorNicknameLabel.text = [data objectForKey:@"mento_nickname"];
-    cell.mentorBirthdayLabel.text = [data objectForKey:@"mento_birth"];
+    cell.mentorBirthdayLabel.text = [NSString stringWithFormat:@"%@년생", [[data objectForKey:@"mento_birth"] substringWithRange:NSMakeRange(2, 2)]];
     
     if([[data objectForKey:@"mento_yn"] isEqualToString:@"Y"]){
         [cell.mentorButtonImage setImage:[UIImage imageNamed:@"popup_btn_icon_mentor.png"]];

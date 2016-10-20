@@ -178,11 +178,12 @@
         [formatter setDateFormat:@"YYYYMMdd"];
         NSString *baby_birth = [formatter stringFromDate:[_scrollViewContoller.dueDateTextField date]];
         
+        
         SignUpFetusInfoController *vc = [segue destinationViewController];
         [vc setFile_name:_fileName];
         [vc setNickname:[_scrollViewContoller.mommyNameTextField text]];
 //        [vc setAddress:[scrollViewContoller.addressTextField text]];
-        [vc setAddress:[NSNumber numberWithInteger:104]];
+        [vc setAddress:[NSNumber numberWithInteger:[[_scrollViewContoller.addressCodeDic objectForKey:[_scrollViewContoller.addressTextField text]] intValue]]];
         [vc setBaby_birth:baby_birth];
         [vc setBefore_weight:[_scrollViewContoller.beforeWeightTextField text]];
         [vc setWeight:[_scrollViewContoller.nowWeightTextField text]];

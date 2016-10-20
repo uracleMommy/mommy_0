@@ -19,6 +19,7 @@
     // Do any additional setup after loading the view.
     _groupKeyArr = [[NSMutableArray alloc] init];
     _groupValueArr = [[NSMutableArray alloc] init];
+    _groupTitleArr = [[NSMutableArray alloc] init];
     
 }
 
@@ -40,6 +41,8 @@
                     NSDictionary *groupDic = [result objectAtIndex:i];
                     [_groupKeyArr addObject:[groupDic objectForKey:@"group_key"]];
                     [_groupValueArr addObject:[groupDic objectForKey:@"group_value"
+                                               ]];
+                    [_groupTitleArr addObject:[groupDic objectForKey:@"group_name"
                                                ]];
                     if(i == 0){
                         dispatch_sync(dispatch_get_main_queue(), ^{
@@ -89,6 +92,6 @@
 */
 
 - (IBAction)moveCommunityList:(id)sender {
-    [_delegate moveCommunityList:[_groupKeyArr objectAtIndex:[sender tag]] value:[_groupValueArr objectAtIndex:[sender tag]]];
+    [_delegate moveCommunityList:[_groupKeyArr objectAtIndex:[sender tag]] value:[_groupValueArr objectAtIndex:[sender tag]] title:[_groupTitleArr objectAtIndex:[sender tag]]];
 }
 @end

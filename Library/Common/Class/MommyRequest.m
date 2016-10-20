@@ -862,6 +862,10 @@ static MommyHttpUrls* instanceMommyHttpUrls;
             return [_mainDomain stringByAppendingString: @"/api/diary/update"];
             break;
             
+        case GpsToAddress:
+            return [_mainDomain stringByAppendingString:@"/api/diary/gps-to-address"];
+            break;
+            
         default:
             return @"";
             break;

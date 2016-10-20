@@ -17,7 +17,7 @@
 @optional
 //- (void)tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath;
 - (void)moreButtonAction:(id)sender point:(CGPoint)point;
-- (void)showProfilePopupViewAction:(NSString *)personKey;
+- (void)showProfilePopupViewAction:(NSString *)personKey personNickname:(NSString *)personNickname;
 
 @end
 

@@ -217,7 +217,7 @@
             <objects>
                 <navigationController id="PnP-x7-Zux" customClass="CommunityNavController" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="AeC-Cx-Tx1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="AeC-Cx-Tx1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -502,7 +502,7 @@
         <!--View Controller-->
         <scene sceneID="Pr6-wJ-ZVp">
             <objects>
-                <viewController id="JeD-tD-SbE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="noDataMentorController" id="JeD-tD-SbE" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BDX-eE-qLS"/>
                         <viewControllerLayoutGuide type="bottom" id="Ddp-gt-dEV"/>
@@ -639,11 +639,60 @@
             </objects>
             <point key="canvasLocation" x="939" y="-102"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Xlq-k8-tBV">
+            <objects>
+                <viewController storyboardIdentifier="noDataCommunityController" id="bjn-ek-EuG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lvx-8v-1yd"/>
+                        <viewControllerLayoutGuide type="bottom" id="5eM-y9-DWl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="10F-kf-YGT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pM0-HK-XSn">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contents_none_img03" translatesAutoresizingMaskIntoConstraints="NO" id="fVI-BE-2VE">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="85" id="5Uq-3O-Kf2"/>
+                                            <constraint firstAttribute="width" constant="85" id="SJY-0n-FT6"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="등록된 뉴스피드가 없습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2I-c8-Tc0">
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
+                                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="fVI-BE-2VE" firstAttribute="centerX" secondItem="pM0-HK-XSn" secondAttribute="centerX" id="5aP-4g-ftj"/>
+                                    <constraint firstItem="h2I-c8-Tc0" firstAttribute="top" secondItem="fVI-BE-2VE" secondAttribute="bottom" constant="20" id="5dg-AM-10t"/>
+                                    <constraint firstAttribute="trailing" secondItem="h2I-c8-Tc0" secondAttribute="trailing" id="Ma7-yI-Ip5"/>
+                                    <constraint firstItem="h2I-c8-Tc0" firstAttribute="leading" secondItem="pM0-HK-XSn" secondAttribute="leading" id="fWp-6h-CXZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="h2I-c8-Tc0" secondAttribute="bottom" id="liZ-mH-H22"/>
+                                    <constraint firstItem="fVI-BE-2VE" firstAttribute="top" secondItem="pM0-HK-XSn" secondAttribute="top" id="sVv-gs-Wgw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="pM0-HK-XSn" firstAttribute="centerX" secondItem="10F-kf-YGT" secondAttribute="centerX" id="1Yd-C4-kjS"/>
+                            <constraint firstItem="pM0-HK-XSn" firstAttribute="centerY" secondItem="10F-kf-YGT" secondAttribute="centerY" id="nKp-Hx-dhc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T57-iq-ZEJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="461" y="-821"/>
+        </scene>
     </scenes>
     <resources>
         <image name="comment_btn_like" width="90" height="90"/>
         <image name="contents_btn_photo_update" width="150" height="150"/>
         <image name="contents_icon_emoticon02" width="60" height="68"/>
+        <image name="contents_none_img03" width="170" height="170"/>
         <image name="contents_none_img06" width="170" height="170"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -50,6 +50,7 @@
         }
         [_cellTypeDic insertObject:@"IMAGE" atIndex:indexPath.row];
         cell.imageArr = [data objectForKey:@"files"];
+        [cell.imageSlider reloadData];
         cell.data = data;
         
         cell.contentsLabel.text = [data objectForKey:@"content"];
@@ -67,6 +68,7 @@
         }else{
             [cell.likeButtonImage setImage:[UIImage imageNamed:@"contents_comm_icon_like"]];
         }
+        
         NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [data objectForKey:@"mento_img"]];
         
         if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {

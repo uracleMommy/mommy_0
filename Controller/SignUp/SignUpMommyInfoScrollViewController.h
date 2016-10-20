@@ -41,6 +41,7 @@
 - (IBAction)mommyPictureButtonAction:(id)sender;
 - (void)setMommyImage:(UIImage *)croppedImage;
 
+@property (strong, nonatomic) NSMutableDictionary *addressCodeDic;
 @property (weak, nonatomic)id<SignUpMommyInfoScrollViewDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UIImageView *mommyBackImageView;
 @property (weak, nonatomic) IBOutlet UITextField *mommyNameTextField;

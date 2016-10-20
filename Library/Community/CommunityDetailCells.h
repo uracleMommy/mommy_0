@@ -13,7 +13,7 @@
 
 @optional
 - (IBAction)moreButtonAction:(id)sender point:(CGPoint)point;
-- (void)showProfilePopupViewAction:(NSString *)personKey;
+- (void)showProfilePopupViewAction:(NSString *)personKey personNickname:(NSString *)personNickname;
 
 @end
 
@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *replyPersonImage05;
 @property (weak, nonatomic) IBOutlet UIButton *replyPersonButton;
 @property (strong, nonatomic) NSString *personKey;
+@property (strong, nonatomic) NSString *personNickname;
 @property (weak, nonatomic) IBOutlet UIButton *writerPersonImage;
 @property (weak, nonatomic) IBOutlet UIButton *moreButton;
 @property (weak, nonatomic) IBOutlet UILabel *writerNicknameLabel;

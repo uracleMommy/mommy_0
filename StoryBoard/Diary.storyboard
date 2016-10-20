@@ -836,7 +836,7 @@
         <!--View Controller-->
         <scene sceneID="Pgc-T1-4qM">
             <objects>
-                <viewController id="6SX-mY-XFa" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="noDataDiaryController" id="6SX-mY-XFa" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pOm-wW-egY"/>
                         <viewControllerLayoutGuide type="bottom" id="NG6-KR-Lev"/>

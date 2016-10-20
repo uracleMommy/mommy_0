@@ -29,6 +29,7 @@
 @property (strong, nonatomic) NSMutableArray *pickerData_number_point;
 @property (strong, nonatomic) NSMutableArray *pickerData_number_weight;
 @property (strong, nonatomic) NSMutableArray *pickerData_text;
+@property (strong, nonatomic) NSMutableDictionary *addressCodeDic;
 @property (strong, nonatomic) UIPickerView *pickerView;
 
 
