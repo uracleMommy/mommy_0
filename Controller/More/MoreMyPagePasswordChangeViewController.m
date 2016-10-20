@@ -144,7 +144,7 @@
             [_passwordValidationLabel setAttributedText: text];
         }
         
-        if([passwordText rangeOfString:@"([A-z]+[0-9]+[?`_=~!@#$%^&*()+-]+)" options:  NSRegularExpressionSearch].location != NSNotFound){  //english & number & special char Check OK
+        if([passwordText rangeOfString:@"([A-z]+)" options:  NSRegularExpressionSearch].location != NSNotFound && [passwordText rangeOfString:@"([0-9]+)" options:  NSRegularExpressionSearch].location != NSNotFound && [passwordText rangeOfString:@"([?`_=~!@#$%^&*()+-]+)" options:  NSRegularExpressionSearch].location != NSNotFound){  //english & number & special char Check OK
             [_passwordValidationArr replaceObjectAtIndex:1 withObject:@"Y"];
             NSMutableAttributedString *text =
             [[NSMutableAttributedString alloc]

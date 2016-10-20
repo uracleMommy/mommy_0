@@ -61,6 +61,7 @@
             cell.regDateLabel.text = [[MommyUtils sharedGlobalData] getMommyDate:[_motherData objectForKey:@"reg_dttm"]];
             NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [_motherData objectForKey:@"mento_img"]];
             cell.personKey = [_motherData objectForKey:@"mento_key"];
+            cell.personNickname = [_motherData objectForKey:@"mento_nickname"];
             
             if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
                 [cell.writerPersonImage setImage:[_cachedImages valueForKey:profileImageIdentifier]forState:UIControlStateNormal];
@@ -322,6 +323,7 @@
             cell.replyContentTextField.text = [result objectForKey:@"content"];
             cell.replyContentsHeightConstraint.constant = textRect.size.height;
             cell.personKey = [result objectForKey:@"mento_key"];
+            cell.personNickname = [result objectForKey:@"mento_nickname"];
             
             NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [result objectForKey:@"img"]];
             
@@ -412,8 +414,8 @@
      [_delegate moreButtonAction:sender point:point];   
 }
 
--(void) showProfilePopupViewAction:(NSString *)personKey{
-    [_delegate showProfilePopupViewAction:personKey];
+-(void) showProfilePopupViewAction:(NSString *)personKey personNickname:(NSString *)personNickname{
+    [_delegate showProfilePopupViewAction:personKey personNickname:(NSString *)personNickname];
 }
 
 @end

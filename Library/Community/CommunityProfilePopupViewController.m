@@ -68,8 +68,8 @@
                 _totalStepLabel.text = [NSString stringWithFormat:@"%@", [stepInfo objectForKey:@"total_step"]];
                 _avgStepLabel.text = [NSString stringWithFormat:@"%@", [stepInfo objectForKey:@"avg_step"]];
                 
-                _nameLabel.text = [mentoInfo objectForKey:@"mento_nickname"];
-                _babyBirthLabel.text = [NSString stringWithFormat:@"출산예정일 %@", [mentoInfo objectForKey:@"baby_birth"]];
+                _nameLabel.text = [NSString stringWithFormat:@"%@ (%@년생)", [mentoInfo objectForKey:@"mento_nickname"], [[mentoInfo objectForKey:@"mento_birth"] substringWithRange:NSMakeRange(2, 2)]];
+                _babyBirthLabel.text = [NSString stringWithFormat:@"출산예정일 %@",  [self getMommyDateyyyyMMdd:[mentoInfo objectForKey:@"baby_birth"]]];
                 
                 if([[mentoInfo objectForKey:@"mento_yn"] isEqualToString:@"Y"]){
                     [_mentorButton setImage:[UIImage imageNamed:@"popup_btn_icon_mentor.png"] forState:UIControlStateNormal];
@@ -124,12 +124,12 @@
 
 - (IBAction)moveWriteMessageView:(id)sender {
     [self.view removeFromSuperview];
-    [_delegate moveWriteMessageView:_mentorId mentoNickName:_mentorNickname];
+    [_delegate moveWriteMessageView:_mentorKey mentoNickName:_mentorNickname];
 }
 
-- (IBAction)moveNewspeedViewAction:(id)sender {
+- (IBAction)moveNewspeedViewAction:(id)sender{
     [self.view removeFromSuperview];
-    [_delegate moveNewspeedViewAction:sender];
+    [_delegate moveNewspeedViewAction:_mentorKey mentoNickName:_mentorNickname];
 }
 
 - (IBAction)toggleMentorAction:(id)sender {
@@ -167,6 +167,24 @@
             
         }];
     }
+}
+
+#pragma mark 마미앤 날짜 형식 변환기(yyyy.MM.dd)
+- (NSString *) getMommyDateyyyyMMdd : (NSString *) dateFormatString {
+    
+    NSString *dateString = dateFormatString;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    // this is imporant - we set our input date format to match our input string
+    // if format doesn't match you'll get nil from your string, so be careful
+    [dateFormatter setDateFormat:@"yyyyMMdd"];
+    NSDate *dateFromString = [[NSDate alloc] init];
+    // voila!
+    dateFromString = [dateFormatter dateFromString:dateString];
+    
+    [dateFormatter setDateFormat:@"yyyy.MM.dd"];
+    NSString *yyyymmdd = [dateFormatter stringFromDate:dateFromString];
+    
+    return yyyymmdd;
 }
 
 @end

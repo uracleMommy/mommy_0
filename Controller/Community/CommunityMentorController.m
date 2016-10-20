@@ -38,12 +38,30 @@
         if([code isEqual:@"0"]){
             NSArray *result = [data objectForKey:@"result"];
             
-            [_tableListController.personList removeAllObjects];
-            [_tableListController.personList addObjectsFromArray:result];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [_tableView reloadData];
-            });
-            
+            if([result count] == 0){
+                if(!_noDataController){
+                    _noDataController = [self.storyboard instantiateViewControllerWithIdentifier:@"noDataMentorController"];
+                    [_noDataController.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+                    _noDataController.view.tag = 2;
+                }
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [self.view addSubview : _noDataController.view];
+                    _tableView.hidden = YES;
+                });
+            }else{
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    _tableView.hidden = NO;
+                    if(self.view.subviews[0].tag == 2){
+                        [self.view.subviews[0] removeFromSuperview];
+                    }
+                });
+                [_tableListController.personList removeAllObjects];
+                [_tableListController.personList addObjectsFromArray:result];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [_tableView reloadData];
+                });
+            }
         }else{
         }
         
@@ -60,7 +78,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath{
-    [_delegate moveCommunityList:[(CommunityPersonListCustomCell *)[tableView cellForRowAtIndexPath:indexPath] mentorKey] value:nil];
+    [_delegate moveCommunityList:[(CommunityPersonListCustomCell *)[tableView cellForRowAtIndexPath:indexPath] mentorKey] value:nil title:[(CommunityPersonListCustomCell *)[tableView cellForRowAtIndexPath:indexPath] mentorNicknameLabel].text];
 }
 
 @end

@@ -27,6 +27,7 @@
     
     _mentoImageButton.layer.cornerRadius = 20;
     _mentoImageButton.layer.masksToBounds = YES;
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -72,7 +73,7 @@
     
     CommunitySliderImageCell *cell =  (CommunitySliderImageCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [[_imageArr objectAtIndex:indexPath.row] objectForKey:@"atch_file_key"]];
+    NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [[_imageArr objectAtIndex:indexPath.row] objectForKey:@"file_name"]];
     
     if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
         [cell.imageView setImage:[_cachedImages valueForKey:profileImageIdentifier]];
@@ -81,7 +82,7 @@
         dispatch_queue_t queue = dispatch_queue_create(s, 0);
         dispatch_async(queue, ^{
             
-            NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [[_imageArr objectAtIndex:indexPath.row] objectForKey:@"atch_file_key"]];
+            NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@&s=%d", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [[_imageArr objectAtIndex:indexPath.row] objectForKey:@"atch_file_key"], (int)indexPath.row];
             
             UIImage *profileImg = nil;
             NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
@@ -94,8 +95,6 @@
             });
         });
     }
-    
-
     
     return cell;
 }

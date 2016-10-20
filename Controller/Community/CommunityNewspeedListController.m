@@ -66,7 +66,7 @@
     UIBarButtonItem *negativeSpacer2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     negativeSpacer2.width = -16;
     
-    NSArray *rightBarButtonItems = [[NSArray alloc] initWithObjects: negativeSpacer2, mentorButton, messageButton, nil];
+    NSArray *rightBarButtonItems = [[NSArray alloc] initWithObjects: negativeSpacer2, messageButton, mentorButton, nil];
     
     //showPeople Button Setting
     UIButton *memberBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -82,6 +82,8 @@
     }else{
         self.navigationItem.rightBarButtonItems = @[memberButton];
     }
+    
+    self.navigationItem.title = _titleText;
     
     [self setListFirst];
 }
@@ -100,6 +102,48 @@
 #pragma mark - Navigation
 
 -(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
+//    if([[segue identifier] isEqualToString:@""]){
+    self.navigationItem.title = _titleText;
+    
+    //mentor Button Setting
+    UIButton *mentorBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *mentorBtnImage = [UIImage imageNamed:@"title_icon_mentor_cancel.png"];
+    mentorBtn.frame = CGRectMake(0, 0, 40, 40);
+    [mentorBtn setImage:mentorBtnImage forState:UIControlStateNormal];
+    [mentorBtn addTarget:self action:@selector(toggleMentor) forControlEvents:UIControlEventTouchUpInside];
+    //    [mentorBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 20, 0, -20)];
+    UIBarButtonItem *mentorButton = [[UIBarButtonItem alloc] initWithCustomView:mentorBtn];
+    
+    //message Button Setting
+    UIButton *messageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *messageBtnImage = [UIImage imageNamed:@"title_icon_message.png"];
+    messageBtn.frame = CGRectMake(0, 0, 40, 40);
+    [messageBtn setImage:messageBtnImage forState:UIControlStateNormal];
+    [messageBtn addTarget:self action:@selector(moveToMessage) forControlEvents:UIControlEventTouchUpInside];
+    //    [messageBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 20, 0, -20)];
+    UIBarButtonItem *messageButton = [[UIBarButtonItem alloc] initWithCustomView:messageBtn];
+    
+    UIBarButtonItem *negativeSpacer2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    negativeSpacer2.width = -16;
+    
+    NSArray *rightBarButtonItems = [[NSArray alloc] initWithObjects: negativeSpacer2, messageButton, mentorButton, nil];
+    
+    //showPeople Button Setting
+    UIButton *memberBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *memberBtnImage = [UIImage imageNamed:@"title_icon_member.png"];
+    memberBtn.frame = CGRectMake(0, 0, 40, 40);
+    [memberBtn setImage:memberBtnImage forState:UIControlStateNormal];
+    [memberBtn addTarget:self action:@selector(movePeopleList) forControlEvents:UIControlEventTouchUpInside];
+    [memberBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
+    UIBarButtonItem *memberButton = [[UIBarButtonItem alloc] initWithCustomView:memberBtn];
+    
+    if(_mode == MentorMode){
+        self.navigationItem.rightBarButtonItems = rightBarButtonItems;
+    }else{
+        self.navigationItem.rightBarButtonItems = @[memberButton];
+    }
+    [self setListFirst];
+//    }
 }
 
 
@@ -122,11 +166,12 @@
 
 #pragma mark navigation Action
 - (void)moveToMessage{
-    [_moveWriteViewButton removeFromSuperview];
-    UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
-    UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"MessageNaivgation"];
-    
-    [self presentViewController:messageNavigationController animated:YES completion:nil];
+//    [_moveWriteViewButton removeFromSuperview];
+//    UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
+//    UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"MessageNaivgation"];
+//    
+//    [self presentViewController:messageNavigationController animated:YES completion:nil];
+    [self moveWriteMessageView:_mentorKey mentoNickName:_titleText];
 }
 
 -(void)goBack{
@@ -159,7 +204,7 @@
 
 #pragma mark in table button Action
 - (void)moveWriteMessageViewAction:(id)sender{
-    [self moveWriteMessageView:[[_tableListController.newspeedList objectAtIndex:[sender tag]] objectForKey:@"mento_id"] mentoNickName:[[_tableListController.newspeedList objectAtIndex:[sender tag]] objectForKey:@"mento_nickname"]];
+    [self moveWriteMessageView:[[_tableListController.newspeedList objectAtIndex:[sender tag]] objectForKey:@"mento_key"] mentoNickName:[[_tableListController.newspeedList objectAtIndex:[sender tag]] objectForKey:@"mento_nickname"]];
 }
 
 -(void) toggleMentor{
@@ -304,26 +349,26 @@
     }
     
     _profilePopupView.mentorKey = [[_tableListController.newspeedList objectAtIndex:[sender tag]] objectForKey:@"mento_key"];
-    _profilePopupView.mentorId = [[_tableListController.newspeedList objectAtIndex:[sender tag]] objectForKey:@"mento_id"];
+//    _profilePopupView.mentorId = [[_tableListController.newspeedList objectAtIndex:[sender tag]] objectForKey:@"mento_id"];
     _profilePopupView.mentorNickname = [[_tableListController.newspeedList objectAtIndex:[sender tag]] objectForKey:@"mento_nickname"];
     
     AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate.window addSubview:_profilePopupView.view];
 }
 
-- (void)moveWriteMessageView:(NSString *)mento_id mentoNickName:(NSString *)mento_nickname{
+- (void)moveWriteMessageView:(NSString *)mento_key mentoNickName:(NSString *)mento_nickname{
     [_moveWriteViewButton removeFromSuperview];
     
     UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
     MessageWriteController *messageNavigationController = [messageStoryboard instantiateViewControllerWithIdentifier:@"MessageWriteController"];
     
-    messageNavigationController.toUserCode = mento_id;
+    messageNavigationController.toUserCode = mento_key;
     messageNavigationController.toUserNickname = mento_nickname;
     
     [[self navigationController] pushViewController:messageNavigationController animated:YES];
 }
 
-- (void)moveNewspeedViewAction:(id)sender{
+- (void)moveNewspeedViewAction:(NSString *)mento_id mentoNickName:(NSString *)mento_nickname{
     NSLog(@"moveNewspeed");
 }
 
@@ -368,7 +413,24 @@
             NSArray *result = [data objectForKey:@"result"];
             if([result count] == 0){
                 NSLog(@"empty");
+                if(!_noDataController){
+                    _noDataController = [self.storyboard instantiateViewControllerWithIdentifier:@"noDataCommunityController"];
+                    [_noDataController.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+                    _noDataController.view.tag = 2;
+                }
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [self.view addSubview : _noDataController.view];
+                    _tableView.hidden = YES;
+                });
             }else{
+                
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    _tableView.hidden = NO;
+                    if(self.view.subviews[0].tag == 2){
+                        [self.view.subviews[0] removeFromSuperview];
+                    }
+                });
+
                 if([[[result objectAtIndex:0] objectForKey:@"tot_cnt"] intValue] >= ([_searchPage intValue]+[PAGE_SIZE intValue]) ){
                     _currentLastPageStatus = YES;
                 }else{

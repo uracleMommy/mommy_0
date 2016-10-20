@@ -71,21 +71,36 @@
             NSArray *result = [data objectForKey:@"result"];
             if([result count] == 0){
                 NSLog(@"empty");
-            }
-            
-            [_diaryListTableController.diaryList removeAllObjects];
-            [_diaryListTableController.diaryList addObjectsFromArray:result];
-            
-            if([result count] == 0 || [[[result objectAtIndex:0] objectForKey:@"tot_cnt"] intValue] >= [_searchPage intValue]+[PAGE_SIZE intValue] ){
-                _currentLastPageStatus = YES;
+                if(!_noDataController){
+                    _noDataController = [self.storyboard instantiateViewControllerWithIdentifier:@"noDataDiaryController"];
+                    [_noDataController.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+                    _noDataController.view.tag = 2;
+                }
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [self.view addSubview : _noDataController.view];
+                    _listTableview.hidden = YES;
+                });
             }else{
-                _currentLastPageStatus = NO;
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    _listTableview.hidden = NO;
+                    if(self.view.subviews[0].tag == 2){
+                        [self.view.subviews[0] removeFromSuperview];
+                    }
+                });
+                [_diaryListTableController.diaryList removeAllObjects];
+                [_diaryListTableController.diaryList addObjectsFromArray:result];
+                
+                if([result count] == 0 || [[[result objectAtIndex:0] objectForKey:@"tot_cnt"] intValue] >= [_searchPage intValue]+[PAGE_SIZE intValue] ){
+                    _currentLastPageStatus = YES;
+                }else{
+                    _currentLastPageStatus = NO;
+                }
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [_listTableview reloadData];
+                    //                [self hideIndicator];
+                });
             }
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [_listTableview reloadData];
-//                [self hideIndicator];
-            });
         }else{
 //            dispatch_async(dispatch_get_main_queue(), ^{
 //                [self hideIndicator];

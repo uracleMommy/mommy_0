@@ -31,6 +31,7 @@
 @property (assign, nonatomic) Boolean currentLastPageStatus;
 @property (assign, nonatomic) int cellTag;
 @property (strong, nonatomic) NSDictionary *detailData;
+@property (strong, nonatomic) UIViewController *noDataController;
 @property (assign) ViewMode mode;
 
 

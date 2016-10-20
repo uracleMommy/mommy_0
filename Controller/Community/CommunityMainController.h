@@ -22,6 +22,7 @@
 @property (strong, nonatomic) NSString *groupKey;
 @property (strong, nonatomic) NSString *groupValue;
 @property (strong, nonatomic) NSString *mentorKey;
+@property (strong, nonatomic) NSString *communityTitle;
 @property (assign) ViewMode mode;
 
 @end

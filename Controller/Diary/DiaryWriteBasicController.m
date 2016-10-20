@@ -22,6 +22,7 @@
     
     // Location Receiver 콜백에 대한 delegate 설정
     _locationManager.delegate = self;
+    _locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
     
     /** Navigation Setting **/
     //close Button
@@ -617,13 +618,43 @@
         [self.locationManager requestWhenInUseAuthorization];
     }
     
+     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     // Location Manager 시작하기
     [self.locationManager startUpdatingLocation];
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
-{
-    NSLog(@"%@", [locations lastObject]);
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    CLLocation *newLocation = [locations lastObject];
+    NSMutableDictionary *param = [[NSMutableDictionary alloc]init];
+    
+    if(_latitude != [NSString stringWithFormat:@"%lf", newLocation.coordinate.latitude] || _longitude != [NSString stringWithFormat:@"%lf", newLocation.coordinate.longitude]){
+        
+        _latitude = [NSString stringWithFormat:@"%lf", newLocation.coordinate.latitude];
+        _longitude = [NSString stringWithFormat:@"%lf", newLocation.coordinate.longitude];
+        
+        [param setObject:[NSString stringWithFormat:@"%lf", newLocation.coordinate.latitude] forKey:@"latitude"];
+        [param setObject:[NSString stringWithFormat:@"%lf", newLocation.coordinate.longitude] forKey:@"longitude"];
+        [param setObject:@"WGS84" forKey:@"inputCoordSystem"];
+        [param setObject:@"json" forKey:@"output"];
+        
+        
+        [[MommyRequest sharedInstance] mommyDiaryApiService:GpsToAddress authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data) {
+            if([[NSString stringWithFormat:@"%@", [data objectForKey:@"code"]] isEqualToString:@"0"]){
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    _addressTextField.text = [[data objectForKey:@"result"] objectForKey:@"fullName"];
+                });
+                
+            }
+        } error:^(NSError *error) {
+            
+        }];
+    }
+    
+    [_locationManager stopUpdatingLocation];
 }
 
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"Cannot find the location.");
+}
 @end

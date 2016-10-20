@@ -48,6 +48,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    if([[segue identifier] isEqualToString:@"UnwindingSegue"]){
+        CommunityNewspeedListController *vc = [segue destinationViewController];
+        [vc setMode:MentorMode];
+        [vc setTitleText:_mento_nickname];
+        [vc setMentorKey:_mento_id];
+    }
+}
+
+
 
 #pragma mark table delegate
 - (void) tableView:(UITableView *)tableView totalPageCount:(NSInteger)count{
@@ -66,6 +81,7 @@
         _profilePopupView.view.frame = CGRectMake(0, 0, [[UIScreen mainScreen] applicationFrame].size.width, [[UIScreen mainScreen] applicationFrame].size.height+20);
     }
     _profilePopupView.mentorKey = [(CommunityPersonListCustomCell *)[tableView cellForRowAtIndexPath:indexPath] mentorKey];
+    _profilePopupView.mentorNickname = [[(CommunityPersonListCustomCell *)[tableView cellForRowAtIndexPath:indexPath] mentorNicknameLabel] text];
     
     AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate.window addSubview:_profilePopupView.view];
@@ -159,7 +175,9 @@
 }
 
 #pragma mark profile delegate
-- (void)moveNewspeedViewAction:(id)sender{
+- (void)moveNewspeedViewAction:(NSString *)mento_id mentoNickName:(NSString *)mento_nickname{
+    _mento_id = mento_id;
+    _mento_nickname = mento_nickname;
     [self performSegueWithIdentifier:@"UnwindingSegue" sender:self];
 }
 
@@ -169,14 +187,6 @@
     [[self navigationController] pushViewController:messageNavigationController animated:YES];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

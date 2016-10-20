@@ -42,6 +42,8 @@
 		2A54B1C81D66E4E600C538D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A54B1C71D66E4E600C538D1 /* Assets.xcassets */; };
 		2A6B1BF01D91338200322A94 /* DiaryListBasicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6B1BED1D91338200322A94 /* DiaryListBasicController.m */; };
 		2A6B1BF11D91338200322A94 /* DiaryWriteBasicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6B1BEF1D91338200322A94 /* DiaryWriteBasicController.m */; };
+		2AA48D751DB752FF008E4DC6 /* noDataDiaryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA48D741DB752FF008E4DC6 /* noDataDiaryController.m */; };
+		2AA48D781DB799CE008E4DC6 /* AppFirstIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA48D771DB799CE008E4DC6 /* AppFirstIntroViewController.m */; };
 		2AA6D6C21D64230A00316DD6 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA6D6C11D64230A00316DD6 /* Diary.storyboard */; };
 		2AB627761D5C0CEC00BD7B84 /* LoginMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB627731D5C0CEC00BD7B84 /* LoginMain.m */; };
 		2AB627771D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB627751D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m */; };
@@ -406,6 +408,10 @@
 		2A6B1BED1D91338200322A94 /* DiaryListBasicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryListBasicController.m; sourceTree = "<group>"; };
 		2A6B1BEE1D91338200322A94 /* DiaryWriteBasicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryWriteBasicController.h; sourceTree = "<group>"; };
 		2A6B1BEF1D91338200322A94 /* DiaryWriteBasicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryWriteBasicController.m; sourceTree = "<group>"; };
+		2AA48D731DB752FF008E4DC6 /* noDataDiaryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = noDataDiaryController.h; sourceTree = "<group>"; };
+		2AA48D741DB752FF008E4DC6 /* noDataDiaryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = noDataDiaryController.m; sourceTree = "<group>"; };
+		2AA48D761DB799CE008E4DC6 /* AppFirstIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppFirstIntroViewController.h; sourceTree = "<group>"; };
+		2AA48D771DB799CE008E4DC6 /* AppFirstIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppFirstIntroViewController.m; sourceTree = "<group>"; };
 		2AA6D6C11D64230A00316DD6 /* Diary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
 		2AB627721D5C0CEC00BD7B84 /* LoginMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginMain.h; sourceTree = "<group>"; };
 		2AB627731D5C0CEC00BD7B84 /* LoginMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginMain.m; sourceTree = "<group>"; };
@@ -1069,6 +1075,8 @@
 				2AEBE34B1D7941BF0075B210 /* DiaryDetailScheduleController.m */,
 				2ABF43461DA7272700AE735F /* DiaryDetailListController.h */,
 				2ABF43471DA7272700AE735F /* DiaryDetailListController.m */,
+				2AA48D731DB752FF008E4DC6 /* noDataDiaryController.h */,
+				2AA48D741DB752FF008E4DC6 /* noDataDiaryController.m */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -1309,6 +1317,8 @@
 				DCD8F5F21D9D464F00546B89 /* IntroScrollImageViewController.m */,
 				DC1856461D9E40C700D9A957 /* IntroScrollImageViewContainer.h */,
 				DC1856471D9E40C700D9A957 /* IntroScrollImageViewContainer.m */,
+				2AA48D761DB799CE008E4DC6 /* AppFirstIntroViewController.h */,
+				2AA48D771DB799CE008E4DC6 /* AppFirstIntroViewController.m */,
 			);
 			path = Intro;
 			sourceTree = "<group>";
@@ -2007,7 +2017,7 @@
 				TargetAttributes = {
 					DCA5AE201D598C6F0075B7AD = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = LUYT38Y3AT;
+						DevelopmentTeam = JH5F2VBM8Z;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2158,6 +2168,7 @@
 				2AB670DC1D9267700060561C /* CommunityNewspeedImageCustomCell.m in Sources */,
 				DC85CF1E1DAB29A100DEA166 /* MorePointModel.m in Sources */,
 				DC60709C1D7030E700F60148 /* MultiImageViewController.m in Sources */,
+				2AA48D751DB752FF008E4DC6 /* noDataDiaryController.m in Sources */,
 				2A54B1BE1D6691F600C538D1 /* DiaryCalenderController.m in Sources */,
 				DC4E95991D7D62D60087647B /* ActiveMassModel.m in Sources */,
 				DC4DE2F21D82A1ED007CF9BF /* MoreWeekCheckCategoryCell.m in Sources */,
@@ -2347,6 +2358,7 @@
 				2AB670C21D9256C80060561C /* CommunityNavController.m in Sources */,
 				DC5D20841D62AFA100ACDCA4 /* OTPageCell.m in Sources */,
 				DC68F52D1D93D7CC009D3B1E /* MoreEquipmentSearchingViewController.m in Sources */,
+				2AA48D781DB799CE008E4DC6 /* AppFirstIntroViewController.m in Sources */,
 				DCA3BCC11D98BBD0009D3DD1 /* MoreEnvironmentModel.m in Sources */,
 				DCA3BCBE1D98BAF6009D3DD1 /* MoreEnvironmentSetupViewController.m in Sources */,
 				DC44C3811D7FADFA00519D96 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
@@ -2482,7 +2494,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jung Ho Park (JMP587VVKV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LUYT38Y3AT;
+				DEVELOPMENT_TEAM = JH5F2VBM8Z;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2508,7 +2520,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jung Ho Park (JMP587VVKV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LUYT38Y3AT;
+				DEVELOPMENT_TEAM = JH5F2VBM8Z;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

@@ -17,5 +17,6 @@
 @property (strong, nonatomic) MoreEnvironmentListModel *moreEnvironmentListModel;
 
 - (IBAction)closeModal:(id)sender;
+- (IBAction)logoutButtonAction:(id)sender;
 
 @end

@@ -125,6 +125,18 @@
                 GET_AUTH_TOKEN = [result objectForKey:@"token"];
                 GET_USER_ID = [result objectForKey:@"id"];
                 
+                NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+                    
+                if([_autoLoginImage.image isEqual:[UIImage imageNamed:@"login_checkbox_off.png"]]){
+                    [userDefaults setObject:@"N" forKey:@"autoLoginFlag"];
+                }else{
+                    [userDefaults setObject:@"Y" forKey:@"autoLoginFlag"];
+                    [userDefaults setObject:_idTextField.text forKey:@"userId"];
+                    [userDefaults setObject:_pwTextField.text forKey:@"userPw"];
+                }
+                
+                [userDefaults synchronize];
+                
                 if([[result objectForKey:@"profile_yn"] isEqual:@"Y"]){
                     dispatch_async(dispatch_get_main_queue(), ^{
                         AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -135,6 +147,7 @@
                         [self performSegueWithIdentifier:@"moveMommyInfoSegue" sender:self];
                     });
                 }
+                
             }else if([code isEqual:@"-1"]){
                 //로그인 실패
                 dispatch_async(dispatch_get_main_queue(), ^{

@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "CommunityPersonListModel.h"
 #import "CommunityProfilePopupViewController.h"
+#import "CommunityNewspeedListController.h"
 #import "CommonViewController.h"
 
 #define PAGE_SIZE [[NSNumber alloc] initWithInt:30]
@@ -23,6 +24,8 @@
 @property (strong, nonatomic) NSString *groupValue;
 @property (strong, nonatomic) NSNumber *searchPage;
 @property (assign, nonatomic) Boolean currentLastPageStatus;
+@property (strong, nonatomic) NSString *mento_id;
+@property (strong, nonatomic) NSString *mento_nickname;
 
 
 @end

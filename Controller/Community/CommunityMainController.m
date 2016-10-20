@@ -89,7 +89,9 @@
         CommunityNewspeedListController *vc = (CommunityNewspeedListController *)([navController viewControllers][0]);
         [vc setGroupKey:_groupKey];
         [vc setMentorKey:_mentorKey];
+//        [vc setMentorNickname:_mentorNickname];
         [vc setGroupValue:_groupValue];
+        [vc setTitleText:_communityTitle];
         [vc setMode:_mode];
     }
     
@@ -136,10 +138,12 @@
 }
 
 #pragma mark views delegate
-- (void)moveCommunityList:(NSString *)key value:(NSString *)value{
+- (void)moveCommunityList:(NSString *)key value:(NSString *)value title:(NSString *)title{
     _groupKey = key;
     _mentorKey = key;
     _groupValue = value;
+//    _mentorNickname = value;
+    _communityTitle = title;
     [self performSegueWithIdentifier:@"showListCommunitySegue" sender:self];
 }
 
