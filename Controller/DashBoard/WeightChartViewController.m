@@ -36,13 +36,14 @@
     
     _tableView.delegate = _weightChartModel;
     _tableView.dataSource = _weightChartModel;
-    //[_tableView reloadData];
+    // [_tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-        
+    
+    
 }
 
 - (IBAction)closeModal:(id)sender {

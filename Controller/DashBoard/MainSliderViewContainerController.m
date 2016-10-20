@@ -31,7 +31,7 @@
     
     MainSliderCell *cell =  (MainSliderCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    if (_programList != nil) {
+    if (_programList != nil && _programList.count > 0) {
         
         NSDictionary *dic = _programList[indexPath.row];
         

@@ -21,4 +21,6 @@
 
 @property (nonatomic, strong) FLAnimatedImageView *gifImageView;
 
+@property (assign, nonatomic) SearchDeviceKind deviceKind;
+
 @end

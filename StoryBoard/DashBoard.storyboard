@@ -143,7 +143,7 @@
                                     <segue destination="abO-WL-GvK" kind="embed" identifier="goDashboardProgramInfo" id="MFS-kl-ISe"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lng-Pm-zMK">
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lng-Pm-zMK">
                                 <connections>
                                     <segue destination="6XP-Bz-MBv" kind="embed" identifier="goDashboardTotalInfo" id="Tf3-hr-osN"/>
                                 </connections>

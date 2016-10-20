@@ -32,7 +32,6 @@
 #pragma 인디케이터 비활성화
 - (void) hideIndicator {
     
-    
     AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate indicatorViewOut];
 }

@@ -46,4 +46,11 @@ typedef enum {
     ProfessionalQuestionUpdateMode
 } ProfessionalQuestionWriteUpdateMode;
 
+#pragma 디바이스 종류
+typedef enum {
+    
+    SearchDeviceBand, // 밴드
+    SearchDeviceWeight // 체중계
+} SearchDeviceKind;
+
 #endif /* EnumType_h */

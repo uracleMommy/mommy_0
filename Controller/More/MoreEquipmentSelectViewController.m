@@ -24,6 +24,39 @@
     _tableView.dataSource = _moreEquipmentSelectModel;
     _tableView.delegate = _moreEquipmentSelectModel;
     
+    // 밴드일때
+    if (_deviceKind == SearchDeviceBand) {
+        
+        
+    }
+    // 체중계일때
+    else {
+        [self.lsBleManager setDebugModeWithPermissions:@"sky"];
+        
+        self.bleConnector = [[LSBleConnector alloc] init];
+        
+        
+//        [_lsBleManager searchLsBleDevice:[NSArray arrayWithObjects:@(LS_WEIGHT_SCALE), @(LS_SPHYGMOMETER), @(LS_FAT_SCALE), @(LS_HEIGHT_MIRIAM), @(LS_KITCHEN_SCALE), @(LS_PEDOMETER),  nil] ofBroadcastType:BROADCAST_TYPE_PAIR searchCompletion:^(LSDeviceInfo *lsDevice){
+//
+//            NSLog(@"%@", lsDevice);
+//        }];
+        
+//        _lsBleManager.isBluetoothPowerOn = YES;
+//        [_lsBleManager setIsBluetoothPowerOn:YES];
+//        NSLog(@"%d", _lsBleManager.isBluetoothPowerOn);
+//        
+//        
+//        [_lsBleManager searchLsBleDevice:[NSArray arrayWithObjects:@(LS_WEIGHT_SCALE), @(LS_SPHYGMOMETER), @(LS_FAT_SCALE), @(LS_HEIGHT_MIRIAM), @(LS_KITCHEN_SCALE), @(LS_PEDOMETER),  nil] ofBroadcastType:BROADCAST_TYPE_PAIR searchCompletion:^(LSDeviceInfo *lsDevice){
+//            
+//            NSLog(@"%@", lsDevice);
+//        }];
+//        
+//        [_lsBleManager checkBluetoothStatus:^(BOOL isSupportFlags,BOOL isOpenFlags){
+//            
+//            NSLog(@"%d %d", isSupportFlags, isOpenFlags);
+//        }];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,6 +67,26 @@
 - (void) tableView:(UITableView *)tableView MoreEquipmentChoiceSelectedRow:(NSIndexPath *)indexPath {
     
     [self performSegueWithIdentifier:@"goEquipmentParing" sender:nil];
+}
+
+-(LSBLEDeviceManager *)lsBleManager {
+    if (!_lsBleManager)
+    {
+        _lsBleManager=[LSBLEDeviceManager defaultLsBleManager];
+    }
+    return _lsBleManager;
+}
+
+- (void)infoManagerWithMacAddr:(NSString *)macAddr peripheral:(CBPeripheral *)peripheral services:(NSArray *)gattServices {
+    
+}
+
+- (void) infoManagerFinished {
+    
+}
+
+- (void)centralManagerDidUpdateState:(CBCentralManager *)central {
+    
 }
 
 @end

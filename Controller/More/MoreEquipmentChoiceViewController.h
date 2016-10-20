@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "CommonViewController.h"
 #import "MoreEquipmentModel.h"
+#import <LifesenseBluetooth/LSBLEDeviceManager.h>
 
 @interface MoreEquipmentChoiceViewController : CommonViewController<MoreEquipmentChoiceModelDelegate>
+
+@property (nonatomic,strong) LSBLEDeviceManager *lsBleManager;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

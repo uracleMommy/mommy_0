@@ -49,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fH-0d-EyT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4723" y="-2564"/>
+            <point key="canvasLocation" x="-4652" y="-2514"/>
         </scene>
         <!--More Equipment Empty View Controller-->
         <scene sceneID="Mep-bv-LAX">
@@ -323,13 +323,17 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N3y-10-a2c">
-                                <frame key="frameInset" width="414" height="672"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N3y-10-a2c">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="N3y-10-a2c" secondAttribute="trailing" id="JF7-cM-1cx"/>
+                            <constraint firstItem="K1J-QE-ZjR" firstAttribute="top" secondItem="N3y-10-a2c" secondAttribute="bottom" id="O33-g0-l8P"/>
+                            <constraint firstItem="N3y-10-a2c" firstAttribute="top" secondItem="XXN-P9-Hea" secondAttribute="bottom" id="XkN-Np-D3n"/>
+                            <constraint firstItem="N3y-10-a2c" firstAttribute="leading" secondItem="Vzv-Eh-RF4" secondAttribute="leading" id="iZP-3B-zBf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="기기관리" id="GzT-o2-vXB">
                         <barButtonItem key="leftBarButtonItem" title="닫기" id="0ZB-n5-376">
@@ -352,7 +356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0Y-qq-Qky" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5389" y="-2057"/>
+            <point key="canvasLocation" x="-5389.5" y="-2057.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="F2Z-zr-Wkw">
