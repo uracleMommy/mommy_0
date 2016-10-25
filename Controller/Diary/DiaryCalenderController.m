@@ -8,6 +8,9 @@
 
 #import "DiaryCalenderController.h"
 
+static NSString *const kKeychainItemName = @"Google Calendar API";
+static NSString *const kClientID = @"YOUR_CLIENT_ID_HERE";
+
 @interface DiaryCalenderController (){
     NSMutableDictionary *_eventsByDate;
     

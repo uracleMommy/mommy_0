@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <GoogleSignIn/GoogleSignIn.h>
 //#import <LifesenseBluetooth/PlusOTAMananger.h>
 //#import <LifesenseBluetooth/LSBLEDeviceManager.h>
 
@@ -16,16 +17,44 @@
 @end
 
 @implementation AppDelegate
+static NSString * const kClientID =
+@"1008861736533-u7jvn3hgunrm85lafb0otio26758ps30.apps.googleusercontent.com";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [GIDSignIn sharedInstance].clientID = kClientID;
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    
+//    NSError* configureError;
+//    [[GGLContext sharedInstance] configureWithError: &configureError];
+//    NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
+//    
+//    [GIDSignIn sharedInstance].delegate = self;
+
     
 //    _sampleMainController = [[SampleMainController alloc] initWithNibName:@"SampleMainController" bundle:nil];
 //    self.window.rootViewController = _sampleMainController;
     
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)app
+            openURL:(NSURL *)url
+            options:(NSDictionary *)options {
+    return [[GIDSignIn sharedInstance] handleURL:url
+                               sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                      annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [[GIDSignIn sharedInstance] handleURL:url
+                               sourceApplication:sourceApplication
+                                      annotation:annotation];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -37,6 +66,7 @@
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
+
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.

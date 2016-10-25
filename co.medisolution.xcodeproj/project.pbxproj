@@ -59,6 +59,7 @@
 		2AB670E21D9267DF0060561C /* CommunityPersonListCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AB670E01D9267DF0060561C /* CommunityPersonListCustomCell.xib */; };
 		2AB670E61D9268120060561C /* CommunityProfilePopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB670E41D9268120060561C /* CommunityProfilePopupViewController.m */; };
 		2AB670E71D9268120060561C /* CommunityProfilePopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AB670E51D9268120060561C /* CommunityProfilePopupViewController.xib */; };
+		2AB994951DB9AF630056C015 /* GTL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB994661DB9AAEF0056C015 /* GTL.framework */; };
 		2ABDB8D91DA36FB500239967 /* LoginResetPasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABDB8D81DA36FB500239967 /* LoginResetPasswordController.m */; };
 		2ABF43481DA7272700AE735F /* DiaryDetailListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABF43471DA7272700AE735F /* DiaryDetailListController.m */; };
 		2AC1644B1D9CA36800533BB0 /* CommunityDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1644A1D9CA36800533BB0 /* CommunityDetailModel.m */; };
@@ -67,6 +68,18 @@
 		2AC164521D9CD0B200533BB0 /* CommunityDetailReplyContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC164511D9CD0B200533BB0 /* CommunityDetailReplyContentCell.xib */; };
 		2AC164561D9CD0CD00533BB0 /* CommunityDetailWriterInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC164551D9CD0CD00533BB0 /* CommunityDetailWriterInfoCell.xib */; };
 		2AC781DB1D599C0800B86BE1 /* MembershipLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC781DA1D599C0800B86BE1 /* MembershipLogin.storyboard */; };
+		2AD09BF91DB8A534005D0CD7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AD09BF81DB8A534005D0CD7 /* GoogleService-Info.plist */; };
+		2AD09C011DB8A5D9005D0CD7 /* GoogleAppUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09BFA1DB8A5D9005D0CD7 /* GoogleAppUtilities.framework */; };
+		2AD09C021DB8A5D9005D0CD7 /* GoogleAuthUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09BFB1DB8A5D9005D0CD7 /* GoogleAuthUtilities.framework */; };
+		2AD09C031DB8A5D9005D0CD7 /* GoogleNetworkingUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09BFC1DB8A5D9005D0CD7 /* GoogleNetworkingUtilities.framework */; };
+		2AD09C041DB8A5D9005D0CD7 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2AD09BFD1DB8A5D9005D0CD7 /* GoogleSignIn.bundle */; };
+		2AD09C051DB8A5D9005D0CD7 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09BFE1DB8A5D9005D0CD7 /* GoogleSignIn.framework */; };
+		2AD09C061DB8A5D9005D0CD7 /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09BFF1DB8A5D9005D0CD7 /* GoogleSymbolUtilities.framework */; };
+		2AD09C071DB8A5D9005D0CD7 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09C001DB8A5D9005D0CD7 /* GoogleUtilities.framework */; };
+		2AD09C091DB8ADB9005D0CD7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09C081DB8ADB9005D0CD7 /* libz.tbd */; };
+		2AD09C0B1DB8ADCB005D0CD7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09C0A1DB8ADCB005D0CD7 /* SystemConfiguration.framework */; };
+		2AD09C0D1DB8AE01005D0CD7 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09C0C1DB8AE01005D0CD7 /* AddressBook.framework */; };
+		2AD09C0F1DB8AE07005D0CD7 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09C0E1DB8AE07005D0CD7 /* SafariServices.framework */; };
 		2AD4A8911D7D660C0032E16C /* emoticonPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4A88F1D7D660C0032E16C /* emoticonPopupViewController.m */; };
 		2AD4A8921D7D660C0032E16C /* emoticonPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4A8901D7D660C0032E16C /* emoticonPopupViewController.xib */; };
 		2AE11DE31D654C4E003C6690 /* DiaryListBasicCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11DE11D654C4E003C6690 /* DiaryListBasicCustomCell.m */; };
@@ -358,6 +371,23 @@
 		DCF8E1EE1D8FD5C300E67402 /* MoreProfessionalAdviceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF8E1ED1D8FD5C300E67402 /* MoreProfessionalAdviceCell.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2AB994651DB9AAEF0056C015 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AB9945B1DB9AAEE0056C015 /* GTLCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F4469DB41C40229D00BCFAA1;
+			remoteInfo = GTLiOSCore;
+		};
+		2AB9946B1DB9AAEF0056C015 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AB9945B1DB9AAEE0056C015 /* GTLCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4F1AD9020B71603F00DC0485;
+			remoteInfo = OSXDevTool;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		2A0CCB421D73B411001B6E1F /* SignUpMainScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpMainScrollViewController.h; sourceTree = "<group>"; };
 		2A0CCB431D73B411001B6E1F /* SignUpMainScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpMainScrollViewController.m; sourceTree = "<group>"; };
@@ -461,6 +491,7 @@
 		2AB670E31D9268120060561C /* CommunityProfilePopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityProfilePopupViewController.h; sourceTree = "<group>"; };
 		2AB670E41D9268120060561C /* CommunityProfilePopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityProfilePopupViewController.m; sourceTree = "<group>"; };
 		2AB670E51D9268120060561C /* CommunityProfilePopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityProfilePopupViewController.xib; sourceTree = "<group>"; };
+		2AB9945B1DB9AAEE0056C015 /* GTLCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GTLCore.xcodeproj; path = "google-api-objectivec-client/Source/GTLCore.xcodeproj"; sourceTree = "<group>"; };
 		2ABDB8D71DA36FB500239967 /* LoginResetPasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginResetPasswordController.h; sourceTree = "<group>"; };
 		2ABDB8D81DA36FB500239967 /* LoginResetPasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginResetPasswordController.m; sourceTree = "<group>"; };
 		2ABF43461DA7272700AE735F /* DiaryDetailListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryDetailListController.h; sourceTree = "<group>"; };
@@ -472,6 +503,18 @@
 		2AC164511D9CD0B200533BB0 /* CommunityDetailReplyContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityDetailReplyContentCell.xib; sourceTree = "<group>"; };
 		2AC164551D9CD0CD00533BB0 /* CommunityDetailWriterInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityDetailWriterInfoCell.xib; sourceTree = "<group>"; };
 		2AC781DA1D599C0800B86BE1 /* MembershipLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MembershipLogin.storyboard; sourceTree = "<group>"; };
+		2AD09BF81DB8A534005D0CD7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2AD09BFA1DB8A5D9005D0CD7 /* GoogleAppUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAppUtilities.framework; sourceTree = "<group>"; };
+		2AD09BFB1DB8A5D9005D0CD7 /* GoogleAuthUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAuthUtilities.framework; sourceTree = "<group>"; };
+		2AD09BFC1DB8A5D9005D0CD7 /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
+		2AD09BFD1DB8A5D9005D0CD7 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
+		2AD09BFE1DB8A5D9005D0CD7 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
+		2AD09BFF1DB8A5D9005D0CD7 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		2AD09C001DB8A5D9005D0CD7 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = "<group>"; };
+		2AD09C081DB8ADB9005D0CD7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		2AD09C0A1DB8ADCB005D0CD7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2AD09C0C1DB8AE01005D0CD7 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		2AD09C0E1DB8AE07005D0CD7 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		2AD4A88E1D7D660C0032E16C /* emoticonPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = emoticonPopupViewController.h; sourceTree = "<group>"; };
 		2AD4A88F1D7D660C0032E16C /* emoticonPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = emoticonPopupViewController.m; sourceTree = "<group>"; };
 		2AD4A8901D7D660C0032E16C /* emoticonPopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = emoticonPopupViewController.xib; sourceTree = "<group>"; };
@@ -972,11 +1015,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC1DDC551DB896DD00D6602E /* Foundation.framework in Frameworks */,
-				DC1DDC541DB896D700D6602E /* UIKit.framework in Frameworks */,
-				DC1DDC501DB8964300D6602E /* CoreBluetooth.framework in Frameworks */,
+				2AB994951DB9AF630056C015 /* GTL.framework in Frameworks */,
+				2AD09C0F1DB8AE07005D0CD7 /* SafariServices.framework in Frameworks */,
+				2AD09C0D1DB8AE01005D0CD7 /* AddressBook.framework in Frameworks */,
+				2AD09C0B1DB8ADCB005D0CD7 /* SystemConfiguration.framework in Frameworks */,
+				2AD09C091DB8ADB9005D0CD7 /* libz.tbd in Frameworks */,
 				2AF695FE1DB4C52D00072FC2 /* CoreLocation.framework in Frameworks */,
-				DC1DDC571DB897DA00D6602E /* LifesenseBluetooth.framework in Frameworks */,
+				2AD09C061DB8A5D9005D0CD7 /* GoogleSymbolUtilities.framework in Frameworks */,
+				2AD09C031DB8A5D9005D0CD7 /* GoogleNetworkingUtilities.framework in Frameworks */,
+				2AD09C011DB8A5D9005D0CD7 /* GoogleAppUtilities.framework in Frameworks */,
+				2AD09C021DB8A5D9005D0CD7 /* GoogleAuthUtilities.framework in Frameworks */,
+				2AD09C051DB8A5D9005D0CD7 /* GoogleSignIn.framework in Frameworks */,
+				2AD09C071DB8A5D9005D0CD7 /* GoogleUtilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1221,6 +1271,15 @@
 			path = Community;
 			sourceTree = "<group>";
 		};
+		2AB9945C1DB9AAEE0056C015 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2AB994661DB9AAEF0056C015 /* GTL.framework */,
+				2AB9946C1DB9AAEF0056C015 /* OSXDevTool */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		2AC781D71D5998D700B86BE1 /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
@@ -1292,6 +1351,17 @@
 				DC1DDC511DB8968200D6602E /* Foundation.framework */,
 				DC1DDC4F1DB8964300D6602E /* CoreBluetooth.framework */,
 				DC1DDC4D1DB8963E00D6602E /* AVKit.framework */,
+				2AD09C0E1DB8AE07005D0CD7 /* SafariServices.framework */,
+				2AD09C0C1DB8AE01005D0CD7 /* AddressBook.framework */,
+				2AD09C0A1DB8ADCB005D0CD7 /* SystemConfiguration.framework */,
+				2AD09C081DB8ADB9005D0CD7 /* libz.tbd */,
+				2AD09BFA1DB8A5D9005D0CD7 /* GoogleAppUtilities.framework */,
+				2AD09BFB1DB8A5D9005D0CD7 /* GoogleAuthUtilities.framework */,
+				2AD09BFC1DB8A5D9005D0CD7 /* GoogleNetworkingUtilities.framework */,
+				2AD09BFD1DB8A5D9005D0CD7 /* GoogleSignIn.bundle */,
+				2AD09BFE1DB8A5D9005D0CD7 /* GoogleSignIn.framework */,
+				2AD09BFF1DB8A5D9005D0CD7 /* GoogleSymbolUtilities.framework */,
+				2AD09C001DB8A5D9005D0CD7 /* GoogleUtilities.framework */,
 				2AF695FD1DB4C52D00072FC2 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
@@ -1979,6 +2049,7 @@
 		DCA5AE181D598C6F0075B7AD = {
 			isa = PBXGroup;
 			children = (
+				2AB9945B1DB9AAEE0056C015 /* GTLCore.xcodeproj */,
 				DC6B0B581DBF27BB0092324C /* blood_pressure.html */,
 				DC6B0B591DBF27BB0092324C /* daily_sleep.html */,
 				DC6B0B5A1DBF27BB0092324C /* daily_step.html */,
@@ -2011,6 +2082,7 @@
 		DCA5AE231D598C6F0075B7AD /* co.medisolution */ = {
 			isa = PBXGroup;
 			children = (
+				2AD09BF81DB8A534005D0CD7 /* GoogleService-Info.plist */,
 				2A54B1C71D66E4E600C538D1 /* Assets.xcassets */,
 				DC5D20721D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf */,
 				DC5D20731D62ACFB00ACDCA4 /* NanumBarunGothic.ttf */,
@@ -2130,12 +2202,35 @@
 			mainGroup = DCA5AE181D598C6F0075B7AD;
 			productRefGroup = DCA5AE221D598C6F0075B7AD /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2AB9945C1DB9AAEE0056C015 /* Products */;
+					ProjectRef = 2AB9945B1DB9AAEE0056C015 /* GTLCore.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				DCA5AE201D598C6F0075B7AD /* co.medisolution */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		2AB994661DB9AAEF0056C015 /* GTL.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GTL.framework;
+			remoteRef = 2AB994651DB9AAEF0056C015 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2AB9946C1DB9AAEF0056C015 /* OSXDevTool */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = OSXDevTool;
+			remoteRef = 2AB9946B1DB9AAEF0056C015 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		DCA5AE1F1D598C6F0075B7AD /* Resources */ = {
@@ -2161,7 +2256,7 @@
 				DC6B0B731DBF29140092324C /* contents_graph_btn_bubble_left.png in Resources */,
 				DC6B0B741DBF29140092324C /* contents_graph_btn_bubble_right.png in Resources */,
 				DC1A77D61D94FC2E00F88693 /* MoreMyPagePasswordChangeCell.xib in Resources */,
-				DC6B0B671DBF27BB0092324C /* pulse_graph.html in Resources */,
+				2AD09C041DB8A5D9005D0CD7 /* GoogleSignIn.bundle in Resources */,
 				DC4E95A61D7D66550087647B /* ActiveMassStepCell.xib in Resources */,
 				DC6B0B631DBF27BB0092324C /* daily_sleep.html in Resources */,
 				DC6B0B621DBF27BB0092324C /* blood_pressure.html in Resources */,
@@ -2193,6 +2288,7 @@
 				DCA3BCCB1D98BCFD009D3DD1 /* MoreEnvironmentAlramCell.xib in Resources */,
 				2AC164561D9CD0CD00533BB0 /* CommunityDetailWriterInfoCell.xib in Resources */,
 				2A444C381D7EBA7E00B37E8A /* termsPopupViewController.xib in Resources */,
+				2AD09BF91DB8A534005D0CD7 /* GoogleService-Info.plist in Resources */,
 				DCF6CAC11D7443E200703CAE /* PushNotice.storyboard in Resources */,
 				2A371A4C1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.xib in Resources */,
 				DC5FCCF91D7E858900957D73 /* SleepingHoursEvalCell.xib in Resources */,
@@ -2628,16 +2724,16 @@
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Common",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Common/IQKeyBoardManager/Library",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
-					"-all_load",
 					"-ObjC",
+					"-all_load",
 				);
-				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.medisolution;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../GTLCore/**";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
@@ -2649,13 +2745,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jung Ho Park (JMP587VVKV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LUYT38Y3AT;
+				DEVELOPMENT_TEAM = JH5F2VBM8Z;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				GCC_INPUT_FILETYPE = automatic;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2667,14 +2762,14 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
-					"-all_load",
 					"-ObjC",
+					"-all_load",
 				);
-				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.medisolution;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../GTLCore/**";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;

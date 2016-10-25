@@ -10,7 +10,8 @@
 #import "JTCalendar.h"
 #import "DiaryListModel.h"
 #import "CommonViewController.h"
-
+#import "GTMOAuth2ViewControllerTouch.h"
+#import "GTLCalendar.h"
 
 @protocol DiaryCalendarDelegate <NSObject>
 
