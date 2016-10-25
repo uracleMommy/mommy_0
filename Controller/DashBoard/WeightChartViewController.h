@@ -10,11 +10,11 @@
 #import "DZNSegmentedControl.h"
 #import "WeightChartModel.h"
 #import "CommonViewController.h"
-#import <LifesenseBluetooth/LSBLEDeviceManager.h>
+//#import <LifesenseBluetooth/LSBLEDeviceManager.h>
 
 @interface WeightChartViewController : CommonViewController<DZNSegmentedControlDelegate>
 
-@property (nonatomic,strong)LSBLEDeviceManager *lsBleManager;
+//@property (nonatomic,strong)LSBLEDeviceManager *lsBleManager;
 
 @property (weak, nonatomic) IBOutlet DZNSegmentedControl *dayWeekTypeSegment;
 

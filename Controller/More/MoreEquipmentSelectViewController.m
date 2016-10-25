@@ -31,10 +31,10 @@
     }
     // 체중계일때
     else {
-        [self.lsBleManager setDebugModeWithPermissions:@"sky"];
-        
-        self.bleConnector = [[LSBleConnector alloc] init];
-        
+//        [self.lsBleManager setDebugModeWithPermissions:@"sky"];
+//        
+//        self.bleConnector = [[LSBleConnector alloc] init];
+//        
         
 //        [_lsBleManager searchLsBleDevice:[NSArray arrayWithObjects:@(LS_WEIGHT_SCALE), @(LS_SPHYGMOMETER), @(LS_FAT_SCALE), @(LS_HEIGHT_MIRIAM), @(LS_KITCHEN_SCALE), @(LS_PEDOMETER),  nil] ofBroadcastType:BROADCAST_TYPE_PAIR searchCompletion:^(LSDeviceInfo *lsDevice){
 //
@@ -69,24 +69,24 @@
     [self performSegueWithIdentifier:@"goEquipmentParing" sender:nil];
 }
 
--(LSBLEDeviceManager *)lsBleManager {
-    if (!_lsBleManager)
-    {
-        _lsBleManager=[LSBLEDeviceManager defaultLsBleManager];
-    }
-    return _lsBleManager;
-}
-
-- (void)infoManagerWithMacAddr:(NSString *)macAddr peripheral:(CBPeripheral *)peripheral services:(NSArray *)gattServices {
-    
-}
+//-(LSBLEDeviceManager *)lsBleManager {
+//    if (!_lsBleManager)
+//    {
+//        _lsBleManager=[LSBLEDeviceManager defaultLsBleManager];
+//    }
+//    return _lsBleManager;
+//}
+//
+//- (void)infoManagerWithMacAddr:(NSString *)macAddr peripheral:(CBPeripheral *)peripheral services:(NSArray *)gattServices {
+//    
+//}
 
 - (void) infoManagerFinished {
     
 }
-
-- (void)centralManagerDidUpdateState:(CBCentralManager *)central {
-    
-}
+//
+//- (void)centralManagerDidUpdateState:(CBCentralManager *)central {
+//    
+//}
 
 @end

@@ -9,21 +9,21 @@
 #import <UIKit/UIKit.h>
 #import "CommonViewController.h"
 #import "MoreEquipmentModel.h"
-#import <LifesenseBluetooth/LSBLEDeviceManager.h>
-#import <LifesenseBluetooth/LSBLEInfoManager.h>
-#import <LifesenseBluetooth/LSBleConnector.h>
-#import <LifesenseBluetooth/LSSleepRecord.h>
-#import <CoreBluetooth/CoreBluetooth.h>
+//#import <LifesenseBluetooth/LSBLEDeviceManager.h>
+//#import <LifesenseBluetooth/LSBLEInfoManager.h>
+//#import <LifesenseBluetooth/LSBleConnector.h>
+//#import <LifesenseBluetooth/LSSleepRecord.h>
+//#import <CoreBluetooth/CoreBluetooth.h>
 
-@interface MoreEquipmentSelectViewController : CommonViewController<MoreEquipmentChoiceModelDelegate, LSBleDataReceiveDelegate,CBCentralManagerDelegate,LSBLEInfoManagerDelegate,CBPeripheralDelegate>
+@interface MoreEquipmentSelectViewController : CommonViewController
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) MoreEquipmentSelectModel *moreEquipmentSelectModel;
 
-@property (nonatomic,strong)LSBLEDeviceManager *lsBleManager;
-
-@property (nonatomic,strong)LSBleConnector *bleConnector;
+//@property (nonatomic,strong)LSBLEDeviceManager *lsBleManager;
+//
+//@property (nonatomic,strong)LSBleConnector *bleConnector;
 
 @property (assign, nonatomic) SearchDeviceKind deviceKind;
 
