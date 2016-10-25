@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.bundle.min.js"></script>
+  <style>
+  #chartjs-container {
+	  width:100%;
+  }
+
+#chart { }
+.chartjs-wrap {
+}
+  
+  canvas {
+	    -moz-user-select: none;
+	    -webkit-user-select: none;
+	    -ms-user-select: none;
+	    height:100%;
+  }
+  
+  </style>
+</head>
+<body>
+  <div id="chartjs-container" class="chartjs-wrap" >
+    <canvas id="chart" ></canvas>
+  </div>
+  <script>
+   var ctx;
+   var lineChartData;
+   var img;
+   var myWeightPosition;
+   var obj;
+   var graph_min, graph_max;
+   var weekList = [];
+   var myWeightChartList = [];
+   var weightDiffList  = [];
+   var averageValueList =  [];
+   var lineChart;
+   var config;
+
+   var todayPosition = 0;
+   var todayWeekDay;
+   var pointRadiusArray = [];
+   var pointHoverRadiusArray = [];
+   var isBubble = false;
+   var imageItems = [ "./img/contents_graph_btn_bubble_left.png", 
+                      "./img/contents_graph_btn_bubble.png", 
+                      "./img/contents_graph_btn_bubble_right.png", 
+                      "./img/contents_graph_point.png"];
+   var imgObj = [];
+   var zeroWidth = [];
+  
+   var isFirst = false;
+   function loader(items, thingToDo, allDone) {
+	   if (!items) {
+	       return;
+	   }
+	   if ("undefined" === items.length) {
+	       items = [items];
+	   }
+	   var count = items.length;
+	   var thingToDoCompleted = function (items, i) {
+	       count--;
+	       if (0 == count) {
+	           allDone(items);
+	       }
+	   };
+	   for (var i = 0; i < items.length; i++) {
+	       thingToDo(items, i, thingToDoCompleted);
+	   }
+  }
+
+  function loadImage(items, i, onComplete) {
+	   var onLoad = function (e) {
+	       e.target.removeEventListener("load", onLoad);
+	       onComplete(items, i);
+	   }
+	   imgObj[i] = new Image();
+	   imgObj[i].addEventListener("load", onLoad, false);
+	   imgObj[i].src = items[i];
+  }
+
+   function initResources(){
+	    loader(imageItems, loadImage, function () {
+	    	imageLoadHandler();
+		});
+   }
+   function initChart(param){
+	   ctx = document.getElementById("chart").getContext("2d");
+/* 	    param = '{"avg_list":[40.0,40.0,41.06,41.23,41.4,41.57,41.74,41.91,40.0,40.0,41.06,41.23,41.4,41.57,41.74,41.91,40.0,40.0,41.06,41.23,41.4,41.57,41.74,41.91,40.0,40.0,41.06,41.23,41.4,41.57,41.74,41.91,41.4,41.57,41.74,41.91],'+
+			   '"comment":"체중증가 속도가 약간 빨라요.", '+
+			   '"diff_list":[0.0,0.0,0.19,0.22,0.24,0.28,0.32,0.35,0.0,0.0,0.19,0.22,0.24,0.28,0.32,0.35,0.0,0.0,0.19,0.22,0.24,0.28,0.32,0.35,0.0,0.0,0.19,0.22,0.24,0.28,0.32,0.35,0.24,0.28,0.32,0.35], '+
+			   '"first_week":4, ' +
+			   '"graph_max":47, ' +
+			   '"graph_min":35, ' +
+			   '"height":300,   ' +
+			   '"now_week":40,  ' +
+			   '"now_weight":45,' +
+			   '"rec_weight":"41.42~42.06", ' +
+			   '"result":"저체중",  '+
+			   '"result_code":0,  '+
+			   '"title_tag":"09-05~10-23", ' +
+			   '"weight":"55.0",' +
+			   '"weight_list":[ ' +
+			   '{ ' +
+			   
+			   '     	"week": 5,' +
+			   '     	"encourage_weight_max": 68,' +
+			   '     	"encourage_weight_min": 68,' +
+			   '    	 "weight": 70,' +
+			     '    	"before_weight": 68,' +
+			    '     	"last_weight": 0,' +
+			    '     	"weight_stauts_code": "1013",' +
+			   '      	"weight_stauts": "",' +
+			   '      	"bmi": "1101",' +
+			        '      "encourage_weight_avg": 68,' +
+			   '      "diff": 0' +
+			   '}' +
+   			   '],' +
+   			   '"width":500' +
+   			   '} '; */
+
+   	/*param  = '{ "avg_list":[50.0,51.06,51.230000000000004,51.400000000000006,51.57,51.74,51.910000000000004,52.080000000000005,51.39,51.72,51.54,52.02,52.5,52.980000000000004,53.46,53.940000000000005,54.42,54.900000000000006,55.38,55.86,56.34,56.82,57.300000000000004,57.78,58.260000000000005,58.74,59.22,59.7,60.18,60.660000000000004,61.14,61.620000000000005,62.1,62.58,63.06,63.540000000000006], ' +
+   	   	       '  "diff_list":[0.0,0.19,0.22,0.24,0.28,0.32,0.35,0.38,0.44,0.5,0.58,0.67,0.76,0.84,0.93,1.02,1.11,1.19,1.28,1.36,1.45,1.54,1.63,1.71,1.8,1.89,1.97,2.06,2.15,2.23,2.32,2.4,2.49,2.58,2.66,2.75],' +
+   	   	       '  "graph_max":66.29,' +
+   	   	       '  "graph_min":0, ' +
+   	   	       '  "height":290, ' +
+   	   	       '  "now_week":12, ' +
+   	   	       '  "now_weight":60, ' +
+   	   	       '  "step_info":{"max":4000,"min":2000},' +
+   	   	       '  "weight_info":{"max_weight":52.46,"min_weight":51.7,"mom_week":12,"weight":60,"weight_stauts":"다소 적은","weight_stauts_code":""}, ' +
+   	   	       '  "weight_list":[{"week":5,"weight":60},{"week":6,"weight":60},{"week":7,"weight":60},{"week":8,"weight":60},{"week":9,"weight":60},{"week":10,"weight":60},{"week":11,"weight":60},{"week":12,"weight":60},{"week":13,"weight":60},{"week":14,"weight":60},{"week":15,"weight":60},{"week":16,"weight":60},{"week":17,"weight":60},{"week":18,"weight":60},{"week":19,"weight":60},{"week":20,"weight":60},{"week":21,"weight":60},{"week":22,"weight":60},{"week":23,"weight":60},{"week":24,"weight":60},{"week":25,"weight":60},{"week":26,"weight":60},{"week":27,"weight":60},{"week":28,"weight":60},{"week":29,"weight":60},{"week":30,"weight":60},{"week":31,"weight":60},{"week":32,"weight":60},{"week":33,"weight":60},{"week":34,"weight":60},{"week":35,"weight":60},{"week":36,"weight":60},{"week":37,"weight":60},{"week":38,"weight":60},{"week":39,"weight":60},{"week":40,"weight":60}],'+
+   	   	       '  "width":500}';
+   	   	       */
+
+   	  /*  param = '{ "avg_list":[0.5,0.51,0.68,0.85,1.02,1.19,1.36,1.53,0.84,1.17,0.99,1.47,1.95,2.43,2.91,3.39,3.87,4.35,4.83,5.31,5.79,6.27,6.75,7.23,7.71,8.19,8.67,9.15,9.63,10.11,10.59,11.07,11.55,12.03,12.51,12.99],' +
+   	   	       '  "diff_list":[0.0,0.19,0.22,0.24,0.28,0.32,0.35,0.38,0.44,0.5,0.58,0.67,0.76,0.84,0.93,1.02,1.11,1.19,1.28,1.36,1.45,1.54,1.63,1.71,1.8,1.89,1.97,2.06,2.15,2.23,2.32,2.4,2.49,2.58,2.66,2.75], ' +
+   	   	       '  "graph_max":66.29,' +
+   	   	       '  "graph_min":0,' +
+   	   	       '  "height":500, ' +
+   	   	       '  "now_week":12,' + 
+   	   	       '  "now_weight":60, '+
+   	   	       '  "step_info":{"max":4000,"min":2000},'+
+   	   	       '  "weight_info":{"max_weight":52.46,"min_weight":51.7,"mom_week":12,"weight":60,"weight_stauts":"다소 적은","weight_stauts_code":""},'+
+   	   	       '  "weight_list":[{"week":5,"weight":60},{"week":6,"weight":60},{"week":7,"weight":60},{"week":8,"weight":60},{"week":9,"weight":60},{"week":10,"weight":60},{"week":11,"weight":60},{"week":12,"weight":60},{"week":13,"weight":60},{"week":14,"weight":60},{"week":15,"weight":60},{"week":16,"weight":60},{"week":17,"weight":60},{"week":18,"weight":60},{"week":19,"weight":60},{"week":20,"weight":60},{"week":21,"weight":60},{"week":22,"weight":60},{"week":23,"weight":60},{"week":24,"weight":60},{"week":25,"weight":60},{"week":26,"weight":60},{"week":27,"weight":60},{"week":28,"weight":60},{"week":29,"weight":60},{"week":30,"weight":60},{"week":31,"weight":60},{"week":32,"weight":60},{"week":33,"weight":60},{"week":34,"weight":60},{"week":35,"weight":60},{"week":36,"weight":60},{"week":37,"weight":60},{"week":38,"weight":60},{"week":39,"weight":60},{"week":40,"weight":60}],'+
+   	   	       '  "width":500}'; */
+  
+	   obj = JSON.parse(param);
+	   ctx.canvas.height= obj.height;
+	   ctx.canvas.width = obj.width;
+ 	   initData();
+	   initResources();
+   }
+  
+   function initData( ){
+	   
+		weekList = [];
+		pointRadiusArray = [];
+		pointHoverRadiusArray = [];
+		myWeightChartList = [];
+		todayPosition = 0;
+		isBubble = false;
+	   
+   	   var startWeek = parseInt(obj.first_week);
+	   for(var i = 5 ; i < 41; i++){
+		   weekList.push(i);
+	   }
+       myWeightPosition  = 0;
+       weightDiffList  = obj.diff_list;
+       averageValueList = obj.avg_list;
+       
+       graph_min = obj.graph_min;
+       graph_max = obj.graph_max;
+       
+       for(var i = 0; i < 36; i++){
+    	   myWeightChartList.push(0);
+    	   pointRadiusArray.push(0);
+   		   pointHoverRadiusArray.push(0);
+       }
+       myWeightChartList[obj.now_week - 5 ] = obj.now_weight;
+       pointHoverRadiusArray[obj.now_week - 5] = 4;
+       pointRadiusArray[obj.now_week - 5] = 4;
+       myWeightPosition = obj.now_week - 5;
+
+       
+       for(var i = 0; i< 36; i++){
+    	   zeroWidth.push(0);
+       }
+
+   }
+   function imageLoadHandler(){
+
+	   
+	   Chart.defaults.stripe = Chart.helpers.clone(Chart.defaults.line);
+	   Chart.controllers.stripe = Chart.controllers.line.extend({
+	     draw: function(ease) {
+	       var result = Chart.controllers.line.prototype.draw.apply(this, arguments);
+	      
+	       this.rendered = true;
+
+	       var helpers = Chart.helpers;
+	       var meta = this.getMeta();
+	       var yScale = this.getScaleForId(meta.yAxisID);
+	       var yScaleZeroPixel = yScale.getPixelForValue(0);
+	       var widths = this.getDataset().width;
+	       var ctx = this.chart.chart.ctx;
+
+	       for( var i in this.chart.chart.config.data.datasets ){
+
+			 if(i == 1){
+				   
+			       ctx.save();
+			       ctx.fillStyle = this.getDataset().backgroundColor;
+			       ctx.lineWidth = 1;
+			       ctx.beginPath();
+		
+			       // initialize the data and bezier control points for the top of the stripe
+			       helpers.each(meta.data, function(point, index) {
+					    	 point._view.y += (yScale.getPixelForValue(widths[index]) - yScaleZeroPixel);
+			       });
+			       Chart.controllers.line.prototype.updateBezierControlPoints.apply(this);
+		
+			       // draw the top of the stripe
+			       helpers.each(meta.data, function(point, index) {
+				         if (index === 0){
+				           ctx.moveTo(point._view.x, point._view.y);
+			     		 } else {
+					           var previous = helpers.previousItem(meta.data, index);
+					           var next = helpers.nextItem(meta.data, index);
+				
+					           Chart.elements.Line.prototype.lineToNextPoint.apply({
+					             _chart: {
+					               ctx: ctx
+					             }
+					           }, [previous, point, next, null, null])
+				         }
+			       });
+		
+			       // revert the data for the top of the stripe
+			       // initialize the data and bezier control points for the bottom of the stripe
+			       helpers.each(meta.data, function(point, index) {
+					    	 point._view.y -= 2 * (yScale.getPixelForValue(widths[index]) - yScaleZeroPixel);
+			       });
+			       // we are drawing the points in the reverse direction
+			       meta.data.reverse();
+			       Chart.controllers.line.prototype.updateBezierControlPoints.apply(this);
+		
+			       // draw the bottom of the stripe
+			       helpers.each(meta.data, function(point, index) {
+
+				         if (index === 0)
+				           ctx.lineTo(point._view.x, point._view.y);
+				         else {
+				           var previous = helpers.previousItem(meta.data, index);
+				           var next = helpers.nextItem(meta.data, index);
+			
+				           Chart.elements.Line.prototype.lineToNextPoint.apply({
+				             _chart: {
+				               ctx: ctx
+				             }
+				           }, [previous, point, next, null, null])
+				         }
+			       });
+		
+			       // revert the data for the bottom of the stripe
+			       meta.data.reverse();
+			       helpers.each(meta.data, function(point, index) {
+				    	 point._view.y += (yScale.getPixelForValue(widths[index]) - yScaleZeroPixel);
+			         
+			       });
+			       Chart.controllers.line.prototype.updateBezierControlPoints.apply(this);
+		
+			       ctx.strokeStyle = "rgba(75,192,192,0.0)";
+			       ctx.stroke();
+			       ctx.closePath();
+			       ctx.fill();
+			       ctx.restore();
+		
+			       return result;
+		       }
+	     	}
+	   }});
+
+	   Chart.pluginService.register({
+	           afterDraw: function (chart, easingDecimal) {
+
+	               var minChartX , maxChartX;
+	               var ctx = chart.chart.ctx;
+	               for( var i in chart.config.data.datasets ){
+	                   var metaData = chart.getDatasetMeta(i);
+	                   if( !metaData.hidden ){
+		                   
+	                       minChartX = metaData.data[0]._model.x;
+	                       maxChartX = metaData.data[metaData.data.length - 1]._model.x;
+	                   }
+
+	                   for( var i in chart.config.data.datasets ){
+	                       if(i == 0){
+	                           var metaData = chart.getDatasetMeta(i); //i번째 데이터 셋의 메타정보 가져오기
+
+	                           
+	                           	minChartX = metaData.data[0]._model.x;
+								maxChartX = metaData.data[metaData.data.length - 1]._model.x;
+
+								if( !metaData.hidden ){ //legend를 클릭하여 데이터 셋을 출력하지 않을 경우, metaData.hidden = true / 반대의 경우 null
+									for( var j in metaData.data ){
+	
+										var dataModel = metaData.data[j]._model;
+										if(j == myWeightPosition ){
+											var imageX,textX;
+
+											if(j == 0){
+												imageX = dataModel.x +5;
+												textX =  dataModel.x + 20 + 5;
+												ctx.drawImage(imgObj[0], imageX , dataModel.y - 40  , 40, 30);
+											}else if(j == 35){
+												imageX = dataModel.x - 40;
+												textX =  dataModel.x - 20;
+												ctx.drawImage(imgObj[2], imageX , dataModel.y - 40  , 40, 30);
+											}else{
+												imageX =  dataModel.x - 20;
+												textX =   dataModel.x;
+												ctx.drawImage(imgObj[1], imageX , dataModel.y - 40  , 40, 30);
+											}
+
+											
+											ctx.font = "14px 맑은 고딕";
+											ctx.fillStyle = "white";
+											ctx.textAlign = 'center';
+											ctx.fillText(chart.config.data.datasets[i].data[j], textX, dataModel.y - 40 + 5);
+										}
+									}
+							   }
+						  }
+	                  }
+          		  }
+ 
+	               var yScale = chart.scales['y-axis-0'];
+				    var helpers = Chart.helpers;
+				    var chartArea = chart.chartArea;
+				    
+			
+				    // draw labels - all we do is turn on display and call scale.draw
+				    yScale.options.display = true;
+				    yScale.draw.apply(yScale, [chartArea]);
+			
+				    // draw the grid lines - simplified version of library code
+				    yScale.ctx.save();
+				    yScale.ctx.globalCompositeOperation = 'destination-over';
+				    helpers.each(yScale.ticks, function (label, index) {
+					      if (label === undefined || label === null) {
+					        return;
+					      }
+				
+					      var yLineValue = this.getPixelForTick(index);
+					      yLineValue += helpers.aliasPixel(this.ctx.lineWidth);
+				
+					      this.ctx.lineWidth = this.options.gridLines.lineWidth;
+					      this.ctx.strokeStyle = 'rgba(210,210,210,0.4)';
+					      this.ctx.beginPath();
+					      this.ctx.moveTo(minChartX, yLineValue);
+					      this.ctx.lineTo(maxChartX, yLineValue);
+					      this.ctx.stroke();
+					      
+				    }, yScale);
+				    
+				    yScale.ctx.restore();    
+				    yScale.ctx.save();
+				    yScale.ctx.fillStyle = 'white';
+				    yScale.ctx.globalCompositeOperation = 'destination-over';
+				    yScale.ctx.fillRect(0, yScale.bottom, chartArea.right, chartArea.bottom);
+				    yScale.ctx.restore();   
+	           }  
+	  });
+
+	   config = {
+		     type: 'stripe',
+		     data: {
+		       labels: weekList ,
+		       datasets: [
+					{
+						label: "",
+					  	data: myWeightChartList,
+					  	width: zeroWidth,
+					    backgroundColor: "rgba(156,39,176,0.0)",
+					    borderColor:"rgba(245,0,87,0.0)",
+					    borderWidth: 0,
+					    pointBorderColor: "rgba(80,81,81,1)",
+					    pointBackgroundColor: "rgba(245,245,245,1)",
+					    pointHoverBorderWidth: 5,
+					    pointBorderWidth: 3,
+					    pointRadius: pointRadiusArray,
+					    pointHoverRadius: pointHoverRadiusArray,
+					    pointHitRadius: 8
+					},
+			   		{
+				         label: "표준 체중 ",
+				         fill: false,
+				         data: averageValueList,
+				         width: weightDiffList ,
+				         borderColor: "rgba(245,0,87,0.0)",
+				         backgroundColor: "rgba(245,0,87,0.6)",
+				         pointRadius: 0
+			        }
+		       ]
+		     },
+		     options: {
+			    responsive:false,
+			    animation:{
+					duration:0
+				},
+	    	    scales: {
+	    	    	xAxes: [{
+						  	display:true,
+						  	gridLines: {
+								display: false,
+							    drawBorder : false
+						  	},
+						  	ticks: {
+								maxRotation:0,
+								fontSize:11,
+								callback: function(value, index, values) {
+			                        return (value % 5 == 0)? value +"주" : "";
+			                    }
+							 }
+					  }],
+					  yAxes: [{
+				          id: 'y-axis-0',
+				          display: true,
+				          gridLines: {
+				        	display: false,
+				          },
+				          ticks: {
+				            min: graph_min,
+				            max: graph_max,
+				            callback: function(value) {
+				             	return value;
+				            }
+				          }
+				        }]
+	    	    }
+	    	 }
+	   };
+	   lineChart  = new Chart(ctx, config);
+   }
+ 
+
+
+  </script>
+</body>
+  
+  
+</html>

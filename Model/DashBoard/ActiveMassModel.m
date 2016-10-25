@@ -63,6 +63,16 @@
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
+        NSError *error;
+        NSData * jsonData = [NSJSONSerialization  dataWithJSONObject:_dicList options:0 error:&error];
+        NSString * myString = [[NSString alloc] initWithData:jsonData   encoding:NSUTF8StringEncoding];
+        NSLog(@"%@",myString);
+        
+        
+        // 자바스크립트 펑션 호출
+        cell.functionJson = myString;
+        [cell.webView loadRequest:_chartRequest];
+        
         return cell;
     }
     

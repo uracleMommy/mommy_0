@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.bundle.min.js"></script>
+  <style>
+  #chartjs-container {
+	  width:100%;
+  }
+
+#chart { }
+.chartjs-wrap {
+}
+  
+  canvas {
+	    -moz-user-select: none;
+	    -webkit-user-select: none;
+	    -ms-user-select: none;
+	    height:100%;
+  }
+  
+  </style>
+</head>
+<body>
+  <div id="chartjs-container" class="chartjs-wrap" >
+    <canvas id="chart"  ></canvas>
+  </div>
+  <script>
+   var ctx;
+   var lineChartData;
+   var img;
+   var myWeightPosition;
+   var obj;
+   var graph_min, graph_max;
+
+   var averageValueList =  [];
+   var lineChart;
+   var config;
+
+   var todayPosition = 0;
+   var todayWeekDay;
+   var pointRadiusArray = [];
+   var pointHoverRadiusArray = [];
+   var isBubble = false;
+   var imageItems = [ "./img/contents_graph_btn_bubble_left.png", 
+                      "./img/contents_graph_btn_bubble.png", 
+                      "./img/contents_graph_btn_bubble_right.png", 
+                      "./img/contents_graph_point.png" ];
+   var imgObj = [];
+   var isFirst = false;
+   function loader(items, thingToDo, allDone) {
+	   if (!items) {
+	       return;
+	   }
+	   if ("undefined" === items.length) {
+	       items = [items];
+	   }
+	   var count = items.length;
+	   var thingToDoCompleted = function (items, i) {
+	       count--;
+	       if (0 == count) {
+	           allDone(items);
+	       }
+	   };
+	   for (var i = 0; i < items.length; i++) {
+	       thingToDo(items, i, thingToDoCompleted);
+	   }
+  }
+
+  function loadImage(items, i, onComplete) {
+	   var onLoad = function (e) {
+	       e.target.removeEventListener("load", onLoad);
+	       onComplete(items, i);
+	   }
+	   imgObj[i] = new Image();
+	   imgObj[i].addEventListener("load", onLoad, false);
+	   imgObj[i].src = items[i];
+  }
+
+   function initResources(){
+	    loader(imageItems, loadImage, function () {
+	    	imageLoadHandler();
+		});
+   }
+
+   var systolicList= [];
+   var diastolicList = [];
+   var pointRadiusArray = [];
+   var pointHoverRadiusArray = [];
+   var hoverBorderWidth = 0;
+   var borderWidth = 0;
+   var dateList  = [];
+   var isFirst = false;
+
+   function initChart(param){
+	   ctx = document.getElementById("chart").getContext("2d");
+
+	   obj = JSON.parse(param);
+	   ctx.canvas.height= obj.height;
+	   ctx.canvas.width = obj.width;
+ 	   initData();
+	   initResources();
+   }
+
+   function getFormattedDate( param ){
+		return param.substring(4,6) + "/" + param.substring(6,8);
+
+   }
+   function initData( ){
+	   
+	   systolicList= [];
+	   diastolicList = [];
+	   dateList  = [];
+	   pointRadiusArray = [];
+	   pointHoverRadiusArray = [];
+	   pointHoverBorderWidth = 0;
+	   pointBorderWidth = 0;
+
+	   
+		for(var i = obj.bp_list.length-1; i >= 0; i--){
+			systolicList.push(obj.bp_list[i].systolic);
+			diastolicList.push(obj.bp_list[i].diastolic);
+			dateList.push(getFormattedDate(obj.bp_list[i].reg_dttm));
+	    }
+
+   }
+   function imageLoadHandler(){
+
+		Chart.pluginService.register({
+			afterDraw: function (chart, easing) {
+				var minChartX , maxChartX;
+				var ctx = chart.chart.ctx;
+			  	for( var i in chart.config.data.datasets ){
+					var metaData = chart.getDatasetMeta(i); 
+
+					for( var i in chart.config.data.datasets ){
+						var metaData = chart.getDatasetMeta(i); //i번째 데이터 셋의 메타정보 가져오기
+
+						minChartX = metaData.data[0]._model.x;
+						maxChartX = metaData.data[metaData.data.length - 1]._model.x;
+
+						if( !metaData.hidden ){ //legend를 클릭하여 데이터 셋을 출력하지 않을 경우, metaData.hidden = true / 반대의 경우 null
+							for( var j in metaData.data ){
+
+								var dataModel = metaData.data[j]._model;
+
+								if(j == 0 && obj.bp_list.length == 1 ){
+									ctx.drawImage(imgObj[3], dataModel.x , dataModel.y   , 10, 10);
+							    }
+							}
+						}
+					}
+				}
+			 }
+		});
+		
+	   config = {
+			 type: 'line',
+		     data: {
+		       labels: dateList ,
+		       datasets: [
+					{
+						label: "이완기",
+						fill: true,
+					  	data: diastolicList,
+					    backgroundColor: "rgba(156,39,176,0.4)",
+					    borderColor:"rgba(245,0,87,0.0)",
+					    pointRadius: 0,
+					    pointHoverRadius: 0
+					},
+			   		{
+				         label: "수축기 ",
+				         fill: true,
+				         data: systolicList,
+				         borderColor: "rgba(245,0,87,0.0)",
+				         backgroundColor: "rgba(245,0,87,0.6)",
+				         pointRadius: 0,
+						 pointHoverRadius: 0
+			        }
+		       ]
+		     },
+		     options: {
+			    responsive:false,
+			    animation:{
+					duration:0
+				},
+	    	    scales: {
+	    	    	xAxes: [{
+						  	display:true,
+						  	gridLines: {
+								display: false,
+							    drawBorder : false
+						  	}
+					  }],
+					  yAxes: [{
+				          ticks: {
+				            min: obj.graph_min,
+				            max: obj.graph_max,
+				            callback: function(value) {
+				             	return value;
+				            }
+				          }
+				        }]
+	    	    }
+	    	 }
+	   };
+	   lineChart  = new Chart(ctx, config);
+   }
+ 
+
+
+  </script>
+</body>
+  
+  
+</html>

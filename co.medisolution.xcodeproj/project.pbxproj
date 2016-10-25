@@ -272,6 +272,23 @@
 		DC68F5491D93D7FD009D3B1E /* MoreEquipmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC68F5461D93D7FD009D3B1E /* MoreEquipmentModel.m */; };
 		DC68F54A1D93D7FD009D3B1E /* MoreMyPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC68F5481D93D7FD009D3B1E /* MoreMyPageModel.m */; };
 		DC69F3271DBE2A40000BAB17 /* WeekProgramDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC69F3261DBE2A40000BAB17 /* WeekProgramDetailController.m */; };
+		DC6B0B621DBF27BB0092324C /* blood_pressure.html in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B581DBF27BB0092324C /* blood_pressure.html */; };
+		DC6B0B631DBF27BB0092324C /* daily_sleep.html in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B591DBF27BB0092324C /* daily_sleep.html */; };
+		DC6B0B641DBF27BB0092324C /* daily_step.html in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B5A1DBF27BB0092324C /* daily_step.html */; };
+		DC6B0B651DBF27BB0092324C /* daily_weight.html in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B5B1DBF27BB0092324C /* daily_weight.html */; };
+		DC6B0B661DBF27BB0092324C /* line_scroll.html in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B5C1DBF27BB0092324C /* line_scroll.html */; };
+		DC6B0B671DBF27BB0092324C /* pulse_graph.html in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B5D1DBF27BB0092324C /* pulse_graph.html */; };
+		DC6B0B681DBF27BB0092324C /* recommend_weight.html in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B5E1DBF27BB0092324C /* recommend_weight.html */; };
+		DC6B0B691DBF27BB0092324C /* weekly_sleep.html in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B5F1DBF27BB0092324C /* weekly_sleep.html */; };
+		DC6B0B6A1DBF27BB0092324C /* weekly_step.html in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B601DBF27BB0092324C /* weekly_step.html */; };
+		DC6B0B6B1DBF27BB0092324C /* weekly_weight.html in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B611DBF27BB0092324C /* weekly_weight.html */; };
+		DC6B0B731DBF29140092324C /* contents_graph_btn_bubble_left.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B6C1DBF29140092324C /* contents_graph_btn_bubble_left.png */; };
+		DC6B0B741DBF29140092324C /* contents_graph_btn_bubble_right.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B6D1DBF29140092324C /* contents_graph_btn_bubble_right.png */; };
+		DC6B0B751DBF29140092324C /* contents_graph_btn_bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B6E1DBF29140092324C /* contents_graph_btn_bubble.png */; };
+		DC6B0B761DBF29140092324C /* contents_graph_btn_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B6F1DBF29140092324C /* contents_graph_btn_heart.png */; };
+		DC6B0B771DBF29140092324C /* contents_graph_btn_walk.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B701DBF29140092324C /* contents_graph_btn_walk.png */; };
+		DC6B0B781DBF29140092324C /* contents_graph_point.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B711DBF29140092324C /* contents_graph_point.png */; };
+		DC6B0B791DBF29140092324C /* title_icon_weight.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B721DBF29140092324C /* title_icon_weight.png */; };
 		DC723C2A1D63FE2200557E1E /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC723C291D63FE2200557E1E /* MainTabBar.storyboard */; };
 		DC7303D81DA48843001472F8 /* MommyUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7303D71DA48843001472F8 /* MommyUtils.m */; };
 		DC7303DB1DA4F452001472F8 /* MessageEmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7303DA1DA4F452001472F8 /* MessageEmptySegue.m */; };
@@ -818,6 +835,23 @@
 		DC68F5481D93D7FD009D3B1E /* MoreMyPageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreMyPageModel.m; sourceTree = "<group>"; };
 		DC69F3251DBE2A40000BAB17 /* WeekProgramDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekProgramDetailController.h; sourceTree = "<group>"; };
 		DC69F3261DBE2A40000BAB17 /* WeekProgramDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekProgramDetailController.m; sourceTree = "<group>"; };
+		DC6B0B581DBF27BB0092324C /* blood_pressure.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = blood_pressure.html; sourceTree = "<group>"; };
+		DC6B0B591DBF27BB0092324C /* daily_sleep.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = daily_sleep.html; sourceTree = "<group>"; };
+		DC6B0B5A1DBF27BB0092324C /* daily_step.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = daily_step.html; sourceTree = "<group>"; };
+		DC6B0B5B1DBF27BB0092324C /* daily_weight.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = daily_weight.html; sourceTree = "<group>"; };
+		DC6B0B5C1DBF27BB0092324C /* line_scroll.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = line_scroll.html; sourceTree = "<group>"; };
+		DC6B0B5D1DBF27BB0092324C /* pulse_graph.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = pulse_graph.html; sourceTree = "<group>"; };
+		DC6B0B5E1DBF27BB0092324C /* recommend_weight.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = recommend_weight.html; sourceTree = "<group>"; };
+		DC6B0B5F1DBF27BB0092324C /* weekly_sleep.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = weekly_sleep.html; sourceTree = "<group>"; };
+		DC6B0B601DBF27BB0092324C /* weekly_step.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = weekly_step.html; sourceTree = "<group>"; };
+		DC6B0B611DBF27BB0092324C /* weekly_weight.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = weekly_weight.html; sourceTree = "<group>"; };
+		DC6B0B6C1DBF29140092324C /* contents_graph_btn_bubble_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contents_graph_btn_bubble_left.png; sourceTree = "<group>"; };
+		DC6B0B6D1DBF29140092324C /* contents_graph_btn_bubble_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contents_graph_btn_bubble_right.png; sourceTree = "<group>"; };
+		DC6B0B6E1DBF29140092324C /* contents_graph_btn_bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contents_graph_btn_bubble.png; sourceTree = "<group>"; };
+		DC6B0B6F1DBF29140092324C /* contents_graph_btn_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contents_graph_btn_heart.png; sourceTree = "<group>"; };
+		DC6B0B701DBF29140092324C /* contents_graph_btn_walk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contents_graph_btn_walk.png; sourceTree = "<group>"; };
+		DC6B0B711DBF29140092324C /* contents_graph_point.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contents_graph_point.png; sourceTree = "<group>"; };
+		DC6B0B721DBF29140092324C /* title_icon_weight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title_icon_weight.png; sourceTree = "<group>"; };
 		DC723C291D63FE2200557E1E /* MainTabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
 		DC7303D61DA48843001472F8 /* MommyUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MommyUtils.h; sourceTree = "<group>"; };
 		DC7303D71DA48843001472F8 /* MommyUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MommyUtils.m; sourceTree = "<group>"; };
@@ -1907,6 +1941,20 @@
 			path = FLAnimatedImage;
 			sourceTree = "<group>";
 		};
+		DC6B0B471DBF267C0092324C /* img */ = {
+			isa = PBXGroup;
+			children = (
+				DC6B0B6C1DBF29140092324C /* contents_graph_btn_bubble_left.png */,
+				DC6B0B6D1DBF29140092324C /* contents_graph_btn_bubble_right.png */,
+				DC6B0B6E1DBF29140092324C /* contents_graph_btn_bubble.png */,
+				DC6B0B6F1DBF29140092324C /* contents_graph_btn_heart.png */,
+				DC6B0B701DBF29140092324C /* contents_graph_btn_walk.png */,
+				DC6B0B711DBF29140092324C /* contents_graph_point.png */,
+				DC6B0B721DBF29140092324C /* title_icon_weight.png */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
 		DC73E5C11D6D896A007D2DEE /* Indicator */ = {
 			isa = PBXGroup;
 			children = (
@@ -1931,6 +1979,17 @@
 		DCA5AE181D598C6F0075B7AD = {
 			isa = PBXGroup;
 			children = (
+				DC6B0B581DBF27BB0092324C /* blood_pressure.html */,
+				DC6B0B591DBF27BB0092324C /* daily_sleep.html */,
+				DC6B0B5A1DBF27BB0092324C /* daily_step.html */,
+				DC6B0B5B1DBF27BB0092324C /* daily_weight.html */,
+				DC6B0B5C1DBF27BB0092324C /* line_scroll.html */,
+				DC6B0B5D1DBF27BB0092324C /* pulse_graph.html */,
+				DC6B0B5E1DBF27BB0092324C /* recommend_weight.html */,
+				DC6B0B5F1DBF27BB0092324C /* weekly_sleep.html */,
+				DC6B0B601DBF27BB0092324C /* weekly_step.html */,
+				DC6B0B611DBF27BB0092324C /* weekly_weight.html */,
+				DC6B0B471DBF267C0092324C /* img */,
 				2A743F561D62CA4B007DEB6B /* Model */,
 				DC3ACEA21D5DCA5500D68F80 /* Library */,
 				2AC781D81D5998F400B86BE1 /* Controller */,
@@ -2083,6 +2142,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC6B0B691DBF27BB0092324C /* weekly_sleep.html in Resources */,
 				2AF695FB1DB4B40F00072FC2 /* CommunitySliderImageCell.xib in Resources */,
 				2AB670B11D924EAD0060561C /* Community.storyboard in Resources */,
 				DCA3BCD51D98BDB7009D3DD1 /* MoreEnvironmentAgreementCell.xib in Resources */,
@@ -2098,19 +2158,28 @@
 				DC5FCCFE1D7E890200957D73 /* SleepingHoursInfoCell.xib in Resources */,
 				DC4E958E1D7D26EC0087647B /* WeightTotalInfoCell.xib in Resources */,
 				DC5D20961D62E01300ACDCA4 /* DashBoardScrollCellView.xib in Resources */,
+				DC6B0B731DBF29140092324C /* contents_graph_btn_bubble_left.png in Resources */,
+				DC6B0B741DBF29140092324C /* contents_graph_btn_bubble_right.png in Resources */,
 				DC1A77D61D94FC2E00F88693 /* MoreMyPagePasswordChangeCell.xib in Resources */,
+				DC6B0B671DBF27BB0092324C /* pulse_graph.html in Resources */,
 				DC4E95A61D7D66550087647B /* ActiveMassStepCell.xib in Resources */,
+				DC6B0B631DBF27BB0092324C /* daily_sleep.html in Resources */,
+				DC6B0B621DBF27BB0092324C /* blood_pressure.html in Resources */,
 				DC5D20741D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf in Resources */,
 				DC68F53F1D93D7E4009D3B1E /* MoreEquipmentListCell.xib in Resources */,
 				DCA3BCEC1D9913F1009D3DD1 /* MorePointCell_375.xib in Resources */,
 				2AB670DD1D9267700060561C /* CommunityNewspeedImageCustomCell.xib in Resources */,
 				DC67EB651D94BDAD0096BCB3 /* MoreMyPageNickNameCell.xib in Resources */,
 				DCA3BCC61D98BCCB009D3DD1 /* MoreEnvironmentMyPageCell.xib in Resources */,
+				DC6B0B681DBF27BB0092324C /* recommend_weight.html in Resources */,
 				2AC1644E1D9CD05A00533BB0 /* CommunityDetailContentCell.xib in Resources */,
+				DC6B0B641DBF27BB0092324C /* daily_step.html in Resources */,
 				DCF6CA911D740D0A00703CAE /* PageImageViewController.xib in Resources */,
+				DC6B0B791DBF29140092324C /* title_icon_weight.png in Resources */,
 				DC68F5411D93D7E4009D3B1E /* MoreEquipmentSelectCell.xib in Resources */,
 				2AD4A8921D7D660C0032E16C /* emoticonPopupViewController.xib in Resources */,
 				DC4DE2F81D82A212007CF9BF /* MoreWeekCheckInfoCell.xib in Resources */,
+				DC6B0B651DBF27BB0092324C /* daily_weight.html in Resources */,
 				DCF8E1EA1D8FA84B00E67402 /* MoreProfessionalButtonViewController.xib in Resources */,
 				DCF6CA9B1D740DED00703CAE /* ChildPageImageViewController.xib in Resources */,
 				2AB670D51D92673E0060561C /* CommunityNewspeedBasicCustomCell.xib in Resources */,
@@ -2132,15 +2201,20 @@
 				DC4462231D87ADB1006BFEBB /* MoreProfessionalAdviceCell.xib in Resources */,
 				DC73E5C71D6DAE3B007D2DEE /* IndicatorViewController.xib in Resources */,
 				2AC781DB1D599C0800B86BE1 /* MembershipLogin.storyboard in Resources */,
+				DC6B0B661DBF27BB0092324C /* line_scroll.html in Resources */,
+				DC6B0B6B1DBF27BB0092324C /* weekly_weight.html in Resources */,
 				DCA5AE371D598C6F0075B7AD /* LaunchScreen.storyboard in Resources */,
+				DC6B0B751DBF29140092324C /* contents_graph_btn_bubble.png in Resources */,
 				DC5D20751D62ACFB00ACDCA4 /* NanumBarunGothic.ttf in Resources */,
 				DC723C2A1D63FE2200557E1E /* MainTabBar.storyboard in Resources */,
 				DC3AAEC51D757D4A007218E9 /* SampleMainController.xib in Resources */,
 				DCA3BCDA1D98BDDF009D3DD1 /* MoreEnvironmentVersionInfoCell.xib in Resources */,
 				2AA6D6C21D64230A00316DD6 /* Diary.storyboard in Resources */,
+				DC6B0B761DBF29140092324C /* contents_graph_btn_heart.png in Resources */,
 				2AC164521D9CD0B200533BB0 /* CommunityDetailReplyContentCell.xib in Resources */,
 				DC4E95AB1D7D66930087647B /* ActiveMassCalorieCell.xib in Resources */,
 				DC56F0A51D79728F00FB3A30 /* WeightDetailInfoContentsCell.xib in Resources */,
+				DC6B0B781DBF29140092324C /* contents_graph_point.png in Resources */,
 				DC5FCCF41D7E84CC00957D73 /* SleepingHoursChartViewCell.xib in Resources */,
 				DC60709D1D7030E700F60148 /* MultiImageViewController.xib in Resources */,
 				DC68F53D1D93D7E4009D3B1E /* MoreEquipmentChoiceCell.xib in Resources */,
@@ -2154,7 +2228,9 @@
 				DC1A77DE1D950F9900F88693 /* MoreMyPageFetusHeaderCell.xib in Resources */,
 				2AC164501D9CD09500533BB0 /* CommunityDetailReplyPeopleInfoCell.xib in Resources */,
 				DC4DE2D41D814F7A007CF9BF /* MoreBloodPressureChartCell.xib in Resources */,
+				DC6B0B6A1DBF27BB0092324C /* weekly_step.html in Resources */,
 				DCA5AE2F1D598C6F0075B7AD /* Main.storyboard in Resources */,
+				DC6B0B771DBF29140092324C /* contents_graph_btn_walk.png in Resources */,
 				DC4DE2BE1D80F4BD007CF9BF /* MoreMainTitleCell.xib in Resources */,
 				DC512AC01D6694D100885C26 /* Message.storyboard in Resources */,
 				DC4E95A11D7D65050087647B /* ActiveMassChartView.xib in Resources */,

@@ -11,7 +11,7 @@
 #import "DZNSegmentedControl.h"
 #import "ActiveMassModel.h"
 
-@interface ActiveMassController : CommonViewController<DZNSegmentedControlDelegate>
+@interface ActiveMassController : CommonViewController<DZNSegmentedControlDelegate, ActiveMassModelDelegate>
 
 @property (weak, nonatomic) IBOutlet DZNSegmentedControl *dayWeekTypeSegment;
 

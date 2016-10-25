@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.bundle.min.js"></script>
+  <style>
+  #chartjs-container {
+	  width:100%;
+  }
+
+#chart { }
+.chartjs-wrap {
+}
+  
+  canvas {
+	    -moz-user-select: none;
+	    -webkit-user-select: none;
+	    -ms-user-select: none;
+	    height:100%;
+  }
+  
+  </style>
+</head>
+<body>
+  <div id="chartjs-container" class="chartjs-wrap" >
+    <canvas id="chart" width="1000" height="1000"></canvas>
+  </div>
+  <script>
+  var ctx;
+  var lineChartData;
+  var img, pointImg;
+  var myWeightPosition;
+  var obj;
+  var graph_min, graph_max;
+  var weekList = [];
+  var myWeightChartList = [];
+  var lineChart;
+  var lineChartData;
+  var config;
+  var weekDays = ['일','월','화','수','목','금','토'];
+  var $chart;
+  var imageItems = [ "./img/contents_graph_btn_bubble_left.png", 
+                     "./img/contents_graph_btn_bubble.png", 
+                     "./img/contents_graph_btn_bubble_right.png", 
+                     "./img/contents_graph_point.png"];
+  var imageObj = [];
+  var isFirst = false;
+  function initResources(){
+	
+    loader(imageItems, loadImage, function () {
+    	imageLoadHandler();
+	});
+  }
+
+  function loader(items, thingToDo, allDone) {
+	   if (!items) {
+	       return;
+	   }
+	   if ("undefined" === items.length) {
+	       items = [items];
+	   }
+	   var count = items.length;
+	   var thingToDoCompleted = function (items, i) {
+	       count--;
+	       if (0 == count) {
+	           allDone(items);
+	       }
+	   };
+	   for (var i = 0; i < items.length; i++) {
+	       thingToDo(items, i, thingToDoCompleted);
+	   }
+  }
+
+  function loadImage(items, i, onComplete) {
+	   var onLoad = function (e) {
+	       e.target.removeEventListener("load", onLoad);
+	       onComplete(items, i);
+	   }
+	   imageObj[i] = new Image();
+	   imageObj[i].addEventListener("load", onLoad, false);
+	   imageObj[i].src = items[i];
+  }
+  function initChart(param){
+/*       var param = 
+			  '{"result": "정상",' +
+			    '"width": 500,' +
+			    '"height": 300, '+
+			    '"weight": "69.2",' +
+			    '"comment": "체중 증가가 너무 빠릅니다. 관리가 필요합니다.",' +
+			    '"result_code": 0, ' +
+			    '"graph_max":67, ' +
+			    '"graph_min":53, ' +
+			    '"title_tag": "이번주", ' +
+			    '"rec_weight": "22kg~43kg",' +
+			    '"weight_list": [ ' +
+			    '  { ' +
+			    '    "weight_key": "2323232222", ' +
+			    '	 "weight": 55.5, ' +
+			    '    "reg_dttm": "2016-10-17",' +
+			    '    "type" : "Y"  ' +  	
+			    '  }, ' +
+			    '{ ' +
+			        '"weight_key": "2334234", ' +
+			    '    "weight": 54, ' +
+			    '    "reg_dttm": "2016-10-18",' +
+			    '    "type" : "Y"  ' +  	
+			    '			      }, ' +
+			    '{ ' +
+		        '	 "weight_key": "2334234", ' +
+			    '    "weight": "64.0", ' +
+			    '    "reg_dttm": "2016-10-19",' +
+			    '    "type" : "Y"  ' +  	
+			    '			      }, ' +
+			    '{ ' +
+			    '	 "weight_key": "2334234", ' +
+			    '    "weight": "64.0", ' +
+			    '    "reg_dttm": "2016-10-20",' +
+			    '    "type" : "N"  ' +  	
+	    		'}, ' +
+			    '{ ' +
+			        '"weight_key": "2334234", ' +
+			    '    "weight": 53.5, ' +
+			    '    "reg_dttm": "2016-10-21",' +
+			    '    "type" : "Y"  ' +  	
+			    '			      }, ' +
+				    '{ ' +
+				    '"weight_key": "2334234", ' +
+				'    "weight": "65.5" , ' +
+				'    "reg_dttm": "2016-10-22",' +
+				 '    "type" : "Y"  ' +  	
+				'			      }, ' +
+				'{ ' +
+				'	 "weight_key": "2334234", ' +
+				'    "weight": "64.0", ' +
+				'    "reg_dttm": "2016-10-23",' +
+				 '    "type" : "Y"  ' +  	
+				'			      } ' +
+			    ']' + 
+			    ' }';   */
+
+/* 			    param = '{"comment":"적절한 체중증가가 필요합니다. ",' +
+				'"graph_max":19,' +
+				'"graph_min":15,' +
+				'"height":300, ' +
+				'"rec_weight":"45.66~46.36", '+
+				'"result":"저체중",' +
+				'"result_code":"0",'+
+				'"title_tag":"이번주",' +
+				'"weight":"16.9", '+
+				'"weight_list":[{"day":0,"reg_dttm":"2016-10-24","type":"Y","weight":"16.9","weight_key":null}, ' +
+				       		'{"day":0,"reg_dttm":"2016-10-25","type":"N","weight":"16.9","weight_key":null}, ' +
+				       		'{"day":0,"reg_dttm":"2016-10-26","type":"N","weight":"16.9","weight_key":null},' +
+				       		'{"day":0,"reg_dttm":"2016-10-27","type":"N","weight":"16.9","weight_key":null},' +
+				       		'{"day":0,"reg_dttm":"2016-10-28","type":"N","weight":"16.9","weight_key":null},' +
+				       		'{"day":0,"reg_dttm":"2016-10-29","type":"N","weight":"16.9","weight_key":null},' +
+				       		'{"day":0,"reg_dttm":"2016-10-30","type":"N","weight":"16.9","weight_key":null}],"width":500}'; */
+
+/* 	  param = '{"comment":"적절한 체중증가가 필요합니다. ", '+
+   			  '"graph_max":51, '+
+   			  '"graph_min":47, '+
+    	      '"height":300, ' +
+   			  '"rec_weight":"55.79~61.29", ' +
+   			  '"result":"저체중",'+
+   			  '"result_code":"0",' +
+   			  '"title_tag":"이번주",' +
+   			  '"weight":"49.1",' +
+   			  '"weight_list":[{"day":0,"reg_dtype":"Y","weight":"45.8","weight_key":null}, ' +
+       			  {"day":0,"reg_dttm":"2016-10-25","type":"Y","weight":"45.5","weight_key":null},
+       			  {"day":0,"reg_dttm":"2016-10-26","type":"Y","weight":"49.3","weight_key":null},
+       			  {"day":0,"reg_dttm":"2016-10-27","type":"Y","weight":"16.8","weight_key":null},
+       			  {"day":0,"rreg_dttm":"2016-10-28","type":"Y","weight":"49.1","weight_key":null},
+       			  {"day":0,"reg_dttm":"2016-10-29","type":"N","weight":"49.1","weight_key":null},
+       			  {"day":0,"reg_dttm":"2016-10-30","type":"N","weight":"49.1","weight_key":null}],"width":500}'
+ */
+ 
+	   ctx = document.getElementById("chart").getContext("2d");
+	   obj = JSON.parse(param);
+	   ctx.canvas.height= obj.height;
+	   ctx.canvas.width = obj.width;
+	  
+ 	   initData();
+	   initResources();
+	   
+  }
+  
+  var todayPosition = 0;
+  var todayWeekDay;
+  var pointRadiusArray = [];
+  var pointHoverRadiusArray = [];
+  var isBubble = false;
+
+  function isToday( param ){
+  	var dateObj = new Date();
+	var year = dateObj.getFullYear();
+	var month = dateObj.getMonth()+1;
+	var day = dateObj.getDate();
+	var current_date = year + "-" + (month < 10 ? "0"+month : month ) + "-" + (day < 10 ? "0"+day : day );
+
+	if(current_date == param){
+		return true;
+	}else{
+		return false;
+	}
+  }
+  function isFuture( param ){
+	  
+	  var dateObj = new Date();
+	  var year = dateObj.getFullYear();
+  	  var month = dateObj.getMonth()+1;
+  	  var day = dateObj.getDate();
+  	  var current_date = year + "-" + (month < 10 ? "0"+month : month ) + "-" + (day < 10 ? "0"+day : day );
+
+       
+      var targetDate = new Date(param) ;
+      var todayDate = new Date(current_date) ;
+   
+      var btMs = targetDate.getTime() - todayDate.getTime() ;
+      var btDay = btMs / (1000*60*60*24) ;
+      if(btDay > 0 ){
+			return true;
+      }else{
+			return false;
+      }
+
+  }
+  function initData(){
+
+
+    graph_min = obj.graph_min;
+    graph_max = obj.graph_max;
+	   
+	weekList = [];
+	pointRadiusArray = [];
+	pointHoverRadiusArray = [];
+	myWeightChartList = [];
+	isBubble = false;
+	
+	weekList = ['월','화','수','목','금','토','일'];
+
+	for(var i = 0; i < obj.weight_list.length ;i++){
+		if(obj.weight_list[i] == null){
+			myWeightChartList.push(null);
+			pointRadiusArray.push(0);
+			pointHoverRadiusArray.push(0);
+		}else{
+			if( isToday( obj.weight_list[i].reg_dttm) && obj.weight_list[i].type == "Y" ){
+				todayPosition = i;
+				isBubble = true;
+			}
+			if(obj.weight_list[i].type == "N"){
+				pointRadiusArray.push(0);
+				pointHoverRadiusArray.push(0);
+			}else{
+				if(i == 0){
+					pointRadiusArray.push(0);
+					pointHoverRadiusArray.push(0);
+				}else{
+					pointRadiusArray.push(4);
+					pointHoverRadiusArray.push(4);
+				}
+			}
+			
+			if(isFuture(obj.weight_list[i].reg_dttm)){
+				myWeightChartList.push(null);
+ 			}else{
+ 				myWeightChartList.push(parseInt(obj.weight_list[i].weight));
+ 	 	    }
+ 	 	    
+		}
+    }
+    
+    lineChartData = {
+    		labels: weekList,
+			datasets: [{
+		    label: "",
+			    tension:0.2	,
+			    data: myWeightChartList,
+			    backgroundColor: "rgba(245,0,87,0.6)",
+			    borderColor:"rgba(0,0,0,0)",
+			    borderWidth: 0,
+			    pointBorderColor: "rgba(80,81,81,1)",
+			    pointBackgroundColor: "rgba(245,245,245,1)",
+			    pointHoverBorderWidth: 3,
+			    pointBorderWidth: 3,
+			    pointRadius: pointRadiusArray,
+			    pointHoverRadius: pointHoverRadiusArray,
+			    pointHitRadius: 4
+		    }]
+  	};
+	
+  }
+  function imageLoadHandler(){
+
+	  Chart.pluginService.register({
+		  afterDraw: function (chart, easingDecimal) {
+				var minChartX , maxChartX;
+				var ctx = chart.chart.ctx;
+			  	for( var i in chart.config.data.datasets ){
+					var metaData = chart.getDatasetMeta(i); 
+					if( !metaData.hidden ){ 
+						minChartX = metaData.data[0]._model.x;
+						maxChartX = metaData.data[metaData.data.length - 1]._model.x;
+					}
+
+					for( var i in chart.config.data.datasets ){
+						var metaData = chart.getDatasetMeta(i); //i번째 데이터 셋의 메타정보 가져오기
+
+						minChartX = metaData.data[0]._model.x;
+						maxChartX = metaData.data[metaData.data.length - 1]._model.x;
+
+						if( !metaData.hidden ){ //legend를 클릭하여 데이터 셋을 출력하지 않을 경우, metaData.hidden = true / 반대의 경우 null
+							for( var j in metaData.data ){
+
+								/* console.log("실제값 :" +  chart.config.data.datasets[i].data[j]); */
+								var dataModel = metaData.data[j]._model;
+								if( isBubble && ( j == todayPosition ) ){
+
+									var imageX,textX;
+
+
+									if(j == 0){
+										imageX = dataModel.x +5;
+										textX =  dataModel.x + 20 + 5;
+										ctx.drawImage(imageObj[0], imageX , dataModel.y - 34  , 40, 30);
+									}else if(j == 6){
+										imageX = dataModel.x - 40;
+										textX =  dataModel.x - 20;
+										ctx.drawImage(imageObj[2], imageX , dataModel.y - 34  , 40, 30);
+									}else{
+										imageX =  dataModel.x - 20;
+										textX =   dataModel.x;
+										ctx.drawImage(imageObj[1], imageX , dataModel.y - 34  , 40, 30);
+									}
+									
+									ctx.font = "14px 맑은 고딕";
+									ctx.fillStyle = "white";
+									ctx.textAlign = 'center';
+									ctx.fillText(chart.config.data.datasets[i].data[j], textX, dataModel.y - 18);
+									
+								}
+
+								if(j == 0){
+									ctx.drawImage(imageObj[3], dataModel.x , dataModel.y   , 10, 10);
+							    }
+							}
+						}
+					}
+				}
+				
+			     var yScale = chart.scales['y-axis-0'];
+			    var helpers = Chart.helpers;
+			    var chartArea = chart.chartArea;
+			    
+		
+			    // draw labels - all we do is turn on display and call scale.draw
+			    yScale.options.display = true;
+			    yScale.draw.apply(yScale, [chartArea]);
+		
+			    // draw the grid lines - simplified version of library code
+			    yScale.ctx.save();
+			    yScale.ctx.globalCompositeOperation = 'destination-over';
+			    helpers.each(yScale.ticks, function (label, index) {
+				      if (label === undefined || label === null) {
+				        return;
+				      }
+			
+				      var yLineValue = this.getPixelForTick(index);
+				      yLineValue += helpers.aliasPixel(this.ctx.lineWidth);
+			
+				      this.ctx.lineWidth = this.options.gridLines.lineWidth;
+				      this.ctx.strokeStyle = 'rgba(210,210,210,0.4)';
+				      this.ctx.beginPath();
+				      this.ctx.moveTo(minChartX, yLineValue);
+				      this.ctx.lineTo(maxChartX, yLineValue);
+				      this.ctx.stroke();
+				      
+			    }, yScale);
+			    
+			    yScale.ctx.restore();    
+			    yScale.ctx.save();
+			    yScale.ctx.fillStyle = 'white';
+			    yScale.ctx.globalCompositeOperation = 'destination-over';
+			    yScale.ctx.fillRect(0, yScale.bottom, chartArea.right, chartArea.bottom);
+			    yScale.ctx.restore();  
+		  }
+		});
+
+		        
+		Chart.defaults.global.pointHitDetectionRadius = 5;
+		window.count = 0;
+
+
+	    lineChart = new Chart(ctx , {
+		    type: 'line',
+		    data: lineChartData,
+		    options: {
+			      showLines: true,
+			      responsive:false,
+			      animation:{
+					 duration:0
+				  },
+			      legend : {
+			        display: false
+			      },
+			      title:{
+			        display:false,
+			        text:'체중'
+			      },
+			      tooltips: {
+			        enabled: false,
+			      },
+			      scales: {
+			    	  yAxes: [{
+				          id: 'y-axis-0',
+				          display: true,
+				          gridLines: {
+				        	display: false,
+				        	drawBorder:false,
+				        	zeroLineColor:'rgb(255,0,0,0)'
+				          },
+				          ticks: {
+				            min: graph_min - 5,
+				            max: graph_max + 5,
+				            callback: function(value) {
+				             	return value;
+				            }
+				          }
+				        }],
+			        xAxes: [{
+			          id: 'x-axis-0',
+			          gridLines: {
+			            display: false,
+			          },
+			          ticks: {
+			            beginAtZero: true,
+			            fontColor:"#999999",
+			            fontSize:14
+			          }
+			        }]
+			      }
+		    }
+	   });
+
+  }
+  
+
+  </script>
+</body>
+  
+  
+</html>

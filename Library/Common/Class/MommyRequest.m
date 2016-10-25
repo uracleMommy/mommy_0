@@ -1099,6 +1099,19 @@ static MommyHttpUrls* instanceMommyHttpUrls;
             return [_mainDomain stringByAppendingString: @"/api/weight/insert"];
             break;
             
+        case ChartStepDaily:
+            return [_mainDomain stringByAppendingString: @"/api/step/daily"];
+            break;
+            
+        case ChartStepWeekly:
+            return [_mainDomain stringByAppendingString: @"/api/step/weekly"];
+            break;
+            
+        case ChartStepGraph:
+            return [_mainDomain stringByAppendingString: @"/api/step/graph"];
+            break;
+            
+            
         default:
             return @"";
             break;

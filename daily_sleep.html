@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>bar char over img</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.js"></script>
+    <script>
+		function initChart(param){
+
+			/* var sleep_list_data = [];
+			for(var i = 0; i < 60; i++){
+				var a = Math.floor(Math.random()*2);
+				var data = '{ "hour": i.toString(), "status": a }';
+		    }
+
+			param =  '{	"result": 1, '+
+					 '   "sleep_list": ['+ 
+					 '{ "hour": 1, "status": 1 },' +
+					 '{ "hour": 2, "status": 2 },' +
+					 '{ "hour": 3, "status": 0 },' +
+					 '{ "hour": 4, "status": 0 },' +
+					 '{ "hour": 5, "status": 0 },' +
+					 '{ "hour": 6, "status": 0 },' +
+					 '{ "hour": 7, "status": 1 },' +
+					 '{ "hour": 8, "status": 2 },' +
+					 '{ "hour": 9, "status": 2 },' +
+					 '{ "hour": 10, "status": 0 },' +
+					 '{ "hour": 11, "status": 0 },' +
+					 '{ "hour": 12, "status": 0 },' +
+					 '{ "hour": 13, "status": 0 },' +
+					 '{ "hour": 14, "status": 1 },' +
+					 '{ "hour": 15, "status": 2 },' +
+					 '{ "hour": 16, "status": 2 },' +
+					 '{ "hour": 17, "status": 1 },' +
+					 '{ "hour": 18, "status": 1 },' +
+					 '{ "hour": 19, "status": 1 },' +
+					 '{ "hour": 20, "status": 0 },' +
+					 '{ "hour": 21, "status": 0 },' +
+					 '{ "hour": 22, "status": 1 },' +
+					 '{ "hour": 23, "status": 0 },' +
+					 '{ "hour": 24, "status": 1 },' +
+					 '{ "hour": 25, "status": 0 },' +
+					 '{ "hour": 26, "status": 1 },' +
+					 '{ "hour": 27, "status": 0 }' +
+					 '],'+
+					 '   "good_sleep": "16분",' +
+					 '   "soso_sleep": "30분",' +
+					 '   "bad_sleep": "7분", ' +
+					 '   "title_tag": "오늘", ' +
+					 '   "max_time": "2359", ' +
+					 '   "total_sleep": "53분",' +
+					 '   "min_time": "2307" ' +
+				  '}'; */
+
+			obj = JSON.parse(param);
+			canvas = document.getElementById("canvas").getContext("2d");
+			canvas.canvas.height= obj.height;
+            canvas.canvas.width = obj.width;
+
+            var sleepData = [];
+			var dummyData = [];
+			var timeLabels = [];
+			var dataColor  = [];
+            var sleepDataCount =  obj.sleep_list.length;
+
+            sleepData = obj.sleep_list;
+
+            for(var i = 0; i < sleepData.length; i++){
+                if(sleepData[i].status == 2 ){
+                	dataColor.push("#f78d23");
+                }else if(sleepData[i].status ==  1){
+                    dataColor.push("#c2caea");
+                }else{
+                    dataColor.push("#294b6e");
+                }
+                dummyData.push(150);
+                timeLabels.push(i);
+            }
+
+
+			chart = new Chart(canvas, {
+				type: "bar",
+				data:{
+					 labels: timeLabels,
+					 datasets: [
+									{
+					                	backgroundColor: dataColor,
+					                    hoverBackgroundColor: dataColor,
+					                	data: dummyData
+				            		}
+		            			]
+					},
+					options:{
+						legend:{
+							display:false
+					    },
+					    tooltips:{
+							enabled:false
+					    },
+						responsive:true,
+						showAllTooltips:false,
+						animation:{
+							duration:0
+					    },
+					    scales:{
+					         xAxes: [{
+					        	 display:true,
+					        	 gridLines:{
+						        	  display:false,
+					        	 },
+				        	 	 ticks:{
+									fontColor:'#999999',
+								 	fontSize:12,
+								 	minRotation:0,
+								 	maxRotation:0,
+								 	autoSkip:false,
+								 	callback: function(value, index, values) {
+								 	     if(index == 0 ){
+								 	        return obj.min_time.substring(0,2) + ':' + obj.min_time.substring(2,4);
+								 	     }else if(index == values.length - 1){
+								 	    	return obj.max_time.substring(0,2) + ':' + obj.max_time.substring(2,4);
+								 	     } 
+								 	     return "";
+						            }
+					        	 },
+					        	 barPercentage: 1.0,
+					        	 categoryPercentage:1.0,
+
+			                 }],
+			                 yAxes: [{
+
+                                        display:false,
+                                        gridLines:{
+                                              display:false,
+                                         },
+				                	 	ticks: {
+											display:true,
+											fontColor:'#999999',
+											fontSize:14,
+											min: 0,
+											max: 150,
+											stepSize: 10,
+											callback: function(value, index, values) {
+						                        return (value %20 == 0)? value : "";
+						                    }
+										}
+			                 }]
+						}
+				    }
+				});
+		}
+	</script>
+</head>
+<body>
+<canvas id= "canvas"  > </canvas>
+<script>
+
+</script>
+</body>
+</html>

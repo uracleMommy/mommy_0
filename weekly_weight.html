@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.bundle.min.js"></script>
+  <style>
+  #chartjs-container {
+	  width:100%;
+  }
+
+#chart { }
+.chartjs-wrap {
+}
+  
+  canvas {
+	    -moz-user-select: none;
+	    -webkit-user-select: none;
+	    -ms-user-select: none;
+	    height:100%;
+  }
+  
+  </style>
+</head>
+<body>
+  <div id="chartjs-container" class="chartjs-wrap" >
+    <canvas id="chart" ></canvas>
+  </div>
+  <script>
+   var ctx;
+   var lineChartData;
+   var img;
+   var myWeightPosition;
+   var obj;
+   var graph_min, graph_max;
+   var weekList = [];
+   var myWeightChartList = [];
+   var weightDiffList  = [];
+   var averageValueList =  [];
+   var lineChart;
+   var config;
+
+   var todayPosition = 0;
+   var todayWeekDay;
+   var pointRadiusArray = [];
+   var pointHoverRadiusArray = [];
+   var isBubble = false;
+   var imageItems = [ "./img/contents_graph_btn_bubble_left.png", 
+                      "./img/contents_graph_btn_bubble.png", 
+                      "./img/contents_graph_btn_bubble_right.png", 
+                      "./img/contents_graph_point.png"];
+   var imgObj = [];
+   var isFirst = false;
+   function loader(items, thingToDo, allDone) {
+	   if (!items) {
+	       return;
+	   }
+	   if ("undefined" === items.length) {
+	       items = [items];
+	   }
+	   var count = items.length;
+	   var thingToDoCompleted = function (items, i) {
+	       count--;
+	       if (0 == count) {
+	           allDone(items);
+	       }
+	   };
+	   for (var i = 0; i < items.length; i++) {
+	       thingToDo(items, i, thingToDoCompleted);
+	   }
+  }
+
+  function loadImage(items, i, onComplete) {
+	   var onLoad = function (e) {
+	       e.target.removeEventListener("load", onLoad);
+	       onComplete(items, i);
+	   }
+	   imgObj[i] = new Image();
+	   imgObj[i].addEventListener("load", onLoad, false);
+	   imgObj[i].src = items[i];
+  }
+
+   function initResources(){
+	    loader(imageItems, loadImage, function () {
+	    	imageLoadHandler();
+		});
+   }
+   function initChart(param){
+	   ctx = document.getElementById("chart").getContext("2d");
+
+	
+ /* param = '{"avg_list":[40.0,40.0,41.06,41.23,41.4,41.57,41.74,41.91],'+
+			   '"comment":"체중증가 속도가 약간 빨라요.", '+
+			   '"diff_list":[0.0,0.0,0.19,0.22,0.24,0.28,0.32,0.35], '+
+			   '"first_week":4, ' +
+			   '"graph_max":45, ' +
+			   '"graph_min":35, ' +
+			   '"height":300,   ' +
+			   '"now_week":10,  ' +
+			   '"now_weight":55,' +
+			   '"rec_weight":"41.42~42.06", ' +
+			   '"result":"저체중",  '+
+			   '"result_code":0,  '+
+			   '"title_tag":"09-05~10-23", ' +
+			   '"weight":"55.0",' +
+			   '"weight_list":[ ' +
+			   			   '{"type":"N","week":4,"weight":null},' +
+			   			   '{"type":"N","week":5,"weight":null},' +
+			   			   '{"type":"N","week":6,"weight":null},' +
+			   			   '{"type":"Y","week":7,"weight":"40.5"},' +
+			   			   '{"type":"N","week":8,"weight":"40.5"},' +
+			   			   '{"type":"Y","week":9,"weight":"42.5"},' +
+			   			   '{"type":"Y","week":10,"weight":"42.0"}],' +
+			   			   '"width":500' +
+			   			   '} ';   */
+
+/* 			   			 param = '{  "avg_list":[40.1,41.16,41.33,41.5,41.67,41.84,42.01],'+
+			              '   "comment":"임신 전 저체중이라도 너무 급격한 체중증가는 좋지 않습니다. ",' +
+			              '    "diff_list":[0.0,0.19,0.22,0.24,0.28,0.32,0.35],' +
+			              '    "first_week":5, ' +
+			              '    "graph_max":55, ' +
+			              '    "graph_min":38, ' +
+			              '    "height":300, ' +
+			              '    "now_week":11,' +
+			              '    "now_weight":53,' +
+			              '    "rec_weight":"41.66~42.36",'+
+			              '    "result":"저체중", '+
+			              '    "result_code":0, '+
+			              '    "title_tag":"09-05~10-23", '+
+			              '    "weight":"53.0",' +
+			              '    "weight_list":[{"type":"N","week":5,"weight":null},'+
+			              '                   {"type":"N","week":6,"weight":null},'+
+			              '                    {"type":"Y","week":7,"weight":"40.5"},'+
+			              '                    {"type":"N","week":8,"weight":"40.5"},'+
+			              '                    {"type":"Y","week":9,"weight":"42.5"},'+
+			              '                    {"type":"Y","week":10,"weight":"55.0"},'+
+			              '                    {"type":"Y","week":11,"weight":"53.0"}],'+
+			            '   "width":500}'; */
+	   obj = JSON.parse(param);
+	   ctx.canvas.height= obj.height;
+	   ctx.canvas.width = obj.width;
+ 	   initData();
+	   initResources();
+   }
+  
+   function initData( ){
+
+
+		weekList = [];
+		pointRadiusArray = [];
+		pointHoverRadiusArray = [];
+		myWeightChartList = [];
+		todayPosition = 0;
+		isBubble = false;
+		
+	   
+   	   var startWeek = parseInt(obj.first_week);
+	   for(var i = startWeek ; i < startWeek + 7; i++){
+		   weekList.push(i);
+	   }
+	   
+       myWeightPosition  = 0;
+       weightDiffList  = obj.diff_list;
+       averageValueList = obj.avg_list;
+       
+       graph_min = obj.graph_min;
+       graph_max = obj.graph_max;
+
+       
+       for(var i = 0; i < obj.weight_list.length ;i++){
+	   		if(obj.weight_list[i].weight == null){
+	   			myWeightChartList.push(0);
+	   			pointRadiusArray.push(0);
+	   			pointHoverRadiusArray.push(0);
+	   		}else{
+
+	   			if( obj.weight_list[i].week == obj.now_week ){
+					todayPosition = i;
+					isBubble = true;
+				}
+		   		
+	   			if(obj.weight_list[i].type == "N"){
+	   				pointRadiusArray.push(0);
+	   				pointHoverRadiusArray.push(0);
+	   			}else{
+	   				pointRadiusArray.push(4);
+	   				pointHoverRadiusArray.push(4);
+	   			}
+	   			myWeightChartList.push( parseFloat(obj.weight_list[i].weight));
+	   			
+	   		}
+	   		weekList[i] = weekList[i] + "주";
+       }
+
+   }
+   function imageLoadHandler(){
+
+	   
+	   Chart.defaults.stripe = Chart.helpers.clone(Chart.defaults.line);
+	   Chart.controllers.stripe = Chart.controllers.line.extend({
+	     draw: function(ease) {
+	       var result = Chart.controllers.line.prototype.draw.apply(this, arguments);
+	      
+	       this.rendered = true;
+
+	       var helpers = Chart.helpers;
+	       var meta = this.getMeta();
+	       var yScale = this.getScaleForId(meta.yAxisID);
+	       var yScaleZeroPixel = yScale.getPixelForValue(0);
+	       var widths = this.getDataset().width;
+	       var ctx = this.chart.chart.ctx;
+
+	       for( var i in this.chart.chart.config.data.datasets ){
+
+			 if(i == 1){
+				   
+			       ctx.save();
+			       ctx.fillStyle = this.getDataset().backgroundColor;
+			       ctx.lineWidth = 1;
+			       ctx.beginPath();
+		
+			       // initialize the data and bezier control points for the top of the stripe
+			       helpers.each(meta.data, function(point, index) {
+					    	 point._view.y += (yScale.getPixelForValue(widths[index]) - yScaleZeroPixel);
+			       });
+			       Chart.controllers.line.prototype.updateBezierControlPoints.apply(this);
+		
+			       // draw the top of the stripe
+			       helpers.each(meta.data, function(point, index) {
+				         if (index === 0){
+				           ctx.moveTo(point._view.x, point._view.y);
+			     		 } else {
+					           var previous = helpers.previousItem(meta.data, index);
+					           var next = helpers.nextItem(meta.data, index);
+				
+					           Chart.elements.Line.prototype.lineToNextPoint.apply({
+					             _chart: {
+					               ctx: ctx
+					             }
+					           }, [previous, point, next, null, null])
+				         }
+			       });
+		
+			       // revert the data for the top of the stripe
+			       // initialize the data and bezier control points for the bottom of the stripe
+			       helpers.each(meta.data, function(point, index) {
+					    	 point._view.y -= 2 * (yScale.getPixelForValue(widths[index]) - yScaleZeroPixel);
+			       });
+			       // we are drawing the points in the reverse direction
+			       meta.data.reverse();
+			       Chart.controllers.line.prototype.updateBezierControlPoints.apply(this);
+		
+			       // draw the bottom of the stripe
+			       helpers.each(meta.data, function(point, index) {
+
+				         if (index === 0)
+				           ctx.lineTo(point._view.x, point._view.y);
+				         else {
+				           var previous = helpers.previousItem(meta.data, index);
+				           var next = helpers.nextItem(meta.data, index);
+			
+				           Chart.elements.Line.prototype.lineToNextPoint.apply({
+				             _chart: {
+				               ctx: ctx
+				             }
+				           }, [previous, point, next, null, null])
+				         }
+			       });
+		
+			       // revert the data for the bottom of the stripe
+			       meta.data.reverse();
+			       helpers.each(meta.data, function(point, index) {
+				    	 point._view.y += (yScale.getPixelForValue(widths[index]) - yScaleZeroPixel);
+			         
+			       });
+			       Chart.controllers.line.prototype.updateBezierControlPoints.apply(this);
+		
+			       ctx.strokeStyle = "rgba(75,192,192,0.0)";
+			       ctx.stroke();
+			       ctx.closePath();
+			       ctx.fill();
+			       ctx.restore();
+		
+			       return result;
+		       }
+	     	}
+	   }});
+
+	   Chart.pluginService.register({
+	           afterDraw: function (chart, easingDecimal) {
+
+	               var minChartX , maxChartX;
+	               var ctx = chart.chart.ctx;
+	               for( var i in chart.config.data.datasets ){
+	                   var metaData = chart.getDatasetMeta(i);
+	                   if( !metaData.hidden ){
+		                   
+	                       minChartX = metaData.data[0]._model.x;
+	                       maxChartX = metaData.data[metaData.data.length - 1]._model.x;
+	                   }
+
+	                   for( var i in chart.config.data.datasets ){
+	                       if(i == 0){
+	                           var metaData = chart.getDatasetMeta(i); //i번째 데이터 셋의 메타정보 가져오기
+
+	                           
+	                           	minChartX = metaData.data[0]._model.x;
+								maxChartX = metaData.data[metaData.data.length - 1]._model.x;
+
+								if( !metaData.hidden ){ //legend를 클릭하여 데이터 셋을 출력하지 않을 경우, metaData.hidden = true / 반대의 경우 null
+									for( var j in metaData.data ){
+	
+										<!--console.log("실제값 :" +  chart.config.data.datasets[i].data[j]);-->
+										var dataModel = metaData.data[j]._model;
+										console.log(chart.config.data.datasets[i].data[j]);
+										if(j == todayPosition ){
+											var imageX,textX;
+
+											if(j == 0){
+												imageX = dataModel.x +5;
+												textX =  dataModel.x + 20 + 5;
+												ctx.drawImage(imgObj[0], imageX , dataModel.y - 44  , 40, 30);
+											}else if(j == 6){
+												imageX = dataModel.x - 40;
+												textX =  dataModel.x - 20;
+												ctx.drawImage(imgObj[2], imageX , dataModel.y - 44  , 40, 30);
+											}else{
+												imageX =  dataModel.x - 20;
+												textX =   dataModel.x;
+												ctx.drawImage(imgObj[1], imageX , dataModel.y - 44  , 40, 30);
+											}
+											
+											ctx.font = "14px 맑은 고딕";
+											ctx.fillStyle = "white";
+											ctx.textAlign = 'center';
+											ctx.fillText(chart.config.data.datasets[i].data[j], textX, dataModel.y - 44 + 5);
+										}
+									}
+							   }
+						  }
+	                  }
+          		  }
+
+	                var yScale = chart.scales['y-axis-0'];
+				    var helpers = Chart.helpers;
+				    var chartArea = chart.chartArea;
+				    
+			
+				    // draw labels - all we do is turn on display and call scale.draw
+				    yScale.options.display = true;
+				    yScale.draw.apply(yScale, [chartArea]);
+			
+				    // draw the grid lines - simplified version of library code
+				    yScale.ctx.save();
+				    yScale.ctx.globalCompositeOperation = 'destination-over';
+				    helpers.each(yScale.ticks, function (label, index) {
+					      if (label === undefined || label === null) {
+					        return;
+					      }
+				
+					      var yLineValue = this.getPixelForTick(index);
+					      yLineValue += helpers.aliasPixel(this.ctx.lineWidth);
+				
+					      this.ctx.lineWidth = this.options.gridLines.lineWidth;
+					      this.ctx.strokeStyle = 'rgba(210,210,210,0.4)';
+					      this.ctx.beginPath();
+					      this.ctx.moveTo(minChartX, yLineValue);
+					      this.ctx.lineTo(maxChartX, yLineValue);
+					      this.ctx.stroke();
+					      
+				    }, yScale);
+				    
+				    yScale.ctx.restore();    
+				    yScale.ctx.save();
+				    yScale.ctx.fillStyle = 'white';
+				    yScale.ctx.globalCompositeOperation = 'destination-over';
+				    yScale.ctx.fillRect(0, yScale.bottom, chartArea.right, chartArea.bottom);
+				    yScale.ctx.restore();  
+	           }  
+	  });
+
+	   config = {
+		     type: 'stripe',
+		     data: {
+		       labels: weekList ,
+		       datasets: [
+					{
+						label: "나의 체중",
+					  	data: myWeightChartList,
+					  	width: [0, 0, 0, 0, 0, 0, 0],
+					    backgroundColor: "rgba(156,39,176,0.4)",
+					    borderColor:"rgba(245,0,87,0.0)",
+					    borderWidth: 0,
+					    pointBorderColor: "rgba(80,81,81,1)",
+					    pointBackgroundColor: "rgba(245,245,245,1)",
+					    pointHoverBorderWidth: 5,
+					    pointBorderWidth: 3,
+					    pointRadius: pointRadiusArray,
+					    pointHoverRadius: pointHoverRadiusArray,
+					    pointHitRadius: 8
+					},
+			   		{
+				         label: "표준 체중 ",
+				         fill: false,
+				         data: averageValueList,
+				         width: weightDiffList ,
+				         borderColor: "rgba(245,0,87,0.0)",
+				         backgroundColor: "rgba(245,0,87,0.6)",
+				         pointRadius: 0
+			        }
+		       ]
+		     },
+		     options: {
+			    responsive:false,
+			    animation:{
+					duration:0
+				},
+	    	    scales: {
+	    	    	  xAxes: [{
+						  	display:true,
+						  	gridLines: {
+								display: false,
+							    drawBorder : false
+						  	}
+					  }],
+					  yAxes: [{
+					          id: 'y-axis-0',
+					          display: true,
+					          gridLines: {
+					        	display: false,
+					          },
+					          ticks: {
+					            min: graph_min - 5,
+					            max: graph_max + 5,
+					            callback: function(value) {
+					             	return value;
+					            }
+					          }
+				      }]
+	    	    }
+	    	 }
+	   };
+	   lineChart  = new Chart(ctx, config);
+   }
+ 
+
+
+  </script>
+</body>
+  
+  
+</html>

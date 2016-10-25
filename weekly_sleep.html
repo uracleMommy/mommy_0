@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>bar char over img</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.js"></script>
+</head>
+<body>
+ 	<canvas id= "canvas" > </canvas>
+	<script>
+	var chart,chartData,ctx;
+	var graph_min,graph_max;
+	var obj;
+	var timeArray = [];
+	var isFirst = false;
+	var goodSleepList = [];
+	var badSleepList = [];
+   	function getWeekDays( param ){
+		switch ( param ){
+			case  1: 
+				return 6;
+			case  2:
+				return 0;
+			case  3:
+				return 1;
+			case  4:
+				return 2;
+			case  5:
+				return 3;
+			case  6:
+				return 4;
+			case  7:
+				return 5;
+		}
+   	}
+   	function getSleepHours( param ){
+   		min = parseFloat( param /60 );
+   	    return min.toFixed(2);
+   	}
+	function initChart( param ){
+		ctx = document.getElementById("canvas").getContext("2d");
+		obj = JSON.parse(param);
+        ctx.canvas.width = obj.width;
+        ctx.canvas.height= obj.height;
+		initData( param );
+		drawChart();
+    }
+    function initData( param ){
+    	/* text =  '{ '+
+    		    '	"result": 2, '+
+    		    '   "graph_min": 0,' +
+    		    '   "graph_max": 4,' +
+    		    '   "sleep_list": ['+
+    		    '  {' +
+    		    '	    "good_sleep": 100,' +
+    		    '    	"soso_sleep": 30,' +
+    		    '    	"bad_sleep": 70,' +
+    		    '    	"day": 5, ' +
+    		    '       "total_sleep": 200, ' +
+    		    '       "status": 1'+
+    		    '  }' +
+    		    '  ], ' +
+    		    '  "good_sleep": "1시간 40분",' +
+    		    '  "soso_sleep": "30분",' +
+    		    '  "bad_sleep": "7분",' +
+    		    '  "title_tag": "이번주",' +
+    		    '  "total_sleep": "1시간 40분" '+
+    		    '}'; */
+    	goodSleepList = [];
+    	badSleepList = [];
+
+ 		for(var i = 0; i < 7; i++){
+			goodSleepList.push(0);
+			badSleepList.push(0)
+ 	    }
+		for(var i = 0; i < obj.sleep_list.length; i++ ){
+			goodSleepList[getWeekDays( obj.sleep_list[i].day )] = getSleepHours ( parseInt( obj.sleep_list[i].good_sleep ) +  parseInt( obj.sleep_list[i].soso_sleep ) );
+			badSleepList[getWeekDays( obj.sleep_list[i].day )] = getSleepHours ( parseInt( obj.sleep_list[i].bad_sleep ) );
+	    }
+
+ 
+    }
+    function drawChart(){
+    	chart = new Chart(canvas, {
+			type: "bar",
+			data:{
+				 labels: ["월", "화", "수", "목", "금", "토", "일"],
+				 datasets: [
+								{
+				                	label: '숙면',
+				                	backgroundColor: "rgba(245,0,87,0.6)",
+				                	data: goodSleepList
+			            		}, 
+			            		{
+				                	label: '비숙면',
+				                	backgroundColor: "rgba(156,39,176,0.4)",
+				                	data: badSleepList
+			            		}
+	            			]
+				},
+			options:{
+				tooltips:{
+					enabled:false
+				},
+				responsive:true,
+				animation:{
+					duration:0
+			    },
+			    showAllTooltips:true,
+			    scales:{
+			         xAxes: [{
+	                        stacked: true,
+	                        gridLines:{
+		                        display:false,
+		                        drawBorder : false
+    						},
+							ticks:{
+								display:true,
+								stepSize:1
+ 						    },
+ 						  	barPercentage: 0.5,
+	                 }],
+	                 yAxes: [{
+	                        stacked: true,
+	                        gridLines:{
+		                        display:true,
+     							tickMarkLength: 0,
+     							zeroLineColor:'rgb(0,0,0,0.0)'
+    						},
+							ticks:{
+								display:true,
+								stepSize:1,
+								max: parseInt( obj.graph_max ),
+								min: 0
+ 						    }
+	                 }]
+				}
+		    }
+		});
+
+    }
+	</script>
+</body>
+</html>

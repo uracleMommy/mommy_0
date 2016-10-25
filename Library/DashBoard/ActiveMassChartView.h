@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ActiveMassChartView : UITableViewCell
+@interface ActiveMassChartView : UITableViewCell<UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *containerView;
+
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+
+@property (strong, nonatomic) NSString *functionJson;
 
 @end

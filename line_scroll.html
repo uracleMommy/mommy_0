@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>맥박 그래프 </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.js"></script>
+  <style>
+    .chartWrapper{position: relative;}
+    .chartAreaWrapper{width: 100%; overflow-x: auto; }
+    .chartWrapper > canvas {
+      position: absolute;
+      left: 0;
+      top: 0;
+      pointer-events:none;
+    }
+    .y-axis{background-color: #fff;}
+  </style>
+</head>
+<body>
+  <div class="chartWrapper">
+    <div class="chartAreaWrapper">
+      <canvas id="canvas" width="2500"  ></canvas>
+    </div>
+    <canvas id="y" class="y-axis" width="0" ></canvas>
+  </div>
+  <script>
+  var originalLineDraw;
+   function rand(s, e, c){ // s ~ e까지의 정수 중 랜덤한 정수 c개 배열로 리턴
+		var arr = [];
+		for( var i=0; i<c; i++ ){
+			arr.push(Math.floor((Math.random() * (e-s+1)) + s));
+		}
+		return arr;
+	}
+	function labels(){
+		var arr = [];
+		for( var i=0; i<50; i++ ){
+			if(i%5 == 0){
+				arr.push(i);
+			}else{
+				arr.push("");
+			}
+
+		}
+		return arr;
+	}
+	var isFirst = false;
+	function initChart(){
+    var ctx = document.getElementById("canvas").getContext("2d");
+    ctx.canvas.height=  290;
+    originalLineDraw = Chart.controllers.line.prototype.draw;
+    Chart.helpers.extend(Chart.controllers.line.prototype, {
+    	  draw : function() {
+    	    if(isFirst == false){
+              var chart = this.chart;
+              var yHighlightRange = chart.config.data.yHighlightRange;
+              if (yHighlightRange !== undefined) {
+                var ctx = chart.chart.ctx;
+                var yRangeBegin = yHighlightRange.begin;
+                var yRangeEnd = yHighlightRange.end;
+
+                var xaxis = chart.scales['x-axis-0'];
+                var yaxis = chart.scales['y-axis-0'];
+
+                var yRangeBeginPixel = yaxis.getPixelForValue(yRangeBegin);
+                var yRangeEndPixel = yaxis.getPixelForValue(yRangeEnd);
+
+                ctx.save();
+                ctx.fillStyle = 'rgba(254, 240, 237, 0.5)';
+                ctx.fillRect(xaxis.left, Math.min(yRangeBeginPixel, yRangeEndPixel), xaxis.right - xaxis.left, Math.max(yRangeBeginPixel, yRangeEndPixel) - Math.min(yRangeBeginPixel, yRangeEndPixel));
+                ctx.restore();
+                isFirst = true;
+              }
+    	    }
+    	    // Apply the original draw function for the line chart.
+    	    originalLineDraw.apply(this, arguments);
+    	    console.log("어떻게 불리나.");
+    	  }
+    	});
+        var chart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: labels(),
+            datasets: [
+                {
+
+                	data: rand(70,160,50),
+				    borderColor: "#ec507a",
+				    fill:false,
+			        tension:0.4	,
+			        pointRadius:0,
+			        pointBorderColor:"rgba(255,0,0,0.5)",
+			        pointBackgroundColor:"rgba(255,0,0,0.5)",
+					borderWidth: 2,
+
+                },
+                {
+
+                	data: rand(70,160,50),
+				    borderColor: "#59c2e6",
+				    fill:false,
+			        tension:0.4	,
+			        pointRadius:0,
+			        pointBorderColor:"rgba(255,0,0,0.5)",
+			        pointBackgroundColor:"rgba(255,0,0,0.5)",
+					borderWidth: 2,
+
+                }
+            ],
+            yHighlightRange : {
+                begin: 130,
+                end: 150
+            }
+          },
+          options: {
+				legend:{
+					display:false,
+				},
+				scales: {
+					xAxes: [{
+						gridLines: {
+							display: false
+						},
+						ticks: {
+							fontColor:"#999999",
+							fontSize:18
+			             }
+					}],
+					yAxes: [{
+						gridLines:{
+							display:true
+					    },
+						ticks: {
+							display:true,
+							beginAtZero: true, // Y축 0부터 시작
+							min: 65,  //그래프 최소
+							max: 160, //그래프 최대
+							fontColor:"#999999",
+							fontSize:18,
+							stepSize:5,
+							callback: function(value, index, values) {
+								return (value % 10 == 0)? value : "";
+							}
+						}
+					}]
+				},
+				responsive: false,
+				animation:{
+					duration:0
+			    }
+
+			},
+
+        });
+
+
+        }
+  </script>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>맥박 그래프 </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.js"></script>
+  <style>
+    .chartWrapper{position: relative;}
+    .chartAreaWrapper{width: 100%; overflow-x: auto; }
+    .chartWrapper > canvas {
+      position: absolute;
+      left: 0;
+      top: 0;
+      pointer-events:none;
+    }
+    .y-axis{background-color: #fff;}
+  </style>
+</head>
+<body>
+  <div class="chartWrapper">
+    <div class="chartAreaWrapper">
+      <canvas id="canvas" width="2500"  ></canvas>
+    </div>
+    <canvas id="y" class="y-axis" width="0" ></canvas>
+  </div>
+  <script>
+  var originalLineDraw;
+  var obj;
+  var graph_min,graph_max;
+  var rec_max_pulse, rec_min_pulse;
+  var start_time, end_time;
+  var timeList = [];
+  var pulseList  = [];
+  var isFirst = false;
+  var chart;
+  function initChart(param){
+	   ctx = document.getElementById("canvas").getContext("2d");
+	   initData();
+	   initResources();
+  }
+  function initData( text ){
+	  text = '{ "result": { ' +
+		        ' "width" : 2500, ' +
+		        ' "height": 350,  ' +
+			    ' "max_pulse": 113, ' +
+			    ' "rec_max_pulse": 145, ' +
+			    ' "start_time": "0723", ' +
+			    ' "graph_min": 80, ' +
+			    ' "graph_max": 150,' +
+			    ' "avg_pulse": 101,' +
+			    ' "rec_min_pulse": 130,' +
+			    ' "graph_list":[' +
+			    '  {  ' +
+			    '    "pulse": 84, ' +
+			    '    "step": 20, ' +
+			    '    "time": "23"' +
+			    '  },' +
+			    '  {' +
+			    '    "pulse": 88,'+
+			    '    "step":  40,' +
+			    '    "time": "24"' +
+			    '  },'+
+			    '  {' +
+			    '    "pulse": 89,'+
+			    '    "step": 40,' +
+			    '    "time": "25"'+
+			    '  },'+
+			    '  {' +
+			    '    "pulse": 91,'+
+			    '    "step": 40,' +
+			    '    "time": "26" ' +
+			    '  },' +
+			    '  {' +
+			    '    "pulse": 95,' +
+			    '    "step": 40,' +
+			    '    "time": "27"' +
+			    '  },' +
+			    '  {' +
+			    '    "pulse": 99, '+
+			    '    "step": 40, '+
+			    '    "time": "28" '+
+			    '  },' +
+			    '  {' +
+			    '    "pulse": 108,'+
+			    '    "step": 40,' +
+			    '    "time": "29"' +
+			    '  },'+
+			    '  {'+
+			    '    "pulse": 109,' +
+			    '    "step": 40,'  +
+			    '    "time": "30"' +
+			    ' },' +
+			    ' {' +
+			    '     "pulse": 111,' +
+			    '     "step": 40, ' +
+			    '     "time": "31"' +
+			    '  },' +
+			    '  {' +
+			    '     "pulse": 112, '+
+			    '     "step": 40,' +
+			    '      "time": "32"' +
+			    '  },'+
+			    ' {' +
+			    '    "pulse": 112, '+
+			    '    "step": 40,' +
+			    '    "time": "33"' +
+			    '  },'+
+			    '  { '+
+			    '    "pulse": 113,'+
+			    '    "step": 40,' +
+			    '    "time": "34"' +
+			    '  },' +
+			    '  {' +
+			    '    "pulse": 110,' +
+			    '    "step": 40,' +
+			    '    "time": "35" '+
+			    '  },' +
+			    '  { ' +
+			    '    "pulse": 109,' +
+			    '    "step": 40,' +
+			    '    "time": "36" ' +
+			    '  },' +
+			    '  {' +
+			    '    "pulse": 105,' +
+			    '    "step": 40, ' +
+			    '    "time": "37"' +
+			    '  },'+
+			    '  {' +
+			    '    "pulse": 102,' +
+			    '    "step": 40,' +
+			    '     "time": "38"' +
+			    '  },'+
+			    ' {'+
+			    '    "pulse": 100,' +
+			    '     "step": 40,' +
+			    '     "time": "39"' +
+			    '  },' +
+			    '  {' + 
+			    '    "pulse": 97,' +
+			    '    "step": 40,' +
+			    '    "time": "40"' +
+			    '  },' +
+			    '  {' +
+			    '    "pulse": 95,'  +
+			    '    "step": 40,' +
+			    '    "time": "41"' +
+			    '  }' + 
+			    '],' +
+			    '"end_time": "0741",' +
+			    '"step": 740'+
+		  '}}';
+
+	   obj = JSON.parse(text);
+	   ctx.canvas.height= obj.result.height; 
+
+	   start_time = obj.result.start_time.substring(0,2)+':'+ obj.result.start_time.substring(2,4) ;
+	   end_time = obj.result.end_time.substring(0,2)+':'+ obj.result.end_time.substring(2,4);
+	   
+	   graph_min = parseInt( obj.result.graph_min ); 
+	   graph_max = parseInt( obj.result.graph_max );
+	   rec_max_pulse = parseInt( obj.result.rec_max_pulse );
+	   rec_min_pulse = parseInt( obj.result.rec_min_pulse );
+
+	   timeList = [];
+	   pulseList= [];
+
+	   for(var i = 0; i < obj.result.graph_list.length; i++){
+		   if(i == 0){
+			   timeList.push( start_time );
+		   }else if( i == obj.result.graph_list.length - 1 ){
+			   timeList.push( end_time );
+		   }else{
+			   timeList.push( parseInt( obj.result.graph_list[i].time ) );
+		   }
+		   pulseList.push( parseInt (  obj.result.graph_list[i].pulse ) );
+	   }
+  }
+  function initResources(){
+       imageLoadHandler();
+  }
+  
+  function imageLoadHandler(){
+	  originalLineDraw = Chart.controllers.line.prototype.draw;
+	    Chart.helpers.extend(Chart.controllers.line.prototype, {
+	    	  draw : function() {
+	    	    if(isFirst == false){
+	              var chart = this.chart;
+	              var yHighlightRange = chart.config.data.yHighlightRange;
+	              if (yHighlightRange !== undefined) {
+	                var ctx = chart.chart.ctx;
+	                var yRangeBegin = yHighlightRange.begin;
+	                var yRangeEnd = yHighlightRange.end;
+
+	                var xaxis = chart.scales['x-axis-0'];
+	                var yaxis = chart.scales['y-axis-0'];
+
+	                var yRangeBeginPixel = yaxis.getPixelForValue(yRangeBegin);
+	                var yRangeEndPixel = yaxis.getPixelForValue(yRangeEnd);
+
+	                ctx.save();
+	                ctx.fillStyle = 'rgba(254, 240, 237, 0.5)';
+	                ctx.fillRect(xaxis.left, Math.min(yRangeBeginPixel, yRangeEndPixel), xaxis.right - xaxis.left, Math.max(yRangeBeginPixel, yRangeEndPixel) - Math.min(yRangeBeginPixel, yRangeEndPixel));
+	                ctx.restore();
+	                isFirst = true;
+	              }
+	    	    }
+	    	    originalLineDraw.apply(this, arguments);
+	    	  }
+	    	});
+	        chart = new Chart(ctx, {
+	          type: 'line',
+	          data: {
+	            labels: timeList,
+	            datasets: [
+			                {
+			                	data: pulseList,
+							    borderColor: "#ec507a",
+							    fill:false,
+						        tension:0.4	,
+						        pointRadius:0,
+						        pointBorderColor:"rgba(255,0,0,0.5)",
+						        pointBackgroundColor:"rgba(255,0,0,0.5)",
+								borderWidth: 2,
+			                }/* ,
+			                {
+		
+			                	data: rand(70,160,50),
+							    borderColor: "#59c2e6",
+							    fill:false,
+						        tension:0.4	,
+						        pointRadius:0,
+						        pointBorderColor:"rgba(255,0,0,0.5)",
+						        pointBackgroundColor:"rgba(255,0,0,0.5)",
+								borderWidth: 2,
+		
+			                } */
+	            		 ],
+	            yHighlightRange : {
+	                begin: rec_min_pulse,
+	                end: rec_max_pulse
+	            }
+	          },
+	          options: {
+					legend:{
+						display:false,
+					},
+					scales: {
+						xAxes: [{
+							gridLines: {
+								display: false
+							},
+							ticks: {
+								fontColor:"#999999",
+								fontSize:14
+				             }
+						}],
+						yAxes: [{
+							gridLines:{
+								display:true,
+								tickMarkLength: 0
+						    },
+							ticks: {
+								display:true,
+								beginAtZero: true, // Y축 0부터 시작
+								min: graph_min,  //그래프 최소
+								max: graph_max, //그래프 최대
+								fontColor:"#999999",
+								fontSize:14,
+								stepSize:5,
+								callback: function(value, index, values) {
+									return (value % 10 == 0)? value : "";
+								}
+							}
+						}]
+					},
+					responsive: false,
+					animation:{
+						duration:0
+				    }
+				},
+
+	        });
+
+  }
+  </script>
+</body>
+</html>

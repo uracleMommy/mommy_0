@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>bar char over img</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.js"></script>
+	<script>
+
+	</script>
+</head>
+<body leftmargin="0" rightmargin="0" bottommargin="0">
+ 	<canvas id= "canvas" > </canvas>
+ 	<script>
+	    var minX,minY,maxX,maxY;
+		var heartWidthRemain = 10;
+		var heartMap = new Map();
+		var chart;
+		var timeArray;
+		var gradient;
+		var ctx;
+		var obj;
+		var stepList = [];
+		var chartStepList = [];
+		var heartExist =  [];
+		var timeList =  [];
+		var config;
+		var chartData;
+		var isFirst = false;
+
+		function initResources(){
+	       //img = new Image();
+		   //img.src = "./img/contents_graph_btn_heart.png";
+		   //img.onload = imageLoadHandler;
+	    }
+	   	function initChart(param){
+            alert('메롱');
+		   ctx = document.getElementById("canvas").getContext("2d");
+		   timeArray = [];
+		   gradient = ctx.createLinearGradient(0, 0, 0, 400);
+		   gradient.addColorStop(0,  '#FFDA72');
+		   gradient.addColorStop(1,  '#FBBB4D');
+	 	   initData( param );
+		   initResources();
+		   
+	   	 }
+	    function initData( param ){
+
+	    	var param =  '{ ' +
+			'  "width":"500",'+
+			'  "height":"300",'+
+		    '  "rec_step": "2000~4000", '+
+		    '  "rec_cal": "72.4~144.7", '+
+		    '  "step_percent": 162,' +
+		    '  "graph_max": 12000, '+
+		    '  "exec_percent": 7, '+
+		    '  "title_tag": "2016-10-06", '+
+		    '  "cal": 235.2,' +
+		    '  "cal_percent": 162, '+
+		    '  "step_list": [ '+
+		    '  { ' +
+		    '     "hour": "10",' +
+		    '     "step": 11000,' +
+		    '     "exec": 0 ' +    		      
+		    '  },' +
+		    '  { ' +
+		    '     "hour": "12",' +
+		    '     "step": 1300,' +
+		    '     "exec": 0 ' +
+		    '  },' +
+		    '  { ' +
+		    '      "hour": "11",' +
+		    '      "step": 4360,' +
+		    '      "exec": 0 ' +
+		    '  },'+
+		    '  { '+
+		    '      "hour": "23",' +
+		    '      "step": 5600,' +
+		    '      "exec": 1 '+
+		    '  }'+
+		    ' ],'+
+		    '"exec_time": "1시간 53분",' +
+		    '"step": 6500,' +
+		    '"comment": "다리 스트레칭으로 피로 싹~",' +
+		    '"result_code": 0 ' +
+		   '}';
+		   
+	       obj = JSON.parse(param);
+	  	   ctx.canvas.height= obj.height;
+	  	   ctx.canvas.width = obj.width;
+	      
+		   stepList = [];
+		   heartExist =  [];
+		   timeList = [];
+		   
+		   for(var i = 0; i < 24; i++){
+				timeList.push(i);
+				stepList.push(0);
+				heartExist.push(0);
+		   }
+		  
+		   
+		   for(var i = 0; i < obj.step_list.length; i++){
+				if( parseInt ( obj.step_list[i].step) > 0){
+					stepList [ parseInt ( obj.step_list[i].hour ) ] = obj.step_list[i].step;
+				}
+				if( parseInt (obj.step_list[i].exec ) > 0 ){
+					heartExist [ parseInt ( obj.step_list[i].hour ) ] = 1;
+				}
+		   }
+
+		   chartData = {
+				labels: timeList ,
+				datasets: [
+					{
+						label: '1번',
+						data: stepList,
+						backgroundColor: gradient,
+						hoverBackgroundColor: gradient
+					}
+				]
+			};
+	        	 	
+	    }
+		function rand(s, e, c){ // s ~ e까지의 정수 중 랜덤한 정수 c개 배열로 리턴
+			var arr = [];
+			for( var i=0; i <24; i++ ){
+				arr.push(Math.floor((Math.random() * (e-s+1)) + s));
+			}
+			return arr;
+		}
+		function labels(){
+			var arr = [];
+			for( var i=0; i<23; i++ ){
+				if(i%4 == 0){
+					arr.push(i);
+				}else{
+					arr.push("");
+			    }
+			}
+			return arr;
+		}
+		function imageLoadHandler(){
+			
+			Chart.pluginService.register({
+				afterDraw: function (chart, easing) {
+					var ctx = chart.chart.ctx;
+					for( var i in chart.config.data.datasets ){
+						var metaData = chart.getDatasetMeta(i); //i번째 데이터 셋의 메타정보 가져오기
+						if( !metaData.hidden ){ //legend를 클릭하여 데이터 셋을 출력하지 않을 경우, metaData.hidden = true / 반대의 경우 null
+                            /*
+							for( var j in metaData.data ){
+								var dataModel = metaData.data[j]._model;
+								if(heartExist[j] == 1){
+									ctx.drawImage(img, dataModel.x - (dataModel.width+ heartWidthRemain) /2, dataModel.y - (dataModel.width+ heartWidthRemain) - 5, dataModel.width + heartWidthRemain, dataModel.width + heartWidthRemain);	//img, x, y, width, height
+								}
+							}*/
+						}
+					}
+				 }
+			});
+			
+			config = {
+				type: "bar",
+				data:chartData,
+				options:{
+					onClick: handleClick,
+					legend:{
+						display:false,
+					},
+					tooltips:{
+						enabled:false
+					},
+					responsive:true,
+					animation:{
+						duration:0
+					},
+					scales:{
+						xAxes: [{
+							  id: 'x-axis-0',
+							  	display:true,
+							  	gridLines: {
+									display: false,
+								    drawBorder : false
+							  	},
+							  	ticks: {
+									display:true,
+									fontColor:'#999999',
+									fontSize:10,
+									min: 0,
+									max: 150,
+									stepSize: 10,
+									barPercentage: 1,
+									maxRotation:0,
+									callback: function(value, index, values) {
+										return (index %4 == 0)? value : "";
+									}
+							  	}
+						}],
+						 yAxes: [{
+								ticks: {
+									display:true,
+									fontColor:'#999999',
+									fontSize:8,
+									min: 0,
+									max: obj.graph_max + 1000,
+									stepSize:1000,
+									barPercentage: 0.8,
+									callback:function(value,index,values){
+										return (value %  20 == 0 )? value: "";
+									}
+								},
+								gridLines:{
+									display:true,
+	     							tickMarkLength: 0,
+	     							zeroLineColor:'rgb(0,0,0,0.0)'
+	    						}
+			             }]
+
+					}
+				}
+			};
+			chart = new Chart(canvas, config);
+		}
+		function handleClick(evt){
+	   		var activeElement = chart.getElementAtEvent(evt);
+	   		if(activeElement.length > 0 ){
+	   			console.log("DKLog", "찍히는 값이 뭐야  : " + config.data.labels[activeElement[0]._index]);
+	   			window.android.setMessage(config.data.labels[activeElement[0]._index]);
+	   		}
+	   	}
+ 	</script>
+</body>
+</html>
