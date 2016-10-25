@@ -11,10 +11,14 @@
 #import "WeightChartModel.h"
 #import "CommonViewController.h"
 #import <LifesenseBluetooth/LSBLEDeviceManager.h>
+#import <LifesenseBluetooth/LSBLEInfoManager.h>
+#import <LifesenseBluetooth/LSBleConnector.h>
+#import <LifesenseBluetooth/LSSleepRecord.h>
+#import <CoreBluetooth/CoreBluetooth.h>
 
-@interface WeightChartViewController : CommonViewController<DZNSegmentedControlDelegate>
+@interface WeightChartViewController : CommonViewController<DZNSegmentedControlDelegate, LSBleDataReceiveDelegate>
 
-@property (nonatomic,strong)LSBLEDeviceManager *lsBleManager;
+@property (nonatomic,strong) LSBLEDeviceManager *lsBleManager;
 
 @property (weak, nonatomic) IBOutlet DZNSegmentedControl *dayWeekTypeSegment;
 
@@ -22,6 +26,5 @@
 
 @property (strong, nonatomic) WeightChartModel *weightChartModel;
 
-- (IBAction)closeModal:(id)sender;
 
 @end

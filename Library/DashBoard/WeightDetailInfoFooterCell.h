@@ -10,4 +10,6 @@
 
 @interface WeightDetailInfoFooterCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIView *footerView;
+
 @end

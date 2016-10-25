@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 Nice Boy LLC. All rights reserved.
 //
 
-@import UIKit;
+//@import UIKit;
+#import <UIKit/UIKit.h>
 
 #import "JTSImageInfo.h"
 

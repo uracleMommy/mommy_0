@@ -13,7 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (strong, nonatomic) NSArray *arrayList;
+@property (strong, nonatomic) NSMutableArray *arrayList;
 
 @property (strong, nonatomic) MoreEquipmentListModel *moreEquipmentListModel;
 

@@ -8,11 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "CommonViewController.h"
+#import <LifesenseBluetooth/LSBLEDeviceManager.h>
+#import <LifesenseBluetooth/LSBLEInfoManager.h>
+#import <LifesenseBluetooth/LSBleConnector.h>
+#import <LifesenseBluetooth/LSSleepRecord.h>
+#import <CoreBluetooth/CoreBluetooth.h>
 
-@interface MoreEquipmentParingViewController : CommonViewController
+@interface MoreEquipmentParingViewController : CommonViewController<LSBlePairingDelegate>
 
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 
 @property (weak, nonatomic) IBOutlet UIImageView *equipmentImageView;
+
+@property (nonatomic,strong) LSBLEDeviceManager *lsBleManager;
+
+@property (strong, nonatomic) LSDeviceInfo *lsDeviceInfo;
 
 @end

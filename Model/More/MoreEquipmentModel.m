@@ -46,6 +46,10 @@
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
+    NSDictionary *dic = _arrayList[indexPath.row];
+    cell.lblDeviceName.text = dic[@"deviceName"];
+    cell.lblModelName.text = dic[@"modelName"];
+    
     CAShapeLayer *firstShapeLayer = [CAShapeLayer layer];
     [firstShapeLayer setBounds:cell.bounds];
     [firstShapeLayer setPosition:cell.center];
@@ -201,6 +205,7 @@
     
     if (self = [super init]) {
         
+        _arrayList = [[NSMutableArray alloc] init];
     }
     
     return self;
@@ -213,7 +218,7 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 10;
+    return _arrayList.count;
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

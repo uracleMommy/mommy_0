@@ -8,8 +8,6 @@
 
 #import "MommyRequest.h"
 
-static NSString *_mainDomain = @"http://211.241.199.153:9100/medisolution"; // 도메인 주소
-
 @implementation MommyRequest
 
 static MommyRequest* instanceMommyRequest;
@@ -598,6 +596,96 @@ static MommyRequest* instanceMommyRequest;
     }] resume];
 }
 
+#pragma mark 차트 관련 서비스 호출
+- (void) mommyChartApiService : (MommyChartWebServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock {
+    
+    NSString *requestUrl = [[MommyHttpUrls sharedInstance] requestChartInfoUrlType:serviceType];
+    
+    NSURL *url = [NSURL URLWithString:requestUrl];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"POST";
+    NSString *contentType = @"application/json";
+    NSString *authorization = [NSString stringWithFormat:@"Bearer %@", authKey];
+    NSMutableData *body = [NSMutableData data];
+    [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
+    [request addValue:authorization forHTTPHeaderField:@"Authorization"];
+    
+    // dictionary -> json
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:parameters
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    [body appendData:[jsonString dataUsingEncoding:NSUTF8StringEncoding]];
+    [request setHTTPBody:body];
+    
+    
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    [[session dataTaskWithRequest:request completionHandler:^(NSData *data,
+                                                              NSURLResponse *response,
+                                                              NSError *error) {
+        
+        if (error != nil) {
+            
+            errorBlock(error);
+            return;
+        }
+        
+        NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+        successBlock(jsonDic);
+        
+        
+    }] resume];
+}
+
+#pragma mark 금주의 프로그램 관련 서비스 호출
+- (void) mommyWeekProgramApiService : (MommyWeekProgramServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock {
+    
+    NSString *requestUrl = [[MommyHttpUrls sharedInstance] requestWeekProgramUrlType:serviceType];
+    
+    NSURL *url = [NSURL URLWithString:requestUrl];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"POST";
+    NSString *contentType = @"application/json";
+    NSString *authorization = [NSString stringWithFormat:@"Bearer %@", authKey];
+    NSMutableData *body = [NSMutableData data];
+    [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
+    [request addValue:authorization forHTTPHeaderField:@"Authorization"];
+    
+    // dictionary -> json
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:parameters
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    [body appendData:[jsonString dataUsingEncoding:NSUTF8StringEncoding]];
+    [request setHTTPBody:body];
+    
+    
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    [[session dataTaskWithRequest:request completionHandler:^(NSData *data,
+                                                              NSURLResponse *response,
+                                                              NSError *error) {
+        
+        if (error != nil) {
+            
+            errorBlock(error);
+            return;
+        }
+        
+        NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+        successBlock(jsonDic);
+        
+        
+    }] resume];
+}
+
 #pragma mark 이미지 업로드 서비스 호출
 - (void) mommyImageUploadApiService : (UIImage *) image success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock {
     
@@ -638,7 +726,6 @@ static MommyRequest* instanceMommyRequest;
         
     }] resume];
 }
-
 
 @end
 
@@ -987,6 +1074,62 @@ static MommyHttpUrls* instanceMommyHttpUrls;
             break;
         case BloodPressureDelete:
             return [_mainDomain stringByAppendingString: @"/api/pressure/delete"];
+            break;
+            
+        default:
+            return @"";
+            break;
+    }
+}
+
+#pragma mark 차트 관련 리퀘스트 주소 리턴 메서드
+- (NSString *) requestChartInfoUrlType : (MommyChartWebServiceType) serviceType {
+    
+    switch (serviceType) {
+            
+        case ChartWeightDailyGraph:
+            return [_mainDomain stringByAppendingString: @"/api/weight/daily-graph"];
+            break;
+            
+        case ChartWeightWeeklyGraph:
+            return [_mainDomain stringByAppendingString: @"/api/weight/weekly-graph"];
+            break;
+            
+        case ChartWeightLogInsert:
+            return [_mainDomain stringByAppendingString: @"/api/weight/insert"];
+            break;
+            
+        default:
+            return @"";
+            break;
+    }
+}
+
+- (NSString *) requestWeekProgramUrlType : (MommyWeekProgramServiceType) serviceType {
+    
+    switch (serviceType) {
+        case WeekProgramHealthList:
+            return [_mainDomain stringByAppendingString: @"/api/program/health/list"];
+            break;
+            
+        case WeekProgramSportsList:
+            return [_mainDomain stringByAppendingString: @"/api/program/sports/list"];
+            break;
+            
+        case WeekProgramNutritionList:
+            return [_mainDomain stringByAppendingString: @"/api/program/nutrition/list"];
+            break;
+            
+        case WeekProgramHealthDetailInfo:
+            return [_mainDomain stringByAppendingString: @"/api/program/health/detail"];
+            break;
+            
+        case WeekProgramSportsDetailInfo:
+            return [_mainDomain stringByAppendingString: @"/api/program/sports/detail"];
+            break;
+            
+        case WeekProgramNutritionDetailInfo:
+            return [_mainDomain stringByAppendingString: @"/api/program/nutrition/detail"];
             break;
             
         default:

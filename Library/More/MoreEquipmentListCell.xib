@@ -52,7 +52,7 @@
                                 <color key="textColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15분전에 동기화 됨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACZ-mr-YVU">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15분전에 동기화 됨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACZ-mr-YVU">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="11" id="gor-86-LZJ"/>
                                 </constraints>
@@ -66,8 +66,11 @@
                                     <constraint firstAttribute="height" constant="30" id="o1z-P0-Hkh"/>
                                 </constraints>
                                 <state key="normal" image="input_btn_del"/>
+                                <connections>
+                                    <action selector="goUnPairing:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="37f-4b-Ujj"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wlb-bH-KX8">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wlb-bH-KX8">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ULW-QE-FNI"/>
                                     <constraint firstAttribute="width" constant="30" id="rft-VQ-fzO"/>
@@ -108,7 +111,9 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="containerView" destination="If6-BG-hOJ" id="IYU-5t-qQS"/>
+                <outlet property="lblDeviceName" destination="era-4B-bqn" id="eZ3-5S-OzA"/>
                 <outlet property="lblDotLine" destination="62m-YO-Z7h" id="XK5-Xy-pg5"/>
+                <outlet property="lblModelName" destination="Khj-aS-ymW" id="86K-sR-OSQ"/>
             </connections>
             <point key="canvasLocation" x="-284" y="-188"/>
         </tableViewCell>

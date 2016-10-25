@@ -19,7 +19,6 @@
 
 @property (strong, nonatomic) ActiveMassModel *activeMassModel;
 
-- (IBAction)closeModal:(id)sender;
 
 - (IBAction)goExerciseTimer:(id)sender;
 

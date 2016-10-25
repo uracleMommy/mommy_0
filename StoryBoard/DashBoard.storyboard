@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="qcd-kp-tux">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="qcd-kp-tux">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -74,7 +74,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="금주의 프로그램"/>
                                 <connections>
-                                    <segue destination="GFT-SH-6XH" kind="modal" id="WlM-tR-g57"/>
+                                    <action selector="WeekProgramAction:" destination="qcd-kp-tux" eventType="touchUpInside" id="IGZ-Bh-T4e"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGz-gG-eAb">
@@ -174,6 +174,7 @@
                         <outlet property="secondLedBox" destination="LTv-S5-2JX" id="bFv-Mn-snD"/>
                         <outlet property="thirdLedBox" destination="GHZ-eN-sMz" id="V3F-S8-QkI"/>
                         <segue destination="F5w-hf-GR2" kind="modal" identifier="goQuestionModal" id="fUJ-wV-Sxy"/>
+                        <segue destination="GFT-SH-6XH" kind="modal" identifier="goModalWeekProgramSegue" id="D08-TX-BXh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P7C-Ce-DXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -204,7 +205,7 @@
         <scene sceneID="vlU-ru-4KT">
             <objects>
                 <navigationController id="GFT-SH-6XH" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sO4-CD-Lj3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="sO4-CD-Lj3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -278,11 +279,87 @@
             </objects>
             <point key="canvasLocation" x="986" y="206"/>
         </scene>
+        <!--키워드 검색-->
+        <scene sceneID="wRJ-Ij-9yb">
+            <objects>
+                <viewController id="Xfb-6f-PFe" customClass="WeekProgramSearchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5nD-Wn-oM0"/>
+                        <viewControllerLayoutGuide type="bottom" id="ugg-5R-7BC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DWr-RA-lQR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="프로그램 키워드를 입력해 주세요." showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kya-yE-r7f">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="mik-Rh-qQO"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Xfb-6f-PFe" id="U0o-ev-7O3"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U1c-xc-gD4">
+                                <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="U1c-xc-gD4" firstAttribute="leading" secondItem="DWr-RA-lQR" secondAttribute="leading" id="PD4-Ir-K3X"/>
+                            <constraint firstItem="ugg-5R-7BC" firstAttribute="top" secondItem="U1c-xc-gD4" secondAttribute="bottom" constant="4" id="TLR-74-ynv"/>
+                            <constraint firstItem="kya-yE-r7f" firstAttribute="leading" secondItem="DWr-RA-lQR" secondAttribute="leading" id="fQf-KP-6Wk"/>
+                            <constraint firstItem="U1c-xc-gD4" firstAttribute="top" secondItem="kya-yE-r7f" secondAttribute="bottom" constant="4" id="oM1-k5-kZR"/>
+                            <constraint firstItem="kya-yE-r7f" firstAttribute="top" secondItem="5nD-Wn-oM0" secondAttribute="bottom" id="stl-bz-9Ww"/>
+                            <constraint firstAttribute="trailing" secondItem="U1c-xc-gD4" secondAttribute="trailing" id="tU5-p4-zpg"/>
+                            <constraint firstAttribute="trailing" secondItem="kya-yE-r7f" secondAttribute="trailing" id="wKS-a7-U2E"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="키워드 검색" id="iur-Rg-6YO"/>
+                    <connections>
+                        <outlet property="searchView" destination="kya-yE-r7f" id="Giy-kl-d2f"/>
+                        <outlet property="tableView" destination="U1c-xc-gD4" id="aVa-rb-eor"/>
+                        <segue destination="VXl-de-y1J" kind="push" identifier="weekProgramDetailSegue" id="UnI-Wx-N4O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zZt-vE-5YL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1490" y="937"/>
+        </scene>
+        <!--상세정보-->
+        <scene sceneID="yY7-aK-Uxd">
+            <objects>
+                <viewController id="VXl-de-y1J" customClass="WeekProgramDetailController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p0t-aZ-iA6"/>
+                        <viewControllerLayoutGuide type="bottom" id="NRh-WD-vRf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WIE-hq-4c0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kEu-1z-XSF">
+                                <frame key="frameInset" minY="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="상세정보" id="q3g-hC-nA9"/>
+                    <connections>
+                        <outlet property="webView" destination="kEu-1z-XSF" id="p27-0j-aqf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mS4-GP-Wbt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1477" y="1760"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="uKo-aJ-KXU">
             <objects>
                 <navigationController id="2V9-q2-tdq" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9TX-8c-t8a">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="9TX-8c-t8a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -293,7 +370,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LSR-aq-wUA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1385" y="937"/>
+            <point key="canvasLocation" x="2002" y="997"/>
         </scene>
         <!--체중-->
         <scene sceneID="a0r-x5-Gf9">
@@ -312,7 +389,7 @@
                                     <constraint firstAttribute="height" constant="44" id="zRr-Ox-3sb"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eFE-CN-IWh">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eFE-CN-IWh">
                                 <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
@@ -327,13 +404,7 @@
                             <constraint firstAttribute="trailing" secondItem="t0R-Gy-ts6" secondAttribute="trailing" id="tsh-Kx-hXt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="체중" id="WUF-KA-wp2">
-                        <barButtonItem key="rightBarButtonItem" title="닫기" id="AuX-Tp-Rr7">
-                            <connections>
-                                <action selector="closeModal:" destination="JU4-gk-Ypu" id="BP4-ej-hWd"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="체중" id="WUF-KA-wp2"/>
                     <connections>
                         <outlet property="dayWeekTypeSegment" destination="t0R-Gy-ts6" id="rno-fp-RIz"/>
                         <outlet property="tableView" destination="eFE-CN-IWh" id="97Z-Cc-0fd"/>
@@ -341,14 +412,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ge-7M-Aq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1828" y="937"/>
+            <point key="canvasLocation" x="2445" y="997"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="W5u-s9-OYF">
             <objects>
                 <navigationController id="F5w-hf-GR2" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Tb7-0Q-BHq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Tb7-0Q-BHq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -448,7 +519,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drd-dz-v14" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1333" y="1723"/>
+            <point key="canvasLocation" x="1011" y="2438"/>
         </scene>
         <!--활동량-->
         <scene sceneID="sCL-xf-XTx">
@@ -499,13 +570,7 @@
                             <constraint firstItem="jPi-4n-daG" firstAttribute="leading" secondItem="FnC-Ol-q6S" secondAttribute="leading" id="vfY-Xa-v3e"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="활동량" id="yHs-e9-gTa">
-                        <barButtonItem key="rightBarButtonItem" title="닫기" id="DOc-lX-Z3A">
-                            <connections>
-                                <action selector="closeModal:" destination="xT4-48-OwY" id="gw9-mn-9gW"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="활동량" id="yHs-e9-gTa"/>
                     <connections>
                         <outlet property="dayWeekTypeSegment" destination="jPi-4n-daG" id="bAP-ca-8au"/>
                         <outlet property="tableView" destination="USI-fU-PAG" id="Nc9-Ap-Iv0"/>
@@ -513,14 +578,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pz4-Lq-4z0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1774" y="1723"/>
+            <point key="canvasLocation" x="1541" y="2410"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XlX-vV-YfE">
             <objects>
                 <navigationController id="pEE-u8-grd" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Eqv-a1-YTT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Eqv-a1-YTT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -534,7 +599,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTP-dP-bMN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7" y="1911"/>
+            <point key="canvasLocation" x="24" y="2247"/>
         </scene>
         <!--Exercise Count Down Controller-->
         <scene sceneID="8Lw-uR-5lg">
@@ -728,12 +793,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3iU-vw-8nC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="506" y="1911"/>
+            <point key="canvasLocation" x="506" y="2459"/>
         </scene>
         <!--금주의 프로그램-->
         <scene sceneID="YYU-hT-2ze">
             <objects>
-                <viewController id="b3k-rf-e6t" sceneMemberID="viewController">
+                <viewController id="b3k-rf-e6t" customClass="ProgramMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OQo-IE-XD8"/>
                         <viewControllerLayoutGuide type="bottom" id="0mc-zW-hMh"/>
@@ -743,7 +808,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dB-3o-PV7">
-                                <color key="backgroundColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.97647058823529409" green="0.41176470588235292" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="OFx-D1-mDI"/>
                                 </constraints>
@@ -751,22 +816,49 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="RF8-XD-opD" kind="push" id="PXM-9J-YRF"/>
+                                    <action selector="weekProgramListAction:" destination="b3k-rf-e6t" eventType="touchUpInside" id="a9y-iq-EQl"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XYI-8L-nQ5" customClass="DZNSegmentedControl">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="DUK-qp-rHR"/>
+                                </constraints>
+                            </view>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RuQ-J0-x7b">
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="RuQ-J0-x7b" secondAttribute="trailing" id="Iac-0s-Pv7"/>
+                            <constraint firstItem="9dB-3o-PV7" firstAttribute="top" secondItem="RuQ-J0-x7b" secondAttribute="bottom" id="bVc-9Q-GwC"/>
                             <constraint firstItem="0mc-zW-hMh" firstAttribute="top" secondItem="9dB-3o-PV7" secondAttribute="bottom" id="bjV-d0-xDV"/>
+                            <constraint firstItem="XYI-8L-nQ5" firstAttribute="leading" secondItem="zin-ab-dAg" secondAttribute="leading" id="efI-fm-z9v"/>
+                            <constraint firstItem="RuQ-J0-x7b" firstAttribute="leading" secondItem="zin-ab-dAg" secondAttribute="leading" id="hCa-uc-oNY"/>
+                            <constraint firstAttribute="trailing" secondItem="XYI-8L-nQ5" secondAttribute="trailing" id="hf5-Sw-DD7"/>
+                            <constraint firstItem="RuQ-J0-x7b" firstAttribute="top" secondItem="XYI-8L-nQ5" secondAttribute="bottom" id="iVa-sk-NZk"/>
                             <constraint firstItem="9dB-3o-PV7" firstAttribute="leading" secondItem="zin-ab-dAg" secondAttribute="leading" id="lP1-vP-vte"/>
+                            <constraint firstItem="XYI-8L-nQ5" firstAttribute="top" secondItem="OQo-IE-XD8" secondAttribute="bottom" id="rLe-rC-pyU"/>
                             <constraint firstAttribute="trailing" secondItem="9dB-3o-PV7" secondAttribute="trailing" id="u5P-V0-yR2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="금주의 프로그램" id="eHR-bD-9Qh"/>
+                    <connections>
+                        <outlet property="programSegment" destination="XYI-8L-nQ5" id="CEd-wW-kNu"/>
+                        <outlet property="webView" destination="RuQ-J0-x7b" id="RKj-Hg-am4"/>
+                        <segue destination="RF8-XD-opD" kind="push" identifier="goWeekProgramListSegue" id="wdF-pW-GL6"/>
+                        <segue destination="Xfb-6f-PFe" kind="push" identifier="weekProgramSearchSegue" id="2Cm-0W-QfL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T16-cA-YPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="nnL-bZ-yoE" customClass="DZNSegmentedControl">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
             </objects>
-            <point key="canvasLocation" x="478" y="937"/>
+            <point key="canvasLocation" x="477.5" y="936.5"/>
         </scene>
         <!--주차별 프로그램-->
         <scene sceneID="g84-k4-zGh">
@@ -780,34 +872,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fe-Xp-jul">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fe-Xp-jul" customClass="DZNSegmentedControl">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="Nwl-a4-oTC"/>
+                                    <constraint firstAttribute="height" constant="44" id="iqa-m8-laY"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ysC-FT-z2i">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ysC-FT-z2i">
+                                <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="9yO-t4-Cz8" firstAttribute="top" secondItem="ysC-FT-z2i" secondAttribute="bottom" id="1o8-cv-XE8"/>
-                            <constraint firstItem="ysC-FT-z2i" firstAttribute="top" secondItem="5fe-Xp-jul" secondAttribute="bottom" id="DkH-kB-np8"/>
-                            <constraint firstItem="5fe-Xp-jul" firstAttribute="leading" secondItem="H2w-mR-Ohm" secondAttribute="leading" id="Oth-dI-Dgw"/>
-                            <constraint firstAttribute="trailing" secondItem="5fe-Xp-jul" secondAttribute="trailing" id="X8S-3Z-mzD"/>
-                            <constraint firstItem="ysC-FT-z2i" firstAttribute="leading" secondItem="H2w-mR-Ohm" secondAttribute="leading" id="cOf-Tm-slB"/>
-                            <constraint firstItem="5fe-Xp-jul" firstAttribute="top" secondItem="g51-4s-4Va" secondAttribute="bottom" id="gP2-Qy-6mn"/>
-                            <constraint firstAttribute="trailing" secondItem="ysC-FT-z2i" secondAttribute="trailing" id="udD-bQ-5JI"/>
+                            <constraint firstItem="5fe-Xp-jul" firstAttribute="leading" secondItem="H2w-mR-Ohm" secondAttribute="leading" id="CQx-FF-gld"/>
+                            <constraint firstItem="5fe-Xp-jul" firstAttribute="top" secondItem="g51-4s-4Va" secondAttribute="bottom" id="DxA-aK-4Bw"/>
+                            <constraint firstItem="ysC-FT-z2i" firstAttribute="leading" secondItem="H2w-mR-Ohm" secondAttribute="leading" id="ES2-jY-3in"/>
+                            <constraint firstAttribute="trailing" secondItem="ysC-FT-z2i" secondAttribute="trailing" id="Hce-YI-CTV"/>
+                            <constraint firstAttribute="trailing" secondItem="5fe-Xp-jul" secondAttribute="trailing" id="U7L-UV-i3W"/>
+                            <constraint firstItem="9yO-t4-Cz8" firstAttribute="top" secondItem="ysC-FT-z2i" secondAttribute="bottom" constant="4" id="fuk-fd-uX6"/>
+                            <constraint firstItem="ysC-FT-z2i" firstAttribute="top" secondItem="5fe-Xp-jul" secondAttribute="bottom" constant="4" id="paS-Ki-PFY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="주차별 프로그램" id="stX-FG-ZP1"/>
                     <connections>
-                        <outlet property="segment" destination="5fe-Xp-jul" id="PRo-h9-Rkf"/>
+                        <outlet property="segment" destination="5fe-Xp-jul" id="hcS-fk-sUl"/>
+                        <outlet property="tableView" destination="ysC-FT-z2i" id="GMc-9V-QoL"/>
+                        <segue destination="VXl-de-y1J" kind="push" identifier="weekProgramDetailSegue" id="xN7-b4-qCY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0q-EU-Fjw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="901" y="937"/>
+            <point key="canvasLocation" x="986" y="937"/>
         </scene>
         <!--Question Scroll View Controller-->
         <scene sceneID="JbZ-b3-A0y">
@@ -1866,4 +1961,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="UnI-Wx-N4O"/>
+    </inferredMetricsTieBreakers>
 </document>

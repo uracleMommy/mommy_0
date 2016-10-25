@@ -53,4 +53,19 @@ typedef enum {
     SearchDeviceWeight // 체중계
 } SearchDeviceKind;
 
+#pragma 체중계 차트 종류
+typedef enum {
+    
+    WeightChartDaily,
+    WeightChartWeekly
+} WeigthChartKind;
+
+#pragma 금주의 프로그램 활성화된 화면 종류
+typedef enum {
+    
+    WeekProgramEnabledHealth,
+    WeekProgramEnabledSport,
+    WeekProgramEnabledNutrition
+} WeekProgramEnabledKind;
+
 #endif /* EnumType_h */

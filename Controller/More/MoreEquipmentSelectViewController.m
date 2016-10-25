@@ -7,6 +7,7 @@
 //
 
 #import "MoreEquipmentSelectViewController.h"
+#import "MoreEquipmentParingViewController.h"
 
 @interface MoreEquipmentSelectViewController ()
 
@@ -17,7 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-        
     
     _moreEquipmentSelectModel = [[MoreEquipmentSelectModel alloc] init];
     _moreEquipmentSelectModel.delegate = self;
@@ -31,29 +31,14 @@
     }
     // 체중계일때
     else {
+        
+//        _lsBleManager=[LSBLEDeviceManager defaultLsBleManager];
         [self.lsBleManager setDebugModeWithPermissions:@"sky"];
+//        self.bleConnector = [[LSBleConnector alloc] init];
         
-        self.bleConnector = [[LSBleConnector alloc] init];
-        
-        
-//        [_lsBleManager searchLsBleDevice:[NSArray arrayWithObjects:@(LS_WEIGHT_SCALE), @(LS_SPHYGMOMETER), @(LS_FAT_SCALE), @(LS_HEIGHT_MIRIAM), @(LS_KITCHEN_SCALE), @(LS_PEDOMETER),  nil] ofBroadcastType:BROADCAST_TYPE_PAIR searchCompletion:^(LSDeviceInfo *lsDevice){
+//        [_lsBleManager searchLsBleDevice:[NSArray arrayWithObjects:@(LS_WEIGHT_SCALE), @(LS_FAT_SCALE), @(LS_HEIGHT_MIRIAM), @(LS_PEDOMETER), nil] ofBroadcastType:BROADCAST_TYPE_PAIR searchCompletion:^(LSDeviceInfo *lsDevice){
 //
 //            NSLog(@"%@", lsDevice);
-//        }];
-        
-//        _lsBleManager.isBluetoothPowerOn = YES;
-//        [_lsBleManager setIsBluetoothPowerOn:YES];
-//        NSLog(@"%d", _lsBleManager.isBluetoothPowerOn);
-//        
-//        
-//        [_lsBleManager searchLsBleDevice:[NSArray arrayWithObjects:@(LS_WEIGHT_SCALE), @(LS_SPHYGMOMETER), @(LS_FAT_SCALE), @(LS_HEIGHT_MIRIAM), @(LS_KITCHEN_SCALE), @(LS_PEDOMETER),  nil] ofBroadcastType:BROADCAST_TYPE_PAIR searchCompletion:^(LSDeviceInfo *lsDevice){
-//            
-//            NSLog(@"%@", lsDevice);
-//        }];
-//        
-//        [_lsBleManager checkBluetoothStatus:^(BOOL isSupportFlags,BOOL isOpenFlags){
-//            
-//            NSLog(@"%d %d", isSupportFlags, isOpenFlags);
 //        }];
     }
     
@@ -65,19 +50,43 @@
 }
 
 - (void) tableView:(UITableView *)tableView MoreEquipmentChoiceSelectedRow:(NSIndexPath *)indexPath {
+  
+    [_lsBleManager stopSearch];
     
-    [self performSegueWithIdentifier:@"goEquipmentParing" sender:nil];
+    LSDeviceInfo *deviceInfo = _moreEquipmentSelectModel.arrayList[indexPath.row];
+//    [_lsBleManager pairWithLsDeviceInfo:deviceInfo pairedDelegate:self];
+    
+    // 여기서 페어링
+    [self performSegueWithIdentifier:@"goEquipmentParing" sender:deviceInfo];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"goEquipmentParing"]) {
+        
+        MoreEquipmentParingViewController *moreEquipmentParingViewController = (MoreEquipmentParingViewController *)segue.destinationViewController;
+        
+        moreEquipmentParingViewController.lsDeviceInfo = sender;
+        
+    }
+}
+
+-(void)bleManagerDidPairedResults:(LSDeviceInfo *)lsDevice pairStatus:(PairedResults)pairStatus {
+    
+    
 }
 
 -(LSBLEDeviceManager *)lsBleManager {
-    if (!_lsBleManager)
-    {
+    
+    if (!_lsBleManager) {
         _lsBleManager=[LSBLEDeviceManager defaultLsBleManager];
     }
+    
     return _lsBleManager;
 }
 
 - (void)infoManagerWithMacAddr:(NSString *)macAddr peripheral:(CBPeripheral *)peripheral services:(NSArray *)gattServices {
+    
     
 }
 
@@ -87,6 +96,23 @@
 
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central {
     
+}
+
+- (IBAction)connectBluethoo:(id)sender {
+    
+    [_lsBleManager searchLsBleDevice:[NSArray arrayWithObjects:@(LS_WEIGHT_SCALE), @(LS_FAT_SCALE), @(LS_HEIGHT_MIRIAM), @(LS_PEDOMETER), nil] ofBroadcastType:BROADCAST_TYPE_PAIR searchCompletion:^(LSDeviceInfo *lsDevice){
+        
+        if (![lsDevice.rssi isEqualToNumber:@127]) {
+            
+            if ([lsDevice.protocolType isEqualToString:@"A2"]) {
+                
+                NSLog(@"디바이스 아이디 : %@, 디바이스 이름 : %@ 디바이스 프로토콜 : %@", lsDevice.deviceId, lsDevice.deviceName, lsDevice.protocolType);
+                
+                [_moreEquipmentSelectModel.arrayList addObject:lsDevice];
+                [_tableView reloadData];
+            }
+        }
+    }];
 }
 
 @end

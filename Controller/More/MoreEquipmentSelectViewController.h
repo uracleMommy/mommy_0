@@ -6,7 +6,7 @@
 //  Copyright © 2016년 medisolution. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+//#import <UIKit/UIKit.h>
 #import "CommonViewController.h"
 #import "MoreEquipmentModel.h"
 #import <LifesenseBluetooth/LSBLEDeviceManager.h>
@@ -15,7 +15,7 @@
 #import <LifesenseBluetooth/LSSleepRecord.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 
-@interface MoreEquipmentSelectViewController : CommonViewController<MoreEquipmentChoiceModelDelegate, LSBleDataReceiveDelegate,CBCentralManagerDelegate,LSBLEInfoManagerDelegate,CBPeripheralDelegate>
+@interface MoreEquipmentSelectViewController : CommonViewController<MoreEquipmentChoiceModelDelegate, LSBlePairingDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -23,8 +23,8 @@
 
 @property (nonatomic,strong)LSBLEDeviceManager *lsBleManager;
 
-@property (nonatomic,strong)LSBleConnector *bleConnector;
-
 @property (assign, nonatomic) SearchDeviceKind deviceKind;
+
+- (IBAction)connectBluethoo:(id)sender;
 
 @end

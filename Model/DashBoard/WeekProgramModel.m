@@ -7,6 +7,8 @@
 //
 
 #import "WeekProgramModel.h"
+#import "WeekProgramCell.h"
+
 
 @implementation WeekProgramModel
 
@@ -14,7 +16,7 @@
     
     if (self = [super init]) {
         
-        
+        _arrayList = [[NSMutableArray alloc] init];
     }
     
     return self;
@@ -27,20 +29,89 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 0;
+    return _arrayList.count;
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return nil;
+    static NSString *CellIdentifierWeekProgramCell = @"WeekProgramCell";
+    
+    UINib *reuseWeekProgramCell = [UINib nibWithNibName:@"WeekProgramCell" bundle:nil];
+    [tableView registerNib:reuseWeekProgramCell forCellReuseIdentifier:CellIdentifierWeekProgramCell];
+    
+    WeekProgramCell *cell = (WeekProgramCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierWeekProgramCell];
+    
+    if (cell == nil) {
+        
+        cell = (WeekProgramCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierWeekProgramCell];
+    }
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    NSDictionary *dic = _arrayList[indexPath.row];
+    
+    [NSNull class];
+    
+    cell.lblWeek.text = dic[@"week"];   // [NSString stringWithFormat:@"%ld주차", [dic[@"week"] longValue]];
+    cell.lblContext.text = [[dic[@"context"] class] isEqual:[NSNull class]] ? @"" : dic[@"context"];
+    
+    CAShapeLayer *firstShapeLayer = [CAShapeLayer layer];
+    [firstShapeLayer setBounds:cell.bounds];
+    [firstShapeLayer setPosition:cell.center];
+    [firstShapeLayer setFillColor:[[UIColor clearColor] CGColor]];
+    [firstShapeLayer setStrokeColor:[[UIColor colorWithRed:217.0/255.0f green:217.0/255.0f  blue:217.0/255.0f alpha:1.0] CGColor]];
+    [firstShapeLayer setLineWidth:1.0f];
+    [firstShapeLayer setLineJoin:kCALineJoinRound];
+    [firstShapeLayer setLineDashPattern:
+     [NSArray arrayWithObjects:[NSNumber numberWithInt:3],
+      [NSNumber numberWithInt:3],nil]];
+    
+    CGMutablePathRef firstPath = CGPathCreateMutable();
+    CGPathMoveToPoint(firstPath, NULL, 0, 0);
+    CGPathAddLineToPoint(firstPath, NULL, tableView.frame.size.width - 134.0, 0);
+    
+    [firstShapeLayer setPath:firstPath];
+    CGPathRelease(firstPath);
+    
+    [[cell.lblDotLine layer] addSublayer:firstShapeLayer];
+    
+//    NSString *context = dic[@"context"];
+//    NSString *html = dic[@"html"];
+//    NSString *img = dic[@"img"];
+//    NSString *program_seq = dic[@"program_seq"];
+//    NSString *program_title = dic[@"program_title"];
+//    NSString *program_type = dic[@"program_type"];
+//    NSString *program_type_name = dic[@"program_type_name"];
+//    NSString *reg_dttm = dic[@"reg_dttm"];
+//    NSString *week = [NSString stringWithFormat:@"%ld주차", [dic[@"week"] longValue]];
+    
+    
+    if (indexPath.row == _arrayList.count - 1 && _arrayList.count % 30 == 0) {
+        
+        if ([self.delegate respondsToSelector:@selector(tableView:totalPageCount:)]) {
+            
+            [self.delegate tableView:tableView totalPageCount:_arrayList.count];
+        }
+    }
+    
+    return cell;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if ([self.delegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]) {
+    NSDictionary *dic = _arrayList[indexPath.row];
+    if(![[dic[@"html"] class] isEqual:[NSNull class]]) {
         
-        [self.delegate tableView:tableView didSelectRowAtIndexPath:indexPath];
+        if ([self.delegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]) {
+            
+            [self.delegate tableView:tableView didSelectRowAtIndexPath:indexPath];
+        }
     }
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 100.0f;
 }
 
 @end

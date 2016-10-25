@@ -10,4 +10,8 @@
 
 @interface WeightInfoView : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *lblDate;
+
+@property (weak, nonatomic) IBOutlet UILabel *lblWeight;
+
 @end

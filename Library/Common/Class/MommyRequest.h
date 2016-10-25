@@ -118,9 +118,33 @@ typedef enum {
     BloodPressureDelete
 } MommyBloodPressureWebServiceType;
 
+#pragma 차트관련 열거형
+typedef enum {
+    
+    ChartWeightDailyGraph,
+    ChartWeightWeeklyGraph,
+    ChartWeightLogInsert,
+    ChartStepDaily,
+    ChartStepWeekly,
+    ChartStepGraph
+} MommyChartWebServiceType;
+
+#pragma 금주의 프로그램 열거형
+typedef enum {
+    
+    WeekProgramHealthList,
+    WeekProgramSportsList,
+    WeekProgramNutritionList,
+    WeekProgramHealthDetailInfo,
+    WeekProgramSportsDetailInfo,
+    WeekProgramNutritionDetailInfo
+} MommyWeekProgramServiceType;
+
 #pragma 블록 타입 정의
 typedef void (^MommyApiServiceSuccessBlock) ( NSDictionary *data );
 typedef void (^MommyApiServiceErrorBlock) ( NSError *error );
+
+static NSString *_mainDomain = @"http://211.241.199.153:9100/medisolution"; // 도메인 주소
 
 #pragma mark API 리퀘스트 목록
 
@@ -164,6 +188,12 @@ typedef void (^MommyApiServiceErrorBlock) ( NSError *error );
 #pragma 혈압관리 관련
 - (void) mommyBloodPressureApiService : (MommyBloodPressureWebServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
 
+#pragma 차트관리 관련
+- (void) mommyChartApiService : (MommyChartWebServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
+
+#pragma 금주의 프로그램 관련
+- (void) mommyWeekProgramApiService : (MommyWeekProgramServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
+
 #pragma 이미지 업로드 관련
 - (void) mommyImageUploadApiService : (UIImage *) image success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
 
@@ -197,6 +227,10 @@ typedef void (^MommyApiServiceErrorBlock) ( NSError *error );
 - (NSString *) requestPointUrlType : (MommyPointWebServiceType) serviceType;
 
 - (NSString *) requestBloodPressureUrlType : (MommyBloodPressureWebServiceType) serviceType;
+
+- (NSString *) requestChartInfoUrlType : (MommyChartWebServiceType) serviceType;
+
+- (NSString *) requestWeekProgramUrlType : (MommyWeekProgramServiceType) serviceType;
 
 - (NSString *) requestImageUploadUrl;
 

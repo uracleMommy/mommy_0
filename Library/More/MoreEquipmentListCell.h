@@ -14,4 +14,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lblDotLine;
 
+@property (weak, nonatomic) IBOutlet UILabel *lblDeviceName;
+
+@property (weak, nonatomic) IBOutlet UILabel *lblModelName;
+
+- (IBAction)goUnPairing:(id)sender;
+
 @end

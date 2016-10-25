@@ -87,6 +87,7 @@
 		2AFDD7641D9BAD1800FE157C /* CommunityNewspeedListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDD7631D9BAD1800FE157C /* CommunityNewspeedListModel.m */; };
 		2AFDD7671D9BAD2700FE157C /* CommunityNewspeedListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDD7661D9BAD2700FE157C /* CommunityNewspeedListController.m */; };
 		2AFDD76A1D9BB46D00FE157C /* CommunityDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDD7691D9BB46D00FE157C /* CommunityDetailController.m */; };
+		DC0995DD1DBD1BFB00D32A2A /* WeekProgramSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0995DC1DBD1BFB00D32A2A /* WeekProgramSearchViewController.m */; };
 		DC1856451D9DEA3500D9A957 /* MommyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1856441D9DEA3500D9A957 /* MommyRequest.m */; };
 		DC1856481D9E40C700D9A957 /* IntroScrollImageViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1856471D9E40C700D9A957 /* IntroScrollImageViewContainer.m */; };
 		DC1A77CE1D94EC1200F88693 /* MoreMyPageNickNameChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A77CD1D94EC1200F88693 /* MoreMyPageNickNameChangeViewController.m */; };
@@ -99,6 +100,11 @@
 		DC1A77E21D9512C900F88693 /* MoreMyPageFetusContentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A77E01D9512C900F88693 /* MoreMyPageFetusContentsCell.m */; };
 		DC1A77E31D9512C900F88693 /* MoreMyPageFetusContentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1A77E11D9512C900F88693 /* MoreMyPageFetusContentsCell.xib */; };
 		DC1A77E61D9535D200F88693 /* MoreMyPagePointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A77E51D9535D200F88693 /* MoreMyPagePointViewController.m */; };
+		DC1DDC501DB8964300D6602E /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1DDC4F1DB8964300D6602E /* CoreBluetooth.framework */; };
+		DC1DDC541DB896D700D6602E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1DDC531DB896D700D6602E /* UIKit.framework */; };
+		DC1DDC551DB896DD00D6602E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1DDC511DB8968200D6602E /* Foundation.framework */; };
+		DC1DDC571DB897DA00D6602E /* LifesenseBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1DDC561DB897DA00D6602E /* LifesenseBluetooth.framework */; };
+		DC1DDC5A1DB8986700D6602E /* httpd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC1DDC581DB8986700D6602E /* httpd.cpp */; };
 		DC1FE6E31D658E47006F7A50 /* DashBoardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6DC1D658E47006F7A50 /* DashBoardSegue.m */; };
 		DC1FE6E41D658E47006F7A50 /* DiarySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6DE1D658E47006F7A50 /* DiarySegue.m */; };
 		DC1FE6E51D658E47006F7A50 /* TabbarDashBoardNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6E01D658E47006F7A50 /* TabbarDashBoardNavController.m */; };
@@ -107,6 +113,8 @@
 		DC1FE6ED1D65A7D4006F7A50 /* fetusInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6EC1D65A7D4006F7A50 /* fetusInfoController.m */; };
 		DC1FE6F61D65C83C006F7A50 /* DZNSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6F31D65C83C006F7A50 /* DZNSegmentedControl.m */; };
 		DC1FE6F71D65C83C006F7A50 /* UIScrollView+DZNSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6F51D65C83C006F7A50 /* UIScrollView+DZNSegmentedControl.m */; };
+		DC21326A1DBB0A7200E1486A /* ProgramMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2132691DBB0A7200E1486A /* ProgramMainViewController.m */; };
+		DC21326D1DBB54B800E1486A /* WeekProgramCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC21326C1DBB54B800E1486A /* WeekProgramCell.m */; };
 		DC25AA521DA39384000E41FC /* GlobalData.m in Sources */ = {isa = PBXBuildFile; fileRef = DC25AA511DA39384000E41FC /* GlobalData.m */; };
 		DC27E5051D9C9C240014C5C4 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC27E5041D9C9C240014C5C4 /* Intro.storyboard */; };
 		DC27E50A1D9CA3F30014C5C4 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC27E5091D9CA3F30014C5C4 /* IntroViewController.m */; };
@@ -128,7 +136,6 @@
 		DC3AAEC51D757D4A007218E9 /* SampleMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC3AAEC31D757D4A007218E9 /* SampleMainController.xib */; };
 		DC3AAECA1D759BA9007218E9 /* WeekProgramController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3AAEC91D759BA9007218E9 /* WeekProgramController.m */; };
 		DC3AAECE1D759C19007218E9 /* WeekProgramModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3AAECD1D759C19007218E9 /* WeekProgramModel.m */; };
-		DC3AAED21D75A11C007218E9 /* WeekProgramCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3AAED01D75A11C007218E9 /* WeekProgramCell.m */; };
 		DC3AAED31D75A11C007218E9 /* WeekProgramCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC3AAED11D75A11C007218E9 /* WeekProgramCell.xib */; };
 		DC3ACE161D5D853C00D68F80 /* DashBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3ACE151D5D853C00D68F80 /* DashBoard.storyboard */; };
 		DC3FFDDE1DA75F990095A395 /* MoreProfessionalWriteAdviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3FFDDD1DA75F990095A395 /* MoreProfessionalWriteAdviceController.m */; };
@@ -264,6 +271,7 @@
 		DC68F5441D93D7F0009D3B1E /* MoreProfessionalReplyContentSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC68F5431D93D7F0009D3B1E /* MoreProfessionalReplyContentSegue.m */; };
 		DC68F5491D93D7FD009D3B1E /* MoreEquipmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC68F5461D93D7FD009D3B1E /* MoreEquipmentModel.m */; };
 		DC68F54A1D93D7FD009D3B1E /* MoreMyPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC68F5481D93D7FD009D3B1E /* MoreMyPageModel.m */; };
+		DC69F3271DBE2A40000BAB17 /* WeekProgramDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC69F3261DBE2A40000BAB17 /* WeekProgramDetailController.m */; };
 		DC723C2A1D63FE2200557E1E /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC723C291D63FE2200557E1E /* MainTabBar.storyboard */; };
 		DC7303D81DA48843001472F8 /* MommyUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7303D71DA48843001472F8 /* MommyUtils.m */; };
 		DC7303DB1DA4F452001472F8 /* MessageEmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7303DA1DA4F452001472F8 /* MessageEmptySegue.m */; };
@@ -482,6 +490,8 @@
 		2AFDD7661D9BAD2700FE157C /* CommunityNewspeedListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityNewspeedListController.m; sourceTree = "<group>"; };
 		2AFDD7681D9BB46D00FE157C /* CommunityDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityDetailController.h; sourceTree = "<group>"; };
 		2AFDD7691D9BB46D00FE157C /* CommunityDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityDetailController.m; sourceTree = "<group>"; };
+		DC0995DB1DBD1BFB00D32A2A /* WeekProgramSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekProgramSearchViewController.h; sourceTree = "<group>"; };
+		DC0995DC1DBD1BFB00D32A2A /* WeekProgramSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekProgramSearchViewController.m; sourceTree = "<group>"; };
 		DC1856431D9DEA3500D9A957 /* MommyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MommyRequest.h; sourceTree = "<group>"; };
 		DC1856441D9DEA3500D9A957 /* MommyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MommyRequest.m; sourceTree = "<group>"; };
 		DC1856461D9E40C700D9A957 /* IntroScrollImageViewContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroScrollImageViewContainer.h; sourceTree = "<group>"; };
@@ -503,6 +513,13 @@
 		DC1A77E11D9512C900F88693 /* MoreMyPageFetusContentsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreMyPageFetusContentsCell.xib; sourceTree = "<group>"; };
 		DC1A77E41D9535D200F88693 /* MoreMyPagePointViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreMyPagePointViewController.h; sourceTree = "<group>"; };
 		DC1A77E51D9535D200F88693 /* MoreMyPagePointViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreMyPagePointViewController.m; sourceTree = "<group>"; };
+		DC1DDC4D1DB8963E00D6602E /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		DC1DDC4F1DB8964300D6602E /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		DC1DDC511DB8968200D6602E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DC1DDC531DB896D700D6602E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DC1DDC561DB897DA00D6602E /* LifesenseBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LifesenseBluetooth.framework; sourceTree = "<group>"; };
+		DC1DDC581DB8986700D6602E /* httpd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = httpd.cpp; path = Library/Common/Class/httpd.cpp; sourceTree = "<group>"; };
+		DC1DDC591DB8986700D6602E /* httpd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = httpd.h; path = Library/Common/Class/httpd.h; sourceTree = "<group>"; };
 		DC1FE6DB1D658E47006F7A50 /* DashBoardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardSegue.h; sourceTree = "<group>"; };
 		DC1FE6DC1D658E47006F7A50 /* DashBoardSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardSegue.m; sourceTree = "<group>"; };
 		DC1FE6DD1D658E47006F7A50 /* DiarySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiarySegue.h; sourceTree = "<group>"; };
@@ -519,6 +536,10 @@
 		DC1FE6F31D65C83C006F7A50 /* DZNSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZNSegmentedControl.m; sourceTree = "<group>"; };
 		DC1FE6F41D65C83C006F7A50 /* UIScrollView+DZNSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+DZNSegmentedControl.h"; sourceTree = "<group>"; };
 		DC1FE6F51D65C83C006F7A50 /* UIScrollView+DZNSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+DZNSegmentedControl.m"; sourceTree = "<group>"; };
+		DC2132681DBB0A7200E1486A /* ProgramMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramMainViewController.h; sourceTree = "<group>"; };
+		DC2132691DBB0A7200E1486A /* ProgramMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramMainViewController.m; sourceTree = "<group>"; };
+		DC21326B1DBB54B800E1486A /* WeekProgramCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekProgramCell.h; sourceTree = "<group>"; };
+		DC21326C1DBB54B800E1486A /* WeekProgramCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekProgramCell.m; sourceTree = "<group>"; };
 		DC25AA501DA39384000E41FC /* GlobalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalData.h; sourceTree = "<group>"; };
 		DC25AA511DA39384000E41FC /* GlobalData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalData.m; sourceTree = "<group>"; };
 		DC27E5041D9C9C240014C5C4 /* Intro.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
@@ -559,8 +580,6 @@
 		DC3AAEC91D759BA9007218E9 /* WeekProgramController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekProgramController.m; sourceTree = "<group>"; };
 		DC3AAECC1D759C19007218E9 /* WeekProgramModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekProgramModel.h; sourceTree = "<group>"; };
 		DC3AAECD1D759C19007218E9 /* WeekProgramModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekProgramModel.m; sourceTree = "<group>"; };
-		DC3AAECF1D75A11C007218E9 /* WeekProgramCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekProgramCell.h; sourceTree = "<group>"; };
-		DC3AAED01D75A11C007218E9 /* WeekProgramCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekProgramCell.m; sourceTree = "<group>"; };
 		DC3AAED11D75A11C007218E9 /* WeekProgramCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekProgramCell.xib; sourceTree = "<group>"; };
 		DC3ACE151D5D853C00D68F80 /* DashBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DashBoard.storyboard; sourceTree = "<group>"; };
 		DC3FFDDC1DA75F990095A395 /* MoreProfessionalWriteAdviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreProfessionalWriteAdviceController.h; sourceTree = "<group>"; };
@@ -797,6 +816,8 @@
 		DC68F5461D93D7FD009D3B1E /* MoreEquipmentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreEquipmentModel.m; sourceTree = "<group>"; };
 		DC68F5471D93D7FD009D3B1E /* MoreMyPageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreMyPageModel.h; sourceTree = "<group>"; };
 		DC68F5481D93D7FD009D3B1E /* MoreMyPageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreMyPageModel.m; sourceTree = "<group>"; };
+		DC69F3251DBE2A40000BAB17 /* WeekProgramDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekProgramDetailController.h; sourceTree = "<group>"; };
+		DC69F3261DBE2A40000BAB17 /* WeekProgramDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekProgramDetailController.m; sourceTree = "<group>"; };
 		DC723C291D63FE2200557E1E /* MainTabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
 		DC7303D61DA48843001472F8 /* MommyUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MommyUtils.h; sourceTree = "<group>"; };
 		DC7303D71DA48843001472F8 /* MommyUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MommyUtils.m; sourceTree = "<group>"; };
@@ -917,7 +938,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC1DDC551DB896DD00D6602E /* Foundation.framework in Frameworks */,
+				DC1DDC541DB896D700D6602E /* UIKit.framework in Frameworks */,
+				DC1DDC501DB8964300D6602E /* CoreBluetooth.framework in Frameworks */,
 				2AF695FE1DB4C52D00072FC2 /* CoreLocation.framework in Frameworks */,
+				DC1DDC571DB897DA00D6602E /* LifesenseBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1226,6 +1251,13 @@
 		2AF695FC1DB4C52D00072FC2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DC1DDC581DB8986700D6602E /* httpd.cpp */,
+				DC1DDC591DB8986700D6602E /* httpd.h */,
+				DC1DDC561DB897DA00D6602E /* LifesenseBluetooth.framework */,
+				DC1DDC531DB896D700D6602E /* UIKit.framework */,
+				DC1DDC511DB8968200D6602E /* Foundation.framework */,
+				DC1DDC4F1DB8964300D6602E /* CoreBluetooth.framework */,
+				DC1DDC4D1DB8963E00D6602E /* AVKit.framework */,
 				2AF695FD1DB4C52D00072FC2 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
@@ -1757,22 +1789,22 @@
 				DC56F0961D79728F00FB3A30 /* WeightChartViewCell.h */,
 				DC56F0971D79728F00FB3A30 /* WeightChartViewCell.m */,
 				DC56F0981D79728F00FB3A30 /* WeightChartViewCell.xib */,
+				DC4E95861D7D0B2B0087647B /* WeightDetailInfoHeaderCell.h */,
+				DC4E95871D7D0B2B0087647B /* WeightDetailInfoHeaderCell.m */,
+				DC56F0A11D79728F00FB3A30 /* WeightDetailInfoHeaderCell.xib */,
 				DC56F0991D79728F00FB3A30 /* WeightDetailInfoContentsCell.h */,
 				DC56F09A1D79728F00FB3A30 /* WeightDetailInfoContentsCell.m */,
 				DC56F09B1D79728F00FB3A30 /* WeightDetailInfoContentsCell.xib */,
 				DC56F09C1D79728F00FB3A30 /* WeightDetailInfoFooterCell.h */,
 				DC56F09D1D79728F00FB3A30 /* WeightDetailInfoFooterCell.m */,
 				DC56F09E1D79728F00FB3A30 /* WeightDetailInfoFooterCell.xib */,
-				DC4E95861D7D0B2B0087647B /* WeightDetailInfoHeaderCell.h */,
-				DC4E95871D7D0B2B0087647B /* WeightDetailInfoHeaderCell.m */,
-				DC56F0A11D79728F00FB3A30 /* WeightDetailInfoHeaderCell.xib */,
 				DC5D20921D62E01300ACDCA4 /* DashBoardScrollCellView.h */,
 				DC5D20931D62E01300ACDCA4 /* DashBoardScrollCellView.m */,
 				DC5D20941D62E01300ACDCA4 /* DashBoardScrollCellView.xib */,
 				DC1FE6EB1D65A7D4006F7A50 /* fetusInfoController.h */,
 				DC1FE6EC1D65A7D4006F7A50 /* fetusInfoController.m */,
-				DC3AAECF1D75A11C007218E9 /* WeekProgramCell.h */,
-				DC3AAED01D75A11C007218E9 /* WeekProgramCell.m */,
+				DC21326B1DBB54B800E1486A /* WeekProgramCell.h */,
+				DC21326C1DBB54B800E1486A /* WeekProgramCell.m */,
 				DC3AAED11D75A11C007218E9 /* WeekProgramCell.xib */,
 				DC4E958A1D7D26EC0087647B /* WeightTotalInfoCell.h */,
 				DC4E958B1D7D26EC0087647B /* WeightTotalInfoCell.m */,
@@ -1811,8 +1843,14 @@
 		DC5D20881D62B0F500ACDCA4 /* DashBoard */ = {
 			isa = PBXGroup;
 			children = (
+				DC2132681DBB0A7200E1486A /* ProgramMainViewController.h */,
+				DC2132691DBB0A7200E1486A /* ProgramMainViewController.m */,
 				DC3AAEC81D759BA9007218E9 /* WeekProgramController.h */,
 				DC3AAEC91D759BA9007218E9 /* WeekProgramController.m */,
+				DC69F3251DBE2A40000BAB17 /* WeekProgramDetailController.h */,
+				DC69F3261DBE2A40000BAB17 /* WeekProgramDetailController.m */,
+				DC0995DB1DBD1BFB00D32A2A /* WeekProgramSearchViewController.h */,
+				DC0995DC1DBD1BFB00D32A2A /* WeekProgramSearchViewController.m */,
 				DC5D208F1D62CB6500ACDCA4 /* DashBoardController.h */,
 				DC5D20901D62CB6500ACDCA4 /* DashBoardController.m */,
 				DC538E601D78009100E5949B /* WeightChartViewController.h */,
@@ -2017,7 +2055,7 @@
 				TargetAttributes = {
 					DCA5AE201D598C6F0075B7AD = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = JH5F2VBM8Z;
+						DevelopmentTeam = LUYT38Y3AT;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2214,7 +2252,6 @@
 				DC4F0F0B1D912F67003CB09B /* SignUpMommyInfoController.m in Sources */,
 				DC5D20951D62E01300ACDCA4 /* DashBoardScrollCellView.m in Sources */,
 				DC3AAEC01D7552EE007218E9 /* PushNoticeDetailViewController.m in Sources */,
-				DC3AAED21D75A11C007218E9 /* WeekProgramCell.m in Sources */,
 				DC27E5191D9CD44E0014C5C4 /* IntroSecondContentPageViewController.m in Sources */,
 				DC4F0F001D911066003CB09B /* MoreProfessionalDetailViewController.m in Sources */,
 				DCF6CAAD1D742B4000703CAE /* UIApplication+JTSImageViewController.m in Sources */,
@@ -2279,6 +2316,7 @@
 				DC538EC31D781C3600E5949B /* IQUITextFieldView+Additions.m in Sources */,
 				DC8EB7881D869A1700A0304D /* MoreWeekCheckDetailViewController.m in Sources */,
 				2A371A501D62D9BD0051F278 /* SignUpFetusInfoCustomCell_Plus.m in Sources */,
+				DC21326D1DBB54B800E1486A /* WeekProgramCell.m in Sources */,
 				DC3AAEB31D7514A3007218E9 /* PushViewListCell.m in Sources */,
 				DC1A77D11D94F47E00F88693 /* MoreMyPagePasswordChangeViewController.m in Sources */,
 				DC2D34C61D9A13D100D70E8C /* QuestionViewController.m in Sources */,
@@ -2297,6 +2335,7 @@
 				DC4E95881D7D0B2B0087647B /* WeightDetailInfoHeaderCell.m in Sources */,
 				2A309ACE1D79634E001C54C5 /* ColorPickerTextField.m in Sources */,
 				DC68F5401D93D7E4009D3B1E /* MoreEquipmentSelectCell.m in Sources */,
+				DC1DDC5A1DB8986700D6602E /* httpd.cpp in Sources */,
 				2AD4A8911D7D660C0032E16C /* emoticonPopupViewController.m in Sources */,
 				DC44C37F1D7FADFA00519D96 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				2A54B1BA1D66904000C538D1 /* JTHorizontalCalendarView.m in Sources */,
@@ -2316,6 +2355,7 @@
 				DC5FCCF81D7E858900957D73 /* SleepingHoursEvalCell.m in Sources */,
 				2AC1644B1D9CA36800533BB0 /* CommunityDetailModel.m in Sources */,
 				DCC017C71D99483700DC333F /* QuestionScrollViewController.m in Sources */,
+				DC69F3271DBE2A40000BAB17 /* WeekProgramDetailController.m in Sources */,
 				DCD8F5ED1D9D2A3300546B89 /* IntroDeviceViewController.m in Sources */,
 				2AFDD7611D9BA0CC00FE157C /* CommunityPersonListModel.m in Sources */,
 				DC7D38491D6BDD8800314189 /* FXBlurView.m in Sources */,
@@ -2347,6 +2387,7 @@
 				DC1A77E21D9512C900F88693 /* MoreMyPageFetusContentsCell.m in Sources */,
 				2AB627771D5C0CEC00BD7B84 /* LoginNewPasswordCreate.m in Sources */,
 				DC5FCCE91D7E417E00957D73 /* ActiveMassChartView.m in Sources */,
+				DC21326A1DBB0A7200E1486A /* ProgramMainViewController.m in Sources */,
 				2A1A86C41D9A92040091399B /* CommunityDetailCells.m in Sources */,
 				DC4DE2C61D810154007CF9BF /* MoreMainTitleCell.m in Sources */,
 				2ABDB8D91DA36FB500239967 /* LoginResetPasswordController.m in Sources */,
@@ -2374,6 +2415,7 @@
 				DC5FCCEC1D7E81B500957D73 /* SleepingHoursViewController.m in Sources */,
 				DC7303DB1DA4F452001472F8 /* MessageEmptySegue.m in Sources */,
 				2A1A86BD1D9A45640091399B /* CommunityMyGroupController.m in Sources */,
+				DC0995DD1DBD1BFB00D32A2A /* WeekProgramSearchViewController.m in Sources */,
 				2A309AD11D79634E001C54C5 /* UIColor+HexColors.m in Sources */,
 				2A54B1B01D66904000C538D1 /* JTCalendarManager.m in Sources */,
 				2AEB7F601DAC84E30032AD47 /* CommunityWriteController.m in Sources */,
@@ -2494,7 +2536,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jung Ho Park (JMP587VVKV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = JH5F2VBM8Z;
+				DEVELOPMENT_TEAM = LUYT38Y3AT;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2504,7 +2552,12 @@
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Common",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Common/IQKeyBoardManager/Library",
 				);
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.medisolution;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -2520,7 +2573,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jung Ho Park (JMP587VVKV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = JH5F2VBM8Z;
+				DEVELOPMENT_TEAM = LUYT38Y3AT;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2531,6 +2590,11 @@
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Common/IQKeyBoardManager/Library",
 				);
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.medisolution;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

@@ -28,6 +28,8 @@
 
 @property (strong, nonatomic) id<DashBoardControllerDelegate> delegate;
 
+- (IBAction)WeekProgramAction:(id)sender;
+
 - (IBAction)MessagePopupAction:(id)sender;
 
 - (IBAction)SingleImageView:(id)sender;
@@ -47,6 +49,14 @@
 @property (strong, nonatomic) MainSliderViewContainerController *mainSliderViewContainerController;
 
 @property (strong, nonatomic) MainInfoContainerViewController *mainInfoContainerViewController;
+
+@property (strong, nonatomic) NSString *weightCode;
+
+@property (strong, nonatomic) NSString *healthProgramSeq;
+
+@property (strong, nonatomic) NSString *sportsProgramSeq;
+
+@property (strong, nonatomic) NSString *nutritionProgramSeq;
 
 @end
 

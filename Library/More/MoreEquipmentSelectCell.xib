@@ -22,7 +22,7 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fey-VX-WQk">
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample_screen_01" translatesAutoresizingMaskIntoConstraints="NO" id="BJr-ci-fQ9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weight_scale" translatesAutoresizingMaskIntoConstraints="NO" id="BJr-ci-fQ9">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Rdo-O4-gGs"/>
                                     <constraint firstAttribute="height" constant="76" id="XoU-7V-wHo"/>
@@ -75,6 +75,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="sample_screen_01" width="382" height="286"/>
+        <image name="weight_scale" width="320" height="194"/>
     </resources>
 </document>

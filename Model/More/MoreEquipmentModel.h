@@ -46,7 +46,7 @@
 #pragma 검색된 기기 선택 모델
 @interface MoreEquipmentSelectModel : NSObject<UITableViewDelegate, UITableViewDataSource>
 
-@property (strong, nonatomic) NSArray *arrayList;
+@property (strong, nonatomic) NSMutableArray *arrayList;
 
 @property (strong, nonatomic) id<MoreEquipmentChoiceModelDelegate> delegate;
 

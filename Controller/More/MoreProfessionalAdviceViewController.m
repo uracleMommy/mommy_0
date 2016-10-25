@@ -60,6 +60,8 @@
     
     [[MommyRequest sharedInstance] mommyProfessionalAdviceApiService:ProfessionalAdviceList authKey:auth_key parameters:parameters success:^(NSDictionary *data){
         
+        dispatch_async(dispatch_get_main_queue(), ^{
+        
         long code = [data[@"code"] longValue];
         
         // 실패시
@@ -89,36 +91,33 @@
             NSDictionary *newDic = [NSDictionary dictionaryWithObjectsAndKeys:qnaKey, @"qna_key", adviceContent, @"content", replyYN, @"reply_yn", adviceType, @"type", regDttm, @"reg_dttm",  nil];
             [_moreProfessionalAdviceModel.arrayList addObject:newDic];
         }
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
             
-            // 카운터 없으면 empty 분기
-            if (totCnt <= 0) {
-                
-                _currentLastPageStatus = YES;
-                
-                // 네비게이션바 버튼 지우기
-                
-                [self hideIndicator];
-                
-                if (_currentLastPageStatus && _moreProfessionalAdviceModel.arrayList.count > 0) {
-                    return;
-                }
-                
-                [self performSegueWithIdentifier:@"goProfessionalEmpty" sender:nil];
-                
+        // 카운터 없으면 empty 분기
+        if (totCnt <= 0) {
+            
+            _currentLastPageStatus = YES;
+            
+            // 네비게이션바 버튼 지우기
+            
+            [self hideIndicator];
+            
+            if (_currentLastPageStatus && _moreProfessionalAdviceModel.arrayList.count > 0) {
                 return;
             }
             
-            _currentLastPageStatus = NO;
-            _moreProfessionalAdviceModel.delegate = self;
-            _tableView.dataSource = _moreProfessionalAdviceModel;
-            _tableView.delegate = _moreProfessionalAdviceModel;
-            [_tableView reloadData];
+            [self performSegueWithIdentifier:@"goProfessionalEmpty" sender:nil];
             
-            [self hideIndicator];
-        });
+            return;
+        }
         
+        _currentLastPageStatus = NO;
+        _moreProfessionalAdviceModel.delegate = self;
+        _tableView.dataSource = _moreProfessionalAdviceModel;
+        _tableView.delegate = _moreProfessionalAdviceModel;
+        [_tableView reloadData];
+        
+        [self hideIndicator];
+    });
     } error:^(NSError *error) {
         
         [self hideIndicator];

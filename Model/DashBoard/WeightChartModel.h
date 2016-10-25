@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EnumType.h"
 
 @interface WeightChartModel : NSObject<UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) NSArray *arrayList;
+
+@property (assign, nonatomic) WeigthChartKind chartKind;
 
 @end

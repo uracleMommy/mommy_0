@@ -14,6 +14,8 @@
 #import "MultiImageViewController.h"
 #import "PageImageViewController.h"
 #import "QuestionViewController.h"
+#import "ProgramMainViewController.h"
+
 
 @interface DashBoardController ()<OTPageScrollViewDataSource,OTPageScrollViewDelegate>
 
@@ -60,6 +62,9 @@
             
             // 프로그램 리스트 바인드
             _programList = [NSArray arrayWithArray:data[@"result"][@"program_list"]];
+            
+            // 체중평가 바인드
+            _weightCode = data[@"result"][@"weight_info"][@"weight_stauts_code"];
             
             // 문진정보 띄우기(제출을 하지 않았으면)
             [self performSegueWithIdentifier:@"goQuestionModal" sender:data[@"result"][@"baby_info"][@"mom_week"]];
@@ -132,6 +137,13 @@
 
 - (void)pageScrollView:(OTPageScrollView *)pageScrollView didTapPageAtIndex:(NSInteger)index {
     
+}
+
+#pragma 금주의 프로그램
+- (IBAction)WeekProgramAction:(id)sender {
+    
+    // 체중평가 코드 넘겨주기
+    [self performSegueWithIdentifier:@"goModalWeekProgramSegue" sender:_weightCode];
 }
 
 #pragma 쪽지리스트 팝업
@@ -236,12 +248,19 @@
     }
     else if ([segue.identifier isEqualToString:@"goDashboardTotalInfo"]) {
         
-        
         NSLog(@"여기");
     }
     else if ([segue.identifier isEqualToString:@"goDashboardProgramInfo"]) {
         
         _mainSliderViewContainerController = segue.destinationViewController;
+    }
+    else if ([segue.identifier isEqualToString:@"goModalWeekProgramSegue"]) {
+        
+        UINavigationController *navController = segue.destinationViewController;
+        ProgramMainViewController *programMainViewController = (ProgramMainViewController *)navController.viewControllers[0];
+        programMainViewController.weightStatusCode = sender;
+        programMainViewController.weekProgramEnabledKind = WeekProgramEnabledHealth;
+        programMainViewController.programList = _programList;
     }
 }
 

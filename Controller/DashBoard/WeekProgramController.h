@@ -9,9 +9,20 @@
 #import <UIKit/UIKit.h>
 #import "CommonViewController.h"
 #import "DZNSegmentedControl.h"
+#import "WeekProgramModel.h"
 
-@interface WeekProgramController : CommonViewController<DZNSegmentedControlDelegate>
+@interface WeekProgramController : CommonViewController<DZNSegmentedControlDelegate, WeekProgramModelDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (weak, nonatomic) IBOutlet DZNSegmentedControl *segment;
+
+@property (strong, nonatomic) WeekProgramModel *weekProgramModel;
+
+@property (strong, nonatomic) NSString *weightStatusCode;
+
+@property (assign, nonatomic) NSInteger mainSelectedIndex;
+
+@property (assign, nonatomic) WeekProgramEnabledKind weekProgramEnabledKind;
 
 @end

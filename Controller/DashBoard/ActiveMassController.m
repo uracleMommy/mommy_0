@@ -19,6 +19,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    // 우측버튼
+    UIButton *professionButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *closeBtnImage = [UIImage imageNamed:@"title_icon_close"];
+    professionButton.frame = CGRectMake(0, 0, 40, 40);
+    [professionButton setImage:closeBtnImage forState:UIControlStateNormal];
+    [professionButton addTarget:self action:@selector(closeModal) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *adviceItemButton = [[UIBarButtonItem alloc] initWithCustomView:professionButton];
+    UIBarButtonItem *rightNegativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    rightNegativeSpacer.width = -16;
+    [self.navigationItem setRightBarButtonItems:@[rightNegativeSpacer, adviceItemButton]];
+    
     NSArray *items = @[@"일자별", @"주차별"];
     _dayWeekTypeSegment.items = items;
     
@@ -28,6 +39,9 @@
     
     [_dayWeekTypeSegment setShowsCount:NO];
     
+    CGRect screenSize = [[UIScreen mainScreen] bounds];
+    [_dayWeekTypeSegment setFrame:CGRectMake(0, 0, screenSize.size.width, 44)];
+    
     _activeMassModel = [[ActiveMassModel alloc] init];
     
     _tableView.dataSource = _activeMassModel;
@@ -35,18 +49,19 @@
     
 }
 
+- (void) closeModal {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)closeModal:(id)sender {
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+
 
 - (IBAction)goExerciseTimer:(id)sender {
-    
     
     UIStoryboard *dashBoardStoryboard = [UIStoryboard storyboardWithName:@"DashBoard" bundle:nil];    
     UIViewController *exerciseCountDownController = [dashBoardStoryboard instantiateViewControllerWithIdentifier:@"ExerciseCountDown"];
