@@ -29,6 +29,8 @@
     [backBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
     self.navigationItem.rightBarButtonItem = backButton;
+    
+    self.navigationItem.hidesBackButton = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -115,7 +117,7 @@
         [param setValue:[scrollViewContoller.idTextField text] forKey:@"id"];
         [param setValue:[scrollViewContoller.passwordTextField text] forKey:@"password"];
         [param setValue:[scrollViewContoller.nameTextField text] forKey:@"name"];
-        [param setValue:[scrollViewContoller.birthdayTextField text] forKey:@"birth"];
+        [param setValue:[self getNumberStr:[scrollViewContoller.birthdayTextField text] ] forKey:@"birth"];
         [param setValue:[scrollViewContoller.emailTextField text] forKey:@"email"];
         [param setValue:[scrollViewContoller.phoneNumberTextField text] forKey:@"phone_num"];
         
@@ -185,6 +187,27 @@
         }
     }
     return textfieldarray;
+}
+
+-(NSString *)getNumberStr:(NSString *)str
+{
+    //NSString *originalString = @"(123) 123123 abc";
+    NSMutableString *strippedString = [NSMutableString stringWithCapacity:str.length];
+    
+    NSScanner *scanner = [NSScanner scannerWithString:str];
+    NSCharacterSet *numbers = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+    
+    while ([scanner isAtEnd] == NO) {
+        NSString *buffer;
+        if ([scanner scanCharactersFromSet:numbers intoString:&buffer]) {
+            [strippedString appendString:buffer];
+        } else {
+            [scanner setScanLocation:([scanner scanLocation] + 1)];
+        }
+    }
+    
+    //NSLog(@"%@", strippedString); // "123123123"
+    return [NSString stringWithString:strippedString];
 }
 
 

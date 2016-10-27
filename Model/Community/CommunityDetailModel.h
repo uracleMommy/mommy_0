@@ -24,6 +24,7 @@
 @interface CommunityDetailModel : NSObject <UITableViewDataSource, UITableViewDelegate, CommunityDetailCellsDelgate>
 
 @property (nonatomic, strong) NSMutableArray *detailList;
+@property (nonatomic, strong) NSMutableArray *likePersonData;
 @property (strong, nonatomic) id<CommunityDetailModelDelegate> delegate;
 @property (strong, nonatomic) NSMutableDictionary *cachedImages;
 @property (strong, nonatomic) NSDictionary *motherData;

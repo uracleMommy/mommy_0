@@ -98,7 +98,9 @@
             NSLog(@"Image Upload data : %@", data);
             NSDictionary *result = [data objectForKey:@"result"];
             _fileName = [result objectForKey:@"file_name"];
-            [_scrollViewContoller setMommyImage:croppedImage];
+            dispatch_sync(dispatch_get_main_queue(), ^{ 
+                [_scrollViewContoller setMommyImage:croppedImage];
+            });
         }else{
             NSLog(@"Image Upload Fail");
         }

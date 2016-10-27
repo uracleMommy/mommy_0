@@ -1037,7 +1037,7 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sM9-pH-PaL">
                                                 <subviews>
-                                                    <button opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osk-aX-ZIL">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osk-aX-ZIL">
                                                         <state key="normal" image="contents_btn_photo_update"/>
                                                         <connections>
                                                             <action selector="mommyPictureButtonAction:" destination="hsk-NJ-sN3" eventType="touchUpInside" id="SSU-2n-W6H"/>
@@ -1056,7 +1056,7 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJz-N7-808">
                                                 <subviews>
-                                                    <button opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zR8-7M-qQY">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zR8-7M-qQY">
                                                         <state key="normal" image="contents_btn_photo_update"/>
                                                         <connections>
                                                             <action selector="mommyPictureButtonAction:" destination="hsk-NJ-sN3" eventType="touchUpInside" id="FQB-vz-Pig"/>
@@ -1074,7 +1074,7 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e2p-HE-RjQ">
                                                 <subviews>
-                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvT-J6-4RG">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvT-J6-4RG">
                                                         <state key="normal" image="contents_btn_photo_update"/>
                                                         <connections>
                                                             <action selector="mommyPictureButtonAction:" destination="hsk-NJ-sN3" eventType="touchUpInside" id="a3k-J9-hak"/>
@@ -1093,7 +1093,7 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5cO-KZ-Xa1">
                                                 <subviews>
-                                                    <button opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7d-9g-eaD">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7d-9g-eaD">
                                                         <state key="normal" image="contents_btn_photo_update"/>
                                                         <connections>
                                                             <action selector="mommyPictureButtonAction:" destination="hsk-NJ-sN3" eventType="touchUpInside" id="rSY-o1-shF"/>

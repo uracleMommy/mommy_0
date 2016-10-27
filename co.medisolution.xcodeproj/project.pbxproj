@@ -42,6 +42,7 @@
 		2A54B1C81D66E4E600C538D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A54B1C71D66E4E600C538D1 /* Assets.xcassets */; };
 		2A6B1BF01D91338200322A94 /* DiaryListBasicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6B1BED1D91338200322A94 /* DiaryListBasicController.m */; };
 		2A6B1BF11D91338200322A94 /* DiaryWriteBasicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6B1BEF1D91338200322A94 /* DiaryWriteBasicController.m */; };
+		2A7DC3FD1DC25E4C00DC9A7E /* LifesenseBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7DC3FC1DC25E4C00DC9A7E /* LifesenseBluetooth.framework */; };
 		2AA48D751DB752FF008E4DC6 /* noDataDiaryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA48D741DB752FF008E4DC6 /* noDataDiaryController.m */; };
 		2AA48D781DB799CE008E4DC6 /* AppFirstIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA48D771DB799CE008E4DC6 /* AppFirstIntroViewController.m */; };
 		2AA6D6C21D64230A00316DD6 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA6D6C11D64230A00316DD6 /* Diary.storyboard */; };
@@ -105,7 +106,6 @@
 		2AD2AE771DBF362800851D47 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2AE711DBF362800851D47 /* SVIndefiniteAnimatedView.m */; };
 		2AD2AE781DBF362800851D47 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2AE721DBF362800851D47 /* SVProgressHUD.bundle */; };
 		2AD2AE791DBF362800851D47 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2AE741DBF362800851D47 /* SVProgressHUD.m */; };
-		2AD2AE7F1DBF391A00851D47 /* LifesenseBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD2AE7E1DBF391A00851D47 /* LifesenseBluetooth.framework */; };
 		2AD4A8911D7D660C0032E16C /* emoticonPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4A88F1D7D660C0032E16C /* emoticonPopupViewController.m */; };
 		2AD4A8921D7D660C0032E16C /* emoticonPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4A8901D7D660C0032E16C /* emoticonPopupViewController.xib */; };
 		2AE11DE31D654C4E003C6690 /* DiaryListBasicCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11DE11D654C4E003C6690 /* DiaryListBasicCustomCell.m */; };
@@ -471,6 +471,7 @@
 		2A6B1BED1D91338200322A94 /* DiaryListBasicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryListBasicController.m; sourceTree = "<group>"; };
 		2A6B1BEE1D91338200322A94 /* DiaryWriteBasicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryWriteBasicController.h; sourceTree = "<group>"; };
 		2A6B1BEF1D91338200322A94 /* DiaryWriteBasicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryWriteBasicController.m; sourceTree = "<group>"; };
+		2A7DC3FC1DC25E4C00DC9A7E /* LifesenseBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LifesenseBluetooth.framework; sourceTree = "<group>"; };
 		2AA48D731DB752FF008E4DC6 /* noDataDiaryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = noDataDiaryController.h; sourceTree = "<group>"; };
 		2AA48D741DB752FF008E4DC6 /* noDataDiaryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = noDataDiaryController.m; sourceTree = "<group>"; };
 		2AA48D761DB799CE008E4DC6 /* AppFirstIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppFirstIntroViewController.h; sourceTree = "<group>"; };
@@ -571,7 +572,6 @@
 		2AD2AE721DBF362800851D47 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		2AD2AE731DBF362800851D47 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		2AD2AE741DBF362800851D47 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
-		2AD2AE7E1DBF391A00851D47 /* LifesenseBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LifesenseBluetooth.framework; sourceTree = "<group>"; };
 		2AD4A88E1D7D660C0032E16C /* emoticonPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = emoticonPopupViewController.h; sourceTree = "<group>"; };
 		2AD4A88F1D7D660C0032E16C /* emoticonPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = emoticonPopupViewController.m; sourceTree = "<group>"; };
 		2AD4A8901D7D660C0032E16C /* emoticonPopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = emoticonPopupViewController.xib; sourceTree = "<group>"; };
@@ -980,7 +980,6 @@
 		DC8EB78C1D869D4800A0304D /* MoreWeekDetailInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreWeekDetailInfoCell.h; sourceTree = "<group>"; };
 		DC8EB78D1D869D4800A0304D /* MoreWeekDetailInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreWeekDetailInfoCell.m; sourceTree = "<group>"; };
 		DC8EB78E1D869D4800A0304D /* MoreWeekDetailInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreWeekDetailInfoCell.xib; sourceTree = "<group>"; };
-		DC95472A1DC02CB700317A10 /* co.medisolution.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = co.medisolution.entitlements; sourceTree = "<group>"; };
 		DCA3BCBC1D98BAF6009D3DD1 /* MoreEnvironmentSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreEnvironmentSetupViewController.h; sourceTree = "<group>"; };
 		DCA3BCBD1D98BAF6009D3DD1 /* MoreEnvironmentSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreEnvironmentSetupViewController.m; sourceTree = "<group>"; };
 		DCA3BCBF1D98BBD0009D3DD1 /* MoreEnvironmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreEnvironmentModel.h; sourceTree = "<group>"; };
@@ -1085,9 +1084,9 @@
 				2AF695FE1DB4C52D00072FC2 /* CoreLocation.framework in Frameworks */,
 				2AD09C061DB8A5D9005D0CD7 /* GoogleSymbolUtilities.framework in Frameworks */,
 				DC6B0B7C1DBF382F0092324C /* LifesenseBluetooth.framework in Frameworks */,
+				2A7DC3FD1DC25E4C00DC9A7E /* LifesenseBluetooth.framework in Frameworks */,
 				2AD09C031DB8A5D9005D0CD7 /* GoogleNetworkingUtilities.framework in Frameworks */,
 				2AD09C011DB8A5D9005D0CD7 /* GoogleAppUtilities.framework in Frameworks */,
-				2AD2AE7F1DBF391A00851D47 /* LifesenseBluetooth.framework in Frameworks */,
 				2AD09C021DB8A5D9005D0CD7 /* GoogleAuthUtilities.framework in Frameworks */,
 				2AD09C051DB8A5D9005D0CD7 /* GoogleSignIn.framework in Frameworks */,
 				2AD09C071DB8A5D9005D0CD7 /* GoogleUtilities.framework in Frameworks */,
@@ -1491,7 +1490,7 @@
 		2AF695FC1DB4C52D00072FC2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2AD2AE7E1DBF391A00851D47 /* LifesenseBluetooth.framework */,
+				2A7DC3FC1DC25E4C00DC9A7E /* LifesenseBluetooth.framework */,
 				DC1DDC581DB8986700D6602E /* httpd.cpp */,
 				DC1DDC591DB8986700D6602E /* httpd.h */,
 				DC1DDC531DB896D700D6602E /* UIKit.framework */,
@@ -2874,7 +2873,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_ENTITLEMENTS = co.medisolution/co.medisolution.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jung Ho Park (JMP587VVKV)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = JH5F2VBM8Z;
 				ENABLE_BITCODE = NO;
@@ -2897,7 +2896,7 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.co.medisolutions;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.medisolution;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2912,9 +2911,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_ENTITLEMENTS = co.medisolution/co.medisolution.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jung Ho Park (JMP587VVKV)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LUYT38Y3AT;
+				DEVELOPMENT_TEAM = JH5F2VBM8Z;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2934,7 +2933,7 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.co.medisolutions;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.medisolution;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

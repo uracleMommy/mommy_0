@@ -143,11 +143,11 @@
             
             //초기화
             
-            cell.replyPersonImage01.hidden = YES;
-            cell.replyPersonImage02.hidden = YES;
-            cell.replyPersonImage03.hidden = YES;
-            cell.replyPersonImage04.hidden = YES;
-            cell.replyPersonImage05.hidden = YES;
+//            cell.replyPersonImage01.hidden = YES;
+//            cell.replyPersonImage02.hidden = YES;
+//            cell.replyPersonImage03.hidden = YES;
+//            cell.replyPersonImage04.hidden = YES;
+//            cell.replyPersonImage05.hidden = YES;
             
             for(int i=0 ; i<5 ; i++){
                 if([_detailList count] > i){

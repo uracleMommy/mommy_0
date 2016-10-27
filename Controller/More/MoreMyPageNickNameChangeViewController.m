@@ -242,12 +242,15 @@
     }
     
     [[MommyRequest sharedInstance] mommyMyPageApiService:MyPageUpdateProfile authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data) {
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self closeModal];
+        });
     } error:^(NSError *error) {
         
     }];
 }
 
-- (IBAction)closeModal:(id)sender {
+- (void)closeModal {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
