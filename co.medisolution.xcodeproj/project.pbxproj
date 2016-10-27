@@ -59,7 +59,6 @@
 		2AB670E21D9267DF0060561C /* CommunityPersonListCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AB670E01D9267DF0060561C /* CommunityPersonListCustomCell.xib */; };
 		2AB670E61D9268120060561C /* CommunityProfilePopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB670E41D9268120060561C /* CommunityProfilePopupViewController.m */; };
 		2AB670E71D9268120060561C /* CommunityProfilePopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AB670E51D9268120060561C /* CommunityProfilePopupViewController.xib */; };
-		2AB994951DB9AF630056C015 /* GTL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB994661DB9AAEF0056C015 /* GTL.framework */; };
 		2ABDB8D91DA36FB500239967 /* LoginResetPasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABDB8D81DA36FB500239967 /* LoginResetPasswordController.m */; };
 		2ABF43481DA7272700AE735F /* DiaryDetailListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABF43471DA7272700AE735F /* DiaryDetailListController.m */; };
 		2AC1644B1D9CA36800533BB0 /* CommunityDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1644A1D9CA36800533BB0 /* CommunityDetailModel.m */; };
@@ -113,10 +112,6 @@
 		DC1A77E21D9512C900F88693 /* MoreMyPageFetusContentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A77E01D9512C900F88693 /* MoreMyPageFetusContentsCell.m */; };
 		DC1A77E31D9512C900F88693 /* MoreMyPageFetusContentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1A77E11D9512C900F88693 /* MoreMyPageFetusContentsCell.xib */; };
 		DC1A77E61D9535D200F88693 /* MoreMyPagePointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A77E51D9535D200F88693 /* MoreMyPagePointViewController.m */; };
-		DC1DDC501DB8964300D6602E /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1DDC4F1DB8964300D6602E /* CoreBluetooth.framework */; };
-		DC1DDC541DB896D700D6602E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1DDC531DB896D700D6602E /* UIKit.framework */; };
-		DC1DDC551DB896DD00D6602E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1DDC511DB8968200D6602E /* Foundation.framework */; };
-		DC1DDC571DB897DA00D6602E /* LifesenseBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1DDC561DB897DA00D6602E /* LifesenseBluetooth.framework */; };
 		DC1DDC5A1DB8986700D6602E /* httpd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC1DDC581DB8986700D6602E /* httpd.cpp */; };
 		DC1FE6E31D658E47006F7A50 /* DashBoardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6DC1D658E47006F7A50 /* DashBoardSegue.m */; };
 		DC1FE6E41D658E47006F7A50 /* DiarySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1FE6DE1D658E47006F7A50 /* DiarySegue.m */; };
@@ -256,6 +251,9 @@
 		DC6070981D7030CF00F60148 /* SingleImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC6070961D7030CF00F60148 /* SingleImageViewController.xib */; };
 		DC60709C1D7030E700F60148 /* MultiImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC60709A1D7030E700F60148 /* MultiImageViewController.m */; };
 		DC60709D1D7030E700F60148 /* MultiImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC60709B1D7030E700F60148 /* MultiImageViewController.xib */; };
+		DC634D871DC1E5AF0019B894 /* CoachMarkFirstController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC634D861DC1E5AF0019B894 /* CoachMarkFirstController.m */; };
+		DC634D8A1DC1E5C60019B894 /* CoachMarkSecondController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC634D891DC1E5C60019B894 /* CoachMarkSecondController.m */; };
+		DC634D8D1DC1E5E00019B894 /* CoachMarkThirdController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC634D8C1DC1E5E00019B894 /* CoachMarkThirdController.m */; };
 		DC660F471DA604C600B106FB /* PushNoticeSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC660F461DA604C600B106FB /* PushNoticeSegue.m */; };
 		DC660F4B1DA6400A00B106FB /* MorePrefessionalEmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC660F4A1DA6400A00B106FB /* MorePrefessionalEmptySegue.m */; };
 		DC67EB5F1D94B4480096BCB3 /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = DC67EB5C1D94B4480096BCB3 /* FLAnimatedImage.m */; };
@@ -290,18 +288,17 @@
 		DC6B0B641DBF27BB0092324C /* daily_step.html in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B5A1DBF27BB0092324C /* daily_step.html */; };
 		DC6B0B651DBF27BB0092324C /* daily_weight.html in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B5B1DBF27BB0092324C /* daily_weight.html */; };
 		DC6B0B661DBF27BB0092324C /* line_scroll.html in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B5C1DBF27BB0092324C /* line_scroll.html */; };
-		DC6B0B671DBF27BB0092324C /* pulse_graph.html in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B5D1DBF27BB0092324C /* pulse_graph.html */; };
 		DC6B0B681DBF27BB0092324C /* recommend_weight.html in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B5E1DBF27BB0092324C /* recommend_weight.html */; };
 		DC6B0B691DBF27BB0092324C /* weekly_sleep.html in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B5F1DBF27BB0092324C /* weekly_sleep.html */; };
 		DC6B0B6A1DBF27BB0092324C /* weekly_step.html in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B601DBF27BB0092324C /* weekly_step.html */; };
 		DC6B0B6B1DBF27BB0092324C /* weekly_weight.html in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B611DBF27BB0092324C /* weekly_weight.html */; };
-		DC6B0B731DBF29140092324C /* contents_graph_btn_bubble_left.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B6C1DBF29140092324C /* contents_graph_btn_bubble_left.png */; };
-		DC6B0B741DBF29140092324C /* contents_graph_btn_bubble_right.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B6D1DBF29140092324C /* contents_graph_btn_bubble_right.png */; };
-		DC6B0B751DBF29140092324C /* contents_graph_btn_bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B6E1DBF29140092324C /* contents_graph_btn_bubble.png */; };
-		DC6B0B761DBF29140092324C /* contents_graph_btn_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B6F1DBF29140092324C /* contents_graph_btn_heart.png */; };
-		DC6B0B771DBF29140092324C /* contents_graph_btn_walk.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B701DBF29140092324C /* contents_graph_btn_walk.png */; };
-		DC6B0B781DBF29140092324C /* contents_graph_point.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B711DBF29140092324C /* contents_graph_point.png */; };
-		DC6B0B791DBF29140092324C /* title_icon_weight.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B721DBF29140092324C /* title_icon_weight.png */; };
+		DC6B0B7C1DBF382F0092324C /* LifesenseBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6B0B7B1DBF382F0092324C /* LifesenseBluetooth.framework */; };
+		DC6B0B831DBF50520092324C /* contents_graph_btn_bubble_left.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B7D1DBF50520092324C /* contents_graph_btn_bubble_left.png */; };
+		DC6B0B841DBF50520092324C /* contents_graph_btn_bubble_right.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B7E1DBF50520092324C /* contents_graph_btn_bubble_right.png */; };
+		DC6B0B851DBF50520092324C /* contents_graph_btn_bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B7F1DBF50520092324C /* contents_graph_btn_bubble.png */; };
+		DC6B0B861DBF50520092324C /* contents_graph_btn_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B801DBF50520092324C /* contents_graph_btn_heart.png */; };
+		DC6B0B871DBF50520092324C /* contents_graph_btn_walk.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B811DBF50520092324C /* contents_graph_btn_walk.png */; };
+		DC6B0B881DBF50520092324C /* contents_graph_point.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B821DBF50520092324C /* contents_graph_point.png */; };
 		DC723C2A1D63FE2200557E1E /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC723C291D63FE2200557E1E /* MainTabBar.storyboard */; };
 		DC7303D81DA48843001472F8 /* MommyUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7303D71DA48843001472F8 /* MommyUtils.m */; };
 		DC7303DB1DA4F452001472F8 /* MessageEmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7303DA1DA4F452001472F8 /* MessageEmptySegue.m */; };
@@ -370,23 +367,6 @@
 		DCF8E1EA1D8FA84B00E67402 /* MoreProfessionalButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCF8E1E81D8FA84B00E67402 /* MoreProfessionalButtonViewController.xib */; };
 		DCF8E1EE1D8FD5C300E67402 /* MoreProfessionalAdviceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF8E1ED1D8FD5C300E67402 /* MoreProfessionalAdviceCell.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		2AB994651DB9AAEF0056C015 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2AB9945B1DB9AAEE0056C015 /* GTLCore.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F4469DB41C40229D00BCFAA1;
-			remoteInfo = GTLiOSCore;
-		};
-		2AB9946B1DB9AAEF0056C015 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2AB9945B1DB9AAEE0056C015 /* GTLCore.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4F1AD9020B71603F00DC0485;
-			remoteInfo = OSXDevTool;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2A0CCB421D73B411001B6E1F /* SignUpMainScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpMainScrollViewController.h; sourceTree = "<group>"; };
@@ -491,7 +471,6 @@
 		2AB670E31D9268120060561C /* CommunityProfilePopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityProfilePopupViewController.h; sourceTree = "<group>"; };
 		2AB670E41D9268120060561C /* CommunityProfilePopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityProfilePopupViewController.m; sourceTree = "<group>"; };
 		2AB670E51D9268120060561C /* CommunityProfilePopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityProfilePopupViewController.xib; sourceTree = "<group>"; };
-		2AB9945B1DB9AAEE0056C015 /* GTLCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GTLCore.xcodeproj; path = "google-api-objectivec-client/Source/GTLCore.xcodeproj"; sourceTree = "<group>"; };
 		2ABDB8D71DA36FB500239967 /* LoginResetPasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginResetPasswordController.h; sourceTree = "<group>"; };
 		2ABDB8D81DA36FB500239967 /* LoginResetPasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginResetPasswordController.m; sourceTree = "<group>"; };
 		2ABF43461DA7272700AE735F /* DiaryDetailListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryDetailListController.h; sourceTree = "<group>"; };
@@ -577,7 +556,6 @@
 		DC1DDC4F1DB8964300D6602E /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		DC1DDC511DB8968200D6602E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DC1DDC531DB896D700D6602E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		DC1DDC561DB897DA00D6602E /* LifesenseBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LifesenseBluetooth.framework; sourceTree = "<group>"; };
 		DC1DDC581DB8986700D6602E /* httpd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = httpd.cpp; path = Library/Common/Class/httpd.cpp; sourceTree = "<group>"; };
 		DC1DDC591DB8986700D6602E /* httpd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = httpd.h; path = Library/Common/Class/httpd.h; sourceTree = "<group>"; };
 		DC1FE6DB1D658E47006F7A50 /* DashBoardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardSegue.h; sourceTree = "<group>"; };
@@ -824,6 +802,12 @@
 		DC6070991D7030E700F60148 /* MultiImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiImageViewController.h; sourceTree = "<group>"; };
 		DC60709A1D7030E700F60148 /* MultiImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiImageViewController.m; sourceTree = "<group>"; };
 		DC60709B1D7030E700F60148 /* MultiImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiImageViewController.xib; sourceTree = "<group>"; };
+		DC634D851DC1E5AF0019B894 /* CoachMarkFirstController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachMarkFirstController.h; sourceTree = "<group>"; };
+		DC634D861DC1E5AF0019B894 /* CoachMarkFirstController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachMarkFirstController.m; sourceTree = "<group>"; };
+		DC634D881DC1E5C60019B894 /* CoachMarkSecondController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachMarkSecondController.h; sourceTree = "<group>"; };
+		DC634D891DC1E5C60019B894 /* CoachMarkSecondController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachMarkSecondController.m; sourceTree = "<group>"; };
+		DC634D8B1DC1E5E00019B894 /* CoachMarkThirdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachMarkThirdController.h; sourceTree = "<group>"; };
+		DC634D8C1DC1E5E00019B894 /* CoachMarkThirdController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachMarkThirdController.m; sourceTree = "<group>"; };
 		DC660F451DA604C600B106FB /* PushNoticeSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNoticeSegue.h; sourceTree = "<group>"; };
 		DC660F461DA604C600B106FB /* PushNoticeSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNoticeSegue.m; sourceTree = "<group>"; };
 		DC660F491DA6400A00B106FB /* MorePrefessionalEmptySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorePrefessionalEmptySegue.h; sourceTree = "<group>"; };
@@ -888,13 +872,13 @@
 		DC6B0B5F1DBF27BB0092324C /* weekly_sleep.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = weekly_sleep.html; sourceTree = "<group>"; };
 		DC6B0B601DBF27BB0092324C /* weekly_step.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = weekly_step.html; sourceTree = "<group>"; };
 		DC6B0B611DBF27BB0092324C /* weekly_weight.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = weekly_weight.html; sourceTree = "<group>"; };
-		DC6B0B6C1DBF29140092324C /* contents_graph_btn_bubble_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contents_graph_btn_bubble_left.png; sourceTree = "<group>"; };
-		DC6B0B6D1DBF29140092324C /* contents_graph_btn_bubble_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contents_graph_btn_bubble_right.png; sourceTree = "<group>"; };
-		DC6B0B6E1DBF29140092324C /* contents_graph_btn_bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contents_graph_btn_bubble.png; sourceTree = "<group>"; };
-		DC6B0B6F1DBF29140092324C /* contents_graph_btn_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contents_graph_btn_heart.png; sourceTree = "<group>"; };
-		DC6B0B701DBF29140092324C /* contents_graph_btn_walk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contents_graph_btn_walk.png; sourceTree = "<group>"; };
-		DC6B0B711DBF29140092324C /* contents_graph_point.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contents_graph_point.png; sourceTree = "<group>"; };
-		DC6B0B721DBF29140092324C /* title_icon_weight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title_icon_weight.png; sourceTree = "<group>"; };
+		DC6B0B7B1DBF382F0092324C /* LifesenseBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LifesenseBluetooth.framework; sourceTree = "<group>"; };
+		DC6B0B7D1DBF50520092324C /* contents_graph_btn_bubble_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contents_graph_btn_bubble_left.png; sourceTree = "<group>"; };
+		DC6B0B7E1DBF50520092324C /* contents_graph_btn_bubble_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contents_graph_btn_bubble_right.png; sourceTree = "<group>"; };
+		DC6B0B7F1DBF50520092324C /* contents_graph_btn_bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contents_graph_btn_bubble.png; sourceTree = "<group>"; };
+		DC6B0B801DBF50520092324C /* contents_graph_btn_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contents_graph_btn_heart.png; sourceTree = "<group>"; };
+		DC6B0B811DBF50520092324C /* contents_graph_btn_walk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contents_graph_btn_walk.png; sourceTree = "<group>"; };
+		DC6B0B821DBF50520092324C /* contents_graph_point.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contents_graph_point.png; sourceTree = "<group>"; };
 		DC723C291D63FE2200557E1E /* MainTabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
 		DC7303D61DA48843001472F8 /* MommyUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MommyUtils.h; sourceTree = "<group>"; };
 		DC7303D71DA48843001472F8 /* MommyUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MommyUtils.m; sourceTree = "<group>"; };
@@ -918,6 +902,7 @@
 		DC8EB78C1D869D4800A0304D /* MoreWeekDetailInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreWeekDetailInfoCell.h; sourceTree = "<group>"; };
 		DC8EB78D1D869D4800A0304D /* MoreWeekDetailInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreWeekDetailInfoCell.m; sourceTree = "<group>"; };
 		DC8EB78E1D869D4800A0304D /* MoreWeekDetailInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreWeekDetailInfoCell.xib; sourceTree = "<group>"; };
+		DC95472A1DC02CB700317A10 /* co.medisolution.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = co.medisolution.entitlements; sourceTree = "<group>"; };
 		DCA3BCBC1D98BAF6009D3DD1 /* MoreEnvironmentSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreEnvironmentSetupViewController.h; sourceTree = "<group>"; };
 		DCA3BCBD1D98BAF6009D3DD1 /* MoreEnvironmentSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreEnvironmentSetupViewController.m; sourceTree = "<group>"; };
 		DCA3BCBF1D98BBD0009D3DD1 /* MoreEnvironmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreEnvironmentModel.h; sourceTree = "<group>"; };
@@ -1015,13 +1000,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AB994951DB9AF630056C015 /* GTL.framework in Frameworks */,
 				2AD09C0F1DB8AE07005D0CD7 /* SafariServices.framework in Frameworks */,
 				2AD09C0D1DB8AE01005D0CD7 /* AddressBook.framework in Frameworks */,
 				2AD09C0B1DB8ADCB005D0CD7 /* SystemConfiguration.framework in Frameworks */,
 				2AD09C091DB8ADB9005D0CD7 /* libz.tbd in Frameworks */,
 				2AF695FE1DB4C52D00072FC2 /* CoreLocation.framework in Frameworks */,
 				2AD09C061DB8A5D9005D0CD7 /* GoogleSymbolUtilities.framework in Frameworks */,
+				DC6B0B7C1DBF382F0092324C /* LifesenseBluetooth.framework in Frameworks */,
 				2AD09C031DB8A5D9005D0CD7 /* GoogleNetworkingUtilities.framework in Frameworks */,
 				2AD09C011DB8A5D9005D0CD7 /* GoogleAppUtilities.framework in Frameworks */,
 				2AD09C021DB8A5D9005D0CD7 /* GoogleAuthUtilities.framework in Frameworks */,
@@ -1271,15 +1256,6 @@
 			path = Community;
 			sourceTree = "<group>";
 		};
-		2AB9945C1DB9AAEE0056C015 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2AB994661DB9AAEF0056C015 /* GTL.framework */,
-				2AB9946C1DB9AAEF0056C015 /* OSXDevTool */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		2AC781D71D5998D700B86BE1 /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
@@ -1344,9 +1320,9 @@
 		2AF695FC1DB4C52D00072FC2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DC6B0B7B1DBF382F0092324C /* LifesenseBluetooth.framework */,
 				DC1DDC581DB8986700D6602E /* httpd.cpp */,
 				DC1DDC591DB8986700D6602E /* httpd.h */,
-				DC1DDC561DB897DA00D6602E /* LifesenseBluetooth.framework */,
 				DC1DDC531DB896D700D6602E /* UIKit.framework */,
 				DC1DDC511DB8968200D6602E /* Foundation.framework */,
 				DC1DDC4F1DB8964300D6602E /* CoreBluetooth.framework */,
@@ -1977,6 +1953,12 @@
 				DCBFDE631DA332D300A28B3A /* MainSliderViewContainerController.m */,
 				DCB4FA3D1DA3A34B0050EA0A /* MainInfoContainerViewController.h */,
 				DCB4FA3E1DA3A34B0050EA0A /* MainInfoContainerViewController.m */,
+				DC634D851DC1E5AF0019B894 /* CoachMarkFirstController.h */,
+				DC634D861DC1E5AF0019B894 /* CoachMarkFirstController.m */,
+				DC634D881DC1E5C60019B894 /* CoachMarkSecondController.h */,
+				DC634D891DC1E5C60019B894 /* CoachMarkSecondController.m */,
+				DC634D8B1DC1E5E00019B894 /* CoachMarkThirdController.h */,
+				DC634D8C1DC1E5E00019B894 /* CoachMarkThirdController.m */,
 			);
 			path = DashBoard;
 			sourceTree = "<group>";
@@ -2014,13 +1996,6 @@
 		DC6B0B471DBF267C0092324C /* img */ = {
 			isa = PBXGroup;
 			children = (
-				DC6B0B6C1DBF29140092324C /* contents_graph_btn_bubble_left.png */,
-				DC6B0B6D1DBF29140092324C /* contents_graph_btn_bubble_right.png */,
-				DC6B0B6E1DBF29140092324C /* contents_graph_btn_bubble.png */,
-				DC6B0B6F1DBF29140092324C /* contents_graph_btn_heart.png */,
-				DC6B0B701DBF29140092324C /* contents_graph_btn_walk.png */,
-				DC6B0B711DBF29140092324C /* contents_graph_point.png */,
-				DC6B0B721DBF29140092324C /* title_icon_weight.png */,
 			);
 			path = img;
 			sourceTree = "<group>";
@@ -2049,16 +2024,21 @@
 		DCA5AE181D598C6F0075B7AD = {
 			isa = PBXGroup;
 			children = (
-				2AB9945B1DB9AAEE0056C015 /* GTLCore.xcodeproj */,
+				DC6B0B7D1DBF50520092324C /* contents_graph_btn_bubble_left.png */,
+				DC6B0B7E1DBF50520092324C /* contents_graph_btn_bubble_right.png */,
+				DC6B0B7F1DBF50520092324C /* contents_graph_btn_bubble.png */,
+				DC6B0B801DBF50520092324C /* contents_graph_btn_heart.png */,
+				DC6B0B811DBF50520092324C /* contents_graph_btn_walk.png */,
+				DC6B0B821DBF50520092324C /* contents_graph_point.png */,
 				DC6B0B581DBF27BB0092324C /* blood_pressure.html */,
 				DC6B0B591DBF27BB0092324C /* daily_sleep.html */,
 				DC6B0B5A1DBF27BB0092324C /* daily_step.html */,
+				DC6B0B601DBF27BB0092324C /* weekly_step.html */,
 				DC6B0B5B1DBF27BB0092324C /* daily_weight.html */,
 				DC6B0B5C1DBF27BB0092324C /* line_scroll.html */,
 				DC6B0B5D1DBF27BB0092324C /* pulse_graph.html */,
 				DC6B0B5E1DBF27BB0092324C /* recommend_weight.html */,
 				DC6B0B5F1DBF27BB0092324C /* weekly_sleep.html */,
-				DC6B0B601DBF27BB0092324C /* weekly_step.html */,
 				DC6B0B611DBF27BB0092324C /* weekly_weight.html */,
 				DC6B0B471DBF267C0092324C /* img */,
 				2A743F561D62CA4B007DEB6B /* Model */,
@@ -2082,6 +2062,7 @@
 		DCA5AE231D598C6F0075B7AD /* co.medisolution */ = {
 			isa = PBXGroup;
 			children = (
+				DC95472A1DC02CB700317A10 /* co.medisolution.entitlements */,
 				2AD09BF81DB8A534005D0CD7 /* GoogleService-Info.plist */,
 				2A54B1C71D66E4E600C538D1 /* Assets.xcassets */,
 				DC5D20721D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf */,
@@ -2188,6 +2169,11 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = LUYT38Y3AT;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -2202,35 +2188,12 @@
 			mainGroup = DCA5AE181D598C6F0075B7AD;
 			productRefGroup = DCA5AE221D598C6F0075B7AD /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 2AB9945C1DB9AAEE0056C015 /* Products */;
-					ProjectRef = 2AB9945B1DB9AAEE0056C015 /* GTLCore.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				DCA5AE201D598C6F0075B7AD /* co.medisolution */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		2AB994661DB9AAEF0056C015 /* GTL.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = GTL.framework;
-			remoteRef = 2AB994651DB9AAEF0056C015 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		2AB9946C1DB9AAEF0056C015 /* OSXDevTool */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = OSXDevTool;
-			remoteRef = 2AB9946B1DB9AAEF0056C015 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		DCA5AE1F1D598C6F0075B7AD /* Resources */ = {
@@ -2240,6 +2203,7 @@
 				DC6B0B691DBF27BB0092324C /* weekly_sleep.html in Resources */,
 				2AF695FB1DB4B40F00072FC2 /* CommunitySliderImageCell.xib in Resources */,
 				2AB670B11D924EAD0060561C /* Community.storyboard in Resources */,
+				DC6B0B831DBF50520092324C /* contents_graph_btn_bubble_left.png in Resources */,
 				DCA3BCD51D98BDB7009D3DD1 /* MoreEnvironmentAgreementCell.xib in Resources */,
 				DC4DE2D91D814F9D007CF9BF /* MoreBloodPressureHistoryCell.xib in Resources */,
 				DCF6CABF1D74430300703CAE /* PushViewListCell.xib in Resources */,
@@ -2253,8 +2217,6 @@
 				DC5FCCFE1D7E890200957D73 /* SleepingHoursInfoCell.xib in Resources */,
 				DC4E958E1D7D26EC0087647B /* WeightTotalInfoCell.xib in Resources */,
 				DC5D20961D62E01300ACDCA4 /* DashBoardScrollCellView.xib in Resources */,
-				DC6B0B731DBF29140092324C /* contents_graph_btn_bubble_left.png in Resources */,
-				DC6B0B741DBF29140092324C /* contents_graph_btn_bubble_right.png in Resources */,
 				DC1A77D61D94FC2E00F88693 /* MoreMyPagePasswordChangeCell.xib in Resources */,
 				2AD09C041DB8A5D9005D0CD7 /* GoogleSignIn.bundle in Resources */,
 				DC4E95A61D7D66550087647B /* ActiveMassStepCell.xib in Resources */,
@@ -2264,13 +2226,13 @@
 				DC68F53F1D93D7E4009D3B1E /* MoreEquipmentListCell.xib in Resources */,
 				DCA3BCEC1D9913F1009D3DD1 /* MorePointCell_375.xib in Resources */,
 				2AB670DD1D9267700060561C /* CommunityNewspeedImageCustomCell.xib in Resources */,
+				DC6B0B861DBF50520092324C /* contents_graph_btn_heart.png in Resources */,
 				DC67EB651D94BDAD0096BCB3 /* MoreMyPageNickNameCell.xib in Resources */,
 				DCA3BCC61D98BCCB009D3DD1 /* MoreEnvironmentMyPageCell.xib in Resources */,
 				DC6B0B681DBF27BB0092324C /* recommend_weight.html in Resources */,
 				2AC1644E1D9CD05A00533BB0 /* CommunityDetailContentCell.xib in Resources */,
 				DC6B0B641DBF27BB0092324C /* daily_step.html in Resources */,
 				DCF6CA911D740D0A00703CAE /* PageImageViewController.xib in Resources */,
-				DC6B0B791DBF29140092324C /* title_icon_weight.png in Resources */,
 				DC68F5411D93D7E4009D3B1E /* MoreEquipmentSelectCell.xib in Resources */,
 				2AD4A8921D7D660C0032E16C /* emoticonPopupViewController.xib in Resources */,
 				DC4DE2F81D82A212007CF9BF /* MoreWeekCheckInfoCell.xib in Resources */,
@@ -2295,38 +2257,38 @@
 				DCBFDE6D1DA347C000A28B3A /* MainSliderCell.xib in Resources */,
 				DCA3BCE21D98EAF3009D3DD1 /* MoreEnvironmentCalendarListCell.xib in Resources */,
 				DC4462231D87ADB1006BFEBB /* MoreProfessionalAdviceCell.xib in Resources */,
+				DC6B0B871DBF50520092324C /* contents_graph_btn_walk.png in Resources */,
 				DC73E5C71D6DAE3B007D2DEE /* IndicatorViewController.xib in Resources */,
 				2AC781DB1D599C0800B86BE1 /* MembershipLogin.storyboard in Resources */,
 				DC6B0B661DBF27BB0092324C /* line_scroll.html in Resources */,
 				DC6B0B6B1DBF27BB0092324C /* weekly_weight.html in Resources */,
 				DCA5AE371D598C6F0075B7AD /* LaunchScreen.storyboard in Resources */,
-				DC6B0B751DBF29140092324C /* contents_graph_btn_bubble.png in Resources */,
 				DC5D20751D62ACFB00ACDCA4 /* NanumBarunGothic.ttf in Resources */,
 				DC723C2A1D63FE2200557E1E /* MainTabBar.storyboard in Resources */,
 				DC3AAEC51D757D4A007218E9 /* SampleMainController.xib in Resources */,
+				DC6B0B841DBF50520092324C /* contents_graph_btn_bubble_right.png in Resources */,
 				DCA3BCDA1D98BDDF009D3DD1 /* MoreEnvironmentVersionInfoCell.xib in Resources */,
 				2AA6D6C21D64230A00316DD6 /* Diary.storyboard in Resources */,
-				DC6B0B761DBF29140092324C /* contents_graph_btn_heart.png in Resources */,
 				2AC164521D9CD0B200533BB0 /* CommunityDetailReplyContentCell.xib in Resources */,
 				DC4E95AB1D7D66930087647B /* ActiveMassCalorieCell.xib in Resources */,
 				DC56F0A51D79728F00FB3A30 /* WeightDetailInfoContentsCell.xib in Resources */,
-				DC6B0B781DBF29140092324C /* contents_graph_point.png in Resources */,
 				DC5FCCF41D7E84CC00957D73 /* SleepingHoursChartViewCell.xib in Resources */,
 				DC60709D1D7030E700F60148 /* MultiImageViewController.xib in Resources */,
 				DC68F53D1D93D7E4009D3B1E /* MoreEquipmentChoiceCell.xib in Resources */,
 				DCA3BCEA1D9910F3009D3DD1 /* MorePointCell_320.xib in Resources */,
 				DCA3BCEE1D9915F4009D3DD1 /* MorePointCell_414.xib in Resources */,
 				DC1A77E31D9512C900F88693 /* MoreMyPageFetusContentsCell.xib in Resources */,
+				DC6B0B851DBF50520092324C /* contents_graph_btn_bubble.png in Resources */,
 				DCA8B7191DB4CDE1008A626A /* MoreBloodPressureDeleteButtonController.xib in Resources */,
 				DC512ACC1D669BF900885C26 /* MessageListCell.xib in Resources */,
 				DC4E95851D7CF0A80087647B /* More.storyboard in Resources */,
 				2AB670E21D9267DF0060561C /* CommunityPersonListCustomCell.xib in Resources */,
+				DC6B0B881DBF50520092324C /* contents_graph_point.png in Resources */,
 				DC1A77DE1D950F9900F88693 /* MoreMyPageFetusHeaderCell.xib in Resources */,
 				2AC164501D9CD09500533BB0 /* CommunityDetailReplyPeopleInfoCell.xib in Resources */,
 				DC4DE2D41D814F7A007CF9BF /* MoreBloodPressureChartCell.xib in Resources */,
 				DC6B0B6A1DBF27BB0092324C /* weekly_step.html in Resources */,
 				DCA5AE2F1D598C6F0075B7AD /* Main.storyboard in Resources */,
-				DC6B0B771DBF29140092324C /* contents_graph_btn_walk.png in Resources */,
 				DC4DE2BE1D80F4BD007CF9BF /* MoreMainTitleCell.xib in Resources */,
 				DC512AC01D6694D100885C26 /* Message.storyboard in Resources */,
 				DC4E95A11D7D65050087647B /* ActiveMassChartView.xib in Resources */,
@@ -2386,6 +2348,7 @@
 				DCA3BCD91D98BDDF009D3DD1 /* MoreEnvironmentVersionInfoCell.m in Sources */,
 				2AB670E61D9268120060561C /* CommunityProfilePopupViewController.m in Sources */,
 				DCF8E1E91D8FA84B00E67402 /* MoreProfessionalButtonViewController.m in Sources */,
+				DC634D8D1DC1E5E00019B894 /* CoachMarkThirdController.m in Sources */,
 				2AEBE3491D79419E0075B210 /* DiaryWriteScheduleController.m in Sources */,
 				2AEBE34C1D7941BF0075B210 /* DiaryDetailScheduleController.m in Sources */,
 				2A54B1B51D66904000C538D1 /* JTCalendarDayView.m in Sources */,
@@ -2409,6 +2372,7 @@
 				DC68F5271D93D7CC009D3B1E /* MoreEquipmentEmptySegue.m in Sources */,
 				DC4DE2E01D815C35007CF9BF /* MoreBloodPressureInfoView.m in Sources */,
 				DC68F52E1D93D7CC009D3B1E /* MoreEquipmentSelectViewController.m in Sources */,
+				DC634D871DC1E5AF0019B894 /* CoachMarkFirstController.m in Sources */,
 				DC1856481D9E40C700D9A957 /* IntroScrollImageViewContainer.m in Sources */,
 				2A3026381D7E549D0020C3B4 /* KxMenu.m in Sources */,
 				DC8EB78F1D869D4800A0304D /* MoreWeekDetailInfoCell.m in Sources */,
@@ -2474,6 +2438,7 @@
 				2A4474C81D6EBB4A00D467C8 /* LoginUnlockAccountController.m in Sources */,
 				DC4DE2FB1D82C4E7007CF9BF /* MoreWeekCheckViewController.m in Sources */,
 				DC68F52F1D93D7CC009D3B1E /* MoreMyPageMasterViewController.m in Sources */,
+				DC634D8A1DC1E5C60019B894 /* CoachMarkSecondController.m in Sources */,
 				DC4462261D87B0AD006BFEBB /* MoreProfessionalInfoViewController.m in Sources */,
 				2AB627761D5C0CEC00BD7B84 /* LoginMain.m in Sources */,
 				DC538E651D78016B00E5949B /* WeightChartModel.m in Sources */,
@@ -2706,6 +2671,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_ENTITLEMENTS = co.medisolution/co.medisolution.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jung Ho Park (JMP587VVKV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = LUYT38Y3AT;
@@ -2729,7 +2695,7 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.co.medisolution;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.medisolutions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2743,9 +2709,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jung Ho Park (JMP587VVKV)";
+				CODE_SIGN_ENTITLEMENTS = co.medisolution/co.medisolution.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = JH5F2VBM8Z;
+				DEVELOPMENT_TEAM = LUYT38Y3AT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2765,7 +2732,7 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.co.medisolution;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.medisolutions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

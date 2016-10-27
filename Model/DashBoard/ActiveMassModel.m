@@ -30,6 +30,7 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
+    // 헷갈리마셈 서희씨 4개 고정
     return 4;
 }
 
@@ -62,20 +63,24 @@
         }
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.delegate = self;
         
         NSError *error;
         NSData * jsonData = [NSJSONSerialization  dataWithJSONObject:_dicList options:0 error:&error];
         NSString * myString = [[NSString alloc] initWithData:jsonData   encoding:NSUTF8StringEncoding];
         NSLog(@"%@",myString);
         
-        
         // 자바스크립트 펑션 호출
+        cell.isFirst = YES;
         cell.functionJson = myString;
+        cell.lblTitle.text = _dicList[@"title_tag"];
+        cell.lblComment.text = [[_dicList[@"comment"] class] isEqual:[NSNull class]] ? @"" : _dicList[@"comment"];
         [cell.webView loadRequest:_chartRequest];
         
         return cell;
     }
     
+    // 걸음
     else if (indexPath.row == 1) {
         
         ActiveMassStepCell *cell = (ActiveMassStepCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierActiveMassStepCell];
@@ -87,9 +92,13 @@
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
+        cell.lblStep.text = [NSString stringWithFormat:@"%ld", [_dicList[@"step"] longValue]];
+        cell.lblRecStep.text = _dicList[@"rec_step"];
+        
         return cell;
     }
     
+    // 칼로리
     else if (indexPath.row == 2) {
         
         ActiveMassCalorieCell *cell = (ActiveMassCalorieCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierActiveMassCalorieCell];
@@ -101,9 +110,12 @@
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
+        cell.lblCal.text = [NSString stringWithFormat:@"%.01f", [_dicList[@"cal"] doubleValue]];
+        cell.lblRecCal.text = _dicList[@"rec_cal"];
+        
         return cell;
     }
-    
+    // 운동시간
     else {
         
         ActiveMassExerciseCell *cell = (ActiveMassExerciseCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierActiveMassExerciseCell];
@@ -115,8 +127,9 @@
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        return cell;
+        cell.lblExerciseTime.text = _dicList[@"exec_time"];
         
+        return cell;
     }
 }
 
@@ -139,6 +152,25 @@
     else {
         
         return 146;
+    }
+}
+
+#pragma 차트 콜백
+- (void) goPrevious {
+    
+    if ([self.delegate respondsToSelector:@selector(goChartPrevious)]) {
+        
+        [self.delegate goChartPrevious];
+    }
+    
+}
+
+#pragma 차트 콜백
+- (void) goNext {
+    
+    if ([self.delegate respondsToSelector:@selector(goChartNext)]) {
+        
+        [self.delegate goChartNext];
     }
 }
 

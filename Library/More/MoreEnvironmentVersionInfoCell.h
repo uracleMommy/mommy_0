@@ -12,4 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 
+@property (weak, nonatomic) IBOutlet UILabel *lblVersion;
+
+
 @end

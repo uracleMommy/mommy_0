@@ -208,11 +208,6 @@
                                 <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weight_crop" translatesAutoresizingMaskIntoConstraints="NO" id="TkE-i8-Kfn">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="190" id="f1T-23-FdG"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contents_icon_comment_info" translatesAutoresizingMaskIntoConstraints="NO" id="FaD-sx-vS9">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="17" id="GtC-4N-EVf"/>
@@ -227,6 +222,9 @@
                                             <constraint firstAttribute="height" constant="40" id="U68-g2-1jt"/>
                                         </constraints>
                                         <state key="normal" image="tab_btn_left"/>
+                                        <connections>
+                                            <action selector="goPrevious:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="I0U-qU-C3d"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이번주" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wx-qs-uJr">
                                         <constraints>
@@ -243,6 +241,9 @@
                                             <constraint firstAttribute="width" constant="40" id="aFs-P3-uSW"/>
                                         </constraints>
                                         <state key="normal" image="tab_btn_right"/>
+                                        <connections>
+                                            <action selector="goNext:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NF3-u8-slj"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -256,10 +257,18 @@
                                     <constraint firstItem="Arv-LB-2gh" firstAttribute="leading" secondItem="2wx-qs-uJr" secondAttribute="trailing" constant="8" id="qxL-Jx-IiA"/>
                                 </constraints>
                             </view>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R0P-16-hBc">
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="dxm-7l-bKl"/>
+                                </constraints>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="STG-j3-D49" firstAttribute="leading" secondItem="UDK-0t-HMg" secondAttribute="leading" constant="43" id="4I3-5d-1gZ"/>
+                            <constraint firstAttribute="trailing" secondItem="R0P-16-hBc" secondAttribute="trailing" constant="8" id="Ale-2q-SAh"/>
+                            <constraint firstItem="R0P-16-hBc" firstAttribute="top" secondItem="JTd-TJ-yz5" secondAttribute="bottom" constant="8" id="BQq-yX-T3n"/>
                             <constraint firstAttribute="trailing" secondItem="STG-j3-D49" secondAttribute="trailing" constant="21" id="Cy2-JB-9Vp"/>
                             <constraint firstAttribute="trailing" secondItem="TfR-3l-DgF" secondAttribute="trailing" constant="8" id="EUn-WY-fZY"/>
                             <constraint firstItem="STG-j3-D49" firstAttribute="top" secondItem="TfR-3l-DgF" secondAttribute="bottom" constant="8" id="EXQ-mP-LN4"/>
@@ -267,22 +276,14 @@
                             <constraint firstAttribute="trailing" secondItem="FaD-sx-vS9" secondAttribute="trailing" constant="8" id="I89-PV-6ZP"/>
                             <constraint firstAttribute="trailing" secondItem="D2j-Xb-kHg" secondAttribute="trailing" constant="8" id="KEl-5U-b9i"/>
                             <constraint firstItem="FaD-sx-vS9" firstAttribute="top" secondItem="TfR-3l-DgF" secondAttribute="bottom" constant="9" id="L7m-0g-wum"/>
-                            <constraint firstItem="TkE-i8-Kfn" firstAttribute="leading" secondItem="UDK-0t-HMg" secondAttribute="leading" constant="8" id="NE7-Ea-9Ob"/>
-                            <constraint firstItem="D2j-Xb-kHg" firstAttribute="top" secondItem="TkE-i8-Kfn" secondAttribute="bottom" constant="8" id="OJr-14-N4G"/>
                             <constraint firstItem="D2j-Xb-kHg" firstAttribute="leading" secondItem="UDK-0t-HMg" secondAttribute="leading" constant="8" id="RhJ-yB-Nef"/>
-                            <constraint firstAttribute="trailing" secondItem="TkE-i8-Kfn" secondAttribute="trailing" constant="8" id="RpP-nB-u0P"/>
-                            <constraint firstItem="TkE-i8-Kfn" firstAttribute="top" secondItem="UDK-0t-HMg" secondAttribute="top" constant="56" id="Yha-U0-udb"/>
                             <constraint firstItem="JTd-TJ-yz5" firstAttribute="leading" secondItem="UDK-0t-HMg" secondAttribute="leading" constant="8" id="ZFw-An-7o6"/>
                             <constraint firstItem="JTd-TJ-yz5" firstAttribute="top" secondItem="UDK-0t-HMg" secondAttribute="top" constant="8" id="hjM-l1-HaJ"/>
-                            <constraint firstItem="TkE-i8-Kfn" firstAttribute="top" secondItem="JTd-TJ-yz5" secondAttribute="bottom" constant="8" id="nhC-EU-s8P"/>
                             <constraint firstAttribute="trailing" secondItem="JTd-TJ-yz5" secondAttribute="trailing" constant="8" id="nzL-vb-cAF"/>
                             <constraint firstItem="TfR-3l-DgF" firstAttribute="top" secondItem="D2j-Xb-kHg" secondAttribute="bottom" constant="10" id="qrA-f6-Gma"/>
+                            <constraint firstItem="R0P-16-hBc" firstAttribute="leading" secondItem="UDK-0t-HMg" secondAttribute="leading" constant="8" id="sGX-V4-76n"/>
+                            <constraint firstItem="D2j-Xb-kHg" firstAttribute="top" secondItem="R0P-16-hBc" secondAttribute="bottom" constant="8" id="ubk-rU-nTL"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Yha-U0-udb"/>
-                            </mask>
-                        </variation>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contents_icon_comment" translatesAutoresizingMaskIntoConstraints="NO" id="Eb6-Q4-1re">
                         <constraints>
@@ -309,9 +310,16 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="containerView" destination="UDK-0t-HMg" id="nxh-bX-LI5"/>
+                <outlet property="lblComment" destination="STG-j3-D49" id="76W-Mx-JpJ"/>
                 <outlet property="lblDotLine" destination="TfR-3l-DgF" id="pis-gw-LNC"/>
+                <outlet property="lblRFirstRangeWeight" destination="YS1-pd-9TM" id="jdB-Jl-y62"/>
+                <outlet property="lblSecondRangeWeight" destination="Zs4-b3-KEJ" id="sE1-fd-Asx"/>
+                <outlet property="lblTitle" destination="2wx-qs-uJr" id="r7K-R8-96L"/>
+                <outlet property="lblWeight" destination="ERW-E6-Qa6" id="S3k-ca-sI9"/>
+                <outlet property="lblWeightAppraisal" destination="lgI-98-Sye" id="uc4-mN-Mu6"/>
+                <outlet property="webView" destination="R0P-16-hBc" id="WCH-kI-JTy"/>
             </connections>
-            <point key="canvasLocation" x="395" y="388.5"/>
+            <point key="canvasLocation" x="254" y="404.5"/>
         </tableViewCell>
     </objects>
     <resources>
@@ -319,6 +327,5 @@
         <image name="contents_icon_comment_info" width="40" height="40"/>
         <image name="tab_btn_left" width="90" height="90"/>
         <image name="tab_btn_right" width="90" height="90"/>
-        <image name="weight_crop" width="621" height="415"/>
     </resources>
 </document>

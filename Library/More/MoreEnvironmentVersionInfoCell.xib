@@ -60,6 +60,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="containerView" destination="Sjq-Ei-ICz" id="VLu-tt-OMQ"/>
+                <outlet property="lblVersion" destination="lYZ-VQ-XjG" id="oy9-H4-Ffg"/>
             </connections>
         </tableViewCell>
     </objects>

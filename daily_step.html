@@ -27,14 +27,14 @@
 		var config;
 		var chartData;
 		var isFirst = false;
+        var img;
 
 		function initResources(){
-	       //img = new Image();
-		   //img.src = "./img/contents_graph_btn_heart.png";
-		   //img.onload = imageLoadHandler;
+	       img = new Image();
+		   img.src = "contents_graph_btn_heart.png";
+		   img.onload = imageLoadHandler;
 	    }
 	   	function initChart(param){
-            alert('메롱');
 		   ctx = document.getElementById("canvas").getContext("2d");
 		   timeArray = [];
 		   gradient = ctx.createLinearGradient(0, 0, 0, 400);
@@ -45,7 +45,8 @@
 		   
 	   	 }
 	    function initData( param ){
-
+            
+            /*
 	    	var param =  '{ ' +
 			'  "width":"500",'+
 			'  "height":"300",'+
@@ -83,9 +84,10 @@
 		    '"step": 6500,' +
 		    '"comment": "다리 스트레칭으로 피로 싹~",' +
 		    '"result_code": 0 ' +
-		   '}';
+		   '}'; */
 		   
 	       obj = JSON.parse(param);
+           
 	  	   ctx.canvas.height= obj.height;
 	  	   ctx.canvas.width = obj.width;
 	      
@@ -98,7 +100,6 @@
 				stepList.push(0);
 				heartExist.push(0);
 		   }
-		  
 		   
 		   for(var i = 0; i < obj.step_list.length; i++){
 				if( parseInt ( obj.step_list[i].step) > 0){
@@ -120,7 +121,6 @@
 					}
 				]
 			};
-	        	 	
 	    }
 		function rand(s, e, c){ // s ~ e까지의 정수 중 랜덤한 정수 c개 배열로 리턴
 			var arr = [];
@@ -148,13 +148,12 @@
 					for( var i in chart.config.data.datasets ){
 						var metaData = chart.getDatasetMeta(i); //i번째 데이터 셋의 메타정보 가져오기
 						if( !metaData.hidden ){ //legend를 클릭하여 데이터 셋을 출력하지 않을 경우, metaData.hidden = true / 반대의 경우 null
-                            /*
 							for( var j in metaData.data ){
 								var dataModel = metaData.data[j]._model;
 								if(heartExist[j] == 1){
 									ctx.drawImage(img, dataModel.x - (dataModel.width+ heartWidthRemain) /2, dataModel.y - (dataModel.width+ heartWidthRemain) - 5, dataModel.width + heartWidthRemain, dataModel.width + heartWidthRemain);	//img, x, y, width, height
 								}
-							}*/
+							}
 						}
 					}
 				 }

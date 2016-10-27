@@ -13,7 +13,7 @@
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "9D01D5BCCDE322646FEB1945347C3CF4E96976E3" : "mommy_0\/google-api-objectivec-client\/Deps\/gtm-oauth2\/",
     "D58DF7C3E72198199D1B65DDDAADD2A7790F9A98" : "google-api-objectivec-client\/",
-    "022C32491B1982E71381A5D9EB5DF3066282EC38" : "mommy_0\/",
+    "022C32491B1982E71381A5D9EB5DF3066282EC38" : "mommy\/",
     "FAD0B99C3A0EB9F5EAC9FDFC4A76471FB31CBC6F" : "mommy_0\/google-api-objectivec-client\/Deps\/gtm-session-fetcher\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "co.medisolution",

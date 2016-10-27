@@ -121,8 +121,6 @@
         UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
         [alert addAction:confirmAlertAction];
     }];
-    
-    
 }
 
 #pragma 주차별 운동 상세 정보

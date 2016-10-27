@@ -16,6 +16,193 @@
         </array>
     </customFonts>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="Ddt-9X-oex">
+            <objects>
+                <viewController id="FxZ-gp-Me8" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VBY-BV-Uqz"/>
+                        <viewControllerLayoutGuide type="bottom" id="rC8-jj-3bL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aK5-uU-Eme">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k3q-RN-Xl2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1930" y="-1319"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="VSF-p9-txm">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="1gt-e1-krC" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K2N-xO-uCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1457" y="-1318"/>
+        </scene>
+        <!--Coach Mark First Controller-->
+        <scene sceneID="LHN-ep-WY6">
+            <objects>
+                <viewController id="eZC-sD-Bat" customClass="CoachMarkFirstController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lQC-00-MjA"/>
+                        <viewControllerLayoutGuide type="bottom" id="wkU-R4-iqN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="F8s-49-Wwz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u86-Xh-MoA">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTZ-0v-ppq">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="J0i-rm-gyH"/>
+                                        </constraints>
+                                        <string key="text">지인으로부터 온 쪽지 및 푸시
+메세지를 확인할 수 있어요</string>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_cm_comm" translatesAutoresizingMaskIntoConstraints="NO" id="mg9-F3-x9U"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_cm_01" translatesAutoresizingMaskIntoConstraints="NO" id="3lh-VH-5hX">
+                                        <frame key="frameInset" minY="47" width="320" height="438"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="HTZ-0v-ppq" firstAttribute="leading" secondItem="u86-Xh-MoA" secondAttribute="leading" id="7hL-DU-1Oa"/>
+                                    <constraint firstItem="mg9-F3-x9U" firstAttribute="top" secondItem="HTZ-0v-ppq" secondAttribute="bottom" constant="8" id="8x2-Oj-8UY"/>
+                                    <constraint firstItem="mg9-F3-x9U" firstAttribute="leading" secondItem="u86-Xh-MoA" secondAttribute="leading" id="GHg-Sy-yCB"/>
+                                    <constraint firstItem="HTZ-0v-ppq" firstAttribute="top" secondItem="u86-Xh-MoA" secondAttribute="top" id="Gqa-gE-icO"/>
+                                    <constraint firstAttribute="bottom" secondItem="mg9-F3-x9U" secondAttribute="bottom" id="agi-FI-VGf"/>
+                                    <constraint firstAttribute="trailing" secondItem="HTZ-0v-ppq" secondAttribute="trailing" id="bGx-Bk-mFu"/>
+                                    <constraint firstAttribute="trailing" secondItem="mg9-F3-x9U" secondAttribute="trailing" id="lbo-0e-CKi"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="u86-Xh-MoA" firstAttribute="leading" secondItem="F8s-49-Wwz" secondAttribute="leadingMargin" constant="11" id="7mz-ZK-oIf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="u86-Xh-MoA" secondAttribute="trailing" constant="12" id="WjW-eJ-6AL"/>
+                            <constraint firstItem="u86-Xh-MoA" firstAttribute="top" secondItem="lQC-00-MjA" secondAttribute="bottom" constant="71" id="hTc-NI-Njw"/>
+                            <constraint firstItem="wkU-R4-iqN" firstAttribute="top" secondItem="u86-Xh-MoA" secondAttribute="bottom" constant="91" id="hvZ-kZ-ES5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JqZ-dB-vmc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1026.5" y="-1329.5"/>
+        </scene>
+        <!--Coach Mark Second Controller-->
+        <scene sceneID="RY1-56-mnp">
+            <objects>
+                <viewController id="iqI-e5-He7" customClass="CoachMarkSecondController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dBc-T7-Dwh"/>
+                        <viewControllerLayoutGuide type="bottom" id="jZ6-XS-lyy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Ju-lw-nIy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKM-Sa-ldG">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 수면/체중/활동량을 확인해 볼까요?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8n-c8-xeO">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="hsl-3S-IxM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_cm_comm" translatesAutoresizingMaskIntoConstraints="NO" id="0VO-2l-czg"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_cm_02" translatesAutoresizingMaskIntoConstraints="NO" id="TZY-LZ-WEs">
+                                        <frame key="frameInset" minY="47" width="320" height="438"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="0VO-2l-czg" secondAttribute="bottom" id="LJi-Ce-SWF"/>
+                                    <constraint firstItem="n8n-c8-xeO" firstAttribute="top" secondItem="dKM-Sa-ldG" secondAttribute="top" id="Ubh-id-yMF"/>
+                                    <constraint firstItem="n8n-c8-xeO" firstAttribute="leading" secondItem="dKM-Sa-ldG" secondAttribute="leading" id="g3m-NI-2eH"/>
+                                    <constraint firstAttribute="trailing" secondItem="n8n-c8-xeO" secondAttribute="trailing" id="pmo-k4-b8h"/>
+                                    <constraint firstItem="0VO-2l-czg" firstAttribute="leading" secondItem="dKM-Sa-ldG" secondAttribute="leading" id="qne-Fq-flk"/>
+                                    <constraint firstAttribute="trailing" secondItem="0VO-2l-czg" secondAttribute="trailing" id="wNs-Ka-NZQ"/>
+                                    <constraint firstItem="0VO-2l-czg" firstAttribute="top" secondItem="n8n-c8-xeO" secondAttribute="bottom" constant="8" id="xIn-6x-B6x"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dKM-Sa-ldG" firstAttribute="leading" secondItem="0Ju-lw-nIy" secondAttribute="leadingMargin" constant="11" id="BPS-8U-Cgm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dKM-Sa-ldG" secondAttribute="trailing" constant="12" id="hur-nO-Znm"/>
+                            <constraint firstItem="jZ6-XS-lyy" firstAttribute="top" secondItem="dKM-Sa-ldG" secondAttribute="bottom" constant="91" id="jOb-PX-pDr"/>
+                            <constraint firstItem="dKM-Sa-ldG" firstAttribute="top" secondItem="dBc-T7-Dwh" secondAttribute="bottom" constant="71" id="vmV-L7-4Pz"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EXY-bk-NKV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-527.5" y="-1318.5"/>
+        </scene>
+        <!--Coach Mark Third Controller-->
+        <scene sceneID="vZE-ts-OFt">
+            <objects>
+                <viewController id="WUV-hl-vny" customClass="CoachMarkThirdController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EkW-vm-hRJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="1U8-1a-nS9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FPg-Bd-R8O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1tn-97-eqo">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좌/우로 화면을 이동시켜 주차별 프로그램을 확인해 보세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0w-9Z-k0l">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="5ur-WE-sYn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_cm_comm" translatesAutoresizingMaskIntoConstraints="NO" id="deD-Li-Ofg"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_cm_03" translatesAutoresizingMaskIntoConstraints="NO" id="RdZ-nX-Qzo">
+                                        <frame key="frameInset" minY="47" width="320" height="438"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="deD-Li-Ofg" secondAttribute="bottom" id="9zn-9c-SHZ"/>
+                                    <constraint firstItem="deD-Li-Ofg" firstAttribute="top" secondItem="s0w-9Z-k0l" secondAttribute="bottom" constant="8" id="KHo-Ac-1W1"/>
+                                    <constraint firstAttribute="trailing" secondItem="deD-Li-Ofg" secondAttribute="trailing" id="XBc-X0-bFO"/>
+                                    <constraint firstAttribute="trailing" secondItem="s0w-9Z-k0l" secondAttribute="trailing" id="ZXY-Sx-iJW"/>
+                                    <constraint firstItem="deD-Li-Ofg" firstAttribute="leading" secondItem="1tn-97-eqo" secondAttribute="leading" id="cMX-TB-zfk"/>
+                                    <constraint firstItem="s0w-9Z-k0l" firstAttribute="top" secondItem="1tn-97-eqo" secondAttribute="top" id="dPk-Gs-erH"/>
+                                    <constraint firstItem="s0w-9Z-k0l" firstAttribute="leading" secondItem="1tn-97-eqo" secondAttribute="leading" id="jSo-Hn-Lyb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1U8-1a-nS9" firstAttribute="top" secondItem="1tn-97-eqo" secondAttribute="bottom" constant="91" id="7fN-ob-K2J"/>
+                            <constraint firstItem="1tn-97-eqo" firstAttribute="leading" secondItem="FPg-Bd-R8O" secondAttribute="leadingMargin" constant="11" id="CA6-SO-W7m"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1tn-97-eqo" secondAttribute="trailing" constant="12" id="FWf-Hf-Cfu"/>
+                            <constraint firstItem="1tn-97-eqo" firstAttribute="top" secondItem="EkW-vm-hRJ" secondAttribute="bottom" constant="71" id="shZ-ZB-dEr"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uKb-lO-UFy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-55" y="-1317"/>
+        </scene>
         <!--Mommy&-->
         <scene sceneID="5DJ-U5-Tla">
             <objects>
@@ -185,7 +372,7 @@
         <scene sceneID="SAB-CZ-1RF">
             <objects>
                 <navigationController id="GwF-kI-Oep" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eb0-SQ-pwN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eb0-SQ-pwN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -205,7 +392,7 @@
         <scene sceneID="vlU-ru-4KT">
             <objects>
                 <navigationController id="GFT-SH-6XH" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="sO4-CD-Lj3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sO4-CD-Lj3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -353,13 +540,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mS4-GP-Wbt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1477" y="1760"/>
+            <point key="canvasLocation" x="1479" y="1790"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uKo-aJ-KXU">
             <objects>
                 <navigationController id="2V9-q2-tdq" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="9TX-8c-t8a">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9TX-8c-t8a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -499,13 +686,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xVu-i1-yh1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2353.5" y="196.5"/>
+            <point key="canvasLocation" x="2355" y="96"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NKl-Bm-BI6">
             <objects>
                 <navigationController id="2U5-a1-C3D" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EK3-bh-W43">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EK3-bh-W43">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -585,7 +772,7 @@
             <objects>
                 <navigationController id="pEE-u8-grd" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Eqv-a1-YTT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Eqv-a1-YTT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -635,7 +822,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YqK-le-lWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1333" y="3029"/>
+            <point key="canvasLocation" x="1260" y="3115"/>
         </scene>
         <!--Exercise Timer Controller-->
         <scene sceneID="ztL-xT-yAp">
@@ -748,7 +935,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zYO-X5-MtP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1774" y="3029"/>
+            <point key="canvasLocation" x="1945" y="3115"/>
         </scene>
         <!--수면량-->
         <scene sceneID="2UY-Wb-9Pt">
@@ -793,7 +980,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3iU-vw-8nC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="506" y="2459"/>
+            <point key="canvasLocation" x="499" y="2247"/>
         </scene>
         <!--금주의 프로그램-->
         <scene sceneID="YYU-hT-2ze">
@@ -1336,7 +1523,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XkS-PN-hPt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2836" y="196.5"/>
+            <point key="canvasLocation" x="2836" y="-175"/>
         </scene>
         <!--User Pager Delegate-->
         <scene sceneID="3v2-eP-Mxo">
@@ -1937,7 +2124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Omj-3A-GrF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2836" y="770"/>
+            <point key="canvasLocation" x="2889" y="356"/>
         </scene>
     </scenes>
     <resources>
@@ -1946,6 +2133,10 @@
         <image name="contents_btn_play" width="160" height="160"/>
         <image name="contents_btn_save" width="160" height="160"/>
         <image name="contents_btn_stop" width="160" height="160"/>
+        <image name="home_cm_01" width="580" height="794"/>
+        <image name="home_cm_02" width="580" height="794"/>
+        <image name="home_cm_03" width="580" height="794"/>
+        <image name="home_cm_comm" width="580" height="794"/>
         <image name="home_icon_activity" width="120" height="120"/>
         <image name="home_icon_heart" width="60" height="60"/>
         <image name="home_icon_sleep" width="120" height="120"/>

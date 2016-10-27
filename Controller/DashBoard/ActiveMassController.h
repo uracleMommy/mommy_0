@@ -19,7 +19,8 @@
 
 @property (strong, nonatomic) ActiveMassModel *activeMassModel;
 
-
 - (IBAction)goExerciseTimer:(id)sender;
+
+@property (assign, nonatomic) NSInteger currentPage;
 
 @end

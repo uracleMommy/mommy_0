@@ -30,7 +30,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="체중증가가 너무 빠릅니다. 관리가 필요해요~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nP9-Nf-w3y">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nP9-Nf-w3y">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="KoO-pM-xcL"/>
                                 </constraints>
@@ -52,8 +52,11 @@
                                             <constraint firstAttribute="height" constant="40" id="p64-1c-EjP"/>
                                         </constraints>
                                         <state key="normal" image="tab_btn_left"/>
+                                        <connections>
+                                            <action selector="goPrevious:" destination="vqF-qa-xEr" eventType="touchUpInside" id="HaK-ey-Qtd"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이번주" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4U-Gt-3ws">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4U-Gt-3ws">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="o0R-UD-KI0"/>
                                             <constraint firstAttribute="width" constant="160" id="s80-zY-f6w"/>
@@ -68,6 +71,9 @@
                                             <constraint firstAttribute="width" constant="40" id="n3d-QR-zYV"/>
                                         </constraints>
                                         <state key="normal" image="tab_btn_right"/>
+                                        <connections>
+                                            <action selector="goNext:" destination="vqF-qa-xEr" eventType="touchUpInside" id="eUz-lg-uU0"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -131,9 +137,11 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="containerView" destination="1jk-ve-CHV" id="c6F-z0-msG"/>
+                <outlet property="lblComment" destination="nP9-Nf-w3y" id="0lW-PV-4io"/>
+                <outlet property="lblTitle" destination="w4U-Gt-3ws" id="Ep4-rk-cjs"/>
                 <outlet property="webView" destination="zKY-JB-6cE" id="ruh-Ca-Fwu"/>
             </connections>
-            <point key="canvasLocation" x="129" y="254"/>
+            <point key="canvasLocation" x="-70" y="40"/>
         </tableViewCell>
     </objects>
     <resources>

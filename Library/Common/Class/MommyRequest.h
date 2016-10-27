@@ -140,6 +140,12 @@ typedef enum {
     WeekProgramNutritionDetailInfo
 } MommyWeekProgramServiceType;
 
+#pragma 더보기 관련(주차별체크리스트/환경설정)
+typedef enum {
+    
+    MoreEtcWeekCheckList    
+} MommyMoreEtcServiceType;
+
 #pragma 블록 타입 정의
 typedef void (^MommyApiServiceSuccessBlock) ( NSDictionary *data );
 typedef void (^MommyApiServiceErrorBlock) ( NSError *error );
@@ -197,6 +203,9 @@ static NSString *_mainDomain = @"http://211.241.199.153:9100/medisolution"; // �
 #pragma 이미지 업로드 관련
 - (void) mommyImageUploadApiService : (UIImage *) image success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
 
+#pragma 더보기 관련(주차별체크리스트/환경설정)
+- (void) mommyMoreEtcApiService : (MommyMoreEtcServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock;
+
 @end
 
 #pragma mark API 주소 정의
@@ -231,6 +240,8 @@ static NSString *_mainDomain = @"http://211.241.199.153:9100/medisolution"; // �
 - (NSString *) requestChartInfoUrlType : (MommyChartWebServiceType) serviceType;
 
 - (NSString *) requestWeekProgramUrlType : (MommyWeekProgramServiceType) serviceType;
+
+- (NSString *) requestMoreEtcUrlType : (MommyMoreEtcServiceType) serviceType;
 
 - (NSString *) requestImageUploadUrl;
 

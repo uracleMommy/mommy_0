@@ -686,6 +686,50 @@ static MommyRequest* instanceMommyRequest;
     }] resume];
 }
 
+- (void) mommyMoreEtcApiService : (MommyMoreEtcServiceType) serviceType authKey : (NSString *) authKey parameters : (NSDictionary *) parameters success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock {
+    
+    NSString *requestUrl = [[MommyHttpUrls sharedInstance] requestMoreEtcUrlType:serviceType];
+    
+    NSURL *url = [NSURL URLWithString:requestUrl];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"POST";
+    NSString *contentType = @"application/json";
+    NSString *authorization = [NSString stringWithFormat:@"Bearer %@", authKey];
+    NSMutableData *body = [NSMutableData data];
+    [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
+    [request addValue:authorization forHTTPHeaderField:@"Authorization"];
+    
+    // dictionary -> json
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:parameters
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    [body appendData:[jsonString dataUsingEncoding:NSUTF8StringEncoding]];
+    [request setHTTPBody:body];
+    
+    
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    [[session dataTaskWithRequest:request completionHandler:^(NSData *data,
+                                                              NSURLResponse *response,
+                                                              NSError *error) {
+        
+        if (error != nil) {
+            
+            errorBlock(error);
+            return;
+        }
+        
+        NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+        successBlock(jsonDic);
+        
+        
+    }] resume];
+}
+
 #pragma mark 이미지 업로드 서비스 호출
 - (void) mommyImageUploadApiService : (UIImage *) image success : (MommyApiServiceSuccessBlock) successBlock error : (MommyApiServiceErrorBlock) errorBlock {
     
@@ -1151,6 +1195,19 @@ static MommyHttpUrls* instanceMommyHttpUrls;
     }
 }
 
+- (NSString *) requestMoreEtcUrlType : (MommyMoreEtcServiceType) serviceType {
+    
+    switch (serviceType) {
+        case MoreEtcWeekCheckList:
+            return [_mainDomain stringByAppendingString: @"/api/check/list"];
+            break;
+            
+        default:
+            return @"";
+            break;
+    }
+}
+
 #pragma mark 이미지 업로드
 - (NSString *) requestImageUploadUrl {
     
@@ -1162,8 +1219,6 @@ static MommyHttpUrls* instanceMommyHttpUrls;
     
     return [_mainDomain stringByAppendingString: @"/api/image/view"];
 }
-
-
 
 @end
 

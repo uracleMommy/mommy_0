@@ -14,4 +14,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *containerBar;
 
+@property (weak, nonatomic) IBOutlet UILabel *lblExerciseTime;
+
 @end

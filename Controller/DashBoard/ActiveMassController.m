@@ -42,37 +42,33 @@
     CGRect screenSize = [[UIScreen mainScreen] bounds];
     [_dayWeekTypeSegment setFrame:CGRectMake(0, 0, screenSize.size.width, 44)];
     
-    _activeMassModel = [[ActiveMassModel alloc] init];
-    _activeMassModel.delegate = self;
+    _currentPage = 0;
     
-    [self getStepDaily];
+    [self getStepDaily : _currentPage];
 }
 
 - (void) didChangeSegment : (id) sender {
     
-    _activeMassModel = [[ActiveMassModel alloc] init];
-    _activeMassModel.delegate = self;
-    
+    _currentPage = 0;
     
     // 일자별
     if (_dayWeekTypeSegment.selectedSegmentIndex == 0) {
         
-        [self getStepDaily];
+        [self getStepDaily : _currentPage];
     }
     // 주차별
     else {
         
-        [self getStepWeekly];
+        [self getStepWeekly : _currentPage];
     }
     
 }
 
 #pragma 일자별 활동정보 가져오기
-- (void) getStepDaily {
+- (void) getStepDaily : (NSInteger) currentPage {
     
     NSString *authToken = [GlobalData sharedGlobalData].authToken;
-    
-    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"19", @"searchPage", nil];
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%ld", (long)currentPage], @"searchPage", nil];
     
     [self showIndicator];
     
@@ -95,15 +91,17 @@
             _activeMassModel = [[ActiveMassModel alloc] init];
             _activeMassModel.delegate = self;
             
-            
             // 차트 바인딩
             NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"daily_step" ofType:@"html"]];
             NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
             _activeMassModel.chartRequest = request;
             
-            
             // 테이블 리로드
-            _activeMassModel.dicList = data[@"result"];
+            NSMutableDictionary *resultDic = [NSMutableDictionary dictionaryWithDictionary:data[@"result"]];
+            [resultDic setValue:@([UIScreen mainScreen].bounds.size.width - 32) forKey:@"width"];
+            [resultDic setValue:@(198) forKey:@"height"];
+            
+            _activeMassModel.dicList = resultDic;
             _tableView.dataSource = _activeMassModel;
             _tableView.delegate = _activeMassModel;
             [_tableView reloadData];
@@ -124,11 +122,11 @@
 }
 
 #pragma 주차별 활동정보 가져오기
-- (void) getStepWeekly {
+- (void) getStepWeekly : (NSInteger) currentPage {
     
     NSString *authToken = [GlobalData sharedGlobalData].authToken;
     
-    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"3", @"searchPage", nil];
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%ld", (long)currentPage], @"searchPage", nil];
     
     [self showIndicator];
     
@@ -147,6 +145,25 @@
                 [self hideIndicator];
                 return;
             }
+            
+            _activeMassModel = [[ActiveMassModel alloc] init];
+            _activeMassModel.delegate = self;
+            
+            
+            // 차트 바인딩
+            NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"weekly_step" ofType:@"html"]];
+            NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+            _activeMassModel.chartRequest = request;
+            
+            // 테이블 리로드
+            NSMutableDictionary *resultDic = [NSMutableDictionary dictionaryWithDictionary:data[@"result"]];
+            [resultDic setValue:@([UIScreen mainScreen].bounds.size.width - 32) forKey:@"width"];
+            [resultDic setValue:@(198) forKey:@"height"];
+            
+            _activeMassModel.dicList = resultDic;
+            _tableView.dataSource = _activeMassModel;
+            _tableView.delegate = _activeMassModel;
+            [_tableView reloadData];
             
             [self hideIndicator];
         });
@@ -173,8 +190,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
 - (IBAction)goExerciseTimer:(id)sender {
     
     UIStoryboard *dashBoardStoryboard = [UIStoryboard storyboardWithName:@"DashBoard" bundle:nil];    
@@ -186,6 +201,45 @@
     
     AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate.window addSubview:exerciseCountDownController.view];
+}
+
+#pragma 차트 콜백
+- (void) goChartPrevious {
+    
+    if(_currentPage == 0) {
+        
+        return;
+    }
+    
+    _currentPage--;
+    
+    // 일자별
+    if (_dayWeekTypeSegment.selectedSegmentIndex == 0) {
+        
+        [self getStepDaily : _currentPage];
+    }
+    // 주차별
+    else {
+        
+        [self getStepWeekly:_currentPage];
+    }
+}
+
+#pragma 차트 콜백
+- (void) goChartNext {
+    
+    _currentPage++;
+    
+    // 일자별
+    if (_dayWeekTypeSegment.selectedSegmentIndex == 0) {
+        
+        [self getStepDaily : _currentPage];
+    }
+    // 주차별
+    else {
+        
+        [self getStepWeekly:_currentPage];
+    }
 }
 
 @end

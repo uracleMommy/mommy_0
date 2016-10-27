@@ -35,7 +35,7 @@
     UIBarButtonItem *leftNegativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     leftNegativeSpacer.width = -16;
     [self.navigationItem setLeftBarButtonItems:@[leftNegativeSpacer, addButton]];
-    
+        
     // 우측버튼
     _btnClose = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *closeBtnImage = [UIImage imageNamed:@"title_icon_close"];

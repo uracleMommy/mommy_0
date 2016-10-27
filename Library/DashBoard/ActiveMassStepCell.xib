@@ -40,7 +40,7 @@
                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6,700" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMz-k2-4qh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMz-k2-4qh">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="7sZ-37-nGg"/>
                                     <constraint firstAttribute="width" constant="95" id="MLq-Up-KTF"/>
@@ -55,7 +55,7 @@
                                     <constraint firstAttribute="height" constant="10" id="tgw-x6-Z1F"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6,700" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgw-wh-A0d">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgw-wh-A0d">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="Taq-Gq-Ho7"/>
                                     <constraint firstAttribute="height" constant="21" id="rZ2-dQ-zB3"/>
@@ -103,9 +103,10 @@
             <connections>
                 <outlet property="containerBar" destination="dfZ-BD-xxZ" id="nLa-oT-0eY"/>
                 <outlet property="containerView" destination="Rby-CH-VQB" id="uzk-zA-gZp"/>
+                <outlet property="lblRecStep" destination="Zgw-wh-A0d" id="Lrd-Ke-pBS"/>
                 <outlet property="lblStep" destination="EMz-k2-4qh" id="Dn2-Ig-Vpy"/>
             </connections>
-            <point key="canvasLocation" x="-429" y="425"/>
+            <point key="canvasLocation" x="-502" y="425"/>
         </tableViewCell>
     </objects>
     <resources>

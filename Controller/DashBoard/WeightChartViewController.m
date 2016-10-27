@@ -42,7 +42,6 @@
     rightNegativeSpacer.width = -16;
     [self.navigationItem setRightBarButtonItems:@[rightNegativeSpacer, adviceItemButton]];
     
-    
     NSArray *items = @[@"일자별", @"주차별"];
     _dayWeekTypeSegment.items = items;
     
@@ -84,11 +83,16 @@
         lsDevice.deviceUserNumber = [weightDic[@"deviceUserNumber"] integerValue];
         lsDevice.peripheralIdentifier = weightDic[@"identifier"];
         lsDevice.deviceName = weightDic[@"deviceName"];
+        //[_lsBleManager pairWithLsDeviceInfo:lsDevice pairedDelegate:self];
         NSLog(@"페어링 성공 여부 : %d", [_lsBleManager addMeasureDevice:lsDevice]);
     }
     
     [self bindDailyWeightChart:0];
 //    [self bindWeeklyWeightChart:0];
+}
+
+-(void)bleManagerDidPairedResults:(LSDeviceInfo *)lsDevice pairStatus:(PairedResults)pairStatus {
+    
 }
 
 -(LSBLEDeviceManager *)lsBleManager {
@@ -272,11 +276,20 @@
     
     [self.lsBleManager startDataReceiveService:self];
     
+}
+
+- (void) viewDidDisappear:(BOOL)animated {
     
+    [super viewDidDisappear:animated];
+    
+    [self.lsBleManager stopDataReceiveService];
 }
 
 - (void)bleManagerDidReceiveWeightMeasuredData:(LSWeightData*)data device:(LSDeviceInfo *)device {
     
+    NSLog(@"데이터 들어옴");
+    
+    // [self.lsBleManager stopDataReceiveService];
 }
 
 -(LSDeviceType)stringToDeviceType:(id)type

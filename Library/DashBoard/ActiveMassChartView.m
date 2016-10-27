@@ -21,18 +21,38 @@
     _containerView.layer.borderWidth = 1.0f;
     _containerView.layer.cornerRadius = 10;
     
+    _isFirst = YES;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     
-    NSString *functionJson = [_webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"initChart(%@)", _functionJson]];
-    
+    if (_isFirst) {
+        
+        [_webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"initChart('%@')", _functionJson]];
+        _isFirst = NO;
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (IBAction)goPrevious:(id)sender {
+    
+    if ([self.delegate respondsToSelector:@selector(goPrevious)]) {
+        
+        [self.delegate goPrevious];
+    }
+}
+
+- (IBAction)goNext:(id)sender {
+    
+    if ([self.delegate respondsToSelector:@selector(goNext)]) {
+        
+        [self.delegate goNext];
+    }
 }
 
 @end

@@ -14,6 +14,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lblCal;
 
+@property (weak, nonatomic) IBOutlet UILabel *lblRecCal;
+
 @property (weak, nonatomic) IBOutlet UIView *containerBar;
 
 @end

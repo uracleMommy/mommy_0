@@ -1,18 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="NanumBarunGothic.ttf">
+        <array key="NanumBarunGothic.ttf">
             <string>NanumBarunGothic</string>
-        </mutableArray>
-        <mutableArray key="NanumBarunGothicBold.ttf">
+        </array>
+        <array key="NanumBarunGothicBold.ttf">
             <string>NanumBarunGothicBold</string>
-            <string>NanumBarunGothicBold</string>
-            <string>NanumBarunGothicBold</string>
-        </mutableArray>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -21,68 +20,61 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TPB-mr-CwR" id="lzH-qc-SDR">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="95.5"/>
+                <frame key="frameInset" width="320" height="95"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cnm-xz-5GR">
-                        <rect key="frame" x="8" y="4" width="304" height="87.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contents_icon_act_kcal" translatesAutoresizingMaskIntoConstraints="NO" id="Epd-kx-9PB">
-                                <rect key="frame" x="15" y="19" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="K7a-hu-L4y"/>
                                     <constraint firstAttribute="width" constant="20" id="cOE-Ac-616"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="칼로리" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bg-6p-UoZ">
-                                <rect key="frame" x="43" y="19" width="52" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="BO7-29-0Gh"/>
                                     <constraint firstAttribute="width" constant="52" id="lx6-4A-E1P"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="18"/>
-                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12,700" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gra-N9-apg">
-                                <rect key="frame" x="98" y="19" width="98" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gra-N9-apg">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="MjU-Bo-jl4"/>
                                     <constraint firstAttribute="width" constant="98" id="xzl-G1-XNk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
-                                <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45w-0p-Q2d">
-                                <rect key="frame" x="15" y="48" width="274" height="10"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="dIK-7e-duJ"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120,000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlC-XZ-DPR">
-                                <rect key="frame" x="201" y="22" width="88" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlC-XZ-DPR">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="8Fm-Ex-vhD"/>
                                     <constraint firstAttribute="width" constant="88" id="O2B-mb-nTj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="14"/>
-                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(권장 kcal)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJI-wH-nRU">
-                                <rect key="frame" x="201" y="60" width="88" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="IW0-6z-9ZZ"/>
                                     <constraint firstAttribute="width" constant="88" id="lEO-DR-yaQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="11"/>
-                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Gra-N9-apg" firstAttribute="top" secondItem="cnm-xz-5GR" secondAttribute="top" constant="19" id="8hY-vt-AIb"/>
                             <constraint firstAttribute="trailing" secondItem="45w-0p-Q2d" secondAttribute="trailing" constant="15" id="E9o-p9-BJD"/>
@@ -100,7 +92,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="cnm-xz-5GR" firstAttribute="top" secondItem="lzH-qc-SDR" secondAttribute="top" constant="4" id="RHm-sK-6cb"/>
                     <constraint firstItem="cnm-xz-5GR" firstAttribute="leading" secondItem="lzH-qc-SDR" secondAttribute="leading" constant="8" id="hV8-Xu-5kk"/>
@@ -112,8 +104,9 @@
                 <outlet property="containerBar" destination="45w-0p-Q2d" id="bnK-gH-ghv"/>
                 <outlet property="containerView" destination="cnm-xz-5GR" id="AAl-QF-Xhy"/>
                 <outlet property="lblCal" destination="Gra-N9-apg" id="6Yx-us-3ev"/>
+                <outlet property="lblRecCal" destination="ZlC-XZ-DPR" id="vDA-Tg-CVl"/>
             </connections>
-            <point key="canvasLocation" x="-385" y="433"/>
+            <point key="canvasLocation" x="-101" y="-3"/>
         </tableViewCell>
     </objects>
     <resources>

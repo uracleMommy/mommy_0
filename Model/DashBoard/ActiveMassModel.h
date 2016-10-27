@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ActiveMassChartView.h"
+
 @protocol ActiveMassModelDelegate <NSObject>
 
 @optional
@@ -15,9 +17,13 @@
 
 - (void) tableView : (UITableView *) tableView totalPageCount : (NSInteger) count;
 
+- (void) goChartPrevious;
+
+- (void) goChartNext;
+
 @end
 
-@interface ActiveMassModel : NSObject<UITableViewDelegate, UITableViewDataSource>
+@interface ActiveMassModel : NSObject<UITableViewDelegate, UITableViewDataSource, ActiveMassChartViewDelegate>
 
 @property (strong, nonatomic) NSDictionary *dicList;
 
@@ -26,4 +32,3 @@
 @property (strong, nonatomic) NSURLRequest *chartRequest;
 
 @end
-

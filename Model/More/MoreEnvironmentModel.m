@@ -116,6 +116,11 @@
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
+        // 버전 정보 가져오기
+        NSDictionary *app_info = [[NSBundle mainBundle] infoDictionary];
+        NSString *major_version = [app_info objectForKey:@"CFBundleShortVersionString"];
+        cell.lblVersion.text = major_version;
+        
         return cell;
     }
 }
