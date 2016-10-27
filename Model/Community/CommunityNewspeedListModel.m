@@ -384,5 +384,11 @@
      }
 }
 
+- (void)collectionView:(NSDictionary *)imageArr didSelectItemAtIndexPath:(NSIndexPath *)indexPath selectedCell:(id)sender{
+    NSLog(@"PSH collectionView didSelecte : %li", (long)indexPath.row);
+    
+    [_delegate collectionView:imageArr didSelectItemAtIndexPath:indexPath selectedCell:sender];
+}
+
 
 @end

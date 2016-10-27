@@ -41,7 +41,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vPx-ws-A14" secondAttribute="height" multiplier="1:1" id="KlI-Vb-TAz"/>
                                         </constraints>
-                                        <state key="normal" image="contents_icon_emoticon02">
+                                        <state key="normal" image="i_contents_comm_area">
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -74,7 +74,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="KIH-JO-2bp" secondAttribute="height" multiplier="1:1" id="7zo-az-kLx"/>
                                         </constraints>
-                                        <state key="normal" image="contents_icon_emoticon02">
+                                        <state key="normal" image="i_contents_comm_birth">
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -106,7 +106,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="XR9-jR-Wb8" secondAttribute="height" multiplier="1:1" id="L0e-5I-uUz"/>
                                         </constraints>
-                                        <state key="normal" image="contents_icon_emoticon02">
+                                        <state key="normal" image="i_contents_comm_12">
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -217,7 +217,7 @@
             <objects>
                 <navigationController id="PnP-x7-Zux" customClass="CommunityNavController" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="AeC-Cx-Tx1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="AeC-Cx-Tx1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -574,7 +574,8 @@
                                             <action selector="insertReplyAction:" destination="OjH-Ry-fWb" eventType="touchUpInside" id="6Kg-5c-og7"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YCI-H3-J5c">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YCI-H3-J5c">
+                                        <frame key="frameInset" minX="8" minY="8" width="292" height="30"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="UA6-1z-qEO"/>
@@ -586,28 +587,16 @@
                                             <outlet property="delegate" destination="OjH-Ry-fWb" id="o6b-hr-W8v"/>
                                         </connections>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gda-E1-iOJ">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="CF6-QQ-Jgv"/>
-                                            <constraint firstAttribute="width" constant="45" id="ToR-kP-jJR"/>
-                                        </constraints>
-                                        <state key="normal" image="comment_btn_like"/>
-                                        <connections>
-                                            <action selector="likeButtonAction:" destination="OjH-Ry-fWb" eventType="touchUpInside" id="n7K-Cg-CMQ"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="YCI-H3-J5c" firstAttribute="leading" secondItem="qPk-rd-P05" secondAttribute="leading" constant="5" id="0fd-qx-sz3"/>
                                     <constraint firstAttribute="trailing" secondItem="uc1-XV-zQ8" secondAttribute="trailing" id="2X5-12-1AC"/>
                                     <constraint firstItem="uc1-XV-zQ8" firstAttribute="centerY" secondItem="qPk-rd-P05" secondAttribute="centerY" id="A6H-Pe-ICd"/>
-                                    <constraint firstItem="YCI-H3-J5c" firstAttribute="leading" secondItem="gda-E1-iOJ" secondAttribute="trailing" constant="3" id="GLI-Bm-pyY"/>
                                     <constraint firstAttribute="height" constant="45" id="IXD-n2-dLU"/>
-                                    <constraint firstItem="gda-E1-iOJ" firstAttribute="centerY" secondItem="qPk-rd-P05" secondAttribute="centerY" id="SgV-fc-cC7"/>
                                     <constraint firstItem="uc1-XV-zQ8" firstAttribute="leading" secondItem="YCI-H3-J5c" secondAttribute="trailing" id="bT7-dp-piE"/>
                                     <constraint firstAttribute="bottom" secondItem="YCI-H3-J5c" secondAttribute="bottom" constant="7" id="fQo-Kn-Pm6"/>
                                     <constraint firstItem="YCI-H3-J5c" firstAttribute="top" secondItem="qPk-rd-P05" secondAttribute="top" constant="8" id="slm-Dx-5iw"/>
-                                    <constraint firstItem="gda-E1-iOJ" firstAttribute="leading" secondItem="qPk-rd-P05" secondAttribute="leading" id="tGi-B3-fWE"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZWD-25-K7Q">
@@ -627,7 +616,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="상세정보" id="Rjb-dB-K0b"/>
                     <connections>
-                        <outlet property="likeButton" destination="gda-E1-iOJ" id="g2t-hX-5sk"/>
                         <outlet property="messageContainerHeight" destination="IXD-n2-dLU" id="Fdc-aY-J4L"/>
                         <outlet property="tableView" destination="ZWD-25-K7Q" id="ep7-pA-9XJ"/>
                         <outlet property="txtMessageContent" destination="YCI-H3-J5c" id="ClZ-Pa-nt0"/>
@@ -637,7 +625,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fyo-fw-cHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="sJ0-1q-f8b" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="939" y="-102"/>
+            <point key="canvasLocation" x="938.5" y="-102.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Xlq-k8-tBV">
@@ -689,11 +677,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="comment_btn_like" width="90" height="90"/>
         <image name="contents_btn_photo_update" width="150" height="150"/>
-        <image name="contents_icon_emoticon02" width="60" height="68"/>
         <image name="contents_none_img03" width="170" height="170"/>
         <image name="contents_none_img06" width="170" height="170"/>
+        <image name="i_contents_comm_12" width="220" height="220"/>
+        <image name="i_contents_comm_area" width="220" height="220"/>
+        <image name="i_contents_comm_birth" width="220" height="220"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

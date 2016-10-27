@@ -17,6 +17,38 @@
             endingLineNumber = "128"
             landmarkName = "-insertCommunity"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CommunityWriteController insertCommunity]"
+                  moduleName = "co.medisolution"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fatesuan/mommy_0/Controller/Community/CommunityWriteController.m"
+                  timestampString = "499240982.621719"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "128"
+                  endingLineNumber = "128"
+                  offsetFromSymbolStart = "956">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__43-[CommunityWriteController insertCommunity]_block_invoke"
+                  moduleName = "co.medisolution"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fatesuan/mommy_0/Controller/Community/CommunityWriteController.m"
+                  timestampString = "499240982.623147"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -298,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Controller/Community/CommunityNewspeedListController.m"
-            timestampString = "498622948.337011"
+            timestampString = "499240314.753515"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
             landmarkName = "-toggleMentor"
             landmarkType = "7">
          </BreakpointContent>
@@ -337,6 +369,68 @@
             endingLineNumber = "310"
             landmarkName = "-initDiary"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__38-[DiaryDetailListController initDiary]_block_invoke"
+                  moduleName = "co.medisolution"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fatesuan/mommy_0/Controller/Diary/DiaryDetailListController.m"
+                  timestampString = "499240982.657855"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "310"
+                  endingLineNumber = "310"
+                  offsetFromSymbolStart = "444">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__38-[DiaryDetailListController initDiary]_block_invoke.273"
+                  moduleName = "co.medisolution"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fatesuan/mommy_0/Controller/Diary/DiaryDetailListController.m"
+                  timestampString = "499240982.659095"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "310"
+                  endingLineNumber = "310"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_.274"
+                  moduleName = "co.medisolution"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fatesuan/mommy_0/Controller/Diary/DiaryDetailListController.m"
+                  timestampString = "499240982.660339"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "310"
+                  endingLineNumber = "310"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.275"
+                  moduleName = "co.medisolution"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fatesuan/mommy_0/Controller/Diary/DiaryDetailListController.m"
+                  timestampString = "499240982.661558"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "310"
+                  endingLineNumber = "310"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -368,38 +462,6 @@
             startingLineNumber = "27"
             endingLineNumber = "27"
             landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Controller/Diary/DiaryWriteBasicController.m"
-            timestampString = "498566393.7104"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "253"
-            endingLineNumber = "253"
-            landmarkName = "-saveDiary"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Controller/Community/CommunityNewspeedListController.m"
-            timestampString = "498622948.337011"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "-prepareForUnwind:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -464,6 +526,38 @@
             startingLineNumber = "74"
             endingLineNumber = "74"
             landmarkName = "-signIn:didDisconnectWithUser:withError:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Library/Common/ImageView/MultiImageViewController.m"
+            timestampString = "499239306.435757"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Controller/Community/CommunityNewspeedListController.m"
+            timestampString = "499241082.016377"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "525"
+            endingLineNumber = "525"
+            landmarkName = "-collectionView:didSelectItemAtIndexPath:selectedCell:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

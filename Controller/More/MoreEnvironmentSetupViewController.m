@@ -53,7 +53,16 @@
 }
 
 - (IBAction)logoutButtonAction:(id)sender {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
+    if([[userDefaults objectForKey:@"autoLoginFlag"] isEqualToString:@"Y"]){
+        [userDefaults setObject:@"N" forKey:@"autoLoginFlag"];
+        [userDefaults synchronize];
+    }
+    
+    
+    AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate go_story_board:@"MembershipLogin"];
 }
 
 - (void) tableView:(UITableView *)tableView MoreMyPageModelSelectedIndexPath:(NSIndexPath *)indexPath {

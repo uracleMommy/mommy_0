@@ -18,11 +18,12 @@
 - (void)moveDetailViewButtonAction:(NSDictionary *)data;
 - (void)moveWriteMessageViewAction:(id)sender;
 - (void)showProfilePopupViewAction:(id)sender;
+- (void)collectionView:(NSDictionary *)imageArr didSelectItemAtIndexPath:(NSIndexPath *)indexPath selectedCell:(id)sender;
 
 @end
 
 
-@interface CommunityNewspeedImageCustomCell : UITableViewCell <HWViewPagerDelegate, UICollectionViewDataSource>
+@interface CommunityNewspeedImageCustomCell : UITableViewCell <HWViewPagerDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet HWViewPager *imageSlider;
 @property (strong, nonatomic) id<CommunityNewspeedImageCustomCellDelegate> delegate;

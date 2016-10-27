@@ -228,6 +228,14 @@ typedef NS_ENUM(NSInteger, PagerControlState) {
     }
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"PSH collectionView didSelecte : %li", (long)indexPath.row);
+    
+    if(self.userPagerDelegate != nil){
+        [self.userPagerDelegate collectionView:collectionView didSelectItemAtIndexPath:indexPath];
+    }
+}
+
 
 
 
