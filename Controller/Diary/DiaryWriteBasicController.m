@@ -85,14 +85,12 @@
     [_imageButton04 setImage:defaultImage forState:UIControlStateNormal];
     
     /** PickerView Setting **/
-    _pickerData_0 = [[NSMutableArray alloc]initWithArray:@[@"Select", @"서울시", @"경기도"]];
-    _pickerData_1 = [[NSMutableArray alloc]initWithArray:@[@"Select"]];
-    _pickerData_2 = [[NSMutableArray alloc]initWithArray:@[@"Select"]];
+//    _pickerData_0 = [[NSMutableArray alloc]initWithArray:@[@"Select", @"서울시", @"경기도"]];
+//    _pickerData_1 = [[NSMutableArray alloc]initWithArray:@[@"Select"]];
+//    _pickerData_2 = [[NSMutableArray alloc]initWithArray:@[@"Select"]];
 
-    _addressPicker = [[UIPickerView alloc] init];
-    _addressPicker.dataSource = self;
-    _addressPicker.delegate = self;
-    [_addressButton setInputView:_addressPicker];
+//    _addressPicker = [[UIPickerView alloc] init];
+//    [_addressButton setInputView:_addressPicker];
     
     [_dateButton setDropDownMode:IQDropDownModeDatePicker];
     [_dateButton setInputTextFlag:YES];
@@ -298,93 +296,6 @@
     else{
         _placeholderLabel.hidden = YES;
     }
-}
-
-#pragma mark pikerView delegate
-- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
-{
-    UILabel *labelText = [[UILabel alloc] init];
-    [labelText setTextAlignment:NSTextAlignmentCenter];
-    [labelText setAdjustsFontSizeToFitWidth:YES];
-    labelText.backgroundColor = [UIColor clearColor];
-
-    if(component == 0){
-        [labelText setText:_pickerData_0[row]];
-    }else if(component == 1){
-        [labelText setText:_pickerData_1[row]];
-    }else{
-        [labelText setText:_pickerData_2[row]];
-    }
-    
-    if (row == 0)
-    {
-        labelText.font = [UIFont boldSystemFontOfSize:30.0];
-        labelText.textColor = [UIColor lightGrayColor];
-    }
-    else
-    {
-        labelText.font = [UIFont boldSystemFontOfSize:18.0];
-        labelText.textColor = [UIColor blackColor];
-    }
-
-    return labelText;
-}
-
-
-// The number of columns of data
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
-    return 3;
-}
-
-// The number of rows of data
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
-{
-    NSInteger count = 0;
-
-    if(component == 0){
-        count = [_pickerData_0 count];
-    }else if(component == 1){
-        count = [_pickerData_1 count];
-    }else{
-        count = [_pickerData_2 count];
-    }
-    
-    return count;
-    
-}
-
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
-    // This method is triggered whenever the user makes a change to the picker selection.
-    // The parameter named row and component represents what was selected.
-    
-    NSMutableString *value = [[NSMutableString alloc]init];
-
-    if(component == 0){
-        if(row == 0){
-            [_pickerData_1 setArray:@[@"Select"]];
-        }else{
-            [_pickerData_1 setArray:@[@"Select", @"노원구", @"도봉구", @"성북구", @"송파구", @"강북구"]];
-        }
-        [_pickerData_2 setArray:@[@"Select"]];
-        
-        [pickerView reloadComponent:1];
-        [pickerView reloadComponent:2];
-    }else if(component == 1){
-        if(row == 0){
-            [_pickerData_2 setArray:@[@"Select"]];
-        }else{
-            [_pickerData_2 setArray:@[@"Select", @"쌍문 1동", @"쌍문 2동", @"쌍문 3동", @"쌍문 4동", @"쌍문 5동"]];
-        }
-        [pickerView reloadComponent:2];
-    }
-    
-    if([pickerView selectedRowInComponent:0] != 0 && [pickerView selectedRowInComponent:1] != 0 && [pickerView selectedRowInComponent:2] != 0){
-        [value appendString:[NSString stringWithFormat:@"%@ %@ %@", _pickerData_0[[pickerView selectedRowInComponent:0]], _pickerData_1[[pickerView selectedRowInComponent:1]], _pickerData_2[[pickerView selectedRowInComponent:2]]]];
-    }
-    
-    _addressTextField.text = value;
 }
 
 #pragma mark - emoticon

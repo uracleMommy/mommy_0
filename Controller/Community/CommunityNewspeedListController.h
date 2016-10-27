@@ -14,6 +14,7 @@
 #import "CommunityPeopleListController.h"
 #import "MessageWriteController.h"
 #import "CommunityDetailController.h"
+#import "MultiImageViewController.h"
 
 #define PAGE_SIZE [[NSNumber alloc] initWithInt:30]
 
@@ -23,6 +24,8 @@
 @property (strong, nonatomic) CommunityNewspeedListModel *tableListController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) CommunityProfilePopupViewController *profilePopupView;
+@property (strong, nonatomic) MultiImageViewController *imageViewer;
+@property (strong, nonatomic) NSMutableDictionary *cachedImages;
 @property (strong, nonatomic) NSString *titleText;
 @property (strong, nonatomic) NSString *groupKey;
 @property (strong, nonatomic) NSString *mentorKey;

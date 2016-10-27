@@ -13,6 +13,7 @@
 
 @protocol HWViewPagerDelegate <NSObject>
 -(void)pagerDidSelectedPage:(NSInteger)selectedPage;
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @interface  HWViewPager : UICollectionView

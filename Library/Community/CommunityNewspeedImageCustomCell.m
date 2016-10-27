@@ -19,6 +19,7 @@
     _cachedImages = [[NSMutableDictionary alloc] init];
 //    _imageSlider.userPage = self;
 //    _imageSlider.dataSource = self;
+//    _imageSlider.delegate = self;
     
     [_cellView.layer setBorderColor:[UIColor colorWithRed:153.0/255.0f green:153.0/255.0f  blue:153.0/255.0f alpha:1.0].CGColor];
     [_cellView.layer setBorderWidth:1.0f];
@@ -103,11 +104,17 @@
     
     return [_imageArr count];
 }
+
 - (void)pagerDidSelectedPage:(NSInteger)selectedPage {
     
     NSLog(@"PSH selectedPage : %li", (long)selectedPage);
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"PSH collectionView didSelecte : %li", (long)indexPath.row);
+    
+    [_delegate collectionView:self.cachedImages didSelectItemAtIndexPath:indexPath selectedCell:self];
+}
 
 
 @end

@@ -18,7 +18,7 @@
 #import "CommonViewController.h"
 
 
-@interface DiaryWriteBasicController : CommonViewController <UITextViewDelegate, IQDropDownTextFieldDelegate, ImageCropViewControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, UINavigationControllerDelegate, emoticonPopupViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, CLLocationManagerDelegate> {
+@interface DiaryWriteBasicController : CommonViewController <UITextViewDelegate, IQDropDownTextFieldDelegate, ImageCropViewControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, UINavigationControllerDelegate, emoticonPopupViewDelegate, CLLocationManagerDelegate> {
     UIButton *selectedImageButton;
     UIImage *defaultImage;
     ImageCropViewController *controller;

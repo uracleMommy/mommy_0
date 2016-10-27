@@ -18,6 +18,7 @@
 @optional
 - (void) tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath;
 - (void) tableView:(UITableView *)tableView totalPageCount:(NSInteger)count;
+- (void)collectionView:(NSDictionary *)imageArr didSelectItemAtIndexPath:(NSIndexPath *)indexPath selectedCell:(id)sender;
 - (void) moreButtonAction:(id)sender point:(CGPoint)point;
 - (void) moveDetailViewButtonAction:(NSDictionary *)data;
 - (void) moveWriteMessageViewAction:(id)sender;

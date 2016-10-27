@@ -85,6 +85,8 @@
     
     self.navigationItem.title = _titleText;
     
+    _cachedImages = [[NSMutableDictionary alloc]init];
+    
     [self setListFirst];
 }
 
@@ -501,6 +503,34 @@
         NSLog(@"PSH error %@", error);
         dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
     } ];
+}
+
+
+- (void)collectionView:(NSDictionary *)imageArr didSelectItemAtIndexPath:(NSIndexPath *)indexPath selectedCell:(id)sender{
+    NSLog(@"PSH collectionView didSelecte : %li", (long)indexPath.row);
+    long cellIndex = (long)[_tableView indexPathForCell:sender].row;
+//    NSString *fileName = [[[_tableListController.newspeedList objectAtIndex:(int)cellIndex] objectForKey:@"files"] objectAtIndex:indexPath.row];
+    
+    _imageViewer = [[MultiImageViewController alloc] init];
+    
+    NSArray *imgNameArray = [[_tableListController.newspeedList objectAtIndex:(int)cellIndex] objectForKey:@"files"];
+    
+    NSMutableArray *uiImageArr = [[NSMutableArray alloc] init];
+    
+    for(int i=0 ; i<[imgNameArray count] ; i++){
+        
+        NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [[imgNameArray objectAtIndex:i] objectForKey:@"file_name"]];
+        
+            if([imageArr objectForKey:profileImageIdentifier] != nil){
+                [uiImageArr addObject:[imageArr valueForKey:profileImageIdentifier]];
+            }
+    }
+    
+    _imageViewer.imgArray = [[NSArray alloc] initWithArray:uiImageArr];
+    _imageViewer.index = (int)indexPath.row;
+    [_moveWriteViewButton removeFromSuperview];
+    [self presentViewController:_imageViewer animated:YES completion:nil];
+
 }
 
 @end
