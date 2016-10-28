@@ -11,6 +11,7 @@
 #import "MessageListController.h"
 #import "MainSliderViewContainerController.h"
 #import "MainInfoContainerViewController.h"
+#import "CoachMarkContainerController.h"
 
 @protocol DashBoardControllerDelegate;
 
@@ -27,6 +28,8 @@
 @property (strong, nonatomic) MessageListController *messageListController;
 
 @property (strong, nonatomic) id<DashBoardControllerDelegate> delegate;
+
+@property (strong, nonatomic) CoachMarkContainerController *coachMarkContainerController;
 
 - (IBAction)WeekProgramAction:(id)sender;
 

@@ -281,8 +281,6 @@
 		DC634D871DC1E5AF0019B894 /* CoachMarkFirstController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC634D861DC1E5AF0019B894 /* CoachMarkFirstController.m */; };
 		DC634D8A1DC1E5C60019B894 /* CoachMarkSecondController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC634D891DC1E5C60019B894 /* CoachMarkSecondController.m */; };
 		DC634D8D1DC1E5E00019B894 /* CoachMarkThirdController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC634D8C1DC1E5E00019B894 /* CoachMarkThirdController.m */; };
-		DC634D901DC1F8530019B894 /* CoachMarkContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC634D8F1DC1F8530019B894 /* CoachMarkContainerController.m */; };
-		DC634D931DC1FEE90019B894 /* CoachMarkContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC634D921DC1FEE90019B894 /* CoachMarkContentController.m */; };
 		DC660F471DA604C600B106FB /* PushNoticeSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC660F461DA604C600B106FB /* PushNoticeSegue.m */; };
 		DC660F4B1DA6400A00B106FB /* MorePrefessionalEmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC660F4A1DA6400A00B106FB /* MorePrefessionalEmptySegue.m */; };
 		DC67EB5F1D94B4480096BCB3 /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = DC67EB5C1D94B4480096BCB3 /* FLAnimatedImage.m */; };
@@ -888,10 +886,6 @@
 		DC634D891DC1E5C60019B894 /* CoachMarkSecondController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachMarkSecondController.m; sourceTree = "<group>"; };
 		DC634D8B1DC1E5E00019B894 /* CoachMarkThirdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachMarkThirdController.h; sourceTree = "<group>"; };
 		DC634D8C1DC1E5E00019B894 /* CoachMarkThirdController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachMarkThirdController.m; sourceTree = "<group>"; };
-		DC634D8E1DC1F8530019B894 /* CoachMarkContainerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachMarkContainerController.h; sourceTree = "<group>"; };
-		DC634D8F1DC1F8530019B894 /* CoachMarkContainerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachMarkContainerController.m; sourceTree = "<group>"; };
-		DC634D911DC1FEE90019B894 /* CoachMarkContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachMarkContentController.h; sourceTree = "<group>"; };
-		DC634D921DC1FEE90019B894 /* CoachMarkContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachMarkContentController.m; sourceTree = "<group>"; };
 		DC660F451DA604C600B106FB /* PushNoticeSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNoticeSegue.h; sourceTree = "<group>"; };
 		DC660F461DA604C600B106FB /* PushNoticeSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNoticeSegue.m; sourceTree = "<group>"; };
 		DC660F491DA6400A00B106FB /* MorePrefessionalEmptySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorePrefessionalEmptySegue.h; sourceTree = "<group>"; };
@@ -986,6 +980,7 @@
 		DC8EB78C1D869D4800A0304D /* MoreWeekDetailInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreWeekDetailInfoCell.h; sourceTree = "<group>"; };
 		DC8EB78D1D869D4800A0304D /* MoreWeekDetailInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreWeekDetailInfoCell.m; sourceTree = "<group>"; };
 		DC8EB78E1D869D4800A0304D /* MoreWeekDetailInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreWeekDetailInfoCell.xib; sourceTree = "<group>"; };
+		DC95472A1DC02CB700317A10 /* co.medisolution.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = co.medisolution.entitlements; sourceTree = "<group>"; };
 		DCA3BCBC1D98BAF6009D3DD1 /* MoreEnvironmentSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreEnvironmentSetupViewController.h; sourceTree = "<group>"; };
 		DCA3BCBD1D98BAF6009D3DD1 /* MoreEnvironmentSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreEnvironmentSetupViewController.m; sourceTree = "<group>"; };
 		DCA3BCBF1D98BBD0009D3DD1 /* MoreEnvironmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreEnvironmentModel.h; sourceTree = "<group>"; };
@@ -1496,7 +1491,11 @@
 		2AF695FC1DB4C52D00072FC2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+				DC6B0B7B1DBF382F0092324C /* LifesenseBluetooth.framework */,
+=======
 				2AD2AE7E1DBF391A00851D47 /* LifesenseBluetooth.framework */,
+>>>>>>> dd6ff6639e4bf0d4feec62865177ea93628598ae
 				DC1DDC581DB8986700D6602E /* httpd.cpp */,
 				DC1DDC591DB8986700D6602E /* httpd.h */,
 				DC1DDC531DB896D700D6602E /* UIKit.framework */,
@@ -2134,16 +2133,12 @@
 				DCBFDE631DA332D300A28B3A /* MainSliderViewContainerController.m */,
 				DCB4FA3D1DA3A34B0050EA0A /* MainInfoContainerViewController.h */,
 				DCB4FA3E1DA3A34B0050EA0A /* MainInfoContainerViewController.m */,
-				DC634D8E1DC1F8530019B894 /* CoachMarkContainerController.h */,
-				DC634D8F1DC1F8530019B894 /* CoachMarkContainerController.m */,
 				DC634D851DC1E5AF0019B894 /* CoachMarkFirstController.h */,
 				DC634D861DC1E5AF0019B894 /* CoachMarkFirstController.m */,
 				DC634D881DC1E5C60019B894 /* CoachMarkSecondController.h */,
 				DC634D891DC1E5C60019B894 /* CoachMarkSecondController.m */,
 				DC634D8B1DC1E5E00019B894 /* CoachMarkThirdController.h */,
 				DC634D8C1DC1E5E00019B894 /* CoachMarkThirdController.m */,
-				DC634D911DC1FEE90019B894 /* CoachMarkContentController.h */,
-				DC634D921DC1FEE90019B894 /* CoachMarkContentController.m */,
 			);
 			path = DashBoard;
 			sourceTree = "<group>";
@@ -2209,12 +2204,15 @@
 		DCA5AE181D598C6F0075B7AD = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				DC6B0B7D1DBF50520092324C /* contents_graph_btn_bubble_left.png */,
 				DC6B0B7E1DBF50520092324C /* contents_graph_btn_bubble_right.png */,
 				DC6B0B7F1DBF50520092324C /* contents_graph_btn_bubble.png */,
 				DC6B0B801DBF50520092324C /* contents_graph_btn_heart.png */,
 				DC6B0B811DBF50520092324C /* contents_graph_btn_walk.png */,
 				DC6B0B821DBF50520092324C /* contents_graph_point.png */,
+=======
+>>>>>>> dd6ff6639e4bf0d4feec62865177ea93628598ae
 				DC6B0B581DBF27BB0092324C /* blood_pressure.html */,
 				DC6B0B591DBF27BB0092324C /* daily_sleep.html */,
 				DC6B0B5A1DBF27BB0092324C /* daily_step.html */,
@@ -2247,7 +2245,11 @@
 		DCA5AE231D598C6F0075B7AD /* co.medisolution */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+				DC95472A1DC02CB700317A10 /* co.medisolution.entitlements */,
+=======
 				2A3F495B1DC02F2C0048C179 /* co.medisolution.entitlements */,
+>>>>>>> dd6ff6639e4bf0d4feec62865177ea93628598ae
 				2AD09BF81DB8A534005D0CD7 /* GoogleService-Info.plist */,
 				2A54B1C71D66E4E600C538D1 /* Assets.xcassets */,
 				DC5D20721D62ACFB00ACDCA4 /* NanumBarunGothicBold.ttf */,
@@ -2352,7 +2354,7 @@
 				TargetAttributes = {
 					DCA5AE201D598C6F0075B7AD = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = LUYT38Y3AT;
+						DevelopmentTeam = JH5F2VBM8Z;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -2519,7 +2521,6 @@
 				2AD2AE791DBF362800851D47 /* SVProgressHUD.m in Sources */,
 				2A54B1B11D66904000C538D1 /* JTCalendarSettings.m in Sources */,
 				2AFDD7641D9BAD1800FE157C /* CommunityNewspeedListModel.m in Sources */,
-				DC634D931DC1FEE90019B894 /* CoachMarkContentController.m in Sources */,
 				DCF6CAC51D74453200703CAE /* PushNoticeModel.m in Sources */,
 				DC4E95A51D7D66550087647B /* ActiveMassStepCell.m in Sources */,
 				DCF6CA9A1D740DED00703CAE /* ChildPageImageViewController.m in Sources */,
@@ -2721,7 +2722,6 @@
 				2AFDD76A1D9BB46D00FE157C /* CommunityDetailController.m in Sources */,
 				DCA3BCD41D98BDB7009D3DD1 /* MoreEnvironmentAgreementCell.m in Sources */,
 				2AD2AE541DBF35E300851D47 /* AFURLConnectionOperation.m in Sources */,
-				DC634D901DC1F8530019B894 /* CoachMarkContainerController.m in Sources */,
 				DC538ECB1D781C3600E5949B /* IQPreviousNextView.m in Sources */,
 				DC4E958D1D7D26EC0087647B /* WeightTotalInfoCell.m in Sources */,
 				DC67EB641D94BDAD0096BCB3 /* MoreMyPageNickNameCell.m in Sources */,
@@ -2887,7 +2887,7 @@
 				CODE_SIGN_ENTITLEMENTS = co.medisolution/co.medisolution.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jung Ho Park (JMP587VVKV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LUYT38Y3AT;
+				DEVELOPMENT_TEAM = JH5F2VBM8Z;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2923,7 +2923,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_ENTITLEMENTS = co.medisolution/co.medisolution.entitlements;
+<<<<<<< HEAD
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+=======
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jung Ho Park (JMP587VVKV)";
+>>>>>>> dd6ff6639e4bf0d4feec62865177ea93628598ae
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = LUYT38Y3AT;
 				ENABLE_BITCODE = NO;

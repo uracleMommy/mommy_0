@@ -1,5 +1,5 @@
 //
-//  CoachMarkThirdController.h
+//  CoachMarkContentController.h
 //  co.medisolution
 //
 //  Created by OGGU on 2016. 10. 27..
@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CoachMarkContentController.h"
 
-@interface CoachMarkThirdController : CoachMarkContentController
+@interface CoachMarkContentController : UIViewController
+
+@property (assign) NSInteger pageIndex;
 
 @end

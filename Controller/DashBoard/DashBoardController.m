@@ -30,7 +30,13 @@
     self.tabBarController.tabBar.translucent = NO;
     self.navigationController.navigationBar.translucent = NO;
     
-    [self dashboardInfoBind];
+    //[self dashboardInfoBind];
+    
+    _coachMarkContainerController = [self.storyboard instantiateViewControllerWithIdentifier:@"CoachContainerController"];
+    
+    [self addChildViewController:_coachMarkContainerController];
+    
+    [self.view addSubview:_coachMarkContainerController.view];
     
     //[self performSegueWithIdentifier:@"goQuestionModal" sender:nil];
 }
