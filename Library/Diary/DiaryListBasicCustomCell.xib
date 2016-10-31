@@ -24,7 +24,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hp7-v0-XHk">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="Ycr-6V-1bB"/>
+                                    <constraint firstAttribute="height" constant="2" id="Ycr-6V-1bB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -117,6 +117,7 @@
                             <constraint firstAttribute="bottom" secondItem="DQt-JB-meM" secondAttribute="bottom" id="EDi-L6-Mvu"/>
                             <constraint firstItem="oKj-x2-mJR" firstAttribute="leading" secondItem="iVd-u7-jDm" secondAttribute="leading" id="EaQ-xp-r5t"/>
                             <constraint firstItem="9Oa-zm-Jlv" firstAttribute="leading" secondItem="oKj-x2-mJR" secondAttribute="trailing" id="N5o-D4-HbL"/>
+                            <constraint firstAttribute="bottom" secondItem="hp7-v0-XHk" secondAttribute="bottom" constant="73" id="P3k-KN-z2q"/>
                             <constraint firstItem="oKj-x2-mJR" firstAttribute="top" secondItem="iVd-u7-jDm" secondAttribute="top" id="W6G-i6-8bI"/>
                             <constraint firstAttribute="trailing" secondItem="hp7-v0-XHk" secondAttribute="trailing" constant="15" id="YJI-cH-n8q"/>
                             <constraint firstItem="hp7-v0-XHk" firstAttribute="top" secondItem="9Oa-zm-Jlv" secondAttribute="bottom" id="aZv-aX-QaW"/>

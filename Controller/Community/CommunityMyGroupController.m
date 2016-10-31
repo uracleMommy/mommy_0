@@ -39,29 +39,41 @@
             }else{
                 for(int i = 0 ; i < [result count] ; i++){
                     NSDictionary *groupDic = [result objectAtIndex:i];
-                    [_groupKeyArr addObject:[groupDic objectForKey:@"group_key"]];
-                    [_groupValueArr addObject:[groupDic objectForKey:@"group_value"
-                                               ]];
-                    [_groupTitleArr addObject:[groupDic objectForKey:@"group_name"
-                                               ]];
-                    if(i == 0){
-                        dispatch_sync(dispatch_get_main_queue(), ^{
-                            _groupNameLabel01.text = [groupDic objectForKey:@"group_name"];
-                            _groupButton01.tag = [_groupKeyArr count]-1;
-                            //                            [_groupButton01 setTitle:[groupDic objectForKey:@"group_key"] forState:UIControlStateNormal];
-                        });
-                    }else if(i == 1){
-                        dispatch_sync(dispatch_get_main_queue(), ^{
-                            _groupNameLabel02.text = [groupDic objectForKey:@"group_name"];
-                            _groupButton02.tag = [_groupKeyArr count]-1;
-                            //                            [_groupButton02 setTitle:[groupDic objectForKey:@"group_key"] forState:UIControlStateNormal];
-                        });
-                    }else if(i == 2){
-                        dispatch_sync(dispatch_get_main_queue(), ^{
-                            _groupNameLabel03.text = [groupDic objectForKey:@"group_name"];
-                            _groupButton03.tag = [_groupKeyArr count]-1;
-                            //                            [_groupButton03 setTitle:[groupDic objectForKey:@"group_key"] forState:UIControlStateNormal];
-                        });
+                    if(![[groupDic objectForKey:@"group_key"] isEqual:[NSNull null]]){
+                        [_groupKeyArr addObject:[groupDic objectForKey:@"group_key"]];
+                        
+                        if(![[groupDic objectForKey:@"group_value"] isEqual:[NSNull null]]){
+                            [_groupValueArr addObject:[groupDic objectForKey:@"group_value"
+                                                       ]];
+                            
+                            if(![[groupDic objectForKey:@"group_name"] isEqual:[NSNull null]]){
+                                [_groupTitleArr addObject:[groupDic objectForKey:@"group_name"
+                                                           ]];
+                            }else{
+                                [_groupTitleArr addObject:@""];
+                            }
+                            
+                            
+                            if(i == 0){
+                                dispatch_sync(dispatch_get_main_queue(), ^{
+                                    _groupNameLabel01.text = [_groupTitleArr objectAtIndex:i];
+                                    _groupButton01.tag = [_groupKeyArr count]-1;
+                                    //                            [_groupButton01 setTitle:[groupDic objectForKey:@"group_key"] forState:UIControlStateNormal];
+                                });
+                            }else if(i == 1){
+                                dispatch_sync(dispatch_get_main_queue(), ^{
+                                    _groupNameLabel02.text = [_groupTitleArr objectAtIndex:i];
+                                    _groupButton02.tag = [_groupKeyArr count]-1;
+                                    //                            [_groupButton02 setTitle:[groupDic objectForKey:@"group_key"] forState:UIControlStateNormal];
+                                });
+                            }else if(i == 2){
+                                dispatch_sync(dispatch_get_main_queue(), ^{
+                                    _groupNameLabel03.text = [_groupTitleArr objectAtIndex:i];
+                                    _groupButton03.tag = [_groupKeyArr count]-1;
+                                    //                            [_groupButton03 setTitle:[groupDic objectForKey:@"group_key"] forState:UIControlStateNormal];
+                                });
+                            }
+                        }
                     }
                 }
             }

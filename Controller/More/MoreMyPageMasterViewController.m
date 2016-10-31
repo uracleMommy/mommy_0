@@ -168,7 +168,7 @@
             dispatch_sync(dispatch_get_main_queue(), ^{
                 _babyNickNames = [result objectForKey:@"baby_nicknames"];
                 _moreMyPageSubInfoPanelController.lblEmail.text = [NSString stringWithFormat:@"%@", [result objectForKey:@"email"]];
-                _moreMyPageSubInfoPanelController.lblBabyBirth.text = [NSString stringWithFormat:@"%@", [result objectForKey:@"baby_birth"]];
+                _moreMyPageSubInfoPanelController.lblBabyBirth.text = [NSString stringWithFormat:@"%@", [self getyyyyMMdd:[result objectForKey:@"baby_birth"] ]];
                 _moreMyPageSubInfoPanelController.lblAddress.text = [NSString stringWithFormat:@"%@", [result objectForKey:@"address_name"]];
                 _moreMyPageSubInfoPanelController.lblFetus.text = [NSString stringWithFormat:@"%@명", [result objectForKey:@"baby_cnt"]];
                 _moreMyPageSubInfoPanelController.lblBeforeWeight.text = [NSString stringWithFormat:@"%@kg", [result objectForKey:@"before_weight"]];
@@ -177,7 +177,7 @@
                 _moreMyPageSubInfoPanelController.lblNickName.text = [NSString stringWithFormat:@"%@", [result objectForKey:@"nickname"]];
                 
                 _moreMyPageSubImageController.user_name.text = [result objectForKey:@"name"];
-                _moreMyPageSubImageController.user_birth.text = [result objectForKey:@"birth"];
+                _moreMyPageSubImageController.user_birth.text = [self getyyyyMMdd:[result objectForKey:@"birth"]];
                 
                 NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [result objectForKey:@"img"]];
                 
@@ -232,6 +232,25 @@
     
     alert.tag = 0;
     [alert show];
+}
+
+
+#pragma mark 마미앤 날짜 형식 변환기(yyyy.MM.dd)
+- (NSString *) getyyyyMMdd : (NSString *) dateFormatString {
+    
+    NSString *dateString = dateFormatString;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    // this is imporant - we set our input date format to match our input string
+    // if format doesn't match you'll get nil from your string, so be careful
+    [dateFormatter setDateFormat:@"yyyyMMdd"];
+    NSDate *dateFromString = [[NSDate alloc] init];
+    // voila!
+    dateFromString = [dateFormatter dateFromString:dateString];
+    
+    [dateFormatter setDateFormat:@"yyyy.MM.dd"];
+    NSString *yyyymmdd = [dateFormatter stringFromDate:dateFromString];
+    
+    return yyyymmdd;
 }
 
 @end

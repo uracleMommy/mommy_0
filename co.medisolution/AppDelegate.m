@@ -249,7 +249,7 @@ static NSString * const kClientID =
                              stringByReplacingOccurrencesOfString: @" " withString: @""];
     
     NSLog(@" 디바이스 토큰 : %@", deviceToken);
-    
+    [GlobalData sharedGlobalData].deviceToken = deviceToken;
     
     //#if !TARGET_IPHONE_SIMULATOR
     //

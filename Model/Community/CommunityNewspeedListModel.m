@@ -109,7 +109,7 @@
         
         CGMutablePathRef firstPath = CGPathCreateMutable();
         CGPathMoveToPoint(firstPath, NULL, 0, 0);
-        CGPathAddLineToPoint(firstPath, NULL, tableView.frame.size.width - 38.0, 0);
+        CGPathAddLineToPoint(firstPath, NULL, tableView.frame.size.width - 55.0, 0);
         
         [firstShapeLayer setPath:firstPath];
         CGPathRelease(firstPath);
@@ -208,7 +208,7 @@
         
         CGMutablePathRef firstPath = CGPathCreateMutable();
         CGPathMoveToPoint(firstPath, NULL, 0, 0);
-        CGPathAddLineToPoint(firstPath, NULL, tableView.frame.size.width - 38.0, 0);
+        CGPathAddLineToPoint(firstPath, NULL, tableView.frame.size.width - 55.0, 0);
         
         [firstShapeLayer setPath:firstPath];
         CGPathRelease(firstPath);

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "GlobalData.h"
 #import "IndicatorViewController.h"
 #import "SampleMainController.h"
 #import "MoreProfessionalButtonViewController.h"

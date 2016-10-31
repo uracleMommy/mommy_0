@@ -113,6 +113,10 @@
         NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
         [param setValue:[_idTextField text] forKey:@"id"];
         [param setValue:_pwTextField.text forKey:@"password"];
+        [param setValue:@"I" forKey:@"os_type"];
+        [param setValue:@"" forKey:@"device_key"];
+        [param setValue:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"] forKey:@"device_version"];
+        [param setValue:[GlobalData sharedGlobalData].deviceToken forKey:@"apns_token"];
         
         [[MommyRequest sharedInstance] mommyLoginApiService:LoginCheck authKey:nil parameters:param success:^(NSDictionary *data){
             NSLog(@"PSH data %@", data);

@@ -97,7 +97,7 @@
             
             CGMutablePathRef firstPath = CGPathCreateMutable();
             CGPathMoveToPoint(firstPath, NULL, 0, 0);
-            CGPathAddLineToPoint(firstPath, NULL, tableView.frame.size.width - 38.0, 0);
+            CGPathAddLineToPoint(firstPath, NULL, tableView.frame.size.width - 35.0, 0);
             
             [firstShapeLayer setPath:firstPath];
             CGPathRelease(firstPath);
@@ -318,6 +318,9 @@
                                                                       options:NSStringDrawingUsesLineFragmentOrigin| NSStringDrawingUsesFontLeading
                                                                    attributes:@{NSFontAttributeName:cell.replyContentTextField.font}
                                                                       context:nil];
+            
+            cell.replyContentsHeightConstraint.constant = textRect.size.height;
+            
             cell.replyRegDate.text = [[MommyUtils sharedGlobalData] getMommyDate:[result objectForKey:@"reg_dttm"]];
             cell.replyPersonKickname.text = [result objectForKey:@"mento_nickname"];
             cell.replyContentTextField.text = [result objectForKey:@"content"];
@@ -346,6 +349,13 @@
                     });
                 });
             }
+            
+            CALayer *border = [CALayer layer];
+            border.borderColor = [[UIColor colorWithRed:217.0f/255.0f green:217.0f/255.0f blue:217.0f/255.0f alpha:1.0] CGColor];
+            border.frame = CGRectMake(0, 0, tableView.frame.size.width, tableView.frame.size.height);
+            border.borderWidth = 1.0f;
+            [cell.layer addSublayer:border];
+            
 
             break;
         }
