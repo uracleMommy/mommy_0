@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoachMarkContentController.h"
 
-@interface CoachMarkFirstController : UIViewController
+@interface CoachMarkFirstController : CoachMarkContentController
 
 @end
