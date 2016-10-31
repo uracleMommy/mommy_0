@@ -22,7 +22,7 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hre-Z9-Fwa">
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jeon" translatesAutoresizingMaskIntoConstraints="NO" id="Laq-Oq-hyZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Laq-Oq-hyZ">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="37" id="QIK-2L-U8N"/>
                                     <constraint firstAttribute="height" constant="37" id="x7t-RU-cC8"/>
@@ -98,9 +98,6 @@
             <point key="canvasLocation" x="-1109" y="359"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="jeon" width="240" height="222"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

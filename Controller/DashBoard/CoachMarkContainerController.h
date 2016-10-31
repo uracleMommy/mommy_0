@@ -18,4 +18,16 @@
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 
+@property (weak, nonatomic) IBOutlet UIImageView *imgFirstPage;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imgSecondPage;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imgThirdPage;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnStart;
+
+@property (weak, nonatomic) IBOutlet UIView *underLine;
+
+- (IBAction) goStart:(id) sender;
+
 @end

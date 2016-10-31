@@ -27,9 +27,13 @@
 
 @interface MoreBloodPressureModel : NSObject<UITableViewDelegate, UITableViewDataSource, MoreBloodPressureChartCellDelegate>
 
+@property (strong, nonatomic) NSURLRequest *chartRequest;
+
 @property (strong, nonatomic) NSMutableArray *arrayList;
 
 @property (strong, nonatomic) NSMutableArray *buttonArray;
+
+@property (strong, nonatomic) NSDictionary *dicList;
 
 @property (strong, nonatomic) id<MoreBloodPressureModelDelegate> delegate;
 

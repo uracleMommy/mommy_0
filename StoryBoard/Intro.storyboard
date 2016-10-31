@@ -30,15 +30,40 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZoV-Ij-5AA">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxT-0c-VSV">
-                                        <frame key="frameInset" minX="164" minY="33" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5p-OZ-FL5">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="0k6-sf-kDx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
+                                        <state key="normal" title="회원가입">
+                                            <color key="titleColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goMemberShip:" destination="jX7-ZS-jue" eventType="touchUpInside" id="wA8-hx-74q"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxT-0c-VSV">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="3S9-Fg-xtZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="16"/>
+                                        <state key="normal" title="로그인">
+                                            <color key="titleColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goLogin:" destination="jX7-ZS-jue" eventType="touchUpInside" id="qCf-tT-X8H"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="h5p-OZ-FL5" secondAttribute="trailing" constant="45" id="4na-SG-jR9"/>
                                     <constraint firstAttribute="height" constant="96" id="Auj-Gr-fTG"/>
+                                    <constraint firstItem="h5p-OZ-FL5" firstAttribute="top" secondItem="vxT-0c-VSV" secondAttribute="bottom" constant="7" id="COF-RF-CMl"/>
+                                    <constraint firstAttribute="bottom" secondItem="h5p-OZ-FL5" secondAttribute="bottom" constant="9" id="J18-k1-1mm"/>
+                                    <constraint firstItem="vxT-0c-VSV" firstAttribute="leading" secondItem="ZoV-Ij-5AA" secondAttribute="leading" constant="46" id="isg-Y2-86Z"/>
+                                    <constraint firstAttribute="trailing" secondItem="vxT-0c-VSV" secondAttribute="trailing" constant="45" id="q4q-6r-bAm"/>
+                                    <constraint firstItem="h5p-OZ-FL5" firstAttribute="leading" secondItem="ZoV-Ij-5AA" secondAttribute="leading" constant="46" id="y1p-Ud-kAX"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m6d-Mt-9aV">
@@ -73,6 +98,10 @@
                             <constraint firstAttribute="trailing" secondItem="m6d-Mt-9aV" secondAttribute="trailing" id="zm8-zA-GTT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnLogin" destination="vxT-0c-VSV" id="CnA-S6-DHJ"/>
+                        <outlet property="btnMemberShip" destination="h5p-OZ-FL5" id="Uch-3Z-YJh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXQ-Rd-x9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -167,7 +196,7 @@
                 <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="CJB-Ir-vaJ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jAB-bW-6Pt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1297" y="-29"/>
+            <point key="canvasLocation" x="1249" y="131"/>
         </scene>
         <!--Intro First Content Page View Controller-->
         <scene sceneID="DMp-xM-T9v">
@@ -222,7 +251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCm-dH-Ocl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1998" y="-29"/>
+            <point key="canvasLocation" x="1994" y="131"/>
         </scene>
         <!--Intro Second Content Page View Controller-->
         <scene sceneID="2tl-MS-tOg">
@@ -374,6 +403,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="containerViewHeight" destination="gGG-ef-kBy" id="vFB-Jc-oXG"/>
+                        <outlet property="containerViewWidth" destination="GIr-Ab-iBh" id="vER-Q2-aMt"/>
                         <outlet property="deviceImage" destination="aha-SP-AtM" id="kIX-ar-ibX"/>
                     </connections>
                 </viewController>
@@ -417,7 +448,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZjY-9e-feV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3074" y="973"/>
+            <point key="canvasLocation" x="2734" y="1125"/>
         </scene>
         <!--Intro Scroll Image View Container-->
         <scene sceneID="dyW-Sa-fgm">
@@ -428,7 +459,7 @@
                         <viewControllerLayoutGuide type="bottom" id="f3Q-5P-DMi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cfK-qT-wFg">
-                        <rect key="frame" x="0.0" y="0.0" width="184" height="304"/>
+                        <rect key="frame" x="0.0" y="0.0" width="184" height="304.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

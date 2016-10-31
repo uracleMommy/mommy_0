@@ -15,12 +15,18 @@
 @implementation MessageDetailController
 
 static BOOL keyboardShow = NO;
+static CGRect viewFrame;
+static BOOL isFirstLoad;
 const int containerViewHeight = 49;
 const int messageViewHeight = 33;
 
 - (void) viewDidLoad {
     
     [super viewDidLoad];
+    
+    [self setKeyboardEnabled:NO];
+    
+    isFirstLoad = YES;
     
     _txtContentMessage.text = _contentMessage;
     _lblUserName.text = _toUserName;
@@ -41,6 +47,7 @@ const int messageViewHeight = 33;
     
     // 키보드 매니저 업 이벤트 비활성화
     [self setKeyboardEnabled:NO];
+//    [[IQKeyboardManager sharedManager] setEnableAutoToolbar:NO];
     
     // 점선처리
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
@@ -101,16 +108,23 @@ const int messageViewHeight = 33;
     [UIView setAnimationCurve:[curve intValue]];
     if([notification name] == UIKeyboardWillShowNotification)
     {
-        [self.view setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, _originalContentRect.size.height - keyboardBounds.size.height)];
+        self.navigationController.navigationBar.translucent = NO;
+        NSLog(@"%f, %f, %f, %f", self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, keyboardBounds.size.height);
+        NSLog(@"%f", _originalContentRect.size.height);
+        [self.view setFrame:CGRectMake(0, 64, self.view.frame.size.width, viewFrame.size.height - keyboardBounds.size.height)];
         
         keyboardShow = YES;
+        
+        
         
         // 텍스트뷰 길이 제조정
     }
     else if([notification name] == UIKeyboardWillHideNotification)
     {
-        //[self.view setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + keyboardBounds.size.height, self.view.frame.size.width, self.view.frame.size.height)];
-        [self.view setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height + keyboardBounds.size.height)];
+        NSLog(@"%f, %f, %f, %f", viewFrame.origin.x, viewFrame.origin.y, viewFrame.size.width, viewFrame.size.height);
+//        [self.view setFrame:viewFrame];
+        
+        [self.view setFrame:CGRectMake(viewFrame.origin.x, 64, viewFrame.size.width, viewFrame.size.height)];
         
         keyboardShow = NO;
     }
@@ -120,6 +134,12 @@ const int messageViewHeight = 33;
 
 #pragma 키보드 스타일 바뀔시에 높이 재조절
 - (void) viewDidLayoutSubviews {
+    
+    if(isFirstLoad) {
+        
+        viewFrame = self.view.frame;
+        isFirstLoad = NO;
+    }
     
     if (!keyboardShow) {
 

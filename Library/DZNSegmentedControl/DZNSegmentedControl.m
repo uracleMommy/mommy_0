@@ -357,6 +357,7 @@
         return fontSize;
     }
     
+    
     CGFloat buttonWidth = roundf(self.bounds.size.width/self.numberOfSegments);
     
     CGSize constraintSize = CGSizeMake(buttonWidth, MAXFLOAT);
@@ -554,6 +555,25 @@
     targetButton.selected = YES;
     targetButton.userInteractionEnabled = NO;
     
+//    [self setTitleColor:self.tintColor forState:UIControlStateHighlighted];
+//    [self setTitleColor:self.tintColor forState:UIControlStateSelected];
+    
+    
+//    int buttonIndex = 0;
+//    
+//    for (UIButton *button in self.buttons) {
+//        
+//        if (buttonIndex == segment) {
+//            
+//            button.titleLabel.font = [UIFont fontWithName:@"NanumBarunGothicBold" size:15.0f];
+//        }
+//        else {
+//            button.titleLabel.font = [UIFont fontWithName:@"NanumBarunGothic" size:15.0f];
+//        }
+//        
+//        buttonIndex++;
+//    }
+    
     _selectedSegmentIndex = segment;
     
     void (^animations)() = ^void(){
@@ -733,15 +753,25 @@
         }
         else {
             
-            // 수정본 시작
-            if (self.selectedSegmentIndex == button.tag) {
-                
+            NSLog(@"선택된 버튼 인덱스 : %ld", (long)self.selectedSegmentIndex);
+            NSLog(@"버튼 태그 :  %ld", (long)button.tag);
+            
+            if (state == UIControlStateSelected) {
                 [attributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"NanumBarunGothicBold" size:15.0f] range:NSMakeRange(0, attributedString.string.length)];
             }
             else {
-                
                 [attributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"NanumBarunGothic" size:15.0f] range:NSMakeRange(0, attributedString.string.length)];
             }
+            
+//            if (self.selectedSegmentIndex == button.tag) {
+//                
+//                [attributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"NanumBarunGothicBold" size:15.0f] range:NSMakeRange(0, attributedString.string.length)];
+//            }
+//            else {
+//                
+//                [attributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"NanumBarunGothic" size:15.0f] range:NSMakeRange(0, attributedString.string.length)];
+//            }
+            
             // 수정본 끝
             
             // 원본

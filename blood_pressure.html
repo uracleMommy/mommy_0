@@ -45,10 +45,10 @@
    var pointRadiusArray = [];
    var pointHoverRadiusArray = [];
    var isBubble = false;
-   var imageItems = [ "./img/contents_graph_btn_bubble_left.png", 
-                      "./img/contents_graph_btn_bubble.png", 
-                      "./img/contents_graph_btn_bubble_right.png", 
-                      "./img/contents_graph_point.png" ];
+   var imageItems = [ "contents_graph_btn_bubble_left.png",
+                      "contents_graph_btn_bubble.png",
+                      "contents_graph_btn_bubble_right.png",
+                      "contents_graph_point.png"];
    var imgObj = [];
    var isFirst = false;
    function loader(items, thingToDo, allDone) {
@@ -96,8 +96,8 @@
    var isFirst = false;
 
    function initChart(param){
+       
 	   ctx = document.getElementById("chart").getContext("2d");
-
 	   obj = JSON.parse(param);
 	   ctx.canvas.height= obj.height;
 	   ctx.canvas.width = obj.width;

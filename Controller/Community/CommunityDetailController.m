@@ -15,6 +15,7 @@
 @end
 
 @implementation CommunityDetailController
+
 static BOOL keyboardShow = NO;
 
 - (void)viewDidLoad {

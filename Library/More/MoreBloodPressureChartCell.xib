@@ -22,11 +22,6 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lka-cA-6wo">
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weight_crop" translatesAutoresizingMaskIntoConstraints="NO" id="it4-DG-ViW">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="190" id="NJC-Se-707"/>
-                                </constraints>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cp-ns-ldR">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oj9-ed-kdU">
@@ -70,22 +65,20 @@
                                     <constraint firstItem="Pab-nh-Vol" firstAttribute="leading" secondItem="LJW-H5-Yzg" secondAttribute="trailing" constant="8" id="Nrh-t7-zH9"/>
                                 </constraints>
                             </view>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i4B-hf-fl6">
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7cp-ns-ldR" firstAttribute="top" secondItem="lka-cA-6wo" secondAttribute="top" constant="8" id="2Yh-EE-aGp"/>
-                            <constraint firstAttribute="trailing" secondItem="it4-DG-ViW" secondAttribute="trailing" constant="8" id="5ga-MF-epi"/>
-                            <constraint firstItem="it4-DG-ViW" firstAttribute="top" secondItem="7cp-ns-ldR" secondAttribute="bottom" constant="8" id="Aca-Lt-84k"/>
-                            <constraint firstItem="it4-DG-ViW" firstAttribute="top" secondItem="lka-cA-6wo" secondAttribute="top" constant="56" id="DuY-9b-sk6"/>
+                            <constraint firstItem="i4B-hf-fl6" firstAttribute="top" secondItem="7cp-ns-ldR" secondAttribute="bottom" constant="8" id="3aS-tE-cIC"/>
+                            <constraint firstAttribute="trailing" secondItem="i4B-hf-fl6" secondAttribute="trailing" constant="8" id="G8G-jF-oID"/>
                             <constraint firstAttribute="trailing" secondItem="7cp-ns-ldR" secondAttribute="trailing" constant="8" id="Nar-jW-agj"/>
                             <constraint firstItem="7cp-ns-ldR" firstAttribute="leading" secondItem="lka-cA-6wo" secondAttribute="leading" constant="8" id="USr-uu-pKA"/>
-                            <constraint firstItem="it4-DG-ViW" firstAttribute="leading" secondItem="lka-cA-6wo" secondAttribute="leading" constant="8" id="f6g-mM-S2t"/>
+                            <constraint firstItem="i4B-hf-fl6" firstAttribute="leading" secondItem="lka-cA-6wo" secondAttribute="leading" constant="8" id="eoa-53-HJN"/>
+                            <constraint firstAttribute="bottom" secondItem="i4B-hf-fl6" secondAttribute="bottom" constant="7.5" id="mqa-2d-GcU"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="DuY-9b-sk6"/>
-                            </mask>
-                        </variation>
                     </view>
                 </subviews>
                 <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -105,13 +98,13 @@
             <connections>
                 <outlet property="containerView" destination="lka-cA-6wo" id="xTo-G2-n3S"/>
                 <outlet property="lblLately" destination="LJW-H5-Yzg" id="gTA-ie-mCZ"/>
+                <outlet property="webView" destination="i4B-hf-fl6" id="V7P-i7-eWO"/>
             </connections>
-            <point key="canvasLocation" x="-125" y="98"/>
+            <point key="canvasLocation" x="-125" y="97.5"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="tab_btn_left" width="90" height="90"/>
         <image name="tab_btn_right" width="90" height="90"/>
-        <image name="weight_crop" width="621" height="415"/>
     </resources>
 </document>

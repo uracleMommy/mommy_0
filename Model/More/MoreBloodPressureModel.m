@@ -81,6 +81,16 @@
             
             cell.delegate = self;
             
+            NSError *error;
+            NSData * jsonData = [NSJSONSerialization  dataWithJSONObject:_dicList options:0 error:&error];
+            NSString * myString = [[NSString alloc] initWithData:jsonData   encoding:NSUTF8StringEncoding];
+            //NSLog(@"%@",myString);
+            
+            // 자바스크립트 펑션 호출
+            cell.isFirst = YES;
+            cell.functionJson = myString;
+            [cell.webView loadRequest:_chartRequest];
+            
             return cell;
         }
         else if (indexPath.row == 1) {
@@ -285,6 +295,7 @@
 //        
 //        [self.delegate tableView:tableView didSelectRowAtIndexPath:indexPath];
 //    }
+    
 }
 
 - (BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath   {
@@ -294,6 +305,7 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     // Perform the real delete action here. Note: you may need to check editing style
     //   if you do not perform delete only.
     NSLog(@"Deleted row.");

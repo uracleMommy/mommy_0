@@ -14,10 +14,22 @@
     [super awakeFromNib];
     // Initialization code
     
+    _webView.delegate = self;
+    
     // 컨테이너뷰 라운드, 보더 처리
     _containerView.layer.borderColor = [[UIColor colorWithRed:217.0f/255.0f green:217.0f/255.0f blue:217.0f/255.0f alpha:1.0f] CGColor];
     _containerView.layer.borderWidth = 1.0f;
     _containerView.layer.cornerRadius = 10;
+    _isFirst = YES;
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    
+    if (_isFirst) {
+        
+        [_webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"initChart('%@')", _functionJson]];
+        _isFirst = NO;
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

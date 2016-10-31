@@ -17,6 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    _btnLogin.layer.borderColor = [[UIColor colorWithRed:132.0f/255.0f green:68.0f/255.0f blue:240.0f/255.0f alpha:1.0f] CGColor];
+    _btnLogin.layer.borderWidth = 1.0f;
+    _btnLogin.layer.cornerRadius = 18;
+    
+    _btnMemberShip.layer.borderColor = [[UIColor colorWithRed:200.0f/255.0f green:200.0f/255.0f blue:200.0f/255.0f alpha:1.0f] CGColor];
+    _btnMemberShip.layer.borderWidth = 1.0f;
+    _btnMemberShip.layer.cornerRadius = 18;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,6 +59,53 @@
         _introDeviceViewController = (IntroDeviceViewController *)segue.destinationViewController;
         
     }
+}
+
+- (IBAction)goLogin:(id)sender {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MembershipLogin" bundle:[NSBundle mainBundle]];
+    
+    UIViewController *viewController = [storyboard instantiateInitialViewController];
+    
+    AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    appDelegate.window.rootViewController = viewController;
+    
+    [appDelegate.window makeKeyAndVisible];
+    
+//    if (screenRect.size.width <= 320) {
+//        
+//        // 3.5
+//        if (screenRect.size.height <= 480) {
+//            vc = (ParLoginController *)[storyboard instantiateViewControllerWithIdentifier:@"login_3.5"];
+//        }
+//        else {
+//            vc = (ParLoginController *)[storyboard instantiateViewControllerWithIdentifier:@"login_4.0"];
+//        }
+//    }
+//    else if (screenRect.size.width <= 375) {
+//        vc = (ParLoginController *)[storyboard instantiateViewControllerWithIdentifier:@"login_4.7"];
+//    }
+//    else {
+//        vc = (ParLoginController *)[storyboard instantiateViewControllerWithIdentifier:@"login_5.5"];
+//    }
+//    
+//    // Set root view controller and make windows visible
+//    self.window.rootViewController = vc;
+//    [self.window makeKeyAndVisible];
+}
+
+- (IBAction)goMemberShip:(id)sender {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MembershipLogin" bundle:[NSBundle mainBundle]];
+    
+    UIViewController *viewController = [storyboard instantiateInitialViewController];
+    
+    AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    appDelegate.window.rootViewController = viewController;
+    
+    [appDelegate.window makeKeyAndVisible];
 }
 
 @end

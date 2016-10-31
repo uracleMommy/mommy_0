@@ -18,6 +18,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.view.backgroundColor = [UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:0.0f/255.0f alpha:0.8f];
+    
     _pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CoachPageViewController"];
     _pageViewController.dataSource = self;
     _pageViewController.delegate = self;
@@ -33,6 +35,8 @@
     [self.view addSubview:_pageViewController.view];
     
     _currentIndex = 0;
+    
+    [self.view bringSubviewToFront:_btnStart];
 }
 
 
@@ -101,7 +105,7 @@
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
     
-    return 3;
+    return 0;
 }
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
@@ -109,9 +113,50 @@
     return 0;
 }
 
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed {
+    
+    CoachMarkContentController *viewController;
+    
+    if (completed) {
+        
+        viewController = [pageViewController.viewControllers lastObject];
+        
+        if (viewController.pageIndex == 0) {
+            
+            _imgFirstPage.hidden = NO;
+            _imgSecondPage.hidden = YES;
+            _imgThirdPage.hidden = YES;
+            _btnStart.hidden = YES;
+            _underLine.hidden = YES;
+        }
+        else if (viewController.pageIndex == 1) {
+            
+            _imgFirstPage.hidden = YES;
+            _imgSecondPage.hidden = NO;
+            _imgThirdPage.hidden = YES;
+            _btnStart.hidden = YES;
+            _underLine.hidden = YES;
+        }
+        else if (viewController.pageIndex == 2) {
+            
+            _imgFirstPage.hidden = YES;
+            _imgSecondPage.hidden = YES;
+            _imgThirdPage.hidden = NO;
+            _btnStart.hidden = NO;
+            _underLine.hidden = NO;
+        }
+    }
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)goStart:(id)sender {
+    
+    [self.view removeFromSuperview];
 }
 
 @end

@@ -29,4 +29,9 @@
 
 - (void) bridgePageMoveCompleted : (NSUInteger) pageIndex;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *containerViewWidth;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *containerViewHeight;
+
+
 @end

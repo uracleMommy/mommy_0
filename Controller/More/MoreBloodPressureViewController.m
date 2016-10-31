@@ -19,6 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
     // 좌측버튼
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *addBtnImage = [UIImage imageNamed:@"title_icon_back"];
@@ -31,6 +32,7 @@
     UIBarButtonItem *leftNegativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     leftNegativeSpacer.width = -16;
     [self.navigationItem setLeftBarButtonItems:@[leftNegativeSpacer, addButton]];
+
     
     // 우측버튼
     UIButton *professionButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -45,7 +47,8 @@
     
     _moreBloodPressureModel = [[MoreBloodPressureModel alloc] init];
     _currentPage = 1;
-    
+
+
     // 리스트 조회
     [self bloodPressureBind:_currentPage];
 }
@@ -96,9 +99,20 @@
                 [_moreBloodPressureModel.arrayList addObject:newDic];
             }
             
+            // 차트 바인딩
+            NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"blood_pressure" ofType:@"html"]];
+            NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+            _moreBloodPressureModel.chartRequest = request;
             _moreBloodPressureModel.delegate = self;
+                        
+            NSMutableDictionary *resultDic = [NSMutableDictionary dictionaryWithDictionary:data[@"result"]];
+            [resultDic setValue:@([UIScreen mainScreen].bounds.size.width - 32) forKey:@"width"];
+            [resultDic setValue:@(191) forKey:@"height"];
+            
+            _moreBloodPressureModel.dicList = resultDic;
             _tableView.dataSource = _moreBloodPressureModel;
             _tableView.delegate = _moreBloodPressureModel;
+            
             [_tableView reloadData];
             
             [self setCurrentChartRange];
@@ -329,7 +343,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
             long code = [data[@"code"] longValue];
-            
+
             // 실패시
             if (code != 0) {
                 
@@ -381,6 +395,10 @@
 }
 
 @end
+
+
+
+
 
 
 

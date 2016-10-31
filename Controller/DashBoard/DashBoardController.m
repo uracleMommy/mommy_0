@@ -34,9 +34,16 @@
     
     _coachMarkContainerController = [self.storyboard instantiateViewControllerWithIdentifier:@"CoachContainerController"];
     
-    [self addChildViewController:_coachMarkContainerController];
+    CGRect windowSize = [UIScreen mainScreen].bounds;
     
-    [self.view addSubview:_coachMarkContainerController.view];
+    [_coachMarkContainerController.view setFrame:windowSize];
+    
+//    [self addChildViewController:_coachMarkContainerController];
+//    
+//    [self.view addSubview:_coachMarkContainerController.view];
+    
+    AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate.window addSubview:_coachMarkContainerController.view];
     
     //[self performSegueWithIdentifier:@"goQuestionModal" sender:nil];
 }

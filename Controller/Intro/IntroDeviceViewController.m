@@ -17,33 +17,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
     
-//    self.view.backgroundColor = [UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:0.0f];
-    
-//    _pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DevicePageViewController"];
-//    _pageViewController.dataSource = self;
-//    _pageViewController.delegate = self;
-//    
-//    IntroDeviceImageViewController  *startViewControlle = [self viewControllerAtIndex:0];
-//    NSArray *viewControllers = @[startViewControlle];
-//    [_pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-//    
-//
-//    
-//    [self addChildViewController:_pageViewController];
-//    [self.view insertSubview:_pageViewController.view belowSubview:_deviceImage];
-//    
-//    [_pageViewController didMoveToParentViewController:self];
-//    
-//    _currentIndex = 0;
-//    
-//    for (UIView *view in self.pageViewController.view.subviews) {
-//        if ([view isKindOfClass:[UIScrollView class]]) {
-//            _scrollView = (UIScrollView *)view;
-//            [(UIScrollView *)view setDelegate:self];
-//        }
-//    }
-    
+    // 아이폰 4s 이하
+    if (screenRect.size.width == 320 && screenRect.size.height == 480) {
+        
+        _containerViewWidth.constant = 132;
+        _containerViewHeight.constant = 220;
+    }
+    // 아이폰 5/5s
+    else if(screenRect.size.width == 320) {
+        
+        _containerViewWidth.constant = 132;
+        _containerViewHeight.constant = 220;
+    }
+    // 아이폰 6/6s/7
+    else if (screenRect.size.width == 375) {
+        
+        // width : 184 / height : 304
+        _containerViewWidth.constant = 184;
+        _containerViewHeight.constant = 304;
+    }
+    // 아이폰 6 Plus/6s Puls/7 Plus
+    else if (screenRect.size.width == 414) {
+        
+        _containerViewWidth.constant = 208;
+        _containerViewHeight.constant = 346;
+    }
 }
 
 - (void) viewDidLayoutSubviews {

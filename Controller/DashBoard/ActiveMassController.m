@@ -149,7 +149,6 @@
             _activeMassModel = [[ActiveMassModel alloc] init];
             _activeMassModel.delegate = self;
             
-            
             // 차트 바인딩
             NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"weekly_step" ofType:@"html"]];
             NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
