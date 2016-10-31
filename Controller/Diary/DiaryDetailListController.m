@@ -254,6 +254,7 @@
             emoticon = [NSString stringWithFormat:@"%ld", (long)_emoticonButton.tag+500];
         }
         
+        
         [param setValue:@"Y" forKey:@"isvalid"];
         [param setValue:_titleTextField.text forKey:@"title"];
         [param setValue:_contentsTextView.text forKey:@"content"];
@@ -354,7 +355,7 @@
         NSArray *files = [result objectForKey:@"files"];
         
         for(int i = 0 ; i<[files count] ; i++){
-            NSString *fileImageName = [[files objectAtIndex:i] objectForKey:@"atch_file_key"];
+            NSString *fileImageName = [[files objectAtIndex:i] objectForKey:@"file_name"];
             
             if ([_cachedImages objectForKey:fileImageName] != nil) {
                 [_files addObject:fileImageName];
@@ -384,7 +385,7 @@
                 dispatch_queue_t queue = dispatch_queue_create(s, 0);
                 dispatch_async(queue, ^{
                     
-                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@&s=%d", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], fileImageName, i];
+                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@&s=%d", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [[files objectAtIndex:i] objectForKey:@"atch_file_key"], i];
                     
                     UIImage *profileImg = nil;
                     NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
@@ -553,6 +554,8 @@
         if(btn.tag == 44){
             [btn removeFromSuperview];
         }
+        
+        [[allImageButton objectAtIndex:i] setUserInteractionEnabled:YES];
     }
 
 }
@@ -583,51 +586,56 @@
 #pragma mark - ImageClick Action
 - (IBAction)mommyPictureButtonAction:(id)sender {
     selectedImageButton = sender;
-    
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"사진"
-                                                                   message:@""
-                                                            preferredStyle:UIAlertControllerStyleActionSheet];
-    
-    UIAlertAction *showAction = [UIAlertAction actionWithTitle:@"사진보기"
-                                                         style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                                                             [self showImageViewer:sender];
-                                                             NSLog(@"You pressed button one");
-                                                         }];
-    
-    UIAlertAction *takeAction = [UIAlertAction actionWithTitle:@"카메라로 사진찍기"
-                                                         style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                                                             if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-                                                             {
-                                                                 [self checkCameraAuthorization];
-                                                             }
-                                                             else
-                                                             {
-                                                                 [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"Your device doesn't have a camera." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
-                                                             }
-                                                             NSLog(@"You pressed button two");
-                                                         }];
-    
-    UIAlertAction *selectAction = [UIAlertAction actionWithTitle:@"사진앨범에서 선택하기"
-                                                           style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                                                               NSLog(@"You pressed button three");
-                                                               
-                                                               [self checkLibraryAuthorization];
-                                                           }];
-    
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"취소"
-                                                           style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
-                                                           }];
-    
-    if(![[selectedImageButton currentImage] isEqual:_defaultImage]){
-        [alert addAction:showAction];
+    if(_editFlag){
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"사진"
+                                                                       message:@""
+                                                                preferredStyle:UIAlertControllerStyleActionSheet];
+        
+        UIAlertAction *showAction = [UIAlertAction actionWithTitle:@"사진보기"
+                                                             style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                                                                 [self showImageViewer:sender];
+                                                                 NSLog(@"You pressed button one");
+                                                             }];
+        
+        UIAlertAction *takeAction = [UIAlertAction actionWithTitle:@"카메라로 사진찍기"
+                                                             style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                                                                 if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+                                                                 {
+                                                                     [self checkCameraAuthorization];
+                                                                 }
+                                                                 else
+                                                                 {
+                                                                     [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"Your device doesn't have a camera." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+                                                                 }
+                                                                 NSLog(@"You pressed button two");
+                                                             }];
+        
+        UIAlertAction *selectAction = [UIAlertAction actionWithTitle:@"사진앨범에서 선택하기"
+                                                               style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                                                                   NSLog(@"You pressed button three");
+                                                                   
+                                                                   [self checkLibraryAuthorization];
+                                                               }];
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"취소"
+                                                               style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+                                                               }];
+        
+        if(![[selectedImageButton currentImage] isEqual:_defaultImage]){
+            [alert addAction:showAction];
+        }
+        
+        [alert addAction:takeAction];
+        [alert addAction:selectAction];
+        [alert addAction:cancelAction];
+        
+        
+        [self presentViewController:alert animated:YES completion:nil]; // 6
+
+    }else{
+        [self showImageViewer:sender];
     }
-    
-    [alert addAction:takeAction];
-    [alert addAction:selectAction];
-    [alert addAction:cancelAction];
-    
-    
-    [self presentViewController:alert animated:YES completion:nil]; // 6
 }
 
 #pragma imagePickerView delegate

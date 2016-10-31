@@ -17,11 +17,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="replyContentCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="replyContentCell" rowHeight="75" id="dWE-Dy-XxG" customClass="CommunityDetailCells">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="replyContentCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="replyContentCell" rowHeight="120" id="dWE-Dy-XxG" customClass="CommunityDetailCells">
+            <rect key="frame" x="0.0" y="0.0" width="468" height="130"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dWE-Dy-XxG" id="5M3-IN-GNf">
-                <frame key="frameInset" width="375" height="84"/>
+                <frame key="frameInset" width="468" height="130"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOq-9C-7Y4">
@@ -36,12 +36,16 @@
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shN-qQ-J07">
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도민준xi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKf-cX-wAe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="도민준xi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKf-cX-wAe">
+                                <frame key="frameInset" width="1000" height="1000"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="14"/>
                                 <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오전 10:13" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNx-lF-Pbl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="오전 10:13" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNx-lF-Pbl">
+                                <frame key="frameInset" width="1000" height="1000"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -49,19 +53,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="tNx-lF-Pbl" secondAttribute="bottom" id="AFY-n4-8VA"/>
-                            <constraint firstItem="bKf-cX-wAe" firstAttribute="leading" secondItem="shN-qQ-J07" secondAttribute="leading" id="CsS-Kw-S9Q"/>
-                            <constraint firstAttribute="trailing" secondItem="tNx-lF-Pbl" secondAttribute="trailing" id="VsT-OH-eWu"/>
-                            <constraint firstItem="bKf-cX-wAe" firstAttribute="top" secondItem="shN-qQ-J07" secondAttribute="top" id="W0C-r1-gcL"/>
                             <constraint firstAttribute="height" constant="20" id="bUt-AN-XiL"/>
-                            <constraint firstAttribute="bottom" secondItem="bKf-cX-wAe" secondAttribute="bottom" id="jd5-A4-Cl1"/>
-                            <constraint firstItem="tNx-lF-Pbl" firstAttribute="top" secondItem="shN-qQ-J07" secondAttribute="top" id="veo-hy-tP1"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저도 그것때문에 잠을 못이루고 있어요 ㅜㅜ 저도 그것때문에 잠을 못이루고 있어요 ㅜㅜ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Gc-y6-Xfk">
-                        <constraints>
-                            <constraint firstAttribute="height" constant="25" id="nwh-5w-zWa"/>
-                        </constraints>
                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
                         <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -82,12 +77,11 @@
             <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="replyContentTextField" destination="3Gc-y6-Xfk" id="4wU-L8-VVm"/>
-                <outlet property="replyContentsHeightConstraint" destination="nwh-5w-zWa" id="PTX-2l-yZU"/>
                 <outlet property="replyPersonButton" destination="YOq-9C-7Y4" id="F1m-9v-YAt"/>
                 <outlet property="replyPersonKickname" destination="bKf-cX-wAe" id="8UW-Fu-tuD"/>
                 <outlet property="replyRegDate" destination="tNx-lF-Pbl" id="Pu9-6X-PQR"/>
             </connections>
-            <point key="canvasLocation" x="521.5" y="345.5"/>
+            <point key="canvasLocation" x="568" y="368"/>
         </tableViewCell>
     </objects>
     <resources>

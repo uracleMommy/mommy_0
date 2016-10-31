@@ -190,6 +190,10 @@
             cell.emoticonImageView.image = [[emoticon objectForKey:[data objectForKey:@"emoticon"]] objectForKey:@"image"];
             cell.emoticonLabel.textColor = [[emoticon objectForKey:[data objectForKey:@"emoticon"]] objectForKey:@"color"];
             cell.emoticonLabel.text = [[emoticon objectForKey:[data objectForKey:@"emoticon"]] objectForKey:@"text"];
+        }else{
+            cell.emoticonImageView.image = nil;
+//            cell.emoticonLabel.textColor = [[emoticon objectForKey:[data objectForKey:@"emoticon"]] objectForKey:@"color"];
+            cell.emoticonLabel.text = @"";
         }
         
         cell.titleLabel.text = [data objectForKey:@"title"];
@@ -209,11 +213,10 @@
         
         CGMutablePathRef firstPath = CGPathCreateMutable();
         CGPathMoveToPoint(firstPath, NULL, 0, 0);
-        CGPathAddLineToPoint(firstPath, NULL, tableView.frame.size.width - 38.0, 0);
+        CGPathAddLineToPoint(firstPath, NULL, tableView.frame.size.width - 90.0, 0);
         
         [firstShapeLayer setPath:firstPath];
         CGPathRelease(firstPath);
-        
         [[cell.lineLabel layer] addSublayer:firstShapeLayer];
         
         // 마지막 셀 체크 페이지 더보기 처리

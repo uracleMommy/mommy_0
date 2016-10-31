@@ -41,48 +41,10 @@
     }
     
     //_infoViewTopConstraint.constant = _infoViewTopConstraint.constant - 17;
-    
-    [[MommyRequest sharedInstance] mommyMyPageApiService:MyPageProfile authKey:GET_AUTH_TOKEN parameters:@{} success:^(NSDictionary *data) {
-        if([[NSString stringWithFormat:@"%@", [data objectForKey:@"code"]] isEqualToString:@"0"]){
-            NSDictionary *result = [data objectForKey:@"result"];
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                _babyNickNames = [result objectForKey:@"baby_nicknames"];
-                _moreMyPageSubInfoPanelController.lblEmail.text = [NSString stringWithFormat:@"%@", [result objectForKey:@"email"]];
-                _moreMyPageSubInfoPanelController.lblBabyBirth.text = [NSString stringWithFormat:@"%@", [result objectForKey:@"baby_birth"]];
-                _moreMyPageSubInfoPanelController.lblAddress.text = [NSString stringWithFormat:@"%@", [result objectForKey:@"address_name"]];
-                _moreMyPageSubInfoPanelController.lblFetus.text = [NSString stringWithFormat:@"%@명", [result objectForKey:@"baby_cnt"]];
-                _moreMyPageSubInfoPanelController.lblBeforeWeight.text = [NSString stringWithFormat:@"%@kg", [result objectForKey:@"before_weight"]];
-                _moreMyPageSubInfoPanelController.lblWeight.text = [NSString stringWithFormat:@"%@kg", [result objectForKey:@"weight"]];
-                _moreMyPageSubInfoPanelController.lblHeight.text = [NSString stringWithFormat:@"%@cm", [result objectForKey:@"height"]];
-                _moreMyPageSubInfoPanelController.lblNickName.text = [NSString stringWithFormat:@"%@", [result objectForKey:@"nickname"]];
-                
-                _moreMyPageSubImageController.user_name.text = [result objectForKey:@"name"];
-                _moreMyPageSubImageController.user_birth.text = [result objectForKey:@"birth"];
-                
-                NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [result objectForKey:@"img"]];
-                
-                char const * s = [profileImageIdentifier  UTF8String];
-                dispatch_queue_t queue = dispatch_queue_create(s, 0);
-                dispatch_async(queue, ^{
-                    
-                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [result objectForKey:@"img"]];
-                    
-                    UIImage *profileImg = nil;
-                    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
-                    profileImg = [[UIImage alloc] initWithData:firstImageData];
-                    
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [_moreMyPageSubImageController setMommyImage:profileImg];
-                    });
-                });
-            });
-        }
-    } error:^(NSError *error) {
-    }];
-
-}
+    }
 
 - (void) viewDidAppear:(BOOL)animated{
+    [self initData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -198,6 +160,47 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+-(void)initData{
+    
+    [[MommyRequest sharedInstance] mommyMyPageApiService:MyPageProfile authKey:GET_AUTH_TOKEN parameters:@{} success:^(NSDictionary *data) {
+        if([[NSString stringWithFormat:@"%@", [data objectForKey:@"code"]] isEqualToString:@"0"]){
+            NSDictionary *result = [data objectForKey:@"result"];
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                _babyNickNames = [result objectForKey:@"baby_nicknames"];
+                _moreMyPageSubInfoPanelController.lblEmail.text = [NSString stringWithFormat:@"%@", [result objectForKey:@"email"]];
+                _moreMyPageSubInfoPanelController.lblBabyBirth.text = [NSString stringWithFormat:@"%@", [self getyyyyMMdd:[result objectForKey:@"baby_birth"] ]];
+                _moreMyPageSubInfoPanelController.lblAddress.text = [NSString stringWithFormat:@"%@", [result objectForKey:@"address_name"]];
+                _moreMyPageSubInfoPanelController.lblFetus.text = [NSString stringWithFormat:@"%@명", [result objectForKey:@"baby_cnt"]];
+                _moreMyPageSubInfoPanelController.lblBeforeWeight.text = [NSString stringWithFormat:@"%@kg", [result objectForKey:@"before_weight"]];
+                _moreMyPageSubInfoPanelController.lblWeight.text = [NSString stringWithFormat:@"%@kg", [result objectForKey:@"weight"]];
+                _moreMyPageSubInfoPanelController.lblHeight.text = [NSString stringWithFormat:@"%@cm", [result objectForKey:@"height"]];
+                _moreMyPageSubInfoPanelController.lblNickName.text = [NSString stringWithFormat:@"%@", [result objectForKey:@"nickname"]];
+                
+                _moreMyPageSubImageController.user_name.text = [result objectForKey:@"name"];
+                _moreMyPageSubImageController.user_birth.text = [self getyyyyMMdd:[result objectForKey:@"birth"]];
+                
+                NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [result objectForKey:@"img"]];
+                
+                char const * s = [profileImageIdentifier  UTF8String];
+                dispatch_queue_t queue = dispatch_queue_create(s, 0);
+                dispatch_async(queue, ^{
+                    
+                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [result objectForKey:@"img"]];
+                    
+                    UIImage *profileImg = nil;
+                    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                    profileImg = [[UIImage alloc] initWithData:firstImageData];
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [_moreMyPageSubImageController setMommyImage:profileImg];
+                    });
+                });
+            });
+        }
+    } error:^(NSError *error) {
+    }];
+}
+
 
 #pragma mark 모달 창 관련
 
@@ -229,6 +232,25 @@
     
     alert.tag = 0;
     [alert show];
+}
+
+
+#pragma mark 마미앤 날짜 형식 변환기(yyyy.MM.dd)
+- (NSString *) getyyyyMMdd : (NSString *) dateFormatString {
+    
+    NSString *dateString = dateFormatString;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    // this is imporant - we set our input date format to match our input string
+    // if format doesn't match you'll get nil from your string, so be careful
+    [dateFormatter setDateFormat:@"yyyyMMdd"];
+    NSDate *dateFromString = [[NSDate alloc] init];
+    // voila!
+    dateFromString = [dateFormatter dateFromString:dateString];
+    
+    [dateFormatter setDateFormat:@"yyyy.MM.dd"];
+    NSString *yyyymmdd = [dateFormatter stringFromDate:dateFromString];
+    
+    return yyyymmdd;
 }
 
 @end

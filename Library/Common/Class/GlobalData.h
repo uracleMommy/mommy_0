@@ -20,4 +20,6 @@
 
 @property (retain, nonatomic) NSString *fileServerDomain;
 
+@property (retain, nonatomic) NSString *deviceToken;
+
 @end

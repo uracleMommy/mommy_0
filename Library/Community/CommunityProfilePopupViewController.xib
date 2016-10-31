@@ -50,7 +50,7 @@
                                 <action selector="closePopupAction:" destination="-1" eventType="touchUpInside" id="0Ox-AL-3o4"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="join_profile_photo" translatesAutoresizingMaskIntoConstraints="NO" id="hsQ-f6-cVD">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contents_profile_default_large" translatesAutoresizingMaskIntoConstraints="NO" id="hsQ-f6-cVD">
                             <constraints>
                                 <constraint firstAttribute="height" constant="110" id="K8G-mc-ePD"/>
                                 <constraint firstAttribute="width" constant="110" id="tRu-EJ-bsW"/>
@@ -297,8 +297,8 @@
         </view>
     </objects>
     <resources>
+        <image name="contents_profile_default_large" width="220" height="220"/>
         <image name="input_btn_del" width="90" height="90"/>
-        <image name="join_profile_photo" width="220" height="220"/>
         <image name="popup_btn_icon_gather" width="50" height="50"/>
         <image name="popup_btn_icon_mentor_add" width="50" height="50"/>
         <image name="popup_btn_icon_message" width="50" height="50"/>

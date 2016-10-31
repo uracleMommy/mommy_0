@@ -24,7 +24,7 @@
     UIImage *closeBtnImage = [UIImage imageNamed:@"title_icon_close.png"];
     closeBtn.frame = CGRectMake(0, 0, 40, 40);
     [closeBtn setImage:closeBtnImage forState:UIControlStateNormal];
-    [closeBtn addTarget:self action:@selector(closeModal:) forControlEvents:UIControlEventTouchUpInside];
+    [closeBtn addTarget:self action:@selector(closeModal) forControlEvents:UIControlEventTouchUpInside];
     [closeBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
     UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithCustomView:closeBtn];
     self.navigationItem.rightBarButtonItem = closeButton;
@@ -101,12 +101,14 @@
             titleText = @"출산예정일";
             _unitLabel.hidden = YES;
             _basicTextField.hidden = YES;
-            _dropDownTextField.text = _valueText;
             [_dropDownTextField setDropDownMode : IQDropDownModeDatePicker];
+            _dropDownTextField.text = _valueText;
             NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
             [formatter setDateFormat:@"YYYY.MM.dd"];
             [_dropDownTextField setDateFormatter:formatter];
             [_dropDownTextField setMinimumDate:[NSDate date]];
+            [_dropDownTextField setDate:[formatter dateFromString:_valueText]];
+            
             break;
         }
             
@@ -209,13 +211,17 @@
             
         case 2: //거주지
         {
-            [param setValue:[NSNumber numberWithInteger:[[_addressCodeDic objectForKey:[_basicTextField text]] intValue]] forKey:@"address"];
+            [param setValue:[NSNumber numberWithInteger:[[_addressCodeDic objectForKey:[_dropDownTextField text]] intValue]] forKey:@"address"];
             break;
         }
             
         case 3: //출산예정일
         {
-            [param setValue:_dropDownTextField.text forKey:@"baby_birth"];
+            NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+            [formatter setDateFormat:@"YYYYMMdd"];
+            NSString *baby_birth = [formatter stringFromDate:[_dropDownTextField date]];
+            
+            [param setValue:baby_birth forKey:@"baby_birth"];
             break;
         }
             
@@ -242,12 +248,26 @@
     }
     
     [[MommyRequest sharedInstance] mommyMyPageApiService:MyPageUpdateProfile authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data) {
+        if([[data objectForKey:@"code"] intValue] == 0){
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [self closeModal];
+            });
+        }else{
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                                message:[data objectForKey:@"msg"]
+                                                               delegate:self
+                                                      cancelButtonTitle:@"확인"
+                                                      otherButtonTitles:nil, nil];
+                [alert show];
+            });
+        }
     } error:^(NSError *error) {
         
     }];
 }
 
-- (IBAction)closeModal:(id)sender {
+- (void)closeModal {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

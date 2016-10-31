@@ -77,22 +77,29 @@
                     [_mentorButton setImage:[UIImage imageNamed:@"popup_btn_icon_mentor_add.png"] forState:UIControlStateNormal];
                 }
                 
-                NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [mentoInfo objectForKey:@"img"]];
-                
-                char const * s = [profileImageIdentifier  UTF8String];
-                dispatch_queue_t queue = dispatch_queue_create(s, 0);
-                dispatch_async(queue, ^{
+                if(![[mentoInfo objectForKey:@"img"] isEqualToString:@""]){
                     
-                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [mentoInfo objectForKey:@"img"]];
+                    NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [mentoInfo objectForKey:@"img"]];
                     
-                    UIImage *profileImg = nil;
-                    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
-                    profileImg = [[UIImage alloc] initWithData:firstImageData];
-                    
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [_profileImage setImage:profileImg];
+                    char const * s = [profileImageIdentifier  UTF8String];
+                    dispatch_queue_t queue = dispatch_queue_create(s, 0);
+                    dispatch_async(queue, ^{
+                        
+                        NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [mentoInfo objectForKey:@"img"]];
+                        
+                        UIImage *profileImg = nil;
+                        NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                        profileImg = [[UIImage alloc] initWithData:firstImageData];
+                        
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [_profileImage setImage:profileImg];
+                        });
                     });
-                });
+                }else{
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [_profileImage setImage:[UIImage imageNamed:@"contents_profile_default_large"]];
+                    });                    
+                }
                 
             });
         }else{
