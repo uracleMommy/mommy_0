@@ -81,9 +81,8 @@
     NSDictionary *device_model = [NSDictionary dictionaryWithObjectsAndKeys:@"iPhone", @"iPhone1,1", @"iPhone3G", @"iPhone1,2", @"iPhone3GS", @"iPhone2,1", @"iPhone4(GSM)", @"iPhone3,1", @"iPhone4(CDMA)", @"iPhone3,3", @"iPhone4S", @"iPhone4,1", @"iPhone5(A1428)", @"iPhone5,1", @"iPhone5(A1429)", @"iPhone5,2", @"iPhone5c(A1456/A1532)", @"iPhone5,3", @"iPhone5c(A1507/A1516/A1529)", @"iPhone5,4", @"iPhone5s(A1433/A1453)", @"iPhone6,1", @"iPhone5s(A1457/A1518/A1530)", @"iPhone6,2", @"iPhone6Plus", @"iPhone7,1", @"iPhone6", @"iPhone7,2", @"iPhone6s", @"iPhone8,1", @"iPhone6sPlus", @"iPhone8,2", @"iPhoneSE", @"iPhone8,4", @"iPhone7(CDMA)", @"iPhone9,1", @"iPhone7(GSM)", @"iPhone9,3", @"iPhone7Plus(CDMA)", @"iPhone9,2", @"iPhone7Plus(GSM)", @"iPhone9,4", nil];
     
     struct utsname systemInfo;
+    
     uname(&systemInfo);
-    
-    
     
     NSString *device_symbol = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
     
