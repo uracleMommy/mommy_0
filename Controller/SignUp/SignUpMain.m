@@ -65,6 +65,7 @@
 -(void) goBack{
     [scrollViewContoller.confirmNumberTimer invalidate];
     [self dismissViewControllerAnimated:YES completion:nil];
+//    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)showTermsPopup:(id)sender {

@@ -30,20 +30,35 @@
     self.tabBarController.tabBar.translucent = NO;
     self.navigationController.navigationBar.translucent = NO;
     
-    //[self dashboardInfoBind];
     
-    _coachMarkContainerController = [self.storyboard instantiateViewControllerWithIdentifier:@"CoachContainerController"];
+    UIImageView *titleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title_bi"]];
+    titleImageView.frame = CGRectMake(0, 0, 110, 20);
+
+//    CGRect test = self.navigationController.navigationBar.frame;
+//    self.navigationController.navigationBar.
+    [self.navigationItem.titleView addSubview:titleImageView];
     
-    CGRect windowSize = [UIScreen mainScreen].bounds;
-    
-    [_coachMarkContainerController.view setFrame:windowSize];
-    
-//    [self addChildViewController:_coachMarkContainerController];
-//    
-//    [self.view addSubview:_coachMarkContainerController.view];
-    
-    AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate.window addSubview:_coachMarkContainerController.view];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+
+    if(![[userDefaults objectForKey:@"coachMarkFlag"] isEqual:[NSNull null]] && [[userDefaults objectForKey:@"coachMarkFlag"] isEqualToString:@"Y"]){
+        [self dashboardInfoBind];
+    }else{
+        [userDefaults setObject:@"Y" forKey:@"coachMarkFlag"];
+        [userDefaults synchronize];
+        
+        _coachMarkContainerController = [self.storyboard instantiateViewControllerWithIdentifier:@"CoachContainerController"];
+        
+        CGRect windowSize = [UIScreen mainScreen].bounds;
+        
+        [_coachMarkContainerController.view setFrame:windowSize];
+        
+        //    [self addChildViewController:_coachMarkContainerController];
+        //
+        //    [self.view addSubview:_coachMarkContainerController.view];
+        
+        AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        [appDelegate.window addSubview:_coachMarkContainerController.view];
+    }
     
     //[self performSegueWithIdentifier:@"goQuestionModal" sender:nil];
 }
@@ -80,7 +95,9 @@
             _weightCode = data[@"result"][@"weight_info"][@"weight_stauts_code"];
             
             // 문진정보 띄우기(제출을 하지 않았으면)
-            [self performSegueWithIdentifier:@"goQuestionModal" sender:data[@"result"][@"baby_info"][@"mom_week"]];
+            if(![data[@"result"][@"medical_info"][@"medical_yn"] isEqual:[NSNull null]] && ![data[@"result"][@"medical_info"][@"medical_yn"] isEqualToString:@"Y"]){
+                [self performSegueWithIdentifier:@"goQuestionModal" sender:data[@"result"][@"baby_info"][@"mom_week"]];
+            }
             
             // 프로그램 리스트 바인드
             [self programListBind];

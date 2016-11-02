@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -31,7 +31,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAb-x3-Q7u">
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weF-YT-sLh">
-                                                <color key="backgroundColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="Sha-Kk-gWm"/>
                                                 </constraints>
@@ -63,7 +63,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="weF-YT-sLh" firstAttribute="top" secondItem="IAb-x3-Q7u" secondAttribute="top" id="3iA-Gi-7Tf"/>
                                             <constraint firstItem="weF-YT-sLh" firstAttribute="leading" secondItem="IAb-x3-Q7u" secondAttribute="leading" id="62H-2y-blg"/>
@@ -76,7 +76,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GiI-Cj-W2S">
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="권장" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxW-fg-JbS">
-                                                <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="EJa-ua-Azp"/>
                                                 </constraints>
@@ -122,14 +122,14 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="144" id="4An-Mj-XKp"/>
                                                     <constraint firstAttribute="height" constant="29" id="Yca-hB-7vb"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="6ch-kr-aQw" firstAttribute="top" secondItem="pxW-fg-JbS" secondAttribute="bottom" id="48p-yf-el5"/>
                                             <constraint firstItem="pxW-fg-JbS" firstAttribute="leading" secondItem="GiI-Cj-W2S" secondAttribute="leading" id="Btf-Ru-2Sa"/>
@@ -151,14 +151,14 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="29" id="FpC-SE-gOI"/>
                                                     <constraint firstAttribute="width" constant="72" id="kEE-p0-PRq"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평가" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqT-8D-1CD">
-                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="gE5-wI-PCb"/>
                                                 </constraints>
@@ -291,14 +291,23 @@
                             <constraint firstAttribute="width" constant="42" id="oUl-do-c57"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코칭멘트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aE-6I-2Ir">
+                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="11"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="UDK-0t-HMg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="1fC-aN-YsQ"/>
+                    <constraint firstItem="2aE-6I-2Ir" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="327" id="8p2-6H-4gv"/>
                     <constraint firstItem="UDK-0t-HMg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="AqY-7O-zLm"/>
                     <constraint firstAttribute="bottom" secondItem="UDK-0t-HMg" secondAttribute="bottom" constant="66" id="G71-Rz-CYx"/>
                     <constraint firstItem="Eb6-Q4-1re" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="327" id="NHa-2c-hiw"/>
+                    <constraint firstItem="2aE-6I-2Ir" firstAttribute="height" secondItem="Eb6-Q4-1re" secondAttribute="height" id="Soq-uY-Mjj"/>
                     <constraint firstItem="Eb6-Q4-1re" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="6" id="X4U-tY-jbJ"/>
+                    <constraint firstItem="2aE-6I-2Ir" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="6" id="nIW-Ql-Icr"/>
+                    <constraint firstItem="2aE-6I-2Ir" firstAttribute="width" secondItem="Eb6-Q4-1re" secondAttribute="width" id="uOo-fK-aHQ"/>
                     <constraint firstAttribute="bottom" secondItem="UDK-0t-HMg" secondAttribute="bottom" constant="4" id="uok-mZ-HM0"/>
                     <constraint firstAttribute="trailing" secondItem="UDK-0t-HMg" secondAttribute="trailing" constant="8" id="xKU-e2-8Jb"/>
                 </constraints>

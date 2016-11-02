@@ -134,9 +134,9 @@
                 <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="iVd-u7-jDm" secondAttribute="bottom" constant="3" id="AOp-dg-9Gp"/>
-                    <constraint firstAttribute="trailing" secondItem="iVd-u7-jDm" secondAttribute="trailing" constant="10" id="FDb-kB-n2b"/>
+                    <constraint firstAttribute="trailing" secondItem="iVd-u7-jDm" secondAttribute="trailing" constant="8" id="FDb-kB-n2b"/>
                     <constraint firstItem="iVd-u7-jDm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="gPz-oC-69q"/>
-                    <constraint firstItem="iVd-u7-jDm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="qJz-U7-acw"/>
+                    <constraint firstItem="iVd-u7-jDm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="qJz-U7-acw"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

@@ -32,6 +32,16 @@
             _imageList = [NSArray arrayWithArray:_adviceInfo[@"files"]];
         }
     }
+    _uiImageList = [[NSMutableArray alloc] init];
+    
+    _firstImgView.layer.cornerRadius = 20;
+    _firstImgView.layer.masksToBounds = YES;
+    _secondImageView.layer.cornerRadius = 20;
+    _secondImageView.layer.masksToBounds = YES;
+    _thirdImageView.layer.cornerRadius = 20;
+    _thirdImageView.layer.masksToBounds = YES;
+    _fourthImageView.layer.cornerRadius = 20;
+    _fourthImageView.layer.masksToBounds = YES;
     
     // 탭 제스쳐 추가하기
     for (int i = 0; i < _imageList.count; i++) {
@@ -40,6 +50,9 @@
         NSString *imageUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], dic[@"atch_file_key"]];
         
         NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
+        if(imageData.length != 0 && imageData != nil){
+            [_uiImageList addObject:[UIImage imageWithData:imageData]];
+        }
         
         if (i == 0) {
             
@@ -74,7 +87,9 @@
     
     if (_imageList == nil) {
         
-        [_txtContent setFrame:CGRectMake(0, 0, _txtContent.frame.size.width, self.view.frame.size.height)];
+        [_txtContent setFrame:CGRectMake(15, 5, _txtContent.frame.size.width, self.view.frame.size.height)];
+        
+        _imageViewContainer.hidden = YES;
     }
 }
 
@@ -88,7 +103,7 @@
 //    _multiImageViewController.index = (int)tapGesture.view.tag;    
     
     if ([self.delegate respondsToSelector:@selector(imageArray:startIndex:)]) {
-        [self.delegate imageArray:_imageList startIndex:tapGesture.view.tag];
+        [self.delegate imageArray:_uiImageList startIndex:tapGesture.view.tag];
     }
     
     

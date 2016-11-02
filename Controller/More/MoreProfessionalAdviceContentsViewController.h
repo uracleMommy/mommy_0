@@ -30,6 +30,8 @@
 
 @property (strong, nonatomic) NSArray *imageList; // 이미지 리스트
 
+@property (strong, nonatomic) NSMutableArray *uiImageList; // 이미지 리스트
+
 @property (strong, nonatomic) MultiImageViewController *multiImageViewController;
 
 @property (strong, nonatomic) id<MoreProfessionalAdviceContentsViewControllerDelegate> delegate;

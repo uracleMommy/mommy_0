@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -32,8 +32,8 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contents_icon_clock" translatesAutoresizingMaskIntoConstraints="NO" id="guk-p3-fOZ">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="6Yb-9A-JII"/>
-                                    <constraint firstAttribute="height" constant="20" id="gPd-R1-X3r"/>
+                                    <constraint firstAttribute="width" constant="17" id="6Yb-9A-JII"/>
+                                    <constraint firstAttribute="height" constant="17" id="gPd-R1-X3r"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016.06.10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcI-Gz-FnA">
@@ -67,14 +67,14 @@
                             <constraint firstItem="4qL-0c-T2L" firstAttribute="leading" secondItem="miM-bh-gqM" secondAttribute="leading" constant="8" id="4pd-3o-uJN"/>
                             <constraint firstItem="2bq-j7-DYe" firstAttribute="top" secondItem="miM-bh-gqM" secondAttribute="top" constant="9" id="8zr-Bk-Div"/>
                             <constraint firstItem="AcI-Gz-FnA" firstAttribute="leading" secondItem="guk-p3-fOZ" secondAttribute="trailing" constant="8" id="I7m-eX-Yjz"/>
-                            <constraint firstItem="guk-p3-fOZ" firstAttribute="top" secondItem="miM-bh-gqM" secondAttribute="top" constant="13" id="JWO-2L-2JD"/>
+                            <constraint firstItem="guk-p3-fOZ" firstAttribute="top" secondItem="miM-bh-gqM" secondAttribute="top" constant="15" id="JWO-2L-2JD"/>
                             <constraint firstItem="AF3-9a-O0R" firstAttribute="top" secondItem="4qL-0c-T2L" secondAttribute="bottom" constant="11" id="NsF-p1-Lsq"/>
-                            <constraint firstAttribute="trailing" secondItem="AF3-9a-O0R" secondAttribute="trailing" constant="8" id="RRy-RH-oax"/>
+                            <constraint firstAttribute="trailing" secondItem="AF3-9a-O0R" secondAttribute="trailing" constant="15" id="RRy-RH-oax"/>
                             <constraint firstItem="AcI-Gz-FnA" firstAttribute="top" secondItem="miM-bh-gqM" secondAttribute="top" constant="13" id="VTX-fn-uxU"/>
                             <constraint firstItem="4qL-0c-T2L" firstAttribute="top" secondItem="AcI-Gz-FnA" secondAttribute="bottom" constant="4" id="YGJ-hC-7HK"/>
                             <constraint firstAttribute="bottom" secondItem="AF3-9a-O0R" secondAttribute="bottom" constant="8" id="Zh9-pX-mAu"/>
-                            <constraint firstItem="AF3-9a-O0R" firstAttribute="leading" secondItem="miM-bh-gqM" secondAttribute="leading" constant="8" id="jEd-ie-sf9"/>
-                            <constraint firstItem="guk-p3-fOZ" firstAttribute="leading" secondItem="miM-bh-gqM" secondAttribute="leading" constant="8" id="mDS-Ob-Kfv"/>
+                            <constraint firstItem="AF3-9a-O0R" firstAttribute="leading" secondItem="miM-bh-gqM" secondAttribute="leading" constant="15" id="jEd-ie-sf9"/>
+                            <constraint firstItem="guk-p3-fOZ" firstAttribute="leading" secondItem="miM-bh-gqM" secondAttribute="leading" constant="15" id="mDS-Ob-Kfv"/>
                             <constraint firstAttribute="trailing" secondItem="4qL-0c-T2L" secondAttribute="trailing" constant="8" id="oQW-93-dnA"/>
                             <constraint firstAttribute="trailing" secondItem="2bq-j7-DYe" secondAttribute="trailing" constant="12" id="vAm-QW-Wdm"/>
                         </constraints>

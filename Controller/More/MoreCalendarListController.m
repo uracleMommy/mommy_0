@@ -22,6 +22,21 @@
     _tableView.dataSource = _moreEnvironmentCalendarModal;
     _tableView.delegate = _moreEnvironmentCalendarModal;
     
+    self.navigationItem.hidesBackButton = YES;
+    // 좌측버튼
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *addBtnImage = [UIImage imageNamed:@"title_icon_back"];
+    backButton.frame = CGRectMake(0, 0, 40, 40);
+    [backButton setImage:addBtnImage forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(closeModal) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    
+    UIBarButtonItem *leftNegativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    leftNegativeSpacer.width = -16;
+    [self.navigationItem setLeftBarButtonItems:@[leftNegativeSpacer, addButton]];
+
+    
     [GIDSignIn sharedInstance].uiDelegate = self;
 }
 
@@ -32,6 +47,11 @@
 
 // Implement these methods only if the GIDSignInUIDelegate is not a subclass of
 // UIViewController.
+
+- (void) closeModal {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 // Stop the UIActivityIndicatorView animation that was started when the user
 // pressed the Sign In button

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="zou-VE-hkq">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="zou-VE-hkq">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -24,6 +24,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
@@ -117,17 +118,17 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="rTt-vs-HNu" firstAttribute="leading" secondItem="Osh-lk-H0E" secondAttribute="leading" constant="8" id="75Q-gf-DIm"/>
+                                    <constraint firstItem="rTt-vs-HNu" firstAttribute="leading" secondItem="Osh-lk-H0E" secondAttribute="leading" constant="15" id="75Q-gf-DIm"/>
                                     <constraint firstAttribute="height" constant="55" id="7KA-gG-XxU"/>
                                     <constraint firstItem="qJC-Zh-pJL" firstAttribute="leading" secondItem="Osh-lk-H0E" secondAttribute="leading" constant="8" id="AfD-HQ-Xei"/>
                                     <constraint firstItem="Mka-c2-fAh" firstAttribute="leading" secondItem="rTt-vs-HNu" secondAttribute="trailing" constant="6" id="As6-aa-Vc3"/>
-                                    <constraint firstAttribute="trailing" secondItem="Mka-c2-fAh" secondAttribute="trailing" constant="8" id="BC5-9e-u2y"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mka-c2-fAh" secondAttribute="trailing" constant="15" id="BC5-9e-u2y"/>
                                     <constraint firstItem="rTt-vs-HNu" firstAttribute="top" secondItem="Osh-lk-H0E" secondAttribute="top" constant="6" id="NGT-7J-mdc"/>
                                     <constraint firstAttribute="trailing" secondItem="qJC-Zh-pJL" secondAttribute="trailing" constant="8" id="R1U-EM-emV"/>
                                     <constraint firstItem="Mka-c2-fAh" firstAttribute="top" secondItem="YZ1-wK-RBR" secondAttribute="bottom" constant="2" id="VpE-3s-iET"/>
                                     <constraint firstItem="YZ1-wK-RBR" firstAttribute="top" secondItem="Osh-lk-H0E" secondAttribute="top" constant="8" id="XFT-PX-bfb"/>
                                     <constraint firstAttribute="bottom" secondItem="qJC-Zh-pJL" secondAttribute="bottom" id="YL9-q5-Dww"/>
-                                    <constraint firstAttribute="trailing" secondItem="YZ1-wK-RBR" secondAttribute="trailing" constant="8" id="pDC-nJ-gQX"/>
+                                    <constraint firstAttribute="trailing" secondItem="YZ1-wK-RBR" secondAttribute="trailing" constant="15" id="pDC-nJ-gQX"/>
                                     <constraint firstItem="YZ1-wK-RBR" firstAttribute="leading" secondItem="rTt-vs-HNu" secondAttribute="trailing" constant="6" id="ze6-aS-I4E"/>
                                 </constraints>
                             </view>
@@ -139,18 +140,21 @@
                                             <constraint firstAttribute="height" constant="30" id="aUP-hD-czN"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
-                                        <state key="normal" title="보내기"/>
+                                        <state key="normal" title="보내기">
+                                            <color key="titleColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="pushMessage:" destination="c8R-dW-6fv" eventType="touchUpInside" id="u9U-6o-Lek"/>
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wes-ta-fx6">
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="wes-ta-fx6" firstAttribute="leading" secondItem="1Jq-j4-Cua" secondAttribute="leading" constant="8" id="Dwc-8u-ggm"/>
                                     <constraint firstItem="TVJ-Nd-rhE" firstAttribute="top" secondItem="1Jq-j4-Cua" secondAttribute="top" constant="10" id="WVl-2H-D9e"/>
@@ -161,24 +165,35 @@
                                     <constraint firstAttribute="height" constant="49" id="v3C-0n-KQR"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6JA-DC-YcN">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcr-cM-9Yi">
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6JA-DC-YcN">
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="6JA-DC-YcN" secondAttribute="trailing" constant="15" id="5WM-n3-dTV"/>
+                                    <constraint firstItem="6JA-DC-YcN" firstAttribute="leading" secondItem="fcr-cM-9Yi" secondAttribute="leading" constant="15" id="ZRi-op-dtx"/>
+                                    <constraint firstAttribute="bottom" secondItem="6JA-DC-YcN" secondAttribute="bottom" constant="15" id="iAh-AJ-8FU"/>
+                                    <constraint firstItem="6JA-DC-YcN" firstAttribute="top" secondItem="fcr-cM-9Yi" secondAttribute="top" constant="15" id="pqL-BM-dI8"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Osh-lk-H0E" secondAttribute="trailing" id="017-Sv-blG"/>
-                            <constraint firstItem="6JA-DC-YcN" firstAttribute="top" secondItem="Osh-lk-H0E" secondAttribute="bottom" id="5AY-UH-nP8"/>
+                            <constraint firstItem="1Jq-j4-Cua" firstAttribute="top" secondItem="fcr-cM-9Yi" secondAttribute="bottom" id="0dL-dx-gVS"/>
                             <constraint firstItem="AZe-aE-5jS" firstAttribute="top" secondItem="1Jq-j4-Cua" secondAttribute="bottom" id="5fy-zn-gR1"/>
                             <constraint firstItem="1Jq-j4-Cua" firstAttribute="leading" secondItem="9vR-Tv-nqf" secondAttribute="leading" id="8Ez-tl-WsR"/>
-                            <constraint firstItem="6JA-DC-YcN" firstAttribute="leading" secondItem="9vR-Tv-nqf" secondAttribute="leading" id="8Ih-yA-Vl2"/>
-                            <constraint firstItem="1Jq-j4-Cua" firstAttribute="top" secondItem="6JA-DC-YcN" secondAttribute="bottom" id="LFV-gh-CRH"/>
+                            <constraint firstAttribute="trailing" secondItem="fcr-cM-9Yi" secondAttribute="trailing" id="AMO-5O-5tv"/>
+                            <constraint firstItem="fcr-cM-9Yi" firstAttribute="leading" secondItem="9vR-Tv-nqf" secondAttribute="leading" id="JFs-wc-9xA"/>
                             <constraint firstItem="Osh-lk-H0E" firstAttribute="leading" secondItem="9vR-Tv-nqf" secondAttribute="leading" id="RbK-mW-jbb"/>
                             <constraint firstAttribute="trailing" secondItem="1Jq-j4-Cua" secondAttribute="trailing" id="W7A-mj-jMT"/>
+                            <constraint firstItem="fcr-cM-9Yi" firstAttribute="top" secondItem="Osh-lk-H0E" secondAttribute="bottom" id="Y9y-nc-ea9"/>
                             <constraint firstItem="Osh-lk-H0E" firstAttribute="top" secondItem="jqw-Gq-0ux" secondAttribute="bottom" id="Zov-Co-aaF"/>
-                            <constraint firstAttribute="trailing" secondItem="6JA-DC-YcN" secondAttribute="trailing" id="b7L-19-bm1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="상세정보" id="rtf-6p-XA7"/>
@@ -189,13 +204,14 @@
                         <outlet property="lblDotLine" destination="qJC-Zh-pJL" id="n47-Ut-U5S"/>
                         <outlet property="lblUserName" destination="YZ1-wK-RBR" id="1U1-Y7-YhN"/>
                         <outlet property="messageContainerHeight" destination="v3C-0n-KQR" id="zca-na-swZ"/>
+                        <outlet property="textMessageView" destination="1Jq-j4-Cua" id="Zde-4i-dt6"/>
                         <outlet property="txtContentMessage" destination="6JA-DC-YcN" id="kZV-pO-AA5"/>
                         <outlet property="txtMessageContent" destination="wes-ta-fx6" id="p7N-8w-5gK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SNk-K7-i1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1322" y="486"/>
+            <point key="canvasLocation" x="1321.5" y="485.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="NMr-Eu-qtN">

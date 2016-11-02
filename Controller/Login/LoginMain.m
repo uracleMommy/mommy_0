@@ -101,6 +101,7 @@
 }
 
 - (void)goBack {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(IBAction)clickAutoLoginButton:(id)sender {

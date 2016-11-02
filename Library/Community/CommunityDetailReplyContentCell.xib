@@ -21,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="468" height="130"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dWE-Dy-XxG" id="5M3-IN-GNf">
-                <frame key="frameInset" width="468" height="130"/>
+                <frame key="frameInset" width="468" height="129"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOq-9C-7Y4">
@@ -36,16 +36,12 @@
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shN-qQ-J07">
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="도민준xi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKf-cX-wAe">
-                                <frame key="frameInset" width="1000" height="1000"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도민준xi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKf-cX-wAe">
                                 <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="14"/>
                                 <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="오전 10:13" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNx-lF-Pbl">
-                                <frame key="frameInset" width="1000" height="1000"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오전 10:13" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNx-lF-Pbl">
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -53,7 +49,13 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="bKf-cX-wAe" firstAttribute="height" secondItem="shN-qQ-J07" secondAttribute="height" id="2d3-2Z-wEi"/>
+                            <constraint firstItem="tNx-lF-Pbl" firstAttribute="top" secondItem="shN-qQ-J07" secondAttribute="top" id="2w8-ta-v7l"/>
+                            <constraint firstItem="tNx-lF-Pbl" firstAttribute="height" secondItem="shN-qQ-J07" secondAttribute="height" id="7WM-3N-3HP"/>
+                            <constraint firstItem="bKf-cX-wAe" firstAttribute="leading" secondItem="shN-qQ-J07" secondAttribute="leading" id="LHT-Zp-pgk"/>
+                            <constraint firstItem="bKf-cX-wAe" firstAttribute="top" secondItem="shN-qQ-J07" secondAttribute="top" id="So9-lH-vul"/>
                             <constraint firstAttribute="height" constant="20" id="bUt-AN-XiL"/>
+                            <constraint firstAttribute="trailing" secondItem="tNx-lF-Pbl" secondAttribute="trailing" id="oFm-cT-DIL"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저도 그것때문에 잠을 못이루고 있어요 ㅜㅜ 저도 그것때문에 잠을 못이루고 있어요 ㅜㅜ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Gc-y6-Xfk">

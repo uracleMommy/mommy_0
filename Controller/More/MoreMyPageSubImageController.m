@@ -99,7 +99,7 @@
 -(void)setMommyImage:(UIImage *)croppedImage{
     [_mommyImageButton setImage:croppedImage forState:UIControlStateNormal];
     [_mommyImageButton.imageView setContentMode:UIViewContentModeScaleAspectFill];
-    UIImage *blurImage = [croppedImage blurredImageWithRadius:50 iterations:1 tintColor:[UIColor blackColor]];;
+    UIImage *blurImage = [croppedImage blurredImageWithRadius:50 iterations:5.0 tintColor:[UIColor blackColor]];;
     [_backgroundImage setImage:blurImage];
 }
 

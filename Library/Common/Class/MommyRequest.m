@@ -200,7 +200,7 @@ static MommyRequest* instanceMommyRequest;
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     request.HTTPMethod = @"POST";
     NSString *contentType = @"application/json";
-    NSString *authorization = authKey;
+    NSString *authorization = [NSString stringWithFormat:@"Bearer %@", authKey];
     NSMutableData *body = [NSMutableData data];
     [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
     [request addValue:authorization forHTTPHeaderField:@"Authorization"];

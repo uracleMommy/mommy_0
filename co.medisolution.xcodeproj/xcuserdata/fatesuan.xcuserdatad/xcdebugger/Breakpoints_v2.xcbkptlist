@@ -58,7 +58,7 @@
                   moduleName = "co.medisolution"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fatesuan/mommy_0/Controller/SignUp/SignUpMommyInfoController.m"
-                  timestampString = "499591617.899356"
+                  timestampString = "499768469.393397"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "96"
@@ -73,7 +73,7 @@
                   moduleName = "co.medisolution"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fatesuan/mommy_0/Controller/SignUp/SignUpMommyInfoController.m"
-                  timestampString = "499591617.901296"
+                  timestampString = "499768469.394702"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "97"
@@ -122,7 +122,7 @@
                   moduleName = "co.medisolution"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fatesuan/mommy_0/Controller/More/MoreMyPageNickNameChangeViewController.m"
-                  timestampString = "499591617.933056"
+                  timestampString = "499768469.399544"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "250"
@@ -137,7 +137,7 @@
                   moduleName = "co.medisolution"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fatesuan/mommy_0/Controller/More/MoreMyPageNickNameChangeViewController.m"
-                  timestampString = "499591617.934797"
+                  timestampString = "499768469.401244"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "251"
@@ -169,13 +169,77 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Model/Message/MessageListModel.m"
-            timestampString = "499591810.662374"
+            filePath = "Controller/More/MoreProfessionalWriteAdviceController.m"
+            timestampString = "499656694.534674"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "477"
+            endingLineNumber = "477"
+            landmarkName = "-ImageCropViewControllerSuccess:didFinishCroppingImage:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Controller/PushNotice/PushNoticeViewController.m"
+            timestampString = "499670635.617849"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Controller/Message/MessageDetailController.m"
+            timestampString = "499673979.76133"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Controller/More/MoreProfessionalDetailViewController.m"
+            timestampString = "499744652.664204"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Controller/DashBoard/WeekProgramSearchViewController.m"
+            timestampString = "499761818.771851"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

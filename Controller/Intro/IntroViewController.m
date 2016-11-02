@@ -63,15 +63,26 @@
 
 - (IBAction)goLogin:(id)sender {
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MembershipLogin" bundle:[NSBundle mainBundle]];
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MembershipLogin" bundle:[NSBundle mainBundle]];
+//    
+//    UIViewController *viewController = [storyboard instantiateInitialViewController];
+//    
+//    AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//    
+//    appDelegate.window.rootViewController = viewController;
+//    
+//    [appDelegate.window makeKeyAndVisible];
+
     
-    UIViewController *viewController = [storyboard instantiateInitialViewController];
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MembershipLogin" bundle:[NSBundle mainBundle]];
+//    UIViewController *vc = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"SignUpMommyInfoController"];
+//    
+//    [self presentViewController:vc animated:YES completion:nil];
     
-    AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    UIStoryboard *mainTabBarStoryboard = [UIStoryboard storyboardWithName:@"MembershipLogin" bundle:nil];
+    UINavigationController *mainTabBarNavigationController = (UINavigationController *)[mainTabBarStoryboard instantiateViewControllerWithIdentifier:@"MembershipLoginNavigation"];
     
-    appDelegate.window.rootViewController = viewController;
-    
-    [appDelegate.window makeKeyAndVisible];
+    [self presentViewController:mainTabBarNavigationController animated:YES completion:nil];
     
 //    if (screenRect.size.width <= 320) {
 //        
@@ -97,15 +108,22 @@
 
 - (IBAction)goMemberShip:(id)sender {
     
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MembershipLogin" bundle:[NSBundle mainBundle]];
+//    
+//    UIViewController *viewController = [storyboard instantiateInitialViewController];
+//    
+//    AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//    
+//    appDelegate.window.rootViewController = viewController;
+//    
+//    [appDelegate.window makeKeyAndVisible];
+
+    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MembershipLogin" bundle:[NSBundle mainBundle]];
+    UINavigationController *vc = (UINavigationController *)[storyboard instantiateViewControllerWithIdentifier:@"SignUpMain"];
     
-    UIViewController *viewController = [storyboard instantiateInitialViewController];
-    
-    AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    appDelegate.window.rootViewController = viewController;
-    
-    [appDelegate.window makeKeyAndVisible];
+    [self presentViewController:vc animated:YES completion:nil];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

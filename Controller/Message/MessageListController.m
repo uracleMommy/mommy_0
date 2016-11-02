@@ -461,13 +461,14 @@
     if ([segue.identifier isEqualToString:@"goMessageDetail"]) {
         
         NSNumber *selectedIndex =(NSNumber *)sender;
-        NSArray *resultArray = _dicData[@"result"];
-        NSDictionary *dic = resultArray[[selectedIndex integerValue]];
+//        NSArray *resultArray = _dicData[@"result"];
+        NSDictionary *dic = _messageListModel.listArray[[selectedIndex integerValue]];
         MessageDetailController *messageDetailController = (MessageDetailController *)segue.destinationViewController;
         NSLog(@"%@", dic[@"content"]);
         messageDetailController.contentMessage = dic[@"content"];
         messageDetailController.profileImageName = dic[@"img"];
         messageDetailController.toUserName = dic[@"from_nickname"];
+        messageDetailController.toUserKey = dic[@"from_user"];
         messageDetailController.writeTime = dic[@"reg_dttm"];
     }
 }

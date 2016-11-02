@@ -52,19 +52,19 @@
     cell.lblNoticeTime.text = [[MommyUtils sharedGlobalData] getMommyDate:dic[@"reg_dttm"]];
     
     // 체중
-    if ([dic[@"type"] isEqualToString:@"11"]) {
+    if (![dic[@"type"] isEqual:[NSNull null]] && [dic[@"type"] isEqualToString:@"11"]) {
         
         cell.imgType.image = [UIImage imageNamed:@"contents_icon_alarm01"];
         cell.lblTypeName.text = @"체중";
     }
     // 활동
-    else if([dic[@"type"] isEqualToString:@"12"]) {
+    else if(![dic[@"type"] isEqual:[NSNull null]] && [dic[@"type"] isEqualToString:@"12"]) {
         
         cell.imgType.image = [UIImage imageNamed:@"contents_icon_alarm02"];
         cell.lblTypeName.text = @"활동";
     }
     // 혈압
-    else if([dic[@"type"] isEqualToString:@"13"]) {
+    else if(![dic[@"type"] isEqual:[NSNull null]] && [dic[@"type"] isEqualToString:@"13"]) {
         
         cell.imgType.image = [UIImage imageNamed:@"contents_icon_alarm03"];
         cell.lblTypeName.text = @"혈압";

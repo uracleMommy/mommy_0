@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="pIT-zG-VIw">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="pIT-zG-VIw">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -15,7 +15,7 @@
         <!--Navigation Controller-->
         <scene sceneID="McU-z3-jbL">
             <objects>
-                <navigationController id="pIT-zG-VIw" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MembershipLoginNavigation" id="pIT-zG-VIw" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="RdA-W4-dWx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -36,7 +36,7 @@
         <!--로그인-->
         <scene sceneID="0xp-Bt-Kih">
             <objects>
-                <viewController id="avC-lf-CXr" customClass="LoginMain" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginMain" id="avC-lf-CXr" customClass="LoginMain" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bG0-a7-Uti"/>
                         <viewControllerLayoutGuide type="bottom" id="VQh-rD-gtX"/>
@@ -189,8 +189,8 @@
                         <outlet property="idTextField" destination="kD9-Rl-7Ze" id="KBb-1h-rS9"/>
                         <outlet property="pwTextField" destination="oUw-1O-ev7" id="bbn-OR-MyJ"/>
                         <segue destination="uBg-MK-Mrd" kind="push" identifier="moveLoginUnlockAccountSegue" id="3eW-lG-fLw"/>
-                        <segue destination="Dp9-bK-7qG" kind="push" identifier="moveSignUpSegue" id="1Yq-Pl-xQo"/>
-                        <segue destination="hva-dI-EYK" kind="push" identifier="moveMommyInfoSegue" id="Cun-v3-Fp8"/>
+                        <segue destination="88h-l9-SOB" kind="push" identifier="moveMommyInfoSegue" id="ALo-fv-jnu"/>
+                        <segue destination="wEo-Cd-kHg" kind="push" identifier="moveSignUpSegue" id="dCg-PC-Urt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ivS-Zf-cUN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -480,15 +480,6 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QGC-Qs-UF4">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="본 서비스의 비밀번호는 암호화 저장되어 분실 시 찾아드릴 수 없는 정보입니다. 휴대전화 본인인증을 한 뒤 새로운 비밀번호를 생성하실 수 있습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="eND-hY-sbW">
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="90" id="hV7-Cq-HmM"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
-                                        <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4mD-ds-Yzz">
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0B-Ud-Itk">
@@ -593,17 +584,37 @@
                                             <action selector="confirmButtonAction:" destination="u9e-jv-waQ" eventType="touchUpInside" id="3zM-NV-sMh"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yEP-Qj-4AL">
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="본 서비스의 비밀번호는 암호화 저장되어 분실 시 찾아드릴 수 없는 정보입니다. 휴대전화 본인인증을 한 뒤 새로운 비밀번호를 생성하실 수 있습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="eND-hY-sbW">
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="90" id="hV7-Cq-HmM"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
+                                                <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="eND-hY-sbW" firstAttribute="leading" secondItem="yEP-Qj-4AL" secondAttribute="leading" constant="10" id="DQP-au-Khg"/>
+                                            <constraint firstAttribute="bottom" secondItem="eND-hY-sbW" secondAttribute="bottom" id="EYX-Cc-g7O"/>
+                                            <constraint firstAttribute="trailing" secondItem="eND-hY-sbW" secondAttribute="trailing" constant="10" id="dGS-st-qFn"/>
+                                            <constraint firstItem="eND-hY-sbW" firstAttribute="top" secondItem="yEP-Qj-4AL" secondAttribute="top" id="v63-a0-xfk"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="4mD-ds-Yzz" firstAttribute="top" secondItem="yEP-Qj-4AL" secondAttribute="bottom" constant="20" id="7eh-ai-XEA"/>
+                                    <constraint firstItem="yEP-Qj-4AL" firstAttribute="leading" secondItem="QGC-Qs-UF4" secondAttribute="leading" id="BX5-t4-Feu"/>
                                     <constraint firstItem="4mD-ds-Yzz" firstAttribute="leading" secondItem="QGC-Qs-UF4" secondAttribute="leading" constant="10" id="WUp-SV-jz3"/>
                                     <constraint firstAttribute="bottom" secondItem="ly2-wf-X4c" secondAttribute="bottom" id="c1W-KT-luT"/>
-                                    <constraint firstItem="4mD-ds-Yzz" firstAttribute="top" secondItem="eND-hY-sbW" secondAttribute="bottom" constant="20" id="iPI-Ae-E0V" userLabel="View.top = 회원가입시 등록한 아이디 및  비밀번호를 입력해 주세요..bottom + 20"/>
-                                    <constraint firstItem="eND-hY-sbW" firstAttribute="top" secondItem="QGC-Qs-UF4" secondAttribute="top" id="ill-zG-Qc7"/>
                                     <constraint firstAttribute="trailing" secondItem="ly2-wf-X4c" secondAttribute="trailing" id="mQh-Ha-4xV"/>
                                     <constraint firstItem="ly2-wf-X4c" firstAttribute="leading" secondItem="QGC-Qs-UF4" secondAttribute="leading" id="pHH-Eg-aTS"/>
-                                    <constraint firstAttribute="trailing" secondItem="eND-hY-sbW" secondAttribute="trailing" id="sgQ-4c-ynF"/>
-                                    <constraint firstItem="eND-hY-sbW" firstAttribute="leading" secondItem="QGC-Qs-UF4" secondAttribute="leading" id="xnF-De-6Hd"/>
+                                    <constraint firstItem="yEP-Qj-4AL" firstAttribute="top" secondItem="QGC-Qs-UF4" secondAttribute="top" id="uQR-wA-3FH"/>
+                                    <constraint firstAttribute="trailing" secondItem="yEP-Qj-4AL" secondAttribute="trailing" id="uyq-nv-qGO"/>
                                     <constraint firstAttribute="trailing" secondItem="4mD-ds-Yzz" secondAttribute="trailing" constant="10" id="xyx-Dq-eov"/>
                                 </constraints>
                             </view>
@@ -677,7 +688,29 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adb-2O-Sj4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="x27-xA-7HZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="66" y="1362"/>
+            <point key="canvasLocation" x="896" y="2024"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rbo-Rb-0OC">
+            <objects>
+                <navigationController storyboardIdentifier="SignUpMain" id="wEo-Cd-kHg" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="oCt-Xu-tXe"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="SY6-kz-ev5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Dp9-bK-7qG" kind="relationship" relationship="rootViewController" id="Wge-TH-AG7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D6G-eG-JUk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18" y="2024"/>
         </scene>
         <!--Sign Up Main Scroll View Controller-->
         <scene sceneID="1E7-CD-QBF">
@@ -1060,7 +1093,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ttm-i3-5jM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="452" y="2017"/>
+            <point key="canvasLocation" x="452" y="2030"/>
         </scene>
         <!--산모정보-->
         <scene sceneID="Sqi-sF-wXM">
@@ -1112,6 +1145,28 @@
             </objects>
             <point key="canvasLocation" x="896" y="2790"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ziz-3E-Pve">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZNm-XB-nEu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="SignUpMommyInfoController" id="88h-l9-SOB" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="mVn-Ei-MxK"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Luc-t5-4rp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hva-dI-EYK" kind="relationship" relationship="rootViewController" id="ULE-tO-voi"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="18" y="2820"/>
+        </scene>
         <!--Sign Up Mommy Info Scroll View Controller-->
         <scene sceneID="ppU-4u-hpF">
             <objects>
@@ -1124,7 +1179,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="530"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ALr-fN-Kfk"/>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="산모정보를 입력해 주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="NOM-Fh-0pG">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1479,17 +1533,13 @@
                             <constraint firstAttribute="trailing" secondItem="dit-dK-Kfy" secondAttribute="trailing" constant="15" id="L6u-Bd-xdW"/>
                             <constraint firstItem="dit-dK-Kfy" firstAttribute="top" secondItem="SbW-tq-Ttw" secondAttribute="bottom" constant="15" id="Lh3-vq-W4l"/>
                             <constraint firstItem="SbW-tq-Ttw" firstAttribute="centerX" secondItem="6H4-eb-ohe" secondAttribute="centerX" id="N2m-O9-bpl"/>
-                            <constraint firstItem="dit-dK-Kfy" firstAttribute="top" secondItem="ALr-fN-Kfk" secondAttribute="bottom" constant="8" id="N4z-HE-9s3"/>
-                            <constraint firstItem="ALr-fN-Kfk" firstAttribute="top" secondItem="NOM-Fh-0pG" secondAttribute="bottom" id="NCV-vU-nPn"/>
                             <constraint firstAttribute="trailing" secondItem="NOM-Fh-0pG" secondAttribute="trailing" id="NRq-sw-1w7"/>
                             <constraint firstAttribute="trailing" secondItem="4qs-I4-ssN" secondAttribute="trailing" constant="15" id="PFH-4m-NH9"/>
                             <constraint firstItem="NOM-Fh-0pG" firstAttribute="top" secondItem="6H4-eb-ohe" secondAttribute="topMargin" id="Wug-WW-dao"/>
                             <constraint firstItem="B8M-6y-6rm" firstAttribute="top" secondItem="4qs-I4-ssN" secondAttribute="bottom" constant="8" id="b9e-zk-3ZF"/>
                             <constraint firstItem="c9r-ay-pxm" firstAttribute="top" secondItem="B8M-6y-6rm" secondAttribute="bottom" constant="8" id="cWF-XL-jRQ"/>
                             <constraint firstItem="B8M-6y-6rm" firstAttribute="leading" secondItem="6H4-eb-ohe" secondAttribute="leading" constant="15" id="eUc-Ir-6ws"/>
-                            <constraint firstAttribute="trailing" secondItem="ALr-fN-Kfk" secondAttribute="trailing" id="hMx-sy-L2c"/>
                             <constraint firstItem="dit-dK-Kfy" firstAttribute="leading" secondItem="6H4-eb-ohe" secondAttribute="leading" constant="15" id="kKX-7M-xrL"/>
-                            <constraint firstItem="ALr-fN-Kfk" firstAttribute="leading" secondItem="6H4-eb-ohe" secondAttribute="leading" id="nhf-ha-d8W"/>
                             <constraint firstItem="NOM-Fh-0pG" firstAttribute="leading" secondItem="6H4-eb-ohe" secondAttribute="leading" id="oEQ-qi-y6f"/>
                             <constraint firstAttribute="trailing" secondItem="c9r-ay-pxm" secondAttribute="trailing" constant="15" id="rZK-4Y-Dtz"/>
                         </constraints>
@@ -1502,7 +1552,6 @@
                         <outlet property="dueDateTextField" destination="SJh-l0-Suo" id="lfg-HB-pH1"/>
                         <outlet property="fetusCountTextField" destination="QF0-Qi-ikP" id="7Gi-wB-paA"/>
                         <outlet property="heightTextField" destination="St4-hy-EX1" id="wpM-Ue-6p1"/>
-                        <outlet property="mommyBackImageView" destination="ALr-fN-Kfk" id="o2Y-np-CYn"/>
                         <outlet property="mommyImageButton" destination="SbW-tq-Ttw" id="sZG-rK-XJp"/>
                         <outlet property="mommyNameTextField" destination="xrc-o1-blP" id="Csi-J7-3OG"/>
                         <outlet property="mommyNameValidationLabel" destination="4qs-I4-ssN" id="Nce-Cd-FKj"/>
@@ -1511,7 +1560,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gZC-nZ-hkk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="452" y="2721"/>
+            <point key="canvasLocation" x="452" y="2751"/>
         </scene>
         <!--태아 정보-->
         <scene sceneID="ekd-NX-E3z">

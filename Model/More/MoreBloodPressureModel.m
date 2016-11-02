@@ -142,6 +142,11 @@
             NSNumber *pulse = dic[@"pulse"];
             cell.lblPurse.text = [NSString stringWithFormat:@"%ld", (long)[pulse integerValue]];
             cell.lblComment.text = dic[@"result"];
+            if(![dic[@"result"] isEqual:[NSNull null]] && [dic[@"result"] isEqualToString:@"약간 높음"]){
+                cell.lblComment.textColor = [[UIColor alloc]initWithRed:249.0f/255.0f green:105.0f/255.0f blue:78.0f/255.0f alpha:1.0];
+            }else if(![dic[@"result"] isEqual:[NSNull null]] && [dic[@"result"] isEqualToString:@"매우 높음"]){
+                cell.lblComment.textColor = [[UIColor alloc]initWithRed:237.0f/255.0f green:28.0f/255.0f blue:36.0f/255.0f alpha:1.0];
+            }
             
             return cell;
         }
@@ -299,8 +304,12 @@
 }
 
 - (BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath   {
-    
-    return YES;
+    if(indexPath.row != 0 && indexPath.row != 1 ){
+        
+        return YES;
+    }else{
+        return NO;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath

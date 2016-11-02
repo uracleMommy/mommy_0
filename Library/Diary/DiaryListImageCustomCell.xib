@@ -138,10 +138,10 @@
                 </subviews>
                 <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="jCm-ol-8l5" firstAttribute="leading" secondItem="OOl-ZI-IjZ" secondAttribute="leading" constant="10" id="09D-du-HRU"/>
+                    <constraint firstItem="jCm-ol-8l5" firstAttribute="leading" secondItem="OOl-ZI-IjZ" secondAttribute="leading" constant="8" id="09D-du-HRU"/>
                     <constraint firstAttribute="bottom" secondItem="jCm-ol-8l5" secondAttribute="bottom" constant="3" id="2Nw-6r-KLX"/>
                     <constraint firstItem="jCm-ol-8l5" firstAttribute="top" secondItem="OOl-ZI-IjZ" secondAttribute="top" constant="3" id="dXd-oc-2Fs"/>
-                    <constraint firstAttribute="trailing" secondItem="jCm-ol-8l5" secondAttribute="trailing" constant="10" id="dnJ-RS-m9K"/>
+                    <constraint firstAttribute="trailing" secondItem="jCm-ol-8l5" secondAttribute="trailing" constant="8" id="dnJ-RS-m9K"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

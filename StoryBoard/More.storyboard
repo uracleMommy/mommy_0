@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="d8O-Ij-A3J">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="d8O-Ij-A3J">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -49,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fH-0d-EyT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4652" y="-2514"/>
+            <point key="canvasLocation" x="-5895" y="-1497"/>
         </scene>
         <!--More Equipment Empty View Controller-->
         <scene sceneID="Mep-bv-LAX">
@@ -93,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aHz-jg-s3b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4187" y="-2105"/>
+            <point key="canvasLocation" x="-5880" y="-2267"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XWR-0p-n2C">
@@ -105,6 +105,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
@@ -114,7 +115,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zfk-MR-fjn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3413.671875" y="928.86795774647874"/>
+            <point key="canvasLocation" x="-3078" y="702"/>
         </scene>
         <!--1:1 전문가 상담-->
         <scene sceneID="WfO-yb-t05">
@@ -151,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eo1-wg-Epc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2782" y="928"/>
+            <point key="canvasLocation" x="-2608" y="702"/>
         </scene>
         <!--상담내용(운동/영양)-->
         <scene sceneID="iFf-QO-xBQ">
@@ -191,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gD7-Wq-rW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2202" y="928"/>
+            <point key="canvasLocation" x="-2122" y="702"/>
         </scene>
         <!--More Professional Advice Contents View Controller-->
         <scene sceneID="eiz-Am-gG4">
@@ -285,16 +286,16 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.33333333329999998" green="0.67428691279999997" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="G7S-1b-JbD" firstAttribute="leading" secondItem="i4j-kw-tE7" secondAttribute="leading" id="8Hz-NF-Sas"/>
-                            <constraint firstItem="G7S-1b-JbD" firstAttribute="top" secondItem="Jn9-s3-P1l" secondAttribute="bottom" id="Iqh-ZZ-xsu"/>
+                            <constraint firstItem="G7S-1b-JbD" firstAttribute="top" secondItem="Jn9-s3-P1l" secondAttribute="bottom" constant="5" id="Iqh-ZZ-xsu"/>
                             <constraint firstAttribute="bottom" secondItem="G7S-1b-JbD" secondAttribute="bottom" id="kJL-3p-AdS"/>
-                            <constraint firstAttribute="trailing" secondItem="Jn9-s3-P1l" secondAttribute="trailing" id="kQT-4S-ud2"/>
-                            <constraint firstItem="Jn9-s3-P1l" firstAttribute="top" secondItem="i4j-kw-tE7" secondAttribute="top" id="plt-Rw-eCM"/>
+                            <constraint firstAttribute="trailing" secondItem="Jn9-s3-P1l" secondAttribute="trailing" constant="15" id="kQT-4S-ud2"/>
+                            <constraint firstItem="Jn9-s3-P1l" firstAttribute="top" secondItem="i4j-kw-tE7" secondAttribute="top" constant="5" id="plt-Rw-eCM"/>
                             <constraint firstItem="G7S-1b-JbD" firstAttribute="centerX" secondItem="i4j-kw-tE7" secondAttribute="centerX" id="q7b-BV-LPe"/>
                             <constraint firstAttribute="trailing" secondItem="G7S-1b-JbD" secondAttribute="trailing" id="rQe-uK-lfv"/>
-                            <constraint firstItem="Jn9-s3-P1l" firstAttribute="leading" secondItem="i4j-kw-tE7" secondAttribute="leading" id="uQk-bE-IbD"/>
+                            <constraint firstItem="Jn9-s3-P1l" firstAttribute="leading" secondItem="i4j-kw-tE7" secondAttribute="leading" constant="15" id="uQk-bE-IbD"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -309,7 +310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1f-IL-FFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1646" y="927"/>
+            <point key="canvasLocation" x="-1678" y="702"/>
         </scene>
         <!--기기관리-->
         <scene sceneID="EiP-HG-VN5">
@@ -356,7 +357,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0Y-qq-Qky" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5389.5" y="-2057.5"/>
+            <point key="canvasLocation" x="-5391" y="-1872"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="F2Z-zr-Wkw">
@@ -368,6 +369,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
@@ -377,7 +379,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gr7-8y-mht" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5681" y="-1062"/>
+            <point key="canvasLocation" x="-5392" y="-1040"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="D3e-E0-gaV">
@@ -389,7 +391,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
@@ -399,7 +401,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="715-za-vns" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6003" y="928"/>
+            <point key="canvasLocation" x="-5437" y="1025"/>
         </scene>
         <!--마이페이지-->
         <scene sceneID="EM8-ro-fLa">
@@ -486,7 +488,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qen-Ks-k0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5436" y="927"/>
+            <point key="canvasLocation" x="-4966" y="1025"/>
         </scene>
         <!--기기선택-->
         <scene sceneID="c2x-Ao-l4y">
@@ -526,7 +528,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7IT-M2-ew0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5145" y="-1063"/>
+            <point key="canvasLocation" x="-4935" y="-1041"/>
         </scene>
         <!--활동량계 검색-->
         <scene sceneID="Wy7-7a-ZKc">
@@ -592,7 +594,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gIj-pA-m6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4430" y="-1087"/>
+            <point key="canvasLocation" x="-4489" y="-1042"/>
         </scene>
         <!--More Equipment Select View Controller-->
         <scene sceneID="gwQ-KT-98j">
@@ -656,7 +658,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmU-0l-Z5a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3878" y="-1087"/>
+            <point key="canvasLocation" x="-4048" y="-1041"/>
         </scene>
         <!--More Equipment Paring View Controller-->
         <scene sceneID="YFq-aR-csg">
@@ -739,7 +741,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YD0-o5-vxb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3345" y="-1088"/>
+            <point key="canvasLocation" x="-3614" y="-1041"/>
         </scene>
         <!--More Professional Advice Reply View Controller-->
         <scene sceneID="1aq-XH-Mu6">
@@ -829,7 +831,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FQk-WK-rmL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1744.5" y="1835.5"/>
+            <point key="canvasLocation" x="-1679" y="1495"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wev-ZK-XzL">
@@ -841,7 +843,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
@@ -851,7 +853,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kwT-Zh-bLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2783" y="1836"/>
+            <point key="canvasLocation" x="-2608" y="1617"/>
         </scene>
         <!--전문가 정보-->
         <scene sceneID="bo6-ah-OfC">
@@ -896,7 +898,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="maT-DO-qwK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2234.5" y="1835.5"/>
+            <point key="canvasLocation" x="-2123" y="1617"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8Pa-cL-toD">
@@ -908,6 +910,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
@@ -917,7 +920,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ogu-Y3-EKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5936" y="-2120"/>
+            <point key="canvasLocation" x="-5392" y="-2699"/>
         </scene>
         <!--더보기-->
         <scene sceneID="Dec-On-eW3">
@@ -959,7 +962,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D2U-Bx-Q2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2661.328125" y="54.017605633802802"/>
+            <point key="canvasLocation" x="-3077" y="-244"/>
         </scene>
         <!--혈압관리-->
         <scene sceneID="xaW-wG-Ocr">
@@ -992,7 +995,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PLg-tX-EB6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-320" y="-470"/>
+            <point key="canvasLocation" x="-595" y="-514"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jgj-fa-YZl">
@@ -1005,6 +1008,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
@@ -1014,7 +1018,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cM7-dl-Tq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-847" y="-457"/>
+            <point key="canvasLocation" x="-1030" y="-513"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HZI-8b-9b2">
@@ -1025,6 +1029,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="POd-st-KJ8" kind="relationship" relationship="rootViewController" id="AxU-if-oyZ"/>
@@ -1032,7 +1040,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N6Z-cj-BqH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2607" y="-1089"/>
+            <point key="canvasLocation" x="-2399" y="-1873"/>
         </scene>
         <!-- 포인트-->
         <scene sceneID="1iM-bf-qBr">
@@ -1103,7 +1111,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title=" 포인트" id="ZSI-NT-Bg6">
-                        <barButtonItem key="leftBarButtonItem" title="닫기" id="L4B-Ff-dcB">
+                        <barButtonItem key="leftBarButtonItem" id="L4B-Ff-dcB">
                             <connections>
                                 <action selector="closeModal:" destination="POd-st-KJ8" id="0kS-Px-11H"/>
                             </connections>
@@ -1118,7 +1126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aKX-YG-Eb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2011" y="-1090"/>
+            <point key="canvasLocation" x="-1957" y="-1874"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sjy-p1-rq8">
@@ -1131,6 +1139,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
@@ -1140,7 +1149,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V0i-mM-aqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1367" y="-1331"/>
+            <point key="canvasLocation" x="-1031" y="-1252"/>
         </scene>
         <!--주차별 체크리스트-->
         <scene sceneID="eTk-Ef-6qS">
@@ -1167,7 +1176,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="주차별 체크리스트" id="Htd-ZL-TYJ">
-                        <barButtonItem key="leftBarButtonItem" title="닫기" id="QZU-dd-c4u">
+                        <barButtonItem key="leftBarButtonItem" id="QZU-dd-c4u">
                             <connections>
                                 <action selector="closeModal:" destination="7mD-qb-8z0" id="crj-Kt-hwb"/>
                             </connections>
@@ -1175,45 +1184,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="CvS-oy-apj" id="ozc-Rn-uDq"/>
-                        <segue destination="hBk-qv-37d" kind="push" identifier="goDetailWeekCheck" id="ASb-YB-RJy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vjL-g4-Lsn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-846" y="-1331"/>
-        </scene>
-        <!--주차-->
-        <scene sceneID="jsJ-IF-CHt">
-            <objects>
-                <viewController id="hBk-qv-37d" customClass="MoreWeekCheckDetailViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6vf-Hp-9OF"/>
-                        <viewControllerLayoutGuide type="bottom" id="OvY-nO-Jlp"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="zYX-Fb-ayT">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yhw-2M-6tq">
-                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="yhw-2M-6tq" secondAttribute="trailing" id="GxT-rP-HId"/>
-                            <constraint firstItem="OvY-nO-Jlp" firstAttribute="top" secondItem="yhw-2M-6tq" secondAttribute="bottom" constant="4" id="V9q-SI-yV8"/>
-                            <constraint firstItem="yhw-2M-6tq" firstAttribute="leading" secondItem="zYX-Fb-ayT" secondAttribute="leading" id="bUn-LU-0po"/>
-                            <constraint firstItem="yhw-2M-6tq" firstAttribute="top" secondItem="6vf-Hp-9OF" secondAttribute="bottom" constant="4" id="m3d-jS-wam"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="주차" id="NfY-yw-Mvh"/>
-                    <connections>
-                        <outlet property="tableView" destination="yhw-2M-6tq" id="eDG-1L-blN"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lqh-W6-1im" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-319" y="-1331"/>
+            <point key="canvasLocation" x="-596" y="-1253"/>
         </scene>
         <!--More My Page Sub Image Controller-->
         <scene sceneID="8Ff-15-zB3">
@@ -1234,7 +1209,7 @@
                                     <constraint firstAttribute="width" constant="71" id="Ycw-k0-zbT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
-                                <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="86.01.01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1n-Uy-CiH">
@@ -1243,7 +1218,7 @@
                                     <constraint firstAttribute="height" constant="17" id="n58-KT-FDq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
-                                <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceg-Lq-fxc">
@@ -1280,7 +1255,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qVt-jc-XDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4865" y="702"/>
+            <point key="canvasLocation" x="-4437" y="798"/>
         </scene>
         <!--태아정보 변경-->
         <scene sceneID="1HA-fN-ck4">
@@ -1320,7 +1295,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8bp-Jd-sCw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5311.5" y="2187.5"/>
+            <point key="canvasLocation" x="-3840" y="1867"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MOO-cF-WNv">
@@ -1332,6 +1307,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
@@ -1341,7 +1317,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z1z-7l-pUB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5312" y="-145"/>
+            <point key="canvasLocation" x="-5393" y="-47"/>
         </scene>
         <!--환경설정-->
         <scene sceneID="ylP-m9-mT4">
@@ -1385,13 +1361,7 @@
                             <constraint firstItem="gdO-LT-gOl" firstAttribute="leading" secondItem="YRx-Dq-r87" secondAttribute="leading" id="zGK-hq-tzL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="환경설정" id="jQi-4W-CeY">
-                        <barButtonItem key="leftBarButtonItem" title="닫기" id="doI-wM-Q7V">
-                            <connections>
-                                <action selector="closeModal:" destination="q7F-hF-WnJ" id="9wP-Yd-skI"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="환경설정" id="jQi-4W-CeY"/>
                     <connections>
                         <outlet property="tableView" destination="r7p-h3-KGC" id="EQT-OB-dRh"/>
                         <segue destination="0HN-w9-bkr" kind="push" identifier="goCalendarConnectList" id="2zg-kN-QUv"/>
@@ -1399,7 +1369,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R2T-Pc-VU2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4748.5" y="-146.5"/>
+            <point key="canvasLocation" x="-4965" y="-48"/>
         </scene>
         <!--캘린더 연결-->
         <scene sceneID="95K-9N-c5o">
@@ -1468,7 +1438,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KkW-o3-zJL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4208.5" y="-146.5"/>
+            <point key="canvasLocation" x="-4517" y="-48"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zua-3u-gwy">
@@ -1480,6 +1450,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
@@ -1489,7 +1460,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="90p-7j-863" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7253" y="1665"/>
+            <point key="canvasLocation" x="-4437" y="3512"/>
         </scene>
         <!--비밀번호 재설정-->
         <scene sceneID="ota-lo-Edc">
@@ -1566,7 +1537,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fq2-Nt-2Zr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6661.5" y="1664.5"/>
+            <point key="canvasLocation" x="-4936" y="3512"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="C2Z-vM-BJt">
@@ -1578,6 +1549,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
@@ -1587,7 +1559,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lkh-uQ-sLG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5894" y="2188"/>
+            <point key="canvasLocation" x="-4423" y="1867"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tPp-FH-PjA">
@@ -1599,6 +1571,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
@@ -1608,7 +1581,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wyt-wO-MkO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4790" y="2188"/>
+            <point key="canvasLocation" x="-4423" y="2735"/>
         </scene>
         <!--사용자 정보변경-->
         <scene sceneID="uAU-IY-dnQ">
@@ -1701,7 +1674,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jDD-9O-0bc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4791.5" y="3003.5"/>
+            <point key="canvasLocation" x="-3938" y="2735"/>
         </scene>
         <!--More My Page Nick Name Change View Controller-->
         <scene sceneID="Ckg-1m-mHN">
@@ -1737,7 +1710,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AGM-Ia-3ce" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4258" y="2188"/>
+            <point key="canvasLocation" x="-4936" y="2735"/>
         </scene>
         <!--More My Page Sub Info Panel Controller-->
         <scene sceneID="Xtf-G8-6Mt">
@@ -2033,7 +2006,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qsw-Tl-7cZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4866" y="1086"/>
+            <point key="canvasLocation" x="-4438" y="1147"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="8Zc-KV-VWH">
@@ -2078,7 +2051,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tFi-HQ-H7m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3415" y="1836"/>
+            <point key="canvasLocation" x="-3011" y="1617"/>
         </scene>
         <!--상담하기-->
         <scene sceneID="3bE-hj-wmd">
@@ -2213,7 +2186,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4M-5q-K1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1790" y="164"/>
+            <point key="canvasLocation" x="-1679" y="-17"/>
         </scene>
         <!--비밀번호 재설정-->
         <scene sceneID="45h-61-3pD">
@@ -2364,7 +2337,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pO8-Dp-0Wc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7254.5" y="2426.5"/>
+            <point key="canvasLocation" x="-3939" y="3512"/>
         </scene>
     </scenes>
     <resources>

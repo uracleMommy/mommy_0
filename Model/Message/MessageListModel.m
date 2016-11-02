@@ -102,7 +102,7 @@
     cell.lblWriteTime.text = [[MommyUtils sharedGlobalData] getMommyDate:dic[@"reg_dttm"]];
     
     // 이미지 캐시 바인딩
-    NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%ld", (long)indexPath.row];
+    NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", dic[@"img"]];
     
     if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
         
@@ -113,7 +113,7 @@
         NSString *fileImageName = dic[@"img"];
         
         // 이미지가 있을때
-        if (!(fileImageName == nil || [fileImageName isEqualToString:@""])) {
+        if (!([dic[@"img"] isEqual:[NSNull null]] || fileImageName == nil || [fileImageName isEqualToString:@""])) {
             
             char const * s = [profileImageIdentifier  UTF8String];
             dispatch_queue_t queue = dispatch_queue_create(s, 0);
@@ -136,7 +136,9 @@
         // 이미지가 없을때
         else {
             
-            [cell.imgProfile setImage:[UIImage imageNamed:@"contents_profile_default"]];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [cell.imgProfile setImage:[UIImage imageNamed:@"contents_profile_default"]];
+            });
         }
     }
     

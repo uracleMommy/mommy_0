@@ -66,6 +66,18 @@
 
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
+    
+    UILabel *gettingSizeLabel = [[UILabel alloc] init];
+    gettingSizeLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    CGSize maximumLabelSize = CGSizeMake(310, CGFLOAT_MAX);
+    
+    CGRect textRect = [cell.lblContent.text boundingRectWithSize:maximumLabelSize
+                                                              options:NSStringDrawingUsesLineFragmentOrigin| NSStringDrawingUsesFontLeading
+                                                           attributes:@{NSFontAttributeName:cell.lblContent.font}
+                                                              context:nil];
+    
+    cell.contentsHeightConstraint.constant = textRect.size.height + 20;
+    
     return cell;
     
     
@@ -192,7 +204,7 @@
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return 70;
+    return UITableViewAutomaticDimension;
     
 //    if (indexPath.section == 0 || indexPath.section == 2 || indexPath.section == 4) {
 //        
@@ -211,26 +223,6 @@
         [self.delegate tableView:tableView selectedRowIndex:indexPath.row];
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @end

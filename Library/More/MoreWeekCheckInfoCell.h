@@ -16,4 +16,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lblContent;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentsHeightConstraint;
+
 @end

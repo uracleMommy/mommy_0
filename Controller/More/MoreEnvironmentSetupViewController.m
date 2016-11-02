@@ -62,7 +62,7 @@
     
     
     AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate go_story_board:@"MembershipLogin"];
+    [appDelegate go_story_board:@"Intro"];
 }
 
 - (void) tableView:(UITableView *)tableView MoreMyPageModelSelectedIndexPath:(NSIndexPath *)indexPath {

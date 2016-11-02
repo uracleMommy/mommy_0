@@ -26,6 +26,8 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *messageContainerHeight;
 
+@property (weak, nonatomic) IBOutlet UIView *textMessageView;
+
 - (IBAction)pushMessage:(id)sender;
 
 @property (strong, nonatomic) NSString *contentMessage;
@@ -33,6 +35,8 @@
 @property (strong, nonatomic) NSString *profileImageName;
 
 @property (strong, nonatomic) NSString *toUserName;
+
+@property (strong, nonatomic) NSString *toUserKey;
 
 @property (strong, nonatomic) NSString *writeTime;
 

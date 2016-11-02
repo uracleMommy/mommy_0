@@ -685,6 +685,61 @@
                                             <constraint firstItem="t1K-cA-uly" firstAttribute="top" secondItem="PNO-WF-ewO" secondAttribute="top" constant="8" id="NXf-Am-2iw"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="17X-3U-ct8">
+                                        <subviews>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88M-9G-yJ4">
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="165" id="d5c-0j-rkW"/>
+                                                    <constraint firstAttribute="height" constant="30" id="dRi-94-9FS"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
+                                                <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUF-UN-5fW">
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="ot9-wZ-eiq"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
+                                                <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" background="tab_btn_calendar" translatesAutoresizingMaskIntoConstraints="NO" id="BId-tJ-cKI" customClass="IQDropDownTextField">
+                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="45" id="HWM-NM-zLD"/>
+                                                    <constraint firstAttribute="height" constant="45" id="ZaL-4G-bVv"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" background="contents_btn_time" translatesAutoresizingMaskIntoConstraints="NO" id="RTa-kk-Kkg" customClass="IQDropDownTextField">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="45" id="9qG-rA-rHv"/>
+                                                    <constraint firstAttribute="height" constant="45" id="lkZ-AC-BwH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="BId-tJ-cKI" firstAttribute="top" secondItem="17X-3U-ct8" secondAttribute="top" id="7lN-fk-FAp"/>
+                                            <constraint firstItem="SUF-UN-5fW" firstAttribute="top" secondItem="17X-3U-ct8" secondAttribute="top" constant="8" id="AfC-fA-n0g"/>
+                                            <constraint firstItem="88M-9G-yJ4" firstAttribute="leading" secondItem="17X-3U-ct8" secondAttribute="leading" constant="15" id="L85-ke-00t"/>
+                                            <constraint firstItem="RTa-kk-Kkg" firstAttribute="top" secondItem="17X-3U-ct8" secondAttribute="top" id="Mqh-UP-W5l"/>
+                                            <constraint firstAttribute="trailing" secondItem="RTa-kk-Kkg" secondAttribute="trailing" constant="5" id="NMj-8k-c82"/>
+                                            <constraint firstItem="88M-9G-yJ4" firstAttribute="top" secondItem="17X-3U-ct8" secondAttribute="top" constant="8" id="Tdg-4a-ctZ"/>
+                                            <constraint firstAttribute="height" constant="45" id="Uwi-YZ-wUt"/>
+                                            <constraint firstItem="RTa-kk-Kkg" firstAttribute="leading" secondItem="SUF-UN-5fW" secondAttribute="trailing" id="ghb-B4-R7q"/>
+                                            <constraint firstItem="SUF-UN-5fW" firstAttribute="leading" secondItem="BId-tJ-cKI" secondAttribute="trailing" constant="2" id="qad-91-PTH"/>
+                                            <constraint firstItem="BId-tJ-cKI" firstAttribute="leading" secondItem="88M-9G-yJ4" secondAttribute="trailing" id="vJd-Mq-Juk"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -692,12 +747,16 @@
                                     <constraint firstAttribute="trailing" secondItem="PNO-WF-ewO" secondAttribute="trailing" id="0v3-Tt-9Du"/>
                                     <constraint firstItem="q2z-AI-eo7" firstAttribute="leading" secondItem="KkK-T6-HgT" secondAttribute="leading" id="1fl-CS-H5m"/>
                                     <constraint firstAttribute="trailing" secondItem="QOs-Nv-pGJ" secondAttribute="trailing" id="3lx-Zn-Bfl"/>
+                                    <constraint firstItem="17X-3U-ct8" firstAttribute="height" secondItem="QOs-Nv-pGJ" secondAttribute="height" id="4BS-1R-qba"/>
+                                    <constraint firstItem="PNO-WF-ewO" firstAttribute="top" secondItem="17X-3U-ct8" secondAttribute="bottom" constant="2" id="9U3-e3-XKC"/>
                                     <constraint firstItem="QOs-Nv-pGJ" firstAttribute="leading" secondItem="KkK-T6-HgT" secondAttribute="leading" id="BiB-hs-STk"/>
-                                    <constraint firstItem="PNO-WF-ewO" firstAttribute="top" secondItem="QOs-Nv-pGJ" secondAttribute="bottom" constant="2" id="Fo1-Ke-OmP"/>
                                     <constraint firstItem="QOs-Nv-pGJ" firstAttribute="top" secondItem="KkK-T6-HgT" secondAttribute="top" id="OZo-36-IhN"/>
                                     <constraint firstAttribute="trailing" secondItem="q2z-AI-eo7" secondAttribute="trailing" id="T8n-8C-mfs"/>
                                     <constraint firstAttribute="bottom" secondItem="q2z-AI-eo7" secondAttribute="bottom" id="UU3-yp-ua7"/>
+                                    <constraint firstItem="17X-3U-ct8" firstAttribute="top" secondItem="QOs-Nv-pGJ" secondAttribute="bottom" constant="2" id="VWA-Hx-EUR"/>
                                     <constraint firstItem="PNO-WF-ewO" firstAttribute="leading" secondItem="KkK-T6-HgT" secondAttribute="leading" id="gBc-Oc-Kxc"/>
+                                    <constraint firstAttribute="trailing" secondItem="17X-3U-ct8" secondAttribute="trailing" id="icq-pH-ZXv"/>
+                                    <constraint firstItem="17X-3U-ct8" firstAttribute="leading" secondItem="KkK-T6-HgT" secondAttribute="leading" id="iqU-Yq-JCx"/>
                                     <constraint firstItem="q2z-AI-eo7" firstAttribute="top" secondItem="PNO-WF-ewO" secondAttribute="bottom" constant="2" id="jAd-2U-3AR"/>
                                     <constraint firstItem="PNO-WF-ewO" firstAttribute="height" secondItem="QOs-Nv-pGJ" secondAttribute="height" id="mn1-5C-9BQ"/>
                                 </constraints>
@@ -725,7 +784,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQo-H1-ca3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="979" y="2153"/>
+            <point key="canvasLocation" x="978.5" y="2152.5"/>
         </scene>
         <!--Diary List Controller-->
         <scene sceneID="Wie-Uj-NUj">

@@ -20,6 +20,9 @@
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MembershipLogin" bundle:nil];
+//    UINavigationController *navigationController = (UINavigationController *)[storyboard instantiateViewControllerWithIdentifier:@"SignUpMommyInfoController"];
+//    [[self navigationController] pushViewController:navigationController animated:YES];
     if([[userDefaults objectForKey:@"autoLoginFlag"] isEqualToString:@"Y"]){
         NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
         [param setValue:[userDefaults objectForKey:@"userId"] forKey:@"id"];
@@ -43,19 +46,22 @@
                     });
                 }else{
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        //TODO
-//                        [self performSegueWithIdentifier:@"moveMommyInfoSegue" sender:self];
+                        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MembershipLogin" bundle:[NSBundle mainBundle]];
+                        UINavigationController *vc = (UINavigationController *)[storyboard instantiateViewControllerWithIdentifier:@"SignUpMommyInfoController"];
+                        AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+                        // Set root view controller and make windows visible
+                        appDelegate.window.rootViewController = vc;
+                        [appDelegate.window makeKeyAndVisible];
                     });
                 }
             }else{
                 //로그인 실패
                 dispatch_async(dispatch_get_main_queue(), ^{
                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
-                                                                    message:@"로그인에 실패하셨습니다.\n로그인 화면으로 이동합니다."
+                                                                    message:@"로그인에 실패하셨습니다.\n인트로 화면으로 이동합니다."
                                                                    delegate:self
                                                           cancelButtonTitle:@"취소"
                                                           otherButtonTitles:nil, nil];
-                    //                [alert setTag:1];
                     [alert show];
                 });
             }
@@ -66,7 +72,7 @@
         } ];
     }else{
         AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        [appDelegate go_story_board:@"MembershipLogin"];
+        [appDelegate go_story_board:@"Intro"];
     }
 }
 
@@ -74,5 +80,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+#pragma mark alertView delegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate go_story_board:@"Intro"];
+}
+
+
 
 @end

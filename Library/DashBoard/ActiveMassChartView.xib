@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -118,13 +118,22 @@
                             <constraint firstAttribute="height" constant="21" id="xpC-sb-YxJ"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코멘트" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPY-gP-QPq">
+                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="11"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="Iav-9v-zPP" firstAttribute="leading" secondItem="EPJ-BB-oaY" secondAttribute="leading" constant="6" id="9Co-Kw-Vre"/>
+                    <constraint firstItem="gPY-gP-QPq" firstAttribute="leading" secondItem="EPJ-BB-oaY" secondAttribute="leading" constant="6" id="9IS-3E-9sq"/>
                     <constraint firstAttribute="bottom" secondItem="1jk-ve-CHV" secondAttribute="bottom" constant="66" id="AvO-74-Mgu"/>
                     <constraint firstItem="1jk-ve-CHV" firstAttribute="top" secondItem="EPJ-BB-oaY" secondAttribute="top" constant="4" id="X1I-0r-ZnW"/>
+                    <constraint firstItem="gPY-gP-QPq" firstAttribute="height" secondItem="Iav-9v-zPP" secondAttribute="height" id="dea-dd-x6s"/>
+                    <constraint firstItem="gPY-gP-QPq" firstAttribute="top" secondItem="EPJ-BB-oaY" secondAttribute="top" constant="276" id="fND-Wd-Pjg"/>
                     <constraint firstAttribute="bottom" secondItem="1jk-ve-CHV" secondAttribute="bottom" constant="4" id="j9z-H2-0Wh"/>
+                    <constraint firstItem="gPY-gP-QPq" firstAttribute="width" secondItem="Iav-9v-zPP" secondAttribute="width" id="mTH-8f-O3R"/>
                     <constraint firstAttribute="trailing" secondItem="1jk-ve-CHV" secondAttribute="trailing" constant="8" id="n6v-Av-mln"/>
                     <constraint firstItem="1jk-ve-CHV" firstAttribute="leading" secondItem="EPJ-BB-oaY" secondAttribute="leading" constant="8" id="skv-v0-7kV"/>
                     <constraint firstItem="Iav-9v-zPP" firstAttribute="top" secondItem="EPJ-BB-oaY" secondAttribute="top" constant="276" id="uTc-0Q-VX4"/>

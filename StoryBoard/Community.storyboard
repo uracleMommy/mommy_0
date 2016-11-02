@@ -217,7 +217,7 @@
             <objects>
                 <navigationController id="PnP-x7-Zux" customClass="CommunityNavController" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="AeC-Cx-Tx1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="AeC-Cx-Tx1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">

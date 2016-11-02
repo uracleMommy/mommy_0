@@ -56,22 +56,23 @@
         return;
     }
     
-    NSString *auth_key = @"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJnb2dvanNzIiwic3ViIjoiZ29nb2pzcyIsImV4cCI6MTQ3NjAwNzgyOSwibmFtZSI6IuyhsOyKueyLnSIsImlhdCI6MTQ3NTE0MzgyOX0.Qzl27M2ye-2pfomvsS8W7dQin_404Ds3YkTVYur_2_4";
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"30", @"pageSize", [NSString stringWithFormat:@"%ld", (long)currentPage], @"searchPage", nil];
     
     [self showIndicator];
     
-    [[MommyRequest sharedInstance] mommyPushNoticeApiService:PushNoticeList authKey:auth_key parameters:parameters success:^(NSDictionary *data){
+    [[MommyRequest sharedInstance] mommyPushNoticeApiService:PushNoticeList authKey:GET_AUTH_TOKEN parameters:parameters success:^(NSDictionary *data){
         
         long code = [data[@"code"] longValue];
         
         // 실패시
         if (code != 0) {
-            
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
-            [alert addAction:confirmAlertAction];
-            [self presentViewController:alert animated:YES completion:nil];
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                [alert addAction:confirmAlertAction];
+                [self presentViewController:alert animated:YES completion:nil];
+                [self hideIndicator];
+            });
             return;
         }
         
@@ -144,17 +145,17 @@
         NSString *pushType = @"";
         
         // 체중
-        if ([dic[@"type"] isEqualToString:@"11"]) {
+        if (![dic[@"type"] isEqual:[NSNull null]] && [dic[@"type"] isEqualToString:@"11"]) {
             
             pushType = @"체중";
         }
         // 활동
-        else if([dic[@"type"] isEqualToString:@"12"]) {
+        else if(![dic[@"type"] isEqual:[NSNull null]] && [dic[@"type"] isEqualToString:@"12"]) {
             
             pushType = @"활동";
         }
         // 혈압
-        else if([dic[@"type"] isEqualToString:@"13"]) {
+        else if(![dic[@"type"] isEqual:[NSNull null]] && [dic[@"type"] isEqualToString:@"13"]) {
             
             pushType = @"혈압";
         }

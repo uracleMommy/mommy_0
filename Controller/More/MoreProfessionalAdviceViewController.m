@@ -38,16 +38,18 @@
     leftNegativeSpacer.width = -16;
     [self.navigationItem setLeftBarButtonItems:@[leftNegativeSpacer, addButton]];
     
+    
     // 우측버튼
     UIButton *professionButton = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *closeBtnImage = [UIImage imageNamed:@"title_icon_expert"];
     professionButton.frame = CGRectMake(0, 0, 40, 40);
     [professionButton setImage:closeBtnImage forState:UIControlStateNormal];
     [professionButton addTarget:self action:@selector(professionalListAction) forControlEvents:UIControlEventTouchUpInside];
+    [professionButton setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
     UIBarButtonItem *adviceItemButton = [[UIBarButtonItem alloc] initWithCustomView:professionButton];
-    UIBarButtonItem *rightNegativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-    rightNegativeSpacer.width = -16;
-    [self.navigationItem setRightBarButtonItems:@[rightNegativeSpacer, adviceItemButton]];
+//    UIBarButtonItem *rightNegativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+//    rightNegativeSpacer.width = -16;
+    [self.navigationItem setRightBarButtonItems:@[adviceItemButton]];
     
     [self getAdviceList:1];
 }

@@ -31,7 +31,19 @@ const int messageViewHeight = 33;
     _txtContentMessage.text = _contentMessage;
     _lblUserName.text = _toUserName;
     _lblDateTime.text = [[MommyUtils sharedGlobalData] getMommyDate:_writeTime];
+    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], _profileImageName];
     
+    UIImage *profileImg = nil;
+    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+    profileImg = [[UIImage alloc] initWithData:firstImageData];
+    if(profileImg != nil){
+        [_imgProfile setImage:profileImg];
+    }else{
+        [_imgProfile setImage:[UIImage imageNamed:@"contents_profile_default"]];
+    }
+    _imgProfile.layer.cornerRadius = 20;
+    _imgProfile.layer.masksToBounds = YES;
+
     // 백키 등록
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *addBtnImage = [UIImage imageNamed:@"title_icon_back"];
@@ -84,6 +96,13 @@ const int messageViewHeight = 33;
                                              selector:@selector(keyboardWillAnimate:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
+    
+    
+    CALayer *border = [CALayer layer];
+    border.borderColor = [[UIColor colorWithRed:217.0f/255.0f green:217.0f/255.0f blue:217.0f/255.0f alpha:1.0] CGColor];
+    border.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    border.borderWidth = 1.0f;
+    [_textMessageView.layer addSublayer:border];
 }
 
 #pragma 뒤로가기
@@ -188,10 +207,9 @@ const int messageViewHeight = 33;
         return;
     }
     
-    NSString *auth_key = [GlobalData sharedGlobalData].authToken;
-    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"gogojss", @"to_user", _txtMessageContent.text, @"content", nil];
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:_toUserKey, @"to_user", _txtMessageContent.text, @"content", nil];
     
-    [[MommyRequest sharedInstance] mommyMessageApiService:MessageSend authKey:auth_key parameters:parameters success:^(NSDictionary *data){
+    [[MommyRequest sharedInstance] mommyMessageApiService:MessageSend authKey:GET_AUTH_TOKEN parameters:parameters success:^(NSDictionary *data){
         
         
         if (data == nil) {
@@ -205,15 +223,16 @@ const int messageViewHeight = 33;
         }
         if (data != nil) {
             
-            long result = [data[@"result"] longValue];
+            long result = [data[@"code"] longValue];
             
             // 실패처리
-            if (result != 1) {
-                
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"메세지 전송이 실패 했습니다.\n다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
-                [alert addAction:confirmAlertAction];
-                [self presentViewController:alert animated:YES completion:nil];
+            if (result != 0) {
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"메세지 전송이 실패 했습니다.\n다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                    [alert addAction:confirmAlertAction];
+                    [self presentViewController:alert animated:YES completion:nil];
+                });
                 return;
             }
             

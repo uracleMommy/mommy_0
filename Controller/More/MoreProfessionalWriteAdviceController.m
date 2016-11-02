@@ -49,12 +49,41 @@
     _files = [[NSMutableArray alloc] init];
     _imageFiles = [[NSMutableArray alloc] init];
     
+    
+    _imageButton01.layer.cornerRadius = 20;//half of the width
+    _imageButton01.layer.borderColor = [UIColor colorWithRed:236.0/255.0f green:236.0/255.0f  blue:236.0/255.0f alpha:1.0].CGColor;
+    _imageButton01.layer.borderWidth = 2.0f;
+    _imageButton01.layer.masksToBounds = YES;
+//    [_imageButton01 setImage:_defaultImage forState:UIControlStateNormal];
+    
+    _imageButton02.layer.cornerRadius = 20;//half of the width
+    _imageButton02.layer.borderColor = [UIColor colorWithRed:236.0/255.0f green:236.0/255.0f  blue:236.0/255.0f alpha:1.0].CGColor;
+    _imageButton02.layer.borderWidth = 2.0f;
+    _imageButton02.layer.masksToBounds = YES;
+    //    [_imageButton02 setImage:_defaultImage forState:UIControlStateNormal];
+    
+    _imageButton03.layer.cornerRadius = 20;//half of the width
+    _imageButton03.layer.borderColor = [UIColor colorWithRed:236.0/255.0f green:236.0/255.0f  blue:236.0/255.0f alpha:1.0].CGColor;
+    _imageButton03.layer.borderWidth = 2.0f;
+    _imageButton03.layer.masksToBounds = YES;
+    //    [_imageButton03 setImage:_defaultImage forState:UIControlStateNormal];
+    
+    _imageButton04.layer.cornerRadius = 20;//half of the width
+    _imageButton04.layer.borderColor = [UIColor colorWithRed:236.0/255.0f green:236.0/255.0f  blue:236.0/255.0f alpha:1.0].CGColor;
+    _imageButton04.layer.borderWidth = 2.0f;
+    _imageButton04.layer.masksToBounds = YES;
+    //    [_imageButton04 setImage:_defaultImage forState:UIControlStateNormal];
+    
+
+    
     // 업데이트 모드일때 실행되는 코드
 //    NSLog(@"%@", _qnaKey);
     if (_professionalQuestionWriteUpdateMode == ProfessionalQuestionUpdateMode) {
         
         [self bindUpdateMode];
     }
+    
+    
 }
 
 #pragma 뒤로가기

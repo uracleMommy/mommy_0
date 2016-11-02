@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="NanumBarunGothic.ttf">
+        <array key="NanumBarunGothic.ttf">
             <string>NanumBarunGothic</string>
-            <string>NanumBarunGothic</string>
-            <string>NanumBarunGothic</string>
-            <string>NanumBarunGothic</string>
-        </mutableArray>
-        <mutableArray key="NanumBarunGothicBold.ttf">
+        </array>
+        <array key="NanumBarunGothicBold.ttf">
             <string>NanumBarunGothicBold</string>
-            <string>NanumBarunGothicBold</string>
-            <string>NanumBarunGothicBold</string>
-            <string>NanumBarunGothicBold</string>
-        </mutableArray>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -25,53 +20,47 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="279.5"/>
+                <frame key="frameInset" width="320" height="279"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHV-sg-Fj7">
-                        <rect key="frame" x="8" y="4" width="304" height="271.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDY-Ug-cOV">
-                                <rect key="frame" x="0.0" y="0.0" width="304" height="68"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contents_icon_sleep_time" translatesAutoresizingMaskIntoConstraints="NO" id="SoD-cu-Qq0">
-                                        <rect key="frame" x="11" y="23" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="NZ7-3k-FW6"/>
                                             <constraint firstAttribute="height" constant="20" id="z7a-NY-y2a"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 수면시간" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c76-rF-ccT">
-                                        <rect key="frame" x="39" y="23" width="189" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="189" id="0Ir-pd-BtO"/>
                                             <constraint firstAttribute="height" constant="21" id="5ko-sc-SGK"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GOOD" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uV7-cQ-r7C">
-                                        <rect key="frame" x="236" y="23" width="57" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="f57-bH-PLl"/>
                                             <constraint firstAttribute="width" constant="57" id="usC-cj-JA4"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="16"/>
-                                        <color key="textColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UbH-G0-SXc">
-                                        <rect key="frame" x="11" y="66" width="282" height="1"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="HuZ-np-an5"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="UbH-G0-SXc" firstAttribute="top" secondItem="uV7-cQ-r7C" secondAttribute="bottom" constant="22" id="04I-7E-BtO"/>
                                     <constraint firstItem="SoD-cu-Qq0" firstAttribute="top" secondItem="fDY-Ug-cOV" secondAttribute="top" constant="23" id="4uM-ql-W4z"/>
@@ -86,46 +75,41 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VvH-tC-ETK">
-                                <rect key="frame" x="0.0" y="68" width="304" height="68"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contents_icon_sleep_deep" translatesAutoresizingMaskIntoConstraints="NO" id="47C-OT-5X5">
-                                        <rect key="frame" x="11" y="23" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="eho-4a-h1L"/>
                                             <constraint firstAttribute="width" constant="20" id="hm6-DQ-83u"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="깊은수면" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xoe-fM-O0O">
-                                        <rect key="frame" x="39" y="23" width="189" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="EIS-Xv-S7B"/>
                                             <constraint firstAttribute="width" constant="189" id="nmy-dK-2rI"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GOOD" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwa-0m-KyT">
-                                        <rect key="frame" x="236" y="23" width="57" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="57" id="a9c-5e-7zP"/>
                                             <constraint firstAttribute="height" constant="21" id="xbg-Jt-SWM"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="16"/>
-                                        <color key="textColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaS-Nx-JeJ">
-                                        <rect key="frame" x="11" y="66" width="282" height="1"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="gRe-nG-KX8"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="aaS-Nx-JeJ" firstAttribute="leading" secondItem="VvH-tC-ETK" secondAttribute="leading" constant="11" id="24F-5c-97Y"/>
                                     <constraint firstItem="47C-OT-5X5" firstAttribute="leading" secondItem="VvH-tC-ETK" secondAttribute="leading" constant="11" id="FV6-ke-pXP"/>
@@ -140,46 +124,41 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yCR-pb-GMl">
-                                <rect key="frame" x="0.0" y="136" width="304" height="68"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contents_icon_sleep_low" translatesAutoresizingMaskIntoConstraints="NO" id="ZLH-JX-B7u">
-                                        <rect key="frame" x="11" y="23" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="In2-I9-WCW"/>
                                             <constraint firstAttribute="width" constant="20" id="L4C-85-K19"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="얕은수면" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7F6-G8-2lC">
-                                        <rect key="frame" x="39" y="23" width="189" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="1DB-rf-zwe"/>
                                             <constraint firstAttribute="width" constant="189" id="dlB-Lz-g2j"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GOOD" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRo-co-fgM">
-                                        <rect key="frame" x="236" y="23" width="57" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="hmj-Iw-WhG"/>
                                             <constraint firstAttribute="width" constant="57" id="wnc-f9-yPG"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="16"/>
-                                        <color key="textColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48H-6R-Ja6">
-                                        <rect key="frame" x="11" y="66" width="282" height="1"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="6cT-Yl-LY2"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="48H-6R-Ja6" firstAttribute="top" secondItem="YRo-co-fgM" secondAttribute="bottom" constant="22" id="36C-fB-NG2"/>
                                     <constraint firstItem="YRo-co-fgM" firstAttribute="top" secondItem="yCR-pb-GMl" secondAttribute="top" constant="23" id="5aO-ip-qFg"/>
@@ -194,37 +173,33 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hHq-pj-jG2">
-                                <rect key="frame" x="0.0" y="204" width="304" height="67"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contents_icon_sleep_wake" translatesAutoresizingMaskIntoConstraints="NO" id="pdW-4V-z6d">
-                                        <rect key="frame" x="11" y="23" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="Rhq-fg-3B7"/>
                                             <constraint firstAttribute="width" constant="20" id="Rj3-IQ-851"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="잠에서 깸" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkL-oh-e74">
-                                        <rect key="frame" x="39" y="23" width="189" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="189" id="H19-RF-CjJ"/>
                                             <constraint firstAttribute="height" constant="21" id="fw9-yz-aNa"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GOOD" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fH-KA-DnL">
-                                        <rect key="frame" x="236" y="23" width="57" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="57" id="1se-27-ik1"/>
                                             <constraint firstAttribute="height" constant="21" id="fEn-A4-1Ad"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="16"/>
-                                        <color key="textColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="3fH-KA-DnL" secondAttribute="trailing" constant="11" id="6Ih-nw-f8x"/>
                                     <constraint firstItem="pdW-4V-z6d" firstAttribute="top" secondItem="hHq-pj-jG2" secondAttribute="top" constant="23" id="H2G-ex-M1v"/>
@@ -235,7 +210,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fDY-Ug-cOV" firstAttribute="leading" secondItem="dHV-sg-Fj7" secondAttribute="leading" id="3cf-I7-9Ih"/>
                             <constraint firstItem="yCR-pb-GMl" firstAttribute="top" secondItem="VvH-tC-ETK" secondAttribute="bottom" id="9Jq-3A-3hc"/>
@@ -253,7 +228,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="dHV-sg-Fj7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="4B5-nB-ers"/>
                     <constraint firstAttribute="trailing" secondItem="dHV-sg-Fj7" secondAttribute="trailing" constant="8" id="GmE-vL-8kf"/>
