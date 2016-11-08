@@ -312,6 +312,23 @@
     }
 }
 
+-(NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+//    UITableViewRowAction *editAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Clona" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
+//        //insert your editAction here
+//    }];
+//    editAction.backgroundColor = [UIColor blueColor];
+//    
+    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@""  handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
+        //insert your deleteAction here
+    }];
+    
+//    deleteAction.
+    deleteAction.backgroundColor = [UIColor whiteColor];
+//       deleteAction.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"contents_list_delete"]];
+    return @[deleteAction];
+}
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     

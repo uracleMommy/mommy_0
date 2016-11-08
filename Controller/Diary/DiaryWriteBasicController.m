@@ -235,7 +235,7 @@
         
         NSString *emoticon;
         if(_emoticonButton.tag == -1){
-            emoticon = @"";
+            emoticon = @"503";
         }else{
             emoticon = [NSString stringWithFormat:@"%ld", (long)_emoticonButton.tag+500];
         }

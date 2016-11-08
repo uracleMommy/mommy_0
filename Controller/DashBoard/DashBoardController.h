@@ -15,7 +15,7 @@
 
 @protocol DashBoardControllerDelegate;
 
-@interface DashBoardController : CommonViewController
+@interface DashBoardController : CommonViewController <MainSliderViewContainerDelegate, MainInfoContainerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *firstLedBox;
 
@@ -46,6 +46,8 @@
 - (void) setMainSliderPage : (NSInteger) pageIndex;
 
 @property (strong, nonatomic) NSArray *programList;
+
+@property (strong, nonatomic) NSDictionary *mainList;
 
 @property (strong, nonatomic) NSDictionary *dashboardDic;
 

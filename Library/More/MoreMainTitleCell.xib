@@ -38,7 +38,7 @@
                                 <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jeon" translatesAutoresizingMaskIntoConstraints="NO" id="e1d-FU-ctd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contents_profile_default_large" translatesAutoresizingMaskIntoConstraints="NO" id="e1d-FU-ctd">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="RXD-pG-Dwo"/>
                                     <constraint firstAttribute="width" constant="37" id="eds-1L-g54"/>
@@ -69,11 +69,12 @@
             <connections>
                 <outlet property="containerView" destination="6bi-aU-5n2" id="yAk-jn-JRS"/>
                 <outlet property="imgProfile" destination="e1d-FU-ctd" id="sXR-gF-mLE"/>
+                <outlet property="nameLabel" destination="vqw-wx-YmG" id="tfN-rm-xr3"/>
             </connections>
             <point key="canvasLocation" x="-1010" y="41"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="jeon" width="240" height="222"/>
+        <image name="contents_profile_default_large" width="220" height="220"/>
     </resources>
 </document>

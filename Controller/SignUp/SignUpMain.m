@@ -130,7 +130,9 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     //TODO 가입이 완료되었습니다. ~~~~~
                     [scrollViewContoller.confirmNumberTimer invalidate];
-                    [self performSegueWithIdentifier:@"UnwindingSegue" sender:self];
+                    
+                    AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+                    [appDelegate go_story_board:@"MembershipLogin"];
                 });
             }else if([code isEqual:@"-11"]){
                 //아이디 중복 에러

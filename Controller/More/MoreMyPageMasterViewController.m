@@ -181,20 +181,28 @@
                 
                 NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [result objectForKey:@"img"]];
                 
-                char const * s = [profileImageIdentifier  UTF8String];
-                dispatch_queue_t queue = dispatch_queue_create(s, 0);
-                dispatch_async(queue, ^{
+                if([profileImageIdentifier isEqualToString:@"Cell"]){
+//                    [_moreMyPageSubImageController setMommyImage:[UIImage imageNamed:@"contents_profile_default"]];
+                    [_moreMyPageSubImageController.mommyImageButton setImage:[UIImage imageNamed:@"contents_profile_default"] forState:UIControlStateNormal];
+                    [_moreMyPageSubImageController.mommyImageButton.imageView setContentMode:UIViewContentModeScaleAspectFill];
+                }else{
                     
-                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [result objectForKey:@"img"]];
-                    
-                    UIImage *profileImg = nil;
-                    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
-                    profileImg = [[UIImage alloc] initWithData:firstImageData];
-                    
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [_moreMyPageSubImageController setMommyImage:profileImg];
+                    char const * s = [profileImageIdentifier  UTF8String];
+                    dispatch_queue_t queue = dispatch_queue_create(s, 0);
+                    dispatch_async(queue, ^{
+                        
+                        NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [result objectForKey:@"img"]];
+                        
+                        UIImage *profileImg = nil;
+                        NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                        profileImg = [[UIImage alloc] initWithData:firstImageData];
+                        
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [_moreMyPageSubImageController setMommyImage:profileImg];
+                        });
                     });
-                });
+                }
+                
             });
         }
     } error:^(NSError *error) {

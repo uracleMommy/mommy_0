@@ -30,4 +30,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)sleepButtonAction:(id)sender {
+    [_delegate moveSleepView];
+}
+
+- (IBAction)weightButtonAction:(id)sender {
+    [_delegate moveWeightView];
+}
+
+- (IBAction)stepButtonAction:(id)sender {
+    [_delegate moveStepView];
+}
 @end

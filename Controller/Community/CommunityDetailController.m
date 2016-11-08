@@ -337,38 +337,54 @@ static BOOL keyboardShow = NO;
     
     NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
     [param setValue:[_motherData objectForKey:@"community_key"] forKey:@"community_key"];
-    [param setValue:PAGE_SIZE forKey:@"pageSize"];
-    [param setValue:_searchPage forKey:@"searchPage"];
     
-    [self showIndicator];
-    [[MommyRequest sharedInstance] mommyCommunityApiService:CommunityReplyList authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data){
-        NSLog(@"PSH data %@", data);
+    [[MommyRequest sharedInstance] mommyCommunityApiService:CommunityReplyInfo authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data) {
         
         NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
         if([code isEqual:@"0"]){
-            NSArray *result = [data objectForKey:@"result"];
-            if([result count] == 0){
-                NSLog(@"empty");
-            }else{
-                if([[[result objectAtIndex:0] objectForKey:@"tot_cnt"] intValue] >= ([_searchPage intValue]+[PAGE_SIZE intValue]) ){
-                    _currentLastPageStatus = YES;
-                }else{
-                    _currentLastPageStatus = NO;
-                }
-                
-                [_tableListController.detailList removeAllObjects];
-                [_tableListController.detailList addObjectsFromArray:result];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [_tableView reloadData];
-                });
-            }
+            NSDictionary *result = [data objectForKey:@"result"];
+            _tableListController.replyInfo = result;
+//            [_tableListController.replyInfo initWithDictionary:result];
         }
         
-        dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+        
+        [param setValue:PAGE_SIZE forKey:@"pageSize"];
+        [param setValue:_searchPage forKey:@"searchPage"];
+        
+        [self showIndicator];
+        [[MommyRequest sharedInstance] mommyCommunityApiService:CommunityReplyList authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data){
+            NSLog(@"PSH data %@", data);
+            
+            NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
+            if([code isEqual:@"0"]){
+                NSArray *result = [data objectForKey:@"result"];
+                if([result count] == 0){
+                    NSLog(@"empty");
+                }else{
+                    if([[[result objectAtIndex:0] objectForKey:@"tot_cnt"] intValue] >= ([_searchPage intValue]+[PAGE_SIZE intValue]) ){
+                        _currentLastPageStatus = YES;
+                    }else{
+                        _currentLastPageStatus = NO;
+                    }
+                    
+                    [_tableListController.detailList removeAllObjects];
+                    [_tableListController.detailList addObjectsFromArray:result];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [_tableView reloadData];
+                    });
+                }
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+        } error:^(NSError *error) {
+            NSLog(@"PSH error %@", error);
+            dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
+        } ];
+        
     } error:^(NSError *error) {
         NSLog(@"PSH error %@", error);
         dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
-    } ];
+    }];
 }
 
 

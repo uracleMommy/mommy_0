@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
 #pragma mark API 열거형
 

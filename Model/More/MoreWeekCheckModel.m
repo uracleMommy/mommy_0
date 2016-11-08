@@ -76,7 +76,7 @@
                                                            attributes:@{NSFontAttributeName:cell.lblContent.font}
                                                               context:nil];
     
-    cell.contentsHeightConstraint.constant = textRect.size.height + 20;
+    cell.contentsHeightConstraint.constant = textRect.size.height;
     
     return cell;
     

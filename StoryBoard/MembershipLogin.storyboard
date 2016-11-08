@@ -16,7 +16,7 @@
         <scene sceneID="McU-z3-jbL">
             <objects>
                 <navigationController storyboardIdentifier="MembershipLoginNavigation" id="pIT-zG-VIw" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="RdA-W4-dWx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="RdA-W4-dWx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -189,8 +189,8 @@
                         <outlet property="idTextField" destination="kD9-Rl-7Ze" id="KBb-1h-rS9"/>
                         <outlet property="pwTextField" destination="oUw-1O-ev7" id="bbn-OR-MyJ"/>
                         <segue destination="uBg-MK-Mrd" kind="push" identifier="moveLoginUnlockAccountSegue" id="3eW-lG-fLw"/>
-                        <segue destination="88h-l9-SOB" kind="push" identifier="moveMommyInfoSegue" id="ALo-fv-jnu"/>
-                        <segue destination="wEo-Cd-kHg" kind="push" identifier="moveSignUpSegue" id="dCg-PC-Urt"/>
+                        <segue destination="wEo-Cd-kHg" kind="modal" identifier="moveSignUpSegue" id="5PS-va-e8y"/>
+                        <segue destination="88h-l9-SOB" kind="modal" identifier="moveMommyInfoSegue" id="QkN-7i-Rcq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ivS-Zf-cUN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -682,11 +682,9 @@
                     <navigationItem key="navigationItem" title="회원가입" id="Lj7-iI-2Pp"/>
                     <connections>
                         <outlet property="scrollView" destination="MpI-ZC-RN7" id="Y17-1B-j1r"/>
-                        <segue destination="x27-xA-7HZ" kind="unwind" identifier="UnwindingSegue" unwindAction="prepareForUnwind:" id="aKn-4N-p65"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adb-2O-Sj4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="x27-xA-7HZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="896" y="2024"/>
         </scene>
@@ -695,7 +693,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SignUpMain" id="wEo-Cd-kHg" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="oCt-Xu-tXe"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="SY6-kz-ev5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="SY6-kz-ev5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1148,10 +1146,9 @@
         <!--Navigation Controller-->
         <scene sceneID="ziz-3E-Pve">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZNm-XB-nEu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="SignUpMommyInfoController" id="88h-l9-SOB" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="mVn-Ei-MxK"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Luc-t5-4rp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Luc-t5-4rp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1164,6 +1161,7 @@
                         <segue destination="hva-dI-EYK" kind="relationship" relationship="rootViewController" id="ULE-tO-voi"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZNm-XB-nEu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18" y="2820"/>
         </scene>
@@ -1648,9 +1646,11 @@
                     <navigationItem key="navigationItem" title="태아 정보" id="XHc-oS-Erw"/>
                     <connections>
                         <outlet property="fetusInfoTableView" destination="BnD-8M-H2U" id="Uwg-Wq-6wR"/>
+                        <segue destination="JhN-CN-pab" kind="unwind" identifier="unwindSegue" unwindAction="prepareForUnwind:" id="Y83-O4-9Wp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4iu-Ge-l79" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="JhN-CN-pab" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1357" y="2790"/>
         </scene>

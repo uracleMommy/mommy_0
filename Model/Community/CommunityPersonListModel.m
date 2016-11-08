@@ -64,25 +64,29 @@
         // 이미지 캐시 바인딩
         NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [data objectForKey:@"mento_img"]];
         
-        if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
-            [cell.mentorImageView setImage:[_cachedImages valueForKey:profileImageIdentifier]];
-        }else {
-            char const * s = [profileImageIdentifier  UTF8String];
-            dispatch_queue_t queue = dispatch_queue_create(s, 0);
-            dispatch_async(queue, ^{
-                
-                NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [data objectForKey:@"mento_img"]];
-                
-                UIImage *profileImg = nil;
-                NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
-                profileImg = [[UIImage alloc] initWithData:firstImageData];
-                
-                [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [cell.mentorImageView setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+        if([[data objectForKey:@"mento_img"] isEqualToString:@""]){
+            [cell.mentorImageView setImage:[UIImage imageNamed:@"contents_profile_default"]];
+        }else{
+            if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
+                [cell.mentorImageView setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+            }else {
+                char const * s = [profileImageIdentifier  UTF8String];
+                dispatch_queue_t queue = dispatch_queue_create(s, 0);
+                dispatch_async(queue, ^{
+                    
+                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [data objectForKey:@"mento_img"]];
+                    
+                    UIImage *profileImg = nil;
+                    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                    profileImg = [[UIImage alloc] initWithData:firstImageData];
+                    
+                    [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [cell.mentorImageView setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                    });
                 });
-            });
+            }
         }
         // 마지막 셀 체크 페이지 더보기 처리
         if (indexPath.row == _personList.count - 1) {
@@ -96,27 +100,33 @@
     }else{
         // 이미지 캐시 바인딩
         NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [data objectForKey:@"img"]];
-        
-        if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
-            [cell.mentorImageView setImage:[_cachedImages valueForKey:profileImageIdentifier]];
-        }else {
-            char const * s = [profileImageIdentifier  UTF8String];
-            dispatch_queue_t queue = dispatch_queue_create(s, 0);
-            dispatch_async(queue, ^{
-                
-                NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [data objectForKey:@"img"]];
-                
-                UIImage *profileImg = nil;
-                NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
-                profileImg = [[UIImage alloc] initWithData:firstImageData];
-                
-                [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [cell.mentorImageView setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+        if([[data objectForKey:@"img"] isEqualToString:@""]){
+            [cell.mentorImageView setImage:[UIImage imageNamed:@"contents_profile_default"]];
+        }else{
+            
+            if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
+                [cell.mentorImageView setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+            }else {
+                char const * s = [profileImageIdentifier  UTF8String];
+                dispatch_queue_t queue = dispatch_queue_create(s, 0);
+                dispatch_async(queue, ^{
+                    
+                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [data objectForKey:@"img"]];
+                    
+                    UIImage *profileImg = nil;
+                    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                    profileImg = [[UIImage alloc] initWithData:firstImageData];
+                    
+                    [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [cell.mentorImageView setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                    });
                 });
-            });
+            }
+  
         }
+        
         cell.addButton.hidden = YES;
         cell.mentorButtonImage.hidden = YES;
     }

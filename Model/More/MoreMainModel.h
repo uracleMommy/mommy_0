@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MommyRequest.h"
 
 @protocol MoreMainModelDelegate;
 
 @interface MoreMainModel : NSObject<UITableViewDelegate, UITableViewDataSource>
 
-@property (strong, nonatomic) NSArray *arrayList;
+@property (strong, nonatomic) NSDictionary *arrayList;
 
 @property (strong, nonatomic) id<MoreMainModelDelegate> delegate;
 

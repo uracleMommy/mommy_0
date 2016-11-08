@@ -13,7 +13,7 @@
 #import "CommunityNewspeedListController.h"
 #import "CommonViewController.h"
 
-#define PAGE_SIZE [[NSNumber alloc] initWithInt:30]
+#define PAGE_SIZE [[NSNumber alloc] initWithInt:10]
 
 @interface CommunityPeopleListController : CommonViewController <CommunityPersonListModelDelegate, CommunityProfilePopupViewDelegate>
 

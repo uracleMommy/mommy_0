@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgProfile;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @end

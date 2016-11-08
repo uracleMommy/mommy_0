@@ -574,8 +574,7 @@
                                             <action selector="insertReplyAction:" destination="OjH-Ry-fWb" eventType="touchUpInside" id="6Kg-5c-og7"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YCI-H3-J5c">
-                                        <frame key="frameInset" minX="8" minY="8" width="292" height="30"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YCI-H3-J5c">
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="UA6-1z-qEO"/>

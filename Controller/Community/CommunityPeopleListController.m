@@ -108,7 +108,7 @@
             if([result count] == 0){
                 NSLog(@"empty");
             }
-            if([[[result objectAtIndex:0] objectForKey:@"tot_cnt"] intValue] >= [_searchPage intValue]+[PAGE_SIZE intValue] ){
+            if([[[result objectAtIndex:0] objectForKey:@"mento_total"] intValue] >= [_searchPage intValue]+[PAGE_SIZE intValue] ){
                 _currentLastPageStatus = YES;
             }else{
                 _currentLastPageStatus = NO;
@@ -148,7 +148,7 @@
             if([result count] == 0){
                 NSLog(@"empty");
             }
-            if([[[result objectAtIndex:0] objectForKey:@"tot_cnt"] intValue] >= [_searchPage intValue]+[PAGE_SIZE intValue] ){
+            if([[[result objectAtIndex:0] objectForKey:@"mento_total"] intValue] >= [_searchPage intValue]+[PAGE_SIZE intValue] ){
                 _currentLastPageStatus = YES;
             }else{
                 _currentLastPageStatus = NO;

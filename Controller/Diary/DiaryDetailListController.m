@@ -362,19 +362,19 @@
                 switch (i) {
                     case 0:
                         [_imageButton01 setImage:[_cachedImages objectForKey:fileImageName] forState:UIControlStateNormal];
-                        [_imageButton01 setTag:_files.count-1];
+//                        [_imageButton01 setTag:_files.count-1];
                         break;
                     case 1:
                         [_imageButton02 setImage:[_cachedImages objectForKey:fileImageName] forState:UIControlStateNormal];
-                        [_imageButton02 setTag:_files.count-1];
+//                        [_imageButton02 setTag:_files.count-1];
                         break;
                     case 2:
                         [_imageButton03 setImage:[_cachedImages objectForKey:fileImageName] forState:UIControlStateNormal];
-                        [_imageButton03 setTag:_files.count-1];
+//                        [_imageButton03 setTag:_files.count-1];
                         break;
                     case 3:
                         [_imageButton04 setImage:[_cachedImages objectForKey:fileImageName] forState:UIControlStateNormal];
-                        [_imageButton04 setTag:_files.count-1];
+//                        [_imageButton04 setTag:_files.count-1];
                         break;
                         
                     default:
@@ -399,19 +399,19 @@
                         switch (i) {
                             case 0:
                                 [_imageButton01 setImage:profileImg forState:UIControlStateNormal];
-                                [_imageButton01 setTag:_files.count-1];
+//                                [_imageButton01 setTag:_files.count-1];
                                 break;
                             case 1:
                                 [_imageButton02 setImage:profileImg forState:UIControlStateNormal];
-                                [_imageButton02 setTag:_files.count-1];
+//                                [_imageButton02 setTag:_files.count-1];
                                 break;
                             case 2:
                                 [_imageButton03 setImage:profileImg forState:UIControlStateNormal];
-                                [_imageButton03 setTag:_files.count-1];
+//                                [_imageButton03 setTag:_files.count-1];
                                 break;
                             case 3:
                                 [_imageButton04 setImage:profileImg forState:UIControlStateNormal];
-                                [_imageButton04 setTag:_files.count-1];
+//                                [_imageButton04 setTag:_files.count-1];
                                 break;
                                 
                             default:
@@ -772,7 +772,7 @@
     
     _imageViewer.imgArray = [[NSArray alloc] initWithArray:imgArray];
     _imageViewer.index = (int)[(UIButton*)sender tag];
-    
+
     [self presentViewController:_imageViewer animated:YES completion:nil];
 }
 

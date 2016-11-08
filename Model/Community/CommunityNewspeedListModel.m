@@ -36,7 +36,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSDictionary *data = [_newspeedList objectAtIndex:[indexPath indexAtPosition:1]];
+    NSDictionary *data = [_newspeedList objectAtIndex:[indexPath row]];
     
     //이미지 존재
     if([data objectForKey:@"files"] && [[data objectForKey:@"files"] count] > 0){
@@ -56,10 +56,14 @@
         cell.contentsLabel.text = [data objectForKey:@"content"];
         if([[data objectForKey:@"like_cnt"] intValue] != 0){
             cell.likeCountLabel.text = [NSString stringWithFormat:@"%@", [data objectForKey:@"like_cnt"]];
+        }else{
+            cell.likeCountLabel.text = @"좋아요";
         }
         
         if([[data objectForKey:@"reply_cnt"] intValue] != 0){
             cell.replyCountLabel.text = [NSString stringWithFormat:@"%@", [data objectForKey:@"reply_cnt"]];
+        }else{
+            cell.replyCountLabel.text = @"댓글";
         }
         cell.mentoNicknameLabel.text = [data objectForKey:@"mento_nickname"];
         cell.regDttmLabel.text = [[MommyUtils sharedGlobalData] getMommyDate:[data objectForKey:@"reg_dttm"]];
@@ -71,27 +75,34 @@
         
         NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [data objectForKey:@"mento_img"]];
         
-        if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
-            [cell.mentoImageButton setImage:[_cachedImages valueForKey:profileImageIdentifier]forState:UIControlStateNormal];
-        }else {
-            char const * s = [profileImageIdentifier  UTF8String];
-            dispatch_queue_t queue = dispatch_queue_create(s, 0);
-            dispatch_async(queue, ^{
-                
-                NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [data objectForKey:@"mento_img"]];
-                
-                UIImage *profileImg = nil;
-                NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
-                profileImg = [[UIImage alloc] initWithData:firstImageData];
-                
-                [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [cell.mentoImageButton setImage:[_cachedImages valueForKey:profileImageIdentifier] forState:UIControlStateNormal];
+        if([profileImageIdentifier isEqualToString:@"Cell"]){
+            
+            [cell.mentoImageButton setImage:[UIImage imageNamed:@"contents_profile_default"] forState:UIControlStateNormal];
+        }else{
+            
+            if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
+                [cell.mentoImageButton setImage:[_cachedImages valueForKey:profileImageIdentifier]forState:UIControlStateNormal];
+            }else {
+                char const * s = [profileImageIdentifier  UTF8String];
+                dispatch_queue_t queue = dispatch_queue_create(s, 0);
+                dispatch_async(queue, ^{
+                    
+                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [data objectForKey:@"mento_img"]];
+                    
+                    UIImage *profileImg = nil;
+                    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                    profileImg = [[UIImage alloc] initWithData:firstImageData];
+                    
+                    [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [cell.mentoImageButton setImage:[_cachedImages valueForKey:profileImageIdentifier] forState:UIControlStateNormal];
+                    });
                 });
-            });
+            }
+    
         }
-
+        
         
         cell.delegate = self;
         cell.tag = [indexPath indexAtPosition:1];
@@ -155,11 +166,16 @@
         cell.contentsLabel.text = [data objectForKey:@"content"];
         if([[data objectForKey:@"like_cnt"] intValue] != 0){
             cell.likeCountLabel.text = [NSString stringWithFormat:@"%@", [data objectForKey:@"like_cnt"]];
+        }else{
+            cell.likeCountLabel.text = @"좋아요";
         }
         
         if([[data objectForKey:@"reply_cnt"] intValue] != 0){
             cell.replyCountLabel.text = [NSString stringWithFormat:@"%@", [data objectForKey:@"reply_cnt"]];
+        }else{
+            cell.replyCountLabel.text = @"댓글";
         }
+        
         cell.mentoNicknameLabel.text = [data objectForKey:@"mento_nickname"];
         cell.regDttmLabel.text = [[MommyUtils sharedGlobalData] getMommyDate:[data objectForKey:@"reg_dttm"]];
         if([[data objectForKey:@"like"] isEqualToString:@"Y"]){
@@ -169,27 +185,32 @@
         }
         NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [data objectForKey:@"mento_img"]];
         
-        if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
-            [cell.mentoImageButton setImage:[_cachedImages valueForKey:profileImageIdentifier]forState:UIControlStateNormal];
-        }else {
-            char const * s = [profileImageIdentifier  UTF8String];
-            dispatch_queue_t queue = dispatch_queue_create(s, 0);
-            dispatch_async(queue, ^{
-                
-                NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [data objectForKey:@"mento_img"]];
-                
-                UIImage *profileImg = nil;
-                NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
-                profileImg = [[UIImage alloc] initWithData:firstImageData];
-                
-                [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [cell.mentoImageButton setImage:[_cachedImages valueForKey:profileImageIdentifier] forState:UIControlStateNormal];
+        if([[data objectForKey:@"mento_img"] isEqualToString:@""]){
+//            dispatch_sync(dispatch_get_main_queue(), ^{ 
+                [cell.mentoImageButton setImage:[UIImage imageNamed:@"contents_profile_default"] forState:UIControlStateNormal];
+//            });
+        }else{
+            if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
+                [cell.mentoImageButton setImage:[_cachedImages valueForKey:profileImageIdentifier]forState:UIControlStateNormal];
+            }else {
+                char const * s = [profileImageIdentifier  UTF8String];
+                dispatch_queue_t queue = dispatch_queue_create(s, 0);
+                dispatch_async(queue, ^{
+                    
+                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [data objectForKey:@"mento_img"]];
+                    
+                    UIImage *profileImg = nil;
+                    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                    profileImg = [[UIImage alloc] initWithData:firstImageData];
+                    
+                    [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [cell.mentoImageButton setImage:[_cachedImages valueForKey:profileImageIdentifier] forState:UIControlStateNormal];
+                    });
                 });
-            });
+            }
         }
-
         
         cell.delegate = self;
         cell.tag = [indexPath indexAtPosition:1];

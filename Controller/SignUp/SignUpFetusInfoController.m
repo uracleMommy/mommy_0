@@ -101,7 +101,7 @@
     NSMutableArray *baby_nicknames = [[NSMutableArray alloc] init];
     
     if([sender tag] == 0 || [fetusInfoArr count] == 0){
-        [param setValue:@"" forKey:@"baby_names"];
+//        [param setValue:@"" forKey:@"baby_names"];
     }else{
         for(int i=0 ; i<[fetusInfoArr count] ; i++){
             [baby_nicknames addObject:@{@"baby_nickname" : [fetusInfoArr objectAtIndex:i]}];
@@ -127,21 +127,45 @@
         NSLog(@"PSH data %@", data);
         
         NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
-        if([code isEqual:@"0"]){
+        if([code isEqualToString:@"0"]){
             dispatch_async(dispatch_get_main_queue(), ^{
                 UIStoryboard *mainTabBarStoryboard = [UIStoryboard storyboardWithName:@"MainTabBar" bundle:nil];
                 UINavigationController *mainTabBarNavigationController = (UINavigationController *)[mainTabBarStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarNavigation"];
                 
                 [self presentViewController:mainTabBarNavigationController animated:YES completion:nil];
             });
-        }else{
+        }else if([code isEqualToString:@"-11"]){
             //TODO 등록 실패시..
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                                message:@"닉네임이 중복됩니다. 다시 확인해 주시기 바랍니다."
+                                                               delegate:self
+                                                      cancelButtonTitle:@"취소"
+                                                      otherButtonTitles:nil, nil];
+                alert.tag = 1;
+                [alert show];
+            });
+        }else{
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후에 시도해주시기 바랍니다." preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                [alert addAction:confirmAlertAction];
+                [self presentViewController:alert animated:YES completion:nil];
+            });
         }
         dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
     } error:^(NSError *error) {
         NSLog(@"PSH error %@", error);
         dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
     } ];
+}
+
+#pragma mark alertView delegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(alertView.tag == 1){
+        [self performSegueWithIdentifier:@"unwindSegue" sender:self];
+    }
 }
 
 -(NSArray*)findAllTextFieldsInView:(UIView*)view{

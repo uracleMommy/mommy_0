@@ -84,6 +84,8 @@
             _moreWeekCheckModel.arrayList = data[@"result"];
             _tableView.dataSource = _moreWeekCheckModel;
             _tableView.delegate = _moreWeekCheckModel;
+            _tableView.estimatedRowHeight = 80.0;
+            _tableView.rowHeight = UITableViewAutomaticDimension;
             [_tableView reloadData];
             
             [self hideIndicator];

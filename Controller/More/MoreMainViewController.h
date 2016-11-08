@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "MoreMainModel.h"
+#import "CommonViewController.h"
+#import "MoreMyPageMasterViewController.h"
 
-@interface MoreMainViewController : UIViewController<MoreMainModelDelegate>
+@interface MoreMainViewController : CommonViewController<MoreMainModelDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) MoreMainModel *moreMainModel;
+@property (strong, nonatomic) NSDictionary *myInfo;
 
 @end

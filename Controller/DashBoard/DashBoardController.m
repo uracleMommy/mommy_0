@@ -27,16 +27,55 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.tabBarController.tabBar.translucent = NO;
-    self.navigationController.navigationBar.translucent = NO;
+//    self.tabBarController.tabBar.translucent = NO;
+//    self.navigationController.navigationBar.translucent = NO;
     
     
-    UIImageView *titleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title_bi"]];
-    titleImageView.frame = CGRectMake(0, 0, 110, 20);
+//    UIImageView *titleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title_bi"]];
+    
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.frame.size.width/2-55), 10, 110, 20)];
+    [imgView setImage:[UIImage imageNamed:@"title_bi"]];
+    // setContent mode aspect fit
+    [imgView setContentMode:UIViewContentModeScaleAspectFit];
+    
+    [titleView addSubview:imgView];
+    
+//    CGFloat verticalOffset = 190;
+//    [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:verticalOffset forBarMetrics:UIBarMetricsDefault];
+//    [imgView setContentEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
+//    titleImageView.frame = CGRectMake(0, 0, 50, 20);
+    
+//    UIImage *image = [UIImage imageNamed:@"title_bi"];
+//    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
 
 //    CGRect test = self.navigationController.navigationBar.frame;
 //    self.navigationController.navigationBar.
-    [self.navigationItem.titleView addSubview:titleImageView];
+    self.navigationItem.titleView = titleView;
+    
+    //message Button
+    UIButton *messageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *messageBtnImage = [UIImage imageNamed:@"title_icon_message.png"];
+    messageBtn.frame = CGRectMake(0, 0, 40, 40);
+    [messageBtn setImage:messageBtnImage forState:UIControlStateNormal];
+    [messageBtn addTarget:self action:@selector(moveToMessage) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *messageButton = [[UIBarButtonItem alloc] initWithCustomView:messageBtn];
+    
+    //alarm Button
+    UIButton *alarmBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *alarmBtnImage = [UIImage imageNamed:@"title_icon_alarm.png"];
+    alarmBtn.frame = CGRectMake(0, 0, 40, 40);
+    [alarmBtn setImage:alarmBtnImage forState:UIControlStateNormal];
+    [alarmBtn addTarget:self action:@selector(moveToAlarm) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *alarmButton = [[UIBarButtonItem alloc] initWithCustomView:alarmBtn];
+    
+    UIBarButtonItem *negativeSpacer2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    negativeSpacer2.width = -16;
+    
+    NSArray *rightBarButtonItems = [[NSArray alloc] initWithObjects: negativeSpacer2, alarmButton, messageButton, nil];
+    self.navigationItem.rightBarButtonItems = rightBarButtonItems;
+    
+
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
@@ -63,6 +102,22 @@
     //[self performSegueWithIdentifier:@"goQuestionModal" sender:nil];
 }
 
+
+- (void)moveToMessage{
+    UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
+    UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"MessageNaivgation"];
+    
+    [self presentViewController:messageNavigationController animated:YES completion:nil];
+}
+
+- (void)moveToAlarm{
+    UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"PushNotice" bundle:nil];
+    UINavigationController *messageNavigationController = (UINavigationController *)[messageStoryboard instantiateViewControllerWithIdentifier:@"PushListNavigation"];
+    
+    [self presentViewController:messageNavigationController animated:YES completion:nil];
+}
+
+
 #pragma 대쉬보드 메인정보 바인드
 - (void) dashboardInfoBind {
     
@@ -80,16 +135,31 @@
             // 실패시
             if (code != 0) {
                 
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
-                [alert addAction:confirmAlertAction];
-                [self presentViewController:alert animated:YES completion:nil];
-                [self hideIndicator];
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                    [alert addAction:confirmAlertAction];
+                    [self presentViewController:alert animated:YES completion:nil];
+                    [self hideIndicator];
+                });
                 return;
             }
             
             // 프로그램 리스트 바인드
             _programList = [NSArray arrayWithArray:data[@"result"][@"program_list"]];
+            
+            _mainList = [NSDictionary dictionaryWithDictionary:data[@"result"]];
+            
+            if(_mainInfoContainerViewController != nil){
+                
+                _mainInfoContainerViewController.momWeekLabel.text = [NSString stringWithFormat:@"%@주", _mainList[@"baby_info"][@"mom_week"]];
+                _mainInfoContainerViewController.lblDday.text = [NSString stringWithFormat:@"D-%@", _mainList[@"baby_info"][@"d_day"]];
+                _mainInfoContainerViewController.bobyInfoTitleLabel.text = _mainList[@"baby_info"][@"info"];
+                _mainInfoContainerViewController.weightLabel.text = [NSString stringWithFormat:@"%@", _mainList[@"weight_info"][@"weight"]];
+                _mainInfoContainerViewController.weightResultLable.text = [NSString stringWithFormat:@"%@", _mainList[@"weight_info"][@"result"]];
+                _mainInfoContainerViewController.stepLabel.text = [NSString stringWithFormat:@"%@ 걸음", _mainList[@"step_info"][@"total_step"]];
+                _mainInfoContainerViewController.kalLabel.text = [NSString stringWithFormat:@"%@ kcal", _mainList[@"step_info"][@"total_step_kal"]];
+            }
             
             // 체중평가 바인드
             _weightCode = data[@"result"][@"weight_info"][@"weight_stauts_code"];
@@ -133,6 +203,7 @@
     
     _mainSliderViewContainerController.programList = _programList;
     [_mainSliderViewContainerController.mainSlider reloadData];
+    
 }
 
 #pragma 대쉬보드 정보 바인드
@@ -268,6 +339,28 @@
     }
 }
 
+- (void) moveSleepView {
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"서비스 준비중입니다." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:confirmAlertAction];
+    [self presentViewController:alert animated:YES completion:nil];
+//    [self performSegueWithIdentifier:@"sleepViewSegue" sender:self];
+}
+
+- (void) moveWeightView {
+    [self performSegueWithIdentifier:@"weightViewSegue" sender:self];
+}
+
+- (void) moveStepView {
+    [self performSegueWithIdentifier:@"stepViewSegue" sender:self];
+}
+
+- (void)moveWeekProgram:(NSDictionary *)program {
+    // 체중평가 코드 넘겨주기
+    [self performSegueWithIdentifier:@"goModalWeekProgramSegue" sender:program[@"weight_code"]];
+}
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString:@"goQuestionModal"]) {
@@ -277,12 +370,13 @@
         questionViewController.momWeek = [NSNumber numberWithInt:[sender intValue]];
     }
     else if ([segue.identifier isEqualToString:@"goDashboardTotalInfo"]) {
-        
-        NSLog(@"여기");
+        _mainInfoContainerViewController = segue.destinationViewController;
+        _mainInfoContainerViewController.delegate = self;
     }
     else if ([segue.identifier isEqualToString:@"goDashboardProgramInfo"]) {
         
         _mainSliderViewContainerController = segue.destinationViewController;
+        _mainSliderViewContainerController.delegate = self;
     }
     else if ([segue.identifier isEqualToString:@"goModalWeekProgramSegue"]) {
         

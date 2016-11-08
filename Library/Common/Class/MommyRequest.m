@@ -140,7 +140,12 @@ static MommyRequest* instanceMommyRequest;
         }
         
         NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        successBlock(jsonDic);
+        if([[jsonDic objectForKey:@"code"] intValue] == -777){
+            AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [appDelegate go_story_board:@"MembershipLogin"];
+        }else{
+            successBlock(jsonDic);
+        }
         
         
     }] resume];
@@ -185,7 +190,12 @@ static MommyRequest* instanceMommyRequest;
         }
         
         NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        successBlock(jsonDic);
+        if([[jsonDic objectForKey:@"code"] intValue] == -777){
+            AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [appDelegate go_story_board:@"MembershipLogin"];
+        }else{
+            successBlock(jsonDic);
+        }
         
         
     }] resume];
@@ -230,7 +240,12 @@ static MommyRequest* instanceMommyRequest;
         }
         
         NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        successBlock(jsonDic);
+        if([[jsonDic objectForKey:@"code"] intValue] == -777){
+            AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [appDelegate go_story_board:@"MembershipLogin"];
+        }else{
+            successBlock(jsonDic);
+        }
         
         
     }] resume];
@@ -274,7 +289,12 @@ static MommyRequest* instanceMommyRequest;
         }
         
         NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        successBlock(jsonDic);
+        if([[jsonDic objectForKey:@"code"] intValue] == -777){
+            AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [appDelegate go_story_board:@"MembershipLogin"];
+        }else{
+            successBlock(jsonDic);
+        }
         
         
     }] resume];
@@ -320,7 +340,12 @@ static MommyRequest* instanceMommyRequest;
         
         
         NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        successBlock(jsonDic);
+        if([[jsonDic objectForKey:@"code"] intValue] == -777){
+            AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [appDelegate go_story_board:@"MembershipLogin"];
+        }else{
+            successBlock(jsonDic);
+        }
         
         
     }] resume];
@@ -364,7 +389,12 @@ static MommyRequest* instanceMommyRequest;
         }
         
         NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        successBlock(jsonDic);
+        if([[jsonDic objectForKey:@"code"] intValue] == -777){
+            AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [appDelegate go_story_board:@"MembershipLogin"];
+        }else{
+            successBlock(jsonDic);
+        }
         
     }] resume];
 }
@@ -409,7 +439,12 @@ static MommyRequest* instanceMommyRequest;
         
         
         NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        successBlock(jsonDic);
+        if([[jsonDic objectForKey:@"code"] intValue] == -777){
+            AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [appDelegate go_story_board:@"MembershipLogin"];
+        }else{
+            successBlock(jsonDic);
+        }
         
         
     }] resume];
@@ -455,7 +490,12 @@ static MommyRequest* instanceMommyRequest;
         
         
         NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        successBlock(jsonDic);
+        if([[jsonDic objectForKey:@"code"] intValue] == -777){
+            AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [appDelegate go_story_board:@"MembershipLogin"];
+        }else{
+            successBlock(jsonDic);
+        }
         
         
     }] resume];
@@ -500,7 +540,12 @@ static MommyRequest* instanceMommyRequest;
         
         
         NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        successBlock(jsonDic);
+        if([[jsonDic objectForKey:@"code"] intValue] == -777){
+            AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [appDelegate go_story_board:@"MembershipLogin"];
+        }else{
+            successBlock(jsonDic);
+        }
         
         
     }] resume];
@@ -545,7 +590,12 @@ static MommyRequest* instanceMommyRequest;
         
         
         NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        successBlock(jsonDic);
+        if([[jsonDic objectForKey:@"code"] intValue] == -777){
+            AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [appDelegate go_story_board:@"MembershipLogin"];
+        }else{
+            successBlock(jsonDic);
+        }
         
         
     }] resume];
@@ -590,7 +640,12 @@ static MommyRequest* instanceMommyRequest;
         }
         
         NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        successBlock(jsonDic);
+        if([[jsonDic objectForKey:@"code"] intValue] == -777){
+            AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [appDelegate go_story_board:@"MembershipLogin"];
+        }else{
+            successBlock(jsonDic);
+        }
         
         
     }] resume];
@@ -635,7 +690,12 @@ static MommyRequest* instanceMommyRequest;
         }
         
         NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        successBlock(jsonDic);
+        if([[jsonDic objectForKey:@"code"] intValue] == -777){
+            AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [appDelegate go_story_board:@"MembershipLogin"];
+        }else{
+            successBlock(jsonDic);
+        }
         
         
     }] resume];
@@ -680,7 +740,12 @@ static MommyRequest* instanceMommyRequest;
         }
         
         NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        successBlock(jsonDic);
+        if([[jsonDic objectForKey:@"code"] intValue] == -777){
+            AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [appDelegate go_story_board:@"MembershipLogin"];
+        }else{
+            successBlock(jsonDic);
+        }
         
         
     }] resume];
@@ -724,7 +789,12 @@ static MommyRequest* instanceMommyRequest;
         }
         
         NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        successBlock(jsonDic);
+        if([[jsonDic objectForKey:@"code"] intValue] == -777){
+            AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [appDelegate go_story_board:@"MembershipLogin"];
+        }else{
+            successBlock(jsonDic);
+        }
         
         
     }] resume];
@@ -766,7 +836,12 @@ static MommyRequest* instanceMommyRequest;
         }
         
         NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        successBlock(jsonDic);
+        if([[jsonDic objectForKey:@"code"] intValue] == -777){
+            AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [appDelegate go_story_board:@"MembershipLogin"];
+        }else{
+            successBlock(jsonDic);
+        }
         
     }] resume];
 }

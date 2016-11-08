@@ -23,6 +23,23 @@
     _tableView.dataSource = _moreMainModel;
     _tableView.delegate = _moreMainModel;
     
+    [self getMyInfo];
+    
+}
+
+-(void) getMyInfo{
+    
+    [[MommyRequest sharedInstance] mommyMyPageApiService:MyPageProfile authKey:GET_AUTH_TOKEN parameters:@{} success:^(NSDictionary *data) {
+        if([[NSString stringWithFormat:@"%@", [data objectForKey:@"code"]] isEqualToString:@"0"]){
+            NSDictionary *result = [data objectForKey:@"result"];
+//            _myInfo = [[NSDictionary alloc] initWithDictionary:result];
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                _moreMainModel.arrayList = [[NSDictionary alloc] initWithDictionary:result];
+                [_tableView reloadData];
+            });
+        }
+    } error:^(NSError *error) {
+    }];
 }
 
 #pragma 선택된 테이블 콜백
@@ -71,6 +88,16 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
     
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"goMypageManagement"]){
+        UINavigationController *navController = [segue destinationViewController];
+        MoreMyPageMasterViewController *vc = (MoreMyPageMasterViewController *)([navController viewControllers][0]);
+        
+        [vc setResult:_moreMainModel.arrayList];
+
+    }
 }
 
 @end

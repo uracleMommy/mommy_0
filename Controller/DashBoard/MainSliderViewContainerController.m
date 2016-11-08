@@ -35,9 +35,25 @@
         
         NSDictionary *dic = _programList[indexPath.row];
         
-        cell.lblTitle.text = dic[@"code_name"];
-        cell.lblContent.text = dic[@"title"];
+        cell.lblTitle.text = dic[@"program_type_name"];
+        cell.lblContent.text = dic[@"program_title"];
         //cell.titleImage
+        
+        if ([dic[@"program_type"] intValue] == 11) {
+            
+            [cell.titleImage setImage:[UIImage imageNamed:@"home_icon_card03"]];
+        }
+        else if ([dic[@"program_type"] intValue] == 12) {
+            
+            [cell.titleImage setImage:[UIImage imageNamed:@"home_icon_card01"]];
+        }
+        else {
+            
+            [cell.titleImage setImage:[UIImage imageNamed:@"home_icon_card02"]];
+        }
+        
+        cell.tag = [dic[@"program_seq"] intValue];
+        
     }
     else {
         
@@ -71,6 +87,12 @@
     DashBoardController *dashBoardController = (DashBoardController *)self.parentViewController;
     [dashBoardController setMainSliderPage:selectedPage];
     
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSLog(@"PSH collectionView didSelecte : %li", (long)indexPath.row);
+    [_delegate moveWeekProgram:_programList[indexPath.row]];
 }
 
 - (void)didReceiveMemoryWarning {

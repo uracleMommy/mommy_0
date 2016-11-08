@@ -34,6 +34,7 @@
 @property (strong, nonatomic) UIImagePickerController *libraryView;
 @property (strong, nonatomic) NSArray *babyNickNames;
 @property (strong, nonatomic) id selectedItem;
+@property (strong, nonatomic) NSDictionary *result;
 
 #pragma mark 모달 창 관련
 - (IBAction)closeModal:(id)sender;

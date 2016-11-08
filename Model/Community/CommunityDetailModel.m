@@ -62,26 +62,30 @@
             NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [_motherData objectForKey:@"mento_img"]];
             cell.personKey = [_motherData objectForKey:@"mento_key"];
             cell.personNickname = [_motherData objectForKey:@"mento_nickname"];
-            
-            if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
-                [cell.writerPersonImage setImage:[_cachedImages valueForKey:profileImageIdentifier]forState:UIControlStateNormal];
-            }else {
-                char const * s = [profileImageIdentifier  UTF8String];
-                dispatch_queue_t queue = dispatch_queue_create(s, 0);
-                dispatch_async(queue, ^{
-                    
-                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [_motherData objectForKey:@"mento_img"]];
-                    
-                    UIImage *profileImg = nil;
-                    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
-                    profileImg = [[UIImage alloc] initWithData:firstImageData];
-                    
-                    [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
-                    
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [cell.writerPersonImage setImage:[_cachedImages valueForKey:profileImageIdentifier] forState:UIControlStateNormal];
+            if([[_motherData objectForKey:@"mento_nickname"] isEqualToString:@""]){
+                [cell.writerPersonImage setImage:[UIImage imageNamed:@"contents_profile_default"] forState:UIControlStateNormal];
+            }else{
+                
+                if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
+                    [cell.writerPersonImage setImage:[_cachedImages valueForKey:profileImageIdentifier]forState:UIControlStateNormal];
+                }else {
+                    char const * s = [profileImageIdentifier  UTF8String];
+                    dispatch_queue_t queue = dispatch_queue_create(s, 0);
+                    dispatch_async(queue, ^{
+                        
+                        NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [_motherData objectForKey:@"mento_img"]];
+                        
+                        UIImage *profileImg = nil;
+                        NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                        profileImg = [[UIImage alloc] initWithData:firstImageData];
+                        
+                        [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
+                        
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [cell.writerPersonImage setImage:[_cachedImages valueForKey:profileImageIdentifier] forState:UIControlStateNormal];
+                        });
                     });
-                });
+                }
             }
 
             CAShapeLayer *firstShapeLayer = [CAShapeLayer layer];
@@ -148,10 +152,10 @@
 //            cell.replyPersonImage03.hidden = YES;
 //            cell.replyPersonImage04.hidden = YES;
 //            cell.replyPersonImage05.hidden = YES;
-            
+            NSArray *replayPerson = [[NSArray alloc]initWithArray: [_replyInfo objectForKey:@"mento_list"]];
             for(int i=0 ; i<5 ; i++){
-                if([_detailList count] > i){
-                    NSDictionary *result = [_detailList objectAtIndex:i];
+                if([replayPerson count] > i){
+                    NSDictionary *result = [replayPerson objectAtIndex:i];
                     
                     NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [result objectForKey:@"img"]];
                     
@@ -160,48 +164,60 @@
                         case 0:
                         {
                             cell.replyPersonImage01.hidden = NO;
-                            if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
-                                [cell.replyPersonImage01 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
-                            }else {
-                                char const * s = [profileImageIdentifier  UTF8String];
-                                dispatch_queue_t queue = dispatch_queue_create(s, 0);
-                                dispatch_async(queue, ^{
-                                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [result objectForKey:@"img"]];
-                                    
-                                    UIImage *profileImg = nil;
-                                    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
-                                    profileImg = [[UIImage alloc] initWithData:firstImageData];
-                                    
-                                    [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
-                                    
-                                    dispatch_async(dispatch_get_main_queue(), ^{
-                                        [cell.replyPersonImage01 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                            if([profileImageIdentifier isEqualToString:@"Cell"]){
+                                [cell.replyPersonImage01 setImage:[UIImage imageNamed:@"contents_profile_default"]];
+                            }else{
+                                
+                                if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
+                                    [cell.replyPersonImage01 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                                }else {
+                                    char const * s = [profileImageIdentifier  UTF8String];
+                                    dispatch_queue_t queue = dispatch_queue_create(s, 0);
+                                    dispatch_async(queue, ^{
+                                        NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [result objectForKey:@"img"]];
+                                        
+                                        UIImage *profileImg = nil;
+                                        NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                                        profileImg = [[UIImage alloc] initWithData:firstImageData];
+                                        
+                                        [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
+                                        
+                                        dispatch_async(dispatch_get_main_queue(), ^{
+                                            [cell.replyPersonImage01 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                                        });
                                     });
-                                });
+                                }
+   
                             }
                             break;
                         }
                         case 1:
                         {
                             cell.replyPersonImage02.hidden = NO;
-                            if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
-                                [cell.replyPersonImage02 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
-                            }else {
-                                char const * s = [profileImageIdentifier  UTF8String];
-                                dispatch_queue_t queue = dispatch_queue_create(s, 0);
-                                dispatch_async(queue, ^{
-                                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [result objectForKey:@"img"]];
-                                    
-                                    UIImage *profileImg = nil;
-                                    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
-                                    profileImg = [[UIImage alloc] initWithData:firstImageData];
-                                    
-                                    [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
-                                    
-                                    dispatch_async(dispatch_get_main_queue(), ^{
-                                        [cell.replyPersonImage02 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                            if([profileImageIdentifier isEqualToString:@"Cell"]){
+                                [cell.replyPersonImage02 setImage:[UIImage imageNamed:@"contents_profile_default"]];
+                            }else{
+                                
+                                if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
+                                    [cell.replyPersonImage02 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                                }else {
+                                    char const * s = [profileImageIdentifier  UTF8String];
+                                    dispatch_queue_t queue = dispatch_queue_create(s, 0);
+                                    dispatch_async(queue, ^{
+                                        NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [result objectForKey:@"img"]];
+                                        
+                                        UIImage *profileImg = nil;
+                                        NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                                        profileImg = [[UIImage alloc] initWithData:firstImageData];
+                                        
+                                        [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
+                                        
+                                        dispatch_async(dispatch_get_main_queue(), ^{
+                                            [cell.replyPersonImage02 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                                        });
                                     });
-                                });
+                                }
+
                             }
                             break;
                         }
@@ -209,48 +225,59 @@
                         case 2:
                         {
                             cell.replyPersonImage03.hidden = NO;
-                            if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
-                                [cell.replyPersonImage03 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
-                            }else {
-                                char const * s = [profileImageIdentifier  UTF8String];
-                                dispatch_queue_t queue = dispatch_queue_create(s, 0);
-                                dispatch_async(queue, ^{
-                                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [result objectForKey:@"img"]];
-                                    
-                                    UIImage *profileImg = nil;
-                                    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
-                                    profileImg = [[UIImage alloc] initWithData:firstImageData];
-                                    
-                                    [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
-                                    
-                                    dispatch_async(dispatch_get_main_queue(), ^{
-                                        [cell.replyPersonImage03 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                            if([profileImageIdentifier isEqualToString:@"Cell"]){
+                                [cell.replyPersonImage03 setImage:[UIImage imageNamed:@"contents_profile_default"]];
+                            }else{
+                                
+                                if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
+                                    [cell.replyPersonImage03 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                                }else {
+                                    char const * s = [profileImageIdentifier  UTF8String];
+                                    dispatch_queue_t queue = dispatch_queue_create(s, 0);
+                                    dispatch_async(queue, ^{
+                                        NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [result objectForKey:@"img"]];
+                                        
+                                        UIImage *profileImg = nil;
+                                        NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                                        profileImg = [[UIImage alloc] initWithData:firstImageData];
+                                        
+                                        [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
+                                        
+                                        dispatch_async(dispatch_get_main_queue(), ^{
+                                            [cell.replyPersonImage03 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                                        });
                                     });
-                                });
+                                }
                             }
                             break;
                         }
                         case 3:
                         {
+                            
                             cell.replyPersonImage04.hidden = NO;
-                            if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
-                                [cell.replyPersonImage04 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
-                            }else {
-                                char const * s = [profileImageIdentifier  UTF8String];
-                                dispatch_queue_t queue = dispatch_queue_create(s, 0);
-                                dispatch_async(queue, ^{
-                                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [result objectForKey:@"img"]];
-                                    
-                                    UIImage *profileImg = nil;
-                                    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
-                                    profileImg = [[UIImage alloc] initWithData:firstImageData];
-                                    
-                                    [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
-                                    
-                                    dispatch_async(dispatch_get_main_queue(), ^{
-                                        [cell.replyPersonImage04 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                            if([profileImageIdentifier isEqualToString:@"Cell"]){
+                                [cell.replyPersonImage04 setImage:[UIImage imageNamed:@"contents_profile_default"]];
+                            }else{
+                                
+                                if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
+                                    [cell.replyPersonImage04 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                                }else {
+                                    char const * s = [profileImageIdentifier  UTF8String];
+                                    dispatch_queue_t queue = dispatch_queue_create(s, 0);
+                                    dispatch_async(queue, ^{
+                                        NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [result objectForKey:@"img"]];
+                                        
+                                        UIImage *profileImg = nil;
+                                        NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                                        profileImg = [[UIImage alloc] initWithData:firstImageData];
+                                        
+                                        [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
+                                        
+                                        dispatch_async(dispatch_get_main_queue(), ^{
+                                            [cell.replyPersonImage04 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                                        });
                                     });
-                                });
+                                }
                             }
                             break;
                         }
@@ -258,24 +285,30 @@
                         case 4:
                         {
                             cell.replyPersonImage05.hidden = NO;
-                            if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
-                                [cell.replyPersonImage05 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
-                            }else {
-                                char const * s = [profileImageIdentifier  UTF8String];
-                                dispatch_queue_t queue = dispatch_queue_create(s, 0);
-                                dispatch_async(queue, ^{
-                                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [result objectForKey:@"img"]];
-                                    
-                                    UIImage *profileImg = nil;
-                                    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
-                                    profileImg = [[UIImage alloc] initWithData:firstImageData];
-                                    
-                                    [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
-                                    
-                                    dispatch_async(dispatch_get_main_queue(), ^{
-                                        [cell.replyPersonImage05 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                            
+                            if([profileImageIdentifier isEqualToString:@"Cell"]){
+                                [cell.replyPersonImage05 setImage:[UIImage imageNamed:@"contents_profile_default"]];
+                            }else{
+                                
+                                if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
+                                    [cell.replyPersonImage05 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                                }else {
+                                    char const * s = [profileImageIdentifier  UTF8String];
+                                    dispatch_queue_t queue = dispatch_queue_create(s, 0);
+                                    dispatch_async(queue, ^{
+                                        NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [result objectForKey:@"img"]];
+                                        
+                                        UIImage *profileImg = nil;
+                                        NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                                        profileImg = [[UIImage alloc] initWithData:firstImageData];
+                                        
+                                        [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
+                                        
+                                        dispatch_async(dispatch_get_main_queue(), ^{
+                                            [cell.replyPersonImage05 setImage:[_cachedImages valueForKey:profileImageIdentifier]];
+                                        });
                                     });
-                                });
+                                }
                             }
                             
                             break;
@@ -288,10 +321,10 @@
             }
             
             
-            if([[_motherData objectForKey:@"like_cnt"] intValue] != 0){
+            if([[_replyInfo objectForKey:@"like_cnt"] intValue] != 0){
                 cell.likeCountLabel.hidden = NO;
                 cell.likeButton.hidden = NO;
-                cell.likeCountLabel.text = [NSString stringWithFormat:@"%@", [_motherData objectForKey:@"like_cnt"]];
+                cell.likeCountLabel.text = [NSString stringWithFormat:@"%@", [_replyInfo objectForKey:@"like_cnt"]];
             }else{
                 cell.likeCountLabel.hidden = YES;
                 cell.likeButton.hidden = YES;
@@ -309,6 +342,7 @@
                 cell = [tableView dequeueReusableCellWithIdentifier:CELL_REPLY];
             }
             NSDictionary *result = [_detailList objectAtIndex:indexPath.row-3];
+            NSLog(@"PSH %d", indexPath.row-3);
             
             UILabel *gettingSizeLabel = [[UILabel alloc] init];
             gettingSizeLabel.lineBreakMode = NSLineBreakByWordWrapping;
@@ -329,25 +363,31 @@
             cell.personNickname = [result objectForKey:@"mento_nickname"];
             
             NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [result objectForKey:@"img"]];
-            
-            if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
-                [cell.replyPersonButton setImage:[_cachedImages valueForKey:profileImageIdentifier]forState:UIControlStateNormal];
-            }else {
-                char const * s = [profileImageIdentifier  UTF8String];
-                dispatch_queue_t queue = dispatch_queue_create(s, 0);
-                dispatch_async(queue, ^{
-                    NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [result objectForKey:@"img"]];
-                    
-                    UIImage *profileImg = nil;
-                    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
-                    profileImg = [[UIImage alloc] initWithData:firstImageData];
-                    
-                    [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
-                    
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [cell.writerPersonImage setImage:[_cachedImages valueForKey:profileImageIdentifier] forState:UIControlStateNormal];
+            if([[result objectForKey:@"img"] isEqualToString:@""]){
+//                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [cell.replyPersonButton setImage:[UIImage imageNamed:@"contents_profile_default"] forState:UIControlStateNormal];
+//                });
+            }else{
+                
+                if ([_cachedImages objectForKey:profileImageIdentifier] != nil) {
+                    [cell.replyPersonButton setImage:[_cachedImages valueForKey:profileImageIdentifier]forState:UIControlStateNormal];
+                }else {
+                    char const * s = [profileImageIdentifier  UTF8String];
+                    dispatch_queue_t queue = dispatch_queue_create(s, 0);
+                    dispatch_async(queue, ^{
+                        NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], [result objectForKey:@"img"]];
+                        
+                        UIImage *profileImg = nil;
+                        NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                        profileImg = [[UIImage alloc] initWithData:firstImageData];
+                        
+                        [_cachedImages setValue:profileImg forKey:profileImageIdentifier];
+                        
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [cell.replyPersonButton setImage:[_cachedImages valueForKey:profileImageIdentifier] forState:UIControlStateNormal];
+                        });
                     });
-                });
+                }
             }
             
             CALayer *border = [CALayer layer];

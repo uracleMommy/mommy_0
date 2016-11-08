@@ -55,6 +55,19 @@
             cell = (MoreMainTitleCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierMoreMainTitleCell];
         }
         
+        NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], _arrayList[@"img"]];
+        
+        UIImage *profileImg = nil;
+        if([_arrayList[@"img"] isEqualToString:@""]){
+            profileImg = [UIImage imageNamed:@"contents_profile_default"];
+        }else{
+            NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+            profileImg = [[UIImage alloc] initWithData:firstImageData];
+            
+        }
+        
+        [cell.imgProfile setImage:profileImg];
+        cell.nameLabel.text = _arrayList[@"name"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         return cell;
