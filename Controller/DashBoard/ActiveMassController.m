@@ -80,11 +80,12 @@
             
             // 실패시
             if (code != 0) {
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                    [alert addAction:confirmAlertAction];
+                    [self presentViewController:alert animated:YES completion:nil];
+                    [self hideIndicator];
                 
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
-                [alert addAction:confirmAlertAction];
-                [self hideIndicator];
                 return;
             }
             
@@ -99,7 +100,7 @@
             // 테이블 리로드
             NSMutableDictionary *resultDic = [NSMutableDictionary dictionaryWithDictionary:data[@"result"]];
             [resultDic setValue:@([UIScreen mainScreen].bounds.size.width - 32) forKey:@"width"];
-            [resultDic setValue:@(198) forKey:@"height"];
+            [resultDic setValue:@(180) forKey:@"height"];
             
             _activeMassModel.dicList = resultDic;
             _tableView.dataSource = _activeMassModel;
@@ -117,6 +118,7 @@
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
             [alert addAction:confirmAlertAction];
+            [self presentViewController:alert animated:YES completion:nil];
         });
     }];
 }
@@ -142,6 +144,7 @@
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
                 UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
                 [alert addAction:confirmAlertAction];
+                [self presentViewController:alert animated:YES completion:nil];
                 [self hideIndicator];
                 return;
             }
@@ -157,7 +160,7 @@
             // 테이블 리로드
             NSMutableDictionary *resultDic = [NSMutableDictionary dictionaryWithDictionary:data[@"result"]];
             [resultDic setValue:@([UIScreen mainScreen].bounds.size.width - 32) forKey:@"width"];
-            [resultDic setValue:@(198) forKey:@"height"];
+            [resultDic setValue:@(180) forKey:@"height"];
             
             _activeMassModel.dicList = resultDic;
             _tableView.dataSource = _activeMassModel;
@@ -175,6 +178,7 @@
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
             [alert addAction:confirmAlertAction];
+            [self presentViewController:alert animated:YES completion:nil];
         });
     }];
 }

@@ -37,6 +37,16 @@
     _tableView.delegate = _moreEnvironmentListModel;
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"goMypageManagement"]){
+        UINavigationController *navController = [segue destinationViewController];
+        MoreMyPageMasterViewController *vc = (MoreMyPageMasterViewController *)([navController viewControllers][0]);
+        
+        [vc setResult:_myPageInfo];
+        
+    }
+}
+
 - (void) closeModal {
     
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -52,23 +62,48 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
+#pragma mark alertView delegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+//    if(alertView.tag == 0){
+        switch (buttonIndex) {
+            case 1 : {
+                
+                NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+                
+                if([[userDefaults objectForKey:@"autoLoginFlag"] isEqualToString:@"Y"]){
+                    [userDefaults setObject:@"N" forKey:@"autoLoginFlag"];
+                    [userDefaults synchronize];
+                }
+                
+                
+                AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+                [appDelegate go_story_board:@"Intro"];
+
+            }
+                
+            default:
+                break;
+        }
+//    }
+}
+
+
 - (IBAction)logoutButtonAction:(id)sender {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
-    if([[userDefaults objectForKey:@"autoLoginFlag"] isEqualToString:@"Y"]){
-        [userDefaults setObject:@"N" forKey:@"autoLoginFlag"];
-        [userDefaults synchronize];
-    }
-    
-    
-    AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate go_story_board:@"Intro"];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                    message:@"서비스를 종료하고 로그아웃 하시겠습니까?"
+                                                   delegate:self
+                                          cancelButtonTitle:@"취소"
+                                          otherButtonTitles:@"로그아웃", nil];
+    [alert show];
 }
 
 - (void) tableView:(UITableView *)tableView MoreMyPageModelSelectedIndexPath:(NSIndexPath *)indexPath {
    
-    if (indexPath.row == 2) {
-        
+    if (indexPath.row == 0) {
+        [self performSegueWithIdentifier:@"goMypageManagement2" sender:nil];
+    }else if(indexPath.row == 2){
         [self performSegueWithIdentifier:@"goCalendarConnectList" sender:nil];
     }
 }

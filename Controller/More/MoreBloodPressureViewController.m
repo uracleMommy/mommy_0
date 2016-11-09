@@ -72,11 +72,14 @@
             
             // 실패시
             if (code != 0) {
-                
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
-                [alert addAction:confirmAlertAction];
-                [self hideIndicator];
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                    [alert addAction:confirmAlertAction];
+                    [self presentViewController:alert animated:YES completion:nil];
+                    [self hideIndicator];
+                });
                 return;
             }
             
@@ -106,8 +109,8 @@
             _moreBloodPressureModel.delegate = self;
                         
             NSMutableDictionary *resultDic = [NSMutableDictionary dictionaryWithDictionary:data[@"result"]];
-            [resultDic setValue:@([UIScreen mainScreen].bounds.size.width - 32) forKey:@"width"];
-            [resultDic setValue:@(191) forKey:@"height"];
+            [resultDic setValue:@([UIScreen mainScreen].bounds.size.width - 52) forKey:@"width"];
+            [resultDic setValue:@(180) forKey:@"height"];
             
             _moreBloodPressureModel.dicList = resultDic;
             _tableView.dataSource = _moreBloodPressureModel;
@@ -120,12 +123,15 @@
         });
         
     } error:^(NSError *error) {
-        
-        [self hideIndicator];
-        
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
-        [alert addAction:confirmAlertAction];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            
+            [self hideIndicator];
+            
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+            [alert addAction:confirmAlertAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        });
     }];
 }
 
@@ -243,10 +249,11 @@
                 // 실패시
                 if (code != 0) {
                     
-                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
-                    UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
-                    [alert addAction:confirmAlertAction];
-                    [self hideIndicator];
+                        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+                        UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                        [alert addAction:confirmAlertAction];
+                        [self presentViewController:alert animated:YES completion:nil];
+                        [self hideIndicator];
                     return;
                 }
                 
@@ -279,6 +286,19 @@
 #pragma 이전 콜백
 - (void) goChartPrevious {
     
+    if (_currentPage + 5 >= _totalPage) {
+        
+        return;
+    }
+    
+    _currentPage += 5;
+    
+    [self bloodPressureBind:_currentPage];
+}
+
+#pragma 이후 콜백
+- (void) goChartNext {
+    
     if (_currentPage <= 1) {
         
         return;
@@ -296,25 +316,14 @@
     // 테이블 차트셀에 접근하여 현재 건수 보여주기
 }
 
-#pragma 이후 콜백
-- (void) goChartNext {
-    
-    if (_currentPage + 5 >= _totalPage) {
-        
-        return;
-    }
-    
-    _currentPage += 5;
-    
-    [self bloodPressureBind:_currentPage];
-}
-
 #pragma 현재 5건에 대한 현재차트 / 토탈 챠트 수
 - (void) setCurrentChartRange {
     
     MoreBloodPressureChartCell *cell = (MoreBloodPressureChartCell *)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     
-    cell.lblLately.text = [NSString stringWithFormat:@"최근 5건(%ld/%ld)", (long)_currentPage + 4 > (long)_totalPage ? (long)_totalPage : (long)_currentPage + 4, (long)_totalPage];
+//    cell.lblLately.text = [NSString stringWithFormat:@"최근 5건(%ld/%ld)", (long)_currentPage + 4 > (long)_totalPage ? (long)_totalPage : (long)_currentPage + 4, (long)_totalPage];
+    
+    cell.lblLately.text = [NSString stringWithFormat:@"%ld건~%ld건 (총%ld건)", (long)_currentPage, (long)_currentPage + 4 > (long)_totalPage ? (long)_totalPage : (long)_currentPage + 4, (long)_totalPage];
     
 }
 
@@ -347,10 +356,11 @@
             // 실패시
             if (code != 0) {
                 
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
-                [alert addAction:confirmAlertAction];
-                [self hideIndicator];
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                    [alert addAction:confirmAlertAction];
+                    [self presentViewController:alert animated:YES completion:nil];
+                    [self hideIndicator];
                 return;
             }
             

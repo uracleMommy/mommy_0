@@ -70,11 +70,11 @@
 -(void)editFetusNickname{
     NSArray *tableTextFieldArr = [self findAllTextFieldsInView:_tableView];
     NSMutableArray *fetusInfoArr = [[NSMutableArray alloc] init];
-    NSString *babyCount;
+//    NSString *babyCount;
     for(int i = 0 ; i < [tableTextFieldArr count] ; i++){
         NSString *text = [(UITextField *)[tableTextFieldArr objectAtIndex:i] text];
         if([(UITextField *)[tableTextFieldArr objectAtIndex:i] tag] == 1){
-            babyCount = [text substringWithRange:NSMakeRange(0, 1)];
+//            babyCount = [text substringWithRange:NSMakeRange(0, 1)];
             break;
         }
         NSLog(@"%@", text);
@@ -91,7 +91,7 @@
     NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
     
     [param setValue:fetusInfoArr forKey:@"baby_nicknames"];
-    [param setValue:babyCount forKey:@"baby_cnt"];
+//    [param setValue:babyCount forKey:@"baby_cnt"];
     
     NSLog(@"param : %@", param);
 

@@ -36,7 +36,6 @@
 @property (strong, nonatomic) NSMutableArray *pickerData_2; //거주지 동
 @property (strong, nonatomic) UIPickerView *addressPicker;
 @property (weak, nonatomic) IBOutlet UILabel *addressTextField;
-@property (weak, nonatomic) IBOutlet UITextField *addressButton;
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextView *contentsTextView;

@@ -22,7 +22,7 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQa-t1-KFc">
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016.06.10 오전 06:17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwx-yM-MtS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwx-yM-MtS">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="13" id="VZt-ZL-jql"/>
                                 </constraints>
@@ -30,7 +30,7 @@
                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도민준" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hss-vy-7GT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hss-vy-7GT">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="ZyP-6e-5ka"/>
                                 </constraints>
@@ -61,7 +61,7 @@
                                     <constraint firstAttribute="width" constant="40" id="X78-FI-w2Z"/>
                                     <constraint firstAttribute="height" constant="40" id="itP-fp-YIb"/>
                                 </constraints>
-                                <state key="normal" image="jeon"/>
+                                <state key="normal" image="contents_profile_default"/>
                                 <connections>
                                     <action selector="showProfilePopupViewAction:" destination="Mm2-HF-wmN" eventType="touchUpInside" id="nNc-tf-E4V"/>
                                 </connections>
@@ -103,6 +103,6 @@
     </objects>
     <resources>
         <image name="contents_comm_btn_more" width="90" height="90"/>
-        <image name="jeon" width="240" height="222"/>
+        <image name="contents_profile_default" width="80" height="80"/>
     </resources>
 </document>

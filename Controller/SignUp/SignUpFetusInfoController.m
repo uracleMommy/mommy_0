@@ -66,15 +66,21 @@
     }
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+
+    if([[segue identifier] isEqualToString:@"moveRecommendWeightView"]){
+        UINavigationController *navController = [segue destinationViewController];
+        SignUpRecommedWeightController *vc = (SignUpRecommedWeightController *)([navController viewControllers][0]);
+        [vc setParam:_recommendParam];
+    }
 }
-*/
+
 - (IBAction)saveButtonAction:(id)sender {
     NSArray *tableTextFieldArr = [self findAllTextFieldsInView:_fetusInfoTableView];
     NSMutableArray *fetusInfoArr = [[NSMutableArray alloc] init];
@@ -123,16 +129,19 @@
     
     NSLog(@"param : %@", param);
     
+    _recommendParam = @{@"before_weight":_before_weight, @"weight":_weight, @"baby_birth":_baby_birth, @"height" : _height, @"baby_cnt" : _baby_cnt};
+    
     [[MommyRequest sharedInstance] mommySignInApiService:InsertUserProfile authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data){
         NSLog(@"PSH data %@", data);
         
         NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
         if([code isEqualToString:@"0"]){
             dispatch_async(dispatch_get_main_queue(), ^{
-                UIStoryboard *mainTabBarStoryboard = [UIStoryboard storyboardWithName:@"MainTabBar" bundle:nil];
-                UINavigationController *mainTabBarNavigationController = (UINavigationController *)[mainTabBarStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarNavigation"];
-                
-                [self presentViewController:mainTabBarNavigationController animated:YES completion:nil];
+//                UIStoryboard *mainTabBarStoryboard = [UIStoryboard storyboardWithName:@"MainTabBar" bundle:nil];
+//                UINavigationController *mainTabBarNavigationController = (UINavigationController *)[mainTabBarStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarNavigation"];
+//                
+//                [self presentViewController:mainTabBarNavigationController animated:YES completion:nil];
+                [self performSegueWithIdentifier:@"moveRecommendWeightView" sender:self];
             });
         }else if([code isEqualToString:@"-11"]){
             //TODO 등록 실패시..
@@ -148,7 +157,7 @@
         }else{
             dispatch_sync(dispatch_get_main_queue(), ^{
                 
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후에 시도해주시기 바랍니다." preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:data[@"msg"] preferredStyle:UIAlertControllerStyleAlert];
                 UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
                 [alert addAction:confirmAlertAction];
                 [self presentViewController:alert animated:YES completion:nil];

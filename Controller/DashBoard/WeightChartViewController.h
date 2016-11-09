@@ -16,7 +16,7 @@
 #import <LifesenseBluetooth/LSSleepRecord.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 
-@interface WeightChartViewController : CommonViewController<DZNSegmentedControlDelegate, LSBleDataReceiveDelegate, LSBlePairingDelegate>
+@interface WeightChartViewController : CommonViewController<DZNSegmentedControlDelegate, LSBleDataReceiveDelegate, LSBlePairingDelegate, WeightChartModelDelegate>
 
 @property (nonatomic,strong) LSBLEDeviceManager *lsBleManager;
 
@@ -25,6 +25,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) WeightChartModel *weightChartModel;
+
+@property (assign, nonatomic) NSInteger currentPage;
 
 
 @end

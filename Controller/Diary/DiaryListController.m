@@ -71,20 +71,23 @@
             NSArray *result = [data objectForKey:@"result"];
             if([result count] == 0){
                 NSLog(@"empty");
-                if(!_noDataController){
-                    _noDataController = [self.storyboard instantiateViewControllerWithIdentifier:@"noDataDiaryController"];
-                    [_noDataController.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-                    _noDataController.view.tag = 2;
-                }
                 dispatch_sync(dispatch_get_main_queue(), ^{
-                    [self.view addSubview : _noDataController.view];
+                    if(!_noDataController){
+                        _noDataController = [self.storyboard instantiateViewControllerWithIdentifier:@"noDataDiaryController"];
+                        [_noDataController.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+                        [self.view addSubview : _noDataController.view];
+                        _noDataController.view.hidden = NO;
+                    }else{
+                        _noDataController.view.hidden = NO;
+                    }
                     _listTableview.hidden = YES;
                 });
             }else{
                 dispatch_sync(dispatch_get_main_queue(), ^{
+                    //만일 데이터 없음으로 되어 있을 시에는 다시 생기도록 해주기
                     _listTableview.hidden = NO;
-                    if(self.view.subviews[0].tag == 2){
-                        [self.view.subviews[0] removeFromSuperview];
+                    if(_noDataController){
+                        _noDataController.view.hidden = YES;
                     }
                 });
                 [_diaryListTableController.diaryList removeAllObjects];

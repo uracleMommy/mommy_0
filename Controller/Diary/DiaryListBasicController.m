@@ -77,6 +77,8 @@
 
 -(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
     NSLog(@"prepareForUnwind");
+    //초기화
+    [_listViewController setListFirst:[NSDate date]];
 }
 
 - (void)didReceiveMemoryWarning {

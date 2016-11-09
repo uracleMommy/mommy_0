@@ -23,13 +23,22 @@
     UIImage *addBtnImage = [UIImage imageNamed:@"title_icon_add"];
     backButton.frame = CGRectMake(0, 0, 40, 40);
     [backButton setImage:addBtnImage forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(addWeightToChart) forControlEvents:UIControlEventTouchUpInside];
+    [backButton addTarget:self action:@selector(addWeightHand) forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     
+    UIButton *weightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *weightBtnImage = [UIImage imageNamed:@"title_icon_weight"];
+    weightBtn.frame = CGRectMake(0, 0, 40, 40);
+    [weightBtn setImage:weightBtnImage forState:UIControlStateNormal];
+    [weightBtn addTarget:self action:@selector(addWeightAuto) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *weightButton = [[UIBarButtonItem alloc] initWithCustomView:weightBtn];
+    
     UIBarButtonItem *leftNegativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     leftNegativeSpacer.width = -16;
-    [self.navigationItem setLeftBarButtonItems:@[leftNegativeSpacer, addButton]];
+    [self.navigationItem setLeftBarButtonItems:@[leftNegativeSpacer, addButton, weightButton]];
+    
+
     
     // 우측버튼
     UIButton *professionButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -41,6 +50,7 @@
     UIBarButtonItem *rightNegativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     rightNegativeSpacer.width = -16;
     [self.navigationItem setRightBarButtonItems:@[rightNegativeSpacer, adviceItemButton]];
+    
     
     NSArray *items = @[@"일자별", @"주차별"];
     _dayWeekTypeSegment.items = items;
@@ -56,6 +66,7 @@
     [_dayWeekTypeSegment setFrame:CGRectMake(0, 0, screenSize.size.width, 44)];
     
     [_dayWeekTypeSegment addTarget:self action:@selector(selectedSegment:) forControlEvents:UIControlEventValueChanged];
+    
     
     // 테이블 바인드
 //    NSArray *arrayList = [NSArray arrayWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", nil];
@@ -86,8 +97,9 @@
         //[_lsBleManager pairWithLsDeviceInfo:lsDevice pairedDelegate:self];
         NSLog(@"페어링 성공 여부 : %d", [_lsBleManager addMeasureDevice:lsDevice]);
     }
+    _currentPage = 0;
     
-    [self bindDailyWeightChart:0];
+    [self bindDailyWeightChart:_currentPage];
 //    [self bindWeeklyWeightChart:0];
 }
 
@@ -106,13 +118,15 @@
 
 - (void) selectedSegment : (id) sender {
     
+    _currentPage = 0;
+    
     if (_dayWeekTypeSegment.selectedSegmentIndex == 0) {
         
-        [self bindDailyWeightChart:0];
+        [self bindDailyWeightChart:_currentPage];
     }
     else {
         
-        [self bindWeeklyWeightChart:0];
+        [self bindWeeklyWeightChart:_currentPage];
     }
 }
 
@@ -134,11 +148,9 @@
     
     [self showIndicator];
     
-    NSString *auth_key = [GlobalData sharedGlobalData].authToken;
-    
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%ld", (long)startPage], @"searchPage", nil];
     
-    [[MommyRequest sharedInstance] mommyChartApiService:ChartWeightDailyGraph authKey:auth_key parameters:parameters success:^(NSDictionary *data){
+    [[MommyRequest sharedInstance] mommyChartApiService:ChartWeightDailyGraph authKey:GET_AUTH_TOKEN parameters:parameters success:^(NSDictionary *data){
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
@@ -146,11 +158,12 @@
             
             // 실패시
             if (code != 0) {
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                    [alert addAction:confirmAlertAction];
+                    [self presentViewController:alert animated:YES completion:nil];
+                    [self hideIndicator];
                 
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
-                [alert addAction:confirmAlertAction];
-                [self hideIndicator];
                 return;
             }
             
@@ -170,8 +183,21 @@
             _weightChartModel = [[WeightChartModel alloc] init];
             _weightChartModel.chartKind = WeightChartDaily;
             _weightChartModel.arrayList = arrayList;
+            _weightChartModel.delegate = self;
             _tableView.delegate = _weightChartModel;
             _tableView.dataSource = _weightChartModel;
+            
+            // 차트 바인딩
+            NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"daily_weight" ofType:@"html"]];
+            NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+            _weightChartModel.chartRequest = request;
+            
+            // 테이블 리로드
+            NSMutableDictionary *resultDic = [NSMutableDictionary dictionaryWithDictionary:data[@"result"]];
+            [resultDic setValue:@([UIScreen mainScreen].bounds.size.width - 42) forKey:@"width"];
+            [resultDic setValue:@(170) forKey:@"height"];
+            
+            _weightChartModel.dicList = resultDic;
             [_tableView reloadData];
             
             [self hideIndicator];
@@ -179,12 +205,16 @@
         });
         
     } error:^(NSError *error) {
-        
-        [self hideIndicator];
-        
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
-        [alert addAction:confirmAlertAction];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            
+            [self hideIndicator];
+            
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+            
+            [alert addAction:confirmAlertAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        });
     }];
 }
 
@@ -209,6 +239,7 @@
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
                 UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
                 [alert addAction:confirmAlertAction];
+                [self presentViewController:alert animated:YES completion:nil];
                 [self hideIndicator];
                 return;
             }
@@ -229,8 +260,22 @@
             _weightChartModel = [[WeightChartModel alloc] init];
             _weightChartModel.chartKind = WeightChartWeekly;
             _weightChartModel.arrayList = arrayList;
+            _weightChartModel.delegate = self;
             _tableView.delegate = _weightChartModel;
             _tableView.dataSource = _weightChartModel;
+            
+            
+            // 차트 바인딩
+            NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"daily_weight" ofType:@"html"]];
+            NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+            _weightChartModel.chartRequest = request;
+            
+            // 테이블 리로드
+            NSMutableDictionary *resultDic = [NSMutableDictionary dictionaryWithDictionary:data[@"result"]];
+            [resultDic setValue:@([UIScreen mainScreen].bounds.size.width - 42) forKey:@"width"];
+            [resultDic setValue:@(170) forKey:@"height"];
+            
+            _weightChartModel.dicList = resultDic;
             [_tableView reloadData];
             
             [self hideIndicator];
@@ -239,16 +284,20 @@
         
     } error:^(NSError *error) {
         
-        [self hideIndicator];
-        
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
-        [alert addAction:confirmAlertAction];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            
+            [self hideIndicator];
+            
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+            [alert addAction:confirmAlertAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        });
     }];
 }
 
 #pragma 체중 기록 추가
-- (void) addWeightToChart {
+- (void) addWeightAuto {
     
     
     // 1. 페어링된 체중계가 있는지 체크
@@ -270,11 +319,16 @@
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"체중계를 연결해 주세요." preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
         [alert addAction:confirmAlertAction];
+        [self presentViewController:alert animated:YES completion:nil];
         
         return;
-    }
+    }else{
+        [self.lsBleManager startDataReceiveService:self];
+    }    
     
-    [self.lsBleManager startDataReceiveService:self];
+}
+
+- (void) addWeightHand {
     
 }
 
@@ -309,5 +363,45 @@
     }
     return tempDeviceType;
 }
+
+#pragma 차트 콜백
+- (void) goChartPrevious {
+    
+    _currentPage++;
+    
+    // 일자별
+    if (_dayWeekTypeSegment.selectedSegmentIndex == 0) {
+        
+        [self bindDailyWeightChart : _currentPage];
+    }
+    // 주차별
+    else {
+        
+        [self bindWeeklyWeightChart:_currentPage];
+    }
+}
+
+#pragma 차트 콜백
+- (void) goChartNext {
+    
+    if(_currentPage == 0) {
+        
+        return;
+    }
+    
+    _currentPage--;
+    
+    // 일자별
+    if (_dayWeekTypeSegment.selectedSegmentIndex == 0) {
+        
+        [self bindDailyWeightChart : _currentPage];
+    }
+    // 주차별
+    else {
+        
+        [self bindWeeklyWeightChart:_currentPage];
+    }
+}
+
 
 @end

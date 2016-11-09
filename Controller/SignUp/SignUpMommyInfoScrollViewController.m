@@ -31,7 +31,7 @@
     
     pickerData_number_point = [[NSMutableArray alloc]init]; //소수점 1자리
     pickerData_number_weight = [[NSMutableArray alloc]initWithArray:@[@"Select"]]; //체중
-    pickerData_number_height = [[NSMutableArray alloc]initWithArray:@[@"Select"]]; //키
+    pickerData_number_height = [[NSMutableArray alloc]init]; //키
     pickerData_number_fetus = [[NSMutableArray alloc]init]; //태아 정보
     
     for(int i = 0 ; i < 200 ; i++){

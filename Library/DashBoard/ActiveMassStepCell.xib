@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -57,7 +57,6 @@
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgw-wh-A0d">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="88" id="Taq-Gq-Ho7"/>
                                     <constraint firstAttribute="height" constant="21" id="rZ2-dQ-zB3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="14"/>
@@ -80,6 +79,7 @@
                             <constraint firstItem="dfZ-BD-xxZ" firstAttribute="top" secondItem="Zgw-wh-A0d" secondAttribute="bottom" constant="5" id="38C-Ig-EQ1"/>
                             <constraint firstItem="EMz-k2-4qh" firstAttribute="top" secondItem="Rby-CH-VQB" secondAttribute="top" constant="19" id="3Oj-LV-cKQ"/>
                             <constraint firstItem="EqZ-tc-NOM" firstAttribute="top" secondItem="Rby-CH-VQB" secondAttribute="top" constant="19" id="6qV-lW-D8q"/>
+                            <constraint firstItem="Zgw-wh-A0d" firstAttribute="leading" secondItem="EMz-k2-4qh" secondAttribute="trailing" constant="8" id="JgM-sq-Vg4"/>
                             <constraint firstAttribute="bottom" secondItem="csm-lQ-648" secondAttribute="bottom" constant="6.5" id="Obb-9q-sVG"/>
                             <constraint firstItem="Zgw-wh-A0d" firstAttribute="top" secondItem="Rby-CH-VQB" secondAttribute="top" constant="22" id="PG2-8F-rjJ"/>
                             <constraint firstAttribute="trailing" secondItem="Zgw-wh-A0d" secondAttribute="trailing" constant="15" id="Pnu-c6-BfY"/>

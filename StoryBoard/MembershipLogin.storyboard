@@ -16,7 +16,7 @@
         <scene sceneID="McU-z3-jbL">
             <objects>
                 <navigationController storyboardIdentifier="MembershipLoginNavigation" id="pIT-zG-VIw" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="RdA-W4-dWx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="RdA-W4-dWx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -26,7 +26,7 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="avC-lf-CXr" kind="relationship" relationship="rootViewController" id="q6T-yl-vzI"/>
+                        <segue destination="avC-lf-CXr" kind="relationship" relationship="rootViewController" id="kX3-Dy-AII"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b7j-oJ-GSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -85,7 +85,7 @@
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QGk-WE-3YO">
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="idTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="gogojss" placeholder="아이디" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kD9-Rl-7Ze" customClass="notPasteField">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="idTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이디" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kD9-Rl-7Ze" customClass="notPasteField">
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="JxJ-xb-RL7"/>
                                                 </constraints>
@@ -102,7 +102,7 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test40!" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="oUw-1O-ev7" customClass="notPasteField">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="oUw-1O-ev7" customClass="notPasteField">
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="T19-CA-b6w"/>
                                                 </constraints>
@@ -693,7 +693,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SignUpMain" id="wEo-Cd-kHg" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="oCt-Xu-tXe"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="SY6-kz-ev5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="SY6-kz-ev5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1148,7 +1148,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SignUpMommyInfoController" id="88h-l9-SOB" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="mVn-Ei-MxK"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Luc-t5-4rp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Luc-t5-4rp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1164,6 +1164,105 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZNm-XB-nEu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18" y="2820"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aJV-C4-bJp">
+            <objects>
+                <navigationController id="7f4-aP-38G" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="dLx-e0-JmO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ma0-jt-tkD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hih-KG-6vm" kind="relationship" relationship="rootViewController" id="L7q-vY-YYx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="336-PB-jCw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18" y="3622"/>
+        </scene>
+        <!--임신 N주-->
+        <scene sceneID="p1p-rg-Eqz">
+            <objects>
+                <viewController id="hih-KG-6vm" customClass="SignUpRecommedWeightController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Ff-cS-Dlo"/>
+                        <viewControllerLayoutGuide type="bottom" id="9hk-tm-ISD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wh5-LG-zly">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="seN-lC-9D9">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="3z8-GJ-PTS"/>
+                                </constraints>
+                                <string key="text">권장체중은 NN kg ~ NN kg로 정상체중입니다.
+일일 3000 ~ 4000보 걷기를 권장합니다.</string>
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
+                                <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LpL-VZ-K5w">
+                                <subviews>
+                                    <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COu-ps-m2N">
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </webView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="KIw-ng-6Wp"/>
+                                    <constraint firstItem="COu-ps-m2N" firstAttribute="leading" secondItem="LpL-VZ-K5w" secondAttribute="leading" constant="8" id="Pdf-GO-AEk"/>
+                                    <constraint firstAttribute="trailing" secondItem="COu-ps-m2N" secondAttribute="trailing" constant="8" id="kmO-MK-GvG"/>
+                                    <constraint firstItem="COu-ps-m2N" firstAttribute="top" secondItem="LpL-VZ-K5w" secondAttribute="top" constant="8" id="rG1-sY-1D2"/>
+                                    <constraint firstAttribute="bottom" secondItem="COu-ps-m2N" secondAttribute="bottom" constant="8" id="z8b-zm-iHz"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moY-Zg-Otb">
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.41176470590000003" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8xR-EY-FC6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
+                                <state key="normal" title="다음">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirmButtonAction:" destination="hva-dI-EYK" eventType="touchUpInside" id="FDU-Pl-ixe"/>
+                                    <action selector="moveDashBoard:" destination="hih-KG-6vm" eventType="touchUpInside" id="PSq-5W-DeU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="seN-lC-9D9" firstAttribute="leading" secondItem="Wh5-LG-zly" secondAttribute="leading" id="5so-Vr-RpR"/>
+                            <constraint firstItem="moY-Zg-Otb" firstAttribute="leading" secondItem="Wh5-LG-zly" secondAttribute="leading" id="8ED-uN-9Jh"/>
+                            <constraint firstItem="9hk-tm-ISD" firstAttribute="top" secondItem="moY-Zg-Otb" secondAttribute="bottom" id="B3v-nB-0eu"/>
+                            <constraint firstItem="LpL-VZ-K5w" firstAttribute="leading" secondItem="Wh5-LG-zly" secondAttribute="leading" constant="15" id="Clq-ps-86X"/>
+                            <constraint firstItem="seN-lC-9D9" firstAttribute="top" secondItem="0Ff-cS-Dlo" secondAttribute="bottom" id="R87-3X-XGg"/>
+                            <constraint firstAttribute="trailing" secondItem="seN-lC-9D9" secondAttribute="trailing" id="R8V-Ys-PTM"/>
+                            <constraint firstItem="LpL-VZ-K5w" firstAttribute="top" secondItem="seN-lC-9D9" secondAttribute="bottom" constant="8" id="aE1-zk-oRY"/>
+                            <constraint firstAttribute="trailing" secondItem="LpL-VZ-K5w" secondAttribute="trailing" constant="15" id="ufe-kV-BAf"/>
+                            <constraint firstAttribute="trailing" secondItem="moY-Zg-Otb" secondAttribute="trailing" id="zmD-DM-wkU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="임신 N주" id="hsr-p8-03X"/>
+                    <connections>
+                        <outlet property="containerView" destination="LpL-VZ-K5w" id="YO3-xg-d86"/>
+                        <outlet property="titleLabel" destination="seN-lC-9D9" id="Ef2-kC-ObM"/>
+                        <outlet property="webView" destination="COu-ps-m2N" id="t2Z-po-jGG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5QK-OX-7Yx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="488.5" y="3621.5"/>
         </scene>
         <!--Sign Up Mommy Info Scroll View Controller-->
         <scene sceneID="ppU-4u-hpF">
@@ -1647,6 +1746,7 @@
                     <connections>
                         <outlet property="fetusInfoTableView" destination="BnD-8M-H2U" id="Uwg-Wq-6wR"/>
                         <segue destination="JhN-CN-pab" kind="unwind" identifier="unwindSegue" unwindAction="prepareForUnwind:" id="Y83-O4-9Wp"/>
+                        <segue destination="7f4-aP-38G" kind="modal" identifier="moveRecommendWeightView" id="2Z5-jM-RoO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4iu-Ge-l79" userLabel="First Responder" sceneMemberID="firstResponder"/>

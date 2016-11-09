@@ -933,6 +933,9 @@ static MommyHttpUrls* instanceMommyHttpUrls;
             return [_mainDomain stringByAppendingString: @"/api/join/insert/user-profile"];
             break;
             
+        case RecommendWeight:
+            return [_mainDomain stringByAppendingString: @"/api/join/recommend-weight"];
+            break;
         default:
             return @"";
             break;

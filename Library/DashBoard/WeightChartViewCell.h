@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol WeightChartViewDelegate <NSObject>
+
+@required
+
+- (void) goPrevious;
+
+- (void) goNext;
+
+@end
+
 @interface WeightChartViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIView *containerView;
@@ -27,6 +37,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblSecondRangeWeight;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblWeightAppraisal;
+
+@property (strong, nonatomic) NSString *functionJson;
+
+@property (assign, nonatomic) BOOL isFirst;
+
+@property (strong, nonatomic) id<WeightChartViewDelegate> delegate;
 
 - (IBAction)goPrevious:(id)sender;
 

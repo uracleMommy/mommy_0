@@ -19,8 +19,5 @@
 
 @property (strong, nonatomic) MoreEquipmentEmptyViewController *moreEquipmentEmptyViewController;
 
-- (IBAction)closeModal:(id)sender;
-
-- (IBAction)addEquipment:(id)sender;
 
 @end

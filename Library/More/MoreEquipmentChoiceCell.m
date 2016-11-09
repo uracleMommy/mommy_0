@@ -18,6 +18,9 @@
     _containerView.layer.borderWidth = 1.0f;
     _containerView.layer.cornerRadius = 10;
     
+    _deviceImageView.layer.cornerRadius = 6;
+    _deviceImageView.layer.masksToBounds = YES;
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

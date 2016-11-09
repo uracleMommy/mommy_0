@@ -117,14 +117,11 @@
             // 실패시
             if (code != 0) {
                 
-                dispatch_sync(dispatch_get_main_queue(), ^{
-                    
                     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
                     UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
                     [alert addAction:confirmAlertAction];
                     [self presentViewController:alert animated:YES completion:nil];
                     [self hideIndicator];
-                });
                 return;
             }
             
@@ -135,13 +132,15 @@
         });
         
     } error:^(NSError *error) {
-        
-        [self hideIndicator];
-        
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
-        [alert addAction:confirmAlertAction];
-        [self presentViewController:alert animated:YES completion:nil];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            
+            [self hideIndicator];
+            
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+            [alert addAction:confirmAlertAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        });
     }];
 }
 
@@ -250,13 +249,15 @@
             });
             
         } error:^(NSError *error) {
-            
-            [self hideIndicator];
-            
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
-            [alert addAction:confirmAlertAction];
-            [self presentViewController:alert animated:YES completion:nil];
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                
+                [self hideIndicator];
+                
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                [alert addAction:confirmAlertAction];
+                [self presentViewController:alert animated:YES completion:nil];
+            });
         }];
         
     }];

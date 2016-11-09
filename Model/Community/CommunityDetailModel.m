@@ -62,7 +62,7 @@
             NSString *profileImageIdentifier = [NSString stringWithFormat:@"Cell%@", [_motherData objectForKey:@"mento_img"]];
             cell.personKey = [_motherData objectForKey:@"mento_key"];
             cell.personNickname = [_motherData objectForKey:@"mento_nickname"];
-            if([[_motherData objectForKey:@"mento_nickname"] isEqualToString:@""]){
+            if([[_motherData objectForKey:@"mento_img"] isEqualToString:@""]){
                 [cell.writerPersonImage setImage:[UIImage imageNamed:@"contents_profile_default"] forState:UIControlStateNormal];
             }else{
                 
@@ -322,12 +322,13 @@
             
             
             if([[_replyInfo objectForKey:@"like_cnt"] intValue] != 0){
-                cell.likeCountLabel.hidden = NO;
-                cell.likeButton.hidden = NO;
+//                cell.likeCountLabel.hidden = NO;
+//                cell.likeButton.hidden = NO;
                 cell.likeCountLabel.text = [NSString stringWithFormat:@"%@", [_replyInfo objectForKey:@"like_cnt"]];
             }else{
-                cell.likeCountLabel.hidden = YES;
-                cell.likeButton.hidden = YES;
+//                cell.likeCountLabel.hidden = YES;
+//                cell.likeButton.hidden = YES;
+                cell.likeCountLabel.text = [NSString stringWithFormat:@"0"];
             }
             
             break;

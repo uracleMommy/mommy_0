@@ -372,6 +372,10 @@
 
 - (void)moveNewspeedViewAction:(NSString *)mento_id mentoNickName:(NSString *)mento_nickname{
     NSLog(@"moveNewspeed");
+    _mode = MentorMode;
+    _titleText = mento_nickname;
+    _mentorKey = mento_id;
+    [self prepareForUnwind:nil];
 }
 
 - (void)changedMento:(int)tableIndex insert:(NSString *)insert{

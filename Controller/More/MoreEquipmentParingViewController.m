@@ -50,6 +50,8 @@
         NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
         [userDefault setObject:devicedic forKey:@"pairedWeightScale"];
         
+        [userDefault synchronize];
+        
         // 루트 페이지로 이동
         [self dismissViewControllerAnimated:YES completion:nil];
     }

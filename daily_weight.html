@@ -43,10 +43,10 @@
   var config;
   var weekDays = ['일','월','화','수','목','금','토'];
   var $chart;
-  var imageItems = [ "./img/contents_graph_btn_bubble_left.png", 
-                     "./img/contents_graph_btn_bubble.png", 
-                     "./img/contents_graph_btn_bubble_right.png", 
-                     "./img/contents_graph_point.png"];
+  var imageItems = [ "contents_graph_btn_bubble_left.png", 
+                     "contents_graph_btn_bubble.png", 
+                     "contents_graph_btn_bubble_right.png", 
+                     "contents_graph_point.png"];
   var imageObj = [];
   var isFirst = false;
   function initResources(){
@@ -85,6 +85,8 @@
 	   imageObj[i].src = items[i];
   }
   function initChart(param){
+//      alert(param);
+      
 /*       var param = 
 			  '{"result": "정상",' +
 			    '"width": 500,' +

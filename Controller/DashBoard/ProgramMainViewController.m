@@ -57,7 +57,15 @@
     CGRect screenSize = [[UIScreen mainScreen] bounds];
     [_programSegment setFrame:CGRectMake(0, 0, screenSize.size.width, 44)];
     
-    [self programHealthDetailInfo];
+    if(_weekProgramEnabledKind == WeekProgramEnabledHealth){
+        [self programHealthDetailInfo];
+    }else if(_weekProgramEnabledKind == WeekProgramEnabledSport){
+        [self programSportsDetailInfo];
+        _programSegment.selectedSegmentIndex = 1;
+    }else{
+        [self programNutritionDetailInfo];
+        _programSegment.selectedSegmentIndex = 2;
+    }
 }
 
 #pragma 주차별 건강 상세 정보
@@ -97,6 +105,7 @@
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
                 UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
                 [alert addAction:confirmAlertAction];
+                [self presentViewController:alert animated:YES completion:nil];
                 [self hideIndicator];
                 return;
             }
@@ -115,11 +124,14 @@
             [self hideIndicator];
         });
     } error:^(NSError *error){
-        
-        [self hideIndicator];
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
-        [alert addAction:confirmAlertAction];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            
+            [self hideIndicator];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+            [alert addAction:confirmAlertAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        });
     }];
 }
 
@@ -160,6 +172,7 @@
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
                 UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
                 [alert addAction:confirmAlertAction];
+                [self presentViewController:alert animated:YES completion:nil];
                 [self hideIndicator];
                 return;
             }
@@ -178,11 +191,14 @@
             [self hideIndicator];
         });
     } error:^(NSError *error){
-        
-        [self hideIndicator];
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
-        [alert addAction:confirmAlertAction];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            
+            [self hideIndicator];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+            [alert addAction:confirmAlertAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        });
     }];
 }
 
@@ -223,6 +239,7 @@
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
                 UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
                 [alert addAction:confirmAlertAction];
+                [self presentViewController:alert animated:YES completion:nil];
                 [self hideIndicator];
                 return;
             }
@@ -241,11 +258,14 @@
             [self hideIndicator];
         });
     } error:^(NSError *error){
-        
-        [self hideIndicator];
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
-        [alert addAction:confirmAlertAction];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            
+            [self hideIndicator];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+            [alert addAction:confirmAlertAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        });
     }];
 }
 

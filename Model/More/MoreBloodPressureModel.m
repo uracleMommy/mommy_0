@@ -138,14 +138,16 @@
             
             NSDictionary *dic = _arrayList[indexPath.row - 2];
             cell.lblWriteTime.text = [[MommyUtils sharedGlobalData] getMommyDate:dic[@"reg_dttm"]];
-            cell.lblBlooodPressure.text = [NSString stringWithFormat:@"%@ / %@", dic[@"diastolic"], dic[@"systolic"]];
+            cell.lblBlooodPressure.text = [NSString stringWithFormat:@"%@ / %@", dic[@"systolic"], dic[@"diastolic"]];
             NSNumber *pulse = dic[@"pulse"];
             cell.lblPurse.text = [NSString stringWithFormat:@"%ld", (long)[pulse integerValue]];
             cell.lblComment.text = dic[@"result"];
-            if(![dic[@"result"] isEqual:[NSNull null]] && [dic[@"result"] isEqualToString:@"약간 높음"]){
+            if(![dic[@"result"] isEqual:[NSNull null]] && [dic[@"result"] isEqualToString:@"높음"]){
                 cell.lblComment.textColor = [[UIColor alloc]initWithRed:249.0f/255.0f green:105.0f/255.0f blue:78.0f/255.0f alpha:1.0];
             }else if(![dic[@"result"] isEqual:[NSNull null]] && [dic[@"result"] isEqualToString:@"매우 높음"]){
                 cell.lblComment.textColor = [[UIColor alloc]initWithRed:237.0f/255.0f green:28.0f/255.0f blue:36.0f/255.0f alpha:1.0];
+            }else{
+                cell.lblComment.textColor = [[UIColor alloc] initWithRed:0.0f green:0.0f blue:0.0f alpha:1.0];
             }
             
             return cell;

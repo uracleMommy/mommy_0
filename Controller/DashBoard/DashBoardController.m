@@ -179,13 +179,15 @@
         });
         
     } error:^(NSError *error) {
-        
-        [self hideIndicator];
-        
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
-        [alert addAction:confirmAlertAction];
-        [self presentViewController:alert animated:YES completion:nil];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            
+            [self hideIndicator];
+            
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+            [alert addAction:confirmAlertAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        });
     }];
 }
 
@@ -358,7 +360,7 @@
 
 - (void)moveWeekProgram:(NSDictionary *)program {
     // 체중평가 코드 넘겨주기
-    [self performSegueWithIdentifier:@"goModalWeekProgramSegue" sender:program[@"weight_code"]];
+    [self performSegueWithIdentifier:@"goModalWeekProgramSegue" sender:program];
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -382,8 +384,14 @@
         
         UINavigationController *navController = segue.destinationViewController;
         ProgramMainViewController *programMainViewController = (ProgramMainViewController *)navController.viewControllers[0];
-        programMainViewController.weightStatusCode = sender;
-        programMainViewController.weekProgramEnabledKind = WeekProgramEnabledHealth;
+        programMainViewController.weightStatusCode = sender[@"weight_code"];
+        if([sender[@"program_type"] intValue] == 11){ //건강
+            programMainViewController.weekProgramEnabledKind =  WeekProgramEnabledHealth;
+        }else if([sender[@"program_type"] intValue] == 12){     //운동
+            programMainViewController.weekProgramEnabledKind = WeekProgramEnabledSport;
+        }else{
+            programMainViewController.weekProgramEnabledKind = WeekProgramEnabledNutrition;
+        }
         programMainViewController.programList = _programList;
     }
 }

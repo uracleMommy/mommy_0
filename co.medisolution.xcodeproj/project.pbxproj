@@ -108,6 +108,7 @@
 		2AD2AE791DBF362800851D47 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2AE741DBF362800851D47 /* SVProgressHUD.m */; };
 		2AD4A8911D7D660C0032E16C /* emoticonPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4A88F1D7D660C0032E16C /* emoticonPopupViewController.m */; };
 		2AD4A8921D7D660C0032E16C /* emoticonPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4A8901D7D660C0032E16C /* emoticonPopupViewController.xib */; };
+		2AD5693D1DD2C121009D8EDE /* SignUpRecommedWeightController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD5693C1DD2C121009D8EDE /* SignUpRecommedWeightController.m */; };
 		2AE11DE31D654C4E003C6690 /* DiaryListBasicCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11DE11D654C4E003C6690 /* DiaryListBasicCustomCell.m */; };
 		2AE11DE41D654C4E003C6690 /* DiaryListBasicCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AE11DE21D654C4E003C6690 /* DiaryListBasicCustomCell.xib */; };
 		2AE11DE81D657DE4003C6690 /* DiaryListImageCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11DE61D657DE4003C6690 /* DiaryListImageCustomCell.m */; };
@@ -577,6 +578,8 @@
 		2AD4A88E1D7D660C0032E16C /* emoticonPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = emoticonPopupViewController.h; sourceTree = "<group>"; };
 		2AD4A88F1D7D660C0032E16C /* emoticonPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = emoticonPopupViewController.m; sourceTree = "<group>"; };
 		2AD4A8901D7D660C0032E16C /* emoticonPopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = emoticonPopupViewController.xib; sourceTree = "<group>"; };
+		2AD5693B1DD2C121009D8EDE /* SignUpRecommedWeightController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpRecommedWeightController.h; sourceTree = "<group>"; };
+		2AD5693C1DD2C121009D8EDE /* SignUpRecommedWeightController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpRecommedWeightController.m; sourceTree = "<group>"; };
 		2AE11DE01D654C4E003C6690 /* DiaryListBasicCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryListBasicCustomCell.h; sourceTree = "<group>"; };
 		2AE11DE11D654C4E003C6690 /* DiaryListBasicCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryListBasicCustomCell.m; sourceTree = "<group>"; };
 		2AE11DE21D654C4E003C6690 /* DiaryListBasicCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiaryListBasicCustomCell.xib; sourceTree = "<group>"; };
@@ -1287,6 +1290,8 @@
 				2A371A531D62E2C10051F278 /* SignUpFetusInfoController.m */,
 				2A0CCB421D73B411001B6E1F /* SignUpMainScrollViewController.h */,
 				2A0CCB431D73B411001B6E1F /* SignUpMainScrollViewController.m */,
+				2AD5693B1DD2C121009D8EDE /* SignUpRecommedWeightController.h */,
+				2AD5693C1DD2C121009D8EDE /* SignUpRecommedWeightController.m */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -2677,6 +2682,7 @@
 				DC4E95881D7D0B2B0087647B /* WeightDetailInfoHeaderCell.m in Sources */,
 				2A309ACE1D79634E001C54C5 /* ColorPickerTextField.m in Sources */,
 				2AD2AE771DBF362800851D47 /* SVIndefiniteAnimatedView.m in Sources */,
+				2AD5693D1DD2C121009D8EDE /* SignUpRecommedWeightController.m in Sources */,
 				DC68F5401D93D7E4009D3B1E /* MoreEquipmentSelectCell.m in Sources */,
 				DC1DDC5A1DB8986700D6602E /* httpd.cpp in Sources */,
 				2AD4A8911D7D660C0032E16C /* emoticonPopupViewController.m in Sources */,

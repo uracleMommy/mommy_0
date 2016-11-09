@@ -30,7 +30,8 @@ typedef enum {
     IdDuplicateCheck,
     NickNameDuplicateCheck,
     GetAddress,
-    InsertUserProfile
+    InsertUserProfile,
+    RecommendWeight
 } MommySignInWebServiceType;
 
 #pragma 쪽지 관련 열거형

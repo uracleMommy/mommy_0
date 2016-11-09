@@ -20,6 +20,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Location Manager 생성
+    _locationManager = [[CLLocationManager alloc] init];
+    
+    // Location Receiver 콜백에 대한 delegate 설정
+    _locationManager.delegate = self;
+    _locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+    
     // Do any additional setup after loading the view.
     
     _editFlag = NO;
@@ -841,5 +849,58 @@
 
 
 
+- (IBAction)getGPSAction:(id)sender {
+    // Location Manager 생성
+    //    self.locationManager = [[CLLocationManager alloc] init];
+    //
+    //    // Location Receiver 콜백에 대한 delegate 설정
+    //    self.locationManager.delegate = self;
+    //
+    //    // 사용중에만 위치 정보 요청
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+    
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+//    [_locationManager stopUpdatingLocation];
+    // Location Manager 시작하기
+    [self.locationManager startUpdatingLocation];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    CLLocation *newLocation = [locations lastObject];
+    NSMutableDictionary *param = [[NSMutableDictionary alloc]init];
+    
+    if(_latitude != [NSString stringWithFormat:@"%lf", newLocation.coordinate.latitude] || _longitude != [NSString stringWithFormat:@"%lf", newLocation.coordinate.longitude]){
+        
+        _latitude = [NSString stringWithFormat:@"%lf", newLocation.coordinate.latitude];
+        _longitude = [NSString stringWithFormat:@"%lf", newLocation.coordinate.longitude];
+        
+        [param setObject:[NSString stringWithFormat:@"%lf", newLocation.coordinate.latitude] forKey:@"latitude"];
+        [param setObject:[NSString stringWithFormat:@"%lf", newLocation.coordinate.longitude] forKey:@"longitude"];
+        [param setObject:@"WGS84" forKey:@"inputCoordSystem"];
+        [param setObject:@"json" forKey:@"output"];
+        
+        
+        [[MommyRequest sharedInstance] mommyDiaryApiService:GpsToAddress authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data) {
+            if([[NSString stringWithFormat:@"%@", [data objectForKey:@"code"]] isEqualToString:@"0"]){
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    _adressLabel.text = [[data objectForKey:@"result"] objectForKey:@"fullName"];
+                });
+                
+            }
+        } error:^(NSError *error) {
+            
+        }];
+    }
+    
+    [_locationManager stopUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"Cannot find the location.");
+}
 
 @end

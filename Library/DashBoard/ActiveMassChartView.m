@@ -15,6 +15,11 @@
     // Initialization code
     
     _webView.delegate = self;
+    for (id subview in _webView.subviews) {
+        if ([[subview class] isSubclassOfClass: [UIScrollView class]]) {
+            ((UIScrollView *)subview).bounces = NO;
+        }
+    }
     
     // 컨테이너뷰 라운드, 보더 처리
     _containerView.layer.borderColor = [[UIColor colorWithRed:217.0f/255.0f green:217.0f/255.0f blue:217.0f/255.0f alpha:1.0f] CGColor];
@@ -41,17 +46,17 @@
 
 - (IBAction)goPrevious:(id)sender {
     
-    if ([self.delegate respondsToSelector:@selector(goPrevious)]) {
+    if ([self.delegate respondsToSelector:@selector(goNext)]) {
         
-        [self.delegate goPrevious];
+        [self.delegate goNext];
     }
 }
 
 - (IBAction)goNext:(id)sender {
     
-    if ([self.delegate respondsToSelector:@selector(goNext)]) {
+    if ([self.delegate respondsToSelector:@selector(goPrevious)]) {
         
-        [self.delegate goNext];
+        [self.delegate goPrevious];
     }
 }
 

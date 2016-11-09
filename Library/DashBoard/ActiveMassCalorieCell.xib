@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -43,7 +43,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gra-N9-apg">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="MjU-Bo-jl4"/>
-                                    <constraint firstAttribute="width" constant="98" id="xzl-G1-XNk"/>
+                                    <constraint firstAttribute="width" constant="70" id="xzl-G1-XNk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                                 <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -58,7 +58,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlC-XZ-DPR">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="8Fm-Ex-vhD"/>
-                                    <constraint firstAttribute="width" constant="88" id="O2B-mb-nTj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="14"/>
                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -76,6 +75,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ZlC-XZ-DPR" firstAttribute="leading" secondItem="Gra-N9-apg" secondAttribute="trailing" constant="8" id="1ND-Mg-0k4"/>
                             <constraint firstItem="Gra-N9-apg" firstAttribute="top" secondItem="cnm-xz-5GR" secondAttribute="top" constant="19" id="8hY-vt-AIb"/>
                             <constraint firstAttribute="trailing" secondItem="45w-0p-Q2d" secondAttribute="trailing" constant="15" id="E9o-p9-BJD"/>
                             <constraint firstItem="Epd-kx-9PB" firstAttribute="leading" secondItem="cnm-xz-5GR" secondAttribute="leading" constant="15" id="Vmk-wb-W4y"/>

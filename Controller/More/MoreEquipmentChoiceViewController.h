@@ -18,7 +18,4 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) MoreEquipmentChoiceModel *moreEquipmentChoiceModel;
-
-- (IBAction)closeModal:(id)sender;
-
 @end

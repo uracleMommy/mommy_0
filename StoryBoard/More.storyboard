@@ -49,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fH-0d-EyT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5895" y="-1497"/>
+            <point key="canvasLocation" x="-5986" y="-1449"/>
         </scene>
         <!--More Equipment Empty View Controller-->
         <scene sceneID="Mep-bv-LAX">
@@ -103,7 +103,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="516-Su-Ana">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -336,18 +336,7 @@
                             <constraint firstItem="N3y-10-a2c" firstAttribute="leading" secondItem="Vzv-Eh-RF4" secondAttribute="leading" id="iZP-3B-zBf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="기기관리" id="GzT-o2-vXB">
-                        <barButtonItem key="leftBarButtonItem" title="닫기" id="0ZB-n5-376">
-                            <connections>
-                                <action selector="closeModal:" destination="8oe-Vb-G5f" id="haX-h6-6Ox"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="추가" id="na9-WY-nBO">
-                            <connections>
-                                <action selector="addEquipment:" destination="8oe-Vb-G5f" id="KIC-t4-FnH"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="기기관리" id="GzT-o2-vXB"/>
                     <connections>
                         <outlet property="containerView" destination="N3y-10-a2c" id="5Oa-O7-G3w"/>
                         <segue destination="hDp-p1-LRE" kind="custom" identifier="goEquipmentList" customClass="MoreEquipmentListSegue" animates="NO" id="Aso-q9-4ek"/>
@@ -367,7 +356,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="nhm-RY-PW4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -386,13 +375,14 @@
             <objects>
                 <navigationController id="ohD-xh-o9V" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="yIT-9r-UD5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -472,13 +462,7 @@
                             <constraint firstItem="Hqc-62-dmE" firstAttribute="width" secondItem="0l9-vC-zfJ" secondAttribute="width" multiplier="1:2" id="znb-1Z-mN5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="마이페이지" id="oEM-HH-Jcu">
-                        <barButtonItem key="rightBarButtonItem" title="닫기" id="4ZK-Ov-FRX">
-                            <connections>
-                                <action selector="closeModal:" destination="pym-gI-bct" id="kGp-F0-Gcx"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="마이페이지" id="oEM-HH-Jcu"/>
                     <connections>
                         <outlet property="infoViewBottomConstraint" destination="KQ2-0L-tpu" id="fln-d8-KcW"/>
                         <outlet property="infoViewTopConstraint" destination="Wnf-ng-OXI" id="MDp-ps-LEg"/>
@@ -505,22 +489,28 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7tm-al-Dhj">
                                 <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어떤 기기를 연결하시겠습니까?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="p0f-yX-Y5o">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="GXj-rL-2Wy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
+                                <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Cdq-SZ-Aj6" firstAttribute="top" secondItem="7tm-al-Dhj" secondAttribute="bottom" constant="4" id="AOk-zT-hha"/>
                             <constraint firstAttribute="trailing" secondItem="7tm-al-Dhj" secondAttribute="trailing" id="Ial-uQ-VYK"/>
-                            <constraint firstItem="7tm-al-Dhj" firstAttribute="top" secondItem="niw-o7-fbM" secondAttribute="bottom" constant="4" id="a5y-J6-ip3"/>
+                            <constraint firstItem="p0f-yX-Y5o" firstAttribute="top" secondItem="niw-o7-fbM" secondAttribute="bottom" id="JxW-uu-jfb"/>
+                            <constraint firstItem="7tm-al-Dhj" firstAttribute="top" secondItem="p0f-yX-Y5o" secondAttribute="bottom" constant="4" id="Qhw-DY-0S5"/>
+                            <constraint firstItem="p0f-yX-Y5o" firstAttribute="leading" secondItem="1b2-DP-CZb" secondAttribute="leading" id="U4P-54-rKd"/>
                             <constraint firstItem="7tm-al-Dhj" firstAttribute="leading" secondItem="1b2-DP-CZb" secondAttribute="leading" id="lk2-uE-d2F"/>
+                            <constraint firstAttribute="trailing" secondItem="p0f-yX-Y5o" secondAttribute="trailing" id="v9f-DM-ioH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="기기선택" id="jIS-b3-37c">
-                        <barButtonItem key="rightBarButtonItem" title="닫기" id="L0X-2o-MaO">
-                            <connections>
-                                <action selector="closeModal:" destination="5PI-pt-eCq" id="eNf-Dj-1aj"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="기기선택" id="jIS-b3-37c"/>
                     <connections>
                         <outlet property="tableView" destination="7tm-al-Dhj" id="q7w-Q2-2Bx"/>
                         <segue destination="vYs-s2-rfF" kind="push" identifier="goEquipmentSearching" id="SJu-Ol-wOP"/>
@@ -528,7 +518,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7IT-M2-ew0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4935" y="-1041"/>
+            <point key="canvasLocation" x="-4935.5" y="-1041.5"/>
         </scene>
         <!--활동량계 검색-->
         <scene sceneID="Wy7-7a-ZKc">
@@ -564,30 +554,20 @@
                                     <constraint firstItem="RT8-aP-Da9" firstAttribute="centerY" secondItem="lyS-id-8Ew" secondAttribute="centerY" id="kgK-qA-yW8"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j8h-gv-QSa">
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="9p3-lw-w5A"/>
-                                    <constraint firstAttribute="height" constant="100" id="i3j-VC-Kqx"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="VLA-r9-rbw" firstAttribute="top" secondItem="lyS-id-8Ew" secondAttribute="bottom" constant="4" id="1fX-C1-w3I"/>
                             <constraint firstItem="lyS-id-8Ew" firstAttribute="leading" secondItem="chs-Ag-Afd" secondAttribute="leading" id="De5-TH-D4r"/>
                             <constraint firstAttribute="trailing" secondItem="lyS-id-8Ew" secondAttribute="trailing" id="SDe-Qg-DN3"/>
-                            <constraint firstItem="j8h-gv-QSa" firstAttribute="centerY" secondItem="chs-Ag-Afd" secondAttribute="centerY" id="VdE-aG-W4X"/>
                             <constraint firstItem="lyS-id-8Ew" firstAttribute="top" secondItem="mF0-p1-AbA" secondAttribute="bottom" id="WEB-PS-UPS"/>
                             <constraint firstItem="VLA-r9-rbw" firstAttribute="leading" secondItem="chs-Ag-Afd" secondAttribute="leading" id="jRP-VS-tHP"/>
                             <constraint firstAttribute="trailing" secondItem="VLA-r9-rbw" secondAttribute="trailing" id="toE-87-66o"/>
-                            <constraint firstItem="j8h-gv-QSa" firstAttribute="centerX" secondItem="chs-Ag-Afd" secondAttribute="centerX" id="yY8-am-mnW"/>
                             <constraint firstItem="KWM-6q-OxQ" firstAttribute="top" secondItem="VLA-r9-rbw" secondAttribute="bottom" constant="4" id="zu3-cD-bj7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="활동량계 검색" id="XOM-tr-LPS"/>
                     <connections>
-                        <outlet property="imageContainerView" destination="j8h-gv-QSa" id="wXd-nN-aCY"/>
                         <outlet property="tableView" destination="VLA-r9-rbw" id="mDr-5H-F9l"/>
                         <segue destination="mEq-yk-ohw" kind="push" identifier="goEquipmentSelect" id="LKs-wM-nok"/>
                     </connections>
@@ -841,7 +821,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="nWI-b7-3Ws">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -908,7 +888,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="lIJ-qc-BPW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1025,13 +1005,14 @@
             <objects>
                 <navigationController id="plu-qQ-qqa" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="3vG-E3-5Bg">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="3vG-E3-5Bg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -1110,13 +1091,7 @@
                             <constraint firstItem="6jC-Tf-4lj" firstAttribute="leading" secondItem="lLf-vz-02S" secondAttribute="leading" id="y1K-Pc-fhj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title=" 포인트" id="ZSI-NT-Bg6">
-                        <barButtonItem key="leftBarButtonItem" id="L4B-Ff-dcB">
-                            <connections>
-                                <action selector="closeModal:" destination="POd-st-KJ8" id="0kS-Px-11H"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title=" 포인트" id="ZSI-NT-Bg6"/>
                     <connections>
                         <outlet property="lblName" destination="Zm8-FM-EEQ" id="Ck2-Gn-FnI"/>
                         <outlet property="lblTotalPoint" destination="n5q-Dt-0gx" id="ch9-vg-Rt8"/>
@@ -1137,10 +1112,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="y3y-tI-dP7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -1206,7 +1181,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtk-0X-FOf">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="PQF-v0-pS9"/>
-                                    <constraint firstAttribute="width" constant="71" id="Ycw-k0-zbT"/>
+                                    <constraint firstAttribute="width" constant="150" id="Ycw-k0-zbT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1302,10 +1277,11 @@
             <objects>
                 <navigationController id="SBo-0t-0bm" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="9Ue-GE-wEc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1346,7 +1322,6 @@
                                 </state>
                                 <connections>
                                     <action selector="logoutButtonAction:" destination="q7F-hF-WnJ" eventType="touchUpInside" id="iog-W3-TbO"/>
-                                    <action selector="saveButtonAction:" destination="17T-Zw-KCc" eventType="touchUpInside" id="KNy-3a-k1i"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1365,6 +1340,7 @@
                     <connections>
                         <outlet property="tableView" destination="r7p-h3-KGC" id="EQT-OB-dRh"/>
                         <segue destination="0HN-w9-bkr" kind="push" identifier="goCalendarConnectList" id="2zg-kN-QUv"/>
+                        <segue destination="ohD-xh-o9V" kind="modal" identifier="goMypageManagement2" id="V2G-fi-f0h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R2T-Pc-VU2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1448,7 +1424,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="pcy-Sp-y9K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1547,7 +1523,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="EWF-sT-96o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1569,7 +1545,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="tMQ-Xp-iPE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1627,7 +1603,7 @@
                                             <constraint firstAttribute="height" constant="30" id="HTC-XA-dfF"/>
                                             <constraint firstAttribute="width" constant="21" id="lSh-oR-DhP"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
                                         <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -2355,6 +2331,7 @@
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Z6y-qO-Kl5"/>
+        <segue reference="6cB-sD-uVb"/>
+        <segue reference="Bee-7I-boU"/>
     </inferredMetricsTieBreakers>
 </document>

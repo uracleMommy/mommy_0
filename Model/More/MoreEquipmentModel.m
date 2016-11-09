@@ -103,8 +103,8 @@
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return 2;
+    //밴드 X
+    return 1;
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -124,8 +124,9 @@
     
     if (indexPath.row == 0) {
         
-        cell.lblTitle.text = @"활동량계 이름";
-        cell.lblModel.text = @"(모델명)";
+        cell.lblTitle.text = @"체중계";
+        cell.lblModel.text = @"CAS (A2)";
+        [cell.deviceImageView setImage:[UIImage imageNamed:@"con_img_cas"]];
     }
     else {
         

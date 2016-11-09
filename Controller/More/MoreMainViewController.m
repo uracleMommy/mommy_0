@@ -97,6 +97,11 @@
         
         [vc setResult:_moreMainModel.arrayList];
 
+    }else if([segue.identifier isEqualToString:@"goEnvironmentSetup"]){
+        UINavigationController *navController = [segue destinationViewController];
+        MoreEnvironmentSetupViewController *vc = (MoreEnvironmentSetupViewController *)([navController viewControllers][0]);
+        
+        [vc setMyPageInfo:_moreMainModel.arrayList];
     }
 }
 

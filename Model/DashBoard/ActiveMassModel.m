@@ -30,7 +30,6 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    // 헷갈리마셈 서희씨 4개 고정
     return 4;
 }
 

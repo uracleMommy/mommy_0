@@ -16,4 +16,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lblModel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *deviceImageView;
+
 @end

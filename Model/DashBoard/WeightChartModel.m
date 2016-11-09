@@ -7,10 +7,6 @@
 //
 
 #import "WeightChartModel.h"
-#import "WeightChartViewCell.h"
-#import "WeightDetailInfoHeaderCell.h"
-#import "WeightDetailInfoContentsCell.h"
-#import "WeightDetailInfoFooterCell.h"
 
 @implementation WeightChartModel
 
@@ -72,6 +68,27 @@
         }
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.delegate = self;
+        
+        NSError *error;
+        NSData * jsonData = [NSJSONSerialization  dataWithJSONObject:_dicList options:0 error:&error];
+        NSString * myString = [[NSString alloc] initWithData:jsonData   encoding:NSUTF8StringEncoding];
+        NSLog(@"%@",myString);
+        
+        
+        NSArray *arrString= [[NSString stringWithFormat:@"%@", _dicList[@"rec_weight"]] componentsSeparatedByString: @"~"];
+
+        // 자바스크립트 펑션 호출
+        cell.isFirst = YES;
+        cell.functionJson = myString;
+        cell.lblTitle.text = _dicList[@"title_tag"];
+        cell.lblComment.text = [[_dicList[@"comment"] class] isEqual:[NSNull class]] ? @"" : _dicList[@"comment"];
+        cell.lblRFirstRangeWeight.text = [[_dicList[@"rec_weight"] class] isEqual:[NSNull class]] ? @"" : [arrString objectAtIndex:0]; //권장체중 first
+        cell.lblSecondRangeWeight.text = [[_dicList[@"rec_weight"] class] isEqual:[NSNull class]] ? @"" : [arrString objectAtIndex:1];
+        cell.lblWeight.text = [[_dicList[@"weight"] class] isEqual:[NSNull class]] ? @"" : [NSString stringWithFormat:@"%@", _dicList[@"weight"]];//현재체중
+        cell.lblWeightAppraisal.text = [[_dicList[@"result"] class] isEqual:[NSNull class]] ? @"" : _dicList[@"result"]; //상태
+        
+        [cell.webView loadRequest:_chartRequest];
         
         return cell;
     }
@@ -153,5 +170,26 @@
         return 38.0f;
     }
 }
+
+
+#pragma 차트 콜백
+- (void) goPrevious {
+    
+    if ([self.delegate respondsToSelector:@selector(goChartPrevious)]) {
+        
+        [self.delegate goChartPrevious];
+    }
+    
+}
+
+#pragma 차트 콜백
+- (void) goNext {
+    
+    if ([self.delegate respondsToSelector:@selector(goChartNext)]) {
+        
+        [self.delegate goChartNext];
+    }
+}
+
 
 @end

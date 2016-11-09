@@ -10,6 +10,7 @@
 #import "MoreMainModel.h"
 #import "CommonViewController.h"
 #import "MoreMyPageMasterViewController.h"
+#import "MoreEnvironmentSetupViewController.h"
 
 @interface MoreMainViewController : CommonViewController<MoreMainModelDelegate>
 

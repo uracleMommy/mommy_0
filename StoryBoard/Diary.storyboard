@@ -315,7 +315,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sxb-fF-Hx7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="mFH-dt-LSr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1461.5" y="418.5"/>
+            <point key="canvasLocation" x="1459" y="426"/>
         </scene>
         <!--다이어리-->
         <scene sceneID="gFj-bE-c0C">
@@ -1042,24 +1042,25 @@
                                                 <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" background="contents_btn_location" translatesAutoresizingMaskIntoConstraints="NO" id="jBL-AE-Ou3" customClass="notPasteField">
-                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75f-mI-U4S">
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="45" id="EcA-3g-n3S"/>
-                                                    <constraint firstAttribute="height" constant="45" id="kYp-lS-YWt"/>
+                                                    <constraint firstAttribute="width" constant="45" id="CkH-gn-fYy"/>
+                                                    <constraint firstAttribute="height" constant="45" id="eG8-sK-ywp"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                                <state key="normal" image="contents_btn_location"/>
+                                                <connections>
+                                                    <action selector="getGPSAction:" destination="hsk-NJ-sN3" eventType="touchUpInside" id="S80-Ls-wLo"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="jBL-AE-Ou3" secondAttribute="bottom" id="3gi-wt-c9v"/>
+                                            <constraint firstItem="75f-mI-U4S" firstAttribute="top" secondItem="OtB-PC-nn1" secondAttribute="top" id="0SM-gk-zq7"/>
                                             <constraint firstItem="dg4-hX-oVh" firstAttribute="leading" secondItem="OtB-PC-nn1" secondAttribute="leading" constant="15" id="8Og-fa-OXe"/>
-                                            <constraint firstAttribute="trailing" secondItem="jBL-AE-Ou3" secondAttribute="trailing" constant="5" id="NX7-uU-ZjI"/>
-                                            <constraint firstItem="jBL-AE-Ou3" firstAttribute="leading" secondItem="dg4-hX-oVh" secondAttribute="trailing" constant="5" id="eYq-jA-P0E"/>
+                                            <constraint firstAttribute="bottom" secondItem="75f-mI-U4S" secondAttribute="bottom" id="Hea-mq-2oc"/>
+                                            <constraint firstItem="75f-mI-U4S" firstAttribute="leading" secondItem="dg4-hX-oVh" secondAttribute="trailing" constant="5" id="U3l-yK-Ipk"/>
+                                            <constraint firstAttribute="trailing" secondItem="75f-mI-U4S" secondAttribute="trailing" constant="5" id="k0T-1I-x8X"/>
                                             <constraint firstItem="dg4-hX-oVh" firstAttribute="top" secondItem="OtB-PC-nn1" secondAttribute="top" constant="8" id="oAK-Pc-qfs"/>
-                                            <constraint firstItem="jBL-AE-Ou3" firstAttribute="top" secondItem="OtB-PC-nn1" secondAttribute="top" id="obP-sT-gtP"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7w3-MA-bwM">
@@ -1263,7 +1264,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0CJ-Hm-KBQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="wfb-Gy-Q1V" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1492" y="-360"/>
+            <point key="canvasLocation" x="1491.5" y="-360.5"/>
         </scene>
     </scenes>
     <resources>

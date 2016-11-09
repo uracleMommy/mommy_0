@@ -24,6 +24,17 @@
     _tableView.dataSource = _moreEquipmentChoiceModel;
     _tableView.delegate = _moreEquipmentChoiceModel;
     
+    //close Button
+    UIButton *closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *closeBtnImage = [UIImage imageNamed:@"title_icon_close.png"];
+    closeBtn.frame = CGRectMake(0, 0, 40, 40);
+    [closeBtn setImage:closeBtnImage forState:UIControlStateNormal];
+    [closeBtn addTarget:self action:@selector(closeModal) forControlEvents:UIControlEventTouchUpInside];
+    [closeBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
+    UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithCustomView:closeBtn];
+    self.navigationItem.rightBarButtonItem = closeButton;
+    self.navigationItem.hidesBackButton = YES;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,7 +48,7 @@
     
     // 현재는 밴드가 없으므로 체중계일때만 처리
     // 체중계일때
-    if (indexPath.row == 1) {
+    if (indexPath.row == 0) {
         
         [self performSegueWithIdentifier:@"goEquipmentSearching" sender:nil];
     }
@@ -52,7 +63,7 @@
     }
 }
 
-- (IBAction)closeModal:(id)sender {
+- (void)closeModal {
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }

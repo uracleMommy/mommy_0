@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SignUpFetusInfoModel.h"
 #import "CommonViewController.h"
+#import "SignUpRecommedWeightController.h"
 
 @interface SignUpFetusInfoController : CommonViewController <fetusInfoModelDelegate>
 
@@ -22,6 +23,7 @@
 @property (strong, nonatomic) NSString *weight;
 @property (strong, nonatomic) NSString *height;
 @property (strong, nonatomic) NSString *baby_cnt;
+@property (strong, nonatomic) NSDictionary *recommendParam;
 
 - (IBAction)saveButtonAction:(id)sender;
 
