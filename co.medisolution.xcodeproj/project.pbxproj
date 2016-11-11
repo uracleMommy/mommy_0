@@ -73,8 +73,6 @@
 		2AD09C011DB8A5D9005D0CD7 /* GoogleAppUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09BFA1DB8A5D9005D0CD7 /* GoogleAppUtilities.framework */; };
 		2AD09C021DB8A5D9005D0CD7 /* GoogleAuthUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09BFB1DB8A5D9005D0CD7 /* GoogleAuthUtilities.framework */; };
 		2AD09C031DB8A5D9005D0CD7 /* GoogleNetworkingUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09BFC1DB8A5D9005D0CD7 /* GoogleNetworkingUtilities.framework */; };
-		2AD09C041DB8A5D9005D0CD7 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2AD09BFD1DB8A5D9005D0CD7 /* GoogleSignIn.bundle */; };
-		2AD09C051DB8A5D9005D0CD7 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09BFE1DB8A5D9005D0CD7 /* GoogleSignIn.framework */; };
 		2AD09C061DB8A5D9005D0CD7 /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09BFF1DB8A5D9005D0CD7 /* GoogleSymbolUtilities.framework */; };
 		2AD09C071DB8A5D9005D0CD7 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09C001DB8A5D9005D0CD7 /* GoogleUtilities.framework */; };
 		2AD09C091DB8ADB9005D0CD7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09C081DB8ADB9005D0CD7 /* libz.tbd */; };
@@ -521,8 +519,6 @@
 		2AD09BFA1DB8A5D9005D0CD7 /* GoogleAppUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAppUtilities.framework; sourceTree = "<group>"; };
 		2AD09BFB1DB8A5D9005D0CD7 /* GoogleAuthUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAuthUtilities.framework; sourceTree = "<group>"; };
 		2AD09BFC1DB8A5D9005D0CD7 /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
-		2AD09BFD1DB8A5D9005D0CD7 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
-		2AD09BFE1DB8A5D9005D0CD7 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
 		2AD09BFF1DB8A5D9005D0CD7 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
 		2AD09C001DB8A5D9005D0CD7 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = "<group>"; };
 		2AD09C081DB8ADB9005D0CD7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -1100,7 +1096,6 @@
 				2AD09C031DB8A5D9005D0CD7 /* GoogleNetworkingUtilities.framework in Frameworks */,
 				2AD09C011DB8A5D9005D0CD7 /* GoogleAppUtilities.framework in Frameworks */,
 				2AD09C021DB8A5D9005D0CD7 /* GoogleAuthUtilities.framework in Frameworks */,
-				2AD09C051DB8A5D9005D0CD7 /* GoogleSignIn.framework in Frameworks */,
 				2AD09C071DB8A5D9005D0CD7 /* GoogleUtilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1520,8 +1515,6 @@
 				2AD09BFA1DB8A5D9005D0CD7 /* GoogleAppUtilities.framework */,
 				2AD09BFB1DB8A5D9005D0CD7 /* GoogleAuthUtilities.framework */,
 				2AD09BFC1DB8A5D9005D0CD7 /* GoogleNetworkingUtilities.framework */,
-				2AD09BFD1DB8A5D9005D0CD7 /* GoogleSignIn.bundle */,
-				2AD09BFE1DB8A5D9005D0CD7 /* GoogleSignIn.framework */,
 				2AD09BFF1DB8A5D9005D0CD7 /* GoogleSymbolUtilities.framework */,
 				2AD09C001DB8A5D9005D0CD7 /* GoogleUtilities.framework */,
 				2AF695FD1DB4C52D00072FC2 /* CoreLocation.framework */,
@@ -2363,7 +2356,7 @@
 					DCA5AE201D598C6F0075B7AD = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = JH5F2VBM8Z;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -2413,7 +2406,6 @@
 				DC4E958E1D7D26EC0087647B /* WeightTotalInfoCell.xib in Resources */,
 				DC5D20961D62E01300ACDCA4 /* DashBoardScrollCellView.xib in Resources */,
 				DC1A77D61D94FC2E00F88693 /* MoreMyPagePasswordChangeCell.xib in Resources */,
-				2AD09C041DB8A5D9005D0CD7 /* GoogleSignIn.bundle in Resources */,
 				DC4E95A61D7D66550087647B /* ActiveMassStepCell.xib in Resources */,
 				DC6B0B631DBF27BB0092324C /* daily_sleep.html in Resources */,
 				DC6B0B621DBF27BB0092324C /* blood_pressure.html in Resources */,
@@ -2922,8 +2914,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.medisolution;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "2b5156ca-69db-4d9e-8a21-2e22316c4da2";
+				PROVISIONING_PROFILE_SPECIFIER = MCIRCLE;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../GTLCore/**";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
@@ -2936,7 +2928,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_ENTITLEMENTS = co.medisolution/co.medisolution.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = JH5F2VBM8Z;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2959,8 +2951,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.medisolution;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "2ba148df-e61b-41e2-96c0-7b7275eb75aa";
+				PROVISIONING_PROFILE_SPECIFIER = MCIRCLE_DistributionProvisioning;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../GTLCore/**";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};

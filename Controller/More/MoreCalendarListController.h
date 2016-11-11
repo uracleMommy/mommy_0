@@ -7,14 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <GoogleSignIn/GoogleSignIn.h>
 #import "CommonViewController.h"
 #import "MoreEnvironmentModel.h"
 
-@interface MoreCalendarListController : CommonViewController <GIDSignInUIDelegate>
+@interface MoreCalendarListController : CommonViewController
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property(weak, nonatomic) IBOutlet GIDSignInButton *signInButton;
 @property (strong, nonatomic) MoreEnvironmentCalendarModal *moreEnvironmentCalendarModal;
 
 @end
