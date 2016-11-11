@@ -38,7 +38,7 @@
 //    [param setObject:@(156) forKey:@"height"];
 //    [param setObject:@"2" forKey:@"baby_cnt"];
     
-    
+    NSLog(@"%@", _param);
     [[MommyRequest sharedInstance] mommySignInApiService:RecommendWeight authKey:GET_AUTH_TOKEN parameters:_param success:^(NSDictionary *data) {
 //        NSLog(@"PSH : %@", [data objectForKey:@"msg"]);
         if([[data objectForKey:@"code"] intValue] == 0){
@@ -68,9 +68,26 @@
                 [_webView loadRequest:request];
             });
 
+        }else{
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                                message:[data objectForKey:@"msg"]
+                                                               delegate:self
+                                                      cancelButtonTitle:@"확인"
+                                                      otherButtonTitles:nil, nil];
+                [alert show];
+            });
+
         }
     } error:^(NSError *error) {
-        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                            message:@"서버 통신 중 에러가 발생하였습니다. 다시 시도해주시기 바랍니다."
+                                                           delegate:self
+                                                  cancelButtonTitle:@"확인"
+                                                  otherButtonTitles:nil, nil];
+            [alert show];
+        });
     }];
 }
 

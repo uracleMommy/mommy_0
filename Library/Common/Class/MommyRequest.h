@@ -153,6 +153,7 @@ typedef void (^MommyApiServiceSuccessBlock) ( NSDictionary *data );
 typedef void (^MommyApiServiceErrorBlock) ( NSError *error );
 
 static NSString *_mainDomain = @"http://211.241.199.153:9100/medisolution"; // 도메인 주소
+//static NSString *_mainDomain = @"http://192.168.21.11:8080/medisolution"; // 도메인 주소
 
 #pragma mark API 리퀘스트 목록
 

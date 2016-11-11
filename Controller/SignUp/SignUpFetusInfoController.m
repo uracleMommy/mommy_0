@@ -156,8 +156,9 @@
             });
         }else{
             dispatch_sync(dispatch_get_main_queue(), ^{
-                
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:data[@"msg"] preferredStyle:UIAlertControllerStyleAlert];
+//                NSLog(@"%@", [NSString stringWithUTF8String:[data objectForKey:@"msg"]]);
+                NSLog(@"%@", [data objectForKey:@"msg"]);
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:[data objectForKey:@"msg"] preferredStyle:UIAlertControllerStyleAlert];
                 UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
                 [alert addAction:confirmAlertAction];
                 [self presentViewController:alert animated:YES completion:nil];

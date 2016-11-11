@@ -16,7 +16,7 @@
 #import <LifesenseBluetooth/LSSleepRecord.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 
-@interface WeightChartViewController : CommonViewController<DZNSegmentedControlDelegate, LSBleDataReceiveDelegate, LSBlePairingDelegate, WeightChartModelDelegate>
+@interface WeightChartViewController : CommonViewController<DZNSegmentedControlDelegate, LSBleDataReceiveDelegate, LSBlePairingDelegate, WeightChartModelDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (nonatomic,strong) LSBLEDeviceManager *lsBleManager;
 
@@ -27,6 +27,15 @@
 @property (strong, nonatomic) WeightChartModel *weightChartModel;
 
 @property (assign, nonatomic) NSInteger currentPage;
+
+@property (strong, nonatomic) NSMutableArray *pickerData_number_point; //소수점 1자리
+
+@property (strong, nonatomic) NSMutableArray *pickerData_number_weight; //체중
+
+@property (strong, nonatomic) UIPickerView *weightPicker;
+
+@property (strong, nonatomic) UITextField *weightTextField;
+
 
 
 @end

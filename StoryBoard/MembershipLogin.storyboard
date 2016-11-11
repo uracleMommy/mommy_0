@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="pIT-zG-VIw">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,7 +15,7 @@
         <scene sceneID="McU-z3-jbL">
             <objects>
                 <navigationController storyboardIdentifier="MembershipLoginNavigation" id="pIT-zG-VIw" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="RdA-W4-dWx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="RdA-W4-dWx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -693,7 +692,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SignUpMain" id="wEo-Cd-kHg" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="oCt-Xu-tXe"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="SY6-kz-ev5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="SY6-kz-ev5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1148,7 +1147,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SignUpMommyInfoController" id="88h-l9-SOB" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="mVn-Ei-MxK"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Luc-t5-4rp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Luc-t5-4rp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1170,7 +1169,7 @@
             <objects>
                 <navigationController id="7f4-aP-38G" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="dLx-e0-JmO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ma0-jt-tkD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ma0-jt-tkD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1186,6 +1185,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="336-PB-jCw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18" y="3622"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KkR-5v-9F9">
+            <objects>
+                <navigationController id="b3m-p5-VyI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="iaA-dG-wkM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="18"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="bOT-FS-hah" kind="relationship" relationship="rootViewController" id="lSg-eH-rGW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qMT-aV-pkd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-102" y="4353"/>
+        </scene>
+        <!--서비스 이용약관-->
+        <scene sceneID="wuW-rr-igW">
+            <objects>
+                <viewController id="bOT-FS-hah" customClass="SignUpAuthController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wVw-C4-4ca"/>
+                        <viewControllerLayoutGuide type="bottom" id="cz4-An-1Kp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tpf-EW-CpP">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="szf-eo-NFM">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="szf-eo-NFM" firstAttribute="leading" secondItem="tpf-EW-CpP" secondAttribute="leading" constant="15" id="EVs-AE-89f"/>
+                            <constraint firstItem="szf-eo-NFM" firstAttribute="top" secondItem="wVw-C4-4ca" secondAttribute="bottom" constant="20" id="GO3-Tq-AQD"/>
+                            <constraint firstItem="cz4-An-1Kp" firstAttribute="top" secondItem="szf-eo-NFM" secondAttribute="bottom" constant="20" id="KwK-eY-yg1"/>
+                            <constraint firstAttribute="trailing" secondItem="szf-eo-NFM" secondAttribute="trailing" constant="15" id="b6w-6Y-hIt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="서비스 이용약관" id="qI6-3s-yEW"/>
+                    <connections>
+                        <outlet property="authTextField" destination="szf-eo-NFM" id="9iT-1o-Bnf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aTJ-lP-FVJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="347.5" y="4352.5"/>
         </scene>
         <!--임신 N주-->
         <scene sceneID="p1p-rg-Eqz">

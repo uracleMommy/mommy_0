@@ -95,6 +95,7 @@
     [formatter setDateFormat:@"YYYY.MM.dd"];
     [_dueDateTextField setDateFormatter:formatter];
     [_dueDateTextField setMinimumDate:[NSDate date]];
+    [_dueDateTextField setMaximumDate:[[NSDate date] dateByAddingTimeInterval:60*60*24*281]];
     
     [_fetusCountTextField setDropDownMode : IQDropDownModeTextPicker];
     [_fetusCountTextField setItemList:pickerData_number_fetus];

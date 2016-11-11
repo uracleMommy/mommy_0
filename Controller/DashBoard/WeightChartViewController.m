@@ -34,6 +34,12 @@
     [weightBtn addTarget:self action:@selector(addWeightAuto) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *weightButton = [[UIBarButtonItem alloc] initWithCustomView:weightBtn];
     
+    UIPickerView *beforeWeightPicker = [[UIPickerView alloc] init];
+    beforeWeightPicker.dataSource = self;
+    beforeWeightPicker.delegate = self;
+    
+
+    
     UIBarButtonItem *leftNegativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     leftNegativeSpacer.width = -16;
     [self.navigationItem setLeftBarButtonItems:@[leftNegativeSpacer, addButton, weightButton]];
@@ -51,6 +57,23 @@
     rightNegativeSpacer.width = -16;
     [self.navigationItem setRightBarButtonItems:@[rightNegativeSpacer, adviceItemButton]];
     
+    
+    //weight pickerView setting
+    _pickerData_number_point = [[NSMutableArray alloc]init]; //소수점 1자리
+    _pickerData_number_weight = [[NSMutableArray alloc]initWithArray:@[@"Select"]]; //체중
+    
+    for(int i = 0 ; i < 200 ; i++){
+        if(i < 10){
+            [_pickerData_number_point addObject: [NSString stringWithFormat:@".%d", i]];
+        }else if( i > 20 && i < 100){
+            [_pickerData_number_weight addObject: [NSString stringWithFormat:@"%d", i]];
+        }
+    }
+    
+    _weightPicker = [[UIPickerView alloc] init];
+    _weightPicker.dataSource = self;
+    _weightPicker.delegate = self;
+
     
     NSArray *items = @[@"일자별", @"주차별"];
     _dayWeekTypeSegment.items = items;
@@ -330,6 +353,87 @@
 
 - (void) addWeightHand {
     
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"혈압기록 추가" preferredStyle:UIAlertControllerStyleAlert];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField)
+     {
+//         UILabel* aLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 70, 38)];
+//         aLabel.text = @"수축기 혈압 :";
+//         //aLabel.font = aField.font;
+//         aLabel.textColor = [UIColor grayColor];
+//         
+//         textField.leftView = aLabel;
+//         textField.leftViewMode = UITextFieldViewModeAlways;
+         
+         textField.placeholder = NSLocalizedString(@"mmHg", @"수축기 혈압");
+         [textField setFrame:CGRectMake(0, 0, textField.frame.size.width, 35.0f)];
+         textField.textAlignment = NSTextAlignmentCenter;
+         [textField setKeyboardType:UIKeyboardTypeNumberPad];
+         
+         [textField setInputView:_weightPicker];
+         
+         _weightTextField = textField;
+         
+     }];
+    
+    UIAlertAction *cancelButton = [UIAlertAction actionWithTitle:@"취소" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        
+    }];
+    UIAlertAction *confirmButton = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+
+        if ([_weightTextField.text isEqualToString:@""]) {
+
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"입력이 올바르게 되지 않았습니다." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *confirmButton = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+            [alert addAction:confirmButton];
+            [self presentViewController:alert animated:YES completion:nil];
+            return;
+        }
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        
+        [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
+        NSString *yyyymmdd = [dateFormatter stringFromDate:[NSDate date]];
+        
+        NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:_weightTextField.text, @"weight", yyyymmdd, @"date", nil];
+        
+        [self showIndicator];
+        
+        // 혈압기록 추가 하기
+        [[MommyRequest sharedInstance] mommyChartApiService:ChartWeightLogInsert authKey:GET_AUTH_TOKEN parameters:parameters success:^(NSDictionary *data){
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                long code = [data[@"code"] longValue];
+                
+                // 실패시
+                if (code != 0) {
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                    [alert addAction:confirmAlertAction];
+                    [self presentViewController:alert animated:YES completion:nil];
+                    [self hideIndicator];
+                    return;
+                }
+                
+                [self selectedSegment:nil];
+            });
+            
+        } error:^(NSError *error) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [self hideIndicator];
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                [alert addAction:confirmAlertAction];
+            });
+            
+        }];
+    }];
+    
+    [alert addAction:confirmButton];
+    [alert addAction:cancelButton];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void) viewDidDisappear:(BOOL)animated {
@@ -400,6 +504,75 @@
     else {
         
         [self bindWeeklyWeightChart:_currentPage];
+    }
+}
+
+
+#pragma mark pikerView
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+{
+    UILabel *labelText = [[UILabel alloc] init];
+    [labelText setTextAlignment:NSTextAlignmentCenter];
+    [labelText setAdjustsFontSizeToFitWidth:YES];
+    labelText.backgroundColor = [UIColor clearColor];
+    
+    if(component == 0){
+        
+        [labelText setText:_pickerData_number_weight[row]];
+        
+        if (row == 0)
+        {
+            labelText.font = [UIFont boldSystemFontOfSize:30.0];
+            labelText.textColor = [UIColor lightGrayColor];
+        }
+        else
+        {
+            labelText.font = [UIFont boldSystemFontOfSize:18.0];
+            labelText.textColor = [UIColor blackColor];
+        }
+        
+    }else{
+        [labelText setText:_pickerData_number_point[row]];
+        
+        labelText.font = [UIFont boldSystemFontOfSize:18.0];
+        labelText.textColor = [UIColor blackColor];
+    }
+    
+    return labelText;
+}
+
+
+// The number of columns of data
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 2;
+}
+
+// The number of rows of data
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    NSInteger count = 0;
+    
+    if(component == 0){
+        count = [_pickerData_number_weight count];
+    }else{
+        count = [_pickerData_number_point count];
+    }
+    
+    return count;
+    
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    NSMutableString *value = [[NSMutableString alloc]init];
+    if([pickerView selectedRowInComponent:0] != 0){
+        [value appendString:[NSString stringWithFormat:@"%@", _pickerData_number_weight[[pickerView selectedRowInComponent:0]]]];
+        
+        [value appendString:_pickerData_number_point[[pickerView selectedRowInComponent:1]]];
+        
+        _weightTextField.text = value;
     }
 }
 

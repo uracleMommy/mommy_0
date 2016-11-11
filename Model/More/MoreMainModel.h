@@ -17,6 +17,8 @@
 
 @property (strong, nonatomic) id<MoreMainModelDelegate> delegate;
 
+@property (strong, nonatomic) UIImage *profileImg;
+
 @end
 
 @protocol MoreMainModelDelegate <NSObject>

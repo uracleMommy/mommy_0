@@ -57,16 +57,30 @@
         
         NSString *imageDownUrl = [NSString stringWithFormat:@"%@?f=%@", [[MommyHttpUrls sharedInstance] requestImageDownloadUrl], _arrayList[@"img"]];
         
-        UIImage *profileImg = nil;
-        if([_arrayList[@"img"] isEqualToString:@""]){
-            profileImg = [UIImage imageNamed:@"contents_profile_default"];
+//        UIImage *profileImg = nil;
+        if(_profileImg != nil){
+            [cell.imgProfile setImage:_profileImg];
         }else{
-            NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
-            profileImg = [[UIImage alloc] initWithData:firstImageData];
-            
+            if([_arrayList[@"img"] isEqualToString:@""]){
+                _profileImg = [UIImage imageNamed:@"contents_profile_default"];
+                [cell.imgProfile setImage:_profileImg];
+            }else{
+                
+                char const * s = [_arrayList[@"img"]  UTF8String];
+                dispatch_queue_t queue = dispatch_queue_create(s, 0);
+                dispatch_async(queue, ^{
+                    
+                    NSData *firstImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageDownUrl]];
+                    _profileImg = [[UIImage alloc] initWithData:firstImageData];
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [cell.imgProfile setImage:_profileImg];
+                    });
+                });
+                
+            }
         }
         
-        [cell.imgProfile setImage:profileImg];
         cell.nameLabel.text = _arrayList[@"name"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         

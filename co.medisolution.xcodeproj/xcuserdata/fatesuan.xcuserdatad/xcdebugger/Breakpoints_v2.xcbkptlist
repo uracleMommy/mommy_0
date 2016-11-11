@@ -201,22 +201,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Model/DashBoard/WeightChartModel.m"
-            timestampString = "500372737.805643"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
-            landmarkName = "-goPrevious"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Controller/DashBoard/WeekProgramSearchViewController.m"
             timestampString = "500362152.00556"
             startingColumnNumber = "9223372036854775807"
@@ -224,22 +208,6 @@
             startingLineNumber = "283"
             endingLineNumber = "283"
             landmarkName = "-searchBarCancelButtonClicked:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Controller/DashBoard/WeightChartViewController.m"
-            timestampString = "500364316.496433"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "332"
-            endingLineNumber = "332"
-            landmarkName = "-addWeightHand"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -297,13 +265,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Library/Common/Class/MommyRequest.m"
-            timestampString = "500371977.214488"
+            filePath = "Controller/DashBoard/WeightChartViewController.m"
+            timestampString = "500456937.681715"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "-mommySignInApiService:authKey:parameters:success:error:"
+            startingLineNumber = "398"
+            endingLineNumber = "398"
+            landmarkName = "-addWeightHand"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -313,13 +281,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Model/DashBoard/WeightChartModel.m"
-            timestampString = "500372756.069781"
+            filePath = "Controller/DashBoard/WeightChartViewController.m"
+            timestampString = "500457202.103729"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "408"
+            endingLineNumber = "408"
+            landmarkName = "-addWeightHand"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

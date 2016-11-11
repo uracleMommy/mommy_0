@@ -11,6 +11,7 @@
 		2A1A86BD1D9A45640091399B /* CommunityMyGroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1A86BC1D9A45640091399B /* CommunityMyGroupController.m */; };
 		2A1A86C01D9A86AB0091399B /* CommunityMentorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1A86BF1D9A86AB0091399B /* CommunityMentorController.m */; };
 		2A1A86C41D9A92040091399B /* CommunityDetailCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1A86C21D9A92040091399B /* CommunityDetailCells.m */; };
+		2A2A4A971DD447FA00DBE230 /* SignUpAuthController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A4A961DD447FA00DBE230 /* SignUpAuthController.m */; };
 		2A3026381D7E549D0020C3B4 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3026371D7E549D0020C3B4 /* KxMenu.m */; };
 		2A309ACE1D79634E001C54C5 /* ColorPickerTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A309AC31D79634E001C54C5 /* ColorPickerTextField.m */; };
 		2A309ACF1D79634E001C54C5 /* HFColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A309AC61D79634E001C54C5 /* HFColorButton.m */; };
@@ -407,6 +408,8 @@
 		2A1A86BF1D9A86AB0091399B /* CommunityMentorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityMentorController.m; sourceTree = "<group>"; };
 		2A1A86C11D9A92040091399B /* CommunityDetailCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityDetailCells.h; sourceTree = "<group>"; };
 		2A1A86C21D9A92040091399B /* CommunityDetailCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityDetailCells.m; sourceTree = "<group>"; };
+		2A2A4A951DD447FA00DBE230 /* SignUpAuthController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpAuthController.h; sourceTree = "<group>"; };
+		2A2A4A961DD447FA00DBE230 /* SignUpAuthController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpAuthController.m; sourceTree = "<group>"; };
 		2A3026361D7E549D0020C3B4 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
 		2A3026371D7E549D0020C3B4 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		2A309AC21D79634E001C54C5 /* ColorPickerTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerTextField.h; sourceTree = "<group>"; };
@@ -1292,6 +1295,8 @@
 				2A0CCB431D73B411001B6E1F /* SignUpMainScrollViewController.m */,
 				2AD5693B1DD2C121009D8EDE /* SignUpRecommedWeightController.h */,
 				2AD5693C1DD2C121009D8EDE /* SignUpRecommedWeightController.m */,
+				2A2A4A951DD447FA00DBE230 /* SignUpAuthController.h */,
+				2A2A4A961DD447FA00DBE230 /* SignUpAuthController.m */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -2750,6 +2755,7 @@
 				DC56F0A21D79728F00FB3A30 /* WeightChartViewCell.m in Sources */,
 				2AD2AE5A1DBF35E300851D47 /* README.md in Sources */,
 				2ABF43481DA7272700AE735F /* DiaryDetailListController.m in Sources */,
+				2A2A4A971DD447FA00DBE230 /* SignUpAuthController.m in Sources */,
 				2AB670C21D9256C80060561C /* CommunityNavController.m in Sources */,
 				DC5D20841D62AFA100ACDCA4 /* OTPageCell.m in Sources */,
 				DC68F52D1D93D7CC009D3B1E /* MoreEquipmentSearchingViewController.m in Sources */,
@@ -2902,7 +2908,7 @@
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2939,7 +2945,7 @@
 				);
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

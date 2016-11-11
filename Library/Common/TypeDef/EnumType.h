@@ -68,4 +68,13 @@ typedef enum {
     WeekProgramEnabledNutrition
 } WeekProgramEnabledKind;
 
+#pragma 이용약관
+typedef enum {
+    
+    AuthText1,
+    AuthText2,
+    AuthText3,
+    AuthText4
+} AuthTextType;
+
 #endif /* EnumType_h */
