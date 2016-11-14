@@ -175,6 +175,15 @@
     }
     
     if (indexPath.row == 0) {
+        if(_authFlag){
+            [cell.authButton setTitle:@"연결해지" forState:UIControlStateNormal];
+//            cell.authButton.titleLabel.text = @"연결해지";
+            cell.accountLabel.text = _accountText;
+        }else{
+            [cell.authButton setTitle:@"연결하기" forState:UIControlStateNormal];
+//            cell.authButton.titleLabel.text = @"연결하기";
+            cell.accountLabel.text = @"www.google.com";
+        }
         cell.calendarImageView.image = [UIImage imageNamed:@"contents_cal_google_n"];
         cell.lblCalendarInfo.text = @"구글 캘린더";
         cell.selectionStyle = UITableViewCellSelectionStyleNone;

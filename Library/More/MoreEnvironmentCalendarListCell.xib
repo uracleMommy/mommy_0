@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="69"/>
+                <frame key="frameInset" width="320" height="69.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUF-07-Rk9">
@@ -28,34 +28,45 @@
                                     <constraint firstAttribute="height" constant="35" id="i19-z5-8fL"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="버전정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qb-pf-1Se">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구글 캘린더" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qb-pf-1Se">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="19" id="Rge-Lt-WWK"/>
+                                    <constraint firstAttribute="height" constant="17" id="Rge-Lt-WWK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
                                 <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYd-Aw-ofn">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYd-Aw-ofn">
+                                <frame key="frameInset" minX="233" minY="16" width="60" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="cEh-G7-zFk"/>
                                 </constraints>
-                                <state key="normal" title="연결하기">
+                                <state key="normal">
                                     <color key="titleColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="googleAuthLinkAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CGt-DW-7pk"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.google.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDv-Df-WmA">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="jYt-fk-8TV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cW8-U3-wQw" firstAttribute="leading" secondItem="sUF-07-Rk9" secondAttribute="leading" constant="13" id="4Wi-sr-eKx"/>
+                            <constraint firstItem="zDv-Df-WmA" firstAttribute="leading" secondItem="cW8-U3-wQw" secondAttribute="trailing" constant="8" id="5NB-0u-yt3"/>
                             <constraint firstAttribute="trailing" secondItem="PYd-Aw-ofn" secondAttribute="trailing" constant="10" id="5cI-QH-Nfl"/>
+                            <constraint firstItem="zDv-Df-WmA" firstAttribute="top" secondItem="5qb-pf-1Se" secondAttribute="bottom" constant="6" id="BTu-xq-phj"/>
                             <constraint firstItem="cW8-U3-wQw" firstAttribute="top" secondItem="sUF-07-Rk9" secondAttribute="top" constant="13" id="Ku2-Sx-Xcl"/>
                             <constraint firstItem="5qb-pf-1Se" firstAttribute="leading" secondItem="cW8-U3-wQw" secondAttribute="trailing" constant="8" id="Q0G-bx-Elu"/>
                             <constraint firstItem="PYd-Aw-ofn" firstAttribute="leading" secondItem="5qb-pf-1Se" secondAttribute="trailing" constant="10" id="Qze-qi-gHS"/>
-                            <constraint firstItem="5qb-pf-1Se" firstAttribute="top" secondItem="sUF-07-Rk9" secondAttribute="top" constant="21" id="p9F-1i-xkl"/>
+                            <constraint firstItem="5qb-pf-1Se" firstAttribute="top" secondItem="sUF-07-Rk9" secondAttribute="top" constant="15" id="p9F-1i-xkl"/>
                             <constraint firstItem="PYd-Aw-ofn" firstAttribute="centerY" secondItem="sUF-07-Rk9" secondAttribute="centerY" id="xeF-G9-bBg"/>
                         </constraints>
                     </view>
@@ -69,6 +80,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="accountLabel" destination="zDv-Df-WmA" id="3Tr-Z6-Ud1"/>
+                <outlet property="authButton" destination="PYd-Aw-ofn" id="a9x-KF-XgN"/>
                 <outlet property="calendarImageView" destination="cW8-U3-wQw" id="Jqr-WL-zu6"/>
                 <outlet property="containerView" destination="sUF-07-Rk9" id="ybl-gC-kCr"/>
                 <outlet property="lblCalendarInfo" destination="5qb-pf-1Se" id="723-VX-2Ys"/>

@@ -19,7 +19,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" restorationIdentifier="EmoticonPopupViewController" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89N-yu-kid">
@@ -231,7 +231,7 @@
                         </button>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ise-la-aud">
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contents_icon_emoticon07" translatesAutoresizingMaskIntoConstraints="NO" id="4fP-qq-tzH">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image=" " translatesAutoresizingMaskIntoConstraints="NO" id="4fP-qq-tzH">
                                     <constraints>
                                         <constraint firstAttribute="height" constant="47" id="1NH-uH-yE9"/>
                                         <constraint firstAttribute="width" constant="42" id="era-my-bR1"/>
@@ -386,18 +386,18 @@
         </view>
     </objects>
     <resources>
+        <image name=" " width="170" height="170"/>
         <image name="contents_icon_emoticon01" width="60" height="68"/>
         <image name="contents_icon_emoticon02" width="60" height="68"/>
         <image name="contents_icon_emoticon03" width="60" height="68"/>
         <image name="contents_icon_emoticon04" width="60" height="68"/>
         <image name="contents_icon_emoticon05" width="60" height="68"/>
         <image name="contents_icon_emoticon06" width="60" height="68"/>
-        <image name="contents_icon_emoticon07" width="60" height="68"/>
         <image name="input_btn_del" width="90" height="90"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_0.fullscreen"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
 </document>

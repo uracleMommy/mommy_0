@@ -1075,6 +1075,10 @@ static MommyHttpUrls* instanceMommyHttpUrls;
             return [_mainDomain stringByAppendingString:@"/api/diary/gps-to-address"];
             break;
             
+        case MonthEmoticon:
+            return [_mainDomain stringByAppendingString:@"/api/diary/month-emoticon"];
+            break;
+            
         default:
             return @"";
             break;

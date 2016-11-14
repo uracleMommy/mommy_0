@@ -12,6 +12,8 @@
 #import "DiaryListImageCustomCell.h"
 #import "MommyUtils.h"
 #import "MommyRequest.h"
+#import "GTLCalendarEvent.h"
+#import "GTLDateTime.h"
 
 @protocol DiaryListModelDelegate <NSObject>
 
@@ -24,7 +26,10 @@
 @interface DiaryListModel : NSObject<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *diaryList;
+@property (nonatomic, strong) NSString *selectedDate;
 @property (strong, nonatomic) id<DiaryListModelDelegate> delegate;
 @property (strong, nonatomic) NSMutableDictionary *cachedImages;
+@property (strong, nonatomic) NSMutableArray *googleCalendarArr;
+@property (strong, nonatomic) NSMutableDictionary *googleCalendarDic;
 
 @end

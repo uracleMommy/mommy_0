@@ -36,5 +36,7 @@
 @interface MoreEnvironmentCalendarModal : NSObject<UITableViewDelegate, UITableViewDataSource, MoreEnvironmentCalendarListCellDelegate>
 
 @property (strong, nonatomic) id<MoreEnvironmentListModelDelegate> delegate;
+@property (assign, nonatomic) Boolean *authFlag;
+@property (strong, nonatomic) NSString *accountText;
 
 @end

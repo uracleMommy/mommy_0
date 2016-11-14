@@ -77,7 +77,8 @@ typedef enum {
     DiaryDetail,
     DiaryDelete,
     DiaryUpdate,
-    GpsToAddress
+    GpsToAddress,
+    MonthEmoticon
 } MommyDiaryWebServiceType;
 
 #pragma 커뮤니티 관련 열거형

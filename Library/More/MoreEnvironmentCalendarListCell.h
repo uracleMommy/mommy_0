@@ -23,6 +23,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lblCalendarInfo;
 
+@property (weak, nonatomic) IBOutlet UILabel *accountLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *authButton;
+
 @property (strong, nonatomic) id<MoreEnvironmentCalendarListCellDelegate> delegate;
 
 - (IBAction)googleAuthLinkAction:(id)sender;

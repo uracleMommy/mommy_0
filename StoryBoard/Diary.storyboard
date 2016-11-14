@@ -848,28 +848,39 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXO-H0-xhq">
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uej-np-hMu">
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="sectionIndexTrackingBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vgy-eE-xzo" customClass="JTHorizontalCalendarView">
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vgy-eE-xzo" secondAttribute="height" multiplier="32:25" id="aF5-Q9-Vpw"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7nN-xW-Fum">
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uej-np-hMu">
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="sectionIndexTrackingBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </tableView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="uej-np-hMu" firstAttribute="top" secondItem="7nN-xW-Fum" secondAttribute="top" id="Ils-1F-NtR"/>
+                                            <constraint firstAttribute="bottom" secondItem="uej-np-hMu" secondAttribute="bottom" id="bCH-Vn-ysL"/>
+                                            <constraint firstItem="uej-np-hMu" firstAttribute="leading" secondItem="7nN-xW-Fum" secondAttribute="leading" id="hAf-e9-J4R"/>
+                                            <constraint firstAttribute="trailing" secondItem="uej-np-hMu" secondAttribute="trailing" id="q1e-2j-1w2"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="uej-np-hMu" secondAttribute="trailing" id="AmO-3M-YPh"/>
-                                    <constraint firstItem="uej-np-hMu" firstAttribute="leading" secondItem="bXO-H0-xhq" secondAttribute="leading" id="CoW-TV-IjS"/>
                                     <constraint firstItem="vgy-eE-xzo" firstAttribute="top" secondItem="bXO-H0-xhq" secondAttribute="top" constant="2" id="DZC-J8-zhc"/>
-                                    <constraint firstAttribute="bottom" secondItem="uej-np-hMu" secondAttribute="bottom" constant="5" id="TH9-vs-Wqa"/>
+                                    <constraint firstAttribute="trailing" secondItem="7nN-xW-Fum" secondAttribute="trailing" id="Hdb-rr-grB"/>
+                                    <constraint firstItem="7nN-xW-Fum" firstAttribute="leading" secondItem="bXO-H0-xhq" secondAttribute="leading" id="Jn6-16-fYa"/>
+                                    <constraint firstItem="7nN-xW-Fum" firstAttribute="top" secondItem="vgy-eE-xzo" secondAttribute="bottom" constant="5" id="PmE-iF-wHm"/>
                                     <constraint firstItem="vgy-eE-xzo" firstAttribute="leading" secondItem="bXO-H0-xhq" secondAttribute="leading" id="TRj-Vp-6O5"/>
-                                    <constraint firstItem="uej-np-hMu" firstAttribute="top" secondItem="vgy-eE-xzo" secondAttribute="bottom" constant="5" id="ioZ-A1-2Rm"/>
                                     <constraint firstAttribute="trailing" secondItem="vgy-eE-xzo" secondAttribute="trailing" id="ovA-oT-Rv6"/>
+                                    <constraint firstAttribute="bottom" secondItem="7nN-xW-Fum" secondAttribute="bottom" constant="5" id="yAQ-h5-IAN"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -886,6 +897,7 @@
                     <connections>
                         <outlet property="calendarContentView" destination="vgy-eE-xzo" id="4N5-HJ-lbz"/>
                         <outlet property="listTableview" destination="uej-np-hMu" id="R8u-Gp-kl0"/>
+                        <outlet property="listView" destination="7nN-xW-Fum" id="xWo-cc-29J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5d8-dZ-scQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

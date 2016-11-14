@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A0381011DD76A2400799779 /* client_1008861736533-t5t3lb3m9u45o04usi4p1cuvm3nfh31a.apps.googleusercontent.com.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A0381001DD76A2400799779 /* client_1008861736533-t5t3lb3m9u45o04usi4p1cuvm3nfh31a.apps.googleusercontent.com.plist */; };
 		2A0CCB441D73B411001B6E1F /* SignUpMainScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0CCB431D73B411001B6E1F /* SignUpMainScrollViewController.m */; };
 		2A1A86BD1D9A45640091399B /* CommunityMyGroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1A86BC1D9A45640091399B /* CommunityMyGroupController.m */; };
 		2A1A86C01D9A86AB0091399B /* CommunityMentorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1A86BF1D9A86AB0091399B /* CommunityMentorController.m */; };
@@ -42,6 +41,7 @@
 		2A54B1BB1D66904000C538D1 /* JTVerticalCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A54B1AF1D66904000C538D1 /* JTVerticalCalendarView.m */; };
 		2A54B1BE1D6691F600C538D1 /* DiaryCalenderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A54B1BD1D6691F600C538D1 /* DiaryCalenderController.m */; };
 		2A54B1C81D66E4E600C538D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A54B1C71D66E4E600C538D1 /* Assets.xcassets */; };
+		2A5E82661DD9980400E7E36A /* client_1008861736533-t5t3lb3m9u45o04usi4p1cuvm3nfh31a.apps.googleusercontent.com.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E82651DD9980400E7E36A /* client_1008861736533-t5t3lb3m9u45o04usi4p1cuvm3nfh31a.apps.googleusercontent.com.plist */; };
 		2A6B1BF01D91338200322A94 /* DiaryListBasicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6B1BED1D91338200322A94 /* DiaryListBasicController.m */; };
 		2A6B1BF11D91338200322A94 /* DiaryWriteBasicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6B1BEF1D91338200322A94 /* DiaryWriteBasicController.m */; };
 		2AA48D751DB752FF008E4DC6 /* noDataDiaryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA48D741DB752FF008E4DC6 /* noDataDiaryController.m */; };
@@ -395,7 +395,6 @@
 
 /* Begin PBXFileReference section */
 		0ADEE111728B7EEDBBBDDB2F /* Pods-co.medisolution.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-co.medisolution.debug.xcconfig"; path = "Pods/Target Support Files/Pods-co.medisolution/Pods-co.medisolution.debug.xcconfig"; sourceTree = "<group>"; };
-		2A0381001DD76A2400799779 /* client_1008861736533-t5t3lb3m9u45o04usi4p1cuvm3nfh31a.apps.googleusercontent.com.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "client_1008861736533-t5t3lb3m9u45o04usi4p1cuvm3nfh31a.apps.googleusercontent.com.plist"; sourceTree = "<group>"; };
 		2A0CCB421D73B411001B6E1F /* SignUpMainScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpMainScrollViewController.h; sourceTree = "<group>"; };
 		2A0CCB431D73B411001B6E1F /* SignUpMainScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpMainScrollViewController.m; sourceTree = "<group>"; };
 		2A1A86BB1D9A45640091399B /* CommunityMyGroupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityMyGroupController.h; sourceTree = "<group>"; };
@@ -469,6 +468,7 @@
 		2A54B1BC1D6691F600C538D1 /* DiaryCalenderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryCalenderController.h; sourceTree = "<group>"; };
 		2A54B1BD1D6691F600C538D1 /* DiaryCalenderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryCalenderController.m; sourceTree = "<group>"; };
 		2A54B1C71D66E4E600C538D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A5E82651DD9980400E7E36A /* client_1008861736533-t5t3lb3m9u45o04usi4p1cuvm3nfh31a.apps.googleusercontent.com.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "client_1008861736533-t5t3lb3m9u45o04usi4p1cuvm3nfh31a.apps.googleusercontent.com.plist"; sourceTree = "<group>"; };
 		2A6B1BEC1D91338200322A94 /* DiaryListBasicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryListBasicController.h; sourceTree = "<group>"; };
 		2A6B1BED1D91338200322A94 /* DiaryListBasicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryListBasicController.m; sourceTree = "<group>"; };
 		2A6B1BEE1D91338200322A94 /* DiaryWriteBasicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryWriteBasicController.h; sourceTree = "<group>"; };
@@ -2199,8 +2199,8 @@
 		DCA5AE181D598C6F0075B7AD = {
 			isa = PBXGroup;
 			children = (
-				2A0381001DD76A2400799779 /* client_1008861736533-t5t3lb3m9u45o04usi4p1cuvm3nfh31a.apps.googleusercontent.com.plist */,
 				DC6B0B7D1DBF50520092324C /* contents_graph_btn_bubble_left.png */,
+				2A5E82651DD9980400E7E36A /* client_1008861736533-t5t3lb3m9u45o04usi4p1cuvm3nfh31a.apps.googleusercontent.com.plist */,
 				DC6B0B7E1DBF50520092324C /* contents_graph_btn_bubble_right.png */,
 				DC6B0B7F1DBF50520092324C /* contents_graph_btn_bubble.png */,
 				DC6B0B801DBF50520092324C /* contents_graph_btn_heart.png */,
@@ -2426,7 +2426,7 @@
 				DC4E95B01D7D66C40087647B /* ActiveMassExerciseCell.xib in Resources */,
 				DC4DE2E11D815C35007CF9BF /* MoreBloodPressureInfoView.xib in Resources */,
 				2AD2AE751DBF362800851D47 /* LICENSE.txt in Resources */,
-				2A0381011DD76A2400799779 /* client_1008861736533-t5t3lb3m9u45o04usi4p1cuvm3nfh31a.apps.googleusercontent.com.plist in Resources */,
+				2A5E82661DD9980400E7E36A /* client_1008861736533-t5t3lb3m9u45o04usi4p1cuvm3nfh31a.apps.googleusercontent.com.plist in Resources */,
 				2A54B1C81D66E4E600C538D1 /* Assets.xcassets in Resources */,
 				DCA3BCCB1D98BCFD009D3DD1 /* MoreEnvironmentAlramCell.xib in Resources */,
 				2AC164561D9CD0CD00533BB0 /* CommunityDetailWriterInfoCell.xib in Resources */,

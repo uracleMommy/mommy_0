@@ -56,8 +56,7 @@
     
     /** searchPage setting **/
     _searchPage = [[NSNumber alloc] initWithInt:1];
-    
-    
+    _listDate = [NSDate new];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -69,16 +68,26 @@
         [_contentView addSubview : _listViewController.view];
         
         /** today setting **/
-        [self moveCalendarMonthView:[NSDate new]];
+//        [self moveCalendarMonthView:[NSDate new]];
+        [self moveCalendarMonthView:_listDate];
     }else{
         [self moveCalendarMonthView:_listDate];
+//        [self moveCalendarMonthView:[NSDate new]];
     }
 }
 
 -(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
     NSLog(@"prepareForUnwind");
+    NSString *restorationIdentifier = _contentView.subviews[0].restorationIdentifier;
+    
+    if([restorationIdentifier isEqualToString:@"tableView"]){
+        [_listViewController setListFirst:_listDate];
+    }else{
+        //        [_calenderViewController setListFirst:date];
+        [_calenderViewController getMonthEmoticon:_listDate];
+    }
     //초기화
-    [_listViewController setListFirst:[NSDate date]];
+//    [_listViewController setListFirst:[NSDate date]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -211,7 +220,8 @@
     if([restorationIdentifier isEqualToString:@"tableView"]){
         [_listViewController setListFirst:date];
     }else{
-//        [_calenderViewController.calendarContentView loadPreviousPageWithAnimation];
+//        [_calenderViewController setListFirst:date];
+        [_calenderViewController getMonthEmoticon:date];
     }
 }
 
