@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A0381011DD76A2400799779 /* client_1008861736533-t5t3lb3m9u45o04usi4p1cuvm3nfh31a.apps.googleusercontent.com.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A0381001DD76A2400799779 /* client_1008861736533-t5t3lb3m9u45o04usi4p1cuvm3nfh31a.apps.googleusercontent.com.plist */; };
 		2A0CCB441D73B411001B6E1F /* SignUpMainScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0CCB431D73B411001B6E1F /* SignUpMainScrollViewController.m */; };
 		2A1A86BD1D9A45640091399B /* CommunityMyGroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1A86BC1D9A45640091399B /* CommunityMyGroupController.m */; };
 		2A1A86C01D9A86AB0091399B /* CommunityMentorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1A86BF1D9A86AB0091399B /* CommunityMentorController.m */; };
@@ -43,7 +44,6 @@
 		2A54B1C81D66E4E600C538D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A54B1C71D66E4E600C538D1 /* Assets.xcassets */; };
 		2A6B1BF01D91338200322A94 /* DiaryListBasicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6B1BED1D91338200322A94 /* DiaryListBasicController.m */; };
 		2A6B1BF11D91338200322A94 /* DiaryWriteBasicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6B1BEF1D91338200322A94 /* DiaryWriteBasicController.m */; };
-		2A7DC3FD1DC25E4C00DC9A7E /* LifesenseBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7DC3FC1DC25E4C00DC9A7E /* LifesenseBluetooth.framework */; };
 		2AA48D751DB752FF008E4DC6 /* noDataDiaryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA48D741DB752FF008E4DC6 /* noDataDiaryController.m */; };
 		2AA48D781DB799CE008E4DC6 /* AppFirstIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA48D771DB799CE008E4DC6 /* AppFirstIntroViewController.m */; };
 		2AA6D6C21D64230A00316DD6 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA6D6C11D64230A00316DD6 /* Diary.storyboard */; };
@@ -70,11 +70,6 @@
 		2AC164561D9CD0CD00533BB0 /* CommunityDetailWriterInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC164551D9CD0CD00533BB0 /* CommunityDetailWriterInfoCell.xib */; };
 		2AC781DB1D599C0800B86BE1 /* MembershipLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC781DA1D599C0800B86BE1 /* MembershipLogin.storyboard */; };
 		2AD09BF91DB8A534005D0CD7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AD09BF81DB8A534005D0CD7 /* GoogleService-Info.plist */; };
-		2AD09C011DB8A5D9005D0CD7 /* GoogleAppUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09BFA1DB8A5D9005D0CD7 /* GoogleAppUtilities.framework */; };
-		2AD09C021DB8A5D9005D0CD7 /* GoogleAuthUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09BFB1DB8A5D9005D0CD7 /* GoogleAuthUtilities.framework */; };
-		2AD09C031DB8A5D9005D0CD7 /* GoogleNetworkingUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09BFC1DB8A5D9005D0CD7 /* GoogleNetworkingUtilities.framework */; };
-		2AD09C061DB8A5D9005D0CD7 /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09BFF1DB8A5D9005D0CD7 /* GoogleSymbolUtilities.framework */; };
-		2AD09C071DB8A5D9005D0CD7 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09C001DB8A5D9005D0CD7 /* GoogleUtilities.framework */; };
 		2AD09C091DB8ADB9005D0CD7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09C081DB8ADB9005D0CD7 /* libz.tbd */; };
 		2AD09C0B1DB8ADCB005D0CD7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09C0A1DB8ADCB005D0CD7 /* SystemConfiguration.framework */; };
 		2AD09C0D1DB8AE01005D0CD7 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09C0C1DB8AE01005D0CD7 /* AddressBook.framework */; };
@@ -116,6 +111,7 @@
 		2AE11DF31D6583BC003C6690 /* DiaryListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11DF21D6583BC003C6690 /* DiaryListController.m */; };
 		2AE9833C1DA51CEF001637AF /* MessageWriteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE9833B1DA51CEF001637AF /* MessageWriteController.m */; };
 		2AEAE5811D9CFF2700146596 /* CommunityPeopleListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAE5801D9CFF2700146596 /* CommunityPeopleListController.m */; };
+		2AEAF0DE1DD5BD8D00746170 /* LifesenseBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AEAF0DD1DD5BD8D00746170 /* LifesenseBluetooth.framework */; };
 		2AEB7F601DAC84E30032AD47 /* CommunityWriteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEB7F5F1DAC84E30032AD47 /* CommunityWriteController.m */; };
 		2AEBE3491D79419E0075B210 /* DiaryWriteScheduleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBE3481D79419E0075B210 /* DiaryWriteScheduleController.m */; };
 		2AEBE34C1D7941BF0075B210 /* DiaryDetailScheduleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBE34B1D7941BF0075B210 /* DiaryDetailScheduleController.m */; };
@@ -126,6 +122,7 @@
 		2AFDD7641D9BAD1800FE157C /* CommunityNewspeedListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDD7631D9BAD1800FE157C /* CommunityNewspeedListModel.m */; };
 		2AFDD7671D9BAD2700FE157C /* CommunityNewspeedListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDD7661D9BAD2700FE157C /* CommunityNewspeedListController.m */; };
 		2AFDD76A1D9BB46D00FE157C /* CommunityDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDD7691D9BB46D00FE157C /* CommunityDetailController.m */; };
+		6907560B055CBB1CF66A2F26 /* libPods-co.medisolution.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FEEE36661764E5476A93B0 /* libPods-co.medisolution.a */; };
 		DC0995DD1DBD1BFB00D32A2A /* WeekProgramSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0995DC1DBD1BFB00D32A2A /* WeekProgramSearchViewController.m */; };
 		DC1856451D9DEA3500D9A957 /* MommyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1856441D9DEA3500D9A957 /* MommyRequest.m */; };
 		DC1856481D9E40C700D9A957 /* IntroScrollImageViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1856471D9E40C700D9A957 /* IntroScrollImageViewContainer.m */; };
@@ -321,7 +318,6 @@
 		DC6B0B691DBF27BB0092324C /* weekly_sleep.html in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B5F1DBF27BB0092324C /* weekly_sleep.html */; };
 		DC6B0B6A1DBF27BB0092324C /* weekly_step.html in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B601DBF27BB0092324C /* weekly_step.html */; };
 		DC6B0B6B1DBF27BB0092324C /* weekly_weight.html in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B611DBF27BB0092324C /* weekly_weight.html */; };
-		DC6B0B7C1DBF382F0092324C /* LifesenseBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6B0B7B1DBF382F0092324C /* LifesenseBluetooth.framework */; };
 		DC6B0B831DBF50520092324C /* contents_graph_btn_bubble_left.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B7D1DBF50520092324C /* contents_graph_btn_bubble_left.png */; };
 		DC6B0B841DBF50520092324C /* contents_graph_btn_bubble_right.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B7E1DBF50520092324C /* contents_graph_btn_bubble_right.png */; };
 		DC6B0B851DBF50520092324C /* contents_graph_btn_bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6B0B7F1DBF50520092324C /* contents_graph_btn_bubble.png */; };
@@ -398,6 +394,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0ADEE111728B7EEDBBBDDB2F /* Pods-co.medisolution.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-co.medisolution.debug.xcconfig"; path = "Pods/Target Support Files/Pods-co.medisolution/Pods-co.medisolution.debug.xcconfig"; sourceTree = "<group>"; };
+		2A0381001DD76A2400799779 /* client_1008861736533-t5t3lb3m9u45o04usi4p1cuvm3nfh31a.apps.googleusercontent.com.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "client_1008861736533-t5t3lb3m9u45o04usi4p1cuvm3nfh31a.apps.googleusercontent.com.plist"; sourceTree = "<group>"; };
 		2A0CCB421D73B411001B6E1F /* SignUpMainScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpMainScrollViewController.h; sourceTree = "<group>"; };
 		2A0CCB431D73B411001B6E1F /* SignUpMainScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpMainScrollViewController.m; sourceTree = "<group>"; };
 		2A1A86BB1D9A45640091399B /* CommunityMyGroupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityMyGroupController.h; sourceTree = "<group>"; };
@@ -475,7 +473,6 @@
 		2A6B1BED1D91338200322A94 /* DiaryListBasicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryListBasicController.m; sourceTree = "<group>"; };
 		2A6B1BEE1D91338200322A94 /* DiaryWriteBasicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryWriteBasicController.h; sourceTree = "<group>"; };
 		2A6B1BEF1D91338200322A94 /* DiaryWriteBasicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryWriteBasicController.m; sourceTree = "<group>"; };
-		2A7DC3FC1DC25E4C00DC9A7E /* LifesenseBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LifesenseBluetooth.framework; sourceTree = "<group>"; };
 		2AA48D731DB752FF008E4DC6 /* noDataDiaryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = noDataDiaryController.h; sourceTree = "<group>"; };
 		2AA48D741DB752FF008E4DC6 /* noDataDiaryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = noDataDiaryController.m; sourceTree = "<group>"; };
 		2AA48D761DB799CE008E4DC6 /* AppFirstIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppFirstIntroViewController.h; sourceTree = "<group>"; };
@@ -516,11 +513,6 @@
 		2AC164551D9CD0CD00533BB0 /* CommunityDetailWriterInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityDetailWriterInfoCell.xib; sourceTree = "<group>"; };
 		2AC781DA1D599C0800B86BE1 /* MembershipLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MembershipLogin.storyboard; sourceTree = "<group>"; };
 		2AD09BF81DB8A534005D0CD7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		2AD09BFA1DB8A5D9005D0CD7 /* GoogleAppUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAppUtilities.framework; sourceTree = "<group>"; };
-		2AD09BFB1DB8A5D9005D0CD7 /* GoogleAuthUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAuthUtilities.framework; sourceTree = "<group>"; };
-		2AD09BFC1DB8A5D9005D0CD7 /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
-		2AD09BFF1DB8A5D9005D0CD7 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
-		2AD09C001DB8A5D9005D0CD7 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = "<group>"; };
 		2AD09C081DB8ADB9005D0CD7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		2AD09C0A1DB8ADCB005D0CD7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2AD09C0C1DB8AE01005D0CD7 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -593,6 +585,7 @@
 		2AE9833B1DA51CEF001637AF /* MessageWriteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageWriteController.m; sourceTree = "<group>"; };
 		2AEAE57F1D9CFF2700146596 /* CommunityPeopleListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityPeopleListController.h; sourceTree = "<group>"; };
 		2AEAE5801D9CFF2700146596 /* CommunityPeopleListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityPeopleListController.m; sourceTree = "<group>"; };
+		2AEAF0DD1DD5BD8D00746170 /* LifesenseBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LifesenseBluetooth.framework; sourceTree = "<group>"; };
 		2AEB7F5E1DAC84E30032AD47 /* CommunityWriteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityWriteController.h; sourceTree = "<group>"; };
 		2AEB7F5F1DAC84E30032AD47 /* CommunityWriteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityWriteController.m; sourceTree = "<group>"; };
 		2AEBE3471D79419E0075B210 /* DiaryWriteScheduleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryWriteScheduleController.h; sourceTree = "<group>"; };
@@ -611,6 +604,8 @@
 		2AFDD7661D9BAD2700FE157C /* CommunityNewspeedListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityNewspeedListController.m; sourceTree = "<group>"; };
 		2AFDD7681D9BB46D00FE157C /* CommunityDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityDetailController.h; sourceTree = "<group>"; };
 		2AFDD7691D9BB46D00FE157C /* CommunityDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityDetailController.m; sourceTree = "<group>"; };
+		5D2E377BA1A4D375768FA876 /* Pods-co.medisolution.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-co.medisolution.release.xcconfig"; path = "Pods/Target Support Files/Pods-co.medisolution/Pods-co.medisolution.release.xcconfig"; sourceTree = "<group>"; };
+		84FEEE36661764E5476A93B0 /* libPods-co.medisolution.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-co.medisolution.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC0995DB1DBD1BFB00D32A2A /* WeekProgramSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekProgramSearchViewController.h; sourceTree = "<group>"; };
 		DC0995DC1DBD1BFB00D32A2A /* WeekProgramSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekProgramSearchViewController.m; sourceTree = "<group>"; };
 		DC1856431D9DEA3500D9A957 /* MommyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MommyRequest.h; sourceTree = "<group>"; };
@@ -958,7 +953,6 @@
 		DC6B0B5F1DBF27BB0092324C /* weekly_sleep.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = weekly_sleep.html; sourceTree = "<group>"; };
 		DC6B0B601DBF27BB0092324C /* weekly_step.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = weekly_step.html; sourceTree = "<group>"; };
 		DC6B0B611DBF27BB0092324C /* weekly_weight.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = weekly_weight.html; sourceTree = "<group>"; };
-		DC6B0B7B1DBF382F0092324C /* LifesenseBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LifesenseBluetooth.framework; sourceTree = "<group>"; };
 		DC6B0B7D1DBF50520092324C /* contents_graph_btn_bubble_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contents_graph_btn_bubble_left.png; sourceTree = "<group>"; };
 		DC6B0B7E1DBF50520092324C /* contents_graph_btn_bubble_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contents_graph_btn_bubble_right.png; sourceTree = "<group>"; };
 		DC6B0B7F1DBF50520092324C /* contents_graph_btn_bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contents_graph_btn_bubble.png; sourceTree = "<group>"; };
@@ -1085,18 +1079,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AEAF0DE1DD5BD8D00746170 /* LifesenseBluetooth.framework in Frameworks */,
 				2AD09C0F1DB8AE07005D0CD7 /* SafariServices.framework in Frameworks */,
 				2AD09C0D1DB8AE01005D0CD7 /* AddressBook.framework in Frameworks */,
 				2AD09C0B1DB8ADCB005D0CD7 /* SystemConfiguration.framework in Frameworks */,
 				2AD09C091DB8ADB9005D0CD7 /* libz.tbd in Frameworks */,
 				2AF695FE1DB4C52D00072FC2 /* CoreLocation.framework in Frameworks */,
-				2AD09C061DB8A5D9005D0CD7 /* GoogleSymbolUtilities.framework in Frameworks */,
-				DC6B0B7C1DBF382F0092324C /* LifesenseBluetooth.framework in Frameworks */,
-				2A7DC3FD1DC25E4C00DC9A7E /* LifesenseBluetooth.framework in Frameworks */,
-				2AD09C031DB8A5D9005D0CD7 /* GoogleNetworkingUtilities.framework in Frameworks */,
-				2AD09C011DB8A5D9005D0CD7 /* GoogleAppUtilities.framework in Frameworks */,
-				2AD09C021DB8A5D9005D0CD7 /* GoogleAuthUtilities.framework in Frameworks */,
-				2AD09C071DB8A5D9005D0CD7 /* GoogleUtilities.framework in Frameworks */,
+				6907560B055CBB1CF66A2F26 /* libPods-co.medisolution.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1501,7 +1490,7 @@
 		2AF695FC1DB4C52D00072FC2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2A7DC3FC1DC25E4C00DC9A7E /* LifesenseBluetooth.framework */,
+				2AEAF0DD1DD5BD8D00746170 /* LifesenseBluetooth.framework */,
 				DC1DDC581DB8986700D6602E /* httpd.cpp */,
 				DC1DDC591DB8986700D6602E /* httpd.h */,
 				DC1DDC531DB896D700D6602E /* UIKit.framework */,
@@ -1512,12 +1501,8 @@
 				2AD09C0C1DB8AE01005D0CD7 /* AddressBook.framework */,
 				2AD09C0A1DB8ADCB005D0CD7 /* SystemConfiguration.framework */,
 				2AD09C081DB8ADB9005D0CD7 /* libz.tbd */,
-				2AD09BFA1DB8A5D9005D0CD7 /* GoogleAppUtilities.framework */,
-				2AD09BFB1DB8A5D9005D0CD7 /* GoogleAuthUtilities.framework */,
-				2AD09BFC1DB8A5D9005D0CD7 /* GoogleNetworkingUtilities.framework */,
-				2AD09BFF1DB8A5D9005D0CD7 /* GoogleSymbolUtilities.framework */,
-				2AD09C001DB8A5D9005D0CD7 /* GoogleUtilities.framework */,
 				2AF695FD1DB4C52D00072FC2 /* CoreLocation.framework */,
+				84FEEE36661764E5476A93B0 /* libPods-co.medisolution.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1533,6 +1518,15 @@
 				2AC1644A1D9CA36800533BB0 /* CommunityDetailModel.m */,
 			);
 			path = Community;
+			sourceTree = "<group>";
+		};
+		514FC286AD6FA1524639F6FC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0ADEE111728B7EEDBBBDDB2F /* Pods-co.medisolution.debug.xcconfig */,
+				5D2E377BA1A4D375768FA876 /* Pods-co.medisolution.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		DC1FE6DA1D658E33006F7A50 /* Tabbar */ = {
@@ -2181,13 +2175,6 @@
 			path = FLAnimatedImage;
 			sourceTree = "<group>";
 		};
-		DC6B0B471DBF267C0092324C /* img */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = img;
-			sourceTree = "<group>";
-		};
 		DC73E5C11D6D896A007D2DEE /* Indicator */ = {
 			isa = PBXGroup;
 			children = (
@@ -2212,6 +2199,7 @@
 		DCA5AE181D598C6F0075B7AD = {
 			isa = PBXGroup;
 			children = (
+				2A0381001DD76A2400799779 /* client_1008861736533-t5t3lb3m9u45o04usi4p1cuvm3nfh31a.apps.googleusercontent.com.plist */,
 				DC6B0B7D1DBF50520092324C /* contents_graph_btn_bubble_left.png */,
 				DC6B0B7E1DBF50520092324C /* contents_graph_btn_bubble_right.png */,
 				DC6B0B7F1DBF50520092324C /* contents_graph_btn_bubble.png */,
@@ -2228,7 +2216,6 @@
 				DC6B0B5E1DBF27BB0092324C /* recommend_weight.html */,
 				DC6B0B5F1DBF27BB0092324C /* weekly_sleep.html */,
 				DC6B0B611DBF27BB0092324C /* weekly_weight.html */,
-				DC6B0B471DBF267C0092324C /* img */,
 				2A743F561D62CA4B007DEB6B /* Model */,
 				DC3ACEA21D5DCA5500D68F80 /* Library */,
 				2AC781D81D5998F400B86BE1 /* Controller */,
@@ -2236,6 +2223,7 @@
 				DCA5AE231D598C6F0075B7AD /* co.medisolution */,
 				DCA5AE221D598C6F0075B7AD /* Products */,
 				2AF695FC1DB4C52D00072FC2 /* Frameworks */,
+				514FC286AD6FA1524639F6FC /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2331,9 +2319,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DCA5AE3B1D598C6F0075B7AD /* Build configuration list for PBXNativeTarget "co.medisolution" */;
 			buildPhases = (
+				00CE547C0DA134824D65B68F /* [CP] Check Pods Manifest.lock */,
 				DCA5AE1D1D598C6F0075B7AD /* Sources */,
 				DCA5AE1E1D598C6F0075B7AD /* Frameworks */,
 				DCA5AE1F1D598C6F0075B7AD /* Resources */,
+				50EBADCCAC9B7639F62D831F /* [CP] Embed Pods Frameworks */,
+				CB2E51249199C5FCBE27AEC7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2356,7 +2347,7 @@
 					DCA5AE201D598C6F0075B7AD = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = JH5F2VBM8Z;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -2435,6 +2426,7 @@
 				DC4E95B01D7D66C40087647B /* ActiveMassExerciseCell.xib in Resources */,
 				DC4DE2E11D815C35007CF9BF /* MoreBloodPressureInfoView.xib in Resources */,
 				2AD2AE751DBF362800851D47 /* LICENSE.txt in Resources */,
+				2A0381011DD76A2400799779 /* client_1008861736533-t5t3lb3m9u45o04usi4p1cuvm3nfh31a.apps.googleusercontent.com.plist in Resources */,
 				2A54B1C81D66E4E600C538D1 /* Assets.xcassets in Resources */,
 				DCA3BCCB1D98BCFD009D3DD1 /* MoreEnvironmentAlramCell.xib in Resources */,
 				2AC164561D9CD0CD00533BB0 /* CommunityDetailWriterInfoCell.xib in Resources */,
@@ -2495,6 +2487,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00CE547C0DA134824D65B68F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		50EBADCCAC9B7639F62D831F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-co.medisolution/Pods-co.medisolution-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB2E51249199C5FCBE27AEC7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-co.medisolution/Pods-co.medisolution-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DCA5AE1D1D598C6F0075B7AD /* Sources */ = {
@@ -2823,6 +2863,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -2868,6 +2909,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -2885,75 +2927,78 @@
 		};
 		DCA5AE3C1D598C6F0075B7AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ADEE111728B7EEDBBBDDB2F /* Pods-co.medisolution.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_ENTITLEMENTS = co.medisolution/co.medisolution.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = JH5F2VBM8Z;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Common",
-					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Common/IQKeyBoardManager/Library",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/GTMOAuth2\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/GTMSessionFetcher\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/GoogleAPIClient\"",
 				);
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.medisolution;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2b5156ca-69db-4d9e-8a21-2e22316c4da2";
-				PROVISIONING_PROFILE_SPECIFIER = MCIRCLE;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../GTLCore/**";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+				USER_HEADER_SEARCH_PATHS = "";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
 		DCA5AE3D1D598C6F0075B7AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D2E377BA1A4D375768FA876 /* Pods-co.medisolution.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_ENTITLEMENTS = co.medisolution/co.medisolution.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = JH5F2VBM8Z;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PREFIX_HEADER = "co.medisolution/medisolution-Prefix.pch";
 				INFOPLIST_FILE = co.medisolution/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Common",
-					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Common/IQKeyBoardManager/Library",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/build/Release-iphoneos/GoogleAPIClient",
+					"$(PROJECT_DIR)/build/Release-iphoneos/GTMOAuth2",
+					"$(PROJECT_DIR)/build/Release-iphoneos/GTMSessionFetcher",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/GoogleAPIClient",
+					"$(PROJECT_DIR)/GTMOAuth2",
+					"$(PROJECT_DIR)/GTMSessionFetcher",
 				);
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.medisolution;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2ba148df-e61b-41e2-96c0-7b7275eb75aa";
-				PROVISIONING_PROFILE_SPECIFIER = MCIRCLE_DistributionProvisioning;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../GTLCore/**";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+				USER_HEADER_SEARCH_PATHS = "";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;

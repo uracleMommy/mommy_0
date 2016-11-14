@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-//#import <GoogleSignIn/GoogleSignIn.h>
+#import "AppAuth.h"
 //#import <LifesenseBluetooth/PlusOTAMananger.h>
 //#import <LifesenseBluetooth/LSBLEDeviceManager.h>
 
@@ -22,17 +22,6 @@ static NSString * const kClientID =
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-//    [GIDSignIn sharedInstance].clientID = kClientID;
-    
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    
-    
-//    NSError* configureError;
-//    [[GGLContext sharedInstance] configureWithError: &configureError];
-//    NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
-//    
-//    [GIDSignIn sharedInstance].delegate = self;
-
     
 //    _sampleMainController = [[SampleMainController alloc] initWithNibName:@"SampleMainController" bundle:nil];
 //    self.window.rootViewController = _sampleMainController;
@@ -63,23 +52,6 @@ static NSString * const kClientID =
     
     return YES;
 }
-//
-//- (BOOL)application:(UIApplication *)app
-//            openURL:(NSURL *)url
-//            options:(NSDictionary *)options {
-//    return [[GIDSignIn sharedInstance] handleURL:url
-//                               sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
-//                                      annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
-//}
-//
-//- (BOOL)application:(UIApplication *)application
-//            openURL:(NSURL *)url
-//  sourceApplication:(NSString *)sourceApplication
-//         annotation:(id)annotation {
-//    return [[GIDSignIn sharedInstance] handleURL:url
-//                               sourceApplication:sourceApplication
-//                                      annotation:annotation];
-//}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -356,6 +328,40 @@ static NSString * const kClientID =
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     
     
+}
+
+
+
+/*! @brief Handles inbound URLs. Checks if the URL matches the redirect URI for a pending
+ AppAuth authorization request.
+ */
+- (BOOL)application:(UIApplication *)app
+            openURL:(NSURL *)url
+            options:(NSDictionary<NSString *, id> *)options {
+    // Sends the URL to the current authorization flow (if any) which will process it if it relates to
+    // an authorization response.
+    if ([_currentAuthorizationFlow resumeAuthorizationFlowWithURL:url]) {
+        _currentAuthorizationFlow = nil;
+        return YES;
+    }
+    
+    // Your additional URL handling (if any) goes here.
+    
+    return NO;
+}
+
+/*! @brief Forwards inbound URLs for iOS 8.x and below to @c application:openURL:options:.
+ @discussion When you drop support for versions of iOS earlier than 9.0, you can delete this
+ method. NB. this implementation doesn't forward the sourceApplication or annotations. If you
+ need these, then you may want @c application:openURL:options to call this method instead.
+ */
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [self application:application
+                     openURL:url
+                     options:@{}];
 }
 
 

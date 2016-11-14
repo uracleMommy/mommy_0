@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol MoreEnvironmentCalendarListCellDelegate <NSObject>
+
+@required
+-(void)googleAuthLinkAction;
+
+@end
+
 @interface MoreEnvironmentCalendarListCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIView *containerView;
@@ -16,6 +23,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lblCalendarInfo;
 
-@property (weak, nonatomic) IBOutlet UILabel *lblConnected;
+@property (strong, nonatomic) id<MoreEnvironmentCalendarListCellDelegate> delegate;
+
+- (IBAction)googleAuthLinkAction:(id)sender;
 
 @end

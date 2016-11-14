@@ -21,6 +21,8 @@
 
 - (void) tableView : (UITableView *) tableView MoreMyPageModelSelectedIndexPath : (NSIndexPath *) indexPath;
 
+-(void)googleAuthLinkAction;
+
 @end
 
 #pragma mark 환경설정 모델
@@ -31,5 +33,8 @@
 @end
 
 #pragma mark 캘린더 연결 모델
-@interface MoreEnvironmentCalendarModal : NSObject<UITableViewDelegate, UITableViewDataSource>
+@interface MoreEnvironmentCalendarModal : NSObject<UITableViewDelegate, UITableViewDataSource, MoreEnvironmentCalendarListCellDelegate>
+
+@property (strong, nonatomic) id<MoreEnvironmentListModelDelegate> delegate;
+
 @end

@@ -13,6 +13,9 @@
 #import "SampleMainController.h"
 #import "MoreProfessionalButtonViewController.h"
 
+
+@protocol OIDAuthorizationFlowSession;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
@@ -41,6 +44,12 @@
 
 #pragma mark 1:1 전문가 상담 버튼뷰 관련
 @property (strong, nonatomic) MoreProfessionalButtonViewController *moreProfessionalButtonViewController;
+
+
+
+#pragma mark google auth 관련
+@property(nonatomic, strong, nullable) id<OIDAuthorizationFlowSession> currentAuthorizationFlow;
+
 
 @end
 

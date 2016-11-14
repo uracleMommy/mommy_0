@@ -25,4 +25,7 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)googleAuthLinkAction:(id)sender {
+    [_delegate googleAuthLinkAction];
+}
 @end

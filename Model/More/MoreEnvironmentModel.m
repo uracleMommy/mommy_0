@@ -175,10 +175,10 @@
     }
     
     if (indexPath.row == 0) {
-        
         cell.calendarImageView.image = [UIImage imageNamed:@"contents_cal_google_n"];
         cell.lblCalendarInfo.text = @"구글 캘린더";
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.delegate = self;
     }
     else {
         
@@ -193,6 +193,10 @@
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return 70;
+}
+
+-(void)googleAuthLinkAction{
+    [_delegate googleAuthLinkAction];
 }
 
 @end
