@@ -67,12 +67,9 @@
         
         [_contentView addSubview : _listViewController.view];
         
-        /** today setting **/
-//        [self moveCalendarMonthView:[NSDate new]];
         [self moveCalendarMonthView:_listDate];
     }else{
         [self moveCalendarMonthView:_listDate];
-//        [self moveCalendarMonthView:[NSDate new]];
     }
 }
 
@@ -83,11 +80,8 @@
     if([restorationIdentifier isEqualToString:@"tableView"]){
         [_listViewController setListFirst:_listDate];
     }else{
-        //        [_calenderViewController setListFirst:date];
         [_calenderViewController getMonthEmoticon:_listDate];
     }
-    //초기화
-//    [_listViewController setListFirst:[NSDate date]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -103,6 +97,10 @@
         UINavigationController *navController = [segue destinationViewController];
         DiaryDetailListController *vc = (DiaryDetailListController *)([navController viewControllers][0]);
         [vc setDiaryKey:_selectedDiaryKey];
+    }else if([[segue identifier] isEqualToString:@"showDetailScheduleSegue"]){
+        UINavigationController *navController = [segue destinationViewController];
+        DiaryDetailScheduleController *vc = (DiaryDetailScheduleController *)([navController viewControllers][0]);
+        [vc setGoogleCalendarData:_selectedGoogleCalendarDic];
     }
 }
 
@@ -220,7 +218,6 @@
     if([restorationIdentifier isEqualToString:@"tableView"]){
         [_listViewController setListFirst:date];
     }else{
-//        [_calenderViewController setListFirst:date];
         [_calenderViewController getMonthEmoticon:date];
     }
 }
@@ -257,13 +254,17 @@
 #pragma tableView delegate
 - (void) tableView:(UITableView *)tableView selectedIndexPath:(NSIndexPath *)indexPath{
     // 디테일 이동 로직
-    if([tableView cellForRowAtIndexPath:indexPath].tag == 0){
-        _selectedDiaryKey = [(DiaryListBasicCustomCell *)[tableView cellForRowAtIndexPath:indexPath] diaryKey];
-    }else{
+    if([tableView cellForRowAtIndexPath:indexPath].tag == 1){
         _selectedDiaryKey = [(DiaryListImageCustomCell *)[tableView cellForRowAtIndexPath:indexPath] diaryKey];
+        [self performSegueWithIdentifier:@"showDetailListSegue" sender:nil];
+    }else if([tableView cellForRowAtIndexPath:indexPath].tag == 0){
+        _selectedDiaryKey = [(DiaryListBasicCustomCell *)[tableView cellForRowAtIndexPath:indexPath] diaryKey];
+        [self performSegueWithIdentifier:@"showDetailListSegue" sender:nil];
+    }else{
+        _selectedGoogleCalendarDic = [(DiaryListBasicCustomCell *)[tableView cellForRowAtIndexPath:indexPath] googleCalendarDic];
+        [self performSegueWithIdentifier:@"showDetailScheduleSegue" sender:nil];
     }
 
-    [self performSegueWithIdentifier:@"showDetailListSegue" sender:nil];
 }
 
 

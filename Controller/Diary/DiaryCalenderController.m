@@ -111,9 +111,22 @@ static NSString *const kExampleAuthorizerKey = @"authorization";
         self.service.authorizer = [GTMAppAuthFetcherAuthorization authorizationFromKeychainForName:kExampleAuthorizerKey];
         //데이터 받아오기
         [self fetchEvents:_selectedDate];
-//        [_listTableview reloadData];
     }else{
+        if([self haveEventForDay:_dateSelected]){
+            [self setListFirst:_dateSelected];
+        }else{
+            if(!_noDataController){
+                _noDataController = [self.storyboard instantiateViewControllerWithIdentifier:@"noDataDiaryController"];
+                [_noDataController.view setFrame:CGRectMake(0, 0, _listView.frame.size.width, _listView.frame.size.height)];
+                [_listView addSubview : _noDataController.view];
+                _noDataController.view.hidden = NO;
+            }else{
+                _noDataController.view.hidden = NO;
+            }
+            _listTableview.hidden = YES;
+        }
         [_calendarManager reload];
+        [self hideIndicator];
     }
 }
 
@@ -128,13 +141,12 @@ static NSString *const kExampleAuthorizerKey = @"authorization";
 
 - (void)fetchEvents:(NSDate *)date {
     GTLQueryCalendar *query = [GTLQueryCalendar queryForEventsListWithCalendarId:@"primary"];
-//        query.maxResults = 10;
     NSCalendar * cal = [NSCalendar currentCalendar];
     NSDateComponents *dateComponents = [cal components:(NSCalendarUnitWeekday|NSCalendarUnitSecond|NSCalendarUnitMonth|NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitYear ) fromDate:date];
     
-    [dateComponents setDay:1];
+    [dateComponents setDay:15];
     
-    query.timeMin = [GTLDateTime dateTimeWithDate:[cal dateFromComponents:dateComponents]
+    query.timeMin = [GTLDateTime dateTimeWithDate:[self addMonth:-1 date:[cal dateFromComponents:dateComponents]]
                                          timeZone:[NSTimeZone localTimeZone]];
     query.timeMax = [GTLDateTime dateTimeWithDate:[self addMonth:1 date:[cal dateFromComponents:dateComponents]]
                                          timeZone:[NSTimeZone localTimeZone]];
@@ -151,52 +163,84 @@ static NSString *const kExampleAuthorizerKey = @"authorization";
 - (void)displayResultWithTicket:(GTLServiceTicket *)ticket
              finishedWithObject:(GTLCalendarEvents *)events
                           error:(NSError *)error {
-    _googleCalendarData = [[NSMutableArray alloc] init];
     if (error == nil) {
         _diaryListTableController.googleCalendarDic = [[NSMutableDictionary alloc] init];
-        NSMutableString *eventString = [[NSMutableString alloc] init];
         if (events.items.count > 0) {
-            [eventString appendString:@"Upcoming 10 events:\n"];
             for (GTLCalendarEvent *event in events) {
                 GTLDateTime *start = event.start.dateTime ?: event.start.date;
+                GTLDateTime *end = event.end.dateTime ?: event.end.date;
                 NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
                 dateFormatter.dateFormat = @"YYYYMMdd";
+                NSCalendar *cal = [NSCalendar currentCalendar];
                 
-                NSString *startString = [dateFormatter stringFromDate:[start date]];
-//                NSString *startString =
-//                [NSDateFormatter localizedStringFromDate:[start date]
-//                                               dateStyle:NSDateFormatterShortStyle
-//                                               timeStyle:NSDateFormatterShortStyle];
-                [eventString appendFormat:@"%@ - %@\n", startString, event.summary];
-                [_googleCalendarData addObject:[event JSON]];
+                NSDateComponents *comp = [cal components:NSDayCalendarUnit fromDate:[start date] toDate:[end date] options:0];
                 
-                if(!_diaryListTableController.googleCalendarDic[startString]){
-                    _diaryListTableController.googleCalendarDic[startString] = [[NSMutableArray alloc] init];
-                    [_diaryListTableController.googleCalendarDic[startString] addObject:[event JSON]];
-                }else{
-                    [_diaryListTableController.googleCalendarDic[startString] addObject:[event JSON]];
-//                    _diaryListTableController.googleCalendarDic[startString] = [NSString stringWithFormat:@"%d", [_diaryListTableController.googleCalendarDic[startString] intValue] + 1 ];
-                }
-                
-                if(!_eventsByDate[startString]){
-                    NSLog(@"%@", [event JSON]);
-                    _eventsByDate[startString] = [[NSMutableDictionary alloc] initWithDictionary:[event JSON]];
-//                    [_eventsByDate[startString] addObject:];
+                for(int i=0 ; i<=comp.day; i++){
+                    NSString *startString = [dateFormatter stringFromDate:[self addDay:i date:[start date]]];
+                    [_googleCalendarData addObject:[event JSON]];
+                    
+                    if(!_diaryListTableController.googleCalendarDic[startString]){
+                        _diaryListTableController.googleCalendarDic[startString] = [[NSMutableArray alloc] init];
+                        [_diaryListTableController.googleCalendarDic[startString] addObject:[event JSON]];
+                    }else{
+                        [_diaryListTableController.googleCalendarDic[startString] addObject:[event JSON]];
+                    }
+                    
+                    if(!_eventsByDate[startString]){
+                        _eventsByDate[startString] = [[NSMutableDictionary alloc] initWithDictionary:[event JSON]];
+                    }
                 }
                 
             }
-            NSLog(@"%@", eventString);
-            _diaryListTableController.googleCalendarArr = _googleCalendarData;
-//            [_listTableview reloadData];
+            if([self haveEventForDay:_dateSelected]){
+                [self setListFirst:_dateSelected];
+            }else{
+                if(!_noDataController){
+                    _noDataController = [self.storyboard instantiateViewControllerWithIdentifier:@"noDataDiaryController"];
+                    [_noDataController.view setFrame:CGRectMake(0, 0, _listView.frame.size.width, _listView.frame.size.height)];
+                    [_listView addSubview : _noDataController.view];
+                    _noDataController.view.hidden = NO;
+                }else{
+                    _noDataController.view.hidden = NO;
+                }
+                _listTableview.hidden = YES;
+            }
             [_calendarManager reload];
+            [self hideIndicator];
         } else {
+            if([self haveEventForDay:_dateSelected]){
+                [self setListFirst:_dateSelected];
+            }else{
+                if(!_noDataController){
+                    _noDataController = [self.storyboard instantiateViewControllerWithIdentifier:@"noDataDiaryController"];
+                    [_noDataController.view setFrame:CGRectMake(0, 0, _listView.frame.size.width, _listView.frame.size.height)];
+                    [_listView addSubview : _noDataController.view];
+                    _noDataController.view.hidden = NO;
+                }else{
+                    _noDataController.view.hidden = NO;
+                }
+                _listTableview.hidden = YES;
+            }
+
             [_calendarManager reload];
-            [eventString appendString:@"No upcoming events found."];
+            [self hideIndicator];
         }
-        //        self.output.text = eventString;
     } else {
+        if([self haveEventForDay:_dateSelected]){
+            [self setListFirst:_dateSelected];
+        }else{
+            if(!_noDataController){
+                _noDataController = [self.storyboard instantiateViewControllerWithIdentifier:@"noDataDiaryController"];
+                [_noDataController.view setFrame:CGRectMake(0, 0, _listView.frame.size.width, _listView.frame.size.height)];
+                [_listView addSubview : _noDataController.view];
+                _noDataController.view.hidden = NO;
+            }else{
+                _noDataController.view.hidden = NO;
+            }
+            _listTableview.hidden = YES;
+        }
         [_calendarManager reload];
-        //        [self showAlert:@"Error" message:error.localizedDescription];
+        [self hideIndicator];
     }
 }
 
@@ -214,26 +258,22 @@ static NSString *const kExampleAuthorizerKey = @"authorization";
         dayView.circleView.backgroundColor = [UIColor whiteColor];
         dayView.circleView.layer.borderWidth = 1;
         dayView.circleView.layer.borderColor = [UIColor colorWithRed:132.0/255.0 green:68.0/255.0 blue:262.0/255.0 alpha:1.0].CGColor;
-//        dayView.dotView.backgroundColor = [UIColor whiteColor];
         dayView.textLabel.textColor = [UIColor colorWithRed:132.0/255.0 green:68.0/255.0 blue:262.0/255.0 alpha:1.0];
     }
     // Selected date
     else if(_dateSelected && [_calendarManager.dateHelper date:_dateSelected isTheSameDayThan:dayView.date]){
         dayView.circleView.hidden = NO;
         dayView.circleView.backgroundColor = [UIColor colorWithRed:132.0/255.0 green:68.0/255.0 blue:262.0/255.0 alpha:1.0];
-//        dayView.dotView.backgroundColor = [UIColor whiteColor];
         dayView.textLabel.textColor = [UIColor whiteColor];
     }
     // Other month
     else if(![_calendarManager.dateHelper date:_calendarContentView.date isTheSameMonthThan:dayView.date]){
         dayView.circleView.hidden = YES;
-//        dayView.dotView.backgroundColor = [UIColor redColor];
         dayView.textLabel.textColor = [UIColor colorWithRed:200.0/255.0 green:200.0/255.0 blue:200.0/255.0 alpha:1.0];
     }
     // Another day of the current month
     else{
         dayView.circleView.hidden = YES;
-//        dayView.dotView.backgroundColor = [UIColor blueColor];
         dayView.textLabel.textColor = [UIColor colorWithRed:80.0/255.0 green:80.0/255.0 blue:80.0/255.0 alpha:1.0];
     }
     
@@ -300,13 +340,9 @@ static NSString *const kExampleAuthorizerKey = @"authorization";
                         [_calendarManager reload];
                     } completion:nil];
     
-    
-    // Don't change page in week mode because block the selection of days in first and last weeks of the month
     if(_calendarManager.settings.weekModeEnabled){
         return;
     }
-    
-    // Load the previous or next page if touch a day from another month
     
     if(![_calendarManager.dateHelper date:_calendarContentView.date isTheSameMonthThan:dayView.date]){
         if([_calendarContentView.date compare:dayView.date] == NSOrderedAscending){
@@ -318,6 +354,16 @@ static NSString *const kExampleAuthorizerKey = @"authorization";
     }else{
         if([self haveEventForDay:dayView.date]){
             [self setListFirst:dayView.date];
+        }else{
+            if(!_noDataController){
+                _noDataController = [self.storyboard instantiateViewControllerWithIdentifier:@"noDataDiaryController"];
+                [_noDataController.view setFrame:CGRectMake(0, 0, _listView.frame.size.width, _listView.frame.size.height)];
+                [_listView addSubview : _noDataController.view];
+                _noDataController.view.hidden = NO;
+            }else{
+                _noDataController.view.hidden = NO;
+            }
+            _listTableview.hidden = YES;
         }
     }
 }
@@ -335,25 +381,6 @@ static NSString *const kExampleAuthorizerKey = @"authorization";
     [_delegate moveCalendarMonthView:date];
 }
 
-#pragma mark - Fake data
-
-- (void)createMinAndMaxDate
-{
-    _todayDate = [NSDate date];
-}
-
-// Used only to have a key for _eventsByDate
-- (NSDateFormatter *)dateFormatter
-{
-    static NSDateFormatter *dateFormatter;
-    if(!dateFormatter){
-        dateFormatter = [NSDateFormatter new];
-        dateFormatter.dateFormat = @"dd-MM-yyyy";
-    }
-    
-    return dateFormatter;
-}
-
 - (BOOL)haveEventForDay:(NSDate *)date
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -361,33 +388,12 @@ static NSString *const kExampleAuthorizerKey = @"authorization";
     
     NSString *key = [dateFormatter stringFromDate:date];
     
-    NSLog(@"%@", key);
-    
     if(_eventsByDate[key] && [_eventsByDate[key] count] > 0){
         return YES;
     }
     
     return NO;
     
-}
-
-- (void)createRandomEvents
-{
-    _eventsByDate = [NSMutableDictionary new];
-    
-    for(int i = 0; i < 30; ++i){
-        // Generate 30 random dates between now and 60 days later
-        NSDate *randomDate = [NSDate dateWithTimeInterval:(rand() % (3600 * 24 * 60)) sinceDate:[NSDate date]];
-        
-        // Use the date as key for eventsByDate
-        NSString *key = [[self dateFormatter] stringFromDate:randomDate];
-        
-        if(!_eventsByDate[key]){
-            _eventsByDate[key] = [NSMutableArray new];
-        }
-        
-        [_eventsByDate[key] addObject:randomDate];
-    }
 }
 
 
@@ -399,7 +405,6 @@ static NSString *const kExampleAuthorizerKey = @"authorization";
 - (void)setListFirst:(NSDate *)date{
     _selectedDate = date;
     _searchPage = [[NSNumber alloc]initWithInt:1];
-    //    [self showIndicator];
     
     NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
     NSDateFormatter *formatter2 = [[NSDateFormatter alloc]init];
@@ -411,12 +416,9 @@ static NSString *const kExampleAuthorizerKey = @"authorization";
     [[MommyRequest sharedInstance] mommyDiaryApiService:DiaryList authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data) {
         
         NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
-        NSLog(@"data : %@", data);
         if([code isEqualToString:@"0"]){
             NSArray *result = [data objectForKey:@"result"];
-//            if([result count] == 0 && [_diaryListTableController.googleCalendarArr count] == 0){
             if(![self haveEventForDay:date]){
-                NSLog(@"empty");
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     if(!_noDataController){
                         _noDataController = [self.storyboard instantiateViewControllerWithIdentifier:@"noDataDiaryController"];
@@ -430,7 +432,6 @@ static NSString *const kExampleAuthorizerKey = @"authorization";
                 });
             }else{
                 dispatch_sync(dispatch_get_main_queue(), ^{
-                    //만일 데이터 없음으로 되어 있을 시에는 다시 생기도록 해주기
                     _listTableview.hidden = NO;
                     if(_noDataController){
                         _noDataController.view.hidden = YES;
@@ -477,8 +478,6 @@ static NSString *const kExampleAuthorizerKey = @"authorization";
 - (void)setListMore:(NSDate *)date searchPage:(NSNumber *)searchPage{
     
     _selectedDate = date;
-    //    [self showIndicator];
-    
     NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
     NSDateFormatter *formatter2 = [[NSDateFormatter alloc]init];
     [formatter2 setDateFormat:@"YYYYMMdd"];
@@ -489,7 +488,6 @@ static NSString *const kExampleAuthorizerKey = @"authorization";
     [[MommyRequest sharedInstance] mommyDiaryApiService:DiaryList authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data) {
         
         NSString *code = [NSString stringWithFormat:@"%@", [data objectForKey:@"code"]];
-        NSLog(@"data : %@", data);
         if([code isEqualToString:@"0"]){
             _searchPage = searchPage;
             
@@ -510,18 +508,9 @@ static NSString *const kExampleAuthorizerKey = @"authorization";
             dispatch_async(dispatch_get_main_queue(), ^{
                 _diaryListTableController.selectedDate = [formatter2 stringFromDate:date];
                 [_listTableview reloadData];
-                //                [self hideIndicator];
             });
-        }else{
-            //            dispatch_async(dispatch_get_main_queue(), ^{
-            //                [self hideIndicator];
-            //            });
         }
     } error:^(NSError *error) {
-        //        dispatch_async(dispatch_get_main_queue(), ^{
-        //            [self hideIndicator];
-        //        });
-        
     }];
 }
 
@@ -535,36 +524,55 @@ static NSString *const kExampleAuthorizerKey = @"authorization";
     return newDate;
 }
 
+- (NSDate *)addDay:(int)addCount date:(NSDate *)date {
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    [dateComponents setDay:addCount];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDate *newDate = [calendar dateByAddingComponents:dateComponents toDate:date options:0];
+    
+    return newDate;
+}
+
 - (void)getMonthEmoticon:(NSDate *)date{
+    //초기화
+    _eventsByDate = [[NSMutableDictionary alloc] init];
+    _googleCalendarData = [[NSMutableArray alloc] init];
+    _diaryListTableController.googleCalendarDic = [[NSMutableDictionary alloc] init];
+    _diaryListTableController.diaryList = [[NSMutableArray alloc] init];
     _selectedDate = date;
+    
+    
     NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
-        NSDateFormatter *formatter2 = [[NSDateFormatter alloc]init];
+    NSDateFormatter *formatter2 = [[NSDateFormatter alloc]init];
     [formatter2 setDateFormat:@"YYYYMM"];
     [param setValue:[formatter2 stringFromDate:date] forKey:@"search_month"];
+    
+    [self showIndicator];
     
     [[MommyRequest sharedInstance] mommyDiaryApiService:MonthEmoticon authKey:GET_AUTH_TOKEN parameters:param success:^(NSDictionary *data) {
         if([data[@"code"] intValue] == 0){
             for(int i = 0 ; i < [data[@"result"] count] ; i++){
                 NSDictionary *value = [data[@"result"] objectAtIndex:i];
-//                if([value[@"emoticon_yn"] isEqualToString:@"Y"]){
                     NSString *key = value[@"reg_dttm"];
                     
                     if(!_eventsByDate[key]){
                         _eventsByDate[key] = [[NSMutableDictionary alloc] initWithDictionary:value];
                     }
-                    
-//                }
             }
-            NSLog(@"%@", _eventsByDate);
-//            [_calendarManager reload];
-            
-            [self loadState];
-        }else{
-            
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [self loadState];
+            });
         }
-        
+        else{
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [self loadState];
+            });
+        }
     } error:^(NSError *error) {
         
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self loadState];
+        });
     }];
 }
 

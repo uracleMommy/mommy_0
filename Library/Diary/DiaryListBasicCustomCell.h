@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *emoticonImageView;
 @property (weak, nonatomic) IBOutlet UILabel *emoticonLabel;
 @property (strong, nonatomic) NSString *diaryKey;
+@property (strong, nonatomic) NSDictionary *googleCalendarDic;
 
 @end

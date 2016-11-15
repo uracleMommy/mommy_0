@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="pIT-zG-VIw">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,7 +16,7 @@
         <scene sceneID="McU-z3-jbL">
             <objects>
                 <navigationController storyboardIdentifier="MembershipLoginNavigation" id="pIT-zG-VIw" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="RdA-W4-dWx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="RdA-W4-dWx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -692,7 +693,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SignUpMain" id="wEo-Cd-kHg" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="oCt-Xu-tXe"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="SY6-kz-ev5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="SY6-kz-ev5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1147,7 +1148,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SignUpMommyInfoController" id="88h-l9-SOB" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="mVn-Ei-MxK"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Luc-t5-4rp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Luc-t5-4rp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1169,7 +1170,7 @@
             <objects>
                 <navigationController id="7f4-aP-38G" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="dLx-e0-JmO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ma0-jt-tkD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ma0-jt-tkD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1190,7 +1191,7 @@
         <scene sceneID="KkR-5v-9F9">
             <objects>
                 <navigationController id="b3m-p5-VyI" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="iaA-dG-wkM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="iaA-dG-wkM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705879999995" green="0.2666666667" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

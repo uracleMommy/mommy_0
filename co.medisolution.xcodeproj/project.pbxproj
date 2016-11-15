@@ -2199,9 +2199,9 @@
 		DCA5AE181D598C6F0075B7AD = {
 			isa = PBXGroup;
 			children = (
-				DC6B0B7D1DBF50520092324C /* contents_graph_btn_bubble_left.png */,
 				2A5E82651DD9980400E7E36A /* client_1008861736533-t5t3lb3m9u45o04usi4p1cuvm3nfh31a.apps.googleusercontent.com.plist */,
 				DC6B0B7E1DBF50520092324C /* contents_graph_btn_bubble_right.png */,
+				DC6B0B7D1DBF50520092324C /* contents_graph_btn_bubble_left.png */,
 				DC6B0B7F1DBF50520092324C /* contents_graph_btn_bubble.png */,
 				DC6B0B801DBF50520092324C /* contents_graph_btn_heart.png */,
 				DC6B0B811DBF50520092324C /* contents_graph_btn_walk.png */,

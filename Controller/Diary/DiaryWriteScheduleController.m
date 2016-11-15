@@ -8,6 +8,8 @@
 
 #import "DiaryWriteScheduleController.h"
 
+static NSString *const kExampleAuthorizerKey = @"authorization";
+
 @interface DiaryWriteScheduleController ()
 
 @end
@@ -38,27 +40,35 @@
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithCustomView:saveBtn];
     self.navigationItem.leftBarButtonItem = saveButton;
     
-    [_dateButton setDropDownMode:IQDropDownModeDatePicker];
-    [_dateButton setInputTextFlag:YES];
-    
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
     [formatter setDateFormat:@"YYYY년 MM월 dd일 EEEE"];
     [_dateButton setDateFormatter:formatter];
     [_dateButton setDelegate:self];
-    
+    [_dateButton setDropDownMode:IQDropDownModeDatePicker];
+    [_dateButton setInputTextFlag:YES];
     [_dateButton setDate:NSDate.date];
     _dateLabel.text = [formatter stringFromDate:NSDate.date];
-    
-    [_timeButton setDropDownMode:IQDropDownModeTimePicker];
-    [_timeButton setInputTextFlag:YES];
-    
+    [_dateButton2 setDateFormatter:formatter];
+    [_dateButton2 setDelegate:self];
+    [_dateButton2 setDropDownMode:IQDropDownModeDatePicker];
+    [_dateButton2 setInputTextFlag:YES];
+    [_dateButton2 setDate:NSDate.date];
+    _dateLabel2.text = [formatter stringFromDate:NSDate.date];
+
     NSDateFormatter *formatter2 = [[NSDateFormatter alloc]init];
     [formatter2 setDateFormat:@"HH:mm"];
     [_timeButton setTimeFormatter:formatter2];
     [_timeButton setDelegate:self];
-    
+    [_timeButton setDropDownMode:IQDropDownModeTimePicker];
+    [_timeButton setInputTextFlag:YES];
     [_timeButton setDate:NSDate.date];
     _timeLabel.text = [formatter2 stringFromDate:NSDate.date];
+    [_timeButton2 setTimeFormatter:formatter2];
+    [_timeButton2 setDelegate:self];
+    [_timeButton2 setDropDownMode:IQDropDownModeTimePicker];
+    [_timeButton2 setInputTextFlag:YES];
+    [_timeButton2 setDate:NSDate.date];
+    _timeLabel2.text = [formatter2 stringFromDate:NSDate.date];
     
     
     _placeholderLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, _contentsTextView.frame.size.width - 10.0, 34.0)];
@@ -72,12 +82,16 @@
     
     [_contentsTextView addSubview:_placeholderLabel];
     [_contentsTextView setTextContainerInset:UIEdgeInsetsMake(8, -5, 0, 0)];
+    
+    self.service = [[GTLServiceCalendar alloc] init];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 #pragma mark UITextView Delegate
 - (BOOL) textViewShouldBeginEditing:(UITextView *)textView
@@ -90,7 +104,6 @@
 
 -(void) textViewDidChange:(UITextView *)textView
 {
-    
     if(![textView hasText]) {
         _placeholderLabel.hidden = NO;
     }
@@ -108,22 +121,113 @@
         _timeLabel.text = item;
     }
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
- */
-
+#pragma mark Navigation Button Action
 - (void)goBack{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)saveSchedule{
+    if([_titleLabel.text isEqualToString:@""] || [_titleLabel.text isEqualToString:@""]){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                        message:@"입력하신 내용을 다시 확인해주세요."
+                                                       delegate:self
+                                              cancelButtonTitle:@"확인"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+    }else{
+        [self loadState];
+    }
     
 }
+
+
+- (void)loadState {
+    GTMAppAuthFetcherAuthorization* authorization =
+    [GTMAppAuthFetcherAuthorization authorizationFromKeychainForName:kExampleAuthorizerKey];
+    [self setGtmAuthorization:authorization];
+}
+
+- (void)setGtmAuthorization:(GTMAppAuthFetcherAuthorization*)authorization {
+    if ([_authorization isEqual:authorization]) {
+        [self updateUI];
+        return;
+    }
+    _authorization = authorization;
+    [self stateChanged];
+}
+
+
+- (void)stateChanged {
+    [self saveState];
+    [self updateUI];
+}
+
+- (void)updateUI {
+    if (_authorization.canAuthorize) {
+        self.service.authorizer = [GTMAppAuthFetcherAuthorization authorizationFromKeychainForName:kExampleAuthorizerKey];
+        //데이터 받아오기
+        [self fetchEvents];
+    }
+}
+
+- (void)saveState {
+    if (_authorization.canAuthorize) {
+        [GTMAppAuthFetcherAuthorization saveAuthorization:_authorization
+                                        toKeychainForName:kExampleAuthorizerKey];
+    } else {
+        [GTMAppAuthFetcherAuthorization removeAuthorizationFromKeychainForName:kExampleAuthorizerKey];
+    }
+}
+
+- (void)fetchEvents {
+    
+    GTLCalendarEvent *event = [GTLCalendarEvent new];
+    
+    [event setSummary:_titleLabel.text];
+    
+    if(![_contentsTextView.text isEqualToString:@""]){
+        [event setDescriptionProperty:_contentsTextView.text];
+    }
+    
+    NSDateFormatter *formatterMonth = [[NSDateFormatter alloc]init];
+    [formatterMonth setDateFormat:@"YYYYMMdd"];
+    NSDateFormatter *formatterTime = [[NSDateFormatter alloc]init];
+    [formatterTime setDateFormat:@"HHmm"];
+    
+    NSString *startDate = [NSString stringWithFormat:@"%@%@", [formatterMonth stringFromDate:_dateButton.date], [formatterTime stringFromDate:_timeButton.date]];
+    
+    
+    NSString *endDate = [NSString stringWithFormat:@"%@%@", [formatterMonth stringFromDate:_dateButton2.date], [formatterTime stringFromDate:_timeButton2.date]];
+    
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    [dateFormatter setDateFormat:@"yyyyMMddHHmm"];
+    
+    GTLDateTime *startDateTime = [GTLDateTime dateTimeWithDate:[dateFormatter dateFromString:startDate] timeZone:[NSTimeZone systemTimeZone]];
+    GTLCalendarEventDateTime *start = [GTLCalendarEventDateTime new];
+    [start setDateTime:startDateTime];
+    [start setTimeZone:@"Asia/Seoul"];
+    [event setStart:start];
+    
+    GTLDateTime *endDateTime = [GTLDateTime dateTimeWithDate:[dateFormatter dateFromString:endDate] timeZone:[NSTimeZone systemTimeZone]];
+    GTLCalendarEventDateTime *end = [GTLCalendarEventDateTime new];
+    [end setDateTime:endDateTime];
+    [end setTimeZone:@"Asia/Seoul"];
+    [event setEnd:end];
+    
+    GTLQueryCalendar *query = [GTLQueryCalendar queryForEventsInsertWithObject:event calendarId:@"primary"];
+    
+    [self.service executeQuery:query delegate:self didFinishSelector:@selector(displayWritingFinish:finishedWithObject:error:)];
+}
+
+
+- (void)displayWritingFinish:(GTLServiceTicket *)ticket
+             finishedWithObject:(GTLCalendarEvents *)events
+                          error:(NSError *)error {
+    [self goBack];
+}
+
+
+
 
 @end

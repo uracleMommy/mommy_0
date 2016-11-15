@@ -29,7 +29,6 @@
 @property (nonatomic, strong) NSString *selectedDate;
 @property (strong, nonatomic) id<DiaryListModelDelegate> delegate;
 @property (strong, nonatomic) NSMutableDictionary *cachedImages;
-@property (strong, nonatomic) NSMutableArray *googleCalendarArr;
 @property (strong, nonatomic) NSMutableDictionary *googleCalendarDic;
 
 @end

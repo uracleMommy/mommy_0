@@ -9,18 +9,25 @@
 #import <UIKit/UIKit.h>
 #import "IQDropDownTextField.h"
 #import "CommonViewController.h"
+#import "GTLCalendar.h"
+#import "GTMAppAuth.h"
+#import "notPasteField.h"
 
-@interface DiaryWriteScheduleController : CommonViewController <IQDropDownTextFieldDelegate, UITextViewDelegate>{
-    UIDatePicker *datePicker;
-    UIDatePicker *timePicker;
-}
+@interface DiaryWriteScheduleController : CommonViewController <IQDropDownTextFieldDelegate, UITextViewDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *contentsTextView;
 @property (strong, nonatomic) UILabel *placeholderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel2;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel2;
 @property (weak, nonatomic) IBOutlet IQDropDownTextField *dateButton;
 @property (weak, nonatomic) IBOutlet IQDropDownTextField *timeButton;
+@property (weak, nonatomic) IBOutlet IQDropDownTextField *dateButton2;
+@property (weak, nonatomic) IBOutlet IQDropDownTextField *timeButton2;
+@property (weak, nonatomic) IBOutlet notPasteField *titleLabel;
 
+@property (nonatomic, strong) GTLServiceCalendar *service;
+@property(nonatomic, nullable) GTMAppAuthFetcherAuthorization *authorization;
 
 @end

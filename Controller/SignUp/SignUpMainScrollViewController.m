@@ -22,6 +22,7 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
     [formatter setDateFormat:@"YYYY.MM.dd"];
     [_birthdayTextField setDateFormatter:formatter];
+    [_birthdayTextField setDate:[formatter dateFromString:@"1980.01.01"]];
     [_birthdayTextField setMaximumDate:[NSDate date]];
     
     _idValidationArr = [[NSMutableArray alloc] initWithArray:@[@"N", @"N", @"N"]];

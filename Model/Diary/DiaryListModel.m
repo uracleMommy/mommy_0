@@ -54,14 +54,18 @@
             cell = [tableView dequeueReusableCellWithIdentifier:BASIC_CELL_ID];
         }
         
-        cell.regDateLabel.text = data[@"start"][@"dateTime"];
+        if(data[@"start"][@"dateTime"] != nil){
+            cell.regDateLabel.text = [self getyyyyMMddeeee:data[@"start"][@"dateTime"]];
+        }else{
+            cell.regDateLabel.text = [NSString stringWithFormat:@"%@%@", [self getyyyyMMdd:data[@"start"][@"date"]], @" 00:01"];
+        }
         cell.emoticonImageView.image = [UIImage imageNamed: @"contents_icon_emoticon08"];
         cell.emoticonLabel.textColor = [UIColor colorWithRed:150.0f/255.0f green:183.0f/255.0f blue:55.0f/255.0f alpha:1.0f];
         cell.emoticonLabel.text = @"개인";
         
         cell.titleLabel.text = [data objectForKey:@"summary"];
-//        cell.tag = 0;
-//        cell.diaryKey = [data objectForKey:@"diary_key"];
+        cell.tag = 2;
+        cell.googleCalendarDic = [[NSDictionary alloc]initWithDictionary:data];
         
         CAShapeLayer *firstShapeLayer = [CAShapeLayer layer];
         [firstShapeLayer setBounds:cell.bounds];
@@ -282,6 +286,8 @@
     }
 }
 
+
+
 /*
  // Override to support conditional editing of the table view.
  - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -321,4 +327,36 @@
 {
     return 120;
 }
+
+
+- (NSString *) getyyyyMMddeeee : (NSString *) dateFormatString {
+    
+    NSString *dateString = dateFormatString;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
+    NSDate *dateFromString = [[NSDate alloc] init];
+    // voila!
+    dateFromString = [dateFormatter dateFromString:dateString];
+    
+    [dateFormatter setDateFormat:@"YYYY.MM.dd HH:mm"];
+    NSString *yyyymmddeeee = [dateFormatter stringFromDate:dateFromString];
+    
+    return yyyymmddeeee;
+}
+
+- (NSString *) getyyyyMMdd : (NSString *) dateFormatString {
+    
+    NSString *dateString = dateFormatString;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSDate *dateFromString = [[NSDate alloc] init];
+    // voila!
+    dateFromString = [dateFormatter dateFromString:dateString];
+    
+    [dateFormatter setDateFormat:@"YYYY.MM.dd"];
+    NSString *yyyymmddeeee = [dateFormatter stringFromDate:dateFromString];
+    
+    return yyyymmddeeee;
+}
+
 @end

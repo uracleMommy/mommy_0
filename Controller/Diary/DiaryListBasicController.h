@@ -13,6 +13,8 @@
 #import "DiaryCalenderController.h"
 #import "CommonViewController.h"
 #import "DiaryDetailListController.h"
+#import "DiaryWriteScheduleController.h"
+#import "DiaryDetailScheduleController.h"
 
 #define PAGE_SIZE [[NSNumber alloc] initWithInt:30]
 
@@ -32,6 +34,7 @@
 @property (strong, nonatomic) NSDate *listDate;
 @property (strong, nonatomic) NSNumber *searchPage;
 @property (strong, nonatomic) NSString *selectedDiaryKey;
+@property (strong, nonatomic) NSDictionary *selectedGoogleCalendarDic;
 
 - (IBAction)changeListViewAction:(id)sender;
 - (IBAction)prevMonthButton:(id)sender;
