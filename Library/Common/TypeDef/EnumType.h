@@ -71,10 +71,9 @@ typedef enum {
 #pragma 이용약관
 typedef enum {
     
-    AuthText1,
-    AuthText2,
-    AuthText3,
-    AuthText4
+    AuthText1 = 1,
+    AuthText2 = 2,
+    AuthText3 = 3
 } AuthTextType;
 
 #endif /* EnumType_h */

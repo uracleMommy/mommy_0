@@ -17,6 +17,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *txtView;
 
+@property (weak, nonatomic) IBOutlet UIView *etcView;
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageFirstQuestion1;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageFirstQuestion2;

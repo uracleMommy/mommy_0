@@ -43,7 +43,7 @@
 
 @property (strong, nonatomic) NSMutableDictionary *addressCodeDic;
 @property (weak, nonatomic)id<SignUpMommyInfoScrollViewDelegate> delegate;
-//@property (weak, nonatomic) IBOutlet UIImageView *mommyBackImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *mommyBackImageView;
 @property (weak, nonatomic) IBOutlet UITextField *mommyNameTextField;
 @property (weak, nonatomic) IBOutlet UILabel *mommyNameValidationLabel;
 @property (weak, nonatomic) IBOutlet IQDropDownTextField *addressTextField;

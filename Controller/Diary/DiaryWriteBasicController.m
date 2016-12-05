@@ -83,6 +83,9 @@
     _imageButton04.layer.borderWidth = 2.0f;
     _imageButton04.layer.masksToBounds = YES;
     [_imageButton04 setImage:defaultImage forState:UIControlStateNormal];
+        
+    [_emoticonButton setImageEdgeInsets:UIEdgeInsetsMake(7, 7, 7, 7)];
+    [_emoticonButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
     
     /** PickerView Setting **/
 //    _pickerData_0 = [[NSMutableArray alloc]initWithArray:@[@"Select", @"서울시", @"경기도"]];
@@ -160,11 +163,7 @@
                 NSString *reg_dttm = [NSString stringWithFormat:@"%@%@", [formatterMonth stringFromDate:_dateButton.date], [formatterTime stringFromDate:_timeButton.date]];
                 
                 NSString *emoticon;
-                if(_emoticonButton.tag == -1){
-                    emoticon = @"";
-                }else{
-                    emoticon = [NSString stringWithFormat:@"%ld", (long)_emoticonButton.tag+500];
-                }
+                emoticon = [NSString stringWithFormat:@"%ld", (long)_emoticonButton.tag+500];
                 
                 [param setValue:@"N" forKey:@"isvalid"];
                 [param setValue:_titleTextField.text forKey:@"title"];
@@ -234,11 +233,7 @@
         NSString *reg_dttm = [NSString stringWithFormat:@"%@%@", [formatterMonth stringFromDate:_dateButton.date], [formatterTime stringFromDate:_timeButton.date]];
         
         NSString *emoticon;
-        if(_emoticonButton.tag == -1){
-            emoticon = @"503";
-        }else{
-            emoticon = [NSString stringWithFormat:@"%ld", (long)_emoticonButton.tag+500];
-        }
+        emoticon = [NSString stringWithFormat:@"%ld", (long)_emoticonButton.tag+500];
         
         [param setValue:@"Y" forKey:@"isvalid"];
         [param setValue:_titleTextField.text forKey:@"title"];
@@ -313,9 +308,9 @@
 - (void)clickButton:(int)tag {
     NSMutableString *emoticonImageName = [[NSMutableString alloc] initWithString:@"contents_icon_emoticon0"];
     
-    [emoticonImageName appendFormat:@"%d", tag+1];
+    [emoticonImageName appendFormat:@"%d", tag];
     [_emoticonButton setImage:[UIImage imageNamed:emoticonImageName] forState:UIControlStateNormal];
-    [_emoticonButton setTag:tag+1];
+    [_emoticonButton setTag:tag];
     
     [_emoticonButton setImageEdgeInsets:UIEdgeInsetsMake(7, 7, 7, 7)];
     [_emoticonButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
@@ -326,8 +321,8 @@
     selectedImageButton = sender;
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"사진"
-                                                                   message:@""
-                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *showAction = [UIAlertAction actionWithTitle:@"사진보기"
                                                          style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {

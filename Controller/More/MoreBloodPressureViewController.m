@@ -86,6 +86,7 @@
             _totalPage = [data[@"result"][@"pres_tot"] integerValue];
             
             NSArray *resultArray = data[@"result"][@"bp_list"];
+            [_moreBloodPressureModel.arrayList removeAllObjects];
             
             // 데이터 형식 만들기
             for (NSDictionary *dic in resultArray) {

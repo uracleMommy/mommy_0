@@ -23,13 +23,13 @@
     
     //back Button Setting
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    UIImage *backBtnImage = [UIImage imageNamed:@"title_icon_close.png"];
+    UIImage *backBtnImage = [UIImage imageNamed:@"title_icon_back"];
     backBtn.frame = CGRectMake(0, 0, 40, 40);
     [backBtn setImage:backBtnImage forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
-    [backBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 15, 0, -15)];
+    [backBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
-    self.navigationItem.rightBarButtonItem = backButton;
+    self.navigationItem.leftBarButtonItem = backButton;
 
     
     CGRect mainRect = [[UIScreen mainScreen] bounds];

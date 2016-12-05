@@ -33,7 +33,7 @@
     for(int i = 0 ; i < 200 ; i++){
         if(i < 10){
             [pickerData_number_point addObject: [NSString stringWithFormat:@".%d", i]];
-            if(i > 0 || i < 6){
+            if(i > 0 && i < 6){
                 [pickerData_number_fetus addObject: [NSString stringWithFormat:@"%d", i]];
             }
         }else if( i > 20 && i < 100){
@@ -66,12 +66,16 @@
     beforeWeightPicker = [[UIPickerView alloc] init];
     beforeWeightPicker.dataSource = self;
     beforeWeightPicker.delegate = self;
+    [beforeWeightPicker selectRow:30 inComponent:0 animated:YES];
     [_beforeWeightTextField setInputView:beforeWeightPicker];
+    _beforeWeightTextField.text = @"50.0";
     
     nowWeightPicker = [[UIPickerView alloc] init];
     nowWeightPicker.dataSource = self;
     nowWeightPicker.delegate = self;
+    [nowWeightPicker selectRow:30 inComponent:0 animated:YES];
     [_nowWeightTextField setInputView:nowWeightPicker];
+    _nowWeightTextField.text = @"50.0";
     
     [_heightTextField setDropDownMode : IQDropDownModeTextPicker];
     [_heightTextField setItemList:pickerData_number_height];
@@ -186,8 +190,8 @@
 #pragma mark - picturebutton action
 - (IBAction)mommyPictureButtonAction:(id)sender {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"사진"
-                                                                   message:@""
-                                                            preferredStyle:UIAlertControllerStyleActionSheet]; // 1
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleAlert]; // 1
     
     UIAlertAction *showAction = [UIAlertAction actionWithTitle:@"사진보기"
                                                          style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
@@ -237,6 +241,8 @@
 -(void)setMommyImage:(UIImage *)croppedImage{
     [_mommyImageButton setImage:croppedImage forState:UIControlStateNormal];
     [_mommyImageButton.imageView setContentMode:UIViewContentModeScaleAspectFill];
+    UIImage *blurImage = [croppedImage blurredImageWithRadius:50 iterations:5.0 tintColor:[UIColor blackColor]];;
+    [_mommyBackImageView setImage:blurImage];
 }
 
 #pragma mark Library Function

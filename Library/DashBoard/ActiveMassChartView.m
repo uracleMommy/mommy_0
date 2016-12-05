@@ -60,4 +60,15 @@
     }
 }
 
+- (IBAction)commentButtonAction:(id)sender {
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                    message:_lblComment.text
+                                                   delegate:self
+                                          cancelButtonTitle:@"확인"
+                                          otherButtonTitles:nil, nil];
+    [alert show];
+
+}
+
 @end

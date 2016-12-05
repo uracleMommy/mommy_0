@@ -12,6 +12,12 @@
 #import "CoachMarkSecondController.h"
 #import "CoachMarkThirdController.h"
 
+@protocol CoachContainerDelegate <NSObject>
+
+-(void)startDashBoard;
+
+@end
+
 @interface CoachMarkContainerController : UIViewController<UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
 @property (assign) NSInteger currentIndex;
@@ -28,6 +34,9 @@
 
 @property (weak, nonatomic) IBOutlet UIView *underLine;
 
+@property (strong, nonatomic) id<CoachContainerDelegate> delegate;
+
 - (IBAction) goStart:(id) sender;
+
 
 @end

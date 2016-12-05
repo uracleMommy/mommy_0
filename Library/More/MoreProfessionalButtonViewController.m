@@ -48,12 +48,12 @@
                 [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
                     
                     CGRect execersizeViewframe = _containerExecersizeView.frame;
-                    execersizeViewframe.origin.y = execersizeViewframe.origin.y - 60;
+                    execersizeViewframe.origin.y = execersizeViewframe.origin.y - 120;
                     _containerExecersizeView.frame = execersizeViewframe;
                     _lblExecersize.hidden = NO;
                     
                     CGRect nutritionViewframe = _containerNutritionView.frame;
-                    nutritionViewframe.origin.y = nutritionViewframe.origin.y - 120;
+                    nutritionViewframe.origin.y = nutritionViewframe.origin.y - 60;
                     _containerNutritionView.frame = nutritionViewframe;
                     _lblNutrition.hidden = NO;
                     

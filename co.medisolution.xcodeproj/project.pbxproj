@@ -68,6 +68,8 @@
 		2AC164501D9CD09500533BB0 /* CommunityDetailReplyPeopleInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC1644F1D9CD09500533BB0 /* CommunityDetailReplyPeopleInfoCell.xib */; };
 		2AC164521D9CD0B200533BB0 /* CommunityDetailReplyContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC164511D9CD0B200533BB0 /* CommunityDetailReplyContentCell.xib */; };
 		2AC164561D9CD0CD00533BB0 /* CommunityDetailWriterInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC164551D9CD0CD00533BB0 /* CommunityDetailWriterInfoCell.xib */; };
+		2AC17EAF1DEE91ED00606FFB /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC17EAE1DEE91ED00606FFB /* UIView+Toast.m */; };
+		2AC17EB21DEEB85200606FFB /* LoginFindIdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC17EB11DEEB85200606FFB /* LoginFindIdController.m */; };
 		2AC781DB1D599C0800B86BE1 /* MembershipLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC781DA1D599C0800B86BE1 /* MembershipLogin.storyboard */; };
 		2AD09BF91DB8A534005D0CD7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AD09BF81DB8A534005D0CD7 /* GoogleService-Info.plist */; };
 		2AD09C091DB8ADB9005D0CD7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD09C081DB8ADB9005D0CD7 /* libz.tbd */; };
@@ -511,6 +513,10 @@
 		2AC1644F1D9CD09500533BB0 /* CommunityDetailReplyPeopleInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityDetailReplyPeopleInfoCell.xib; sourceTree = "<group>"; };
 		2AC164511D9CD0B200533BB0 /* CommunityDetailReplyContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityDetailReplyContentCell.xib; sourceTree = "<group>"; };
 		2AC164551D9CD0CD00533BB0 /* CommunityDetailWriterInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityDetailWriterInfoCell.xib; sourceTree = "<group>"; };
+		2AC17EAD1DEE91ED00606FFB /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		2AC17EAE1DEE91ED00606FFB /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		2AC17EB01DEEB85200606FFB /* LoginFindIdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginFindIdController.h; sourceTree = "<group>"; };
+		2AC17EB11DEEB85200606FFB /* LoginFindIdController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginFindIdController.m; sourceTree = "<group>"; };
 		2AC781DA1D599C0800B86BE1 /* MembershipLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MembershipLogin.storyboard; sourceTree = "<group>"; };
 		2AD09BF81DB8A534005D0CD7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2AD09C081DB8ADB9005D0CD7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -1260,6 +1266,8 @@
 				2A4474C71D6EBB4A00D467C8 /* LoginUnlockAccountController.m */,
 				2ABDB8D71DA36FB500239967 /* LoginResetPasswordController.h */,
 				2ABDB8D81DA36FB500239967 /* LoginResetPasswordController.m */,
+				2AC17EB01DEEB85200606FFB /* LoginFindIdController.h */,
+				2AC17EB11DEEB85200606FFB /* LoginFindIdController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1619,6 +1627,8 @@
 		DC3266471D6E7E4F008B38A8 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				2AC17EAD1DEE91ED00606FFB /* UIView+Toast.h */,
+				2AC17EAE1DEE91ED00606FFB /* UIView+Toast.m */,
 				2AD2AE631DBF35F200851D47 /* NSString+UUID.h */,
 				2AD2AE641DBF35F200851D47 /* NSString+UUID.m */,
 				DC3266481D6E7EA1008B38A8 /* CommonViewController.h */,
@@ -2649,6 +2659,7 @@
 				2A444C371D7EBA7E00B37E8A /* termsPopupViewController.m in Sources */,
 				2AD2AE5E1DBF35E300851D47 /* UIButton+AFNetworking.m in Sources */,
 				2AD2AE521DBF35E300851D47 /* AFNetworkReachabilityManager.m in Sources */,
+				2AC17EAF1DEE91ED00606FFB /* UIView+Toast.m in Sources */,
 				DC5D20861D62AFA100ACDCA4 /* OTPageView.m in Sources */,
 				2A54B1B21D66904000C538D1 /* JTDateHelper.m in Sources */,
 				DC68F5441D93D7F0009D3B1E /* MoreProfessionalReplyContentSegue.m in Sources */,
@@ -2736,6 +2747,7 @@
 				DC4F0F061D912DC3003CB09B /* MoreProfessionalAdviceContentsViewController.m in Sources */,
 				2A371A4B1D62D9720051F278 /* SignUpFetusInfoCustomCell_Basic.m in Sources */,
 				DC2D90021DB4EB180032FD2D /* MoreBloodPressureFooterCell.m in Sources */,
+				2AC17EB21DEEB85200606FFB /* LoginFindIdController.m in Sources */,
 				DCA5AE261D598C6F0075B7AD /* main.m in Sources */,
 				2A1A86C01D9A86AB0091399B /* CommunityMentorController.m in Sources */,
 				DC67EB5F1D94B4480096BCB3 /* FLAnimatedImage.m in Sources */,
@@ -2935,7 +2947,7 @@
 				CODE_SIGN_ENTITLEMENTS = co.medisolution/co.medisolution.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = JH5F2VBM8Z;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -2971,8 +2983,8 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_ENTITLEMENTS = co.medisolution/co.medisolution.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = JH5F2VBM8Z;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;

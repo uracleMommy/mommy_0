@@ -99,6 +99,8 @@
     [currentWindow addSubview:_moveWriteViewButton];
     
     [_moveWriteViewButton addTarget:self action:@selector(moveWriteView) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self setList:@([_searchPage intValue]*[PAGE_SIZE intValue])];
 }
 
 #pragma mark - Navigation
@@ -393,6 +395,11 @@
 
 #pragma mark setting list
 - (void)setListFirst{
+    [self setList:PAGE_SIZE];
+}
+
+- (void)setList:(NSNumber *)pageSize{
+    
     _searchPage = [[NSNumber alloc]initWithInt:1];
     
     MommyCommunityWebServiceType service;
@@ -407,7 +414,7 @@
         [param setValue:_mentorKey forKey:@"mento_key"];
     }
     
-    [param setValue:PAGE_SIZE forKey:@"pageSize"];
+    [param setValue:pageSize forKey:@"pageSize"];
     [param setValue:_searchPage forKey:@"searchPage"];
     
     [self showIndicator];
@@ -436,7 +443,7 @@
                         [self.view.subviews[0] removeFromSuperview];
                     }
                 });
-
+                
                 if([[[result objectAtIndex:0] objectForKey:@"tot_cnt"] intValue] >= ([_searchPage intValue]+[PAGE_SIZE intValue]) ){
                     _currentLastPageStatus = YES;
                 }else{
@@ -457,6 +464,7 @@
         NSLog(@"PSH error %@", error);
         dispatch_async(dispatch_get_main_queue(), ^{[self hideIndicator];});
     } ];
+
 }
 
 - (void)setListMore:(NSNumber *)searchPage{

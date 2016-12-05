@@ -20,6 +20,7 @@ typedef enum {
     AuthNumber,
     UnlockMember,
     ResetPassword,
+    FindId,
     SetPassword
 } MommyLoginWebServiceType;
 

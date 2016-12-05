@@ -47,8 +47,8 @@
 #pragma mark - picturebutton action
 - (IBAction)mommyPictureButtonAction:(id)sender {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"사진"
-                                                                   message:@""
-                                                            preferredStyle:UIAlertControllerStyleActionSheet]; // 1
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleAlert]; // 1
     
     UIAlertAction *showAction = [UIAlertAction actionWithTitle:@"사진보기"
                                                          style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {

@@ -11,7 +11,7 @@
 
 @interface SignUpAuthController : CommonViewController
 
-@property (weak, nonatomic) IBOutlet UITextView *authTextField;
-@property (assign, nonatomic) AuthTextType *type;
+@property (assign, nonatomic) AuthTextType type;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end

@@ -56,7 +56,7 @@
                                 <constraint firstItem="0v0-Ok-67O" firstAttribute="centerY" secondItem="M21-ov-na0" secondAttribute="centerY" id="tHe-XO-C3G"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPD-KQ-957">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPD-KQ-957">
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="75" id="c2r-Dz-ICy"/>
@@ -65,7 +65,7 @@
                                 <action selector="clickButton:" destination="-1" eventType="touchUpInside" id="a5j-NK-4SV"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJh-3e-VOU">
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJh-3e-VOU">
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="75" id="aTX-kX-1sa"/>
@@ -74,7 +74,7 @@
                                 <action selector="clickButton:" destination="-1" eventType="touchUpInside" id="z0C-ga-Z04"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIk-ua-fU4">
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIk-ua-fU4">
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="75" id="42b-Hc-q0E"/>
@@ -83,7 +83,7 @@
                                 <action selector="clickButton:" destination="-1" eventType="touchUpInside" id="ttI-Mo-KCG"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKV-Uz-HhZ">
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKV-Uz-HhZ">
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="75" id="hGw-g7-zZy"/>
@@ -196,7 +196,7 @@
                                 <constraint firstItem="csO-66-LUG" firstAttribute="top" secondItem="9oS-km-RT5" secondAttribute="bottom" constant="7" id="vi8-Fk-VHy"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcw-ut-RD2">
+                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcw-ut-RD2">
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="75" id="VV3-4l-Omw"/>
@@ -205,7 +205,7 @@
                                 <action selector="clickButton:" destination="-1" eventType="touchUpInside" id="MdH-1i-KPt"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1u-At-h1n">
+                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1u-At-h1n">
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="75" id="xLT-Ga-qD3"/>
@@ -214,7 +214,7 @@
                                 <action selector="clickButton:" destination="-1" eventType="touchUpInside" id="C14-yI-eDF"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThQ-Ur-ISP">
+                        <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThQ-Ur-ISP">
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="75" id="cVj-Tm-HQn"/>
@@ -231,7 +231,7 @@
                         </button>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ise-la-aud">
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image=" " translatesAutoresizingMaskIntoConstraints="NO" id="4fP-qq-tzH">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contents_icon_emoticon07" translatesAutoresizingMaskIntoConstraints="NO" id="4fP-qq-tzH">
                                     <constraints>
                                         <constraint firstAttribute="height" constant="47" id="1NH-uH-yE9"/>
                                         <constraint firstAttribute="width" constant="42" id="era-my-bR1"/>
@@ -386,13 +386,13 @@
         </view>
     </objects>
     <resources>
-        <image name=" " width="170" height="170"/>
         <image name="contents_icon_emoticon01" width="60" height="68"/>
         <image name="contents_icon_emoticon02" width="60" height="68"/>
         <image name="contents_icon_emoticon03" width="60" height="68"/>
         <image name="contents_icon_emoticon04" width="60" height="68"/>
         <image name="contents_icon_emoticon05" width="60" height="68"/>
         <image name="contents_icon_emoticon06" width="60" height="68"/>
+        <image name="contents_icon_emoticon07" width="60" height="68"/>
         <image name="input_btn_del" width="90" height="90"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -47,5 +47,6 @@
 - (IBAction)goPrevious:(id)sender;
 
 - (IBAction)goNext:(id)sender;
+- (IBAction)commentButtonAction:(id)sender;
 
 @end

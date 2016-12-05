@@ -24,9 +24,9 @@
     _containerView.layer.borderWidth = 1.0f;
     _containerView.layer.cornerRadius = 10;
     
-    _txtView.layer.borderColor = [[UIColor colorWithRed:217.0f/255.0f green:217.0f/255.0f blue:217.0f/255.0f alpha:1.0f] CGColor];
-    _txtView.layer.borderWidth = 1.0f;
-    _txtView.layer.cornerRadius = 10;
+    _etcView.layer.borderColor = [[UIColor colorWithRed:217.0f/255.0f green:217.0f/255.0f blue:217.0f/255.0f alpha:1.0f] CGColor];
+    _etcView.layer.borderWidth = 1.0f;
+    _etcView.layer.cornerRadius = 10;
     
 //    self.view.backgroundColor = [UIColor colorWithRed:235.0f/255.0f green:235.0f/255.0f blue:235.0f/255.0f alpha:1.0f];
     

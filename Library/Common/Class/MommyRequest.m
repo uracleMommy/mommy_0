@@ -903,6 +903,10 @@ static MommyHttpUrls* instanceMommyHttpUrls;
             return [_mainDomain stringByAppendingString: @"/api/user/password/new"];
             break;
             
+        case FindId:
+            return [_mainDomain stringByAppendingString: @"/api/user/find/id"];
+            break;
+            
         default:
             return @"";
             break;

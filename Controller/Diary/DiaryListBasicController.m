@@ -189,6 +189,8 @@
         
         [_contentView addSubview : _calenderViewController.view];
         
+        [_changeListButton setImage:[UIImage imageNamed:@"tab_btn_list"] forState:UIControlStateNormal];
+        
         [_calenderViewController.calendarManager setDate:_listDate];
     }else{
         NSString *restorationIdentifier = _contentView.subviews[0].restorationIdentifier;
@@ -197,8 +199,10 @@
         if([restorationIdentifier isEqualToString:@"tableView"]){
             [_calenderViewController.calendarManager setDate:_listDate];
             [_contentView addSubview : _calenderViewController.view];
+            [_changeListButton setImage:[UIImage imageNamed:@"tab_btn_list"] forState:UIControlStateNormal];
         }else{
             [_contentView addSubview : _listViewController.view];
+            [_changeListButton setImage:[UIImage imageNamed:@"tab_btn_calendar"] forState:UIControlStateNormal];
         }
     }
     

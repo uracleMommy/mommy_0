@@ -180,13 +180,16 @@
             long code = [data[@"code"] longValue];
             
             // 실패시
-            if (code != 0) {
-                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
-                    UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
-                    [alert addAction:confirmAlertAction];
-                    [self presentViewController:alert animated:YES completion:nil];
-                    [self hideIndicator];
-                
+            if( code == -100){
+                [self.view makeToast:@"데이터가 없습니다"];
+                [self hideIndicator];
+                return ;
+            }else if (code != 0) {
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
+                [alert addAction:confirmAlertAction];
+                [self presentViewController:alert animated:YES completion:nil];
+                [self hideIndicator];
                 return;
             }
             
@@ -257,7 +260,11 @@
             long code = [data[@"code"] longValue];
             
             // 실패시
-            if (code != 0) {
+            if( code == -100){
+                [self.view makeToast:@"데이터가 없습니다"];
+                [self hideIndicator];
+                return ;
+            }else if (code != 0) {
                 
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"잠시후 다시 시도해 주세요." preferredStyle:UIAlertControllerStyleAlert];
                 UIAlertAction *confirmAlertAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil];
@@ -353,7 +360,7 @@
 
 - (void) addWeightHand {
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"혈압기록 추가" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"체중기록 추가" preferredStyle:UIAlertControllerStyleAlert];
     [alert addTextFieldWithConfigurationHandler:^(UITextField *textField)
      {
 //         UILabel* aLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 70, 38)];
@@ -364,7 +371,7 @@
 //         textField.leftView = aLabel;
 //         textField.leftViewMode = UITextFieldViewModeAlways;
          
-         textField.placeholder = NSLocalizedString(@"mmHg", @"수축기 혈압");
+         textField.placeholder = NSLocalizedString(@"kg", @"체중");
          [textField setFrame:CGRectMake(0, 0, textField.frame.size.width, 35.0f)];
          textField.textAlignment = NSTextAlignmentCenter;
          [textField setKeyboardType:UIKeyboardTypeNumberPad];
@@ -489,7 +496,7 @@
 - (void) goChartNext {
     
     if(_currentPage == 0) {
-        
+        [self.view makeToast:@"가장 최근 데이터입니다"];
         return;
     }
     

@@ -17,7 +17,7 @@
 #import "ProgramMainViewController.h"
 
 
-@interface DashBoardController ()<OTPageScrollViewDataSource,OTPageScrollViewDelegate>
+@interface DashBoardController ()<OTPageScrollViewDataSource,OTPageScrollViewDelegate, CoachContainerDelegate>
 
 @end
 
@@ -77,31 +77,35 @@
     
 
     
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-
-    if(![[userDefaults objectForKey:@"coachMarkFlag"] isEqual:[NSNull null]] && [[userDefaults objectForKey:@"coachMarkFlag"] isEqualToString:@"Y"]){
+//    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+//    
+//    if(![[userDefaults objectForKey:@"coachMarkFlag"] isEqual:[NSNull null]] && [[userDefaults objectForKey:@"coachMarkFlag"] isEqualToString:@"Y"]){
         [self dashboardInfoBind];
-    }else{
-        [userDefaults setObject:@"Y" forKey:@"coachMarkFlag"];
-        [userDefaults synchronize];
-        
-        _coachMarkContainerController = [self.storyboard instantiateViewControllerWithIdentifier:@"CoachContainerController"];
-        
-        CGRect windowSize = [UIScreen mainScreen].bounds;
-        
-        [_coachMarkContainerController.view setFrame:windowSize];
-        
-        //    [self addChildViewController:_coachMarkContainerController];
-        //
-        //    [self.view addSubview:_coachMarkContainerController.view];
-        
-        AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        [appDelegate.window addSubview:_coachMarkContainerController.view];
-    }
+//    }else{
+//        [userDefaults setObject:@"Y" forKey:@"coachMarkFlag"];
+//        [userDefaults synchronize];
+//        
+//        _coachMarkContainerController = [self.storyboard instantiateViewControllerWithIdentifier:@"CoachContainerController"];
+//        
+//        CGRect windowSize = [UIScreen mainScreen].bounds;
+//        
+//        [_coachMarkContainerController.view setFrame:windowSize];
+//        _coachMarkContainerController.delegate = self;
+//        
+//        //    [self addChildViewController:_coachMarkContainerController];
+//        //
+//        //    [self.view addSubview:_coachMarkContainerController.view];
+//        
+//        AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//        [appDelegate.window addSubview:_coachMarkContainerController.view];
+//    }
     
     //[self performSegueWithIdentifier:@"goQuestionModal" sender:nil];
 }
 
+- (void)startDashBoard{
+//    [self dashboardInfoBind];
+}
 
 - (void)moveToMessage{
     UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
@@ -174,6 +178,27 @@
             
             // 대쉬보드 정보 바인드
             _dashboardDic = data[@"result"];
+            
+            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+            
+            if([[userDefaults objectForKey:@"coachMarkFlag"] isEqual:[NSNull null]] && ![[userDefaults objectForKey:@"coachMarkFlag"] isEqualToString:@"Y"]){
+                [userDefaults setObject:@"Y" forKey:@"coachMarkFlag"];
+                [userDefaults synchronize];
+                
+                _coachMarkContainerController = [self.storyboard instantiateViewControllerWithIdentifier:@"CoachContainerController"];
+                
+                CGRect windowSize = [UIScreen mainScreen].bounds;
+                
+                [_coachMarkContainerController.view setFrame:windowSize];
+                _coachMarkContainerController.delegate = self;
+                
+                //    [self addChildViewController:_coachMarkContainerController];
+                //
+                //    [self.view addSubview:_coachMarkContainerController.view];
+                
+                AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+                [appDelegate.window addSubview:_coachMarkContainerController.view];
+            }
             
             [self hideIndicator];
         });

@@ -31,6 +31,8 @@
     self.navigationItem.rightBarButtonItem = backButton;
     
     self.navigationItem.hidesBackButton = YES;
+    
+    [self showTermsPopup];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,6 +41,10 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    if(_termsPopupFlag){
+        AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        [appDelegate.window addSubview:_termsPopupView.view];
+    }
     scrollViewContoller = [self.storyboard instantiateViewControllerWithIdentifier:@"SignUpMainScrollView"];
 
     [scrollViewContoller.view setFrame:CGRectMake(0, 0, _scrollView.frame.size.width, 680)];
@@ -52,15 +58,15 @@
     [_scrollView sizeToFit];
 }
 
-/*
-#pragma mark - Navigationf
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"moveTermsView"])
+    {
+        SignUpAuthController *vc = [segue destinationViewController];
+        [vc setType:_type];
+    }
 }
-*/
+
 
 -(void) goBack{
     [scrollViewContoller.confirmNumberTimer invalidate];
@@ -68,7 +74,7 @@
 //    [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)showTermsPopup:(id)sender {
+- (void)showTermsPopup {
     if (!_termsPopupView) {
         _termsPopupView = [[termsPopupViewController alloc] initWithNibName:@"termsPopupViewController" bundle:nil];
         _termsPopupView.delegate = self;
@@ -77,13 +83,55 @@
     
     AppDelegate *appDelegate =  (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate.window addSubview:_termsPopupView.view];
+    _termsPopupFlag = YES;
 }
 
 - (void)cancleButtonAction{
-    
+    _termsPopupFlag = NO;
 }
 
 - (void)okButtonAction{
+    _termsPopupFlag = NO;
+}
+
+-(NSArray*)findAllTextFieldsInView:(UIView*)view{
+    NSMutableArray* textfieldarray = [[NSMutableArray alloc] init];
+    for(id x in [view subviews]){
+        if([x isKindOfClass:[UITextField class]])
+            [textfieldarray addObject:x];
+        
+        if([x respondsToSelector:@selector(subviews)]){
+            // if it has subviews, loop through those, too
+            [textfieldarray addObjectsFromArray:[self findAllTextFieldsInView:x]];
+        }
+    }
+    return textfieldarray;
+}
+
+-(NSString *)getNumberStr:(NSString *)str
+{
+    //NSString *originalString = @"(123) 123123 abc";
+    NSMutableString *strippedString = [NSMutableString stringWithCapacity:str.length];
+    
+    NSScanner *scanner = [NSScanner scannerWithString:str];
+    NSCharacterSet *numbers = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+    
+    while ([scanner isAtEnd] == NO) {
+        NSString *buffer;
+        if ([scanner scanCharactersFromSet:numbers intoString:&buffer]) {
+            [strippedString appendString:buffer];
+        } else {
+            [scanner setScanLocation:([scanner scanLocation] + 1)];
+        }
+    }
+    
+    //NSLog(@"%@", strippedString); // "123123123"
+    return [NSString stringWithString:strippedString];
+}
+
+
+- (IBAction)nextButtonAction:(id)sender {
+    
     //TODO 인증번호 체크
     NSArray *allTextFields = [self findAllTextFieldsInView:_scrollView];
     Boolean validationFlag = TRUE;
@@ -178,40 +226,9 @@
     }
 }
 
--(NSArray*)findAllTextFieldsInView:(UIView*)view{
-    NSMutableArray* textfieldarray = [[NSMutableArray alloc] init];
-    for(id x in [view subviews]){
-        if([x isKindOfClass:[UITextField class]])
-            [textfieldarray addObject:x];
-        
-        if([x respondsToSelector:@selector(subviews)]){
-            // if it has subviews, loop through those, too
-            [textfieldarray addObjectsFromArray:[self findAllTextFieldsInView:x]];
-        }
-    }
-    return textfieldarray;
+
+- (void)moveTermsView:(AuthTextType)type{
+    _type = type;
+    [self performSegueWithIdentifier:@"moveTermsView" sender:self];
 }
-
--(NSString *)getNumberStr:(NSString *)str
-{
-    //NSString *originalString = @"(123) 123123 abc";
-    NSMutableString *strippedString = [NSMutableString stringWithCapacity:str.length];
-    
-    NSScanner *scanner = [NSScanner scannerWithString:str];
-    NSCharacterSet *numbers = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
-    
-    while ([scanner isAtEnd] == NO) {
-        NSString *buffer;
-        if ([scanner scanCharactersFromSet:numbers intoString:&buffer]) {
-            [strippedString appendString:buffer];
-        } else {
-            [scanner setScanLocation:([scanner scanLocation] + 1)];
-        }
-    }
-    
-    //NSLog(@"%@", strippedString); // "123123123"
-    return [NSString stringWithString:strippedString];
-}
-
-
 @end

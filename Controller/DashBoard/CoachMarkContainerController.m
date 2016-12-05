@@ -155,8 +155,8 @@
 }
 
 - (IBAction)goStart:(id)sender {
-    
     [self.view removeFromSuperview];
+    [_delegate startDashBoard];
 }
 
 @end

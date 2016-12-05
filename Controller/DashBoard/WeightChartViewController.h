@@ -15,6 +15,7 @@
 #import <LifesenseBluetooth/LSBleConnector.h>
 #import <LifesenseBluetooth/LSSleepRecord.h>
 #import <CoreBluetooth/CoreBluetooth.h>
+#import "UIView+Toast.h"
 
 @interface WeightChartViewController : CommonViewController<DZNSegmentedControlDelegate, LSBleDataReceiveDelegate, LSBlePairingDelegate, WeightChartModelDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 

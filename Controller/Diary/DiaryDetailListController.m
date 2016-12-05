@@ -256,12 +256,7 @@
         NSString *reg_dttm = [NSString stringWithFormat:@"%@%@", [formatterMonth stringFromDate:_dateButton.date], [formatterTime stringFromDate:_timeButton.date]];
         
         NSString *emoticon;
-        if(_emoticonButton.tag == -1){
-            emoticon = @"";
-        }else{
-            emoticon = [NSString stringWithFormat:@"%ld", (long)_emoticonButton.tag+500];
-        }
-        
+        emoticon = [NSString stringWithFormat:@"%ld", (long)_emoticonButton.tag+500];        
         
         [param setValue:@"Y" forKey:@"isvalid"];
         [param setValue:_titleTextField.text forKey:@"title"];
@@ -347,7 +342,7 @@
     //emoticon
     if([detail objectForKey:@"emoticon"] && ![[detail objectForKey:@"emoticon"] isEqual:[NSNull null]] && ![[detail objectForKey:@"emoticon"] isEqualToString:@""]){
         [_emoticonButton setImage:[UIImage imageNamed:[NSString stringWithFormat:@"contents_icon_emoticon0%d", ([[detail objectForKey:@"emoticon"] intValue] - 500)]] forState:UIControlStateNormal] ;
-        [_emoticonButton setTag:([[detail objectForKey:@"emoticon"] intValue] - 500)+1];
+        [_emoticonButton setTag:([[detail objectForKey:@"emoticon"] intValue] - 500)];
         
         [_emoticonButton setImageEdgeInsets:UIEdgeInsetsMake(7, 7, 7, 7)];
         [_emoticonButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
@@ -583,9 +578,9 @@
 - (void)clickButton:(int)tag {
     NSMutableString *emoticonImageName = [[NSMutableString alloc] initWithString:@"contents_icon_emoticon0"];
     
-    [emoticonImageName appendFormat:@"%d", tag+1];
+    [emoticonImageName appendFormat:@"%d", tag];
     [_emoticonButton setImage:[UIImage imageNamed:emoticonImageName] forState:UIControlStateNormal];
-    [_emoticonButton setTag:tag+1];
+    [_emoticonButton setTag:tag];
     
     [_emoticonButton setImageEdgeInsets:UIEdgeInsetsMake(7, 7, 7, 7)];
     [_emoticonButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
@@ -597,8 +592,8 @@
     if(_editFlag){
         
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"사진"
-                                                                       message:@""
-                                                                preferredStyle:UIAlertControllerStyleActionSheet];
+                                                                       message:nil
+                                                                preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction *showAction = [UIAlertAction actionWithTitle:@"사진보기"
                                                              style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {

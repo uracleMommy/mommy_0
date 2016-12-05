@@ -66,6 +66,24 @@
     [alert show];
 }
 
+- (IBAction)termsButtonAction:(id)sender {
+    switch ((int)[sender tag]) {
+        case 0:
+            _type = AuthText1;
+            break;
+        case 1:
+            _type = AuthText2;
+            break;
+        case 2:
+            _type = AuthText3;
+            break;
+        default:
+            break;
+    }
+    [self.view removeFromSuperview];
+    [delegate moveTermsView:_type];
+}
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if(buttonIndex == 1){ //"종료" pressed

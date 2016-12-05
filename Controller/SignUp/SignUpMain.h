@@ -14,6 +14,7 @@
 #import "emoticonPopupViewController.h"
 #import "CommonViewController.h"
 #import "SignUpMainScrollViewController.h"
+#import "SignUpAuthController.h"
 
 @interface SignUpMain : CommonViewController <UITextFieldDelegate, UIPickerViewDelegate, termsPopupViewDelegate>{
     SignUpMainScrollViewController *scrollViewContoller;
@@ -23,6 +24,10 @@
 
 #pragma mark 정보동의 팝업 관련
 @property (strong, nonatomic) termsPopupViewController *termsPopupView;
+@property (assign, nonatomic) AuthTextType type;
+@property (assign, nonatomic) Boolean termsPopupFlag;
+
+- (IBAction)nextButtonAction:(id)sender;
 
 @end
 

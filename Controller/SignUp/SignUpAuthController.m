@@ -30,11 +30,22 @@
     
     self.navigationItem.hidesBackButton = YES;
     
-    if(_type == AuthText1){
-        _authTextField.text = @"AuthText1";
-    }else{
-        _authTextField.text = @"AuthText2";
+    
+    _webView.delegate = self;
+    for (id subview in _webView.subviews) {
+        if ([[subview class] isSubclassOfClass: [UIScrollView class]]) {
+            ((UIScrollView *)subview).bounces = NO;
+        }
     }
+    
+//    if(_type == AuthText1){
+        // html 바인딩
+        NSString *path = [NSString stringWithFormat:@"%@/html/term/term%d.html", _mainDomain, _type];
+        NSURL *url = [[NSURL alloc] initWithString:path];
+        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+        [_webView loadRequest:request];
+//    }else{
+//    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,7 +64,7 @@
 */
 
 - (void)goBack{
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

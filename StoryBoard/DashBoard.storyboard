@@ -366,7 +366,7 @@
         <scene sceneID="vlU-ru-4KT">
             <objects>
                 <navigationController id="GFT-SH-6XH" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="sO4-CD-Lj3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="sO4-CD-Lj3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -529,7 +529,7 @@
             <objects>
                 <navigationController id="F5w-hf-GR2" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Tb7-0Q-BHq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Tb7-0Q-BHq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.51764705882352935" green="0.26666666666666666" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1392,24 +1392,44 @@
                                         <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xgi-aE-xBU">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZA-Yy-ZWb">
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xgi-aE-xBU">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30자 이내로 입력해 주세요." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Df-yI-awB">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="125" id="FX7-gt-2Sh"/>
+                                                    <constraint firstAttribute="height" constant="15" id="LFb-tm-Tzk"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="11"/>
+                                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="66" id="1Sc-MV-0XE"/>
+                                            <constraint firstAttribute="trailing" secondItem="9Df-yI-awB" secondAttribute="trailing" constant="5" id="37N-IM-gP3"/>
+                                            <constraint firstItem="xgi-aE-xBU" firstAttribute="leading" secondItem="xZA-Yy-ZWb" secondAttribute="leading" constant="5" id="3Ts-B5-NJu"/>
+                                            <constraint firstItem="9Df-yI-awB" firstAttribute="top" secondItem="xgi-aE-xBU" secondAttribute="bottom" constant="5" id="4b7-02-E7y"/>
+                                            <constraint firstAttribute="height" constant="66" id="CBk-pF-XjT"/>
+                                            <constraint firstAttribute="bottom" secondItem="9Df-yI-awB" secondAttribute="bottom" constant="5" id="Rbz-cI-eNO"/>
+                                            <constraint firstAttribute="trailing" secondItem="xgi-aE-xBU" secondAttribute="trailing" constant="5" id="TYh-fl-zkL"/>
+                                            <constraint firstItem="xgi-aE-xBU" firstAttribute="top" secondItem="xZA-Yy-ZWb" secondAttribute="top" constant="5" id="hOi-MY-y36"/>
                                         </constraints>
-                                        <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="xgi-aE-xBU" firstAttribute="leading" secondItem="bUs-tB-aDy" secondAttribute="leading" constant="8" id="3IB-ee-xN3"/>
+                                    <constraint firstAttribute="bottom" secondItem="xZA-Yy-ZWb" secondAttribute="bottom" constant="8" id="3fM-of-7Af"/>
                                     <constraint firstAttribute="trailing" secondItem="Kga-8w-R4x" secondAttribute="trailing" constant="8" id="DpE-VX-2I8"/>
-                                    <constraint firstAttribute="trailing" secondItem="xgi-aE-xBU" secondAttribute="trailing" constant="8" id="Im0-iZ-lvp"/>
                                     <constraint firstItem="Kga-8w-R4x" firstAttribute="leading" secondItem="bUs-tB-aDy" secondAttribute="leading" constant="8" id="KyZ-fI-4t8"/>
                                     <constraint firstAttribute="height" constant="397" id="WlM-QJ-v1K"/>
-                                    <constraint firstAttribute="bottom" secondItem="xgi-aE-xBU" secondAttribute="bottom" constant="8" id="Yfj-c1-tQF"/>
+                                    <constraint firstItem="xZA-Yy-ZWb" firstAttribute="leading" secondItem="bUs-tB-aDy" secondAttribute="leading" constant="8" id="YvL-Pg-WUF"/>
+                                    <constraint firstAttribute="trailing" secondItem="xZA-Yy-ZWb" secondAttribute="trailing" constant="8" id="adp-bC-4Xn"/>
                                     <constraint firstItem="Kga-8w-R4x" firstAttribute="top" secondItem="bUs-tB-aDy" secondAttribute="top" constant="8" id="cLv-tk-fX0"/>
                                 </constraints>
                             </view>
@@ -1437,6 +1457,7 @@
                     <size key="freeformSize" width="320" height="453"/>
                     <connections>
                         <outlet property="containerView" destination="bUs-tB-aDy" id="WAc-fs-It2"/>
+                        <outlet property="etcView" destination="xZA-Yy-ZWb" id="uIV-fQ-bep"/>
                         <outlet property="imageFirstQuestion1" destination="5mX-35-ksg" id="229-lc-QJb"/>
                         <outlet property="imageFirstQuestion2" destination="aCV-Pe-Jhh" id="i3j-jC-P2a"/>
                         <outlet property="imageFirstQuestion3" destination="b56-Nt-g8X" id="ase-6K-a4t"/>
@@ -1451,7 +1472,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XkS-PN-hPt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="253" y="-675"/>
+            <point key="canvasLocation" x="253" y="-675.5"/>
         </scene>
         <!--User Pager Delegate-->
         <scene sceneID="3v2-eP-Mxo">
@@ -2095,22 +2116,42 @@
                                         <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fT6-a5-Omn">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GpU-TN-ZOF">
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5VI-ig-kOY">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30자 이내로 입력해 주세요." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymu-2H-jEB">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="BcG-NW-uMy"/>
+                                                    <constraint firstAttribute="width" constant="125" id="d7k-mw-QBv"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="11"/>
+                                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="66" id="cri-5P-lY7"/>
+                                            <constraint firstItem="ymu-2H-jEB" firstAttribute="top" secondItem="5VI-ig-kOY" secondAttribute="bottom" constant="5" id="KYA-vM-R5Z"/>
+                                            <constraint firstAttribute="trailing" secondItem="ymu-2H-jEB" secondAttribute="trailing" constant="5" id="OjV-Gu-6Cm"/>
+                                            <constraint firstAttribute="height" constant="66" id="Vvz-Fh-fQm"/>
+                                            <constraint firstAttribute="bottom" secondItem="ymu-2H-jEB" secondAttribute="bottom" constant="5" id="a3l-BD-73V"/>
+                                            <constraint firstItem="5VI-ig-kOY" firstAttribute="leading" secondItem="GpU-TN-ZOF" secondAttribute="leading" constant="5" id="aZI-Lp-Ufc"/>
+                                            <constraint firstItem="5VI-ig-kOY" firstAttribute="top" secondItem="GpU-TN-ZOF" secondAttribute="top" constant="5" id="bNo-VT-MZe"/>
+                                            <constraint firstAttribute="trailing" secondItem="5VI-ig-kOY" secondAttribute="trailing" constant="5" id="eBm-x7-hzn"/>
                                         </constraints>
-                                        <color key="textColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="397" id="Fr6-Hq-sWV"/>
-                                    <constraint firstItem="fT6-a5-Omn" firstAttribute="leading" secondItem="IdE-EH-rNY" secondAttribute="leading" constant="8" id="FsY-Bf-rws"/>
-                                    <constraint firstAttribute="trailing" secondItem="fT6-a5-Omn" secondAttribute="trailing" constant="8" id="LlM-4O-dKV"/>
-                                    <constraint firstAttribute="bottom" secondItem="fT6-a5-Omn" secondAttribute="bottom" constant="107" id="ges-L8-yzt"/>
+                                    <constraint firstAttribute="trailing" secondItem="GpU-TN-ZOF" secondAttribute="trailing" constant="8" id="L3Z-uf-D4V"/>
+                                    <constraint firstAttribute="bottom" secondItem="GpU-TN-ZOF" secondAttribute="bottom" constant="107" id="Vtu-O8-93U"/>
+                                    <constraint firstItem="GpU-TN-ZOF" firstAttribute="leading" secondItem="IdE-EH-rNY" secondAttribute="leading" constant="8" id="xw6-eb-wOy"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="산모에게 가장 적합한 영양/운동관리 컨텐츠를 제공하기 위해서 아래의 정보를 입력해 주세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRC-RZ-pYz">
@@ -2137,13 +2178,14 @@
                     <size key="freeformSize" width="320" height="453"/>
                     <connections>
                         <outlet property="containerView" destination="IdE-EH-rNY" id="yLm-TW-1Ab"/>
+                        <outlet property="etcView" destination="GpU-TN-ZOF" id="nAV-xx-UXq"/>
                         <outlet property="imageFirstQuestion1" destination="MT7-2e-CyB" id="NN3-F1-bsK"/>
                         <outlet property="imageFirstQuestion2" destination="Jix-us-mmQ" id="8rf-Uo-KID"/>
                         <outlet property="imageFirstQuestion3" destination="Qvu-QR-1Ej" id="StU-3O-cHI"/>
                         <outlet property="imageSecondQuestion1" destination="oXt-yp-sOi" id="n5X-Kb-iFY"/>
                         <outlet property="imageSecondQuestion2" destination="tgX-mp-a0D" id="w75-OZ-w14"/>
                         <outlet property="imageSecondQuestion3" destination="SHB-M9-JEZ" id="Wwb-g8-ylW"/>
-                        <outlet property="txtView" destination="fT6-a5-Omn" id="0C5-f6-Tyv"/>
+                        <outlet property="txtView" destination="5VI-ig-kOY" id="P3h-KD-YFK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Omj-3A-GrF" userLabel="First Responder" sceneMemberID="firstResponder"/>

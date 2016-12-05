@@ -21,28 +21,28 @@
     // Do any additional setup after loading the view.
     
     // 좌측버튼
-    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    UIImage *addBtnImage = [UIImage imageNamed:@"title_icon_back"];
-    backButton.frame = CGRectMake(0, 0, 40, 40);
-    [backButton setImage:addBtnImage forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(goPrevious) forControlEvents:UIControlEventTouchUpInside];
-    
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    
-    UIBarButtonItem *leftNegativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-    leftNegativeSpacer.width = -16;
-    [self.navigationItem setLeftBarButtonItems:@[leftNegativeSpacer, addButton]];
-    
-    // 우측버튼
     UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *saveImage = [UIImage imageNamed:@"title_icon_save"];
     saveButton.frame = CGRectMake(0, 0, 40, 40);
     [saveButton setImage:saveImage forState:UIControlStateNormal];
     [saveButton addTarget:self action:@selector(saveRequestAdvice) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *saveItemButton = [[UIBarButtonItem alloc] initWithCustomView:saveButton];
+    UIBarButtonItem *leftNegativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    leftNegativeSpacer.width = -16;
+    [self.navigationItem setLeftBarButtonItems:@[leftNegativeSpacer, saveItemButton]];
+    
+    // 우측버튼
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *backBtnImage = [UIImage imageNamed:@"title_icon_close"];
+    backButton.frame = CGRectMake(0, 0, 40, 40);
+    [backButton setImage:backBtnImage forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(goPrevious) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *backItemButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+
     UIBarButtonItem *rightNegativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     rightNegativeSpacer.width = -16;
-    [self.navigationItem setRightBarButtonItems:@[rightNegativeSpacer, saveItemButton]];
+    [self.navigationItem setRightBarButtonItems:@[rightNegativeSpacer, backItemButton]];
 
     /** imageButton Radius, defaultImage Setting **/
     defaultImage = [UIImage imageNamed:@"contents_btn_photo_update.png"];
@@ -73,6 +73,12 @@
     _imageButton04.layer.borderWidth = 2.0f;
     _imageButton04.layer.masksToBounds = YES;
     //    [_imageButton04 setImage:_defaultImage forState:UIControlStateNormal];
+    
+    if(_professionalButtonKind == ProfessionalButtonExecersize){
+        self.navigationController.title = @"상담내용등록(운동)";
+    }else{
+        self.navigationController.title = @"상담내용등록(영양)";
+    }
     
 
     
@@ -407,8 +413,8 @@
     selectedImageButton = sender;
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"사진"
-                                                                   message:@""
-                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *showAction = [UIAlertAction actionWithTitle:@"사진보기"
                                                          style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {

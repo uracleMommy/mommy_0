@@ -28,6 +28,7 @@
 @interface DiaryListBasicController : CommonViewController <DiaryCalendarDelegate, DiaryListDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UIButton *changeListButton;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
 @property (strong, nonatomic) DiaryListController *listViewController;
 @property (strong, nonatomic) DiaryCalenderController *calenderViewController;

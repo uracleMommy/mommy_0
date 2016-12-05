@@ -171,8 +171,8 @@
     selectedImageButton = sender;
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"사진"
-                                                                   message:@""
-                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *showAction = [UIAlertAction actionWithTitle:@"사진보기"
                                                          style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
